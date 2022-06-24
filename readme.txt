@@ -11,7 +11,7 @@ License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Collection of advanced blocks to be used with WordPress Gutenberg Pagebuilder
 
 == Description ==
-GutenBlock is a light weight WordPress Plugin that adds advanced and powerful Gutenberg Blocks and opens infinite possibilities to the WordPress Gutenberg editor for anyone to create the website of their own imagination in no time without touching a single line of code. GutenBlock has 20+ unique and beautifully designed Gutenberg blocks that extend the library of existing WordPress blocks. The plugin works with any WordPress theme and is compatible with any other WordPress plugins.
+SmartBlocks is a light weight WordPress Plugin that adds advanced and powerful Gutenberg Blocks and opens infinite possibilities to the WordPress Gutenberg editor for anyone to create the website of their own imagination in no time without touching a single line of code. GutenBlock has 20+ unique and beautifully designed Gutenberg blocks that extend the library of existing WordPress blocks. The plugin works with any WordPress theme and is compatible with any other WordPress plugins.
 
 == Installation ==
 
@@ -19,7 +19,7 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 <ol>
 <li>Go to WordPress Dashboard > Plugins > Add New</li>
-<li>Search for "Gutenblocks - Blocks for Gutenberg" and install the plugin.</li>
+<li>Search for "SmartBlocks - Blocks for Gutenberg" and install the plugin.</li>
 <li>Activate Plugin from "Plugins" menu in WordPress.</li>
 </ol>
 
