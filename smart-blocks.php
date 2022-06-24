@@ -61,7 +61,7 @@ if (!class_exists('Smart_Blocks')) {
         // Enqueue localization data for our blocks.
         public function block_localization() {
             if ( function_exists( 'wp_set_script_translations' ) ) {
-                wp_set_script_translations('smart-blocks-editor', 'smart-blocks', SB_PATH . 'languages');
+                wp_set_script_translations('sb-blocks', 'smart-blocks', SB_PATH . 'languages');
             }
         }
 
