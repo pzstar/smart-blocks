@@ -13,10 +13,10 @@ defined('ABSPATH') || die;
   Text Domain:       smart-blocks
  */
 
-define('SB_FILE', __FILE__);
-define('SB_PATH', plugin_dir_path(SB_FILE));
-define('SB_URL', plugins_url('/', SB_FILE));
-define('SB_VERSION', '1.0');
+define('Smart_Blocks_FILE', __FILE__);
+define('Smart_Blocks_PATH', plugin_dir_path(Smart_Blocks_FILE));
+define('Smart_Blocks_URL', plugins_url('/', Smart_Blocks_FILE));
+define('Smart_Blocks_VERSION', '1.0');
 
 if (!class_exists('Smart_Blocks')) {
 
@@ -55,37 +55,37 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function load_textdomain() {
-            load_plugin_textdomain('smart-blocks', false, SB_PATH . 'languages');
+            load_plugin_textdomain('smart-blocks', false, Smart_Blocks_PATH . 'languages');
         }
 
         // Enqueue localization data for our blocks.
         public function block_localization() {
             if ( function_exists( 'wp_set_script_translations' ) ) {
-                wp_set_script_translations('sb-blocks', 'smart-blocks', SB_PATH . 'languages');
+                wp_set_script_translations('sb-blocks', 'smart-blocks', Smart_Blocks_PATH . 'languages');
             }
         }
 
         public function init() {
-            require SB_PATH . 'inc/helper-functions.php';
-            require SB_PATH . 'inc/blocks/blocks-manager.php';
-            require SB_PATH . 'inc/blocks/blocks-render.php';
-            require SB_PATH . 'inc/generate-css.php';
-            require SB_PATH . 'inc/blocks/attributes.php';
+            require Smart_Blocks_PATH . 'inc/helper-functions.php';
+            require Smart_Blocks_PATH . 'inc/blocks/blocks-manager.php';
+            require Smart_Blocks_PATH . 'inc/blocks/blocks-render.php';
+            require Smart_Blocks_PATH . 'inc/generate-css.php';
+            require Smart_Blocks_PATH . 'inc/blocks/attributes.php';
         }
 
         public function sb_create_block_init() {
             // automatically load dependencies and version
-            $asset_file = include( SB_PATH . 'build/index.asset.php');
-            wp_register_style('owl-carousel', SB_URL . 'inc/assets/css/owl.carousel.css', array(), SB_VERSION);
-            wp_register_style('materialdesignicons', SB_URL . 'inc/assets/css/materialdesignicons.css', array(), SB_VERSION);
-            wp_register_style('sb-style', SB_URL . 'inc/assets/css/sb-style.css', array('materialdesignicons', 'owl-carousel'), SB_VERSION);
-            wp_register_style('sb-block-editor', SB_URL . 'inc/assets/css/editor.css', array(), SB_VERSION);
+            $asset_file = include( Smart_Blocks_PATH . 'build/index.asset.php');
+            wp_register_style('owl-carousel', Smart_Blocks_URL . 'inc/assets/css/owl.carousel.css', array(), Smart_Blocks_VERSION);
+            wp_register_style('materialdesignicons', Smart_Blocks_URL . 'inc/assets/css/materialdesignicons.css', array(), Smart_Blocks_VERSION);
+            wp_register_style('sb-style', Smart_Blocks_URL . 'inc/assets/css/sb-style.css', array('materialdesignicons', 'owl-carousel'), Smart_Blocks_VERSION);
+            wp_register_style('sb-block-editor', Smart_Blocks_URL . 'inc/assets/css/editor.css', array(), Smart_Blocks_VERSION);
 
-            wp_register_script('owl-carousel', SB_URL . 'inc/assets/js/owl.carousel.js', array('jquery'), SB_VERSION, true);
-            wp_register_script('sb-script', SB_URL . 'inc/assets/js/sb-script.js', array('jquery', 'owl-carousel'), SB_VERSION, true);
+            wp_register_script('owl-carousel', Smart_Blocks_URL . 'inc/assets/js/owl.carousel.js', array('jquery'), Smart_Blocks_VERSION, true);
+            wp_register_script('sb-script', Smart_Blocks_URL . 'inc/assets/js/sb-script.js', array('jquery', 'owl-carousel'), Smart_Blocks_VERSION, true);
 
             wp_register_script(
-                    'sb-blocks', SB_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version']
+                    'sb-blocks', Smart_Blocks_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version']
             );
 
             $block_render = new Smart_Blocks_Blocks_Render();

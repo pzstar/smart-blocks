@@ -4,9 +4,9 @@
  *
  * @package HHGB
  */
-if (!class_exists('SB_CSS')) {
+if (!class_exists('Smart_Blocks_CSS')) {
 
-    final class SB_CSS {
+    final class Smart_Blocks_CSS {
 
         private static $instance;
         public static $stylesheet;
@@ -70,7 +70,7 @@ if (!class_exists('SB_CSS')) {
                 return;
             }
 
-            wp_register_style( 'sb-style-frontend', false, array(), SB_VERSION );
+            wp_register_style( 'sb-style-frontend', false, array(), Smart_Blocks_VERSION );
             wp_enqueue_style( 'sb-style-frontend' );
             wp_add_inline_style( 'sb-style-frontend', sb_css_strip_whitespace(self::$stylesheet) );
             $frontend_gfonts = $this->frontend_gfonts();
@@ -203,5 +203,5 @@ if (!class_exists('SB_CSS')) {
 
     }
 
-    SB_CSS::get_instance();
+    Smart_Blocks_CSS::get_instance();
 }

@@ -5,7 +5,7 @@ class Smart_Blocks_Blocks_Manager {
     static function get_instance($block_type) {
         if ($block_type) {
             /* Modules */
-            require_once SB_PATH . 'inc/blocks/modules/' . str_replace('_', '-', $block_type) . '.php';
+            require_once Smart_Blocks_PATH . 'inc/blocks/modules/' . str_replace('_', '-', $block_type) . '.php';
             $block_class = '\HashGutenberg\\' . self::get_class_name($block_type);
             if (class_exists($block_class)) {
                 $new_instance = new $block_class();
