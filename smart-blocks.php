@@ -2,7 +2,7 @@
 
 defined('ABSPATH') || die;
 /*
-  Plugin Name:       Smart Blocks
+  Plugin Name:       Smart Blocks - Wordpress Gutenberg Blocks
   Description:       Collection of advanced blocks to be used with WordPress Gutenberg Pagebuilder
   Version:           1.0.0
   Author:            HashThemes
