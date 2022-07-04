@@ -2,7 +2,7 @@
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks, editor
 Tested up to:      6.0
-Stable tag:        1.0.0
+Stable tag:        1.0.1
 Requires at least: 5.0
 Requires PHP:      5.6 
 License:           GPL-2.0-or-later
@@ -24,6 +24,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
+= 1.0.1 - Jul 04, 2022 =
+* Constants Naming Issue - Fixed
+* Dynamic typography not working in Header Title - Fixed
 
 = 1.0.0 =
 * Release

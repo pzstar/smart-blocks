@@ -37,6 +37,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
 
         public function render_block_asset( $block_content, $block ) {
             $blockAttrs = $block['attrs'];
+            $block_css = '';
             foreach ($blockAttrs as $attrs) {
                 if (isset($attrs['family'])) {
                     self::blocks_google_font($attrs['family'], $attrs['weight'] ? str_replace('italic', 'i', $attrs['weight']) : 400);
@@ -70,7 +71,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                 return;
             }
 
-            wp_register_style( 'sb-style-frontend', false, array(), Smart_Blocks_VERSION );
+            wp_register_style( 'sb-style-frontend', false, array(), SMART_BLOCKS_VERSION );
             wp_enqueue_style( 'sb-style-frontend' );
             wp_add_inline_style( 'sb-style-frontend', sb_css_strip_whitespace(self::$stylesheet) );
             $frontend_gfonts = $this->frontend_gfonts();

@@ -4,7 +4,7 @@ defined('ABSPATH') || die;
 /*
   Plugin Name:       Smart Blocks - Wordpress Gutenberg Blocks
   Description:       Collection of advanced blocks to be used with WordPress Gutenberg Pagebuilder
-  Version:           1.0.0
+  Version:           1.0.1
   Author:            HashThemes
   Author URI:        http://hashthemes.com
   License:           GPLv2 or later
@@ -13,10 +13,10 @@ defined('ABSPATH') || die;
   Text Domain:       smart-blocks
  */
 
-define('Smart_Blocks_FILE', __FILE__);
-define('Smart_Blocks_PATH', plugin_dir_path(Smart_Blocks_FILE));
-define('Smart_Blocks_URL', plugins_url('/', Smart_Blocks_FILE));
-define('Smart_Blocks_VERSION', '1.0');
+define('SMART_BLOCKS_FILE', __FILE__);
+define('SMART_BLOCKS_PATH', plugin_dir_path(SMART_BLOCKS_FILE));
+define('SMART_BLOCKS_URL', plugins_url('/', SMART_BLOCKS_FILE));
+define('SMART_BLOCKS_VERSION', '1.0.1');
 
 if (!class_exists('Smart_Blocks')) {
 
@@ -35,8 +35,8 @@ if (!class_exists('Smart_Blocks')) {
         public function __construct() {
 
             // Load translation files
-            add_action( 'plugins_loaded', array( $this, 'load_textdomain' ), 99 );
-            add_action( 'enqueue_block_editor_assets', array( $this, 'block_localization' ) );
+            add_action('plugins_loaded', array($this, 'load_textdomain'), 99);
+            add_action('enqueue_block_editor_assets', array($this, 'block_localization'));
 
             // Initialize Blocks
             add_action('init', array($this, 'sb_create_block_init'));
@@ -55,37 +55,37 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function load_textdomain() {
-            load_plugin_textdomain('smart-blocks', false, Smart_Blocks_PATH . 'languages');
+            load_plugin_textdomain('smart-blocks', false, SMART_BLOCKS_PATH . 'languages');
         }
 
         // Enqueue localization data for our blocks.
         public function block_localization() {
-            if ( function_exists( 'wp_set_script_translations' ) ) {
-                wp_set_script_translations('sb-blocks', 'smart-blocks', Smart_Blocks_PATH . 'languages');
+            if (function_exists('wp_set_script_translations')) {
+                wp_set_script_translations('sb-blocks', 'smart-blocks', SMART_BLOCKS_PATH . 'languages');
             }
         }
 
         public function init() {
-            require Smart_Blocks_PATH . 'inc/helper-functions.php';
-            require Smart_Blocks_PATH . 'inc/blocks/blocks-manager.php';
-            require Smart_Blocks_PATH . 'inc/blocks/blocks-render.php';
-            require Smart_Blocks_PATH . 'inc/generate-css.php';
-            require Smart_Blocks_PATH . 'inc/blocks/attributes.php';
+            require SMART_BLOCKS_PATH . 'inc/helper-functions.php';
+            require SMART_BLOCKS_PATH . 'inc/blocks/blocks-manager.php';
+            require SMART_BLOCKS_PATH . 'inc/blocks/blocks-render.php';
+            require SMART_BLOCKS_PATH . 'inc/generate-css.php';
+            require SMART_BLOCKS_PATH . 'inc/blocks/attributes.php';
         }
 
         public function sb_create_block_init() {
             // automatically load dependencies and version
-            $asset_file = include( Smart_Blocks_PATH . 'build/index.asset.php');
-            wp_register_style('owl-carousel', Smart_Blocks_URL . 'inc/assets/css/owl.carousel.css', array(), Smart_Blocks_VERSION);
-            wp_register_style('materialdesignicons', Smart_Blocks_URL . 'inc/assets/css/materialdesignicons.css', array(), Smart_Blocks_VERSION);
-            wp_register_style('sb-style', Smart_Blocks_URL . 'inc/assets/css/sb-style.css', array('materialdesignicons', 'owl-carousel'), Smart_Blocks_VERSION);
-            wp_register_style('sb-block-editor', Smart_Blocks_URL . 'inc/assets/css/editor.css', array(), Smart_Blocks_VERSION);
+            $asset_file = include( SMART_BLOCKS_PATH . 'build/index.asset.php');
+            wp_register_style('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/css/owl.carousel.css', array(), SMART_BLOCKS_VERSION);
+            wp_register_style('materialdesignicons', SMART_BLOCKS_URL . 'inc/assets/css/materialdesignicons.css', array(), SMART_BLOCKS_VERSION);
+            wp_register_style('sb-style', SMART_BLOCKS_URL . 'inc/assets/css/sb-style.css', array('materialdesignicons', 'owl-carousel'), SMART_BLOCKS_VERSION);
+            wp_register_style('sb-block-editor', SMART_BLOCKS_URL . 'inc/assets/css/editor.css', array(), SMART_BLOCKS_VERSION);
 
-            wp_register_script('owl-carousel', Smart_Blocks_URL . 'inc/assets/js/owl.carousel.js', array('jquery'), Smart_Blocks_VERSION, true);
-            wp_register_script('sb-script', Smart_Blocks_URL . 'inc/assets/js/sb-script.js', array('jquery', 'owl-carousel'), Smart_Blocks_VERSION, true);
+            wp_register_script('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/js/owl.carousel.js', array('jquery'), SMART_BLOCKS_VERSION, true);
+            wp_register_script('sb-script', SMART_BLOCKS_URL . 'inc/assets/js/sb-script.js', array('jquery', 'owl-carousel'), SMART_BLOCKS_VERSION, true);
 
             wp_register_script(
-                    'sb-blocks', Smart_Blocks_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version']
+                    'sb-blocks', SMART_BLOCKS_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version']
             );
 
             $block_render = new Smart_Blocks_Blocks_Render();
@@ -132,7 +132,7 @@ if (!class_exists('Smart_Blocks')) {
          * @param array  $categories Block categories.
          * @param object $post Post object.
          */
-        public function register_category( $categories, $post ) {
+        public function register_category($categories, $post) {
             return array_merge(
                     $categories, array(
                 array(
@@ -177,6 +177,7 @@ if (!class_exists('Smart_Blocks')) {
         }
 
     }
+
 }
 
 

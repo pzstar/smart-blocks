@@ -1,6 +1,6 @@
 <?php
 
-namespace HashGutenberg;
+namespace Smart_Blocks;
 
 class Smart_Blocks_News_Module_Thirteen {
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace HashGutenberg;
+namespace Smart_Blocks;
 
 class Smart_Blocks_Carousel_Module_One {
 
