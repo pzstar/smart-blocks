@@ -2,7 +2,7 @@
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks, editor
 Tested up to:      6.0
-Stable tag:        1.0.2
+Stable tag:        1.0.3
 Requires at least: 5.0
 Requires PHP:      5.6 
 License:           GPL-2.0-or-later
@@ -24,6 +24,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
+= 1.0.3 - Jul 17, 2022 =
+* Image Check for the featured image of the magazine block added
+
 = 1.0.2 - Jul 15, 2022 =
 * Blocks not working issue fixed
 
