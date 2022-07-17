@@ -341,7 +341,7 @@ export default function Edit({ attributes, setAttributes }) {
                     <div className="sb-post-thumb">
                         <a href={post.link}>
                             <div className="sb-thumb-container">
-                                {featuredImage && (
+                                {featuredImage && featuredImage.media_details && (
                                     <img
                                         src={featuredImage.media_details.sizes?.[image_size] ? featuredImage.media_details.sizes?.[image_size].source_url : featuredImage.media_details.sizes?.['full'].source_url}
                                         alt={featuredImage.alt_text}
