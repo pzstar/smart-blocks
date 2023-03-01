@@ -590,7 +590,7 @@ export default function Edit({ attributes, setAttributes }) {
                                 autoplayTimeout={parseInt(pause)*1000}
                                 nav={true}
                                 dots={false}
-                                navText={['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']}
+                                navText={['<i class="mdi-chevron-left"></i>', '<i class="mdi-chevron-right"></i>']}
                                 className="">
                                 {posts.map((post, index) => (
                                     <a href={post.link} key={post.id}>

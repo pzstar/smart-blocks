@@ -22,7 +22,7 @@ if (!function_exists('smart_blocks_custom_excerpt')) {
 if (!function_exists('smart_blocks_author_name')) {
 
     function smart_blocks_author_name() {
-        return '<span class="sb-post-author"><i class="mdi mdi-account"></i>' . get_the_author() . '</span>';
+        return '<span class="sb-post-author"><i class="mdi-account"></i>' . get_the_author() . '</span>';
     }
 
 }
@@ -31,7 +31,7 @@ if (!function_exists('smart_blocks_author_name')) {
 if (!function_exists('smart_blocks_comment_count')) {
 
     function smart_blocks_comment_count() {
-        return '<span class="sb-post-comment"><i class="mdi mdi-comment-outline"></i>' . get_comments_number() . '</span>';
+        return '<span class="sb-post-comment"><i class="mdi-comment-outline"></i>' . get_comments_number() . '</span>';
     }
 
 }
@@ -42,9 +42,9 @@ if (!function_exists('smart_blocks_post_date')) {
     function smart_blocks_post_date($format = '') {
 
         if ($format) {
-            return '<span class="sb-post-date"><i class="mdi mdi-clock-time-four-outline"></i>' . get_the_date($format) . '</span>';
+            return '<span class="sb-post-date"><i class="mdi-clock-time-four-outline"></i>' . get_the_date($format) . '</span>';
         } else {
-            return '<span class="sb-post-date"><i class="mdi mdi-clock-time-four-outline"></i>' . get_the_date() . '</span>';
+            return '<span class="sb-post-date"><i class="mdi-clock-time-four-outline"></i>' . get_the_date() . '</span>';
         }
     }
 
@@ -54,7 +54,7 @@ if (!function_exists('smart_blocks_post_date')) {
 if (!function_exists('smart_blocks_time_ago')) {
 
     function smart_blocks_time_ago() {
-        return '<span class="sb-post-date"><i class="mdi mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'hash-elements') . '</span>';
+        return '<span class="sb-post-date"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'hash-elements') . '</span>';
     }
 
 }

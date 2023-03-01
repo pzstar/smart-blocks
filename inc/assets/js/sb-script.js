@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
 				autoplayTimeout: params.pause,
 				nav: JSON.parse(params.nav),
 				dots: JSON.parse(params.dots),
-				navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>'],
+				navText: ['<i class="mdi-chevron-left"></i>', '<i class="mdi-chevron-right"></i>'],
 				responsive: {
 					0: {
 						items: params.items_mobile,
@@ -42,7 +42,7 @@ jQuery(document).ready(function ($) {
 				autoplayTimeout: parseInt(params.pause) * 1000,
 				nav: true,
 				dots: false,
-				navText: ['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']
+				navText: ['<i class="mdi-chevron-left"></i>', '<i class="mdi-chevron-right"></i>']
 			});
 		})
 	}

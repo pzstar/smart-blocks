@@ -1,8 +1,8 @@
 === Smart Blocks ===
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks, editor
-Tested up to:      6.0
-Stable tag:        1.0.3
+Tested up to:      6.1
+Stable tag:        1.0.4
 Requires at least: 5.0
 Requires PHP:      5.6 
 License:           GPL-2.0-or-later
@@ -24,6 +24,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
+= 1.0.4 - Mar 1, 2023 =
+* Font Icons updated
+
 = 1.0.3 - Jul 17, 2022 =
 * Image Check for the featured image of the magazine block added
 

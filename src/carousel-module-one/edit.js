@@ -433,13 +433,13 @@ export default function Edit({ attributes, setAttributes }) {
                         <div className="sb-post-meta">
                             {postAuthor && postPostAuthor && (
                                 <span className="sb-post-author">
-                                    <i className="mdi mdi-account"></i>
+                                    <i className="mdi-account"></i>
                                     {postAuthor.name}
                                 </span>
                             )}
                             {post.date_gmt && postPostDate && (
                                 <span className="sb-post-date">
-                                    <i className="mdi mdi-clock-time-four-outline"></i>
+                                    <i className="mdi-clock-time-four-outline"></i>
                                     {dateFormat == 'relative_format' && `${post.relative_dates.created}`}
                                     {dateFormat == 'default' && dateI18n(__experimentalGetSettings().formats.date, post.date_gmt)}
                                     {dateFormat == 'custom' && dateI18n(customDateFormat, post.date_gmt)}
@@ -447,7 +447,7 @@ export default function Edit({ attributes, setAttributes }) {
                             )}
                             {postPostComments && (
                                 <span className="sb-post-comment">
-                                    <i className="mdi mdi-comment-outline"></i>
+                                    <i className="mdi-comment-outline"></i>
                                     {postComment ? postComment.length : 0}
                                 </span>
                             )}
@@ -1006,7 +1006,7 @@ export default function Edit({ attributes, setAttributes }) {
                         autoplayTimeout={pauseDuration*1000}
                         nav={nav}
                         dots={dots}
-                        navText={['<i class="mdi mdi-chevron-left"></i>', '<i class="mdi mdi-chevron-right"></i>']}
+                        navText={['<i class="mdi-chevron-left"></i>', '<i class="mdi-chevron-right"></i>']}
                         responsive={responsive}
                         className="sb-carousel-block-wrap">
                         {posts && posts.map((post, index) => (postInner(post, index)))}

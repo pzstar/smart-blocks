@@ -376,13 +376,13 @@ export default function Edit({ attributes, setAttributes }) {
                         <div className="sb-post-meta">
                             {postAuthor && post_author && (
                                 <span className="sb-post-author">
-                                    <i className="mdi mdi-account"></i>
+                                    <i className="mdi-account"></i>
                                     {postAuthor.name}
                                 </span>
                             )}
                             {post.date_gmt && post_date && (
                                 <span className="sb-post-date">
-                                    <i className="mdi mdi-clock-time-four-outline"></i>
+                                    <i className="mdi-clock-time-four-outline"></i>
                                     {dateFormat == 'relative_format' && `${post.relative_dates.created}`}
                                     {dateFormat == 'default' && dateI18n(__experimentalGetSettings().formats.date, post.date_gmt)}
                                     {dateFormat == 'custom' && dateI18n(customDateFormat, post.date_gmt)}
@@ -390,7 +390,7 @@ export default function Edit({ attributes, setAttributes }) {
                             )}
                             {post_comment && (
                                 <span className="sb-post-comment">
-                                    <i className="mdi mdi-comment-outline"></i>
+                                    <i className="mdi-comment-outline"></i>
                                     {postComment ? postComment.length : 0}
                                 </span>
                             )}
