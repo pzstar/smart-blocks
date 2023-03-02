@@ -24,7 +24,7 @@ const Color = ({label, value, onChange, enableAlpha}) => {
 	                </div>
                 </Tooltip>
                 <Dropdown 
-                    position="top center"
+                    position="top right"
                     className="sb-ml-auto"
                     contentClassName="sb-popover-style"
                     renderToggle={(function ( { isOpen, onToggle } ) {

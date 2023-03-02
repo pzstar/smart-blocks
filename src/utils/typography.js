@@ -116,7 +116,7 @@ const Typography = ({label, values, onChange, device, setDevice}) => {
 		                </div>
 					</Tooltip>
 	                <Dropdown 
-						position="top center"
+						position="top right"
 		                className="sb-ml-auto"
 		                contentClassName="sb-popover-style"
 		                renderToggle={ ( { isOpen, onToggle } ) => (
