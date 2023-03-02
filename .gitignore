@@ -29,4 +29,8 @@ node_modules/
 # dotenv environment variables file
 .env
 package-lock.json
+package.json
 .DS_Store
+build/index.asset.php
+build/index.js
+build/index.js.map
