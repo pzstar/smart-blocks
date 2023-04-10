@@ -45,6 +45,7 @@ export default function Edit({ attributes, setAttributes }) {
         metasTypography,
         dateFormat,
         customDateFormat,
+        imageBorderRadius,
         postTitleMargin,
         titleColor,
         titleHoverColor,
@@ -230,6 +231,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${contentMargin.lg.right ? '--sb-content-margin-right-lg: ' + contentMargin.lg.right +';' : ''}
         ${contentMargin.lg.bottom ? '--sb-content-margin-bottom-lg: ' + contentMargin.lg.bottom +';' : ''}
         ${contentMargin.lg.left ? '--sb-content-margin-left-lg: ' + contentMargin.lg.left +';' : ''}
+        ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius +'px;' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
@@ -534,6 +536,13 @@ export default function Edit({ attributes, setAttributes }) {
                                 onChange={ ( postImageHeight ) => setAttributes( {postImageHeight} ) }
                                 min={ 30 }
                                 max={ 150 }
+                            />
+                            <CustomRangeControl
+                                label={ __('Image Border Radius(px)', 'smart-blocks')}
+                                value={ imageBorderRadius }
+                                onChange={ ( imageBorderRadius ) => setAttributes( {imageBorderRadius} ) }
+                                min={ 0 }
+                                max={ 30 }
                             />
                             <Select
                                 label={ __( 'Content Alignment', 'smart-blocks' ) }

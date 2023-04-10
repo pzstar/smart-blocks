@@ -62,6 +62,7 @@ export default function Edit({ attributes, setAttributes }) {
         metasTypography,
         dateFormat,
         customDateFormat,
+        imageBorderRadius,
         sideTitleMargin,
         categoryBackgroundColor,
         categoryTextColor,
@@ -246,6 +247,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${metasTypography.lineHeight.md ? '--sb-post-metas-typo-lh-md: ' + metasTypography.lineHeight.md + metasTypography.lineHeight.unit +';' : ''}
         ${metasTypography.lineHeight.lg ? '--sb-post-metas-typo-lh-lg: ' + metasTypography.lineHeight.lg + metasTypography.lineHeight.unit +';' : ''}
         ${moduleHeight ? '--sb-module-height: ' + moduleHeight +'px;' : ''}
+        ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius +'px;' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
@@ -596,6 +598,13 @@ export default function Edit({ attributes, setAttributes }) {
                             title={ __( 'Additional Settings', 'smart-blocks' ) }
                             initialOpen={ false }
                         >
+                            <CustomRangeControl
+                                label={ __('Image Border Radius(px)', 'smart-blocks')}
+                                value={ imageBorderRadius }
+                                onChange={ ( imageBorderRadius ) => setAttributes( {imageBorderRadius} ) }
+                                min={ 0 }
+                                max={ 30 }
+                            />
                             <Select
                                 label={ __('Date Format', 'smart-blocks') }
                                 value={ dateFormat }

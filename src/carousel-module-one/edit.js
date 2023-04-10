@@ -59,6 +59,7 @@ export default function Edit({ attributes, setAttributes }) {
         metasTypography,
         dateFormat,
         customDateFormat,
+        imageBorderRadius,
         postTitleMargin,
         categoryBackgroundColor,
         categoryTextColor,
@@ -189,6 +190,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${categoryTypography.lineHeight.sm ? '--sb-category-typo-lh-sm: ' + categoryTypography.lineHeight.sm + categoryTypography.lineHeight.unit +';' : ''}
         ${categoryTypography.lineHeight.md ? '--sb-category-typo-lh-md: ' + categoryTypography.lineHeight.md + categoryTypography.lineHeight.unit +';' : ''}
         ${categoryTypography.lineHeight.lg ? '--sb-category-typo-lh-lg: ' + categoryTypography.lineHeight.lg + categoryTypography.lineHeight.unit +';' : ''}
+        ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius +'px;' : ''}
         ${categoryBackgroundColor ? '--sb-category-background-color: ' + categoryBackgroundColor +';' : ''}
         ${categoryTextColor ? '--sb-category-text-color: ' + categoryTextColor +';' : ''}
         ${categoryBackgroundHoverColor ? '--sb-category-background-hover-color: ' + categoryBackgroundHoverColor +';' : ''}
@@ -679,6 +681,13 @@ export default function Edit({ attributes, setAttributes }) {
                             title={ __( 'Additional Settings', 'smart-blocks' ) }
                             initialOpen={ false }
                             >
+                            <CustomRangeControl
+                                label={ __('Image Border Radius(px)', 'smart-blocks')}
+                                value={ imageBorderRadius }
+                                onChange={ ( imageBorderRadius ) => setAttributes( {imageBorderRadius} ) }
+                                min={ 0 }
+                                max={ 30 }
+                            />
                             <Select
                                 label={ __('Date Format', 'smart-blocks') }
                                 value={ dateFormat }

@@ -48,6 +48,7 @@ export default function Edit({ attributes, setAttributes }) {
         metasTypography,
         dateFormat,
         customDateFormat,
+        imageBorderRadius,
         postTitleMargin,
         titleColor,
         titleHoverColor,
@@ -243,6 +244,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${excerptMargin.lg.bottom ? '--sb-excerpt-margin-bottom-lg: ' + excerptMargin.lg.bottom +';' : ''}
         ${excerptMargin.lg.left ? '--sb-excerpt-margin-left-lg: ' + excerptMargin.lg.left +';' : ''}
         ${contentOverlayBackground ? '--sb-content-overlay-gradient: ' + contentOverlayBackground +';' : ''}
+        ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius +'px;' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
@@ -543,6 +545,13 @@ export default function Edit({ attributes, setAttributes }) {
                                 onChange={ ( postImageHeight ) => setAttributes( {postImageHeight} ) }
                                 min={ 30 }
                                 max={ 150 }
+                            />
+                            <CustomRangeControl
+                                label={ __('Image Border Radius(px)', 'smart-blocks')}
+                                value={ imageBorderRadius }
+                                onChange={ ( imageBorderRadius ) => setAttributes( {imageBorderRadius} ) }
+                                min={ 0 }
+                                max={ 30 }
                             />
                         </PanelBody>
                     </div>

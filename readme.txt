@@ -24,7 +24,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
-= 1.0.6 - Apr 9, 2023 =
+= 1.0.6 - Apr 11, 2023 =
+* Compatibility test with WordPress v 6.2.2
+* Border Radius option added for all blocks
 
 = 1.0.5 - Mar 2, 2023 =
 * Color and typography popup hidden issue fixed

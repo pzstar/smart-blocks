@@ -265,7 +265,8 @@ h3.sb-big-title {
 
 .sb-post-thumb {
     overflow: hidden;
-    position: relative
+    position: relative;
+    border-radius: var(--sb-image-border-radius, 0);
 }
 
 .sb-post-thumb img {
@@ -494,10 +495,6 @@ h3.sb-big-title {
 .sb-news-module-one .sb-post-item:nth-child(3) {
     order: 3;
     width: 25%
-}
-
-.sb-news-module-one .sb-post-thumb {
-    border-radius: var(--sb-image-border-radius, 0);
 }
 
 
