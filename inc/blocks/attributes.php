@@ -343,6 +343,10 @@ function smart_blocks_attributes_news_module_one() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());

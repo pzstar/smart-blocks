@@ -496,6 +496,10 @@ h3.sb-big-title {
     width: 25%
 }
 
+.sb-news-module-one .sb-post-thumb {
+    border-radius: var(--sb-image-border-radius, 0);
+}
+
 
 /* News Module Two */
 
