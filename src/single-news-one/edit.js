@@ -54,8 +54,6 @@ export default function Edit({ attributes, setAttributes }) {
         postExcerptLength,
         excerptColor,
         excerptTypography,
-        excerptMargin,
-        metasMargin,
         contentBgColor,
         contentPadding,
         contentMargin,
@@ -138,6 +136,18 @@ export default function Edit({ attributes, setAttributes }) {
         ${postImageHeight ? '--sb-listing-post-thumb-height: ' + postImageHeight +'%;' : ''}
         ${titleColor ? '--sb-title-color: ' + titleColor +';' : ''}
         ${titleHoverColor ? '--sb-title-hover-color: ' + titleHoverColor +';' : ''}
+        ${postTitleMargin.sm.top ? '--sb-listing-post-title-margin-top-sm: ' + postTitleMargin.sm.top + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.sm.right ? '--sb-listing-post-title-margin-right-sm: ' + postTitleMargin.sm.righ + postTitleMargin.unitt +';' : ''}
+        ${postTitleMargin.sm.bottom ? '--sb-listing-post-title-margin-bottom-sm: ' + postTitleMargin.sm.bottom + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.sm.left ? '--sb-listing-post-title-margin-left-sm: ' + postTitleMargin.sm.left + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.md.top ? '--sb-listing-post-title-margin-top-md: ' + postTitleMargin.md.top + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.md.right ? '--sb-listing-post-title-margin-right-md: ' + postTitleMargin.md.right + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.md.bottom ? '--sb-listing-post-title-margin-bottom-md: ' + postTitleMargin.md.bottom + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.md.left ? '--sb-listing-post-title-margin-left-md: ' + postTitleMargin.md.left + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.lg.top ? '--sb-listing-post-title-margin-top-lg: ' + postTitleMargin.lg.top + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.lg.right ? '--sb-listing-post-title-margin-right-lg: ' + postTitleMargin.lg.right + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.lg.bottom ? '--sb-listing-post-title-margin-bottom-lg: ' + postTitleMargin.lg.bottom + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.lg.left ? '--sb-listing-post-title-margin-left-lg: ' + postTitleMargin.lg.left + postTitleMargin.unit +';' : ''}
         ${postTypography.family ? '--sb-listing-post-title-typo-family: ' + postTypography.family +';' : ''}
         ${postTypography.weight ? '--sb-listing-post-title-typo-weight: ' + postTypography.weight.replace(/\D/g, '') +';' : ''}
         ${postTypography.weight ? '--sb-listing-post-title-typo-style: ' + postTypography.weight.replace(/\d+/g, '') +';' : ''}
@@ -168,69 +178,45 @@ export default function Edit({ attributes, setAttributes }) {
         ${metasTypography.lineHeight.md ? '--sb-post-metas-typo-lh-md: ' + metasTypography.lineHeight.md + metasTypography.lineHeight.unit +';' : ''}
         ${metasTypography.lineHeight.lg ? '--sb-post-metas-typo-lh-lg: ' + metasTypography.lineHeight.lg + metasTypography.lineHeight.unit +';' : ''}
         ${excerptColor ? '--sb-excerpt-color: ' + excerptColor +';' : ''}
-        ${excerptTypography.family ? '--sb-post-metas-typo-family: ' + excerptTypography.family +';' : ''}
-        ${excerptTypography.weight ? '--sb-post-metas-typo-weight: ' + excerptTypography.weight.replace(/\D/g, '') +';' : ''}
-        ${excerptTypography.weight ? '--sb-post-metas-typo-style: ' + excerptTypography.weight.replace(/\d+/g, '') +';' : ''}
-        ${excerptTypography.textTransform ? '--sb-post-metas-typo-tt: ' + excerptTypography.textTransform +';' : ''}
-        ${excerptTypography.textDecoration ? '--sb-post-metas-typo-td: ' + excerptTypography.textDecoration +';' : ''}
-        ${excerptTypography.fontSize.sm  ? '--sb-post-metas-typo-fs-sm: ' + excerptTypography.fontSize.sm + excerptTypography.fontSize.unit +';' : ''}
-        ${excerptTypography.fontSize.md ? '--sb-post-metas-typo-fs-md: ' + excerptTypography.fontSize.md + excerptTypography.fontSize.unit +';' : ''}
-        ${excerptTypography.fontSize.lg ? '--sb-post-metas-typo-fs-lg: ' + excerptTypography.fontSize.lg + excerptTypography.fontSize.unit +';' : ''}
-        ${excerptTypography.letterSpacing.sm ? '--sb-post-metas-typo-ls-sm: ' + excerptTypography.letterSpacing.sm + excerptTypography.letterSpacing.unit +';' : ''}
-        ${excerptTypography.letterSpacing.md ? '--sb-post-metas-typo-ls-md: ' + excerptTypography.letterSpacing.md + excerptTypography.letterSpacing.unit +';' : ''}
-        ${excerptTypography.letterSpacing.lg ? '--sb-post-metas-typo-ls-lg: ' + excerptTypography.letterSpacing.lg + excerptTypography.letterSpacing.unit +';' : ''}
-        ${excerptTypography.lineHeight.sm ? '--sb-post-metas-typo-lh-sm: ' + excerptTypography.lineHeight.sm + excerptTypography.lineHeight.unit +';' : ''}
-        ${excerptTypography.lineHeight.md ? '--sb-post-metas-typo-lh-md: ' + excerptTypography.lineHeight.md + excerptTypography.lineHeight.unit +';' : ''}
-        ${excerptTypography.lineHeight.lg ? '--sb-post-metas-typo-lh-lg: ' + excerptTypography.lineHeight.lg + excerptTypography.lineHeight.unit +';' : ''}
-        ${excerptMargin.sm.top ? '--sb-content-margin-top-sm: ' + excerptMargin.sm.top +';' : ''}
-        ${excerptMargin.sm.right ? '--sb-content-margin-right-sm: ' + excerptMargin.sm.right +';' : ''}
-        ${excerptMargin.sm.bottom ? '--sb-content-margin-bottom-sm: ' + excerptMargin.sm.bottom +';' : ''}
-        ${excerptMargin.sm.left ? '--sb-content-margin-left-sm: ' + excerptMargin.sm.left +';' : ''}
-        ${excerptMargin.md.top ? '--sb-content-margin-top-md: ' + excerptMargin.md.top +';' : ''}
-        ${excerptMargin.md.right ? '--sb-content-margin-right-md: ' + excerptMargin.md.right +';' : ''}
-        ${excerptMargin.md.bottom ? '--sb-content-margin-bottom-md: ' + excerptMargin.md.bottom +';' : ''}
-        ${excerptMargin.md.left ? '--sb-content-margin-left-md: ' + excerptMargin.md.left +';' : ''}
-        ${excerptMargin.lg.top ? '--sb-content-margin-top-lg: ' + excerptMargin.lg.top +';' : ''}
-        ${excerptMargin.lg.right ? '--sb-content-margin-right-lg: ' + excerptMargin.lg.right +';' : ''}
-        ${excerptMargin.lg.bottom ? '--sb-content-margin-bottom-lg: ' + excerptMargin.lg.bottom +';' : ''}
-        ${excerptMargin.lg.left ? '--sb-content-margin-left-lg: ' + excerptMargin.lg.left +';' : ''}
-        ${metasMargin.sm.top ? '--sb-metas-margin-top-sm: ' + metasMargin.sm.top +';' : ''}
-        ${metasMargin.sm.right ? '--sb-metas-margin-right-sm: ' + metasMargin.sm.right +';' : ''}
-        ${metasMargin.sm.bottom ? '--sb-metas-margin-bottom-sm: ' + metasMargin.sm.bottom +';' : ''}
-        ${metasMargin.sm.left ? '--sb-metas-margin-left-sm: ' + metasMargin.sm.left +';' : ''}
-        ${metasMargin.md.top ? '--sb-metas-margin-top-md: ' + metasMargin.md.top +';' : ''}
-        ${metasMargin.md.right ? '--sb-metas-margin-right-md: ' + metasMargin.md.right +';' : ''}
-        ${metasMargin.md.bottom ? '--sb-metas-margin-bottom-md: ' + metasMargin.md.bottom +';' : ''}
-        ${metasMargin.md.left ? '--sb-metas-margin-left-md: ' + metasMargin.md.left +';' : ''}
-        ${metasMargin.lg.top ? '--sb-metas-margin-top-lg: ' + metasMargin.lg.top +';' : ''}
-        ${metasMargin.lg.right ? '--sb-metas-margin-right-lg: ' + metasMargin.lg.right +';' : ''}
-        ${metasMargin.lg.bottom ? '--sb-metas-margin-bottom-lg: ' + metasMargin.lg.bottom +';' : ''}
-        ${metasMargin.lg.left ? '--sb-metas-margin-left-lg: ' + metasMargin.lg.left +';' : ''}
+        ${excerptTypography.family ? '--sb-excerpt-typo-family: ' + excerptTypography.family +';' : ''}
+        ${excerptTypography.weight ? '--sb-excerpt-typo-weight: ' + excerptTypography.weight.replace(/\D/g, '') +';' : ''}
+        ${excerptTypography.weight ? '--sb-excerpt-typo-style: ' + excerptTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${excerptTypography.textTransform ? '--sb-excerpt-typo-tt: ' + excerptTypography.textTransform +';' : ''}
+        ${excerptTypography.textDecoration ? '--sb-excerpt-typo-td: ' + excerptTypography.textDecoration +';' : ''}
+        ${excerptTypography.fontSize.sm  ? '--sb-excerpt-typo-fs-sm: ' + excerptTypography.fontSize.sm + excerptTypography.fontSize.unit +';' : ''}
+        ${excerptTypography.fontSize.md ? '--sb-excerpt-typo-fs-md: ' + excerptTypography.fontSize.md + excerptTypography.fontSize.unit +';' : ''}
+        ${excerptTypography.fontSize.lg ? '--sb-excerpt-typo-fs-lg: ' + excerptTypography.fontSize.lg + excerptTypography.fontSize.unit +';' : ''}
+        ${excerptTypography.letterSpacing.sm ? '--sb-excerpt-typo-ls-sm: ' + excerptTypography.letterSpacing.sm + excerptTypography.letterSpacing.unit +';' : ''}
+        ${excerptTypography.letterSpacing.md ? '--sb-excerpt-typo-ls-md: ' + excerptTypography.letterSpacing.md + excerptTypography.letterSpacing.unit +';' : ''}
+        ${excerptTypography.letterSpacing.lg ? '--sb-excerpt-typo-ls-lg: ' + excerptTypography.letterSpacing.lg + excerptTypography.letterSpacing.unit +';' : ''}
+        ${excerptTypography.lineHeight.sm ? '--sb-excerpt-typo-lh-sm: ' + excerptTypography.lineHeight.sm + excerptTypography.lineHeight.unit +';' : ''}
+        ${excerptTypography.lineHeight.md ? '--sb-excerpt-typo-lh-md: ' + excerptTypography.lineHeight.md + excerptTypography.lineHeight.unit +';' : ''}
+        ${excerptTypography.lineHeight.lg ? '--sb-excerpt-typo-lh-lg: ' + excerptTypography.lineHeight.lg + excerptTypography.lineHeight.unit +';' : ''}
         ${contentBgColor ? '--sb-content-bg-color: ' + contentBgColor +';' : ''}
-        ${contentPadding.sm.top ? '--sb-content-padding-top-sm: ' + contentPadding.sm.top +';' : ''}
-        ${contentPadding.sm.right ? '--sb-content-padding-right-sm: ' + contentPadding.sm.right +';' : ''}
-        ${contentPadding.sm.bottom ? '--sb-content-padding-bottom-sm: ' + contentPadding.sm.bottom +';' : ''}
-        ${contentPadding.sm.left ? '--sb-content-padding-left-sm: ' + contentPadding.sm.left +';' : ''}
-        ${contentPadding.md.top ? '--sb-content-padding-top-md: ' + contentPadding.md.top +';' : ''}
-        ${contentPadding.md.right ? '--sb-content-padding-right-md: ' + contentPadding.md.right +';' : ''}
-        ${contentPadding.md.bottom ? '--sb-content-padding-bottom-md: ' + contentPadding.md.bottom +';' : ''}
-        ${contentPadding.md.left ? '--sb-content-padding-left-md: ' + contentPadding.md.left +';' : ''}
-        ${contentPadding.lg.top ? '--sb-content-padding-top-lg: ' + contentPadding.lg.top +';' : ''}
-        ${contentPadding.lg.right ? '--sb-content-padding-right-lg: ' + contentPadding.lg.right +';' : ''}
-        ${contentPadding.lg.bottom ? '--sb-content-padding-bottom-lg: ' + contentPadding.lg.bottom +';' : ''}
-        ${contentPadding.lg.left ? '--sb-content-padding-left-lg: ' + contentPadding.lg.left +';' : ''}
-        ${contentMargin.sm.top ? '--sb-content-margin-top-sm: ' + contentMargin.sm.top +';' : ''}
-        ${contentMargin.sm.right ? '--sb-content-margin-right-sm: ' + contentMargin.sm.right +';' : ''}
-        ${contentMargin.sm.bottom ? '--sb-content-margin-bottom-sm: ' + contentMargin.sm.bottom +';' : ''}
-        ${contentMargin.sm.left ? '--sb-content-margin-left-sm: ' + contentMargin.sm.left +';' : ''}
-        ${contentMargin.md.top ? '--sb-content-margin-top-md: ' + contentMargin.md.top +';' : ''}
-        ${contentMargin.md.right ? '--sb-content-margin-right-md: ' + contentMargin.md.right +';' : ''}
-        ${contentMargin.md.bottom ? '--sb-content-margin-bottom-md: ' + contentMargin.md.bottom +';' : ''}
-        ${contentMargin.md.left ? '--sb-content-margin-left-md: ' + contentMargin.md.left +';' : ''}
-        ${contentMargin.lg.top ? '--sb-content-margin-top-lg: ' + contentMargin.lg.top +';' : ''}
-        ${contentMargin.lg.right ? '--sb-content-margin-right-lg: ' + contentMargin.lg.right +';' : ''}
-        ${contentMargin.lg.bottom ? '--sb-content-margin-bottom-lg: ' + contentMargin.lg.bottom +';' : ''}
-        ${contentMargin.lg.left ? '--sb-content-margin-left-lg: ' + contentMargin.lg.left +';' : ''}
+        ${contentPadding.sm.top ? '--sb-content-padding-top-sm: ' + contentPadding.sm.top + contentPadding.unit +';' : ''}
+        ${contentPadding.sm.right ? '--sb-content-padding-right-sm: ' + contentPadding.sm.right + contentPadding.unit +';' : ''}
+        ${contentPadding.sm.bottom ? '--sb-content-padding-bottom-sm: ' + contentPadding.sm.bottom + contentPadding.unit +';' : ''}
+        ${contentPadding.sm.left ? '--sb-content-padding-left-sm: ' + contentPadding.sm.left + contentPadding.unit +';' : ''}
+        ${contentPadding.md.top ? '--sb-content-padding-top-md: ' + contentPadding.md.top + contentPadding.unit +';' : ''}
+        ${contentPadding.md.right ? '--sb-content-padding-right-md: ' + contentPadding.md.right + contentPadding.unit +';' : ''}
+        ${contentPadding.md.bottom ? '--sb-content-padding-bottom-md: ' + contentPadding.md.bottom + contentPadding.unit +';' : ''}
+        ${contentPadding.md.left ? '--sb-content-padding-left-md: ' + contentPadding.md.left + contentPadding.unit +';' : ''}
+        ${contentPadding.lg.top ? '--sb-content-padding-top-lg: ' + contentPadding.lg.top + contentPadding.unit +';' : ''}
+        ${contentPadding.lg.right ? '--sb-content-padding-right-lg: ' + contentPadding.lg.right + contentPadding.unit +';' : ''}
+        ${contentPadding.lg.bottom ? '--sb-content-padding-bottom-lg: ' + contentPadding.lg.bottom + contentPadding.unit +';' : ''}
+        ${contentPadding.lg.left ? '--sb-content-padding-left-lg: ' + contentPadding.lg.left + contentPadding.unit +';' : ''}
+        ${contentMargin.sm.top ? '--sb-content-margin-top-sm: ' + contentMargin.sm.top + contentMargin.unit +';' : ''}
+        ${contentMargin.sm.right ? '--sb-content-margin-right-sm: ' + contentMargin.sm.right + contentMargin.unit +';' : ''}
+        ${contentMargin.sm.bottom ? '--sb-content-margin-bottom-sm: ' + contentMargin.sm.bottom + contentMargin.unit +';' : ''}
+        ${contentMargin.sm.left ? '--sb-content-margin-left-sm: ' + contentMargin.sm.left + contentMargin.unit +';' : ''}
+        ${contentMargin.md.top ? '--sb-content-margin-top-md: ' + contentMargin.md.top + contentMargin.unit +';' : ''}
+        ${contentMargin.md.right ? '--sb-content-margin-right-md: ' + contentMargin.md.right + contentMargin.unit +';' : ''}
+        ${contentMargin.md.bottom ? '--sb-content-margin-bottom-md: ' + contentMargin.md.bottom + contentMargin.unit +';' : ''}
+        ${contentMargin.md.left ? '--sb-content-margin-left-md: ' + contentMargin.md.left + contentMargin.unit +';' : ''}
+        ${contentMargin.lg.top ? '--sb-content-margin-top-lg: ' + contentMargin.lg.top + contentMargin.unit +';' : ''}
+        ${contentMargin.lg.right ? '--sb-content-margin-right-lg: ' + contentMargin.lg.right + contentMargin.unit +';' : ''}
+        ${contentMargin.lg.bottom ? '--sb-content-margin-bottom-lg: ' + contentMargin.lg.bottom + contentMargin.unit +';' : ''}
+        ${contentMargin.lg.left ? '--sb-content-margin-left-lg: ' + contentMargin.lg.left + contentMargin.unit +';' : ''}
         ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius +'px;' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
@@ -381,7 +367,7 @@ export default function Edit({ attributes, setAttributes }) {
                         </div>
                     )}
                     {excerpt_length !=0 && (
-                        <div className="sb-post-excerpt">
+                        <div className="sb-excerpt">
                             {post.content.rendered && (
                                 <RawHTML>{post.content.rendered.replace(/<[^>]+>/g, '').substring(0, excerpt_length)}{excerpt_length < post.content.rendered.length ? `...` : ``}</RawHTML>
                             )}
@@ -622,15 +608,6 @@ export default function Edit({ attributes, setAttributes }) {
                                 onChange={ ( metasTypography ) => setAttributes( {metasTypography} ) }
                                 device={ device }
                                 setDevice={ setDevice }/>
-                            <Dimension
-                                label={ __('Margin', 'smart-blocks') }
-                                min="0"
-                                max="100"
-                                values={ metasMargin }
-                                onChange={ ( metasMargin ) => setAttributes( {metasMargin} ) }
-                                device={device}
-                                setDevice={setDevice}
-                            />
                         </PanelBody>
                         <PanelBody
                             title="Post Excerpt"
@@ -648,15 +625,6 @@ export default function Edit({ attributes, setAttributes }) {
                                 onChange={ ( excerptTypography ) => setAttributes( {excerptTypography} ) }
                                 device={ device }
                                 setDevice={ setDevice }/>
-                            <Dimension
-                                label={ __('Margin', 'smart-blocks') }
-                                min="0"
-                                max="100"
-                                values={ excerptMargin }
-                                onChange={ ( excerptMargin ) => setAttributes( {excerptMargin} ) }
-                                device={device}
-                                setDevice={setDevice}
-                            />
                         </PanelBody>
                     </div>
                     <div tabTitle={__("Advanced", 'smart-blocks')}>

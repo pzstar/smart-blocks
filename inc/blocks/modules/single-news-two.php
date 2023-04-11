@@ -41,7 +41,7 @@ class Smart_Blocks_Single_News_Two {
                 $content_rendered .= $this->get_post_meta();
 
                 if ($excerpt_length) {
-                    $content_rendered .= '<div class="sb-post-excerpt">' . smart_blocks_custom_excerpt($excerpt_length) . '</div>';
+                    $content_rendered .= '<div class="sb-excerpt">' . smart_blocks_custom_excerpt($excerpt_length) . '</div>';
                 }
                 $content_rendered .= '</div>';
                 $content_rendered .= '</div>';

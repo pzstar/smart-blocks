@@ -24,9 +24,12 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
-= 1.0.6 - Apr 11, 2023 =
+= 1.0.6 - Apr 12, 2023 =
 * Compatibility test with WordPress v 6.2.2
 * Border Radius option added for all blocks
+* Single News 1 and Single News 2 bug fixed
+* Styling Bug Fixed
+* Dynamic style not working when block is added inside the column fixed
 
 = 1.0.5 - Mar 2, 2023 =
 * Color and typography popup hidden issue fixed

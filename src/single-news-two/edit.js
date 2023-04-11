@@ -57,9 +57,7 @@ export default function Edit({ attributes, setAttributes }) {
         contentAlignment,
         contentPadding,
         contentMargin,
-        metasMargin,
         excerptColor,
-        excerptMargin,
         contentOverlayBackground,
         filterOption,
         blockMargin,
@@ -168,18 +166,18 @@ export default function Edit({ attributes, setAttributes }) {
         ${postTypography.lineHeight.sm ? '--sb-listing-post-title-typo-lh-sm: ' + postTypography.lineHeight.sm + postTypography.lineHeight.unit +';' : ''}
         ${postTypography.lineHeight.md ? '--sb-listing-post-title-typo-lh-md: ' + postTypography.lineHeight.md + postTypography.lineHeight.unit +';' : ''}
         ${postTypography.lineHeight.lg ? '--sb-listing-post-title-typo-lh-lg: ' + postTypography.lineHeight.lg + postTypography.lineHeight.unit +';' : ''}
-        ${postTitleMargin.sm.top ? '--sb-listing-post-title-margin-top-sm: ' + postTitleMargin.sm.top +';' : ''}
-        ${postTitleMargin.sm.right ? '--sb-listing-post-title-margin-right-sm: ' + postTitleMargin.sm.right +';' : ''}
-        ${postTitleMargin.sm.bottom ? '--sb-listing-post-title-margin-bottom-sm: ' + postTitleMargin.sm.bottom +';' : ''}
-        ${postTitleMargin.sm.left ? '--sb-listing-post-title-margin-left-sm: ' + postTitleMargin.sm.left +';' : ''}
-        ${postTitleMargin.md.top ? '--sb-listing-post-title-margin-top-md: ' + postTitleMargin.md.top +';' : ''}
-        ${postTitleMargin.md.right ? '--sb-listing-post-title-margin-right-md: ' + postTitleMargin.md.right +';' : ''}
-        ${postTitleMargin.md.bottom ? '--sb-listing-post-title-margin-bottom-md: ' + postTitleMargin.md.bottom +';' : ''}
-        ${postTitleMargin.md.left ? '--sb-listing-post-title-margin-left-md: ' + postTitleMargin.md.left +';' : ''}
-        ${postTitleMargin.lg.top ? '--sb-listing-post-title-margin-top-lg: ' + postTitleMargin.lg.top +';' : ''}
-        ${postTitleMargin.lg.right ? '--sb-listing-post-title-margin-right-lg: ' + postTitleMargin.lg.right +';' : ''}
-        ${postTitleMargin.lg.bottom ? '--sb-listing-post-title-margin-bottom-lg: ' + postTitleMargin.lg.bottom +';' : ''}
-        ${postTitleMargin.lg.left ? '--sb-listing-post-title-margin-left-lg: ' + postTitleMargin.lg.left +';' : ''}
+        ${postTitleMargin.sm.top ? '--sb-listing-post-title-margin-top-sm: ' + postTitleMargin.sm.top + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.sm.right ? '--sb-listing-post-title-margin-right-sm: ' + postTitleMargin.sm.righ + postTitleMargin.unitt +';' : ''}
+        ${postTitleMargin.sm.bottom ? '--sb-listing-post-title-margin-bottom-sm: ' + postTitleMargin.sm.bottom + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.sm.left ? '--sb-listing-post-title-margin-left-sm: ' + postTitleMargin.sm.left + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.md.top ? '--sb-listing-post-title-margin-top-md: ' + postTitleMargin.md.top + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.md.right ? '--sb-listing-post-title-margin-right-md: ' + postTitleMargin.md.right + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.md.bottom ? '--sb-listing-post-title-margin-bottom-md: ' + postTitleMargin.md.bottom + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.md.left ? '--sb-listing-post-title-margin-left-md: ' + postTitleMargin.md.left + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.lg.top ? '--sb-listing-post-title-margin-top-lg: ' + postTitleMargin.lg.top + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.lg.right ? '--sb-listing-post-title-margin-right-lg: ' + postTitleMargin.lg.right + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.lg.bottom ? '--sb-listing-post-title-margin-bottom-lg: ' + postTitleMargin.lg.bottom + postTitleMargin.unit +';' : ''}
+        ${postTitleMargin.lg.left ? '--sb-listing-post-title-margin-left-lg: ' + postTitleMargin.lg.left + postTitleMargin.unit +';' : ''}
         ${postMetasColor ? '--sb-post-metas-color: ' + postMetasColor +';' : ''}
         ${metasTypography.family ? '--sb-post-metas-typo-family: ' + metasTypography.family +';' : ''}
         ${metasTypography.weight ? '--sb-post-metas-typo-weight: ' + metasTypography.weight.replace(/\D/g, '') +';' : ''}
@@ -195,54 +193,30 @@ export default function Edit({ attributes, setAttributes }) {
         ${metasTypography.lineHeight.sm ? '--sb-post-metas-typo-lh-sm: ' + metasTypography.lineHeight.sm + metasTypography.lineHeight.unit +';' : ''}
         ${metasTypography.lineHeight.md ? '--sb-post-metas-typo-lh-md: ' + metasTypography.lineHeight.md + metasTypography.lineHeight.unit +';' : ''}
         ${metasTypography.lineHeight.lg ? '--sb-post-metas-typo-lh-lg: ' + metasTypography.lineHeight.lg + metasTypography.lineHeight.unit +';' : ''}
-        ${contentPadding.sm.top ? '--sb-content-padding-top-sm: ' + contentPadding.sm.top +';' : ''}
-        ${contentPadding.sm.right ? '--sb-content-padding-right-sm: ' + contentPadding.sm.right +';' : ''}
-        ${contentPadding.sm.bottom ? '--sb-content-padding-bottom-sm: ' + contentPadding.sm.bottom +';' : ''}
-        ${contentPadding.sm.left ? '--sb-content-padding-left-sm: ' + contentPadding.sm.left +';' : ''}
-        ${contentPadding.md.top ? '--sb-content-padding-top-md: ' + contentPadding.md.top +';' : ''}
-        ${contentPadding.md.right ? '--sb-content-padding-right-md: ' + contentPadding.md.right +';' : ''}
-        ${contentPadding.md.bottom ? '--sb-content-padding-bottom-md: ' + contentPadding.md.bottom +';' : ''}
-        ${contentPadding.md.left ? '--sb-content-padding-left-md: ' + contentPadding.md.left +';' : ''}
-        ${contentPadding.lg.top ? '--sb-content-padding-top-lg: ' + contentPadding.lg.top +';' : ''}
-        ${contentPadding.lg.right ? '--sb-content-padding-right-lg: ' + contentPadding.lg.right +';' : ''}
-        ${contentPadding.lg.bottom ? '--sb-content-padding-bottom-lg: ' + contentPadding.lg.bottom +';' : ''}
-        ${contentPadding.lg.left ? '--sb-content-padding-left-lg: ' + contentPadding.lg.left +';' : ''}
-        ${contentMargin.sm.top ? '--sb-content-margin-top-sm: ' + contentMargin.sm.top +';' : ''}
-        ${contentMargin.sm.right ? '--sb-content-margin-right-sm: ' + contentMargin.sm.right +';' : ''}
-        ${contentMargin.sm.bottom ? '--sb-content-margin-bottom-sm: ' + contentMargin.sm.bottom +';' : ''}
-        ${contentMargin.sm.left ? '--sb-content-margin-left-sm: ' + contentMargin.sm.left +';' : ''}
-        ${contentMargin.md.top ? '--sb-content-margin-top-md: ' + contentMargin.md.top +';' : ''}
-        ${contentMargin.md.right ? '--sb-content-margin-right-md: ' + contentMargin.md.right +';' : ''}
-        ${contentMargin.md.bottom ? '--sb-content-margin-bottom-md: ' + contentMargin.md.bottom +';' : ''}
-        ${contentMargin.md.left ? '--sb-content-margin-left-md: ' + contentMargin.md.left +';' : ''}
-        ${contentMargin.lg.top ? '--sb-content-margin-top-lg: ' + contentMargin.lg.top +';' : ''}
-        ${contentMargin.lg.right ? '--sb-content-margin-right-lg: ' + contentMargin.lg.right +';' : ''}
-        ${contentMargin.lg.bottom ? '--sb-content-margin-bottom-lg: ' + contentMargin.lg.bottom +';' : ''}
-        ${contentMargin.lg.left ? '--sb-content-margin-left-lg: ' + contentMargin.lg.left +';' : ''}
-        ${metasMargin.sm.top ? '--sb-metas-margin-top-sm: ' + metasMargin.sm.top +';' : ''}
-        ${metasMargin.sm.right ? '--sb-metas-margin-right-sm: ' + metasMargin.sm.right +';' : ''}
-        ${metasMargin.sm.bottom ? '--sb-metas-margin-bottom-sm: ' + metasMargin.sm.bottom +';' : ''}
-        ${metasMargin.sm.left ? '--sb-metas-margin-left-sm: ' + metasMargin.sm.left +';' : ''}
-        ${metasMargin.md.top ? '--sb-metas-margin-top-md: ' + metasMargin.md.top +';' : ''}
-        ${metasMargin.md.right ? '--sb-metas-margin-right-md: ' + metasMargin.md.right +';' : ''}
-        ${metasMargin.md.bottom ? '--sb-metas-margin-bottom-md: ' + metasMargin.md.bottom +';' : ''}
-        ${metasMargin.md.left ? '--sb-metas-margin-left-md: ' + metasMargin.md.left +';' : ''}
-        ${metasMargin.lg.top ? '--sb-metas-margin-top-lg: ' + metasMargin.lg.top +';' : ''}
-        ${metasMargin.lg.right ? '--sb-metas-margin-right-lg: ' + metasMargin.lg.right +';' : ''}
-        ${metasMargin.lg.bottom ? '--sb-metas-margin-bottom-lg: ' + metasMargin.lg.bottom +';' : ''}
-        ${metasMargin.lg.left ? '--sb-metas-margin-left-lg: ' + metasMargin.lg.left +';' : ''}
-        ${excerptMargin.sm.top ? '--sb-excerpt-margin-top-sm: ' + excerptMargin.sm.top +';' : ''}
-        ${excerptMargin.sm.right ? '--sb-excerpt-margin-right-sm: ' + excerptMargin.sm.right +';' : ''}
-        ${excerptMargin.sm.bottom ? '--sb-excerpt-margin-bottom-sm: ' + excerptMargin.sm.bottom +';' : ''}
-        ${excerptMargin.sm.left ? '--sb-excerpt-margin-left-sm: ' + excerptMargin.sm.left +';' : ''}
-        ${excerptMargin.md.top ? '--sb-excerpt-margin-top-md: ' + excerptMargin.md.top +';' : ''}
-        ${excerptMargin.md.right ? '--sb-excerpt-margin-right-md: ' + excerptMargin.md.right +';' : ''}
-        ${excerptMargin.md.bottom ? '--sb-excerpt-margin-bottom-md: ' + excerptMargin.md.bottom +';' : ''}
-        ${excerptMargin.md.left ? '--sb-excerpt-margin-left-md: ' + excerptMargin.md.left +';' : ''}
-        ${excerptMargin.lg.top ? '--sb-excerpt-margin-top-lg: ' + excerptMargin.lg.top +';' : ''}
-        ${excerptMargin.lg.right ? '--sb-excerpt-margin-right-lg: ' + excerptMargin.lg.right +';' : ''}
-        ${excerptMargin.lg.bottom ? '--sb-excerpt-margin-bottom-lg: ' + excerptMargin.lg.bottom +';' : ''}
-        ${excerptMargin.lg.left ? '--sb-excerpt-margin-left-lg: ' + excerptMargin.lg.left +';' : ''}
+        ${contentPadding.sm.top ? '--sb-content-padding-top-sm: ' + contentPadding.sm.top + contentPadding.unit +';' : ''}
+        ${contentPadding.sm.right ? '--sb-content-padding-right-sm: ' + contentPadding.sm.right + contentPadding.unit +';' : ''}
+        ${contentPadding.sm.bottom ? '--sb-content-padding-bottom-sm: ' + contentPadding.sm.bottom + contentPadding.unit +';' : ''}
+        ${contentPadding.sm.left ? '--sb-content-padding-left-sm: ' + contentPadding.sm.left + contentPadding.unit +';' : ''}
+        ${contentPadding.md.top ? '--sb-content-padding-top-md: ' + contentPadding.md.top + contentPadding.unit +';' : ''}
+        ${contentPadding.md.right ? '--sb-content-padding-right-md: ' + contentPadding.md.right + contentPadding.unit +';' : ''}
+        ${contentPadding.md.bottom ? '--sb-content-padding-bottom-md: ' + contentPadding.md.bottom + contentPadding.unit +';' : ''}
+        ${contentPadding.md.left ? '--sb-content-padding-left-md: ' + contentPadding.md.left + contentPadding.unit +';' : ''}
+        ${contentPadding.lg.top ? '--sb-content-padding-top-lg: ' + contentPadding.lg.top + contentPadding.unit +';' : ''}
+        ${contentPadding.lg.right ? '--sb-content-padding-right-lg: ' + contentPadding.lg.right + contentPadding.unit +';' : ''}
+        ${contentPadding.lg.bottom ? '--sb-content-padding-bottom-lg: ' + contentPadding.lg.bottom + contentPadding.unit +';' : ''}
+        ${contentPadding.lg.left ? '--sb-content-padding-left-lg: ' + contentPadding.lg.left + contentPadding.unit +';' : ''}
+        ${contentMargin.sm.top ? '--sb-content-margin-top-sm: ' + contentMargin.sm.top + contentMargin.unit +';' : ''}
+        ${contentMargin.sm.right ? '--sb-content-margin-right-sm: ' + contentMargin.sm.right + contentMargin.unit +';' : ''}
+        ${contentMargin.sm.bottom ? '--sb-content-margin-bottom-sm: ' + contentMargin.sm.bottom + contentMargin.unit +';' : ''}
+        ${contentMargin.sm.left ? '--sb-content-margin-left-sm: ' + contentMargin.sm.left + contentMargin.unit +';' : ''}
+        ${contentMargin.md.top ? '--sb-content-margin-top-md: ' + contentMargin.md.top + contentMargin.unit +';' : ''}
+        ${contentMargin.md.right ? '--sb-content-margin-right-md: ' + contentMargin.md.right + contentMargin.unit +';' : ''}
+        ${contentMargin.md.bottom ? '--sb-content-margin-bottom-md: ' + contentMargin.md.bottom + contentMargin.unit +';' : ''}
+        ${contentMargin.md.left ? '--sb-content-margin-left-md: ' + contentMargin.md.left + contentMargin.unit +';' : ''}
+        ${contentMargin.lg.top ? '--sb-content-margin-top-lg: ' + contentMargin.lg.top + contentMargin.unit +';' : ''}
+        ${contentMargin.lg.right ? '--sb-content-margin-right-lg: ' + contentMargin.lg.right + contentMargin.unit +';' : ''}
+        ${contentMargin.lg.bottom ? '--sb-content-margin-bottom-lg: ' + contentMargin.lg.bottom + contentMargin.unit +';' : ''}
+        ${contentMargin.lg.left ? '--sb-content-margin-left-lg: ' + contentMargin.lg.left + contentMargin.unit +';' : ''}
         ${contentOverlayBackground ? '--sb-content-overlay-gradient: ' + contentOverlayBackground +';' : ''}
         ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius +'px;' : ''}
     }`
@@ -391,7 +365,7 @@ export default function Edit({ attributes, setAttributes }) {
                         </div>
                     )}
                     {excerpt_length !=0 && (
-                        <div className="sb-post-excerpt">
+                        <div className="sb-excerpt">
                             {post.content.rendered && (
                                 <RawHTML>{post.content.rendered.replace(/<[^>]+>/g, '').substring(0, excerpt_length)}{excerpt_length < post.content.rendered.length ? `...` : ``}</RawHTML>
                             )}
@@ -553,9 +527,42 @@ export default function Edit({ attributes, setAttributes }) {
                                 min={ 0 }
                                 max={ 30 }
                             />
+                            <Select
+                                label={ __( 'Content Alignment', 'smart-blocks' ) }
+                                value={ contentAlignment }
+                                onChange={ ( contentAlignment ) => setAttributes( { contentAlignment } ) }
+                                options={ [
+                                    { value: 'left', label: 'Left' },
+                                    { value: 'center', label: 'Center' },
+                                    { value: 'right', label: 'Right' }
+                                ] }
+                            />
                         </PanelBody>
                     </div>
                     <div tabTitle={__("Style", 'smart-blocks')}>
+                        <PanelBody
+                            title="Content"
+                            initialOpen={ false }
+                            >
+                            <GradientPicker
+                                value={ contentOverlayBackground }
+                                onChange={ ( contentOverlayBackground ) => setAttributes( {contentOverlayBackground} ) }
+                            />
+                            <Dimension
+                                label={ __('Content Padding', 'smart-blocks') }
+                                values={ contentPadding }
+                                onChange={ ( contentPadding ) => setAttributes( {contentPadding} ) }
+                                device={device}
+                                setDevice={setDevice}
+                            />
+                            <Dimension
+                                label={ __('Content Margin', 'smart-blocks') }
+                                values={ contentMargin }
+                                onChange={ ( contentMargin ) => setAttributes( {contentMargin} ) }
+                                device={device}
+                                setDevice={setDevice}
+                            />
+                        </PanelBody>
                         <PanelBody
                             title="Post Title"
                             initialOpen={ false }
@@ -597,13 +604,6 @@ export default function Edit({ attributes, setAttributes }) {
                                 device={ device }
                                 setDevice={ setDevice }
                                 />
-                            <Dimension
-                                label={ __('Margin', 'smart-blocks') }
-                                values={ metasMargin }
-                                onChange={ ( metasMargin ) => setAttributes( {metasMargin} ) }
-                                device={device}
-                                setDevice={setDevice}
-                                />
                         </PanelBody>
                         <PanelBody
                             title="Post Excerpt"
@@ -622,47 +622,6 @@ export default function Edit({ attributes, setAttributes }) {
                                 device={ device }
                                 setDevice={ setDevice }
                                 />
-                            <Dimension
-                                label={ __('Margin', 'smart-blocks') }
-                                values={ excerptMargin }
-                                onChange={ ( excerptMargin ) => setAttributes( {excerptMargin} ) }
-                                device={device}
-                                setDevice={setDevice}
-                                />
-                        </PanelBody>
-
-                        <PanelBody
-                            title="Content"
-                            initialOpen={ false }
-                            >
-                            <Select
-                                label={ __( 'Content Alignment', 'smart-blocks' ) }
-                                value={ contentAlignment }
-                                onChange={ ( contentAlignment ) => setAttributes( { contentAlignment } ) }
-                                options={ [
-                                    { value: 'left', label: 'Left' },
-                                    { value: 'center', label: 'Center' },
-                                    { value: 'right', label: 'Right' }
-                                ] }
-                            />
-                            <Dimension
-                                label={ __('Content Padding', 'smart-blocks') }
-                                values={ contentPadding }
-                                onChange={ ( contentPadding ) => setAttributes( {contentPadding} ) }
-                                device={device}
-                                setDevice={setDevice}
-                            />
-                            <Dimension
-                                label={ __('Content Margin', 'smart-blocks') }
-                                values={ contentMargin }
-                                onChange={ ( contentMargin ) => setAttributes( {contentMargin} ) }
-                                device={device}
-                                setDevice={setDevice}
-                            />
-                            <GradientPicker
-                                value={ contentOverlayBackground }
-                                onChange={ ( contentOverlayBackground ) => setAttributes( {contentOverlayBackground} ) }
-                            />
                         </PanelBody>
                     </div>
                     <div tabTitle={__("Advanced", 'smart-blocks')}>

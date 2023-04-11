@@ -210,7 +210,6 @@ a {
 /* Title Font Size */
 
 .sb-post-content h3.sb-post-title {
-    font-size: 1.2em;
     color: var(--sb-title-color, #000);
 }
 
@@ -263,7 +262,8 @@ h3.sb-big-title {
     object-position: center
 }
 
-.sb-post-thumb {
+.sb-post-thumb,
+.sb-post-graident-title{
     overflow: hidden;
     position: relative;
     border-radius: var(--sb-image-border-radius, 0);
@@ -1299,39 +1299,36 @@ h3.sb-big-title {
     padding-bottom: var(--sb-listing-post-thumb-height, 70%);
 }
 
-.sb-single-post-one .sb-post-excerpt {
+.sb-single-post-one .sb-excerpt {
     margin-top: 20px;
 }
 
 
 /* Single News Two */
 
-.sb-single-post-two .sb-post-title {
-    font-size: 1.3rem;
-}
-
 .sb-single-post-two .sb-thumb-container {
     padding-bottom: var(--sb-listing-post-thumb-height, 70%);
 }
 
-.sb-single-post-two .sb-post-graident-title .sb-post-content {
+.sb-single-post-one .sb-post-content,
+.sb-single-post-two .sb-post-content {
     margin-top: var(--sb-content-margin-top-lg, 0);
     margin-right: var(--sb-content-margin-right-lg, 0);
     margin-bottom: var(--sb-content-margin-bottom-lg, 0);
     margin-left: var(--sb-content-margin-left-lg, 0);
     padding-top: var(--sb-content-padding-top-lg, 20px);
+    padding-right: var(--sb-content-padding-right-lg, 0);
+    padding-bottom: var(--sb-content-padding-bottom-lg, 0);
+    padding-left: var(--sb-content-padding-left-lg, 0);
+    background: var(--sb-content-bg-color);
+}
+
+.sb-single-post-two .sb-post-content {
+    padding-top: var(--sb-content-padding-top-lg, 20px);
     padding-right: var(--sb-content-padding-right-lg, 20px);
     padding-bottom: var(--sb-content-padding-bottom-lg, 20px);
     padding-left: var(--sb-content-padding-left-lg, 20px);
 }
-
-.sb-single-post-two .sb-post-graident-title .sb-post-excerpt {
-    margin-top: var(--sb-excerpt-margin-top-lg, 0);
-    margin-right: var(--sb-excerpt-margin-right-lg, 0);
-    margin-bottom: var(--sb-excerpt-margin-bottom-lg, 0);
-    margin-left: var(--sb-excerpt-margin-left-lg, 0);
-}
-
 
 /** Gradient Background **/
 
@@ -1344,17 +1341,26 @@ h3.sb-big-title {
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 20px;
     background: var(--sb-content-overlay-gradient, linear-gradient(to top, rgba(0, 0, 0, 0.65) 0px, rgba(0, 0, 0, 0.45) 34%, transparent 100%));
 }
 
-.sb-post-graident-title .sb-post-title a,
-.sb-post-graident-title .sb-post-meta span,
-.sb-post-graident-title .sb-post-excerpt {
-    color: #FFF;
+.sb-post-graident-title h3.sb-post-title{
+    color: var(--sb-title-color, #FFF);
 }
 
-.sb-post-graident-title .sb-post-excerpt {
+.sb-post-graident-title h3.sb-post-title:hover{
+    color: var(--sb-title-hover-color, var(--sb-title-color, #FFF));
+}
+
+.sb-post-graident-title .sb-excerpt {
+    color: var(--sb-excerpt-color, #FFF)
+}
+
+.sb-post-graident-title .sb-post-meta span{
+    color: var(--sb-post-metas-color, #FFF);
+}
+
+.sb-post-graident-title .sb-excerpt {
     margin-top: 15px;
 }
 
@@ -1625,21 +1631,22 @@ h3.sb-big-title {
         letter-spacing: var(--sb-post-metas-typo-ls-md, var(--sb-post-metas-typo-ls-lg, 0));
         line-height: var(--sb-post-metas-typo-lh-md, var(--sb-post-metas-typo-lh-lg, 1.3));
     }
-    .sb-single-post-two .sb-post-graident-title .sb-post-content {
+    .sb-single-post-one .sb-post-content,
+    .sb-single-post-two .sb-post-content {
         margin-top: var(--sb-content-margin-top-md, var(--sb-content-margin-top-lg, 0));
         margin-right: var(--sb-content-margin-right-md, var(--sb-content-margin-right-lg, 0));
         margin-bottom: var(--sb-content-margin-bottom-md, var(--sb-content-margin-bottom-lg, 0));
         margin-left: var(--sb-content-margin-left-md, var(--sb-content-margin-left-lg, 0));
         padding-top: var(--sb-content-padding-top-md, var(--sb-content-padding-top-lg, 20px));
+        padding-right: var(--sb-content-padding-right-md, var(--sb-content-padding-right-lg, 0));
+        padding-bottom: var(--sb-content-padding-bottom-md, var(--sb-content-padding-bottom-lg, 0));
+        padding-left: var(--sb-content-padding-left-md, var(--sb-content-padding-left-lg, 0));
+    }
+    .sb-single-post-two .sb-post-content {
+        padding-top: var(--sb-content-padding-top-md, var(--sb-content-padding-top-lg, 20px));
         padding-right: var(--sb-content-padding-right-md, var(--sb-content-padding-right-lg, 20px));
         padding-bottom: var(--sb-content-padding-bottom-md, var(--sb-content-padding-bottom-lg, 20px));
         padding-left: var(--sb-content-padding-left-md, var(--sb-content-padding-left-lg, 20px));
-    }
-    .sb-single-post-two .sb-post-graident-title .sb-post-excerpt {
-        margin-top: var(--sb-excerpt-margin-top-md, var(--sb-excerpt-margin-top-lg, 0));
-        margin-right: var(--sb-excerpt-margin-right-md, var(--sb-excerpt-margin-right-lg, 0));
-        margin-bottom: var(--sb-excerpt-margin-bottom-md, var(--sb-excerpt-margin-bottom-lg, 0));
-        margin-left: var(--sb-excerpt-margin-left-md, var(--sb-excerpt-margin-left-lg, 0));
     }
     .wp-block-smart-blocks {
         margin-top: var(--sb-block-margin-top-md, var(--sb-block-margin-top-lg, 0));
@@ -1728,9 +1735,9 @@ h3.sb-big-title {
     .sb-news-module-fourteen .sb-post-item .sb-post-title,
     .sb-news-module-fifteen .sb-post-item .sb-post-title,
     .sb-tile-block.style3 .sb-post-title,
-    .sb-carousel-block .sb-post-title,
-    .sb-single-post-one .sb-post-title,
-    .sb-single-post-two .sb-post-title {
+    .sb-carousel-block .sb-post-content .sb-post-title,
+    .sb-single-post-one .sb-post-content .sb-post-title,
+    .sb-single-post-two .sb-post-content .sb-post-title {
         font-size: var(--sb-listing-post-title-typo-fs-sm, var(--sb-listing-post-title-typo-fs-md, var(--sb-listing-post-title-typo-fs-lg, 26px)));
         letter-spacing: var(--sb-listing-post-title-typo-ls-sm, var(--sb-listing-post-title-typo-ls-md, var(--sb-listing-post-title-typo-ls-lg, 0)));
         line-height: var(--sb-listing-post-title-typo-lh-sm, var(--sb-listing-post-title-typo-lh-md, var(--sb-listing-post-title-typo-lh-lg, 1.3)));
@@ -1749,21 +1756,22 @@ h3.sb-big-title {
         letter-spacing: var(--sb-post-metas-typo-ls-sm, var(--sb-post-metas-typo-ls-md, var(--sb-post-metas-typo-ls-lg, 0)));
         line-height: var(--sb-post-metas-typo-lh-sm, var(--sb-post-metas-typo-lh-md, var(--sb-post-metas-typo-lh-lg, 1.3)));
     }
-    .sb-single-post-two .sb-post-graident-title .sb-post-content {
+    .sb-single-post-one .sb-post-content,
+    .sb-single-post-two .sb-post-content {
         margin-top: var(--sb-content-margin-top-sm, var(--sb-content-margin-top-md, var(--sb-content-margin-top-lg, 0)));
         margin-right: var(--sb-content-margin-right-sm, var(--sb-content-margin-right-md, var(--sb-content-margin-right-lg, 0)));
         margin-bottom: var(--sb-content-margin-bottom-sm, var(--sb-content-margin-bottom-md, var(--sb-content-margin-bottom-lg, 0)));
         margin-left: var(--sb-content-margin-left-sm, var(--sb-content-margin-left-md, var(--sb-content-margin-left-lg, 0)));
         padding-top: var(--sb-content-padding-top-sm, var(--sb-content-padding-top-md, var(--sb-content-padding-top-lg, 20px)));
+        padding-right: var(--sb-content-padding-right-sm, var(--sb-content-padding-right-md, var(--sb-content-padding-right-lg, 0)));
+        padding-bottom: var(--sb-content-padding-bottom-sm, var(--sb-content-padding-bottom-md, var(--sb-content-padding-bottom-lg, 0)));
+        padding-left: var(--sb-content-padding-left-sm, var(--sb-content-padding-left-md, var(--sb-content-padding-left-lg, 0)));
+    }
+    .sb-single-post-two .sb-post-content {
+        padding-top: var(--sb-content-padding-top-sm, var(--sb-content-padding-top-md, var(--sb-content-padding-top-lg, 20px)));
         padding-right: var(--sb-content-padding-right-sm, var(--sb-content-padding-right-md, var(--sb-content-padding-right-lg, 20px)));
         padding-bottom: var(--sb-content-padding-bottom-sm, var(--sb-content-padding-bottom-md, var(--sb-content-padding-bottom-lg, 20px)));
         padding-left: var(--sb-content-padding-left-sm, var(--sb-content-padding-left-md, var(--sb-content-padding-left-lg, 20px)));
-    }
-    .sb-single-post-two .sb-post-graident-title .sb-post-excerpt {
-        margin-top: var(--sb-excerpt-margin-top-sm, var(--sb-excerpt-margin-top-md, var(--sb-excerpt-margin-top-lg, 0)));
-        margin-right: var(--sb-excerpt-margin-right-sm, var(--sb-excerpt-margin-right-md, var(--sb-excerpt-margin-right-lg, 0)));
-        margin-bottom: var(--sb-excerpt-margin-bottom-sm, var(--sb-excerpt-margin-bottom-md, var(--sb-excerpt-margin-bottom-lg, 0)));
-        margin-left: var(--sb-excerpt-margin-left-sm, var(--sb-excerpt-margin-left-md, var(--sb-excerpt-margin-left-lg, 0)));
     }
     .wp-block-smart-blocks {
         margin-top: var(--sb-block-margin-top-sm, var(--sb-block-margin-top-md, var(--sb-block-margin-top-lg, 0)));
