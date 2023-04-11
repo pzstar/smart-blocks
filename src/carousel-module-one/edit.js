@@ -883,7 +883,7 @@ export default function Edit({ attributes, setAttributes }) {
                                         onChange={ ( navIconHoverColor ) => setAttributes( { navIconHoverColor } ) }
                                     />
                                     <Color
-                                        label={ __( 'Dots Color (Hover)', 'smart-blocks' ) }
+                                        label={ __( 'Dots Color (Active)', 'smart-blocks' ) }
                                         enableAlpha
                                         value={dotsBgColorHover}
                                         onChange={ ( dotsBgColorHover ) => setAttributes( { dotsBgColorHover } ) }

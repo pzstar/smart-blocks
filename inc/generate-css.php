@@ -197,6 +197,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                     if (isset($blockAttrs['style'])) {
                         $block_css .= is_array($blockAttrs['style']) ? implode(" ", $blockAttrs['style']) : $blockAttrs['style'];
                     }
+
                 }
             }
             return $block_css;

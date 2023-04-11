@@ -209,16 +209,16 @@ a {
 
 /* Title Font Size */
 
-h3.sb-post-title {
+.sb-post-content h3.sb-post-title {
     font-size: 1.2em;
     color: var(--sb-title-color, #000);
 }
 
-h3.sb-post-title:hover {
+.sb-post-content h3.sb-post-title:hover {
     color: var(--sb-title-hover-color, var(--sb-title-color, #000));
 }
 
-h3.sb-post-title a {
+.sb-post-content h3.sb-post-title a {
     color: inherit;
 }
 
@@ -407,9 +407,9 @@ h3.sb-big-title {
 .sb-news-module-fourteen .sb-post-item .sb-post-title,
 .sb-news-module-fifteen .sb-post-item .sb-post-title,
 .sb-tile-block.style3 .sb-post-title,
-.sb-carousel-block .sb-post-title,
-.sb-single-post-one .sb-post-title,
-.sb-single-post-two .sb-post-title {
+.sb-carousel-block .sb-post-content h3.sb-post-title,
+.sb-single-post-one .sb-post-content h3.sb-post-title,
+.sb-single-post-two .sb-post-content h3.sb-post-title {
     font-family: var(--sb-listing-post-title-typo-family);
     font-weight: var(--sb-listing-post-title-typo-weight, 400);
     font-style: var(--sb-listing-post-title-typo-style, normal);
@@ -1383,7 +1383,7 @@ h3.sb-big-title {
     width: 35px;
     line-height: 40px;
     text-align: center;
-    background: var(nav-normal-bg-color, #000);
+    background: var(--sb-nav-normal-bg-color, #000);
     font-size: 26px;
     color: var(--sb-nav-icon-normal-color, #FFF);
     opacity: 0;
@@ -1408,8 +1408,8 @@ h3.sb-big-title {
 
 .sb-carousel-block .owl-carousel .owl-nav button.owl-prev:hover,
 .sb-carousel-block .owl-carousel .owl-nav button.owl-next:hover {
-    background: var(--sb-nav-hover-bg-color, var(nav-normal-bg-color, #000));
-    background: var(--sb-nav-icon-hover-color, var(--sb-nav-icon-normal-color, #FFF));
+    background: var(--sb-nav-hover-bg-color, var(--sb-nav-normal-bg-color, #000));
+    color: var(--sb-nav-icon-hover-color, var(--sb-nav-icon-normal-color, #FFF));
 }
 
 .sb-carousel-block .owl-carousel .owl-dots {
@@ -1604,9 +1604,9 @@ h3.sb-big-title {
     .sb-news-module-fourteen .sb-post-item .sb-post-title,
     .sb-news-module-fifteen .sb-post-item .sb-post-title,
     .sb-tile-block.style3 .sb-post-title,
-    .sb-carousel-block .sb-post-title,
-    .sb-single-post-one .sb-post-title,
-    .sb-single-post-two .sb-post-title {
+    .sb-carousel-block .sb-post-content h3.sb-post-title,
+    .sb-single-post-one .sb-post-content h3.sb-post-title,
+    .sb-single-post-two .sb-post-content h3.sb-post-title {
         font-size: var(--sb-listing-post-title-typo-fs-md, var(--sb-listing-post-title-typo-fs-lg, 20px));
         letter-spacing: var(--sb-listing-post-title-typo-ls-md, var(--sb-listing-post-title-typo-ls-lg, 0));
         line-height: var(--sb-listing-post-title-typo-lh-md, var(--sb-listing-post-title-typo-lh-lg, 1.3));
