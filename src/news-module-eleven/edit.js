@@ -546,7 +546,7 @@ export default function Edit({ attributes, setAttributes }) {
                                 value={ imageBorderRadius }
                                 onChange={ ( imageBorderRadius ) => setAttributes( {imageBorderRadius} ) }
                                 min={ 0 }
-                                max={ 30 }
+                                max={ 60 }
                             />
                             <Select
                                 label={ __('Date Format', 'smart-blocks') }

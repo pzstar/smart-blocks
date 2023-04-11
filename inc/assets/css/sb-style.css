@@ -747,12 +747,11 @@ h3.sb-big-title {
 .sb-news-module-seven .sb-big-block .sb-post-thumb {
     float: left;
     width: 50%;
-    padding-right: 15px;
 }
 
 .sb-news-module-seven .sb-big-block .sb-post-content {
     margin-left: 50%;
-    padding-left: 15px;
+    padding-left: 30px;
 }
 
 .sb-news-module-seven .sb-small-block {

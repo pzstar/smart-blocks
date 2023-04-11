@@ -694,6 +694,10 @@ function smart_blocks_attributes_news_module_two() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -1035,6 +1039,10 @@ function smart_blocks_attributes_news_module_three() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -1374,6 +1382,10 @@ function smart_blocks_attributes_news_module_four() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -1717,6 +1729,10 @@ function smart_blocks_attributes_news_module_five() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -2060,6 +2076,10 @@ function smart_blocks_attributes_news_module_six() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -2403,6 +2423,10 @@ function smart_blocks_attributes_news_module_seven() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -2746,6 +2770,10 @@ function smart_blocks_attributes_news_module_eight() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -3094,6 +3122,10 @@ function smart_blocks_attributes_news_module_nine() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -3340,6 +3372,10 @@ function smart_blocks_attributes_news_module_ten() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -3574,6 +3610,10 @@ function smart_blocks_attributes_news_module_eleven() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -3808,6 +3848,10 @@ function smart_blocks_attributes_news_module_twelve() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -4079,6 +4123,10 @@ function smart_blocks_attributes_news_module_thirteen() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -4355,6 +4403,10 @@ function smart_blocks_attributes_news_module_fourteen() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -4589,6 +4641,10 @@ function smart_blocks_attributes_news_module_fifteen() {
         "customDateFormat" => [
             "type" => "string",
             "default" => "F j, Y"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -4902,6 +4958,10 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "titleBorderColor" => [
             "type" => "string"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -5211,6 +5271,10 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "titleBorderColor" => [
             "type" => "string"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -5449,6 +5513,10 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "titleBorderColor" => [
             "type" => "string"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -5779,6 +5847,10 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "dotsBgColorHover" => [
             "type" => "string"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -6059,6 +6131,10 @@ function smart_blocks_attributes_single_news_one() {
         "filterOption" => [
             "type" => "string",
             "default" => "single-post"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
@@ -6359,6 +6435,10 @@ function smart_blocks_attributes_single_news_two() {
         "filterOption" => [
             "type" => "string",
             "default" => "single-post"
+        ],
+        "imageBorderRadius" => [
+            "type" => "number",
+            "default" => 0
         ]
     ];
     return array_merge($attrs, smart_blocks_global_attributes());
