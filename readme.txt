@@ -2,7 +2,7 @@
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks, editor
 Tested up to:      6.2
-Stable tag:        1.0.6
+Stable tag:        1.0.7
 Requires at least: 5.0
 Requires PHP:      5.6 
 License:           GPL-2.0-or-later
@@ -24,6 +24,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
+= 1.0.7 - Apr 17, 2023 =
+* Gradient not working in Single New Two fixed
+
 = 1.0.6 - Apr 12, 2023 =
 * Compatibility test with WordPress v 6.2.2
 * Border Radius option added for all blocks
