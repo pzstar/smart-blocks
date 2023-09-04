@@ -211,6 +211,7 @@ a {
 
 .sb-post-content h3.sb-post-title {
     color: var(--sb-title-color, #000);
+    clear: none;
 }
 
 .sb-post-content h3.sb-post-title:hover {
