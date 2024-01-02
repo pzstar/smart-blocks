@@ -1,9 +1,9 @@
 <?php
 defined('ABSPATH') || die;
 /*
-  Plugin Name:       Smart Blocks - Wordpress Gutenberg Blocks
+  Plugin Name:       Smart Blocks - WordPress Gutenberg Blocks
   Description:       Collection of advanced blocks to be used with WordPress Gutenberg Pagebuilder
-  Version:           1.0.8
+  Version:           1.0.9
   Author:            HashThemes
   Author URI:        http://hashthemes.com
   License:           GPLv2 or later
@@ -15,7 +15,7 @@ defined('ABSPATH') || die;
 define('SMART_BLOCKS_FILE', __FILE__);
 define('SMART_BLOCKS_PATH', plugin_dir_path(SMART_BLOCKS_FILE));
 define('SMART_BLOCKS_URL', plugins_url('/', SMART_BLOCKS_FILE));
-define('SMART_BLOCKS_VERSION', '1.0.8');
+define('SMART_BLOCKS_VERSION', '1.0.9');
 
 if (!class_exists('Smart_Blocks')) {
 
@@ -222,7 +222,7 @@ if (!class_exists('Smart_Blocks')) {
                         <?php
                         printf(
                                 /* translators: %1$s is link start tag, %2$s is link end tag. */
-                                esc_html__('Great to see that you have been using Smart Blocks - Wordpress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'smart-blocks'), '<a target="_blank" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5">', '</a>'
+                                esc_html__('Great to see that you have been using Smart Blocks - WordPress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'smart-blocks'), '<a target="_blank" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5">', '</a>'
                         );
                         ?>
                     </p>
