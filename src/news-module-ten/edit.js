@@ -147,8 +147,8 @@ export default function Edit({ attributes, setAttributes }) {
         ${headerColor ? '--sb-header-color: ' + headerColor +';' : ''}
         ${headerShortBorderColor ? '--sb-header-short-border-color: ' + headerShortBorderColor +';' : ''}
         ${headerLongBorderColor ? '--sb-header-long-border-color: ' + headerLongBorderColor +';' : ''}
-        ${headerTitleTypography.family ? '--sb-header-typo-family: ' + headerTitleTypography.family +';' : ''}
-        ${headerTitleTypography.weight ? '--sb-header-typo-weight: ' + headerTitleTypography.weight.replace(/\D/g, '') +';' : ''}
+        ${headerTitleTypography.family ? '--sb-header-typo-family: ' + (headerTitleTypography.family == 'Default' ? 'inherit' : headerTitleTypography.family) +';' : ''}
+        ${headerTitleTypography.weight ? '--sb-header-typo-weight: ' + (headerTitleTypography.family == 'Default' ? 'inherit' : headerTitleTypography.weight.replace(/\D/g, '')) +';' : ''}
         ${headerTitleTypography.weight ? '--sb-header-typo-style: ' + headerTitleTypography.weight.replace(/\d+/g, '') +';' : ''}
         ${headerTitleTypography.textTransform ? '--sb-header-typo-tt: ' + headerTitleTypography.textTransform +';' : ''}
         ${headerTitleTypography.textDecoration ? '--sb-header-typo-td: ' + headerTitleTypography.textDecoration +';' : ''}
@@ -161,8 +161,8 @@ export default function Edit({ attributes, setAttributes }) {
         ${headerTitleTypography.lineHeight.sm ? '--sb-header-typo-lh-sm: ' + headerTitleTypography.lineHeight.sm + headerTitleTypography.lineHeight.unit +';' : ''}
         ${headerTitleTypography.lineHeight.md ? '--sb-header-typo-lh-md: ' + headerTitleTypography.lineHeight.md + headerTitleTypography.lineHeight.unit +';' : ''}
         ${headerTitleTypography.lineHeight.lg ? '--sb-header-typo-lh-lg: ' + headerTitleTypography.lineHeight.lg + headerTitleTypography.lineHeight.unit +';' : ''}
-        ${categoryTypography.family ? '--sb-category-typo-family: ' + categoryTypography.family +';' : ''}
-        ${categoryTypography.weight ? '--sb-category-typo-weight: ' + categoryTypography.weight.replace(/\D/g, '') +';' : ''}
+        ${categoryTypography.family ? '--sb-category-typo-family: ' + (categoryTypography.family == 'Default' ? 'inherit' : categoryTypography.family) +';' : ''}
+        ${categoryTypography.weight ? '--sb-category-typo-weight: ' + (categoryTypography.family == 'Default' ? 'inherit' : categoryTypography.weight.replace(/\D/g, '')) +';' : ''}
         ${categoryTypography.weight ? '--sb-category-typo-style: ' + categoryTypography.weight.replace(/\d+/g, '') +';' : ''}
         ${categoryTypography.textTransform ? '--sb-category-typo-tt: ' + categoryTypography.textTransform +';' : ''}
         ${categoryTypography.textDecoration ? '--sb-category-typo-td: ' + categoryTypography.textDecoration +';' : ''}
@@ -181,8 +181,8 @@ export default function Edit({ attributes, setAttributes }) {
         ${categoryTextHoverColor ? '--sb-category-text-hover-color: ' + categoryTextHoverColor +';' : ''}
         ${titleColor ? '--sb-title-color: ' + titleColor +';' : ''}
         ${titleHoverColor ? '--sb-title-hover-color: ' + titleHoverColor +';' : ''}
-        ${listingTypography.family ? '--sb-listing-post-title-typo-family: ' + listingTypography.family +';' : ''}
-        ${listingTypography.weight ? '--sb-listing-post-title-typo-weight: ' + listingTypography.weight.replace(/\D/g, '') +';' : ''}
+        ${listingTypography.family ? '--sb-listing-post-title-typo-family: ' + (listingTypography.family == 'Default' ? 'inherit' : listingTypography.family) +';' : ''}
+        ${listingTypography.weight ? '--sb-listing-post-title-typo-weight: ' + (listingTypography.family == 'Default' ? 'inherit' : listingTypography.weight.replace(/\D/g, '')) +';' : ''}
         ${listingTypography.weight ? '--sb-listing-post-title-typo-style: ' + listingTypography.weight.replace(/\d+/g, '') +';' : ''}
         ${listingTypography.textTransform ? '--sb-listing-post-title-typo-tt: ' + listingTypography.textTransform +';' : ''}
         ${listingTypography.textDecoration ? '--sb-listing-post-title-typo-td: ' + listingTypography.textDecoration +';' : ''}
@@ -208,8 +208,8 @@ export default function Edit({ attributes, setAttributes }) {
         ${listingTitleMargin.lg.bottom ? '--sb-listing-post-title-margin-bottom-lg: ' + listingTitleMargin.lg.bottom + listingTitleMargin.unit +';' : ''}
         ${listingTitleMargin.lg.left ? '--sb-listing-post-title-margin-left-lg: ' + listingTitleMargin.lg.left + listingTitleMargin.unit +';' : ''}
         ${postMetasColor ? '--sb-post-metas-color: ' + postMetasColor +';' : ''}
-        ${metasTypography.family ? '--sb-post-metas-typo-family: ' + metasTypography.family +';' : ''}
-        ${metasTypography.weight ? '--sb-post-metas-typo-weight: ' + metasTypography.weight.replace(/\D/g, '') +';' : ''}
+        ${metasTypography.family ? '--sb-post-metas-typo-family: ' + (metasTypography.family == 'Default' ? 'inherit' : metasTypography.family) +';' : ''}
+        ${metasTypography.weight ? '--sb-post-metas-typo-weight: ' + (metasTypography.family == 'Default' ? 'inherit' : metasTypography.weight.replace(/\D/g, '')) +';' : ''}
         ${metasTypography.weight ? '--sb-post-metas-typo-style: ' + metasTypography.weight.replace(/\d+/g, '') +';' : ''}
         ${metasTypography.textTransform ? '--sb-post-metas-typo-tt: ' + metasTypography.textTransform +';' : ''}
         ${metasTypography.textDecoration ? '--sb-post-metas-typo-td: ' + metasTypography.textDecoration +';' : ''}
@@ -425,10 +425,10 @@ export default function Edit({ attributes, setAttributes }) {
             <style jsx>
                 {style}
             </style>
-            {headerTitleTypography['family'] && (<GoogleFontLoad family={headerTitleTypography['family']} weight={headerTitleTypography['weight'].replace("italic", "i")}/>)}
-            {categoryTypography['family'] && (<GoogleFontLoad family={categoryTypography['family']} weight={categoryTypography['weight'].replace("italic", "i")}/>)}
-            {listingTypography['family'] && (<GoogleFontLoad family={listingTypography['family']} weight={listingTypography['weight'].replace("italic", "i")}/>)}
-            {metasTypography['family'] && (<GoogleFontLoad family={metasTypography['family']} weight={metasTypography['weight'].replace("italic", "i")}/>)}
+            {headerTitleTypography['family'] && (headerTitleTypography['family'] != 'Default') && (<GoogleFontLoad family={headerTitleTypography['family']} weight={headerTitleTypography['weight'].replace("italic", "i")}/>)}
+            {categoryTypography['family'] && (categoryTypography['family'] != 'Default') && (<GoogleFontLoad family={categoryTypography['family']} weight={categoryTypography['weight'].replace("italic", "i")}/>)}
+            {listingTypography['family'] && (listingTypography['family'] != 'Default') && (<GoogleFontLoad family={listingTypography['family']} weight={listingTypography['weight'].replace("italic", "i")}/>)}
+            {metasTypography['family'] && (metasTypography['family'] != 'Default') && (<GoogleFontLoad family={metasTypography['family']} weight={metasTypography['weight'].replace("italic", "i")}/>)}
             <InspectorControls>
                 <PanelTabs>
                     <div tabTitle={__("Layout", 'smart-blocks')}>

@@ -129,8 +129,8 @@ export default function Edit({ attributes, setAttributes }) {
         ${blockPadding.lg.right ? '--sb-block-padding-right-lg: ' + blockPadding.lg.right + blockPadding.unit +';' : ''}
         ${blockPadding.lg.bottom ? '--sb-block-padding-bottom-lg: ' + blockPadding.lg.bottom + blockPadding.unit +';' : ''}
         ${blockPadding.lg.left ? '--sb-block-padding-left-lg: ' + blockPadding.lg.left + blockPadding.unit +';' : ''}
-        ${tickerTitleTypography.family ? '--sb-ticker-title-typo-family: ' + tickerTitleTypography.family +';' : ''}
-        ${tickerTitleTypography.weight ? '--sb-ticker-title-typo-weight: ' + tickerTitleTypography.weight.replace(/\D/g, '') +';' : ''}
+        ${tickerTitleTypography.family ? '--sb-ticker-title-typo-family: ' + (tickerTitleTypography.family == 'Default' ? 'inherit' : tickerTitleTypography.family) +';' : ''}
+        ${tickerTitleTypography.weight ? '--sb-ticker-title-typo-weight: ' + (tickerTitleTypography.family == 'Default' ? 'inherit' : tickerTitleTypography.weight.replace(/\D/g, '')) +';' : ''}
         ${tickerTitleTypography.weight ? '--sb-ticker-title-typo-style: ' + tickerTitleTypography.weight.replace(/\d+/g, '') +';' : ''}
         ${tickerTitleTypography.textTransform ? '--sb-ticker-title-typo-tt: ' + tickerTitleTypography.textTransform +';' : ''}
         ${tickerTitleTypography.textDecoration ? '--sb-ticker-title-typo-td: ' + tickerTitleTypography.textDecoration +';' : ''}
@@ -152,8 +152,8 @@ export default function Edit({ attributes, setAttributes }) {
         ${navIconNormalColor ? '--sb-nav-icon-normal-color: ' + navIconNormalColor +';' : ''}
         ${navHoverBgColor ? '--sb-nav-hover-bg-color: ' + navHoverBgColor +';' : ''}
         ${navIconHoverColor ? '--sb-nav-icon-hover-color: ' + navIconHoverColor +';' : ''}
-        ${tickerContentTypography.family ? '--sb-ticker-content-typo-family: ' + tickerContentTypography.family +';' : ''}
-        ${tickerContentTypography.weight ? '--sb-ticker-content-typo-weight: ' + tickerContentTypography.weight.replace(/\D/g, '') +';' : ''}
+        ${tickerContentTypography.family ? '--sb-ticker-content-typo-family: ' + (tickerContentTypography.family == 'Default' ? 'inherit' : tickerContentTypography.family) +';' : ''}
+        ${tickerContentTypography.weight ? '--sb-ticker-content-typo-weight: ' + (tickerContentTypography.family == 'Default' ? 'inherit' : tickerContentTypography.weight.replace(/\D/g, '')) +';' : ''}
         ${tickerContentTypography.weight ? '--sb-ticker-content-typo-style: ' + tickerContentTypography.weight.replace(/\d+/g, '') +';' : ''}
         ${tickerContentTypography.textTransform ? '--sb-ticker-content-typo-tt: ' + tickerContentTypography.textTransform +';' : ''}
         ${tickerContentTypography.textDecoration ? '--sb-ticker-content-typo-td: ' + tickerContentTypography.textDecoration +';' : ''}
@@ -281,8 +281,8 @@ export default function Edit({ attributes, setAttributes }) {
             <style jsx>
                 {style}
             </style>
-            {tickerTitleTypography['family'] && (<GoogleFontLoad family={tickerTitleTypography['family']} weight={tickerTitleTypography['weight'].replace("italic", "i")}/>)}
-            {tickerContentTypography['family'] && (<GoogleFontLoad family={tickerContentTypography['family']} weight={tickerContentTypography['weight'].replace("italic", "i")}/>)}
+            {tickerTitleTypography['family'] && (tickerTitleTypography['family'] != 'Default') && (<GoogleFontLoad family={tickerTitleTypography['family']} weight={tickerTitleTypography['weight'].replace("italic", "i")}/>)}
+            {tickerContentTypography['family'] && (tickerContentTypography['family'] != 'Default') && (<GoogleFontLoad family={tickerContentTypography['family']} weight={tickerContentTypography['weight'].replace("italic", "i")}/>)}
             <InspectorControls>
                 <PanelTabs>
                     <div tabTitle={__("Layout", 'smart-blocks')}>

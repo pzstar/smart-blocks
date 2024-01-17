@@ -148,8 +148,8 @@ export default function Edit({ attributes, setAttributes }) {
         ${postTitleMargin.lg.right ? '--sb-listing-post-title-margin-right-lg: ' + postTitleMargin.lg.right + postTitleMargin.unit +';' : ''}
         ${postTitleMargin.lg.bottom ? '--sb-listing-post-title-margin-bottom-lg: ' + postTitleMargin.lg.bottom + postTitleMargin.unit +';' : ''}
         ${postTitleMargin.lg.left ? '--sb-listing-post-title-margin-left-lg: ' + postTitleMargin.lg.left + postTitleMargin.unit +';' : ''}
-        ${postTypography.family ? '--sb-listing-post-title-typo-family: ' + postTypography.family +';' : ''}
-        ${postTypography.weight ? '--sb-listing-post-title-typo-weight: ' + postTypography.weight.replace(/\D/g, '') +';' : ''}
+        ${postTypography.family ? '--sb-listing-post-title-typo-family: ' + (postTypography.family == 'Default' ? 'inherit' : postTypography.family) +';' : ''}
+        ${postTypography.weight ? '--sb-listing-post-title-typo-weight: ' + (postTypography.family == 'Default' ? 'inherit' : postTypography.weight.replace(/\D/g, '')) +';' : ''}
         ${postTypography.weight ? '--sb-listing-post-title-typo-style: ' + postTypography.weight.replace(/\d+/g, '') +';' : ''}
         ${postTypography.textTransform ? '--sb-listing-post-title-typo-tt: ' + postTypography.textTransform +';' : ''}
         ${postTypography.textDecoration ? '--sb-listing-post-title-typo-td: ' + postTypography.textDecoration +';' : ''}
@@ -163,8 +163,8 @@ export default function Edit({ attributes, setAttributes }) {
         ${postTypography.lineHeight.md ? '--sb-listing-post-title-typo-lh-md: ' + postTypography.lineHeight.md + postTypography.lineHeight.unit +';' : ''}
         ${postTypography.lineHeight.lg ? '--sb-listing-post-title-typo-lh-lg: ' + postTypography.lineHeight.lg + postTypography.lineHeight.unit +';' : ''}
         ${postMetasColor ? '--sb-post-metas-color: ' + postMetasColor +';' : ''}
-        ${metasTypography.family ? '--sb-post-metas-typo-family: ' + metasTypography.family +';' : ''}
-        ${metasTypography.weight ? '--sb-post-metas-typo-weight: ' + metasTypography.weight.replace(/\D/g, '') +';' : ''}
+        ${metasTypography.family ? '--sb-post-metas-typo-family: ' + (metasTypography.family == 'Default' ? 'inherit' : metasTypography.family) +';' : ''}
+        ${metasTypography.weight ? '--sb-post-metas-typo-weight: ' + (metasTypography.family == 'Default' ? 'inherit' : metasTypography.weight.replace(/\D/g, '')) +';' : ''}
         ${metasTypography.weight ? '--sb-post-metas-typo-style: ' + metasTypography.weight.replace(/\d+/g, '') +';' : ''}
         ${metasTypography.textTransform ? '--sb-post-metas-typo-tt: ' + metasTypography.textTransform +';' : ''}
         ${metasTypography.textDecoration ? '--sb-post-metas-typo-td: ' + metasTypography.textDecoration +';' : ''}
@@ -178,8 +178,8 @@ export default function Edit({ attributes, setAttributes }) {
         ${metasTypography.lineHeight.md ? '--sb-post-metas-typo-lh-md: ' + metasTypography.lineHeight.md + metasTypography.lineHeight.unit +';' : ''}
         ${metasTypography.lineHeight.lg ? '--sb-post-metas-typo-lh-lg: ' + metasTypography.lineHeight.lg + metasTypography.lineHeight.unit +';' : ''}
         ${excerptColor ? '--sb-excerpt-color: ' + excerptColor +';' : ''}
-        ${excerptTypography.family ? '--sb-excerpt-typo-family: ' + excerptTypography.family +';' : ''}
-        ${excerptTypography.weight ? '--sb-excerpt-typo-weight: ' + excerptTypography.weight.replace(/\D/g, '') +';' : ''}
+        ${excerptTypography.family ? '--sb-excerpt-typo-family: ' + (excerptTypography.family == 'Default' ? 'inherit' : excerptTypography.family) +';' : ''}
+        ${excerptTypography.weight ? '--sb-excerpt-typo-weight: ' + (excerptTypography.family == 'Default' ? 'inherit' : excerptTypography.weight.replace(/\D/g, '')) +';' : ''}
         ${excerptTypography.weight ? '--sb-excerpt-typo-style: ' + excerptTypography.weight.replace(/\d+/g, '') +';' : ''}
         ${excerptTypography.textTransform ? '--sb-excerpt-typo-tt: ' + excerptTypography.textTransform +';' : ''}
         ${excerptTypography.textDecoration ? '--sb-excerpt-typo-td: ' + excerptTypography.textDecoration +';' : ''}
@@ -398,9 +398,9 @@ export default function Edit({ attributes, setAttributes }) {
             <style jsx>
                 {style}
             </style>
-            {postTypography['family'] && (<GoogleFontLoad family={postTypography['family']} weight={postTypography['weight'].replace("italic", "i")}/>)}
-            {excerptTypography['family'] && (<GoogleFontLoad family={excerptTypography['family']} weight={excerptTypography['weight'].replace("italic", "i")}/>)}
-            {metasTypography['family'] && (<GoogleFontLoad family={metasTypography['family']} weight={metasTypography['weight'].replace("italic", "i")}/>)}
+            {postTypography['family'] && (postTypography['family'] != 'Default') && (<GoogleFontLoad family={postTypography['family']} weight={postTypography['weight'].replace("italic", "i")}/>)}
+            {excerptTypography['family'] && (excerptTypography['family'] != 'Default') && (<GoogleFontLoad family={excerptTypography['family']} weight={excerptTypography['weight'].replace("italic", "i")}/>)}
+            {metasTypography['family'] && (metasTypography['family'] != 'Default') && (<GoogleFontLoad family={metasTypography['family']} weight={metasTypography['weight'].replace("italic", "i")}/>)}
             <InspectorControls>
                 <PanelTabs>
                     <div tabTitle={__("Layout", 'smart-blocks')}>
