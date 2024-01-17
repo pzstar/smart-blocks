@@ -139,7 +139,6 @@ const Typography = ({label, values, onChange, device, setDevice}) => {
 												<select
 													value={values ? values['family'] : null}
 													onChange={onFontChangeHandler}>
-													{!values['family'] && (<option>Default</option>)}
 													{GoogleFontsList && GoogleFontsList.map((font, index)=>{
 														return <option value={font.family} key={index}>{font.family}</option>;
 													}
@@ -171,6 +170,7 @@ const Typography = ({label, values, onChange, device, setDevice}) => {
 												<select
 													value={values ? values['textTransform'] : null}
 													onChange={onTextTransformChangeHandler}>
+													<option value="inherit">Default</option>
 													<option value="none">None</option>
 													<option value="uppercase">Uppercase</option>
 													<option value="lowercase">Lowercase</option>
@@ -186,7 +186,8 @@ const Typography = ({label, values, onChange, device, setDevice}) => {
 													<select
 														value={values ? values['textDecoration'] : null}
 														onChange={onTextDecorationChangeHandler}>
-														<option value="blink">None</option>
+														<option value="inherit">Default</option>
+														<option value="none">None</option>
 														<option value="underline">Underline</option>
 														<option value="line-through">Line Through</option>
 														<option value="overline">Overline</option>
