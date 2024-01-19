@@ -48,11 +48,11 @@ class Smart_Blocks_Carousel_Module_One {
             $content_rendered .= '</div>';
             $content_rendered .= '</a>';
             if ($this->attributes['postPostCategory'] == 'yes')
-                $content_rendered .= smart_blocks_get_the_primary_category();
+                $content_rendered .= smart_blocks_get_the_primary_category('post-categories', smart_blocks_get_font_class($this->attributes['categoryTypography']));
             $content_rendered .= '</div>';
 
             $content_rendered .= '<div class="sb-post-content">';
-            $content_rendered .= '<h3 class="sb-post-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+            $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['postTypography']) . '"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
             $content_rendered .= $this->get_post_meta();
             $content_rendered .= $this->get_post_excerpt();
             $content_rendered .= '</div>';
@@ -69,7 +69,7 @@ class Smart_Blocks_Carousel_Module_One {
     public function render_header() {
         $content = '';
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . '">';
+            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';
@@ -113,7 +113,7 @@ class Smart_Blocks_Carousel_Module_One {
         $content = '';
         $excerpt_length = $this->attributes['postExcerptLength'];
         if ($excerpt_length) {
-            $content .= '<div class="sb-excerpt">' . smart_blocks_custom_excerpt($excerpt_length) . '</div>';
+            $content .= '<div class="sb-excerpt ' . smart_blocks_get_font_class($this->attributes['excerptTypography']) . '">' . smart_blocks_custom_excerpt($excerpt_length) . '</div>';
         }
         return $content;
     }
@@ -126,7 +126,7 @@ class Smart_Blocks_Carousel_Module_One {
         $post_comment = $this->attributes['postPostComments'];
 
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
-            $content .= '<div class="sb-post-meta">';
+            $content .= '<div class="sb-post-meta ' . smart_blocks_get_font_class($this->attributes['metasTypography']) . '">';
             if ($post_author == 'yes') {
                 $content .= smart_blocks_author_name();
             }

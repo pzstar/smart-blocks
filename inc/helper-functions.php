@@ -61,7 +61,7 @@ if (!function_exists('smart_blocks_time_ago')) {
 
 if (!function_exists('smart_blocks_get_the_primary_category')) {
 
-    function smart_blocks_get_the_primary_category($class = "post-categories") {
+    function smart_blocks_get_the_primary_category($class = "post-categories", $link_class = '') {
         $post_categories = smart_blocks_get_post_primary_category(get_the_ID());
         $content = '';
 
@@ -69,7 +69,7 @@ if (!function_exists('smart_blocks_get_the_primary_category')) {
             $category_obj = $post_categories['primary_category'];
             $category_link = get_category_link($category_obj->term_id);
             $content .= '<ul class="' . esc_attr($class) . '">';
-            $content .= '<li><a class="sb-primary-cat sb-category-' . esc_attr($category_obj->term_id) . '" href="' . esc_url($category_link) . '">' . esc_html($category_obj->name) . '</a></li>';
+            $content .= '<li><a class="sb-primary-cat sb-category-' . esc_attr($category_obj->term_id)  . ' ' . $link_class . '" href="' . esc_url($category_link) . '">' . esc_html($category_obj->name) . '</a></li>';
             $content .= '</ul>';
         }
         return $content;
@@ -183,4 +183,22 @@ function sb_get_relative_dates($post) {
         'created' => human_time_diff(get_the_date('U', $post['id'])) . ' ' . __('ago', 'smart-blocks'),
         'modified' => human_time_diff(get_the_modified_date('U', $post['id'])) . ' ' . __('ago', 'smart-blocks')
     );
+}
+
+
+function smart_blocks_get_font_class($attr) {
+    $retrun_classes = array();
+    if (!(isset($attr['family']) && (strtolower($attr['family']) != 'default'))) {
+        $retrun_classes[] = 'sb-ff';
+    }
+    if (!(isset($attr['weight']) && (strtolower($attr['weight']) != 'default'))) {
+        $retrun_classes[] = 'sb-fw';
+    }
+    if (!(isset($attr['textTransform']) && (strtolower($attr['textTransform']) != 'default'))) {
+        $retrun_classes[] = 'sb-tt';
+    }
+    if (!(isset($attr['textDecoration']) && (strtolower($attr['textDecoration']) != 'default'))) {
+        $retrun_classes[] = 'sb-td';
+    }
+    return implode(' ', $retrun_classes);
 }
