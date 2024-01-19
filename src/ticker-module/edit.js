@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { RawHTML, useState } from '@wordpress/element';
 // eslint-disable-next-line @wordpress/no-unsafe-wp-apis
-import { format, dateI18n, __experimentalGetSettings } from '@wordpress/date';
+import { format, dateI18n, getSettings } from '@wordpress/date';
 import {
     useBlockProps,
     InspectorControls,
@@ -27,6 +27,7 @@ import TokenMultiSelectControl from '../utils/token-multiselect-control';
 import OwlCarousel from 'react-owl-carousel';
 import Border from '../utils/border';
 import BoxShadow from '../utils/boxshadow';
+import { checkDefault } from '../utils/helper';
 
 export default function Edit({ attributes, setAttributes }) {
     const [device, setDevice] = useState('lg');
@@ -129,9 +130,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${blockPadding.lg.right ? '--sb-block-padding-right-lg: ' + blockPadding.lg.right + blockPadding.unit +';' : ''}
         ${blockPadding.lg.bottom ? '--sb-block-padding-bottom-lg: ' + blockPadding.lg.bottom + blockPadding.unit +';' : ''}
         ${blockPadding.lg.left ? '--sb-block-padding-left-lg: ' + blockPadding.lg.left + blockPadding.unit +';' : ''}
-        ${tickerTitleTypography.family ? '--sb-ticker-title-typo-family: ' + (tickerTitleTypography.family == 'Default' ? 'inherit' : tickerTitleTypography.family) +';' : ''}
-        ${tickerTitleTypography.weight ? '--sb-ticker-title-typo-weight: ' + (tickerTitleTypography.family == 'Default' ? 'inherit' : tickerTitleTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${tickerTitleTypography.weight ? '--sb-ticker-title-typo-style: ' + tickerTitleTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${tickerTitleTypography.family ? '--sb-ticker-title-typo-family: ' + checkDefault(tickerTitleTypography.family) +';' : ''}
+        ${tickerTitleTypography.weight ? '--sb-ticker-title-typo-weight: ' + checkDefault(tickerTitleTypography.weight.replace(/\D/g, ''), tickerTitleTypography.weight) +';' : ''}
+        ${tickerTitleTypography.weight ? '--sb-ticker-title-typo-style: ' + checkDefault(tickerTitleTypography.weight.replace(/\d+/g, ''), tickerTitleTypography.weight) +';' : ''}
         ${tickerTitleTypography.textTransform ? '--sb-ticker-title-typo-tt: ' + tickerTitleTypography.textTransform +';' : ''}
         ${tickerTitleTypography.textDecoration ? '--sb-ticker-title-typo-td: ' + tickerTitleTypography.textDecoration +';' : ''}
         ${tickerTitleTypography.fontSize.sm ? '--sb-ticker-title-typo-fs-sm: ' + tickerTitleTypography.fontSize.sm + tickerTitleTypography.fontSize.unit +';' : ''}
@@ -152,9 +153,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${navIconNormalColor ? '--sb-nav-icon-normal-color: ' + navIconNormalColor +';' : ''}
         ${navHoverBgColor ? '--sb-nav-hover-bg-color: ' + navHoverBgColor +';' : ''}
         ${navIconHoverColor ? '--sb-nav-icon-hover-color: ' + navIconHoverColor +';' : ''}
-        ${tickerContentTypography.family ? '--sb-ticker-content-typo-family: ' + (tickerContentTypography.family == 'Default' ? 'inherit' : tickerContentTypography.family) +';' : ''}
-        ${tickerContentTypography.weight ? '--sb-ticker-content-typo-weight: ' + (tickerContentTypography.family == 'Default' ? 'inherit' : tickerContentTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${tickerContentTypography.weight ? '--sb-ticker-content-typo-style: ' + tickerContentTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${tickerContentTypography.family ? '--sb-ticker-content-typo-family: ' + checkDefault(tickerContentTypography.family) +';' : ''}
+        ${tickerContentTypography.weight ? '--sb-ticker-content-typo-weight: ' + checkDefault(tickerContentTypography.weight.replace(/\D/g, ''), tickerContentTypography.weight) +';' : ''}
+        ${tickerContentTypography.weight ? '--sb-ticker-content-typo-style: ' + checkDefault(tickerContentTypography.weight.replace(/\d+/g, ''), tickerContentTypography.weight) +';' : ''}
         ${tickerContentTypography.textTransform ? '--sb-ticker-content-typo-tt: ' + tickerContentTypography.textTransform +';' : ''}
         ${tickerContentTypography.textDecoration ? '--sb-ticker-content-typo-td: ' + tickerContentTypography.textDecoration +';' : ''}
         ${tickerContentTypography.fontSize.sm ? '--sb-ticker-content-typo-fs-sm: ' + tickerContentTypography.fontSize.sm + tickerContentTypography.fontSize.unit +';' : ''}

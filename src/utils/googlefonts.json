@@ -2,7 +2,6 @@
   {
     "family": "Default",
     "variants": {
-      "Default" : "Default",
       "100" : "Thin",
       "300" : "Light",
       "400" : "Normal",

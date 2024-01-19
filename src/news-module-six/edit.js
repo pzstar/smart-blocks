@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { RawHTML, useState } from '@wordpress/element';
 // eslint-disable-next-line @wordpress/no-unsafe-wp-apis
-import { format, dateI18n, __experimentalGetSettings } from '@wordpress/date';
+import { format, dateI18n, getSettings } from '@wordpress/date';
 import {
     useBlockProps,
     InspectorControls,
@@ -27,6 +27,7 @@ import CustomRangeControl from '../utils/customrangecontrol';
 import TokenMultiSelectControl from '../utils/token-multiselect-control';
 import Border from '../utils/border';
 import BoxShadow from '../utils/boxshadow';
+import { checkDefault } from '../utils/helper';
 
 export default function Edit({ attributes, setAttributes }) {
     const [device, setDevice] = useState('lg');
@@ -155,9 +156,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${headerColor ? '--sb-header-color: ' + headerColor +';' : ''}
         ${headerShortBorderColor ? '--sb-header-short-border-color: ' + headerShortBorderColor +';' : ''}
         ${headerLongBorderColor ? '--sb-header-long-border-color: ' + headerLongBorderColor +';' : ''}
-        ${headerTitleTypography.family ? '--sb-header-typo-family: ' + (headerTitleTypography.family == 'Default' ? 'inherit' : headerTitleTypography.family) +';' : ''}
-        ${headerTitleTypography.weight ? '--sb-header-typo-weight: ' + (headerTitleTypography.family == 'Default' ? 'inherit' : headerTitleTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${headerTitleTypography.weight ? '--sb-header-typo-style: ' + headerTitleTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${headerTitleTypography.family ? '--sb-header-typo-family: ' + checkDefault(headerTitleTypography.family) +';' : ''}
+        ${headerTitleTypography.weight ? '--sb-header-typo-weight: ' + checkDefault(headerTitleTypography.weight.replace(/\D/g, ''), headerTitleTypography.weight) +';' : ''}
+        ${headerTitleTypography.weight ? '--sb-header-typo-style: ' + checkDefault(headerTitleTypography.weight.replace(/\d+/g, ''), headerTitleTypography.weight) +';' : ''}
         ${headerTitleTypography.textTransform ? '--sb-header-typo-tt: ' + headerTitleTypography.textTransform +';' : ''}
         ${headerTitleTypography.textDecoration ? '--sb-header-typo-td: ' + headerTitleTypography.textDecoration +';' : ''}
         ${headerTitleTypography.fontSize.sm ? '--sb-header-typo-fs-sm: ' + headerTitleTypography.fontSize.sm + headerTitleTypography.fontSize.unit +';' : ''}
@@ -169,9 +170,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${headerTitleTypography.lineHeight.sm ? '--sb-header-typo-lh-sm: ' + headerTitleTypography.lineHeight.sm + headerTitleTypography.lineHeight.unit +';' : ''}
         ${headerTitleTypography.lineHeight.md ? '--sb-header-typo-lh-md: ' + headerTitleTypography.lineHeight.md + headerTitleTypography.lineHeight.unit +';' : ''}
         ${headerTitleTypography.lineHeight.lg ? '--sb-header-typo-lh-lg: ' + headerTitleTypography.lineHeight.lg + headerTitleTypography.lineHeight.unit +';' : ''}
-        ${categoryTypography.family ? '--sb-category-typo-family: ' + (categoryTypography.family == 'Default' ? 'inherit' : categoryTypography.family) +';' : ''}
-        ${categoryTypography.weight ? '--sb-category-typo-weight: ' + (categoryTypography.family == 'Default' ? 'inherit' : categoryTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${categoryTypography.weight ? '--sb-category-typo-style: ' + categoryTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${categoryTypography.family ? '--sb-category-typo-family: ' + checkDefault(categoryTypography.family) +';' : ''}
+        ${categoryTypography.weight ? '--sb-category-typo-weight: ' + checkDefault(categoryTypography.weight.replace(/\D/g, ''), categoryTypography.weight) +';' : ''}
+        ${categoryTypography.weight ? '--sb-category-typo-style: ' + checkDefault(categoryTypography.weight.replace(/\d+/g, ''), categoryTypography.weight) +';' : ''}
         ${categoryTypography.textTransform ? '--sb-category-typo-tt: ' + categoryTypography.textTransform +';' : ''}
         ${categoryTypography.textDecoration ? '--sb-category-typo-td: ' + categoryTypography.textDecoration +';' : ''}
         ${categoryTypography.fontSize.sm ? '--sb-category-typo-fs-sm: ' + categoryTypography.fontSize.sm + categoryTypography.fontSize.unit +';' : ''}
@@ -189,9 +190,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${categoryTextHoverColor ? '--sb-category-text-hover-color: ' + categoryTextHoverColor +';' : ''}
         ${titleColor ? '--sb-title-color: ' + titleColor +';' : ''}
         ${titleHoverColor ? '--sb-title-hover-color: ' + titleHoverColor +';' : ''}
-        ${topTypography.family ? '--sb-top-post-title-typo-family: ' + (topTypography.family == 'Default' ? 'inherit' : topTypography.family) +';' : ''}
-        ${topTypography.weight ? '--sb-top-post-title-typo-weight: ' + (topTypography.family == 'Default' ? 'inherit' : topTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${topTypography.weight ? '--sb-top-post-title-typo-style: ' + topTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${topTypography.family ? '--sb-top-post-title-typo-family: ' + checkDefault(topTypography.family) +';' : ''}
+        ${topTypography.weight ? '--sb-top-post-title-typo-weight: ' + checkDefault(topTypography.weight.replace(/\D/g, ''), topTypography.weight) +';' : ''}
+        ${topTypography.weight ? '--sb-top-post-title-typo-style: ' + checkDefault(topTypography.weight.replace(/\d+/g, ''), topTypography.weight) +';' : ''}
         ${topTypography.textTransform ? '--sb-top-post-title-typo-tt: ' + topTypography.textTransform +';' : ''}
         ${topTypography.textDecoration ? '--sb-top-post-title-typo-td: ' + topTypography.textDecoration +';' : ''}
         ${topTypography.fontSize.sm ? '--sb-top-post-title-typo-fs-sm: ' + topTypography.fontSize.sm + topTypography.fontSize.unit +';' : ''}
@@ -215,9 +216,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${topTitleMargin.lg.right ? '--sb-top-post-title-margin-right-lg: ' + topTitleMargin.lg.right + topTitleMargin.unit +';' : ''}
         ${topTitleMargin.lg.bottom ? '--sb-top-post-title-margin-bottom-lg: ' + topTitleMargin.lg.bottom + topTitleMargin.unit +';' : ''}
         ${topTitleMargin.lg.left ? '--sb-top-post-title-margin-left-lg: ' + topTitleMargin.lg.left + topTitleMargin.unit +';' : ''}
-        ${bottomTypography.family ? '--sb-bottom-post-title-typo-family: ' + (bottomTypography.family == 'Default' ? 'inherit' : bottomTypography.family) +';' : ''}
-        ${bottomTypography.weight ? '--sb-bottom-post-title-typo-weight: ' + (bottomTypography.family == 'Default' ? 'inherit' : bottomTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${bottomTypography.weight ? '--sb-bottom-post-title-typo-style: ' + bottomTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${bottomTypography.family ? '--sb-bottom-post-title-typo-family: ' + checkDefault(bottomTypography.family) +';' : ''}
+        ${bottomTypography.weight ? '--sb-bottom-post-title-typo-weight: ' + checkDefault(bottomTypography.weight.replace(/\D/g, ''), bottomTypography.weight) +';' : ''}
+        ${bottomTypography.weight ? '--sb-bottom-post-title-typo-style: ' + checkDefault(bottomTypography.weight.replace(/\d+/g, ''), bottomTypography.weight) +';' : ''}
         ${bottomTypography.textTransform ? '--sb-bottom-post-title-typo-tt: ' + bottomTypography.textTransform +';' : ''}
         ${bottomTypography.textDecoration ? '--sb-bottom-post-title-typo-td: ' + bottomTypography.textDecoration +';' : ''}
         ${bottomTypography.fontSize.sm ? '--sb-bottom-post-title-typo-fs-sm: ' + bottomTypography.fontSize.sm + bottomTypography.fontSize.unit +';' : ''}
@@ -242,9 +243,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${bottomTitleMargin.lg.bottom ? '--sb-bottom-post-title-margin-bottom-lg: ' + bottomTitleMargin.lg.bottom + bottomTitleMargin.unit +';' : ''}
         ${bottomTitleMargin.lg.left ? '--sb-bottom-post-title-margin-left-lg: ' + bottomTitleMargin.lg.left + bottomTitleMargin.unit +';' : ''}
         ${excerptColor ? '--sb-excerpt-color: ' + excerptColor +';' : ''}
-        ${excerptTypography.family ? '--sb-excerpt-typo-family: ' + (excerptTypography.family == 'Default' ? 'inherit' : excerptTypography.family) +';' : ''}
-        ${excerptTypography.weight ? '--sb-excerpt-typo-weight: ' + (excerptTypography.family == 'Default' ? 'inherit' : excerptTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${excerptTypography.weight ? '--sb-excerpt-typo-style: ' + excerptTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${excerptTypography.family ? '--sb-excerpt-typo-family: ' + checkDefault(excerptTypography.family) +';' : ''}
+        ${excerptTypography.weight ? '--sb-excerpt-typo-weight: ' + checkDefault(excerptTypography.weight.replace(/\D/g, ''), excerptTypography.weight) +';' : ''}
+        ${excerptTypography.weight ? '--sb-excerpt-typo-style: ' + checkDefault(excerptTypography.weight.replace(/\d+/g, ''), excerptTypography.weight) +';' : ''}
         ${excerptTypography.textTransform ? '--sb-excerpt-typo-tt: ' + excerptTypography.textTransform +';' : ''}
         ${excerptTypography.textDecoration ? '--sb-excerpt-typo-td: ' + excerptTypography.textDecoration +';' : ''}
         ${excerptTypography.fontSize.sm ? '--sb-excerpt-typo-fs-sm: ' + excerptTypography.fontSize.sm + excerptTypography.fontSize.unit +';' : ''}
@@ -257,9 +258,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${excerptTypography.lineHeight.md ? '--sb-excerpt-typo-lh-md: ' + excerptTypography.lineHeight.md + excerptTypography.lineHeight.unit +';' : ''}
         ${excerptTypography.lineHeight.lg ? '--sb-excerpt-typo-lh-lg: ' + excerptTypography.lineHeight.lg + excerptTypography.lineHeight.unit +';' : ''}
         ${postMetasColor ? '--sb-post-metas-color: ' + postMetasColor +';' : ''}
-        ${metasTypography.family ? '--sb-post-metas-typo-family: ' + (metasTypography.family == 'Default' ? 'inherit' : metasTypography.family) +';' : ''}
-        ${metasTypography.weight ? '--sb-post-metas-typo-weight: ' + (metasTypography.family == 'Default' ? 'inherit' : metasTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${metasTypography.weight ? '--sb-post-metas-typo-style: ' + metasTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${metasTypography.family ? '--sb-post-metas-typo-family: ' + checkDefault(metasTypography.family) +';' : ''}
+        ${metasTypography.weight ? '--sb-post-metas-typo-weight: ' + checkDefault(metasTypography.weight.replace(/\D/g, ''), metasTypography.weight) +';' : ''}
+        ${metasTypography.weight ? '--sb-post-metas-typo-style: ' + checkDefault(metasTypography.weight.replace(/\d+/g, ''), metasTypography.weight) +';' : ''}
         ${metasTypography.textTransform ? '--sb-post-metas-typo-tt: ' + metasTypography.textTransform +';' : ''}
         ${metasTypography.textDecoration ? '--sb-post-metas-typo-td: ' + metasTypography.textDecoration +';' : ''}
         ${metasTypography.fontSize.sm  ? '--sb-post-metas-typo-fs-sm: ' + metasTypography.fontSize.sm + metasTypography.fontSize.unit +';' : ''}
@@ -434,7 +435,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     <span className="sb-post-date">
                                         <i className="mdi-clock-time-four-outline"></i>
                                         {dateFormat == 'relative_format' && `${post.relative_dates.created}`}
-                                        {dateFormat == 'default' && dateI18n(__experimentalGetSettings().formats.date, post.date_gmt)}
+                                        {dateFormat == 'default' && dateI18n(getSettings().formats.date, post.date_gmt)}
                                         {dateFormat == 'custom' && dateI18n(customDateFormat, post.date_gmt)}
                                     </span>
                                 )}
@@ -496,7 +497,7 @@ export default function Edit({ attributes, setAttributes }) {
                                 <span className="sb-post-date">
                                     <i className="mdi-clock-time-four-outline"></i>
                                     {dateFormat == 'relative_format' && `${post.relative_dates.created}`}
-                                    {dateFormat == 'default' && dateI18n(__experimentalGetSettings().formats.date, post.date_gmt)}
+                                    {dateFormat == 'default' && dateI18n(getSettings().formats.date, post.date_gmt)}
                                     {dateFormat == 'custom' && dateI18n(customDateFormat, post.date_gmt)}
                                 </span>
                             )}

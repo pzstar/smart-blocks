@@ -154,7 +154,8 @@ const Typography = ({label, values, onChange, device, setDevice}) => {
 												<select
 													value={values ? values['weight'] : null}
 													onChange={onWeightChangeHandler}>
-													{Object.keys(allWeights).map((key) => {
+													{values && values['family'] && values['family'] == 'Default' && (<option value="Default">Default</option>)}
+													{Object.keys(allWeights).sort().map((key) => {
 														return <option value={key}>{allWeights[key]}</option>;
 													})
 												}

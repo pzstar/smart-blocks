@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { RawHTML, useState } from '@wordpress/element';
 // eslint-disable-next-line @wordpress/no-unsafe-wp-apis
-import { format, dateI18n, __experimentalGetSettings } from '@wordpress/date';
+import { format, dateI18n, getSettings } from '@wordpress/date';
 import {
     useBlockProps,
     InspectorControls,
@@ -27,6 +27,7 @@ import CustomRangeControl from '../utils/customrangecontrol';
 import TokenMultiSelectControl from '../utils/token-multiselect-control';
 import Border from '../utils/border';
 import BoxShadow from '../utils/boxshadow';
+import { checkDefault } from '../utils/helper';
 
 export default function Edit({ attributes, setAttributes }) {
     const [device, setDevice] = useState('lg');
@@ -136,9 +137,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${blockPadding.lg.left ? '--sb-block-padding-left-lg: ' + blockPadding.lg.left + blockPadding.unit +';' : ''}
         ${postImageHeight ? '--sb-listing-post-thumb-height: ' + postImageHeight +'%;' : ''}
         ${excerptColor ? '--sb-excerpt-color: ' + excerptColor +';' : ''}
-        ${excerptTypography.family ? '--sb-excerpt-typo-family: ' + (excerptTypography.family == 'Default' ? 'inherit' : excerptTypography.family) +';' : ''}
-        ${excerptTypography.weight ? '--sb-excerpt-typo-weight: ' + (excerptTypography.family == 'Default' ? 'inherit' : excerptTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${excerptTypography.weight ? '--sb-excerpt-typo-style: ' + excerptTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${excerptTypography.family ? '--sb-excerpt-typo-family: ' + checkDefault(excerptTypography.family) +';' : ''}
+        ${excerptTypography.weight ? '--sb-excerpt-typo-weight: ' + checkDefault(excerptTypography.weight.replace(/\D/g, ''), excerptTypography.weight) +';' : ''}
+        ${excerptTypography.weight ? '--sb-excerpt-typo-style: ' + checkDefault(excerptTypography.weight.replace(/\d+/g, ''), excerptTypography.weight) +';' : ''}
         ${excerptTypography.textTransform ? '--sb-excerpt-typo-tt: ' + excerptTypography.textTransform +';' : ''}
         ${excerptTypography.textDecoration ? '--sb-excerpt-typo-td: ' + excerptTypography.textDecoration +';' : ''}
         ${excerptTypography.fontSize.sm ? '--sb-excerpt-typo-fs-sm: ' + excerptTypography.fontSize.sm + excerptTypography.fontSize.unit +';' : ''}
@@ -152,9 +153,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${excerptTypography.lineHeight.lg ? '--sb-excerpt-typo-lh-lg: ' + excerptTypography.lineHeight.lg + excerptTypography.lineHeight.unit +';' : ''}
         ${titleColor ? '--sb-title-color: ' + titleColor +';' : ''}
         ${titleHoverColor ? '--sb-title-hover-color: ' + titleHoverColor +';' : ''}
-        ${postTypography.family ? '--sb-listing-post-title-typo-family: ' + (postTypography.family == 'Default' ? 'inherit' : postTypography.family) +';' : ''}
-        ${postTypography.weight ? '--sb-listing-post-title-typo-weight: ' + (postTypography.family == 'Default' ? 'inherit' : postTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${postTypography.weight ? '--sb-listing-post-title-typo-style: ' + postTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${postTypography.family ? '--sb-listing-post-title-typo-family: ' + checkDefault(postTypography.family) +';' : ''}
+        ${postTypography.weight ? '--sb-listing-post-title-typo-weight: ' + checkDefault(postTypography.weight.replace(/\D/g, ''), postTypography.weight) +';' : ''}
+        ${postTypography.weight ? '--sb-listing-post-title-typo-style: ' + checkDefault(postTypography.weight.replace(/\d+/g, ''), postTypography.weight) +';' : ''}
         ${postTypography.textTransform ? '--sb-listing-post-title-typo-tt: ' + postTypography.textTransform +';' : ''}
         ${postTypography.textDecoration ? '--sb-listing-post-title-typo-td: ' + postTypography.textDecoration +';' : ''}
         ${postTypography.fontSize.sm ? '--sb-listing-post-title-typo-fs-sm: ' + postTypography.fontSize.sm + postTypography.fontSize.unit +';' : ''}
@@ -179,9 +180,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${postTitleMargin.lg.bottom ? '--sb-listing-post-title-margin-bottom-lg: ' + postTitleMargin.lg.bottom + postTitleMargin.unit +';' : ''}
         ${postTitleMargin.lg.left ? '--sb-listing-post-title-margin-left-lg: ' + postTitleMargin.lg.left + postTitleMargin.unit +';' : ''}
         ${postMetasColor ? '--sb-post-metas-color: ' + postMetasColor +';' : ''}
-        ${metasTypography.family ? '--sb-post-metas-typo-family: ' + (metasTypography.family == 'Default' ? 'inherit' : metasTypography.family) +';' : ''}
-        ${metasTypography.weight ? '--sb-post-metas-typo-weight: ' + (metasTypography.family == 'Default' ? 'inherit' : metasTypography.weight.replace(/\D/g, '')) +';' : ''}
-        ${metasTypography.weight ? '--sb-post-metas-typo-style: ' + metasTypography.weight.replace(/\d+/g, '') +';' : ''}
+        ${metasTypography.family ? '--sb-post-metas-typo-family: ' + checkDefault(metasTypography.family) +';' : ''}
+        ${metasTypography.weight ? '--sb-post-metas-typo-weight: ' + checkDefault(metasTypography.weight.replace(/\D/g, ''), metasTypography.weight) +';' : ''}
+        ${metasTypography.weight ? '--sb-post-metas-typo-style: ' + checkDefault(metasTypography.weight.replace(/\d+/g, ''), metasTypography.weight) +';' : ''}
         ${metasTypography.textTransform ? '--sb-post-metas-typo-tt: ' + metasTypography.textTransform +';' : ''}
         ${metasTypography.textDecoration ? '--sb-post-metas-typo-td: ' + metasTypography.textDecoration +';' : ''}
         ${metasTypography.fontSize.sm  ? '--sb-post-metas-typo-fs-sm: ' + metasTypography.fontSize.sm + metasTypography.fontSize.unit +';' : ''}
@@ -352,7 +353,7 @@ export default function Edit({ attributes, setAttributes }) {
                                 <span className="sb-post-date">
                                     <i className="mdi-clock-time-four-outline"></i>
                                     {dateFormat == 'relative_format' && `${post.relative_dates.created}`}
-                                    {dateFormat == 'default' && dateI18n(__experimentalGetSettings().formats.date, post.date_gmt)}
+                                    {dateFormat == 'default' && dateI18n(getSettings().formats.date, post.date_gmt)}
                                     {dateFormat == 'custom' && dateI18n(customDateFormat, post.date_gmt)}
                                 </span>
                             )}
