@@ -33,15 +33,30 @@ a {
 
 .wp-block-smart-blocks .sb-block-title {
     margin-bottom: 30px;
-    font-family: var(--sb-header-typo-family);
-    font-weight: var(--sb-header-typo-weight, 700);
-    font-style: var(--sb-header-typo-style, normal);
-    text-transform: var(--sb-header-typo-tt, capitalize);
-    text-decoration: var(--sb-header-typo-td, none);
     font-size: var(--sb-header-typo-fs-lg, 20px);
     letter-spacing: var(--sb-header-typo-ls-lg, 0);
     line-height: var(--sb-header-typo-lh-lg, 1.3);
     color: var(--sb-header-color, #000);
+}
+
+.wp-block-smart-blocks .sb-ff.sb-block-title {
+    font-family: var(--sb-header-typo-family);
+}
+
+.wp-block-smart-blocks .sb-fw.sb-block-title {
+    font-weight: var(--sb-header-typo-weight, 700);
+}
+
+.wp-block-smart-blocks .sb-fw.sb-block-title {
+    font-style: var(--sb-header-typo-style, normal);
+}
+
+.wp-block-smart-blocks .sb-tt.sb-block-title {
+    text-transform: var(--sb-header-typo-tt, capitalize);
+}
+
+.wp-block-smart-blocks .sb-td.sb-block-title {
+    text-decoration: var(--sb-header-typo-td, none);
 }
 
 .wp-block-smart-blocks .sb-block-title a,
