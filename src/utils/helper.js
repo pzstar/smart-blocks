@@ -5,4 +5,5 @@ const checkDefault = (check, checkDiff = 'undefined') => {
     return (!check || check.toLowerCase() == 'default') ? 'inherit' : check;
 }
 
+
 export {checkDefault};

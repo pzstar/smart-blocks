@@ -4,32 +4,6 @@ import GoogleFontsList from './googlefonts.json';
 import { useState } from '@wordpress/element';
 import { DesktopIcon, TabletIcon, PhoneIcon, ClearIcon } from './svgicons';
 const Typography = ({label, values, onChange, device, setDevice}) => {
-	!values ?
-	values= {
-		"family": undefined,
-		"weight": undefined,
-		"textTransform": undefined,
-		"textDecoration": undefined,
-		"fontSize": {
-			"sm": undefined,
-			"md": undefined,
-			"lg": undefined,
-			"unit": "px"
-		},
-		"letterSpacing": {
-			"sm": undefined,
-			"md": undefined,
-			"lg": undefined,
-			"unit": "px"
-		},
-		"lineHeight": {
-			"sm": undefined,
-			"md": undefined,
-			"lg": undefined,
-			"unit": "px"
-		}
-	} : values;
-	
 	var selectedFamily = GoogleFontsList[0].family;
 	var selectedWeight = '';
 	const [allWeights, setAllWeights] = useState(GoogleFontsList.filter(GoogleFontsList => GoogleFontsList.family === selectedFamily)[0].variants);

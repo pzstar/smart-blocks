@@ -23,7 +23,7 @@ class Smart_Blocks_News_Module_Four {
         while ($query->have_posts()): $query->the_post();
             $index = $query->current_post + 1;
             $last = $query->post_count;
-            $title_class = ($index == 1 || $index == 2) ? 'sb-big-title' : '';
+            $title_class = ($index == 1 || $index == 2) ? 'sb-big-title ' . smart_blocks_get_font_class($this->attributes['topTypography']) : smart_blocks_get_font_class($this->attributes['bottomTypography']);
             $content_rendered .= '<div class="sb-post-item">';
             $content_rendered .= '<div class="sb-post-thumb">';
             $content_rendered .= '<a href="' . get_the_permalink() . '">';
@@ -37,10 +37,10 @@ class Smart_Blocks_News_Module_Four {
             $content_rendered .= '</a>';
             if ($index == 1 || $index == 2) {
                 if ($this->attributes['topPostCategory'] == 'yes')
-                    $content_rendered .= get_the_category_list();
+                    $content_rendered .= preg_replace('/<a /', '<a class="' . smart_blocks_get_font_class($this->attributes['categoryTypography']) . '"', get_the_category_list());
             } else {
                 if ($this->attributes['bottomPostCategory'] == 'yes')
-                    $content_rendered .= smart_blocks_get_the_primary_category();
+                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories ' . smart_blocks_get_font_class($this->attributes['categoryTypography']));
             }
             $content_rendered .= '</div>';
 
@@ -62,7 +62,7 @@ class Smart_Blocks_News_Module_Four {
         $content = '';
 
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . '">';
+            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';
@@ -110,19 +110,19 @@ class Smart_Blocks_News_Module_Four {
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             $content .= '<div class="sb-post-meta">';
             if ($post_author == 'yes') {
-                $content .= smart_blocks_author_name();
+                $content .= smart_blocks_author_name(smart_blocks_get_font_class($this->attributes['metasTypography']));
             }
 
             if ($post_date == 'yes') {
                 $date_format = $this->attributes['dateFormat'];
 
                 if ($date_format == 'relative_format') {
-                    $content .= smart_blocks_time_ago();
+                    $content .= smart_blocks_time_ago(smart_blocks_get_font_class($this->attributes['metasTypography']));
                 } else if ($date_format == 'default') {
-                    $content .= smart_blocks_post_date();
+                    $content .= smart_blocks_post_date('', smart_blocks_get_font_class($this->attributes['metasTypography']));
                 } else if ($date_format == 'custom') {
                     $format = $this->attributes['customDateFormat'];
-                    $content .= smart_blocks_post_date($format);
+                    $content .= smart_blocks_post_date($format, smart_blocks_get_font_class($this->attributes['metasTypography']));
                 }
             }
 

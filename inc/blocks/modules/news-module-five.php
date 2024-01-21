@@ -36,8 +36,9 @@ class Smart_Blocks_News_Module_Five {
                 $content_rendered .= '</div>';
                 $content_rendered .= '</a>';
 
-                if ($this->attributes['featuredPostCategory'] == 'yes')
+                if ($this->attributes['featuredPostCategory'] == 'yes') {
                     $content_rendered .= preg_replace('/<a /', '<a class="' . smart_blocks_get_font_class($this->attributes['categoryTypography']) . '"', get_the_category_list());
+                }
                 $content_rendered .= '</div>';
 
                 $content_rendered .= '<div class="sb-post-content">';
@@ -105,8 +106,9 @@ class Smart_Blocks_News_Module_Five {
         $args['order'] = $this->attributes['order'];
         $args['ignore_sticky_posts'] = 1;
         $args['post_status'] = 'publish';
-        if (isset($this->attributes['offset']))
+        if (isset($this->attributes['offset'])) {
             $args['offset'] = $this->attributes['offset'];
+        }
         $args['posts_per_page'] = 5;
         $args['post__not_in'] = isset($this->attributes['excludePosts']) && $this->attributes['excludePosts'] ? $this->attributes['excludePosts'] : [];
 

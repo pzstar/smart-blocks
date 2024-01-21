@@ -21,7 +21,7 @@ class Smart_Blocks_News_Module_One {
         while ($query->have_posts()): $query->the_post();
             $index = $query->current_post + 1;
             $image_size = ($index == 1) ? $featured_post_image_size : $side_post_image_size;
-            $title_class = $index == 1 ? 'sb-large-title' : 'sb-big-title';
+            $title_class = $index == 1 ? 'sb-large-title ' . smart_blocks_get_font_class($this->attributes['featuredTypography']) : 'sb-big-title ' . smart_blocks_get_font_class($this->attributes['sideTypography']);
             $image_height = $index == 1 ? $this->attributes['featuredImageHeight'] : $this->attributes['sideImageHeight'];
             $content_rendered .= '<div class="sb-post-item">';
             $content_rendered .= '<div class="sb-post-thumb">';
@@ -38,7 +38,7 @@ class Smart_Blocks_News_Module_One {
                     $content_rendered .= get_the_category_list();
             } else {
                 if ($this->attributes['sidePostCategory'] == 'yes')
-                    $content_rendered .= smart_blocks_get_the_primary_category();
+                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories ' . smart_blocks_get_font_class($this->attributes['categoryTypography']));
             }
             $content_rendered .= '</div>';
             $content_rendered .= '<div class="sb-post-content">';
@@ -64,7 +64,7 @@ class Smart_Blocks_News_Module_One {
         $content = '';
 
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . esc_attr($this->attributes['headerStyle']) . '">';
+            $content .= '<h2 class="sb-block-title ' . esc_attr($this->attributes['headerStyle']) . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';
@@ -105,7 +105,7 @@ class Smart_Blocks_News_Module_One {
     public function get_post_excerpt($count) {
         $excerpt_length = $count == 1 ? $this->attributes['featuredExcerptLength'] : $this->attributes['sideExcerptLength'];
         if ($excerpt_length) {
-            return '<div class="sb-excerpt">' . smart_blocks_custom_excerpt($excerpt_length) . '</div>';
+            return '<div class="sb-excerpt ' . smart_blocks_get_font_class($this->attributes['excerptTypography']) . '">' . smart_blocks_custom_excerpt($excerpt_length) . '</div>';
         }
     }
 
@@ -119,18 +119,18 @@ class Smart_Blocks_News_Module_One {
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             $content .= '<div class="sb-post-meta">';
             if ($post_author == 'yes') {
-                $content .= smart_blocks_author_name();
+                $content .= smart_blocks_author_name(smart_blocks_get_font_class($this->attributes['metasTypography']));
             }
             if ($post_date == 'yes') {
                 $date_format = $this->attributes['dateFormat'];
 
                 if ($date_format == 'relative_format') {
-                    $content .= smart_blocks_time_ago();
+                    $content .= smart_blocks_time_ago(smart_blocks_get_font_class($this->attributes['metasTypography']));
                 } else if ($date_format == 'default') {
-                    $content .= smart_blocks_post_date();
+                    $content .= smart_blocks_post_date('', smart_blocks_get_font_class($this->attributes['metasTypography']));
                 } else if ($date_format == 'custom') {
                     $format = $this->attributes['customDateFormat'];
-                    $content .= smart_blocks_post_date($format);
+                    $content .= smart_blocks_post_date($format, smart_blocks_get_font_class($this->attributes['metasTypography']));
                 }
             }
 

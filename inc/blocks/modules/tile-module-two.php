@@ -37,20 +37,20 @@ class Smart_Blocks_Tile_Module_Two {
                 $content_rendered .= '</a>';
 
                 if ($featured_display_cat == 'yes') {
-                    $content_rendered .= get_the_category_list();
+                    $content_rendered .= preg_replace('/<a /', '<a class="' . smart_blocks_get_font_class($this->attributes['categoryTypography']) . '"', get_the_category_list());
                 }
-
                 $content_rendered .= '<div class="sb-title-container">';
                 $content_rendered .= '<a href="' . get_the_permalink() . '">';
-                $content_rendered .= '<h3 class="sb-large-title sb-post-title"><span>' . get_the_title() . '</span></h3>';
+                $content_rendered .= '<h3 class="sb-large-title sb-post-title ' . smart_blocks_get_font_class($this->attributes['featuredTypography']) . '"><span>' . get_the_title() . '</span></h3>';
                 $content_rendered .= $this->get_post_meta($index);
                 $content_rendered .= '</a>';
                 $content_rendered .= '</div>';
                 $content_rendered .= '</div>';
                 $content_rendered .= '</div>';
             } else {
-                if ($index == 2)
+                if ($index == 2) {
                     $content_rendered .= '<div class="sb-width-50 sb-height-100 sb-parent sb-right-col">';
+                }
 
                 if ($index > 1) {
                     $content_rendered .= '<div class="sb-height-50 sb-width-50 sb-thumb">';
@@ -63,20 +63,21 @@ class Smart_Blocks_Tile_Module_Two {
                     $content_rendered .= '</a>';
 
                     if ($side_display_cat == 'yes') {
-                        $content_rendered .= smart_blocks_get_the_primary_category();
+                        $content_rendered .= smart_blocks_get_the_primary_category('post-categories ' . smart_blocks_get_font_class($this->attributes['categoryTypography']));
                     }
 
                     $content_rendered .= '<div class="sb-title-container">';
                     $content_rendered .= '<a href="' . get_the_permalink() . '">';
-                    $content_rendered .= '<h3 class="sb-post-title"><span>' . get_the_title() . '</span></h3>';
+                    $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['sideTypography']) . '"><span>' . get_the_title() . '</span></h3>';
                     $content_rendered .= $this->get_post_meta($index);
                     $content_rendered .= '</a>';
                     $content_rendered .= '</div>';
                     $content_rendered .= '</div>';
                     $content_rendered .= '</div>';
                 }
-                if ($index == $last)
+                if ($index == $last) {
                     $content_rendered .= '</div>';
+                }
             }
         endwhile;
         wp_reset_postdata();
@@ -90,7 +91,7 @@ class Smart_Blocks_Tile_Module_Two {
     public function render_header() {
         $content = '';
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . '">';
+            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';
@@ -138,19 +139,18 @@ class Smart_Blocks_Tile_Module_Two {
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             $content .= '<div class="sb-post-meta">';
             if ($post_author == 'yes') {
-                $content .= smart_blocks_author_name();
+                $content .= smart_blocks_author_name(smart_blocks_get_font_class($this->attributes['metasTypography']));
             }
 
             if ($post_date == 'yes') {
                 $date_format = $this->attributes['dateFormat'];
-
                 if ($date_format == 'relative_format') {
-                    $content .= smart_blocks_time_ago();
+                    $content .= smart_blocks_time_ago(smart_blocks_get_font_class($this->attributes['metasTypography']));
                 } else if ($date_format == 'default') {
-                    $content .= smart_blocks_post_date();
+                    $content .= smart_blocks_post_date('', smart_blocks_get_font_class($this->attributes['metasTypography']));
                 } else if ($date_format == 'custom') {
                     $format = $this->attributes['customDateFormat'];
-                    $content .= smart_blocks_post_date($format);
+                    $content .= smart_blocks_post_date($format, smart_blocks_get_font_class($this->attributes['metasTypography']));
                 }
             }
 
