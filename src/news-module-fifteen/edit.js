@@ -314,7 +314,7 @@ export default function Edit({ attributes, setAttributes }) {
         const obj = allCats && allCats.find(o => o.id === catId);
         return obj && (
             <li key={index}>
-                <a class={`sb-primary-cat sb-category-${catId}`} href={`${obj.link}`}>
+                <a class={`sb-primary-cat sb-category-${catId} ${getFontClass(categoryTypography)}`} href={`${obj.link}`}>
                     {obj.name}
                 </a>
             </li>
@@ -362,7 +362,7 @@ export default function Edit({ attributes, setAttributes }) {
                             {post.categories && post.categories.map((catId, index) => (catInner(catId, index, true)))}
                         </ul>
                     )}
-                    <h3 className="sb-post-title">
+                    <h3 className={`sb-post-title ${postTypography}`}>
                         <a href={post.link}>
                             {post.title.rendered ? (
                                 <RawHTML>
@@ -376,13 +376,13 @@ export default function Edit({ attributes, setAttributes }) {
                     {(post_author || post_date || post_comment) && (
                         <div className="sb-post-meta">
                             {postAuthor && post_author && (
-                                <span className="sb-post-author">
+                                <span className={`sb-post-author ${getFontClass(metasTypography)}`}>
                                     <i className="mdi-account"></i>
                                     {postAuthor.name}
                                 </span>
                             )}
                             {post.date_gmt && post_date && (
-                                <span className="sb-post-date">
+                                <span className={`sb-post-date ${getFontClass(metasTypography)}`}>
                                     <i className="mdi-clock-time-four-outline"></i>
                                     {dateFormat == 'relative_format' && `${post.relative_dates.created}`}
                                     {dateFormat == 'default' && dateI18n(getSettings().formats.date, post.date_gmt)}
@@ -390,7 +390,7 @@ export default function Edit({ attributes, setAttributes }) {
                                 </span>
                             )}
                             {post_comment && (
-                                <span className="sb-post-comment">
+                                <span className={`sb-post-comment ${getFontClass(metasTypography)}`}>
                                     <i className="mdi-comment-outline"></i>
                                     {postComment ? postComment.length : 0}
                                 </span>

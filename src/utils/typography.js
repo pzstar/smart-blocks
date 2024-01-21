@@ -4,7 +4,7 @@ import GoogleFontsList from './googlefonts.json';
 import { useState } from '@wordpress/element';
 import { DesktopIcon, TabletIcon, PhoneIcon, ClearIcon } from './svgicons';
 const Typography = ({label, values, onChange, device, setDevice}) => {
-	var selectedFamily = GoogleFontsList[0].family;
+	var selectedFamily = values && values.family ? values.family : GoogleFontsList[0].family;
 	var selectedWeight = '';
 	const [allWeights, setAllWeights] = useState(GoogleFontsList.filter(GoogleFontsList => GoogleFontsList.family === selectedFamily)[0].variants);
 	const onFontChangeHandler = (e) => {
