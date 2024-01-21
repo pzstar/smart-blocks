@@ -37,11 +37,11 @@ class Smart_Blocks_News_Module_Five {
                 $content_rendered .= '</a>';
 
                 if ($this->attributes['featuredPostCategory'] == 'yes')
-                    $content_rendered .= get_the_category_list();
+                    $content_rendered .= preg_replace('/<a /', '<a class="' . smart_blocks_get_font_class($this->attributes['categoryTypography']) . '"', get_the_category_list());
                 $content_rendered .= '</div>';
 
                 $content_rendered .= '<div class="sb-post-content">';
-                $content_rendered .= '<h3 class="sb-post-title sb-big-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+                $content_rendered .= '<h3 class="sb-post-title sb-big-title ' . smart_blocks_get_font_class($this->attributes['featuredTypography']) . '"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
                 $content_rendered .= $this->get_post_meta($index);
                 $content_rendered .= $this->get_post_excerpt($index);
                 $content_rendered .= '</div>';
@@ -65,8 +65,8 @@ class Smart_Blocks_News_Module_Five {
 
                 $content_rendered .= '<div class="sb-post-content">';
                 if ($this->attributes['listingPostCategory'] == 'yes')
-                    $content_rendered .= smart_blocks_get_the_primary_category();
-                $content_rendered .= '<h3 class="sb-post-title"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories ' . smart_blocks_get_font_class($this->attributes['categoryTypography']));
+                $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['listingTypography']) . '"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
                 $content_rendered .= $this->get_post_meta($index);
                 $content_rendered .= '</div>';
                 $content_rendered .= '</div>';
@@ -88,7 +88,7 @@ class Smart_Blocks_News_Module_Five {
         $content = '';
 
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . esc_attr($this->attributes['headerStyle']) . '">';
+            $content .= '<h2 class="sb-block-title ' . esc_attr($this->attributes['headerStyle']) . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';
@@ -131,7 +131,7 @@ class Smart_Blocks_News_Module_Five {
         $content = '';
         $excerpt_length = $count == 1 ? $this->attributes['featuredExcerptLength'] : $this->attributes['listingExcerptLength'];
         if ($excerpt_length) {
-            $content .= '<div class="sb-excerpt">' . smart_blocks_custom_excerpt($excerpt_length) . '</div>';
+            $content .= '<div class="sb-excerpt ' . smart_blocks_get_font_class($this->attributes['excerptTypography']) . '">' . smart_blocks_custom_excerpt($excerpt_length) . '</div>';
         }
         return $content;
     }
@@ -146,19 +146,19 @@ class Smart_Blocks_News_Module_Five {
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             $content .= '<div class="sb-post-meta">';
             if ($post_author == 'yes') {
-                $content .= smart_blocks_author_name();
+                $content .= smart_blocks_author_name(smart_blocks_get_font_class($this->attributes['metasTypography']));
             }
 
             if ($post_date == 'yes') {
                 $date_format = $this->attributes['dateFormat'];
 
                 if ($date_format == 'relative_format') {
-                    $content .= smart_blocks_time_ago();
+                    $content .= smart_blocks_time_ago(smart_blocks_get_font_class($this->attributes['metasTypography']));
                 } else if ($date_format == 'default') {
-                    $content .= smart_blocks_post_date();
+                    $content .= smart_blocks_post_date('', smart_blocks_get_font_class($this->attributes['metasTypography']));
                 } else if ($date_format == 'custom') {
                     $format = $this->attributes['customDateFormat'];
-                    $content .= smart_blocks_post_date($format);
+                    $content .= smart_blocks_post_date($format, smart_blocks_get_font_class($this->attributes['metasTypography']));
                 }
             }
 

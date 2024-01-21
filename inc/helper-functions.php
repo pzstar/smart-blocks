@@ -21,8 +21,8 @@ if (!function_exists('smart_blocks_custom_excerpt')) {
 
 if (!function_exists('smart_blocks_author_name')) {
 
-    function smart_blocks_author_name() {
-        return '<span class="sb-post-author"><i class="mdi-account"></i>' . get_the_author() . '</span>';
+    function smart_blocks_author_name($class = '') {
+        return '<span class="sb-post-author ' . $class . '"><i class="mdi-account"></i>' . get_the_author() . '</span>';
     }
 
 }
@@ -39,12 +39,12 @@ if (!function_exists('smart_blocks_comment_count')) {
 
 if (!function_exists('smart_blocks_post_date')) {
 
-    function smart_blocks_post_date($format = '') {
+    function smart_blocks_post_date($format = '', $class = '') {
 
         if ($format) {
-            return '<span class="sb-post-date"><i class="mdi-clock-time-four-outline"></i>' . get_the_date($format) . '</span>';
+            return '<span class="sb-post-date ' . $class . '"><i class="mdi-clock-time-four-outline"></i>' . get_the_date($format) . '</span>';
         } else {
-            return '<span class="sb-post-date"><i class="mdi-clock-time-four-outline"></i>' . get_the_date() . '</span>';
+            return '<span class="sb-post-date ' . $class . '"><i class="mdi-clock-time-four-outline"></i>' . get_the_date() . '</span>';
         }
     }
 
@@ -53,8 +53,8 @@ if (!function_exists('smart_blocks_post_date')) {
 
 if (!function_exists('smart_blocks_time_ago')) {
 
-    function smart_blocks_time_ago() {
-        return '<span class="sb-post-date"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'hash-elements') . '</span>';
+    function smart_blocks_time_ago($class = '') {
+        return '<span class="sb-post-date ' . $class . '"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'hash-elements') . '</span>';
     }
 
 }
@@ -188,16 +188,16 @@ function sb_get_relative_dates($post) {
 
 function smart_blocks_get_font_class($attr) {
     $retrun_classes = array();
-    if (!(isset($attr['family']) && (strtolower($attr['family']) != 'default'))) {
+    if (isset($attr['family']) && (strtolower($attr['family']) != 'default')) {
         $retrun_classes[] = 'sb-ff';
     }
-    if (!(isset($attr['weight']) && (strtolower($attr['weight']) != 'default'))) {
+    if (isset($attr['weight']) && (strtolower($attr['weight']) != 'default')) {
         $retrun_classes[] = 'sb-fw';
     }
-    if (!(isset($attr['textTransform']) && (strtolower($attr['textTransform']) != 'default'))) {
+    if (isset($attr['textTransform']) && (strtolower($attr['textTransform']) != 'default')) {
         $retrun_classes[] = 'sb-tt';
     }
-    if (!(isset($attr['textDecoration']) && (strtolower($attr['textDecoration']) != 'default'))) {
+    if (isset($attr['textDecoration']) && (strtolower($attr['textDecoration']) != 'default')) {
         $retrun_classes[] = 'sb-td';
     }
     return implode(' ', $retrun_classes);
