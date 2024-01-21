@@ -27,7 +27,7 @@ import TokenMultiSelectControl from '../utils/token-multiselect-control';
 import OwlCarousel from 'react-owl-carousel';
 import Border from '../utils/border';
 import BoxShadow from '../utils/boxshadow';
-import { checkDefault } from '../utils/helper';
+import { checkDefault, getFontClass } from '../utils/helper';
 
 export default function Edit({ attributes, setAttributes }) {
     const [device, setDevice] = useState('lg');

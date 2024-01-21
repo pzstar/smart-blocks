@@ -27,7 +27,7 @@ import CustomRangeControl from '../utils/customrangecontrol';
 import TokenMultiSelectControl from '../utils/token-multiselect-control';
 import Border from '../utils/border';
 import BoxShadow from '../utils/boxshadow';
-import { checkDefault } from '../utils/helper';
+import { checkDefault, getFontClass } from '../utils/helper';
 
 export default function Edit({ attributes, setAttributes }) {
     const [device, setDevice] = useState('lg');
@@ -340,7 +340,8 @@ export default function Edit({ attributes, setAttributes }) {
 
     const headerClasses = classnames(
         'sb-block-title',
-        `${headerStyle}`
+        `${headerStyle}`,
+        getFontClass(headerTitleTypography)
     );
 
     const catInner = (catId, index, primary) => {
