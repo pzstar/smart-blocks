@@ -5,9 +5,35 @@ import { useState, useEffect } from '@wordpress/element';
 import { DesktopIcon, TabletIcon, PhoneIcon, ClearIcon } from './svgicons';
 const Typography = ({label, values, onChange, device, setDevice}) => {
 	useEffect(() => {
-		onChange({...values});
-	});
-
+		setTimeout(() => {
+			onChange({...values});
+		}, 1000);
+	}, []);
+	var values = values;
+	values = values ? values : {
+		"family": 'Default',
+		"weight": 'Default',
+		"textTransform": 'inherit',
+		"textDecoration": 'inherit',
+		"fontSize": {
+			"sm": null,
+			"md": null,
+			"lg": null,
+			"unit": "px"
+		},
+		"letterSpacing": {
+			"sm": null,
+			"md": null,
+			"lg": null,
+			"unit": "px"
+		},
+		"lineHeight": {
+			"sm": null,
+			"md": null,
+			"lg": null,
+			"unit": "px"
+		}
+	};
 	var selectedFamily = values && values.family ? values.family : GoogleFontsList[0].family;
 	var selectedWeight = '';
 	const [allWeights, setAllWeights] = useState(GoogleFontsList.filter(GoogleFontsList => GoogleFontsList.family === selectedFamily)[0].variants);
@@ -56,10 +82,10 @@ const Typography = ({label, values, onChange, device, setDevice}) => {
 	}
 	const onClearHandler = (e) => {
 		onChange({
-			"family": 'Default',
-	        "weight": 'Default',
-	        "textTransform": 'inherit',
-	        "textDecoration": 'inherit',
+			"family": null,
+	        "weight": null,
+	        "textTransform": null,
+	        "textDecoration": null,
 	        "fontSize": {
 	        	"sm": null,
 	        	"md": null,
