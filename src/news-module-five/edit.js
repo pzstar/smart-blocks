@@ -381,7 +381,7 @@ export default function Edit({ attributes, setAttributes }) {
 		post._embedded['replies'] &&
 		post._embedded['replies'].length > 0 &&
 		post._embedded['replies'][0];
-		const titleClass = block == 'featured' ? 'sb-large-title' : '';
+		const titleClass = block == 'featured' ? 'sb-large-title' + getFontClass(featuredTypography) : getFontClass(listingTypography);
 		const post_author = block == 'featured' ? featuredPostAuthor : listingPostAuthor;
 		const post_date = block == 'featured' ? featuredPostDate : listingPostDate;
 		const post_comment = block == 'featured' ? featuredPostComments : listingPostComments;
@@ -450,7 +450,7 @@ export default function Edit({ attributes, setAttributes }) {
 					</div>
 				)}
 				{excerpt_length != 0 && (
-					<div className="sb-excerpt">
+					<div className={`sb-excerpt ${getFontClass(excerptTypography)}`}>
 						{post.content.rendered && (
 							<RawHTML>
 								{post.content.rendered.replace(/<[^>]+>/g, '').substring(0, excerpt_length)}{excerpt_length < post.content.rendered.length ? `...` : ``}

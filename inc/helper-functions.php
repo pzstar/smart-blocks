@@ -30,8 +30,8 @@ if (!function_exists('smart_blocks_author_name')) {
 /** Get Comment Count */
 if (!function_exists('smart_blocks_comment_count')) {
 
-    function smart_blocks_comment_count() {
-        return '<span class="sb-post-comment"><i class="mdi-comment-outline"></i>' . get_comments_number() . '</span>';
+    function smart_blocks_comment_count($class = '') {
+        return '<span class="sb-post-comment ' . esc_attr($class) . '"><i class="mdi-comment-outline"></i>' . get_comments_number() . '</span>';
     }
 
 }

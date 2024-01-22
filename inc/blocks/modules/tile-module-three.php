@@ -121,7 +121,7 @@ class Smart_Blocks_Tile_Module_Three {
             }
 
             if ($post_comment == 'yes') {
-                $content .= smart_blocks_comment_count();
+                $content .= smart_blocks_comment_count(smart_blocks_get_font_class($this->attributes['metasTypography']));
             }
             $content .= '</div>';
         }
