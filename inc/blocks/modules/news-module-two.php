@@ -47,7 +47,7 @@ class Smart_Blocks_News_Module_Two {
                     $content_rendered .= preg_replace('/<a /', '<a class="' . smart_blocks_get_font_class($this->attributes['categoryTypography']) . '"', get_the_category_list());
             } else {
                 if ($this->attributes['sidePostCategory'] == 'yes')
-                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories ' . smart_blocks_get_font_class($this->attributes['categoryTypography']));
+                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories', smart_blocks_get_font_class($this->attributes['categoryTypography']));
             }
             $content_rendered .= '</div>';
 

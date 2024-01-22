@@ -38,7 +38,7 @@ class Smart_Blocks_News_Module_Eleven {
             $content_rendered .= '</div>';
             $content_rendered .= '</a>';
             if ($display_cat == 'yes') {
-                $content_rendered .= smart_blocks_get_the_primary_category('post-categories ' . smart_blocks_get_font_class($this->attributes['categoryTypography']));
+                $content_rendered .= smart_blocks_get_the_primary_category('post-categories', smart_blocks_get_font_class($this->attributes['categoryTypography']));
             }
             $content_rendered .= '</div>';
             $content_rendered .= '</div>';

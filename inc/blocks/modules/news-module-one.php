@@ -35,10 +35,10 @@ class Smart_Blocks_News_Module_One {
             $content_rendered .= '</a>';
             if ($index == 1) {
                 if ($this->attributes['featuredPostCategory'] == 'yes')
-                    $content_rendered .= get_the_category_list();
+                    $content_rendered .= preg_replace('/<a /', '<a class="' . smart_blocks_get_font_class($this->attributes['categoryTypography']) . '"', get_the_category_list());
             } else {
                 if ($this->attributes['sidePostCategory'] == 'yes')
-                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories ' . smart_blocks_get_font_class($this->attributes['categoryTypography']));
+                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories', smart_blocks_get_font_class($this->attributes['categoryTypography']));
             }
             $content_rendered .= '</div>';
             $content_rendered .= '<div class="sb-post-content">';

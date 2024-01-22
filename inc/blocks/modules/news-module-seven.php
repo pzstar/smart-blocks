@@ -66,7 +66,7 @@ class Smart_Blocks_News_Module_Seven {
 
                 $content_rendered .= '<div class="sb-post-content">';
                 if ($this->attributes['listingPostCategory'] == 'yes')
-                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories ' . smart_blocks_get_font_class($this->attributes['categoryTypography']));
+                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories', smart_blocks_get_font_class($this->attributes['categoryTypography']));
                 $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['listingTypography']) . '"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
                 $content_rendered .= $this->get_post_meta($index);
                 $content_rendered .= '</div>';
