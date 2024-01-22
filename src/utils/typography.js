@@ -1,9 +1,15 @@
 import { __ } from '@wordpress/i18n';
 import { Tooltip, Dropdown, Dashicon } from '@wordpress/components';
 import GoogleFontsList from './googlefonts.json';
-import { useState } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 import { DesktopIcon, TabletIcon, PhoneIcon, ClearIcon } from './svgicons';
 const Typography = ({label, values, onChange, device, setDevice}) => {
+	useEffect(() => {
+		setTimeout(() => {
+			onChange({...values});
+		}, 1000);
+	});
+
 	var selectedFamily = values && values.family ? values.family : GoogleFontsList[0].family;
 	var selectedWeight = '';
 	const [allWeights, setAllWeights] = useState(GoogleFontsList.filter(GoogleFontsList => GoogleFontsList.family === selectedFamily)[0].variants);

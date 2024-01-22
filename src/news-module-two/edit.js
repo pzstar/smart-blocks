@@ -393,7 +393,7 @@ export default function Edit({ attributes, setAttributes }) {
             post._embedded['replies'].length > 0 &&
             post._embedded['replies'][0];
 
-        const titleClass = block == 'featured' ? 'sb-large-title' + getFontClass(featuredTypography) : getFontClass(sideTypography);
+        const titleClass = block == 'featured' ? 'sb-large-title ' + getFontClass(featuredTypography) : getFontClass(sideTypography);
         const post_author = block == 'featured' ? featuredPostAuthor : sidePostAuthor;
         const post_date = block == 'featured' ? featuredPostDate : sidePostDate;
         const post_comment = block == 'featured' ? featuredPostComments : sidePostComments;

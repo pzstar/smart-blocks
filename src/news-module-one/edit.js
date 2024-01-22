@@ -392,7 +392,7 @@ export default function Edit({ attributes, setAttributes }) {
             post._embedded['replies'] &&
             post._embedded['replies'].length > 0 &&
             post._embedded['replies'][0];
-        const titleClass = index == 0 ? 'sb-large-title' + getFontClass(featuredTypography) : 'sb-big-title' + getFontClass(sideTypography);
+        const titleClass = index == 0 ? 'sb-large-title ' + getFontClass(featuredTypography) : 'sb-big-title' + getFontClass(sideTypography);
         const post_author = index == 0 ? featuredPostAuthor : sidePostAuthor;
         const post_date = index == 0 ? featuredPostDate : sidePostDate;
         const post_comment = index == 0 ? featuredPostComments : sidePostComments;

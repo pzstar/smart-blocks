@@ -48,7 +48,7 @@ class Smart_Blocks_Carousel_Module_One {
             $content_rendered .= '</div>';
             $content_rendered .= '</a>';
             if ($this->attributes['postPostCategory'] == 'yes') {
-                $content_rendered .= smart_blocks_get_the_primary_category('post-categories' . smart_blocks_get_font_class($this->attributes['categoryTypography']));
+                $content_rendered .= smart_blocks_get_the_primary_category('post-categories', smart_blocks_get_font_class($this->attributes['categoryTypography']));
             }
             $content_rendered .= '</div>';
 
