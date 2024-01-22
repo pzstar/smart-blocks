@@ -5,9 +5,7 @@ import { useState, useEffect } from '@wordpress/element';
 import { DesktopIcon, TabletIcon, PhoneIcon, ClearIcon } from './svgicons';
 const Typography = ({label, values, onChange, device, setDevice}) => {
 	useEffect(() => {
-		setTimeout(() => {
-			onChange({...values});
-		}, 1000);
+		onChange({...values});
 	});
 
 	var selectedFamily = values && values.family ? values.family : GoogleFontsList[0].family;
