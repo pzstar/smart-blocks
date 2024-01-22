@@ -82,10 +82,10 @@ const Typography = ({label, values, onChange, device, setDevice}) => {
 	}
 	const onClearHandler = (e) => {
 		onChange({
-			"family": null,
-	        "weight": null,
-	        "textTransform": null,
-	        "textDecoration": null,
+			"family": 'Default',
+	        "weight": 'Default',
+	        "textTransform": 'inherit',
+	        "textDecoration": 'inherit',
 	        "fontSize": {
 	        	"sm": null,
 	        	"md": null,
