@@ -391,7 +391,7 @@ export default function Edit({ attributes, setAttributes }) {
             post._embedded['replies'] &&
             post._embedded['replies'].length > 0 &&
             post._embedded['replies'][0];
-        const titleClass = block == 'top' ? 'sb-big-title' + getFontClass(topTypography) : getFontClass(bottomTypography);
+        const titleClass = block == 'top' ? 'sb-big-title ' + getFontClass(topTypography) : getFontClass(bottomTypography);
         const post_author = block == 'top' ? topPostAuthor : bottomPostAuthor;
         const post_date = block == 'top' ? topPostDate : bottomPostDate;
         const post_comment = block == 'top' ? topPostComments : bottomPostComments;
