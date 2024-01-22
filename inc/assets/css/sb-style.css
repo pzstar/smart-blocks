@@ -345,11 +345,6 @@ h3.sb-big-title {
 .sb-news-module-nine .sb-big-post-item .sb-post-title,
 .sb-tile-block.style1 .sb-left-col .sb-post-title,
 .sb-tile-block.style2 .sb-left-col .sb-post-title {
-    font-family: var(--sb-featured-title-typo-family);
-    font-weight: var(--sb-featured-title-typo-weight, 400);
-    font-style: var(--sb-featured-title-typo-style, normal);
-    text-transform: var(--sb-featured-title-typo-tt, none);
-    text-decoration: var(--sb-featured-title-typo-td, none);
     font-size: var(--sb-featured-title-typo-fs-lg, 1.5em);
     letter-spacing: var(--sb-featured-title-typo-ls-lg, 0);
     line-height: var(--sb-featured-title-typo-lh-lg, 1.3);
@@ -357,6 +352,55 @@ h3.sb-big-title {
     margin-right: var(--sb-featured-title-margin-right-lg, 0);
     margin-bottom: var(--sb-featured-title-margin-bottom-lg, 10px);
     margin-left: var(--sb-featured-title-margin-left-lg, 0);
+}
+
+.sb-news-module-one .sb-post-item:nth-child(1) .sb-ff.sb-post-title,
+.sb-news-module-two .col1 .sb-ff.sb-post-title,
+.sb-news-module-three .col1 .sb-ff.sb-post-title,
+.sb-news-module-five .sb-big-block .sb-ff.sb-post-title,
+.sb-news-module-seven .sb-big-block .sb-ff.sb-post-title,
+.sb-news-module-eight .sb-big-block .sb-ff.sb-post-title,
+.sb-news-module-nine .sb-big-post-item .sb-ff.sb-post-title,
+.sb-tile-block.style1 .sb-left-col .sb-ff.sb-post-title,
+.sb-tile-block.style2 .sb-left-col .sb-ff.sb-post-title{
+    font-family: var(--sb-featured-title-typo-family);
+}
+
+.sb-news-module-one .sb-post-item:nth-child(1) .sb-fw.sb-post-title,
+.sb-news-module-two .col1 .sb-fw.sb-post-title,
+.sb-news-module-three .col1 .sb-fw.sb-post-title,
+.sb-news-module-five .sb-big-block .sb-fw.sb-post-title,
+.sb-news-module-seven .sb-big-block .sb-fw.sb-post-title,
+.sb-news-module-eight .sb-big-block .sb-fw.sb-post-title,
+.sb-news-module-nine .sb-big-post-item .sb-fw.sb-post-title,
+.sb-tile-block.style1 .sb-left-col .sb-fw.sb-post-title,
+.sb-tile-block.style2 .sb-left-col .sb-fw.sb-post-title{
+    font-weight: var(--sb-featured-title-typo-weight, 400);
+    font-style: var(--sb-featured-title-typo-style, normal);
+}
+
+.sb-news-module-one .sb-post-item:nth-child(1) .sb-tt.sb-post-title,
+.sb-news-module-two .col1 .sb-tt.sb-post-title,
+.sb-news-module-three .col1 .sb-tt.sb-post-title,
+.sb-news-module-five .sb-big-block .sb-tt.sb-post-title,
+.sb-news-module-seven .sb-big-block .sb-tt.sb-post-title,
+.sb-news-module-eight .sb-big-block .sb-tt.sb-post-title,
+.sb-news-module-nine .sb-big-post-item .sb-tt.sb-post-title,
+.sb-tile-block.style1 .sb-left-col .sb-tt.sb-post-title,
+.sb-tile-block.style2 .sb-left-col .sb-tt.sb-post-title{
+    text-transform: var(--sb-featured-title-typo-tt, none);
+}
+
+.sb-news-module-one .sb-post-item:nth-child(1) .sb-td.sb-post-title,
+.sb-news-module-two .col1 .sb-td.sb-post-title,
+.sb-news-module-three .col1 .sb-td.sb-post-title,
+.sb-news-module-five .sb-big-block .sb-td.sb-post-title,
+.sb-news-module-seven .sb-big-block .sb-td.sb-post-title,
+.sb-news-module-eight .sb-big-block .sb-td.sb-post-title,
+.sb-news-module-nine .sb-big-post-item .sb-td.sb-post-title,
+.sb-tile-block.style1 .sb-left-col .sb-td.sb-post-title,
+.sb-tile-block.style2 .sb-left-col .sb-td.sb-post-title{
+    text-decoration: var(--sb-featured-title-typo-td, none);
 }
 
 .sb-news-module-one .sb-post-item:nth-child(2) .sb-post-title,
@@ -367,11 +411,6 @@ h3.sb-big-title {
 .sb-news-module-eight .sb-small-block .sb-post-title,
 .sb-tile-block.style1 .sb-right-col .sb-post-title,
 .sb-tile-block.style2 .sb-right-col .sb-post-title {
-    font-family: var(--sb-side-post-title-typo-family);
-    font-weight: var(--sb-side-post-title-typo-weight, 400);
-    font-style: var(--sb-side-post-title-typo-style, normal);
-    text-transform: var(--sb-side-post-title-typo-tt, none);
-    text-decoration: var(--sb-side-post-title-typo-td, none);
     font-size: var(--sb-side-post-title-typo-fs-lg, 1.2em);
     letter-spacing: var(--sb-side-post-title-typo-ls-lg, 0);
     line-height: var(--sb-side-post-title-typo-lh-lg, 1.3);
@@ -381,14 +420,54 @@ h3.sb-big-title {
     margin-left: var(--sb-side-post-title-margin-left-lg, 0);
 }
 
+.sb-news-module-one .sb-post-item:nth-child(2) .sb-ff.sb-post-title,
+.sb-news-module-one .sb-post-item:nth-child(3) .sb-ff.sb-post-title,
+.sb-news-module-two .col2 .sb-ff.sb-post-title,
+.sb-news-module-two .col3 .sb-ff.sb-post-title,
+.sb-news-module-three .col2 .sb-ff.sb-post-title,
+.sb-news-module-eight .sb-small-block .sb-ff.sb-post-title,
+.sb-tile-block.style1 .sb-right-col .sb-ff.sb-post-title,
+.sb-tile-block.style2 .sb-right-col .sb-ff.sb-post-title{
+    font-family: var(--sb-side-post-title-typo-family);
+}
+
+.sb-news-module-one .sb-post-item:nth-child(2) .sb-fw.sb-post-title,
+.sb-news-module-one .sb-post-item:nth-child(3) .sb-fw.sb-post-title,
+.sb-news-module-two .col2 .sb-fw.sb-post-title,
+.sb-news-module-two .col3 .sb-fw.sb-post-title,
+.sb-news-module-three .col2 .sb-fw.sb-post-title,
+.sb-news-module-eight .sb-small-block .sb-fw.sb-post-title,
+.sb-tile-block.style1 .sb-right-col .sb-fw.sb-post-title,
+.sb-tile-block.style2 .sb-right-col .sb-fw.sb-post-title{
+    font-weight: var(--sb-side-post-title-typo-weight, 400);
+    font-style: var(--sb-side-post-title-typo-style, normal);
+}
+
+.sb-news-module-one .sb-post-item:nth-child(2) .sb-tt.sb-post-title,
+.sb-news-module-one .sb-post-item:nth-child(3) .sb-tt.sb-post-title,
+.sb-news-module-two .col2 .sb-tt.sb-post-title,
+.sb-news-module-two .col3 .sb-tt.sb-post-title,
+.sb-news-module-three .col2 .sb-tt.sb-post-title,
+.sb-news-module-eight .sb-small-block .sb-tt.sb-post-title,
+.sb-tile-block.style1 .sb-right-col .sb-tt.sb-post-title,
+.sb-tile-block.style2 .sb-right-col .sb-tt.sb-post-title{
+    text-transform: var(--sb-side-post-title-typo-tt, none);
+}
+
+.sb-news-module-one .sb-post-item:nth-child(2) .sb-td.sb-post-title,
+.sb-news-module-one .sb-post-item:nth-child(3) .sb-td.sb-post-title,
+.sb-news-module-two .col2 .sb-td.sb-post-title,
+.sb-news-module-two .col3 .sb-td.sb-post-title,
+.sb-news-module-three .col2 .sb-td.sb-post-title,
+.sb-news-module-eight .sb-small-block .sb-td.sb-post-title,
+.sb-tile-block.style1 .sb-right-col .sb-td.sb-post-title,
+.sb-tile-block.style2 .sb-right-col .sb-td.sb-post-title{
+    text-decoration: var(--sb-side-post-title-typo-td, none);
+}
+
 .sb-news-module-four .sb-post-item:nth-child(1) .sb-post-title,
 .sb-news-module-four .sb-post-item:nth-child(2) .sb-post-title,
 .sb-news-module-six .sb-big-block .sb-post-title {
-    font-family: var(--sb-top-post-title-typo-family);
-    font-weight: var(--sb-top-post-title-typo-weight, 400);
-    font-style: var(--sb-top-post-title-typo-style, normal);
-    text-transform: var(--sb-top-post-title-typo-tt, none);
-    text-decoration: var(--sb-top-post-title-typo-td, none);
     font-size: var(--sb-top-post-title-typo-fs-lg, 1.5em);
     letter-spacing: var(--sb-top-post-title-typo-ls-lg, 0);
     line-height: var(--sb-top-post-title-typo-lh-lg, 1.3);
@@ -398,13 +477,33 @@ h3.sb-big-title {
     margin-left: var(--sb-top-post-title-margin-left-lg, 0);
 }
 
+.sb-news-module-four .sb-post-item:nth-child(1) .sb-ff.sb-post-title,
+.sb-news-module-four .sb-post-item:nth-child(2) .sb-ff.sb-post-title,
+.sb-news-module-six .sb-big-block .sb-ff.sb-post-title{
+    font-family: var(--sb-top-post-title-typo-family);
+}
+
+.sb-news-module-four .sb-post-item:nth-child(1) .sb-fw.sb-post-title,
+.sb-news-module-four .sb-post-item:nth-child(2) .sb-fw.sb-post-title,
+.sb-news-module-six .sb-big-block .sb-post-title{
+    font-weight: var(--sb-top-post-title-typo-weight, 400);
+    font-style: var(--sb-top-post-title-typo-style, normal);
+}
+
+.sb-news-module-four .sb-post-item:nth-child(1) .sb-tt.sb-post-title,
+.sb-news-module-four .sb-post-item:nth-child(2) .sb-tt.sb-post-title,
+.sb-news-module-six .sb-big-block .sb-tt.sb-post-title{
+    text-transform: var(--sb-top-post-title-typo-tt, none);
+}
+
+.sb-news-module-four .sb-post-item:nth-child(1) .sb-td.sb-post-title,
+.sb-news-module-four .sb-post-item:nth-child(2) .sb-td.sb-post-title,
+.sb-news-module-six .sb-big-block .sb-td.sb-post-title{
+    text-decoration: var(--sb-top-post-title-typo-td, none);
+}
+
 .sb-news-module-four .sb-post-item:nth-child(n+3) .sb-post-title,
 .sb-news-module-six .sb-small-block .sb-post-title {
-    font-family: var(--sb-bottom-post-title-typo-family);
-    font-weight: var(--sb-bottom-post-title-typo-weight, 400);
-    font-style: var(--sb-bottom-post-title-typo-style, normal);
-    text-transform: var(--sb-bottom-post-title-typo-tt, none);
-    text-decoration: var(--sb-bottom-post-title-typo-td, none);
     font-size: var(--sb-bottom-post-title-typo-fs-lg, 1.2em);
     letter-spacing: var(--sb-bottom-post-title-typo-ls-lg, 0);
     line-height: var(--sb-bottom-post-title-typo-lh-lg, 1.3);
@@ -412,6 +511,27 @@ h3.sb-big-title {
     margin-right: var(--sb-bottom-post-title-margin-right-lg, 0);
     margin-bottom: var(--sb-bottom-post-title-margin-bottom-lg, 10px);
     margin-left: var(--sb-bottom-post-title-margin-left-lg, 0);
+}
+
+.sb-news-module-four .sb-post-item:nth-child(n+3) .sb-ff.sb-post-title,
+.sb-news-module-six .sb-small-block .sb-ff.sb-post-title{
+    font-family: var(--sb-bottom-post-title-typo-family);
+}
+
+.sb-news-module-four .sb-post-item:nth-child(n+3) .sb-fw.sb-post-title,
+.sb-news-module-six .sb-small-block .sb-fw.sb-post-title{
+    font-weight: var(--sb-bottom-post-title-typo-weight, 400);
+    font-style: var(--sb-bottom-post-title-typo-style, normal);
+}
+
+.sb-news-module-four .sb-post-item:nth-child(n+3) .sb-tt.sb-post-title,
+.sb-news-module-six .sb-small-block .sb-tt.sb-post-title{
+    text-transform: var(--sb-bottom-post-title-typo-tt, none);
+}
+
+.sb-news-module-four .sb-post-item:nth-child(n+3) .sb-td.sb-post-title,
+.sb-news-module-six .sb-small-block .sb-td.sb-post-title{
+    text-decoration: var(--sb-bottom-post-title-typo-td, none);
 }
 
 .sb-news-module-five .sb-small-block .sb-post-title,
@@ -427,11 +547,6 @@ h3.sb-big-title {
 .sb-carousel-block .sb-post-content h3.sb-post-title,
 .sb-single-post-one .sb-post-content h3.sb-post-title,
 .sb-single-post-two .sb-post-content h3.sb-post-title {
-    font-family: var(--sb-listing-post-title-typo-family);
-    font-weight: var(--sb-listing-post-title-typo-weight, 400);
-    font-style: var(--sb-listing-post-title-typo-style, normal);
-    text-transform: var(--sb-listing-post-title-typo-tt, none);
-    text-decoration: var(--sb-listing-post-title-typo-td, none);
     font-size: var(--sb-listing-post-title-typo-fs-lg, 1.2em);
     letter-spacing: var(--sb-listing-post-title-typo-ls-lg, 0);
     line-height: var(--sb-listing-post-title-typo-lh-lg, 1.3);
@@ -439,6 +554,71 @@ h3.sb-big-title {
     margin-right: var(--sb-listing-post-title-margin-right-lg, 0);
     margin-bottom: var(--sb-listing-post-title-margin-bottom-lg, 10px);
     margin-left: var(--sb-listing-post-title-margin-left-lg, 0);
+}
+
+.sb-news-module-five .sb-small-block .sb-ff.sb-post-title,
+.sb-news-module-seven .sb-small-block .sb-ff.sb-post-title,
+.sb-news-module-nine .sb-post-item .sb-ff.sb-post-title,
+.sb-news-module-ten .sb-post-item .sb-ff.sb-post-title,
+.sb-news-module-eleven .sb-post-item .sb-ff.sb-post-title,
+.sb-news-module-twelve .sb-post-item .sb-ff.sb-post-title,
+.sb-news-module-thirteen .sb-post-item .sb-ff.sb-post-title,
+.sb-news-module-fourteen .sb-post-item .sb-ff.sb-post-title,
+.sb-news-module-fifteen .sb-post-item .sb-ff.sb-post-title,
+.sb-tile-block.style3 .sb-ff.sb-post-title,
+.sb-carousel-block .sb-post-content h3.sb-ff.sb-post-title,
+.sb-single-post-one .sb-post-content h3.sb-ff.sb-post-title,
+.sb-single-post-two .sb-post-content h3.sb-ff.sb-post-title{
+    font-family: var(--sb-listing-post-title-typo-family);
+}
+
+.sb-news-module-five .sb-small-block .sb-fw.sb-post-title,
+.sb-news-module-seven .sb-small-block .sb-fw.sb-post-title,
+.sb-news-module-nine .sb-post-item .sb-fw.sb-post-title,
+.sb-news-module-ten .sb-post-item .sb-fw.sb-post-title,
+.sb-news-module-eleven .sb-post-item .sb-fw.sb-post-title,
+.sb-news-module-twelve .sb-post-item .sb-fw.sb-post-title,
+.sb-news-module-thirteen .sb-post-item .sb-fw.sb-post-title,
+.sb-news-module-fourteen .sb-post-item .sb-fw.sb-post-title,
+.sb-news-module-fifteen .sb-post-item .sb-fw.sb-post-title,
+.sb-tile-block.style3 .sb-fw.sb-post-title,
+.sb-carousel-block .sb-post-content h3.sb-fw.sb-post-title,
+.sb-single-post-one .sb-post-content h3.sb-fw.sb-post-title,
+.sb-single-post-two .sb-post-content h3.sb-fw.sb-post-title{
+    font-weight: var(--sb-listing-post-title-typo-weight, 400);
+    font-style: var(--sb-listing-post-title-typo-style, normal);
+}
+
+.sb-news-module-five .sb-small-block .sb-tt.sb-post-title,
+.sb-news-module-seven .sb-small-block .sb-tt.sb-post-title,
+.sb-news-module-nine .sb-post-item .sb-tt.sb-post-title,
+.sb-news-module-ten .sb-post-item .sb-tt.sb-post-title,
+.sb-news-module-eleven .sb-post-item .sb-tt.sb-post-title,
+.sb-news-module-twelve .sb-post-item .sb-tt.sb-post-title,
+.sb-news-module-thirteen .sb-post-item .sb-tt.sb-post-title,
+.sb-news-module-fourteen .sb-post-item .sb-tt.sb-post-title,
+.sb-news-module-fifteen .sb-post-item .sb-tt.sb-post-title,
+.sb-tile-block.style3 .sb-tt.sb-post-title,
+.sb-carousel-block .sb-post-content h3.sb-tt.sb-post-title,
+.sb-single-post-one .sb-post-content h3.sb-tt.sb-post-title,
+.sb-single-post-two .sb-post-content h3.sb-tt.sb-post-title{
+    text-transform: var(--sb-listing-post-title-typo-tt, none);
+}
+
+.sb-news-module-five .sb-small-block .sb-td.sb-post-title,
+.sb-news-module-seven .sb-small-block .sb-td.sb-post-title,
+.sb-news-module-nine .sb-post-item .sb-td.sb-post-title,
+.sb-news-module-ten .sb-post-item .sb-td.sb-post-title,
+.sb-news-module-eleven .sb-post-item .sb-td.sb-post-title,
+.sb-news-module-twelve .sb-post-item .sb-td.sb-post-title,
+.sb-news-module-thirteen .sb-post-item .sb-td.sb-post-title,
+.sb-news-module-fourteen .sb-post-item .sb-td.sb-post-title,
+.sb-news-module-fifteen .sb-post-item .sb-td.sb-post-title,
+.sb-tile-block.style3 .sb-td.sb-post-title,
+.sb-carousel-block .sb-post-content h3.sb-td.sb-post-title,
+.sb-single-post-one .sb-post-content h3.sb-td.sb-post-title,
+.sb-single-post-two .sb-post-content h3.sb-td.sb-post-title{
+    text-decoration: var(--sb-listing-post-title-typo-td, none);
 }
 
 .wp-block-smart-blocks {
