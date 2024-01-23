@@ -37,10 +37,10 @@ class Smart_Blocks_News_Module_Four {
             $content_rendered .= '</a>';
             if ($index == 1 || $index == 2) {
                 if ($this->attributes['topPostCategory'] == 'yes')
-                    $content_rendered .= preg_replace('/<a /', '<a class="' . smart_blocks_get_font_class($this->attributes['categoryTypography']) . '"', get_the_category_list());
+                    $content_rendered .= get_the_category_list();
             } else {
                 if ($this->attributes['bottomPostCategory'] == 'yes')
-                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories', smart_blocks_get_font_class($this->attributes['categoryTypography']));
+                    $content_rendered .= smart_blocks_get_the_primary_category();
             }
             $content_rendered .= '</div>';
 
@@ -110,24 +110,24 @@ class Smart_Blocks_News_Module_Four {
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             $content .= '<div class="sb-post-meta">';
             if ($post_author == 'yes') {
-                $content .= smart_blocks_author_name(smart_blocks_get_font_class($this->attributes['metasTypography']));
+                $content .= smart_blocks_author_name();
             }
 
             if ($post_date == 'yes') {
                 $date_format = $this->attributes['dateFormat'];
 
                 if ($date_format == 'relative_format') {
-                    $content .= smart_blocks_time_ago(smart_blocks_get_font_class($this->attributes['metasTypography']));
+                    $content .= smart_blocks_time_ago();
                 } else if ($date_format == 'default') {
-                    $content .= smart_blocks_post_date('', smart_blocks_get_font_class($this->attributes['metasTypography']));
+                    $content .= smart_blocks_post_date();
                 } else if ($date_format == 'custom') {
                     $format = $this->attributes['customDateFormat'];
-                    $content .= smart_blocks_post_date($format, smart_blocks_get_font_class($this->attributes['metasTypography']));
+                    $content .= smart_blocks_post_date($format);
                 }
             }
 
             if ($post_comment == 'yes') {
-                $content .= smart_blocks_comment_count(smart_blocks_get_font_class($this->attributes['metasTypography']));
+                $content .= smart_blocks_comment_count();
             }
             $content .= '</div>';
         }

@@ -35,8 +35,9 @@ class Smart_Blocks_News_Module_Eight {
                 }
                 $content_rendered .= '</div>';
                 $content_rendered .= '</a>';
-                if ($this->attributes['featuredPostCategory'] == 'yes')
-                    $content_rendered .= preg_replace('/<a /', '<a class="' . smart_blocks_get_font_class($this->attributes['categoryTypography']) . '"', get_the_category_list());
+                if ($this->attributes['featuredPostCategory'] == 'yes') {
+                    $content_rendered .= get_the_category_list();
+                }
                 $content_rendered .= '</div>';
 
                 $content_rendered .= '<div class="sb-post-content">';
@@ -63,7 +64,7 @@ class Smart_Blocks_News_Module_Eight {
                 $content_rendered .= '</div>';
                 $content_rendered .= '</a>';
                 if ($this->attributes['sidePostCategory'] == 'yes')
-                    $content_rendered .= smart_blocks_get_the_primary_category('post-categories', smart_blocks_get_font_class($this->attributes['categoryTypography']));
+                    $content_rendered .= smart_blocks_get_the_primary_category();
                 $content_rendered .= '</div>';
 
                 $content_rendered .= '<div class="sb-post-content">';
@@ -130,7 +131,7 @@ class Smart_Blocks_News_Module_Eight {
     public function get_post_excerpt($count) {
         $excerpt_length = $count == 1 ? $this->attributes['featuredExcerptLength'] : 0;
         if ($excerpt_length) {
-            return '<div class="sb-excerpt ' . smart_blocks_get_font_class($this->attributes['excerptTypography']) . '">' . smart_blocks_custom_excerpt($excerpt_length) . '</div>';
+            return '<div class="sb-excerpt">' . smart_blocks_custom_excerpt($excerpt_length) . '</div>';
         }
     }
 
@@ -144,24 +145,24 @@ class Smart_Blocks_News_Module_Eight {
         if ($post_author == 'yes' || $post_date == 'yes' || $post_comment == 'yes') {
             $content .= '<div class="sb-post-meta">';
             if ($post_author == 'yes') {
-                $content .= smart_blocks_author_name(smart_blocks_get_font_class($this->attributes['metasTypography']));
+                $content .= smart_blocks_author_name();
             }
 
             if ($post_date == 'yes') {
                 $date_format = $this->attributes['dateFormat'];
 
                 if ($date_format == 'relative_format') {
-                    $content .= smart_blocks_time_ago(smart_blocks_get_font_class($this->attributes['metasTypography']));
+                    $content .= smart_blocks_time_ago();
                 } else if ($date_format == 'default') {
-                    $content .= smart_blocks_post_date('', smart_blocks_get_font_class($this->attributes['metasTypography']));
+                    $content .= smart_blocks_post_date();
                 } else if ($date_format == 'custom') {
                     $format = $this->attributes['customDateFormat'];
-                    $content .= smart_blocks_post_date($format, smart_blocks_get_font_class($this->attributes['metasTypography']));
+                    $content .= smart_blocks_post_date($format);
                 }
             }
 
             if ($post_comment == 'yes') {
-                $content .= smart_blocks_comment_count(smart_blocks_get_font_class($this->attributes['metasTypography']));
+                $content .= smart_blocks_comment_count();
             }
             $content .= '</div>';
         }

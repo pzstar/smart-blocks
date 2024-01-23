@@ -1,6 +1,6 @@
 [
   {
-    "family": "Default",
+    "family": "inherit",
     "variants": {
       "100" : "Thin",
       "300" : "Light",

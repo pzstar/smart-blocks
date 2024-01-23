@@ -188,16 +188,16 @@ function sb_get_relative_dates($post) {
 
 function smart_blocks_get_font_class($attr) {
     $retrun_classes = array();
-    if (isset($attr['family']) && (strtolower($attr['family']) != 'default')) {
+    if (isset($attr['family']) && (strtolower($attr['family']) != 'inherit')) {
         $retrun_classes[] = 'sb-ff';
     }
-    if (isset($attr['weight']) && (strtolower($attr['weight']) != 'default')) {
+    if (isset($attr['weight']) && (strtolower($attr['weight']) != 'inherit')) {
         $retrun_classes[] = 'sb-fw';
     }
-    if (isset($attr['textTransform']) && (strtolower($attr['textTransform']) != 'default')) {
+    if (isset($attr['textTransform']) && (strtolower($attr['textTransform']) != 'inherit')) {
         $retrun_classes[] = 'sb-tt';
     }
-    if (isset($attr['textDecoration']) && (strtolower($attr['textDecoration']) != 'default')) {
+    if (isset($attr['textDecoration']) && (strtolower($attr['textDecoration']) != 'inherit')) {
         $retrun_classes[] = 'sb-td';
     }
     return implode(' ', $retrun_classes);

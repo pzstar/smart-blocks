@@ -144,7 +144,7 @@ const Typography = ({label, values, onChange, device, setDevice}) => {
 													value={values ? values['family'] : null}
 													onChange={onFontChangeHandler}>
 													{GoogleFontsList && GoogleFontsList.map((font, index)=>{
-														return <option value={font.family} key={index}>{font.family}</option>;
+														return <option value={font.family} key={index}>{`${font.family != 'inherit' ? font.family : 'Default'}`}</option>;
 													}
 												)}
 												</select>
@@ -158,7 +158,7 @@ const Typography = ({label, values, onChange, device, setDevice}) => {
 												<select
 													value={values ? values['weight'] : null}
 													onChange={onWeightChangeHandler}>
-													{!(values && values['family'] && values['family'] != 'Default') && (<option value="Default">Default</option>)}
+													{!(values && values['family'] && values['family'] != 'inherit') && (<option value="inherit">Default</option>)}
 													{Object.keys(allWeights).sort().map((key) => {
 														return <option value={key}>{allWeights[key]}</option>;
 													})

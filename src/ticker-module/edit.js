@@ -27,7 +27,7 @@ import TokenMultiSelectControl from '../utils/token-multiselect-control';
 import OwlCarousel from 'react-owl-carousel';
 import Border from '../utils/border';
 import BoxShadow from '../utils/boxshadow';
-import { checkDefault, getFontClass } from '../utils/helper';
+import { checkDefault } from '../utils/helper';
 
 export default function Edit({ attributes, setAttributes }) {
     const [device, setDevice] = useState('lg');
@@ -255,7 +255,7 @@ export default function Edit({ attributes, setAttributes }) {
         const obj = allCats && allCats.find(o => o.id === catId);
         return obj && (
             <li key={index}>
-                <a class={`sb-primary-cat sb-category-${catId} ${getFontClass(categoryTypography)}`} href={`${obj.link}`}>
+                <a class={`sb-primary-cat sb-category-${catId}`} href={`${obj.link}`}>
                     {obj.name}
                 </a>
             </li>

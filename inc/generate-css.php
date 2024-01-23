@@ -108,7 +108,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
         }
 
         public static function blocks_google_font($font_family, $font_weight, $font_subset=null) {
-            if (strtolower($font_family) != 'default') {
+            if (strtolower($font_family) != 'inherit') {
                 if (!array_key_exists($font_family, self::$gfonts)) {
                     $add_font = array(
                         'fontfamily' => $font_family,
@@ -117,7 +117,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                     );
                     self::$gfonts[$font_family] = $add_font;
                 } else {
-                    if (isset($font_weight) && !empty($font_weight)) {
+                    if (isset($font_weight) && ($font_weight != 'inherit') && !empty($font_weight)) {
                         if (!in_array($font_weight, self::$gfonts[$font_family]['fontvariants'], true)) {
                             array_push(self::$gfonts[$font_family]['fontvariants'], $font_weight);
                         }
