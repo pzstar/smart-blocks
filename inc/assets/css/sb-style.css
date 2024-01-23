@@ -45,9 +45,6 @@ a {
 
 .wp-block-smart-blocks .sb-fw.sb-block-title {
     font-weight: var(--sb-header-typo-weight, 700);
-}
-
-.wp-block-smart-blocks .sb-fw.sb-block-title {
     font-style: var(--sb-header-typo-style, normal);
 }
 
