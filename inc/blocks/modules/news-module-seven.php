@@ -115,9 +115,9 @@ class Smart_Blocks_News_Module_Seven {
 
         $args['tax_query'] = [];
 
-        if (isset($this->this->attributes['categories']) && $this->this->attributes['categories']) {
-            foreach ($this->this->attributes['categories'] as $taxonomy => $terms) {
-                if (sb_is_taxonomy_assigned_to_post_type($this->this->attributes['postsPostType'], $taxonomy) && !empty($terms)) {
+        if (isset($this->attributes['categories']) && $this->attributes['categories']) {
+            foreach ($this->attributes['categories'] as $taxonomy => $terms) {
+                if (sb_is_taxonomy_assigned_to_post_type($this->attributes['postsPostType'], $taxonomy) && !empty($terms)) {
                     $args['tax_query'][] = [
                         'taxonomy' => $taxonomy,
                         'field' => 'term_id',
