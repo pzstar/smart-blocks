@@ -2,7 +2,7 @@
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks, editor
 Tested up to:      6.4
-Stable tag:        1.1.0
+Stable tag:        1.1.1
 Requires at least: 5.0
 Requires PHP:      5.6 
 License:           GPL-2.0-or-later
@@ -24,6 +24,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
+= 1.1.1 - Jan 26, 2024 =
+* News Module 7 bug - Fixed
+
 = 1.1.0 - Jan 23, 2024 =
 * Default option added for typography
 
