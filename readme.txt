@@ -1,8 +1,8 @@
 === Smart Blocks ===
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks
-Tested up to:      6.4
-Stable tag:        1.1.2
+Tested up to:      6.5
+Stable tag:        1.1.3
 Requires at least: 5.0
 Requires PHP:      5.6 
 License:           GPL-2.0-or-later
@@ -24,6 +24,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
+= 1.1.3 - May 16, 2024 =
+* Code refinements
+
 = 1.1.2 - Mar 26, 2024 =
 * Error Fixed
 
