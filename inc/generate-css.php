@@ -6,8 +6,7 @@
  */
 if (!class_exists('Smart_Blocks_CSS')) {
 
-    final class Smart_Blocks_CSS
-    {
+    final class Smart_Blocks_CSS {
 
         private static $instance;
         public static $stylesheet;

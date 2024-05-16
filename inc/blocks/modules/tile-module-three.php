@@ -2,8 +2,7 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_Tile_Module_Three
-{
+class Smart_Blocks_Tile_Module_Three {
 
     public $attributes = array();
 

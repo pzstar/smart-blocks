@@ -2,8 +2,7 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_Ticker_Module
-{
+class Smart_Blocks_Ticker_Module {
 
     public $attributes = array();
 

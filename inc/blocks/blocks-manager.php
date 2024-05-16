@@ -1,7 +1,6 @@
 <?php
 
-class Smart_Blocks_Blocks_Manager
-{
+class Smart_Blocks_Blocks_Manager {
 
     static function get_instance($block_type) {
         if ($block_type) {

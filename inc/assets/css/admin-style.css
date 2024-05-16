@@ -7,23 +7,23 @@
     position: relative;
 }
 
-.smart-blocks-notice.notice .smart-blocks-notice-logo{
+.smart-blocks-notice.notice .smart-blocks-notice-logo {
     width: 84px;
     flex: 84px 0 0;
 }
 
-.smart-blocks-notice.notice .smart-blocks-notice-logo svg{
+.smart-blocks-notice.notice .smart-blocks-notice-logo svg {
     fill: #72aee6;
     display: block;
 }
 
-.smart-blocks-notice.notice p{
+.smart-blocks-notice.notice p {
     padding: 0;
     margin: 0 0 15px;
     font-size: 16px;
 }
 
-.smart-blocks-notice.notice .button .dashicons{
+.smart-blocks-notice.notice .button .dashicons {
     height: auto;
     width: auto;
     margin: 0 6px 0 0;

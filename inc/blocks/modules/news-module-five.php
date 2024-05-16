@@ -2,8 +2,7 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_News_Module_Five
-{
+class Smart_Blocks_News_Module_Five {
 
     public $attributes = array();
 

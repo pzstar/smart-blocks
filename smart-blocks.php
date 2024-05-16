@@ -19,8 +19,7 @@ define('SMART_BLOCKS_VERSION', '1.1.2');
 
 if (!class_exists('Smart_Blocks')) {
 
-    class Smart_Blocks
-    {
+    class Smart_Blocks {
 
         private static $instance = null;
 
