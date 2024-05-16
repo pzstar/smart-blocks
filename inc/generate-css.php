@@ -73,7 +73,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
 
             wp_register_style('sb-style-frontend', false, array(), SMART_BLOCKS_VERSION);
             wp_enqueue_style('sb-style-frontend');
-            wp_add_inline_style('sb-style-frontend', sb_css_strip_whitespace(self::$stylesheet));
+            wp_add_inline_style('sb-style-frontend', smart_blocks_css_strip_whitespace(self::$stylesheet));
             $frontend_gfonts = $this->frontend_gfonts();
             wp_enqueue_style('sb-fonts-frontend', $frontend_gfonts, array(), NULL);
         }

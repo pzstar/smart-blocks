@@ -38,7 +38,7 @@ if (!class_exists('Smart_Blocks')) {
             add_action('enqueue_block_editor_assets', array($this, 'block_localization'));
 
             // Initialize Blocks
-            add_action('init', array($this, 'sb_create_block_init'));
+            add_action('init', array($this, 'create_block_init'));
 
             // Load necessary files.
             add_action('plugins_loaded', array($this, 'init'));
@@ -77,7 +77,7 @@ if (!class_exists('Smart_Blocks')) {
             require SMART_BLOCKS_PATH . 'inc/blocks/attributes.php';
         }
 
-        public function sb_create_block_init() {
+        public function create_block_init() {
             // automatically load dependencies and version
             $asset_file = include (SMART_BLOCKS_PATH . 'build/index.asset.php');
             wp_register_style('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/css/owl.carousel.css', array(), SMART_BLOCKS_VERSION);
@@ -117,16 +117,15 @@ if (!class_exists('Smart_Blocks')) {
             );
             foreach ($blocks as $block) {
                 register_block_type(
-                    'smart-blocks/' . $block,
-                    array(
-                        'api_version' => 2,
-                        'editor_script' => 'sb-blocks',
-                        'editor_style' => 'sb-block-editor',
-                        'style' => 'sb-style',
-                        'attributes' => function_exists('smart_blocks_attributes_' . str_replace('-', '_', $block)) ? call_user_func('smart_blocks_attributes_' . str_replace('-', '_', $block)) : [],
-                        'script' => 'sb-script',
-                        'render_callback' => [$block_render, 'smart_blocks_render_' . str_replace('-', '_', $block)]
-                    )
+                        'smart-blocks/' . $block, array(
+                    'api_version' => 2,
+                    'editor_script' => 'sb-blocks',
+                    'editor_style' => 'sb-block-editor',
+                    'style' => 'sb-style',
+                    'attributes' => function_exists('smart_blocks_attributes_' . str_replace('-', '_', $block)) ? call_user_func('smart_blocks_attributes_' . str_replace('-', '_', $block)) : [],
+                    'script' => 'sb-script',
+                    'render_callback' => [$block_render, 'smart_blocks_render_' . str_replace('-', '_', $block)]
+                        )
                 );
             }
         }
@@ -139,48 +138,41 @@ if (!class_exists('Smart_Blocks')) {
          */
         public function register_category($categories, $post) {
             return array_merge(
-                $categories,
+                    $categories, array(
                 array(
-                    array(
-                        'slug' => 'smart-blocks-magazine-modules',
-                        'title' => esc_html__('SB Magazine Modules', 'smart-blocks')
-                    ),
-                )
+                    'slug' => 'smart-blocks-magazine-modules',
+                    'title' => esc_html__('SB Magazine Modules', 'smart-blocks')
+                ),
+                    )
             );
         }
 
         public function register_custom_fields() {
             // POST fields
             register_rest_field(
-                'post',
-                'relative_dates',
-                array(
-                    'get_callback' => 'sb_get_relative_dates',
-                    'update_callback' => null,
-                    'schema' => null,
-                )
+                    'post', 'relative_dates', array(
+                'get_callback' => 'smart_blocks_get_relative_dates',
+                'update_callback' => null,
+                'schema' => null,
+                    )
             );
 
             register_rest_field(
-                'page',
-                'relative_dates',
-                array(
-                    'get_callback' => 'sb_get_relative_dates',
-                    'update_callback' => null,
-                    'schema' => null,
-                )
+                    'page', 'relative_dates', array(
+                'get_callback' => 'smart_blocks_get_relative_dates',
+                'update_callback' => null,
+                'schema' => null,
+                    )
             );
 
             // CPT fields
-            foreach (sb_get_CPTs() as $cpt) {
+            foreach (smart_blocks_get_CPTs() as $cpt) {
                 register_rest_field(
-                    $cpt,
-                    'relative_dates',
-                    array(
-                        'get_callback' => 'sb_get_relative_dates',
-                        'update_callback' => null,
-                        'schema' => null,
-                    )
+                        $cpt, 'relative_dates', array(
+                    'get_callback' => 'smart_blocks_get_relative_dates',
+                    'update_callback' => null,
+                    'schema' => null,
+                        )
                 );
             }
         }
@@ -235,19 +227,17 @@ if (!class_exists('Smart_Blocks')) {
                     <p>
                         <?php
                         printf(
-                            /* translators: %1$s is link start tag, %2$s is link end tag. */
-                            esc_html__('Great to see that you have been using Smart Blocks - WordPress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'smart-blocks'),
-                            '<a target="_blank" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5">',
-                            '</a>'
+                                /* translators: %1$s is link start tag, %2$s is link end tag. */
+                                esc_html__('Great to see that you have been using Smart Blocks - WordPress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'smart-blocks'), '<a target="_blank" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5">', '</a>'
                         );
                         ?>
                     </p>
                     <a target="_blank" class="button button-primary button-large"
-                        href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5"><span
+                       href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5"><span
                             class="dashicons dashicons-thumbs-up"></span><?php echo esc_html__('Yes, of course', 'smart-blocks') ?></a>
                     &nbsp;
                     <a class="button button-large"
-                        href="<?php echo esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', 'review'), 'review', 'smart_blocks_notice_nonce')); ?>"><span
+                       href="<?php echo esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', 'review'), 'review', 'smart_blocks_notice_nonce')); ?>"><span
                             class="dashicons dashicons-yes"></span><?php echo esc_html__('I have already rated', 'smart-blocks') ?></a>
                 </div>
             </div>

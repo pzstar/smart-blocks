@@ -27,7 +27,6 @@ if (!function_exists('smart_blocks_author_name')) {
 
 }
 
-/** Get Comment Count */
 if (!function_exists('smart_blocks_comment_count')) {
 
     function smart_blocks_comment_count($class = '') {
@@ -35,7 +34,6 @@ if (!function_exists('smart_blocks_comment_count')) {
     }
 
 }
-
 
 if (!function_exists('smart_blocks_post_date')) {
 
@@ -49,7 +47,6 @@ if (!function_exists('smart_blocks_post_date')) {
     }
 
 }
-
 
 if (!function_exists('smart_blocks_time_ago')) {
 
@@ -115,9 +112,9 @@ if (!function_exists('smart_blocks_get_post_primary_category')) {
 
 }
 
-if (!function_exists('sb_css_strip_whitespace')) {
+if (!function_exists('smart_blocks_css_strip_whitespace')) {
 
-    function sb_css_strip_whitespace($css) {
+    function smart_blocks_css_strip_whitespace($css) {
         $replace = array(
             "#/\*.*?\*/#s" => "", // Strip C style comments.
             "#\s\s+#" => " ", // Strip excess whitespace.
@@ -145,9 +142,9 @@ if (!function_exists('sb_css_strip_whitespace')) {
 
 }
 
-if (!function_exists('sb_is_taxonomy_assigned_to_post_type')) {
+if (!function_exists('smart_blocks_is_taxonomy_assigned_to_post_type')) {
 
-    function sb_is_taxonomy_assigned_to_post_type($post_type, $taxonomy = null) {
+    function smart_blocks_is_taxonomy_assigned_to_post_type($post_type, $taxonomy = null) {
         if (is_object($post_type))
             $post_type = $post_type->post_type;
 
@@ -164,41 +161,42 @@ if (!function_exists('sb_is_taxonomy_assigned_to_post_type')) {
 
 }
 
-/**
- * Returns the custom post types.
- *
- * @return array
- */
-function sb_get_CPTs() {
-    return get_post_types(array('_builtin' => false, 'public' => true));
+if (!function_exists('smart_blocks_is_taxonomy_assigned_to_post_type')) {
+
+    function smart_blocks_get_CPTs() {
+        return get_post_types(array('_builtin' => false, 'public' => true));
+    }
+
 }
 
-/**
- * Returns the relative dates of the post.
- *
- * @return array
- */
-function sb_get_relative_dates($post) {
-    return array(
-        'created' => human_time_diff(get_the_date('U', $post['id'])) . ' ' . __('ago', 'smart-blocks'),
-        'modified' => human_time_diff(get_the_modified_date('U', $post['id'])) . ' ' . __('ago', 'smart-blocks')
-    );
+if (!function_exists('smart_blocks_is_taxonomy_assigned_to_post_type')) {
+
+    function smart_blocks_get_relative_dates($post) {
+        return array(
+            'created' => human_time_diff(get_the_date('U', $post['id'])) . ' ' . __('ago', 'smart-blocks'),
+            'modified' => human_time_diff(get_the_modified_date('U', $post['id'])) . ' ' . __('ago', 'smart-blocks')
+        );
+    }
+
 }
 
+if (!function_exists('smart_blocks_get_font_class')) {
 
-function smart_blocks_get_font_class($attr) {
-    $retrun_classes = array();
-    if (isset($attr['family']) && (strtolower($attr['family']) != 'inherit')) {
-        $retrun_classes[] = 'sb-ff';
+    function smart_blocks_get_font_class($attr) {
+        $retrun_classes = array();
+        if (isset($attr['family']) && (strtolower($attr['family']) != 'inherit')) {
+            $retrun_classes[] = 'sb-ff';
+        }
+        if (isset($attr['weight']) && (strtolower($attr['weight']) != 'inherit')) {
+            $retrun_classes[] = 'sb-fw';
+        }
+        if (isset($attr['textTransform']) && (strtolower($attr['textTransform']) != 'inherit')) {
+            $retrun_classes[] = 'sb-tt';
+        }
+        if (isset($attr['textDecoration']) && (strtolower($attr['textDecoration']) != 'inherit')) {
+            $retrun_classes[] = 'sb-td';
+        }
+        return implode(' ', $retrun_classes);
     }
-    if (isset($attr['weight']) && (strtolower($attr['weight']) != 'inherit')) {
-        $retrun_classes[] = 'sb-fw';
-    }
-    if (isset($attr['textTransform']) && (strtolower($attr['textTransform']) != 'inherit')) {
-        $retrun_classes[] = 'sb-tt';
-    }
-    if (isset($attr['textDecoration']) && (strtolower($attr['textDecoration']) != 'inherit')) {
-        $retrun_classes[] = 'sb-td';
-    }
-    return implode(' ', $retrun_classes);
+
 }
