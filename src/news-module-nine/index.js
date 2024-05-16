@@ -20,7 +20,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType('smart-blocks/news-module-nine', {
-	icon: <News9/>,
+	icon: <News9 />,
 	supports: {
 		html: false
 	},

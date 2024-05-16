@@ -4,40 +4,40 @@ import Color from './color';
 import AdvancedRadio from './advancedradio';
 import { ClearIcon } from './svgicons';
 
-const BoxShadow = ({label, values, onChange}) => {
+const BoxShadow = ({ label, values, onChange }) => {
     !values ?
-    values= {
-        "horizontal": undefined,
-        "vertical": undefined,
-        "blur": undefined,
-        "spread": undefined,
-        "color": undefined,
-        "inset": undefined
-    } : values;
+        values = {
+            "horizontal": undefined,
+            "vertical": undefined,
+            "blur": undefined,
+            "spread": undefined,
+            "color": undefined,
+            "inset": undefined
+        } : values;
 
     const onHorizontalChangeHandler = (e) => {
         values['horizontal'] = e;
-        onChange({...values})
+        onChange({ ...values })
     }
     const onVerticalChangeHandler = (e) => {
         values['vertical'] = e;
-        onChange({...values})
+        onChange({ ...values })
     }
     const onBlurChangeHandler = (e) => {
         values['blur'] = e;
-        onChange({...values})
+        onChange({ ...values })
     }
     const onSpreadChangeHandler = (e) => {
         values['spread'] = e;
-        onChange({...values})
+        onChange({ ...values })
     }
     const onColorChangeHandler = (e) => {
         values['color'] = e;
-        onChange({...values})
+        onChange({ ...values })
     }
     const onInsetChangeHandler = (e) => {
         values['inset'] = e;
-        onChange({...values})
+        onChange({ ...values })
     }
     const onClearHandler = (e) => {
         onChange({
@@ -57,7 +57,7 @@ const BoxShadow = ({label, values, onChange}) => {
                     <div className="sb-reset-color"
                         onClick={onClearHandler}>
                         <span className="sb-border-clear sb-flex" role="button">
-                            <ClearIcon/>
+                            <ClearIcon />
                         </span>
                     </div>
                 </Tooltip>
@@ -65,17 +65,17 @@ const BoxShadow = ({label, values, onChange}) => {
                     position="top right"
                     className="sb-ml-auto"
                     contentClassName="sb-popover-style"
-                    renderToggle={ ( { isOpen, onToggle } ) => (
+                    renderToggle={({ isOpen, onToggle }) => (
                         <button
                             className="sb-shadow-setttings"
-                            isPrimary= {!0}
-                            onClick={ onToggle }
-                            aria-expanded={ isOpen }
-                            >
+                            isPrimary={!0}
+                            onClick={onToggle}
+                            aria-expanded={isOpen}
+                        >
                             <Dashicon size="15" icon="admin-tools" />
                         </button>
-                    ) }
-                    renderContent= {() =>
+                    )}
+                    renderContent={() =>
                         <>
                             <div className="sb-field sb-d-flex sb-align-justified boxshadow-content">
                                 <TextControl
@@ -83,25 +83,25 @@ const BoxShadow = ({label, values, onChange}) => {
                                     type={"number"}
                                     value={values['horizontal'] || ""}
                                     onChange={onHorizontalChangeHandler}
-                                    />
+                                />
                                 <TextControl
                                     label={__('Y', 'smart-blocks')}
                                     type={"number"}
                                     value={values['vertical'] || ""}
                                     onChange={onVerticalChangeHandler}
-                                    />
+                                />
                                 <TextControl
                                     label={__('Blur', 'smart-blocks')}
                                     type={"number"}
                                     value={values['blur'] || ""}
                                     onChange={onBlurChangeHandler}
-                                    />
+                                />
                                 <TextControl
                                     label={__('Spread', 'smart-blocks')}
                                     type={"number"}
                                     value={values['spread'] || ""}
                                     onChange={onSpreadChangeHandler}
-                                    />
+                                />
                             </div>
 
                             <Color
@@ -109,7 +109,7 @@ const BoxShadow = ({label, values, onChange}) => {
                                 value={values['color']}
                                 onChange={onColorChangeHandler}
                                 enableAlpha
-                                />
+                            />
 
                             <AdvancedRadio
                                 label={__("Inset", 'smart-blocks')}
@@ -119,7 +119,7 @@ const BoxShadow = ({label, values, onChange}) => {
                                     { label: __("Inset"), value: "inset", title: __("Inset") },
                                     { label: __("Outset"), value: "", title: __("Outset") }
                                 ]}
-                                />
+                            />
                         </>
                     }
                 />

@@ -6,7 +6,8 @@
  */
 if (!class_exists('Smart_Blocks_CSS')) {
 
-    final class Smart_Blocks_CSS {
+    final class Smart_Blocks_CSS
+    {
 
         private static $instance;
         public static $stylesheet;
@@ -21,21 +22,21 @@ if (!class_exists('Smart_Blocks_CSS')) {
 
         public function __construct() {
             // Simple use `render_block` in FSE themes to enqueue assets.
-            add_action('wp', function() {
-                if ( current_theme_supports( 'block-templates' ) ) {
+            add_action('wp', function () {
+                if (current_theme_supports('block-templates')) {
                     // Parse all blocks.
-                    add_action('render_block', array($this, 'render_block_asset'), 11, 2);
+                    add_action('render_block', array ($this, 'render_block_asset'), 11, 2);
 
                     // Parse blocks manually from content and custom locations in Classic themes.
                 } else {
-                    add_filter('widget_block_content', array($this, 'addFrontendWidgetAssets'), 8);
+                    add_filter('widget_block_content', array ($this, 'addFrontendWidgetAssets'), 8);
                     $this->generate_stylesheet();
                 }
             });
-            add_action('wp_footer', array( $this, 'print_stylesheet' ), 11);
+            add_action('wp_footer', array($this, 'print_stylesheet'), 11);
         }
 
-        public function render_block_asset( $block_content, $block ) {
+        public function render_block_asset($block_content, $block) {
             $blockAttrs = $block['attrs'];
             $block_css = '';
             foreach ($blockAttrs as $attrs) {
@@ -52,7 +53,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
         }
 
         public function addFrontendWidgetAssets($text) {
-            if ( is_admin() ) {
+            if (is_admin()) {
                 return $text;
             }
             if (isset($text)) {
@@ -71,11 +72,11 @@ if (!class_exists('Smart_Blocks_CSS')) {
                 return;
             }
 
-            wp_register_style( 'sb-style-frontend', false, array(), SMART_BLOCKS_VERSION );
-            wp_enqueue_style( 'sb-style-frontend' );
-            wp_add_inline_style( 'sb-style-frontend', sb_css_strip_whitespace(self::$stylesheet) );
+            wp_register_style('sb-style-frontend', false, array(), SMART_BLOCKS_VERSION);
+            wp_enqueue_style('sb-style-frontend');
+            wp_add_inline_style('sb-style-frontend', sb_css_strip_whitespace(self::$stylesheet));
             $frontend_gfonts = $this->frontend_gfonts();
-            wp_enqueue_style( 'sb-fonts-frontend', $frontend_gfonts, array(), NULL );
+            wp_enqueue_style('sb-fonts-frontend', $frontend_gfonts, array(), NULL);
         }
 
         public function frontend_gfonts() {
@@ -107,13 +108,13 @@ if (!class_exists('Smart_Blocks_CSS')) {
             return '//fonts.googleapis.com/css?family=' . esc_attr(str_replace('|', '%7C', $link));
         }
 
-        public static function blocks_google_font($font_family, $font_weight, $font_subset=null) {
+        public static function blocks_google_font($font_family, $font_weight, $font_subset = null) {
             if (strtolower($font_family) != 'inherit') {
                 if (!array_key_exists($font_family, self::$gfonts)) {
                     $add_font = array(
                         'fontfamily' => $font_family,
-                        'fontvariants' => ( isset($font_weight) && !empty($font_weight) ? array($font_weight) : array() ),
-                        'fontsubsets' => ( isset($font_subset) && !empty($font_subset) ? array($font_subset) : array() ),
+                        'fontvariants' => (isset($font_weight) && !empty($font_weight) ? array($font_weight) : array()),
+                        'fontsubsets' => (isset($font_subset) && !empty($font_subset) ? array($font_subset) : array()),
                     );
                     self::$gfonts[$font_family] = $add_font;
                 } else {
@@ -176,7 +177,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
          */
         public function parse($content) {
             global $wp_version;
-            return ( version_compare($wp_version, '5', '>=') ) ? parse_blocks($content) : gutenberg_parse_blocks($content);
+            return (version_compare($wp_version, '5', '>=')) ? parse_blocks($content) : gutenberg_parse_blocks($content);
         }
 
         /**
@@ -207,7 +208,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
 
         public function get_inner_block_css($block) {
             $block_css = '';
-            if(empty($block['innerBlocks'])) {
+            if (empty($block['innerBlocks'])) {
                 $blockAttrs = $block['attrs'];
                 foreach ($blockAttrs as $attrs) {
                     if (isset($attrs['family'])) {
@@ -219,7 +220,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                     $block_css .= is_array($blockAttrs['style']) ? implode(" ", $blockAttrs['style']) : $blockAttrs['style'];
                 }
             } else {
-                foreach($block['innerBlocks'] as $innerblock) {
+                foreach ($block['innerBlocks'] as $innerblock) {
                     $block_css .= self::get_inner_block_css($innerblock);
                 }
             }

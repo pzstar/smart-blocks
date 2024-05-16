@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
-const Select = ({label, options, value, onChange}) => {
-    const onChangeHandler = (e) =>{
+const Select = ({ label, options, value, onChange }) => {
+    const onChangeHandler = (e) => {
         onChange(e.target.value);
     }
-	return <>
+    return <>
         <div className="sb-field-select sb-field sb-d-flex sb-inline-block">
             {label && (<label>{label}</label>)}
             <div class="sb-field-child">
@@ -11,7 +11,7 @@ const Select = ({label, options, value, onChange}) => {
                     <select
                         value={value}
                         onChange={onChangeHandler}>
-                        {options && options.map((obj, i)=>{
+                        {options && options.map((obj, i) => {
                             return <option value={obj.value} key={obj.value}>{obj.label}</option>
                         }
                         )}
@@ -19,7 +19,7 @@ const Select = ({label, options, value, onChange}) => {
                 </div>
             </div>
         </div>
-	</>;
+    </>;
 }
 
 export default Select;

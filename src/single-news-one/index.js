@@ -20,7 +20,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType('smart-blocks/single-news-one', {
-	icon: <SingleNews1/>,
+	icon: <SingleNews1 />,
 	supports: {
 		html: false
 	},

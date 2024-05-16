@@ -2,14 +2,14 @@
   {
     "family": "inherit",
     "variants": {
-      "100" : "Thin",
-      "300" : "Light",
-      "400" : "Normal",
-      "400italic" : "Normal Italic",
-      "500" : "Medium",
-      "600" : "Semi Bold",
-      "700" : "Bold",
-      "700italic" : "Bold Italic"
+      "100": "Thin",
+      "300": "Light",
+      "400": "Normal",
+      "400italic": "Normal Italic",
+      "500": "Medium",
+      "600": "Semi Bold",
+      "700": "Bold",
+      "700italic": "Bold Italic"
     },
     "subsets": {
       "latin": "Latin"

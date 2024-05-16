@@ -20,7 +20,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType('smart-blocks/tile-module-one', {
-    icon: <Tile1/>,
+    icon: <Tile1 />,
     supports: {
         "html": false
     },
@@ -28,12 +28,12 @@ registerBlockType('smart-blocks/tile-module-one', {
     title: __("Tile Module 1", 'smart-blocks'),
     description: __("Smart Blocks News Modules", 'smart-blocks'),
     keywords: ["posts"],
-	/**
-	 * @see ./edit.js
-	 */
-	edit: Edit,
-	/**
-	 * @see ./save.js
-	 */
-	save,
+    /**
+     * @see ./edit.js
+     */
+    edit: Edit,
+    /**
+     * @see ./save.js
+     */
+    save,
 });

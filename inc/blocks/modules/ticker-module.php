@@ -2,7 +2,8 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_Ticker_Module {
+class Smart_Blocks_Ticker_Module
+{
 
     public $attributes = array();
 
@@ -33,7 +34,8 @@ class Smart_Blocks_Ticker_Module {
             }
             $content_rendered .= '</span>';
             $content_rendered .= '<div class="sb-ticker-posts"><div class="owl-carousel" data-params=' . $parameters_json . '>';
-            while ($query->have_posts()): $query->the_post();
+            while ($query->have_posts()):
+                $query->the_post();
                 $content_rendered .= '<a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a>';
             endwhile;
             wp_reset_postdata();

@@ -1,6 +1,7 @@
 <?php
 
-class Smart_Blocks_Blocks_Render {
+class Smart_Blocks_Blocks_Render
+{
 
     public function smart_blocks_render_news_module_one($attributes) {
         $block = Smart_Blocks_Blocks_Manager::get_instance('news_module_one');

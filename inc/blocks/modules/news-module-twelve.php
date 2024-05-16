@@ -2,7 +2,8 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_News_Module_Twelve {
+class Smart_Blocks_News_Module_Twelve
+{
 
     public $attributes = array();
 
@@ -19,7 +20,8 @@ class Smart_Blocks_News_Module_Twelve {
         $content_rendered .= '<div class="sb-double-small-block">';
         $args = $this->query_args();
         $query = new \WP_Query($args);
-        while ($query->have_posts()): $query->the_post();
+        while ($query->have_posts()):
+            $query->the_post();
             $index = $query->current_post + 1;
             $content_rendered .= '<div class="sb-post-item sb-clearfix">';
             $content_rendered .= '<div class="sb-post-thumb">';

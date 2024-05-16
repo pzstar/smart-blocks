@@ -20,7 +20,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType('smart-blocks/news-module-one', {
-    icon: <News1/>,
+    icon: <News1 />,
     supports: {
         "html": false
     },
@@ -28,12 +28,12 @@ registerBlockType('smart-blocks/news-module-one', {
     title: __("News Module 1", 'smart-blocks'),
     description: __("Smart Blocks News Modules", 'smart-blocks'),
     keywords: ["posts"],
-	/**
-	 * @see ./edit.js
-	 */
-	edit: Edit,
-	/**
-	 * @see ./save.js
-	 */
-	save,
+    /**
+     * @see ./edit.js
+     */
+    edit: Edit,
+    /**
+     * @see ./save.js
+     */
+    save,
 });

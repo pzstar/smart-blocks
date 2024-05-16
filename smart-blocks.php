@@ -19,7 +19,8 @@ define('SMART_BLOCKS_VERSION', '1.1.2');
 
 if (!class_exists('Smart_Blocks')) {
 
-    class Smart_Blocks {
+    class Smart_Blocks
+    {
 
         private static $instance = null;
 
@@ -79,7 +80,7 @@ if (!class_exists('Smart_Blocks')) {
 
         public function sb_create_block_init() {
             // automatically load dependencies and version
-            $asset_file = include( SMART_BLOCKS_PATH . 'build/index.asset.php');
+            $asset_file = include (SMART_BLOCKS_PATH . 'build/index.asset.php');
             wp_register_style('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/css/owl.carousel.css', array(), SMART_BLOCKS_VERSION);
             wp_register_style('materialdesignicons', SMART_BLOCKS_URL . 'inc/assets/css/materialdesignicons.css', array(), SMART_BLOCKS_VERSION);
             wp_register_style('sb-style', SMART_BLOCKS_URL . 'inc/assets/css/sb-style.css', array('materialdesignicons', 'owl-carousel'), SMART_BLOCKS_VERSION);
@@ -88,9 +89,7 @@ if (!class_exists('Smart_Blocks')) {
             wp_register_script('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/js/owl.carousel.js', array('jquery'), SMART_BLOCKS_VERSION, true);
             wp_register_script('sb-script', SMART_BLOCKS_URL . 'inc/assets/js/sb-script.js', array('jquery', 'owl-carousel'), SMART_BLOCKS_VERSION, true);
 
-            wp_register_script(
-                    'sb-blocks', SMART_BLOCKS_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version']
-            );
+            wp_register_script('sb-blocks', SMART_BLOCKS_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version']);
 
             $block_render = new Smart_Blocks_Blocks_Render();
             $blocks = array(
@@ -118,15 +117,18 @@ if (!class_exists('Smart_Blocks')) {
                 'ticker-module'
             );
             foreach ($blocks as $block) {
-                register_block_type('smart-blocks/' . $block, array(
-                    'api_version' => 2,
-                    'editor_script' => 'sb-blocks',
-                    'editor_style' => 'sb-block-editor',
-                    'style' => 'sb-style',
-                    'attributes' => function_exists('smart_blocks_attributes_' . str_replace('-', '_', $block)) ? call_user_func('smart_blocks_attributes_' . str_replace('-', '_', $block)) : [],
-                    'script' => 'sb-script',
-                    'render_callback' => [$block_render, 'smart_blocks_render_' . str_replace('-', '_', $block)]
-                ));
+                register_block_type(
+                    'smart-blocks/' . $block,
+                    array(
+                        'api_version' => 2,
+                        'editor_script' => 'sb-blocks',
+                        'editor_style' => 'sb-block-editor',
+                        'style' => 'sb-style',
+                        'attributes' => function_exists('smart_blocks_attributes_' . str_replace('-', '_', $block)) ? call_user_func('smart_blocks_attributes_' . str_replace('-', '_', $block)) : [],
+                        'script' => 'sb-script',
+                        'render_callback' => [$block_render, 'smart_blocks_render_' . str_replace('-', '_', $block)]
+                    )
+                );
             }
         }
 
@@ -138,38 +140,48 @@ if (!class_exists('Smart_Blocks')) {
          */
         public function register_category($categories, $post) {
             return array_merge(
-                    $categories, array(
+                $categories,
                 array(
-                    'slug' => 'smart-blocks-magazine-modules',
-                    'title' => esc_html__('SB Magazine Modules', 'smart-blocks')
-                ),
-                    )
+                    array(
+                        'slug' => 'smart-blocks-magazine-modules',
+                        'title' => esc_html__('SB Magazine Modules', 'smart-blocks')
+                    ),
+                )
             );
         }
 
         public function register_custom_fields() {
             // POST fields
-            register_rest_field('post', 'relative_dates', array(
-                'get_callback' => 'sb_get_relative_dates',
-                'update_callback' => null,
-                'schema' => null,
-                    )
+            register_rest_field(
+                'post',
+                'relative_dates',
+                array(
+                    'get_callback' => 'sb_get_relative_dates',
+                    'update_callback' => null,
+                    'schema' => null,
+                )
             );
 
-            register_rest_field('page', 'relative_dates', array(
-                'get_callback' => 'sb_get_relative_dates',
-                'update_callback' => null,
-                'schema' => null,
-                    )
+            register_rest_field(
+                'page',
+                'relative_dates',
+                array(
+                    'get_callback' => 'sb_get_relative_dates',
+                    'update_callback' => null,
+                    'schema' => null,
+                )
             );
 
             // CPT fields
             foreach (sb_get_CPTs() as $cpt) {
-                register_rest_field($cpt, 'relative_dates', array(
-                    'get_callback' => 'sb_get_relative_dates',
-                    'update_callback' => null,
-                    'schema' => null,
-                        )
+                register_rest_field(
+                    $cpt,
+                    'relative_dates',
+                    array(
+                        'get_callback' => 'sb_get_relative_dates',
+                        'update_callback' => null,
+                        'schema' => null,
+                    )
                 );
             }
         }
@@ -214,20 +226,30 @@ if (!class_exists('Smart_Blocks')) {
             <div class="smart-blocks-notice notice notice-info">
                 <?php $this->dismiss_button('review'); ?>
                 <div class="smart-blocks-notice-logo">
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 256 256"><path d="M116 5c-14.5 3.1-28.8 9.8-41.7 19.6C55 39.4 22.4 80 11 103.5c-6.4 13.2-8.3 20.6-8.2 33 0 13.2 2.8 23.9 9.7 38 11 22.5 26.6 38.5 56.2 57.9 12.1 7.9 30.3 16.8 39.3 19.2 8.4 2.2 22.5 2.2 31 0 18.6-4.9 59.2-30.9 79.6-51.1 27.3-27.1 40.2-60.3 35-90.1-6.5-37.5-37.6-78.2-73.3-95.9C158.8 3.9 136.6.6 116 5zm39.6 56.5c12 5.3 28.7 12.5 36.9 16.1 8.3 3.5 15.7 6.9 16.5 7.4 1.2.8.6 1.8-3.5 6-2.7 2.7-5.5 5-6.3 5-.8 0-15.4-6.1-32.4-13.5-28.7-12.4-31.2-13.3-33.1-12-1.2.8-10 9.3-19.5 18.8l-17.3 17.3 14.3 6.2c7.9 3.3 24.2 10.4 36.3 15.7 12.1 5.3 25.4 11 29.5 12.7 4.1 1.7 7.8 3.4 8.3 3.8.4.3-5.2 6.5-12.5 13.6s-21 20.5-30.5 29.8c-10.1 9.9-17.7 16.7-18.5 16.4-3.6-1.5-76.4-33.1-76.8-33.5-.2-.2 2.1-2.8 5.1-5.9l5.5-5.5 11.4 5c6.3 2.7 20.8 8.9 32.1 13.9l20.5 8.9 19.5-18.8c18.7-18.1 19.3-18.8 16.9-19.7-1.4-.6-15.5-6.7-31.5-13.6-15.9-7-35-15.2-42.2-18.4-7.3-3.1-13.2-6-13-6.3.6-1.4 60.3-58.9 61.3-58.9.6 0 10.9 4.3 23 9.5zM153.8 94c10 4.4 18.6 8 19.2 8 2 0 .9 1.8-4.5 6.9l-5.4 5.2-9.8-4.2c-5.4-2.3-11.2-4.8-12.8-5.5-2.9-1.2-3.3-1-7.9 3.2-2.7 2.4-5.5 4.4-6.1 4.4-1 0-12.1-4.6-13.3-5.5-.5-.4 20.4-20.5 21.4-20.5.6 0 9.2 3.6 19.2 8zm-45.4 55.1 11.1 4.9 4.9-4.9 4.9-4.9 7.1 3c3.9 1.7 7.2 3.1 7.4 3.3.5.4-19.9 20-21.2 20.3-.6.1-9.4-3.3-19.5-7.8-10-4.4-18.6-8-19.2-8-1.8 0-.8-1.5 4.3-6.7 6-6.1 4.4-6.1 20.2.8z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 256 256">
+                        <path
+                            d="M116 5c-14.5 3.1-28.8 9.8-41.7 19.6C55 39.4 22.4 80 11 103.5c-6.4 13.2-8.3 20.6-8.2 33 0 13.2 2.8 23.9 9.7 38 11 22.5 26.6 38.5 56.2 57.9 12.1 7.9 30.3 16.8 39.3 19.2 8.4 2.2 22.5 2.2 31 0 18.6-4.9 59.2-30.9 79.6-51.1 27.3-27.1 40.2-60.3 35-90.1-6.5-37.5-37.6-78.2-73.3-95.9C158.8 3.9 136.6.6 116 5zm39.6 56.5c12 5.3 28.7 12.5 36.9 16.1 8.3 3.5 15.7 6.9 16.5 7.4 1.2.8.6 1.8-3.5 6-2.7 2.7-5.5 5-6.3 5-.8 0-15.4-6.1-32.4-13.5-28.7-12.4-31.2-13.3-33.1-12-1.2.8-10 9.3-19.5 18.8l-17.3 17.3 14.3 6.2c7.9 3.3 24.2 10.4 36.3 15.7 12.1 5.3 25.4 11 29.5 12.7 4.1 1.7 7.8 3.4 8.3 3.8.4.3-5.2 6.5-12.5 13.6s-21 20.5-30.5 29.8c-10.1 9.9-17.7 16.7-18.5 16.4-3.6-1.5-76.4-33.1-76.8-33.5-.2-.2 2.1-2.8 5.1-5.9l5.5-5.5 11.4 5c6.3 2.7 20.8 8.9 32.1 13.9l20.5 8.9 19.5-18.8c18.7-18.1 19.3-18.8 16.9-19.7-1.4-.6-15.5-6.7-31.5-13.6-15.9-7-35-15.2-42.2-18.4-7.3-3.1-13.2-6-13-6.3.6-1.4 60.3-58.9 61.3-58.9.6 0 10.9 4.3 23 9.5zM153.8 94c10 4.4 18.6 8 19.2 8 2 0 .9 1.8-4.5 6.9l-5.4 5.2-9.8-4.2c-5.4-2.3-11.2-4.8-12.8-5.5-2.9-1.2-3.3-1-7.9 3.2-2.7 2.4-5.5 4.4-6.1 4.4-1 0-12.1-4.6-13.3-5.5-.5-.4 20.4-20.5 21.4-20.5.6 0 9.2 3.6 19.2 8zm-45.4 55.1 11.1 4.9 4.9-4.9 4.9-4.9 7.1 3c3.9 1.7 7.2 3.1 7.4 3.3.5.4-19.9 20-21.2 20.3-.6.1-9.4-3.3-19.5-7.8-10-4.4-18.6-8-19.2-8-1.8 0-.8-1.5 4.3-6.7 6-6.1 4.4-6.1 20.2.8z" />
+                    </svg>
                 </div>
 
                 <div class="smart-blocks-notice-content">
                     <p>
                         <?php
                         printf(
-                                /* translators: %1$s is link start tag, %2$s is link end tag. */
-                                esc_html__('Great to see that you have been using Smart Blocks - WordPress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'smart-blocks'), '<a target="_blank" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5">', '</a>'
+                            /* translators: %1$s is link start tag, %2$s is link end tag. */
+                            esc_html__('Great to see that you have been using Smart Blocks - WordPress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'smart-blocks'),
+                            '<a target="_blank" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5">',
+                            '</a>'
                         );
                         ?>
                     </p>
-                    <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5"><span class="dashicons dashicons-thumbs-up"></span><?php echo esc_html__('Yes, of course', 'smart-blocks') ?></a> &nbsp;
-                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', 'review'), 'review', 'smart_blocks_notice_nonce')); ?>"><span class="dashicons dashicons-yes"></span><?php echo esc_html__('I have already rated', 'smart-blocks') ?></a>
+                    <a target="_blank" class="button button-primary button-large"
+                        href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5"><span
+                            class="dashicons dashicons-thumbs-up"></span><?php echo esc_html__('Yes, of course', 'smart-blocks') ?></a>
+                    &nbsp;
+                    <a class="button button-large"
+                        href="<?php echo esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', 'review'), 'review', 'smart_blocks_notice_nonce')); ?>"><span
+                            class="dashicons dashicons-yes"></span><?php echo esc_html__('I have already rated', 'smart-blocks') ?></a>
                 </div>
             </div>
             <?php
@@ -236,7 +258,7 @@ if (!class_exists('Smart_Blocks')) {
         public function welcome_init() {
             if (!get_option('smart_blocks_first_activation')) {
                 update_option('smart_blocks_first_activation', time());
-            };
+            }
 
             if (isset($_GET['smart-blocks-hide-notice'], $_GET['smart_blocks_notice_nonce'])) {
                 $notice = sanitize_key($_GET['smart-blocks-hide-notice']);

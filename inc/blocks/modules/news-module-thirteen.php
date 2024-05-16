@@ -2,7 +2,8 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_News_Module_Thirteen {
+class Smart_Blocks_News_Module_Thirteen
+{
 
     public $attributes = array();
 
@@ -20,7 +21,8 @@ class Smart_Blocks_News_Module_Thirteen {
         $content_rendered .= '<div class="sb-alternate-block">';
         $args = $this->query_args();
         $query = new \WP_Query($args);
-        while ($query->have_posts()): $query->the_post();
+        while ($query->have_posts()):
+            $query->the_post();
             $index = $query->current_post + 1;
             $last = $query->post_count;
             $content_rendered .= '<div class="sb-alt-post-item sb-post-item">';

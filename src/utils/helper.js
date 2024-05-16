@@ -22,4 +22,4 @@ const getFontClass = (attr) => {
     return retrun_classes.join(" ");
 }
 
-export {checkDefault, getFontClass};
+export { checkDefault, getFontClass };

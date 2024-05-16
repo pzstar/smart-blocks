@@ -2,7 +2,8 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_Carousel_Module_One {
+class Smart_Blocks_Carousel_Module_One
+{
 
     public $attributes = array();
 
@@ -35,7 +36,8 @@ class Smart_Blocks_Carousel_Module_One {
         $content_rendered .= '<div class="sb-carousel-block-wrap owl-carousel" data-params=' . $params . '>';
         $args = $this->query_args();
         $query = new \WP_Query($args);
-        while ($query->have_posts()): $query->the_post();
+        while ($query->have_posts()):
+            $query->the_post();
             $last = $query->post_count;
             $content_rendered .= '<div class="sb-post-item">';
             $content_rendered .= '<div class="sb-post-thumb">';

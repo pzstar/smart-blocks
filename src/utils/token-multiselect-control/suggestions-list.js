@@ -13,66 +13,66 @@ import { withSafeTimeout } from '@wordpress/compose';
 
 class SuggestionsList extends Component {
 	constructor() {
-		super( ...arguments );
-		this.handleMouseDown = this.handleMouseDown.bind( this );
-		this.bindList = this.bindList.bind( this );
+		super(...arguments);
+		this.handleMouseDown = this.handleMouseDown.bind(this);
+		this.bindList = this.bindList.bind(this);
 	}
 
 	componentDidUpdate() {
 		// only have to worry about scrolling selected suggestion into view
 		// when already expanded
-		if ( this.props.selectedIndex > -1 && this.props.scrollIntoView ) {
+		if (this.props.selectedIndex > -1 && this.props.scrollIntoView) {
 			this.scrollingIntoView = true;
 			scrollIntoView(
-				this.list.children[ this.props.selectedIndex ],
+				this.list.children[this.props.selectedIndex],
 				this.list,
 				{
 					onlyScrollIfNeeded: true,
 				}
 			);
 
-			this.props.setTimeout( () => {
+			this.props.setTimeout(() => {
 				this.scrollingIntoView = false;
-			}, 100 );
+			}, 100);
 		}
 	}
 
-	bindList( ref ) {
+	bindList(ref) {
 		this.list = ref;
 	}
 
-	handleHover( suggestion ) {
+	handleHover(suggestion) {
 		return () => {
-			if ( ! this.scrollingIntoView ) {
-				this.props.onHover( suggestion );
+			if (!this.scrollingIntoView) {
+				this.props.onHover(suggestion);
 			}
 		};
 	}
 
-	handleClick( suggestion ) {
+	handleClick(suggestion) {
 		return () => {
-			this.props.onSelect( suggestion );
+			this.props.onSelect(suggestion);
 		};
 	}
 
-	handleMouseDown( e ) {
+	handleMouseDown(e) {
 		// By preventing default here, we will not lose focus of <input> when clicking a suggestion
 		e.preventDefault();
 	}
 
-	computeSuggestionMatch( suggestion ) {
+	computeSuggestionMatch(suggestion) {
 		const match = this.props
-			.displayTransform( this.props.match || '' )
+			.displayTransform(this.props.match || '')
 			.toLocaleLowerCase();
-		if ( match.length === 0 ) {
+		if (match.length === 0) {
 			return null;
 		}
 
-		suggestion = this.props.displayTransform( suggestion );
-		const indexOfMatch = suggestion.toLocaleLowerCase().indexOf( match );
+		suggestion = this.props.displayTransform(suggestion);
+		const indexOfMatch = suggestion.toLocaleLowerCase().indexOf(match);
 
 		return {
-			suggestionBeforeMatch: suggestion.substring( 0, indexOfMatch ),
+			suggestionBeforeMatch: suggestion.substring(0, indexOfMatch),
 			suggestionMatch: suggestion.substring(
 				indexOfMatch,
 				indexOfMatch + match.length
@@ -90,13 +90,13 @@ class SuggestionsList extends Component {
 		// TODO does this still apply now that it's a <ul> and not a <div>?
 		return (
 			<ul
-				ref={ this.bindList }
+				ref={this.bindList}
 				className="components-form-token-field__suggestions-list"
-				id={ `components-form-token-suggestions-${ this.props.instanceId }` }
+				id={`components-form-token-suggestions-${this.props.instanceId}`}
 				role="listbox"
 			>
-				{ map( this.props.suggestions, ( suggestion, index ) => {
-					const match = this.computeSuggestionMatch( suggestion );
+				{map(this.props.suggestions, (suggestion, index) => {
+					const match = this.computeSuggestionMatch(suggestion);
 					const classeName = classnames(
 						'components-form-token-field__suggestion',
 						{
@@ -107,34 +107,34 @@ class SuggestionsList extends Component {
 					/* eslint-disable jsx-a11y/click-events-have-key-events */
 					return (
 						<li
-							id={ `components-form-token-suggestions-${ this.props.instanceId }-${ index }` }
+							id={`components-form-token-suggestions-${this.props.instanceId}-${index}`}
 							role="option"
-							className={ classeName }
-							key={ this.props.displayTransform( suggestion ) }
-							onMouseDown={ this.handleMouseDown }
-							onClick={ this.handleClick( suggestion ) }
-							onMouseEnter={ this.handleHover( suggestion ) }
-							aria-selected={ index === this.props.selectedIndex }
+							className={classeName}
+							key={this.props.displayTransform(suggestion)}
+							onMouseDown={this.handleMouseDown}
+							onClick={this.handleClick(suggestion)}
+							onMouseEnter={this.handleHover(suggestion)}
+							aria-selected={index === this.props.selectedIndex}
 						>
-							{ match ? (
+							{match ? (
 								<span
-									aria-label={ this.props.displayTransform(
+									aria-label={this.props.displayTransform(
 										suggestion
-									) }
+									)}
 								>
-									{ match.suggestionBeforeMatch }
+									{match.suggestionBeforeMatch}
 									<strong className="components-form-token-field__suggestion-match">
-										{ match.suggestionMatch }
+										{match.suggestionMatch}
 									</strong>
-									{ match.suggestionAfterMatch }
+									{match.suggestionAfterMatch}
 								</span>
 							) : (
-								this.props.displayTransform( suggestion )
-							) }
+								this.props.displayTransform(suggestion)
+							)}
 						</li>
 					);
 					/* eslint-enable jsx-a11y/click-events-have-key-events */
-				} ) }
+				})}
 			</ul>
 		);
 	}
@@ -142,9 +142,9 @@ class SuggestionsList extends Component {
 
 SuggestionsList.defaultProps = {
 	match: '',
-	onHover: () => {},
-	onSelect: () => {},
-	suggestions: Object.freeze( [] ),
+	onHover: () => { },
+	onSelect: () => { },
+	suggestions: Object.freeze([]),
 };
 
-export default withSafeTimeout( SuggestionsList );
+export default withSafeTimeout(SuggestionsList);

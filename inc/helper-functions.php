@@ -69,7 +69,7 @@ if (!function_exists('smart_blocks_get_the_primary_category')) {
             $category_obj = $post_categories['primary_category'];
             $category_link = get_category_link($category_obj->term_id);
             $content .= '<ul class="' . esc_attr($class) . '">';
-            $content .= '<li><a class="sb-primary-cat sb-category-' . esc_attr($category_obj->term_id)  . ' ' . $link_class . '" href="' . esc_url($category_link) . '">' . esc_html($category_obj->name) . '</a></li>';
+            $content .= '<li><a class="sb-primary-cat sb-category-' . esc_attr($category_obj->term_id) . ' ' . $link_class . '" href="' . esc_url($category_link) . '">' . esc_html($category_obj->name) . '</a></li>';
             $content .= '</ul>';
         }
         return $content;

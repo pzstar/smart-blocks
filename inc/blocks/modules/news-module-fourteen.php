@@ -2,7 +2,8 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_News_Module_Fourteen {
+class Smart_Blocks_News_Module_Fourteen
+{
 
     public $attributes = array();
 
@@ -22,7 +23,8 @@ class Smart_Blocks_News_Module_Fourteen {
         $content_rendered .= '<div class="sb-four-column-block sb-col-' . esc_attr($post_column) . '">';
         $args = $this->query_args();
         $query = new \WP_Query($args);
-        while ($query->have_posts()): $query->the_post();
+        while ($query->have_posts()):
+            $query->the_post();
             $content_rendered .= '<div class="sb-post-item">';
             $content_rendered .= '<div class="sb-post-thumb">';
             $content_rendered .= '<a href="' . get_the_permalink() . '">';

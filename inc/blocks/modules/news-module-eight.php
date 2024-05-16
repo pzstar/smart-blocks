@@ -19,7 +19,8 @@ class Smart_Blocks_News_Module_Eight {
         $content_rendered .= '<div class="sb-news-module-eight-wrap">';
         $args = $this->query_args();
         $query = new \WP_Query($args);
-        while ($query->have_posts()): $query->the_post();
+        while ($query->have_posts()):
+            $query->the_post();
             $index = $query->current_post + 1;
             $last = $query->post_count;
 
@@ -47,8 +48,7 @@ class Smart_Blocks_News_Module_Eight {
                 $content_rendered .= '</div>';
                 $content_rendered .= '</div>';
                 $content_rendered .= '</div>';
-            }
-            else {
+            } else {
                 if ($index == 2) {
                     $content_rendered .= '<div class="sb-small-block">';
                     $content_rendered .= '<div class="sb-small-block-wrap">';
