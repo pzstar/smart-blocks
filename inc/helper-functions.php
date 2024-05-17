@@ -161,7 +161,7 @@ if (!function_exists('smart_blocks_is_taxonomy_assigned_to_post_type')) {
 
 }
 
-if (!function_exists('smart_blocks_is_taxonomy_assigned_to_post_type')) {
+if (!function_exists('smart_blocks_get_CPTs')) {
 
     function smart_blocks_get_CPTs() {
         return get_post_types(array('_builtin' => false, 'public' => true));
@@ -169,7 +169,7 @@ if (!function_exists('smart_blocks_is_taxonomy_assigned_to_post_type')) {
 
 }
 
-if (!function_exists('smart_blocks_is_taxonomy_assigned_to_post_type')) {
+if (!function_exists('smart_blocks_get_relative_dates')) {
 
     function smart_blocks_get_relative_dates($post) {
         return array(
