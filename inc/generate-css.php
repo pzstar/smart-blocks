@@ -216,7 +216,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                 }
                 // Get CSS for the Block.
                 if (isset($blockAttrs['style'])) {
-                    $block_css .= is_array($blockAttrs['style']) ? implode(" ", $blockAttrs['style']) : $blockAttrs['style'];
+                    $block_css .= is_array($blockAttrs['style']) ? '' : $blockAttrs['style'];
                 }
             } else {
                 foreach ($block['innerBlocks'] as $innerblock) {
