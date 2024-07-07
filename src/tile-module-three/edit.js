@@ -794,7 +794,7 @@ export default function Edit({ attributes, setAttributes }) {
                             placeholder={__('Heading...', 'smart-blocks')}
                         />
                     </h2>
-                    <div className="sb-tile-block ht-clearfix style3 space-10">
+                    <div className="sb-tile-block sb-clearfix style3 space-10">
                         {posts && posts.map((post, index) => (postInner(post)))}
                     </div>
                 </div>
