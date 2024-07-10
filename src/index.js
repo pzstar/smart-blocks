@@ -1,3 +1,7 @@
+import './data';
+import './section/columns';
+import './section/column';
+import './template-import';
 import './news-module-one';
 import './news-module-two';
 import './news-module-three';

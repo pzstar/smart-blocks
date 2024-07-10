@@ -75,6 +75,7 @@ if (!class_exists('Smart_Blocks')) {
             require SMART_BLOCKS_PATH . 'inc/blocks/blocks-render.php';
             require SMART_BLOCKS_PATH . 'inc/generate-css.php';
             require SMART_BLOCKS_PATH . 'inc/blocks/attributes.php';
+            require SMART_BLOCKS_PATH . 'inc/template-library.php';
         }
 
         public function create_block_init() {
@@ -125,6 +126,24 @@ if (!class_exists('Smart_Blocks')) {
                     'attributes' => function_exists('smart_blocks_attributes_' . str_replace('-', '_', $block)) ? call_user_func('smart_blocks_attributes_' . str_replace('-', '_', $block)) : [],
                     'script' => 'sb-script',
                     'render_callback' => [$block_render, 'smart_blocks_render_' . str_replace('-', '_', $block)]
+                        )
+                );
+            }
+
+            $blocks = array(
+                // 'template-import',
+                // 'columns',
+                // 'column',
+            );
+
+            foreach ($blocks as $block) {
+                register_block_type(
+                        'smart-blocks/' . $block, array(
+                    'api_version' => 2,
+                    'editor_script' => 'sb-blocks',
+                    'editor_style' => 'sb-block-editor',
+                    'style' => 'sb-style',
+                    'script' => 'sb-script',
                         )
                 );
             }

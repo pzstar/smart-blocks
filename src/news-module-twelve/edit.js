@@ -11,7 +11,8 @@ import {
 import {
     PanelBody,
     ToggleControl,
-    TextControl
+    TextControl,
+    Button
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import classnames from 'classnames';
@@ -19,7 +20,6 @@ import Typography from '../utils/typography';
 import GoogleFontLoad from '../utils/googlefontload';
 import Color from '../utils/color';
 import Tabs from '../utils/tabs';
-import PanelTabs from '../utils/paneltabs';
 import Select from '../utils/select';
 import Dimension from '../utils/dimension';
 import QueryTaxonomyControls from '../utils/querytaxonomycontrols';
@@ -28,9 +28,10 @@ import TokenMultiSelectControl from '../utils/token-multiselect-control';
 import Border from '../utils/border';
 import BoxShadow from '../utils/boxshadow';
 import { checkDefault, getFontClass } from '../utils/helper';
+import { LayoutIcon, StyleIcon, AdvancedIcon } from '../utils/svgicons';
 
 export default function Edit({ attributes, setAttributes }) {
-    const [device, setDevice] = useState('lg');
+    const [activeTab, setActiveTab] = useState('layout');
     const {
         id,
         style,
@@ -432,374 +433,400 @@ export default function Edit({ attributes, setAttributes }) {
             {postTypography['family'] && (postTypography['family'] != 'Default') && (<GoogleFontLoad family={postTypography['family']} weight={postTypography['weight'].replace("italic", "i")} />)}
             {metasTypography['family'] && (metasTypography['family'] != 'Default') && (<GoogleFontLoad family={metasTypography['family']} weight={metasTypography['weight'].replace("italic", "i")} />)}
             <InspectorControls>
-                <PanelTabs>
-                    <div tabTitle={__("Layout", 'smart-blocks')}>
-                        {headerTitle && (
-                            <PanelBody
-                                title={__('Header', 'smart-blocks')}
-                                initialOpen={false}
-                            >
-                                <Select
-                                    label={__('Style', 'smart-blocks')}
-                                    value={headerStyle}
-                                    onChange={(headerStyle) => setAttributes({ headerStyle })}
-                                    options={[
-                                        { value: 'sb-title-style1', label: __('Style 1', 'smart-blocks') },
-                                        { value: 'sb-title-style2', label: __('Style 2', 'smart-blocks') },
-                                        { value: 'sb-title-style3', label: __('Style 3', 'smart-blocks') },
-                                        { value: 'sb-title-style4', label: __('Style 4', 'smart-blocks') }
-                                    ]}
-                                />
-                            </PanelBody>
-                        )}
-                        <PanelBody
-                            title={__('Content Filter', 'smart-blocks')}
-                            initialOpen={false}
+                <div className="sb-field sb-head-panel-tabs">
+                    <div className="sb-panel-tabs-wrap">
+                        <Button
+                            className={classnames('sb-panel-tab', {'active-tab': 'layout' === activeTab})}
+                            onClick={() => setActiveTab('layout')}
                         >
-                            <Select
-                                label={__('Source', 'smart-blocks')}
-                                value={postsPostType}
-                                onChange={(postsPostType) => setAttributes({ postsPostType })}
-                                options={allPostTypes}
-                            />
+                            <span className="dashicons">
+                                <LayoutIcon />
+                            </span>
+                            {__('Layout', 'smart-blocks')}
+                        </Button>
 
-                            <QueryTaxonomyControls
-                                value={categories}
-                                postType={postsPostType}
-                                onChange={(categories) => setAttributes({ categories })}
-                            />
-
-                            <TokenMultiSelectControl
-                                label={__('Exclude Posts', 'smart-blocks')}
-                                options={allPostsSelect}
-                                value={excludePosts}
-                                onChange={(excludePosts) => setAttributes({ excludePosts })}
-                            />
-
-                            <Select
-                                label={__('Order By', 'smart-blocks')}
-                                value={orderBy}
-                                onChange={(orderBy) => setAttributes({ orderBy })}
-                                options={[
-                                    { value: 'date', label: __('Date', 'smart-blocks') },
-                                    { value: 'modified', label: __('Last Modified Date', 'smart-blocks') },
-                                    { value: 'rand', label: __('Rand', 'smart-blocks') },
-                                    { value: 'comment_count', label: __('Comment Count', 'smart-blocks') },
-                                    { value: 'title', label: __('Title', 'smart-blocks') },
-                                    { value: 'author', label: __('Show Post Author', 'smart-blocks') }
-                                ]}
-                            />
-
-                            <Select
-                                label={__('Order', 'smart-blocks')}
-                                value={order}
-                                onChange={(order) => setAttributes({ order })}
-                                options={[
-                                    { value: 'desc', label: __('Descending', 'smart-blocks') },
-                                    { value: 'asc', label: __('Ascending', 'smart-blocks') }
-                                ]}
-                            />
-
-                            <CustomRangeControl
-                                label={__('Offset', 'smart-blocks')}
-                                value={offset}
-                                onChange={(offset) => setAttributes({ offset })}
-                                min={0}
-                                max={10}
-                            />
-                        </PanelBody>
-                        <PanelBody
-                            title={__('Post Block', 'smart-blocks')}
-                            initialOpen={false}
+                        <Button
+                            className={classnames('sb-panel-tab', {'active-tab': 'style' === activeTab})}
+                            onClick={() => setActiveTab('style')}
                         >
-                            <Select
-                                label={__('Image Size', 'smart-blocks')}
-                                options={getImageSizeOptions()}
-                                value={postImageSize}
-                                onChange={(postImageSize) => setAttributes({ postImageSize })}
-                            />
-                            <CustomRangeControl
-                                label={__('Image Height (%)', 'smart-blocks')}
-                                value={postImageHeight}
-                                onChange={(postImageHeight) => setAttributes({ postImageHeight })}
-                                min={30}
-                                max={150}
-                            />
-                            <ToggleControl
-                                label={__('Show Post Author', 'smart-blocks')}
-                                checked={postPostAuthor}
-                                onChange={(postPostAuthor) => setAttributes({ postPostAuthor })}
-                            />
-                            <ToggleControl
-                                label={__('Show Post Date', 'smart-blocks')}
-                                checked={postPostDate}
-                                onChange={(postPostDate) => setAttributes({ postPostDate })}
-                            />
-                            <ToggleControl
-                                label={__('Show Post Comments', 'smart-blocks')}
-                                checked={postPostComments}
-                                onChange={(postPostComments) => setAttributes({ postPostComments })}
-                            />
-                            <ToggleControl
-                                label={__('Show Post Category', 'smart-blocks')}
-                                checked={postPostCategory}
-                                onChange={(postPostCategory) => setAttributes({ postPostCategory })}
-                            />
-                        </PanelBody>
-                        <PanelBody
-                            title={__('Additional Settings', 'smart-blocks')}
-                            initialOpen={false}
+                            <span className="dashicons">
+                                <StyleIcon />
+                            </span>
+                            {__('Style', 'smart-blocks')}
+                        </Button>
+
+                        <Button
+                            className={classnames('sb-panel-tab', {'active-tab': 'advanced' === activeTab})}
+                            onClick={() => setActiveTab('advanced')}
                         >
-                            <CustomRangeControl
-                                label={__('Image Border Radius(px)', 'smart-blocks')}
-                                value={imageBorderRadius}
-                                onChange={(imageBorderRadius) => setAttributes({ imageBorderRadius })}
-                                min={0}
-                                max={30}
-                            />
-                            <Select
-                                label={__('Date Format', 'smart-blocks')}
-                                value={dateFormat}
-                                onChange={(dateFormat) => setAttributes({ dateFormat })}
-                                options={[
-                                    { value: 'relative_format', label: __('Relative Format (Ago)', 'smart-blocks') },
-                                    { value: 'default', label: __('WordPress Default Format', 'smart-blocks') },
-                                    { value: 'custom', label: __('Custom Format', 'smart-blocks') }
-                                ]}
-                            />
-                            {dateFormat == 'custom' && (
-                                <TextControl
-                                    label={__('Custom Date Format', 'smart-blocks')}
-                                    value={customDateFormat}
-                                    onChange={(customDateFormat) => setAttributes({ customDateFormat })}
-                                />
-                            )}
-                        </PanelBody>
+                            <span className="dashicons">
+                                <AdvancedIcon />
+                            </span>
+                            {__('Advanced', 'smart-blocks')}
+                        </Button>
                     </div>
-                    <div tabTitle={__("Style", 'smart-blocks')}>
-                        {headerTitle && (
-                            <PanelBody
-                                title={__('Header Title', 'smart-blocks')}
-                                initialOpen={false}
-                            >
-                                <Color
-                                    label={__('Color', 'smart-blocks')}
-                                    enableAlpha
-                                    value={headerColor}
-                                    onChange={(headerColor) => setAttributes({ headerColor })}
-                                />
-                                <Color
-                                    label={__('Short Border Color', 'smart-blocks')}
-                                    enableAlpha
-                                    value={headerShortBorderColor}
-                                    onChange={(headerShortBorderColor) => setAttributes({ headerShortBorderColor })}
-                                />
-                                <Color
-                                    label={__('Long Border Color', 'smart-blocks')}
-                                    enableAlpha
-                                    value={headerLongBorderColor}
-                                    onChange={(headerLongBorderColor) => setAttributes({ headerLongBorderColor })}
-                                />
-                                <Typography
-                                    label={__('Typography', 'smart-blocks')}
-                                    values={headerTitleTypography}
-                                    onChange={(headerTitleTypography) => setAttributes({ headerTitleTypography })}
-                                    device={device}
-                                    setDevice={setDevice} />
-                            </PanelBody>
-                        )}
-                        <PanelBody
-                            title={__('Category', 'smart-blocks')}
-                            initialOpen={false}
-                        >
-                            <Typography
-                                label={__('Typography', 'smart-blocks')}
-                                values={categoryTypography}
-                                onChange={(categoryTypography) => setAttributes({ categoryTypography })}
-                                device={device}
-                                setDevice={setDevice} />
-                            <Tabs>
-                                <div tabTitle={__("Normal", 'smart-blocks')}>
+                    <div className="sb-panel-tab-fields">
+                        {'layout' === activeTab && (
+                            <>
+                                {headerTitle && (
+                                    <PanelBody
+                                        title={__('Header', 'smart-blocks')}
+                                        initialOpen={false}
+                                    >
+                                        <Select
+                                            label={__('Style', 'smart-blocks')}
+                                            value={headerStyle}
+                                            onChange={(headerStyle) => setAttributes({ headerStyle })}
+                                            options={[
+                                                { value: 'sb-title-style1', label: __('Style 1', 'smart-blocks') },
+                                                { value: 'sb-title-style2', label: __('Style 2', 'smart-blocks') },
+                                                { value: 'sb-title-style3', label: __('Style 3', 'smart-blocks') },
+                                                { value: 'sb-title-style4', label: __('Style 4', 'smart-blocks') }
+                                            ]}
+                                        />
+                                    </PanelBody>
+                                )}
+                                <PanelBody
+                                    title={__('Content Filter', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <Select
+                                        label={__('Source', 'smart-blocks')}
+                                        value={postsPostType}
+                                        onChange={(postsPostType) => setAttributes({ postsPostType })}
+                                        options={allPostTypes}
+                                    />
+
+                                    <QueryTaxonomyControls
+                                        value={categories}
+                                        postType={postsPostType}
+                                        onChange={(categories) => setAttributes({ categories })}
+                                    />
+
+                                    <TokenMultiSelectControl
+                                        label={__('Exclude Posts', 'smart-blocks')}
+                                        options={allPostsSelect}
+                                        value={excludePosts}
+                                        onChange={(excludePosts) => setAttributes({ excludePosts })}
+                                    />
+
+                                    <Select
+                                        label={__('Order By', 'smart-blocks')}
+                                        value={orderBy}
+                                        onChange={(orderBy) => setAttributes({ orderBy })}
+                                        options={[
+                                            { value: 'date', label: __('Date', 'smart-blocks') },
+                                            { value: 'modified', label: __('Last Modified Date', 'smart-blocks') },
+                                            { value: 'rand', label: __('Rand', 'smart-blocks') },
+                                            { value: 'comment_count', label: __('Comment Count', 'smart-blocks') },
+                                            { value: 'title', label: __('Title', 'smart-blocks') },
+                                            { value: 'author', label: __('Show Post Author', 'smart-blocks') }
+                                        ]}
+                                    />
+
+                                    <Select
+                                        label={__('Order', 'smart-blocks')}
+                                        value={order}
+                                        onChange={(order) => setAttributes({ order })}
+                                        options={[
+                                            { value: 'desc', label: __('Descending', 'smart-blocks') },
+                                            { value: 'asc', label: __('Ascending', 'smart-blocks') }
+                                        ]}
+                                    />
+
+                                    <CustomRangeControl
+                                        label={__('Offset', 'smart-blocks')}
+                                        value={offset}
+                                        onChange={(offset) => setAttributes({ offset })}
+                                        min={0}
+                                        max={10}
+                                    />
+                                </PanelBody>
+                                <PanelBody
+                                    title={__('Post Block', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <Select
+                                        label={__('Image Size', 'smart-blocks')}
+                                        options={getImageSizeOptions()}
+                                        value={postImageSize}
+                                        onChange={(postImageSize) => setAttributes({ postImageSize })}
+                                    />
+                                    <CustomRangeControl
+                                        label={__('Image Height (%)', 'smart-blocks')}
+                                        value={postImageHeight}
+                                        onChange={(postImageHeight) => setAttributes({ postImageHeight })}
+                                        min={30}
+                                        max={150}
+                                    />
+                                    <ToggleControl
+                                        label={__('Show Post Author', 'smart-blocks')}
+                                        checked={postPostAuthor}
+                                        onChange={(postPostAuthor) => setAttributes({ postPostAuthor })}
+                                    />
+                                    <ToggleControl
+                                        label={__('Show Post Date', 'smart-blocks')}
+                                        checked={postPostDate}
+                                        onChange={(postPostDate) => setAttributes({ postPostDate })}
+                                    />
+                                    <ToggleControl
+                                        label={__('Show Post Comments', 'smart-blocks')}
+                                        checked={postPostComments}
+                                        onChange={(postPostComments) => setAttributes({ postPostComments })}
+                                    />
+                                    <ToggleControl
+                                        label={__('Show Post Category', 'smart-blocks')}
+                                        checked={postPostCategory}
+                                        onChange={(postPostCategory) => setAttributes({ postPostCategory })}
+                                    />
+                                </PanelBody>
+                                <PanelBody
+                                    title={__('Additional Settings', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <CustomRangeControl
+                                        label={__('Image Border Radius(px)', 'smart-blocks')}
+                                        value={imageBorderRadius}
+                                        onChange={(imageBorderRadius) => setAttributes({ imageBorderRadius })}
+                                        min={0}
+                                        max={30}
+                                    />
+                                    <Select
+                                        label={__('Date Format', 'smart-blocks')}
+                                        value={dateFormat}
+                                        onChange={(dateFormat) => setAttributes({ dateFormat })}
+                                        options={[
+                                            { value: 'relative_format', label: __('Relative Format (Ago)', 'smart-blocks') },
+                                            { value: 'default', label: __('WordPress Default Format', 'smart-blocks') },
+                                            { value: 'custom', label: __('Custom Format', 'smart-blocks') }
+                                        ]}
+                                    />
+                                    {dateFormat == 'custom' && (
+                                        <TextControl
+                                            label={__('Custom Date Format', 'smart-blocks')}
+                                            value={customDateFormat}
+                                            onChange={(customDateFormat) => setAttributes({ customDateFormat })}
+                                        />
+                                    )}
+                                </PanelBody>
+                            </>
+                        ) || 'style' === activeTab && (
+                            <>
+                                {headerTitle && (
+                                    <PanelBody
+                                        title={__('Header Title', 'smart-blocks')}
+                                        initialOpen={false}
+                                    >
+                                        <Color
+                                            label={__('Color', 'smart-blocks')}
+                                            enableAlpha
+                                            value={headerColor}
+                                            onChange={(headerColor) => setAttributes({ headerColor })}
+                                        />
+                                        <Color
+                                            label={__('Short Border Color', 'smart-blocks')}
+                                            enableAlpha
+                                            value={headerShortBorderColor}
+                                            onChange={(headerShortBorderColor) => setAttributes({ headerShortBorderColor })}
+                                        />
+                                        <Color
+                                            label={__('Long Border Color', 'smart-blocks')}
+                                            enableAlpha
+                                            value={headerLongBorderColor}
+                                            onChange={(headerLongBorderColor) => setAttributes({ headerLongBorderColor })}
+                                        />
+                                        <Typography
+                                            label={__('Typography', 'smart-blocks')}
+                                            values={headerTitleTypography}
+                                            onChange={(headerTitleTypography) => setAttributes({ headerTitleTypography })} />
+                                    </PanelBody>
+                                )}
+                                <PanelBody
+                                    title={__('Category', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <Typography
+                                        label={__('Typography', 'smart-blocks')}
+                                        values={categoryTypography}
+                                        onChange={(categoryTypography) => setAttributes({ categoryTypography })} />
+                                    <Tabs>
+                                        <div tabTitle={__("Normal", 'smart-blocks')}>
+                                            <Color
+                                                label={__('Background Color', 'smart-blocks')}
+                                                enableAlpha
+                                                value={categoryBackgroundColor}
+                                                onChange={(categoryBackgroundColor) => setAttributes({ categoryBackgroundColor })}
+                                            />
+                                            <Color
+                                                label={__('Text Color', 'smart-blocks')}
+                                                enableAlpha
+                                                value={categoryTextColor}
+                                                onChange={(categoryTextColor) => setAttributes({ categoryTextColor })}
+                                            />
+                                        </div>
+                                        <div tabTitle={__("Hover", 'smart-blocks')}>
+                                            <Color
+                                                label={__('Background Color', 'smart-blocks')}
+                                                enableAlpha
+                                                value={categoryBackgroundHoverColor}
+                                                onChange={(categoryBackgroundHoverColor) => setAttributes({ categoryBackgroundHoverColor })}
+                                            />
+                                            <Color
+                                                label={__('Text Color', 'smart-blocks')}
+                                                enableAlpha
+                                                value={categoryTextHoverColor}
+                                                onChange={(categoryTextHoverColor) => setAttributes({ categoryTextHoverColor })}
+                                            />
+                                        </div>
+                                    </Tabs>
+                                </PanelBody>
+                                <PanelBody
+                                    title={__('Title', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <Color
+                                        label={__('Title Color', 'smart-blocks')}
+                                        enableAlpha
+                                        value={titleColor}
+                                        onChange={(titleColor) => setAttributes({ titleColor })}
+                                    />
+                                    <Color
+                                        label={__('Title Color(Hover)', 'smart-blocks')}
+                                        enableAlpha
+                                        value={titleHoverColor}
+                                        onChange={(titleHoverColor) => setAttributes({ titleHoverColor })}
+                                    />
+                                    <Typography
+                                        label={__('Typography', 'smart-blocks')}
+                                        values={postTypography}
+                                        onChange={(postTypography) => setAttributes({ postTypography })} />
+                                    <Dimension
+                                        label={__('Margin', 'smart-blocks')}
+                                        values={postTitleMargin}
+                                        onChange={(postTitleMargin) => setAttributes({ postTitleMargin })}
+                                        responsive={!0}
+                                    />
+                                </PanelBody>
+                                <PanelBody
+                                    title={__('Metas', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <Color
+                                        label={__('Color', 'smart-blocks')}
+                                        enableAlpha
+                                        value={postMetasColor}
+                                        onChange={(postMetasColor) => setAttributes({ postMetasColor })}
+                                    />
+                                    <Typography
+                                        label={__('Typography', 'smart-blocks')}
+                                        values={metasTypography}
+                                        onChange={(metasTypography) => setAttributes({ metasTypography })} />
+                                </PanelBody>
+                            </>
+                        ) || 'advanced' === activeTab && (
+                            <>
+                                <PanelBody
+                                    title={__('Layout', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <Dimension
+                                        label={__('Margin', 'smart-blocks')}
+                                        min="0"
+                                        max="100"
+                                        values={blockMargin}
+                                        onChange={(blockMargin) => setAttributes({ blockMargin })}
+                                        responsive={!0}
+                                    />
+                                    <Dimension
+                                        label={__('Padding', 'smart-blocks')}
+                                        min="0"
+                                        max="100"
+                                        values={blockPadding}
+                                        onChange={(blockPadding) => setAttributes({ blockPadding })}
+                                        responsive={!0}
+                                    />
+                                </PanelBody>
+
+                                <PanelBody
+                                    title={__('Border', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <Tabs>
+                                        <div tabTitle={__("Normal", 'smart-blocks')}>
+                                            <Border
+                                                value={borderNormal}
+                                                setValue={(borderNormal) => setAttributes({ borderNormal })}
+                                            />
+                                            {borderNormal && (
+                                                <Color
+                                                    label={__('Border Color', 'smart-blocks')}
+                                                    enableAlpha
+                                                    value={borderNormalColor}
+                                                    onChange={(borderNormalColor) => setAttributes({ borderNormalColor })}
+                                                />
+                                            )}
+                                            <Dimension
+                                                label={__('Border Width', 'smart-blocks')}
+                                                values={borderNormalWidth}
+                                                onChange={(borderNormalWidth) => setAttributes({ borderNormalWidth })}
+                                                units={['px', 'em']}
+                                            />
+                                            <Dimension
+                                                label={__('Border Radius', 'smart-blocks')}
+                                                values={borderNormalRadius}
+                                                onChange={(borderNormalRadius) => setAttributes({ borderNormalRadius })}
+                                            />
+                                            <BoxShadow
+                                                values={borderNormalBoxShadow}
+                                                onChange={(borderNormalBoxShadow) => setAttributes({ borderNormalBoxShadow })}
+                                            />
+                                        </div>
+                                        <div tabTitle={__("Hover", 'smart-blocks')}>
+                                            <Border
+                                                value={borderHover}
+                                                setValue={(borderHover) => setAttributes({ borderHover })}
+                                            />
+                                            {borderHover && (
+                                                <Color
+                                                    label={__('Border Color', 'smart-blocks')}
+                                                    enableAlpha
+                                                    value={borderHoverColor}
+                                                    onChange={(borderHoverColor) => setAttributes({ borderHoverColor })}
+                                                />
+                                            )}
+                                            <Dimension
+                                                label={__('Border Width', 'smart-blocks')}
+                                                values={borderHoverWidth}
+                                                onChange={(borderHoverWidth) => setAttributes({ borderHoverWidth })}
+                                                units={['px', 'em']}
+                                            />
+                                            <Dimension
+                                                label={__('Border Radius', 'smart-blocks')}
+                                                values={borderHoverRadius}
+                                                onChange={(borderHoverRadius) => setAttributes({ borderHoverRadius })}
+                                            />
+                                            <BoxShadow
+                                                values={borderHoverBoxShadow}
+                                                onChange={(borderHoverBoxShadow) => setAttributes({ borderHoverBoxShadow })}
+                                            />
+                                        </div>
+                                    </Tabs>
+                                </PanelBody>
+                                <PanelBody
+                                    title={__('Background', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
                                     <Color
                                         label={__('Background Color', 'smart-blocks')}
                                         enableAlpha
-                                        value={categoryBackgroundColor}
-                                        onChange={(categoryBackgroundColor) => setAttributes({ categoryBackgroundColor })}
+                                        value={blockBgColor}
+                                        onChange={(blockBgColor) => setAttributes({ blockBgColor })}
                                     />
-                                    <Color
-                                        label={__('Text Color', 'smart-blocks')}
-                                        enableAlpha
-                                        value={categoryTextColor}
-                                        onChange={(categoryTextColor) => setAttributes({ categoryTextColor })}
-                                    />
-                                </div>
-                                <div tabTitle={__("Hover", 'smart-blocks')}>
-                                    <Color
-                                        label={__('Background Color', 'smart-blocks')}
-                                        enableAlpha
-                                        value={categoryBackgroundHoverColor}
-                                        onChange={(categoryBackgroundHoverColor) => setAttributes({ categoryBackgroundHoverColor })}
-                                    />
-                                    <Color
-                                        label={__('Text Color', 'smart-blocks')}
-                                        enableAlpha
-                                        value={categoryTextHoverColor}
-                                        onChange={(categoryTextHoverColor) => setAttributes({ categoryTextHoverColor })}
-                                    />
-                                </div>
-                            </Tabs>
-                        </PanelBody>
-                        <PanelBody
-                            title={__('Title', 'smart-blocks')}
-                            initialOpen={false}
-                        >
-                            <Color
-                                label={__('Title Color', 'smart-blocks')}
-                                enableAlpha
-                                value={titleColor}
-                                onChange={(titleColor) => setAttributes({ titleColor })}
-                            />
-                            <Color
-                                label={__('Title Color(Hover)', 'smart-blocks')}
-                                enableAlpha
-                                value={titleHoverColor}
-                                onChange={(titleHoverColor) => setAttributes({ titleHoverColor })}
-                            />
-                            <Typography
-                                label={__('Typography', 'smart-blocks')}
-                                values={postTypography}
-                                onChange={(postTypography) => setAttributes({ postTypography })}
-                                device={device}
-                                setDevice={setDevice} />
-                            <Dimension
-                                label={__('Margin', 'smart-blocks')}
-                                values={postTitleMargin}
-                                onChange={(postTitleMargin) => setAttributes({ postTitleMargin })}
-                                device={device}
-                                setDevice={setDevice}
-                            />
-                        </PanelBody>
-                        <PanelBody
-                            title={__('Metas', 'smart-blocks')}
-                            initialOpen={false}
-                        >
-                            <Color
-                                label={__('Color', 'smart-blocks')}
-                                enableAlpha
-                                value={postMetasColor}
-                                onChange={(postMetasColor) => setAttributes({ postMetasColor })}
-                            />
-                            <Typography
-                                label={__('Typography', 'smart-blocks')}
-                                values={metasTypography}
-                                onChange={(metasTypography) => setAttributes({ metasTypography })}
-                                device={device}
-                                setDevice={setDevice} />
-                        </PanelBody>
+                                </PanelBody>
+                            </>
+                        )}
                     </div>
-                    <div tabTitle={__("Advanced", 'smart-blocks')}>
-                        <PanelBody
-                            title={__('Layout', 'smart-blocks')}
-                            initialOpen={false}
-                        >
-                            <Dimension
-                                label={__('Margin', 'smart-blocks')}
-                                min="0"
-                                max="100"
-                                values={blockMargin}
-                                onChange={(blockMargin) => setAttributes({ blockMargin })}
-                                device={device}
-                                setDevice={setDevice}
-                            />
-                            <Dimension
-                                label={__('Padding', 'smart-blocks')}
-                                min="0"
-                                max="100"
-                                values={blockPadding}
-                                onChange={(blockPadding) => setAttributes({ blockPadding })}
-                                device={device}
-                                setDevice={setDevice}
-                            />
-                        </PanelBody>
-
-                        <PanelBody
-                            title={__('Border', 'smart-blocks')}
-                            initialOpen={false}
-                        >
-                            <Tabs>
-                                <div tabTitle={__("Normal", 'smart-blocks')}>
-                                    <Border
-                                        value={borderNormal}
-                                        setValue={(borderNormal) => setAttributes({ borderNormal })}
-                                    />
-                                    {borderNormal && (
-                                        <Color
-                                            label={__('Border Color', 'smart-blocks')}
-                                            enableAlpha
-                                            value={borderNormalColor}
-                                            onChange={(borderNormalColor) => setAttributes({ borderNormalColor })}
-                                        />
-                                    )}
-                                    <Dimension
-                                        label={__('Border Width', 'smart-blocks')}
-                                        values={borderNormalWidth}
-                                        onChange={(borderNormalWidth) => setAttributes({ borderNormalWidth })}
-                                        units={['px', 'em']}
-                                    />
-                                    <Dimension
-                                        label={__('Border Radius', 'smart-blocks')}
-                                        values={borderNormalRadius}
-                                        onChange={(borderNormalRadius) => setAttributes({ borderNormalRadius })}
-                                    />
-                                    <BoxShadow
-                                        values={borderNormalBoxShadow}
-                                        onChange={(borderNormalBoxShadow) => setAttributes({ borderNormalBoxShadow })}
-                                    />
-                                </div>
-                                <div tabTitle={__("Hover", 'smart-blocks')}>
-                                    <Border
-                                        value={borderHover}
-                                        setValue={(borderHover) => setAttributes({ borderHover })}
-                                    />
-                                    {borderHover && (
-                                        <Color
-                                            label={__('Border Color', 'smart-blocks')}
-                                            enableAlpha
-                                            value={borderHoverColor}
-                                            onChange={(borderHoverColor) => setAttributes({ borderHoverColor })}
-                                        />
-                                    )}
-                                    <Dimension
-                                        label={__('Border Width', 'smart-blocks')}
-                                        values={borderHoverWidth}
-                                        onChange={(borderHoverWidth) => setAttributes({ borderHoverWidth })}
-                                        units={['px', 'em']}
-                                    />
-                                    <Dimension
-                                        label={__('Border Radius', 'smart-blocks')}
-                                        values={borderHoverRadius}
-                                        onChange={(borderHoverRadius) => setAttributes({ borderHoverRadius })}
-                                    />
-                                    <BoxShadow
-                                        values={borderHoverBoxShadow}
-                                        onChange={(borderHoverBoxShadow) => setAttributes({ borderHoverBoxShadow })}
-                                    />
-                                </div>
-                            </Tabs>
-                        </PanelBody>
-                        <PanelBody
-                            title={__('Background', 'smart-blocks')}
-                            initialOpen={false}
-                        >
-                            <Color
-                                label={__('Background Color', 'smart-blocks')}
-                                enableAlpha
-                                value={blockBgColor}
-                                onChange={(blockBgColor) => setAttributes({ blockBgColor })}
-                            />
-                        </PanelBody>
-                    </div>
-                </PanelTabs>
+                </div>
             </InspectorControls>
             <div id={id}>
                 <div {...useBlockProps({

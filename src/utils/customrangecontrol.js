@@ -1,46 +1,27 @@
 import { __ } from '@wordpress/i18n';
-import { DesktopIcon, TabletIcon, PhoneIcon } from './svgicons';
+import ResponsiveDropdown from './responsivedropdown';
+import {useSelect} from '@wordpress/data';
 
-const CustomRangeControl = ({ label, min = 1, max = 20, steps, value, onChange, useUnit, device, setDevice }) => {
-    const onChangeHandler = (e) => {
-        value[device] = parseInt(e.target.value);
-        onChange({ ...value })
-    };
+const CustomRangeControl = ({ label, min = 1, max = 20, steps, value, onChange, useUnit, responsive }) => {
+
     const onChangeHandlerSingle = (e) => {
         onChange(parseInt(e.target.value))
     };
-    return <div className={`sb-field-range sb-field ${device ? 'sb-responsive' : ''}`}>
+
+    const getView = useSelect(select => {
+        const { getView } = select( 'smart-blocks/data' );
+        const { __experimentalGetPreviewDeviceType } = select( 'core/edit-post' ) ? select( 'core/edit-post' ) : false;
+        return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+    }, []);
+
+    return <div className={`sb-field-range sb-field ${responsive ? 'sb-responsive' : ''}`}>
         <div className="sb-d-flex sb-align-center">
             {label &&
                 (<div>
                     <label htmlFor="input">{label}</label>
                 </div>)
             }
-            {device && (
-                <div className="sb-device sb-ml-10 active-md">
-                    <button
-                        title={__('Desktop', 'smart-blocks')}
-                        className={`sb-device-desktop ${device === 'lg' ? " active" : ""}`}
-                        onClick={() => { setDevice('lg') }}
-                    >
-                        <DesktopIcon />
-                    </button>
-                    <button
-                        title={__('Tablet', 'smart-blocks')}
-                        className={`sb-device-tablet ${device === 'md' ? " active" : ""}`}
-                        onClick={() => { setDevice('md') }}
-                    >
-                        <TabletIcon />
-                    </button>
-                    <button
-                        title={__('Phone', 'smart-blocks')}
-                        className={`sb-device-mobile ${device === 'sm' ? " active" : ""}`}
-                        onClick={() => { setDevice('sm') }}
-                    >
-                        <PhoneIcon />
-                    </button>
-                </div>
-            )}
+            {responsive && (<ResponsiveDropdown/>)}
             {useUnit && (
                 <div class="sb-unit-btn-group sb-ml-auto">
                     <button
@@ -65,53 +46,71 @@ const CustomRangeControl = ({ label, min = 1, max = 20, steps, value, onChange, 
             )}
         </div>
         <div className="nxp-field-child">
-            {device ?
+            {responsive ?
                 (<>
-                    {device == 'sm' && (
+                    {getView == 'Mobile' && (
                         <div className="sb-input-range">
                             <input type="range"
                                 min={min}
                                 max={max}
-                                value={value.sm}
+                                value={value?.sm}
                                 step={steps ? steps : 1}
-                                onChange={onChangeHandler}
+                                onChange={(e) => {
+                                    value['sm'] = parseInt(e.target.value);
+                                    onChange({ ...value })
+                                }}
                             />
                             <input type="number"
                                 step={steps ? steps : 1}
-                                onChange={onChangeHandler}
-                                value={value.sm}
+                                onChange={(e) => {
+                                    value['sm'] = parseInt(e.target.value);
+                                    onChange({ ...value })
+                                }}
+                                value={value?.sm}
                             />
                         </div>
                     )}
-                    {device == 'md' && (
+                    {getView == 'Tablet' && (
                         <div className="sb-input-range">
                             <input type="range"
                                 min={min}
                                 max={max}
-                                value={value.md}
+                                value={value?.md}
                                 step={steps ? steps : 1}
-                                onChange={onChangeHandler}
+                                onChange={(e) => {
+                                    value['md'] = parseInt(e.target.value);
+                                    onChange({ ...value })
+                                }}
                             />
                             <input type="number"
                                 step={steps ? steps : 1}
-                                onChange={onChangeHandler}
-                                value={value.md}
+                                onChange={(e) => {
+                                    value['md'] = parseInt(e.target.value);
+                                    onChange({ ...value })
+                                }}
+                                value={value?.md}
                             />
                         </div>
                     )}
-                    {device == 'lg' && (
+                    {getView == 'Desktop' && (
                         <div className="sb-input-range">
                             <input type="range"
                                 min={min}
                                 max={max}
-                                value={value.lg}
+                                value={value?.lg}
                                 step={steps ? steps : 1}
-                                onChange={onChangeHandler}
+                                onChange={(e) => {
+                                    value['lg'] = parseInt(e.target.value);
+                                    onChange({ ...value })
+                                }}
                             />
                             <input type="number"
                                 step={steps ? steps : 1}
-                                onChange={onChangeHandler}
-                                value={value.lg}
+                                onChange={(e) => {
+                                    value['lg'] = parseInt(e.target.value);
+                                    onChange({ ...value })
+                                }}
+                                value={value?.lg}
                             />
                         </div>
                     )}

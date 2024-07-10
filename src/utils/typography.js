@@ -3,7 +3,10 @@ import { Tooltip, Dropdown, Dashicon } from '@wordpress/components';
 import GoogleFontsList from './googlefonts.json';
 import { useState, useEffect } from '@wordpress/element';
 import { DesktopIcon, TabletIcon, PhoneIcon, ClearIcon } from './svgicons';
-const Typography = ({ label, values, onChange, device, setDevice }) => {
+import ResponsiveDropdown from './responsivedropdown';
+import {useSelect} from '@wordpress/data';
+
+const Typography = ({ label, values, onChange }) => {
 	useEffect(() => {
 		setTimeout(() => {
 			onChange({ ...values });
@@ -60,22 +63,12 @@ const Typography = ({ label, values, onChange, device, setDevice }) => {
 		values['fontSize']['unit'] = e.target.value;
 		onChange({ ...values })
 	}
-	const onChangeFontSize = (e) => {
-		values['fontSize'][device] = e.target.value;
-		onChange({ ...values })
-	}
-	const onChangeLetterSpacing = (e) => {
-		values['letterSpacing'][device] = e.target.value;
-		onChange({ ...values })
-	}
+
 	const onClickLetterSpacingUnit = (e) => {
 		values['letterSpacing']['unit'] = e.target.value;
 		onChange({ ...values })
 	}
-	const onChangeLineHeight = (e) => {
-		values['lineHeight'][device] = e.target.value;
-		onChange({ ...values })
-	}
+
 	const onClickLineHeightUnit = (e) => {
 		values['lineHeight']['unit'] = e.target.value;
 		onChange({ ...values })
@@ -106,6 +99,13 @@ const Typography = ({ label, values, onChange, device, setDevice }) => {
 			}
 		});
 	}
+
+	const getView = useSelect(select => {
+        const { getView } = select( 'smart-blocks/data' );
+        const { __experimentalGetPreviewDeviceType } = select( 'core/edit-post' ) ? select( 'core/edit-post' ) : false;
+        return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+    }, []);
+
 	return <>
 		<div className="sb-typography-options">
 			<div className="sb-field sb-flex sb-inline-block sb-typography-option-actions">
@@ -206,29 +206,7 @@ const Typography = ({ label, values, onChange, device, setDevice }) => {
 										<div>
 											<label for="input">{__('Font Size', 'smart-blocks')}</label>
 										</div>
-										<div className="sb-device sb-ml-10 active-md">
-											<button
-												title={__('Desktop', 'smart-blocks')}
-												className={`sb-device-desktop ${device === 'lg' ? " active" : ""}`}
-												onClick={() => { setDevice('lg') }}
-											>
-												<DesktopIcon />
-											</button>
-											<button
-												title={__('Tablet', 'smart-blocks')}
-												className={`sb-device-tablet ${device === 'md' ? " active" : ""}`}
-												onClick={() => { setDevice('md') }}
-											>
-												<TabletIcon />
-											</button>
-											<button
-												title={__('Phone', 'smart-blocks')}
-												className={`sb-device-mobile ${device === 'sm' ? " active" : ""}`}
-												onClick={() => { setDevice('sm') }}
-											>
-												<PhoneIcon />
-											</button>
-										</div>
+										<ResponsiveDropdown/>
 										<div className="sb-unit-btn-group sb-ml-auto sb-mb-5">
 											<button
 												className={`${values['fontSize']['unit'] === 'px' ? "active" : ""}`}
@@ -251,46 +229,64 @@ const Typography = ({ label, values, onChange, device, setDevice }) => {
 										</div>
 									</div>
 									<div className="nxp-field-child">
-										{device == 'lg' && (<div className="sb-input-range">
+										{getView == 'Desktop' && (<div className="sb-input-range">
 											<input type="range"
 												min="1"
 												max="150"
 												step="1"
 												value={values['fontSize']['lg']}
-												onChange={onChangeFontSize} />
+												onChange={(e) => {
+													values['fontSize']['lg'] = e.target.value;
+													onChange({ ...values })
+												}} />
 											<input
 												type="number"
 												step="1"
 												value={values['fontSize']['lg']}
-												onChange={onChangeFontSize}
+												onChange={(e) => {
+													values['fontSize']['lg'] = e.target.value;
+													onChange({ ...values })
+												}}
 											/>
 										</div>)}
-										{device == 'md' && (<div className="sb-input-range">
+										{getView == 'Tablet' && (<div className="sb-input-range">
 											<input type="range"
 												min="1"
 												max="150"
 												step="1"
 												value={values['fontSize']['md']}
-												onChange={onChangeFontSize} />
+												onChange={(e) => {
+													values['fontSize']['md'] = e.target.value;
+													onChange({ ...values })
+												}} />
 											<input
 												type="number"
 												step="1"
 												value={values['fontSize']['md']}
-												onChange={onChangeFontSize}
+												onChange={(e) => {
+													values['fontSize']['md'] = e.target.value;
+													onChange({ ...values })
+												}}
 											/>
 										</div>)}
-										{device == 'sm' && (<div className="sb-input-range">
+										{getView == 'Mobile' && (<div className="sb-input-range">
 											<input type="range"
 												min="1"
 												max="150"
 												step="1"
 												value={values['fontSize']['sm']}
-												onChange={onChangeFontSize} />
+												onChange={(e) => {
+													values['fontSize']['sm'] = e.target.value;
+													onChange({ ...values })
+												}} />
 											<input
 												type="number"
 												step="1"
 												value={values['fontSize']['sm']}
-												onChange={onChangeFontSize}
+												onChange={(e) => {
+													values['fontSize']['sm'] = e.target.value;
+													onChange({ ...values })
+												}}
 											/>
 										</div>)}
 									</div>
@@ -300,29 +296,7 @@ const Typography = ({ label, values, onChange, device, setDevice }) => {
 										<div>
 											<label for="input">{__('Letter Spacing', 'smart-blocks')}</label>
 										</div>
-										<div className="sb-device sb-ml-10 active-md">
-											<button
-												title={__('Desktop', 'smart-blocks')}
-												className={`sb-device-desktop ${device === 'lg' ? " active" : ""}`}
-												onClick={() => { setDevice('lg') }}
-											>
-												<DesktopIcon />
-											</button>
-											<button
-												title={__('Tablet', 'smart-blocks')}
-												className={`sb-device-tablet ${device === 'md' ? " active" : ""}`}
-												onClick={() => { setDevice('md') }}
-											>
-												<TabletIcon />
-											</button>
-											<button
-												title={__('Phone', 'smart-blocks')}
-												className={`sb-device-mobile ${device === 'sm' ? " active" : ""}`}
-												onClick={() => { setDevice('sm') }}
-											>
-												<PhoneIcon />
-											</button>
-										</div>
+										<ResponsiveDropdown/>
 										<div className="sb-unit-btn-group sb-ml-auto sb-mb-5">
 											<button
 												className={`${values['letterSpacing']['unit'] === 'px' ? "active" : ""}`}
@@ -345,46 +319,64 @@ const Typography = ({ label, values, onChange, device, setDevice }) => {
 										</div>
 									</div>
 									<div className="nxp-field-child">
-										{device == 'lg' && (<div className="sb-input-range">
+										{getView == 'Desktop' && (<div className="sb-input-range">
 											<input type="range"
 												min="-10"
 												max="20"
 												step="0.1"
 												value={values['letterSpacing']['lg']}
-												onChange={onChangeLetterSpacing} />
+												onChange={(e) => {
+													values['letterSpacing']['lg'] = e.target.value;
+													onChange({ ...values })
+												}} />
 											<input
 												type="number"
 												step="0.1"
 												value={values['letterSpacing']['lg']}
-												onChange={onChangeLetterSpacing}
+												onChange={(e) => {
+													values['letterSpacing']['lg'] = e.target.value;
+													onChange({ ...values })
+												}}
 											/>
 										</div>)}
-										{device == 'md' && (<div className="sb-input-range">
+										{getView == 'Tablet' && (<div className="sb-input-range">
 											<input type="range"
 												min="-10"
 												max="20"
 												step="0.1"
 												value={values['letterSpacing']['md']}
-												onChange={onChangeLetterSpacing} />
+												onChange={(e) => {
+													values['letterSpacing']['md'] = e.target.value;
+													onChange({ ...values })
+												}} />
 											<input
 												type="number"
 												step="0.1"
 												value={values['letterSpacing']['md']}
-												onChange={onChangeLetterSpacing}
+												onChange={(e) => {
+													values['letterSpacing']['md'] = e.target.value;
+													onChange({ ...values })
+												}}
 											/>
 										</div>)}
-										{device == 'sm' && (<div className="sb-input-range">
+										{getView == 'Mobile' && (<div className="sb-input-range">
 											<input type="range"
 												min="-10"
 												max="20"
 												step="0.1"
 												value={values['letterSpacing']['sm']}
-												onChange={onChangeLetterSpacing} />
+												onChange={(e) => {
+													values['letterSpacing']['sm'] = e.target.value;
+													onChange({ ...values })
+												}} />
 											<input
 												type="number"
 												step="0.1"
 												value={values['letterSpacing']['sm']}
-												onChange={onChangeLetterSpacing}
+												onChange={(e) => {
+													values['letterSpacing']['sm'] = e.target.value;
+													onChange({ ...values })
+												}}
 											/>
 										</div>)}
 									</div>
@@ -394,29 +386,7 @@ const Typography = ({ label, values, onChange, device, setDevice }) => {
 										<div>
 											<label for="input">{__('Line Height', 'smart-blocks')}</label>
 										</div>
-										<div className="sb-device sb-ml-10 active-md">
-											<button
-												title={__('Desktop', 'smart-blocks')}
-												className={`sb-device-desktop ${device === 'lg' ? " active" : ""}`}
-												onClick={() => { setDevice('lg') }}
-											>
-												<DesktopIcon />
-											</button>
-											<button
-												title={__('Tablet', 'smart-blocks')}
-												className={`sb-device-tablet ${device === 'md' ? " active" : ""}`}
-												onClick={() => { setDevice('md') }}
-											>
-												<TabletIcon />
-											</button>
-											<button
-												title={__('Phone', 'smart-blocks')}
-												className={`sb-device-mobile ${device === 'sm' ? " active" : ""}`}
-												onClick={() => { setDevice('sm') }}
-											>
-												<PhoneIcon />
-											</button>
-										</div>
+										<ResponsiveDropdown/>
 										<div className="sb-unit-btn-group sb-ml-auto sb-mb-5">
 											<button
 												className={`${values['lineHeight']['unit'] === 'px' ? "active" : ""}`}
@@ -439,46 +409,64 @@ const Typography = ({ label, values, onChange, device, setDevice }) => {
 										</div>
 									</div>
 									<div className="nxp-field-child">
-										{device == 'lg' && (<div className="sb-input-range">
+										{getView == 'Desktop' && (<div className="sb-input-range">
 											<input type="range"
 												min="1"
 												max="150"
 												step="1"
 												value={values['lineHeight']['lg']}
-												onChange={onChangeLineHeight} />
+												onChange={(e) => {
+													values['lineHeight']['lg'] = e.target.value;
+													onChange({ ...values })
+												}} />
 											<input
 												type="number"
 												step="1"
 												value={values['lineHeight']['lg']}
-												onChange={onChangeLineHeight}
+												onChange={(e) => {
+													values['lineHeight']['lg'] = e.target.value;
+													onChange({ ...values })
+												}}
 											/>
 										</div>)}
-										{device == 'md' && (<div className="sb-input-range">
+										{getView == 'Tablet' && (<div className="sb-input-range">
 											<input type="range"
 												min="1"
 												max="150"
 												step="1"
 												value={values['lineHeight']['md']}
-												onChange={onChangeLineHeight} />
+												onChange={(e) => {
+													values['lineHeight']['md'] = e.target.value;
+													onChange({ ...values })
+												}} />
 											<input
 												type="number"
 												step="1"
 												value={values['lineHeight']['md']}
-												onChange={onChangeLineHeight}
+												onChange={(e) => {
+													values['lineHeight']['md'] = e.target.value;
+													onChange({ ...values })
+												}}
 											/>
 										</div>)}
-										{device == 'sm' && (<div className="sb-input-range">
+										{getView == 'Mobile' && (<div className="sb-input-range">
 											<input type="range"
 												min="1"
 												max="150"
 												step="1"
 												value={values['lineHeight']['sm']}
-												onChange={onChangeLineHeight} />
+												onChange={(e) => {
+													values['lineHeight']['sm'] = e.target.value;
+													onChange({ ...values })
+												}} />
 											<input
 												type="number"
 												step="1"
 												value={values['lineHeight']['sm']}
-												onChange={onChangeLineHeight}
+												onChange={(e) => {
+													values['lineHeight']['sm'] = e.target.value;
+													onChange({ ...values })
+												}}
 											/>
 										</div>)}
 									</div>

@@ -1,11 +1,14 @@
 import { __ } from '@wordpress/i18n';
+import ResponsiveDropdown from './responsivedropdown';
 import { useState } from '@wordpress/element';
 import { DesktopIcon, TabletIcon, PhoneIcon } from './svgicons';
-const Dimension = ({ min, max, label, values, onChange, device, setDevice, units }) => {
+import {useSelect} from '@wordpress/data';
+
+const Dimension = ({ min, max, label, values, onChange, responsive, units }) => {
 	const [lock, setLock] = useState(true);
 	const sides = ["top", "right", "bottom", "left"];
 	const allUnits = units ? units : ["px", "em", "%"];
-	!values ? values = device ? {
+	!values ? values = responsive ? {
 		"sm": {
 			"top": undefined,
 			"left": undefined,
@@ -32,12 +35,20 @@ const Dimension = ({ min, max, label, values, onChange, device, setDevice, units
 		"bottom": undefined,
 		"unit": "px"
 	} : '';
+
 	const onClickUnit = (e) => {
 		values['unit'] = e.target.value;
 		onChange({ ...values })
 	}
+
+	const getView = useSelect(select => {
+        const { getView } = select( 'smart-blocks/data' );
+        const { __experimentalGetPreviewDeviceType } = select( 'core/edit-post' ) ? select( 'core/edit-post' ) : false;
+        return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+    }, []);
+
 	return <>
-		<div className={`sb-field-dimension sb-field sb-d-flex ${device ? 'sb-responsive' : ''}`}>
+		<div className={`sb-field-dimension sb-field sb-d-flex ${responsive ? 'sb-responsive' : ''}`}>
 			<div className="sb-d-flex sb-mb-10">
 				{label &&
 					(<div>
@@ -45,31 +56,9 @@ const Dimension = ({ min, max, label, values, onChange, device, setDevice, units
 					</div>)
 				}
 				{
-					device ? (
+					responsive ? (
 						<>
-							<div className="sb-device sb-ml-10 active-md">
-								<button
-									title={__('Desktop', 'smart-blocks')}
-									className={`sb-device-desktop ${device === 'lg' ? " active" : ""}`}
-									onClick={() => { setDevice('lg') }}
-								>
-									<DesktopIcon />
-								</button>
-								<button
-									title={__('Tablet', 'smart-blocks')}
-									className={`sb-device-tablet ${device === 'md' ? " active" : ""}`}
-									onClick={() => { setDevice('md') }}
-								>
-									<TabletIcon />
-								</button>
-								<button
-									title={__('Phone', 'smart-blocks')}
-									className={`sb-device-mobile ${device === 'sm' ? " active" : ""}`}
-									onClick={() => { setDevice('sm') }}
-								>
-									<PhoneIcon />
-								</button>
-							</div>
+							<ResponsiveDropdown/>
 							<div className="sb-unit-btn-group sb-ml-auto">
 								{allUnits.map((unit, index) => {
 									return <button
@@ -82,7 +71,7 @@ const Dimension = ({ min, max, label, values, onChange, device, setDevice, units
 							</div>
 							<div className="nxp-field-child">
 								<div className="sb-dimension-input-group hasLock">
-									{device == 'lg' && sides.map((side, index) => {
+									{getView == 'Desktop' && sides.map((side, index) => {
 										return <span>
 											<input type="number"
 												min={min}
@@ -98,7 +87,7 @@ const Dimension = ({ min, max, label, values, onChange, device, setDevice, units
 											</span>
 										</span>
 									})}
-									{device == 'md' && sides.map((side, index) => {
+									{getView == 'Tablet' && sides.map((side, index) => {
 										return <span>
 											<input type="number"
 												min={min}
@@ -114,7 +103,7 @@ const Dimension = ({ min, max, label, values, onChange, device, setDevice, units
 											</span>
 										</span>
 									})}
-									{device == 'sm' && sides.map((side, index) => {
+									{getView == 'Mobile' && sides.map((side, index) => {
 										return <span>
 											<input type="number"
 												min={min}
