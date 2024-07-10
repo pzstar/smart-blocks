@@ -19,7 +19,7 @@ class Smart_Blocks_Tile_Module_Two {
         $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
         $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-tile-block-wrap wp-block-smart-blocks']) . '>';
         $content_rendered .= $this->render_header();
-        $content_rendered .= '<div class="sb-tile-block ht-clearfix style2 space-10">';
+        $content_rendered .= '<div class="sb-tile-block sb-clearfix style2 space-10">';
         $args = $this->query_args();
         $query = new \WP_Query($args);
         while ($query->have_posts()):

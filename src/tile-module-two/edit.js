@@ -906,7 +906,7 @@ export default function Edit({ attributes, setAttributes }) {
                             placeholder={__('Heading...', 'smart-blocks')}
                         />
                     </h2>
-                    <div className="sb-tile-block ht-clearfix style2 space-10">
+                    <div className="sb-tile-block sb-clearfix style2 space-10">
                         {posts && posts.length > 0 && (
                             <div className="sb-width-50 sb-height-100 sb-thumb sb-left-col">
                                 {postInner(posts[Object.keys(posts)[0]], 'featured')}
