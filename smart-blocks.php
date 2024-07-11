@@ -159,6 +159,10 @@ if (!class_exists('Smart_Blocks')) {
             return array_merge(
                     $categories, array(
                 array(
+                    'slug' => 'smart-blocks-block-modules',
+                    'title' => esc_html__('SB Block Modules', 'smart-blocks')
+                ),
+                array(
                     'slug' => 'smart-blocks-magazine-modules',
                     'title' => esc_html__('SB Magazine Modules', 'smart-blocks')
                 ),

@@ -27,7 +27,7 @@ registerBlockType('smart-blocks/column', {
         "reusable": false,
         "html": false
     },
-    category: "smart-blocks-magazine-modules",
+    category: "smart-blocks-block-modules",
     attributes,
     title: __("Section Column", 'smart-blocks'),
     description: __("A single column within a Section block", 'smart-blocks'),

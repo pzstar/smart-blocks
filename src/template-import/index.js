@@ -24,7 +24,7 @@ registerBlockType('smart-blocks/template-import', {
     supports: {
         "html": false
     },
-    category: "smart-blocks-magazine-modules",
+    category: "smart-blocks-block-modules",
     title: __("Template Library", 'smart-blocks'),
     description: __("Import Blocks and Templates Library", 'smart-blocks'),
     keywords: ["Import", "Template", "Block", "Widget", "Section", "Patterns", "Reusable", "Library", "Tools"],

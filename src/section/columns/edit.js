@@ -39,10 +39,10 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		};
 	}, []);
 
-	const isLarger = useViewportMatch( 'large', '>=' );
-	const isLarge = useViewportMatch( 'large', '<=' );
-	const isSmall = useViewportMatch( 'small', '>=' );
-	const isSmaller = useViewportMatch( 'small', '<=' );
+	const isLarger = useViewportMatch('large', '>=');
+	const isLarge = useViewportMatch('large', '<=');
+	const isSmall = useViewportMatch('small', '>=');
+	const isSmaller = useViewportMatch('small', '<=');
 
 	useEffect( () => {
 		const unsubscribe = blockInit( clientId, defaultAttributes );
@@ -51,11 +51,11 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 
 	const [ dividerViewType, setDividerViewType ] = useState( 'top' );
 
-	let isDesktop = isLarger && ! isLarge && isSmall && ! isSmaller;
-	let isTablet = ! isLarger && ! isLarge && isSmall && ! isSmaller;
-	let isMobile = ! isLarger && ! isLarge && ! isSmall && ! isSmaller;
+	let isDesktop = isLarger && !isLarge && isSmall && !isSmaller;
+	let isTablet = !isLarger && !isLarge && isSmall && !isSmaller;
+	let isMobile = !isLarger && !isLarge && !isSmall && !isSmaller;
 
-	if ( isViewportAvailable && ! isMobile ) {
+	if (isViewportAvailable && !isMobile) {
 		isDesktop = isPreviewDesktop;
 		isTablet = isPreviewTablet;
 		isMobile = isPreviewMobile;

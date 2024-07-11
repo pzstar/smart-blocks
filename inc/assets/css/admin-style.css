@@ -937,3 +937,10 @@
 .wp-block-smart-blocks-columns-layout-control .wp-block-smart-blocks-column-layout.selected svg {
      fill: #6d7882;
 }
+
+
+
+section.sb-template-import {
+    padding: 20px;
+    text-align: center;
+}

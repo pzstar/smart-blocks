@@ -20,15 +20,17 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 	const [ isLibraryOpen, setIsLibraryOpen ] = useState( false );
 
     return <Tooltip text={__( 'Open Template Library', 'smart-blocks')} >
-        <Button isPrimary={!0} isLarge={!0} className={"smart-blocks-template-library"} onClick={() => setIsLibraryOpen( true )}>
-            <Dashicon icon="category"/>
-            {__("Template Library", "smart-blocks")}
-	    </Button>
-        {isLibraryOpen && (
-			<Library
-				clientId={ clientId }
-				close={ () => setIsLibraryOpen( false ) }
-			/>
-		)}
+	    <section class="sb-template-import">
+	        <Button isPrimary={!0} isLarge={!0} className={"smart-blocks-template-library"} onClick={() => setIsLibraryOpen( true )}>
+	            <Dashicon icon="category"/>
+	            {__("Template Library", "smart-blocks")}
+		    </Button>
+	        {isLibraryOpen && (
+				<Library
+					clientId={ clientId }
+					close={ () => setIsLibraryOpen( false ) }
+				/>
+			)}
+		</section>
 	</Tooltip>;		
 }

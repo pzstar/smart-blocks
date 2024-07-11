@@ -26,7 +26,7 @@ registerBlockType('smart-blocks/columns', {
         "align": [ 'wide', 'full' ],
         "html": false
     },
-    category: "smart-blocks-magazine-modules",
+    category: "smart-blocks-block-modules",
     attributes,
     title: __("Section", 'smart-blocks'),
     description: __("Add a Section block that displays content in multiple columns, then add whatever content blocks you’d like", 'smart-blocks'),

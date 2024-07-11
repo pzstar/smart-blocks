@@ -11,8 +11,8 @@ import { columnsIcon } from '../../helpers/icons.js';
 const LayoutSelector = ({ clientId, setupColumns }) => {
 	return (
 		<Placeholder
-			label={__('Select Layout', 'smart-blocks')}
-			instructions={__('Select a layout to start with, or make one yourself.', 'smart-blocks')}
+			label={__('Section', 'smart-blocks')}
+			instructions={__('Select a variation to start with', 'smart-blocks')}
 			icon={<Icon icon={columnsIcon} />}
 			isColumnLayout={true}
 			className="wp-block-sb-onboarding-component"
