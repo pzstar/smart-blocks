@@ -1,6 +1,3 @@
-/**
- * WordPress dependencies
- */
 import { __ } from '@wordpress/i18n';
 
 import {
@@ -30,26 +27,24 @@ import {
  */
 import { navigatorIcon } from '../../helpers/icons.js';
 
-const BlockNavigatorControl = ({ clientId }) => {
+const BlockNavigatorControl = ({clientId}) => {
 	const {
 		block,
 		selectedBlockClientId
-	} = useSelect( select => {
+	} = useSelect(select => {
 		const {
 			getSelectedBlockClientId,
 			getBlock
-		} = select( 'core/block-editor' );
+		} = select('core/block-editor');
 
 		return {
-			block: getBlock( clientId ),
+			block: getBlock(clientId),
 			selectedBlockClientId: getSelectedBlockClientId()
 		};
 	}, []);
 
-	const { selectBlock } = useDispatch( 'core/block-editor' );
-
-	const [ isOpen, setOpen ] = useState( false );
-
+	const {selectBlock} = useDispatch('core/block-editor');
+	const [isOpen, setOpen] = useState(false);
 	const BlockNavigation = __experimentalBlockNavigationList || __experimentalBlockNavigationTree;
 
 	return (
@@ -58,28 +53,28 @@ const BlockNavigatorControl = ({ clientId }) => {
 				<Toolbar>
 					<Button
 						className="components-toolbar__control"
-						label={ __( 'Open block navigator', 'smart-blocks' ) }
-						showTooltip={ true }
-						onClick={ () => setOpen( true ) }
-						icon={ navigatorIcon }
+						label={__('Open block navigator', 'smart-blocks')}
+						showTooltip={true}
+						onClick={() => setOpen(true)}
+						icon={navigatorIcon}
 					/>
 				</Toolbar>
 			</BlockControls>
 
-			{ isOpen && (
+			{isOpen && (
 				<Modal
-					title={ __( 'Block Navigator', 'smart-blocks' ) }
-					closeLabel={ __( 'Close', 'smart-blocks' ) }
-					onRequestClose={ () => setOpen( false ) }
+					title={__('Block Navigator', 'smart-blocks')}
+					closeLabel={__('Close', 'smart-blocks')}
+					onRequestClose={() => setOpen(false)}
 				>
 					<BlockNavigation
-						blocks={ [ block ] }
-						selectedBlockClientId={ selectedBlockClientId }
-						selectBlock={ selectBlock }
+						blocks={[block]}
+						selectedBlockClientId={selectedBlockClientId}
+						selectBlock={selectBlock}
 						showNestedBlocks
 					/>
 				</Modal>
-			) }
+			)}
 		</Fragment>
 	);
 };

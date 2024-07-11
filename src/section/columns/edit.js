@@ -1,7 +1,4 @@
-
 import classnames from 'classnames';
-import hexToRgba from 'hex-rgba';
-
 
 import { times } from 'lodash';
 import { useViewportMatch } from '@wordpress/compose';
@@ -19,17 +16,83 @@ import layouts from '../layouts.js';
 import Controls from './controls.js';
 import Inspector from './inspector.js';
 import BlockNavigatorControl from '../../components/block-navigator-control/index.js';
-import { blockInit } from '../../helpers/block-utility.js';
+import {blockInit} from '../../helpers/block-utility.js';
 import LayoutSelector from './layoutselector.js';
 
 const Edit = ({attributes, setAttributes, className, clientId}) => {
+	const {
+		id,
+        columns,
+        columnsWidth,
+        columnsHTMLTag,
+        layout,
+        layoutTablet,
+        layoutMobile,
+        columnsGap,
+        verticalAlign,
+        horizontalAlign,
+        reverseColumnsTablet,
+        reverseColumnsMobile,
+        hideTablet,
+        hideMobile,
+        blockMargin,
+        blockPadding,
+        columnsHeight,
+        columnsHeightCustom,
+        columnAlignment,
+        columnJustify
+    } = attributes;
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
+
+	const stylesCSS = `#${id} {
+        ${columnsWidth.sm ? '--sb-column-width-sm: ' + columnsWidth.sm + 'px;' : ''}
+        ${columnsWidth.md ? '--sb-column-width-md: ' + columnsWidth.md + 'px;' : ''}
+        ${columnsWidth.lg ? '--sb-column-width-lg: ' + columnsWidth.lg + 'px;' : ''}
+        ${horizontalAlign.sm ? '--sb-horizontal-align-sm: ' + horizontalAlign.sm + ';' : ''}
+        ${horizontalAlign.md ? '--sb-horizontal-align-md: ' + horizontalAlign.md + ';' : ''}
+        ${horizontalAlign.lg ? '--sb-horizontal-align-lg: ' + horizontalAlign.lg + ';' : ''}
+        ${columnsGap.sm ? '--sb-column-gap-sm: ' + columnsGap.sm + ';' : ''}
+        ${columnsGap.md ? '--sb-column-gap-md: ' + columnsGap.md + ';' : ''}
+        ${columnsGap.lg ? '--sb-column-gap-lg: ' + columnsGap.lg + ';' : ''}
+        ${columnAlignment.sm ? '--sb-horizontal-align-sm: ' + columnAlignment.sm + ';' : ''}
+        ${columnAlignment.md ? '--sb-horizontal-align-md: ' + columnAlignment.md + ';' : ''}
+        ${columnAlignment.lg ? '--sb-horizontal-align-lg: ' + columnAlignment.lg + ';' : ''}
+        ${columnJustify.sm ? '--sb-horizontal-align-sm: ' + columnJustify.sm + ';' : ''}
+        ${columnJustify.md ? '--sb-horizontal-align-md: ' + columnJustify.md + ';' : ''}
+        ${columnJustify.lg ? '--sb-horizontal-align-lg: ' + columnJustify.lg + ';' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustom.sm ? '--sb-column-width-sm: ' + columnsHeightCustom.sm + 'px;' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustom.md ? '--sb-column-width-md: ' + columnsHeightCustom.md + 'px;' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustom.lg ? '--sb-column-width-lg: ' + columnsHeightCustom.lg + 'px;' : ''}
+        ${blockMargin.sm.top ? '--sb-block-margin-top-sm: ' + blockMargin.sm.top + blockMargin.unit + ';' : ''}
+        ${blockMargin.sm.right ? '--sb-block-margin-right-sm: ' + blockMargin.sm.right + blockMargin.unit + ';' : ''}
+        ${blockMargin.sm.bottom ? '--sb-block-margin-bottom-sm: ' + blockMargin.sm.bottom + blockMargin.unit + ';' : ''}
+        ${blockMargin.sm.left ? '--sb-block-margin-left-sm: ' + blockMargin.sm.left + blockMargin.unit + ';' : ''}
+        ${blockMargin.md.top ? '--sb-block-margin-top-md: ' + blockMargin.md.top + blockMargin.unit + ';' : ''}
+        ${blockMargin.md.right ? '--sb-block-margin-right-md: ' + blockMargin.md.right + blockMargin.unit + ';' : ''}
+        ${blockMargin.md.bottom ? '--sb-block-margin-bottom-md: ' + blockMargin.md.bottom + blockMargin.unit + ';' : ''}
+        ${blockMargin.md.left ? '--sb-block-margin-left-md: ' + blockMargin.md.left + blockMargin.unit + ';' : ''}
+        ${blockMargin.lg.top ? '--sb-block-margin-top-lg: ' + blockMargin.lg.top + blockMargin.unit + ';' : ''}
+        ${blockMargin.lg.right ? '--sb-block-margin-right-lg: ' + blockMargin.lg.right + blockMargin.unit + ';' : ''}
+        ${blockMargin.lg.bottom ? '--sb-block-margin-bottom-lg: ' + blockMargin.lg.bottom + blockMargin.unit + ';' : ''}
+        ${blockMargin.lg.left ? '--sb-block-margin-left-lg: ' + blockMargin.lg.left + blockMargin.unit + ';' : ''}
+        ${blockPadding.sm.top ? '--sb-block-padding-top-sm: ' + blockPadding.sm.top + blockPadding.unit + ';' : ''}
+        ${blockPadding.sm.right ? '--sb-block-padding-right-sm: ' + blockPadding.sm.right + blockPadding.unit + ';' : ''}
+        ${blockPadding.sm.bottom ? '--sb-block-padding-bottom-sm: ' + blockPadding.sm.bottom + blockPadding.unit + ';' : ''}
+        ${blockPadding.sm.left ? '--sb-block-padding-left-sm: ' + blockPadding.sm.left + blockPadding.unit + ';' : ''}
+        ${blockPadding.md.top ? '--sb-block-padding-top-md: ' + blockPadding.md.top + blockPadding.unit + ';' : ''}
+        ${blockPadding.md.right ? '--sb-block-padding-right-md: ' + blockPadding.md.right + blockPadding.unit + ';' : ''}
+        ${blockPadding.md.bottom ? '--sb-block-padding-bottom-md: ' + blockPadding.md.bottom + blockPadding.unit + ';' : ''}
+        ${blockPadding.md.left ? '--sb-block-padding-left-md: ' + blockPadding.md.left + blockPadding.unit + ';' : ''}
+        ${blockPadding.lg.top ? '--sb-block-padding-top-lg: ' + blockPadding.lg.top + blockPadding.unit + ';' : ''}
+        ${blockPadding.lg.right ? '--sb-block-padding-right-lg: ' + blockPadding.lg.right + blockPadding.unit + ';' : ''}
+        ${blockPadding.lg.bottom ? '--sb-block-padding-bottom-lg: ' + blockPadding.lg.bottom + blockPadding.unit + ';' : ''}
+        ${blockPadding.lg.left ? '--sb-block-padding-left-lg: ' + blockPadding.lg.left + blockPadding.unit + ';' : ''}
+    }`
 
 	const { sectionBlock, isViewportAvailable, isPreviewDesktop, isPreviewTablet, isPreviewMobile } = useSelect( select => {
 		const { getBlock } = select( 'core/block-editor' );
 		const { __experimentalGetPreviewDeviceType } = select( 'core/edit-post' ) ? select( 'core/edit-post' ) : false;
 		const sectionBlock = getBlock( clientId );
-
 		return {
 			sectionBlock,
 			isViewportAvailable: __experimentalGetPreviewDeviceType ? true : false,
@@ -44,12 +107,10 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 	const isSmall = useViewportMatch('small', '>=');
 	const isSmaller = useViewportMatch('small', '<=');
 
-	useEffect( () => {
-		const unsubscribe = blockInit( clientId, defaultAttributes );
-		return () => unsubscribe( attributes.id );
-	}, [ attributes.id ]);
-
-	const [ dividerViewType, setDividerViewType ] = useState( 'top' );
+	useEffect(() => {
+		const unsubscribe = blockInit(clientId, defaultAttributes);
+		return () => unsubscribe(id);
+	}, [id]);
 
 	let isDesktop = isLarger && !isLarge && isSmall && !isSmaller;
 	let isTablet = !isLarger && !isLarge && isSmall && !isSmaller;
@@ -61,165 +122,26 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		isMobile = isPreviewMobile;
 	}
 
-	const Tag = attributes.columnsHTMLTag;
+	const Tag = columnsHTMLTag;
 
-	let stylesheet, background, overlayBackground, borderStyle, borderRadiusStyle, boxShadowStyle;
 
-	if (isDesktop) {
-		stylesheet = {
-			paddingTop: 'linked' === attributes.paddingType ? `${attributes.padding}px` : `${attributes.paddingTop}px`,
-			paddingRight: 'linked' === attributes.paddingType ? `${attributes.padding}px` : `${attributes.paddingRight}px`,
-			paddingBottom: 'linked' === attributes.paddingType ? `${attributes.padding}px` : `${attributes.paddingBottom}px`,
-			paddingLeft: 'linked' === attributes.paddingType ? `${attributes.padding}px` : `${attributes.paddingLeft}px`,
-			marginTop: 'linked' === attributes.marginType ? `${attributes.margin}px` : `${attributes.marginTop}px`,
-			marginBottom: 'linked' === attributes.marginType ? `${attributes.margin}px` : `${attributes.marginBottom}px`,
-			minHeight: 'custom' === attributes.columnsHeight ? `${attributes.columnsHeightCustom}px` : attributes.columnsHeight
-		};
-	}
+	// let innerStyle = {};
 
-	if ( isTablet ) {
-		stylesheet = {
-			paddingTop: 'linked' === attributes.paddingTypeTablet ? `${attributes.paddingTablet}px` : `${attributes.paddingTopTablet}px`,
-			paddingRight: 'linked' === attributes.paddingTypeTablet ? `${attributes.paddingTablet}px` : `${attributes.paddingRightTablet}px`,
-			paddingBottom: 'linked' === attributes.paddingTypeTablet ? `${attributes.paddingTablet}px` : `${attributes.paddingBottomTablet}px`,
-			paddingLeft: 'linked' === attributes.paddingTypeTablet ? `${attributes.paddingTablet}px` : `${attributes.paddingLeftTablet}px`,
-			marginTop: 'linked' === attributes.marginTypeTablet ? `${attributes.marginTablet}px` : `${attributes.marginTopTablet}px`,
-			marginBottom: 'linked' === attributes.marginTypeTablet ? `${attributes.marginTablet}px` : `${attributes.marginBottomTablet}px`,
-			minHeight: 'custom' === attributes.columnsHeight ? `${attributes.columnsHeightCustomTablet}px` : attributes.columnsHeight
-		};
-	}
-
-	if (isMobile) {
-		stylesheet = {
-			paddingTop: 'linked' === attributes.paddingTypeMobile ? `${attributes.paddingMobile}px` : `${attributes.paddingTopMobile}px`,
-			paddingRight: 'linked' === attributes.paddingTypeMobile ? `${attributes.paddingMobile}px` : `${attributes.paddingRightMobile}px`,
-			paddingBottom: 'linked' === attributes.paddingTypeMobile ? `${attributes.paddingMobile}px` : `${attributes.paddingBottomMobile}px`,
-			paddingLeft: 'linked' === attributes.paddingTypeMobile ? `${attributes.paddingMobile}px` : `${attributes.paddingLeftMobile}px`,
-			marginTop: 'linked' === attributes.marginTypeMobile ? `${attributes.marginMobile}px` : `${attributes.marginTopMobile}px`,
-			marginBottom: 'linked' === attributes.marginTypeMobile ? `${attributes.marginMobile}px` : `${attributes.marginBottomMobile}px`,
-			minHeight: 'custom' === attributes.columnsHeight ? `${attributes.columnsHeightCustomMobile}px` : attributes.columnsHeight
-		};
-	}
-
-	if ('color' === attributes.backgroundType) {
-		background = {
-			background: attributes.backgroundColor
-		};
-	}
-
-	if ('image' === attributes.backgroundType ) {
-		background = {
-			backgroundImage: `url('${attributes.backgroundImageURL}')`,
-			backgroundAttachment: attributes.backgroundAttachment,
-			backgroundPosition: attributes.backgroundPosition,
-			backgroundRepeat: attributes.backgroundRepeat,
-			backgroundSize: attributes.backgroundSize
-		};
-	}
-
-	if ('gradient' === attributes.backgroundType) {
-		background = {
-			background: attributes.backgroundGradient
-		};
-	}
-
-	if ('linked' === attributes.borderType) {
-		borderStyle = {
-			borderWidth: `${attributes.border}px`,
-			borderStyle: 'solid',
-			borderColor: attributes.borderColor
-		};
-	}
-
-	if ('unlinked' === attributes.borderType) {
-		borderStyle = {
-			borderTopWidth: `${attributes.borderTop}px`,
-			borderRightWidth: `${attributes.borderRight}px`,
-			borderBottomWidth: `${attributes.borderBottom}px`,
-			borderLeftWidth: `${attributes.borderLeft}px`,
-			borderStyle: 'solid',
-			borderColor: attributes.borderColor
-		};
-	}
-
-	if ('linked' === attributes.borderRadiusType) {
-		borderRadiusStyle = {
-			borderRadius: `${attributes.borderRadius}px`
-		};
-	}
-
-	if ('unlinked' === attributes.borderRadiusType) {
-		borderRadiusStyle = {
-			borderTopLeftRadius: `${attributes.borderRadiusTop}px`,
-			borderTopRightRadius: `${attributes.borderRadiusRight}px`,
-			borderBottomRightRadius: `${attributes.borderRadiusBottom}px`,
-			borderBottomLeftRadius: `${attributes.borderRadiusLeft}px`
-		};
-	}
-
-	if (true === attributes.boxShadow) {
-		boxShadowStyle = {
-			boxShadow: `${attributes.boxShadowHorizontal}px ${attributes.boxShadowVertical}px ${attributes.boxShadowBlur}px ${attributes.boxShadowSpread}px ${hexToRgba((attributes.boxShadowColor ? attributes.boxShadowColor : '#000000'), attributes.boxShadowColorOpacity)}`
-		};
-	}
-
-	const style = {
-		...stylesheet,
-		...background,
-		...borderStyle,
-		...borderRadiusStyle,
-		...boxShadowStyle
-	};
-
-	if ( 'color' === attributes.backgroundOverlayType ) {
-		overlayBackground = {
-			background: attributes.backgroundOverlayColor,
-			opacity: attributes.backgroundOverlayOpacity / 100
-		};
-	}
-
-	if ( 'image' === attributes.backgroundOverlayType ) {
-		overlayBackground = {
-			backgroundImage: `url( '${attributes.backgroundOverlayImageURL }' )`,
-			backgroundAttachment: attributes.backgroundOverlayAttachment,
-			backgroundPosition: attributes.backgroundOverlayPosition,
-			backgroundRepeat: attributes.backgroundOverlayRepeat,
-			backgroundSize: attributes.backgroundOverlaySize,
-			opacity: attributes.backgroundOverlayOpacity / 100
-		};
-	}
-
-	if ( 'gradient' === attributes.backgroundOverlayType ) {
-		overlayBackground = {
-			background: attributes.backgroundOverlayGradient,
-			opacity: attributes.backgroundOverlayOpacity / 100
-		};
-	}
-
-	const overlayStyle = {
-		...overlayBackground,
-		...borderRadiusStyle,
-		mixBlendMode: attributes.backgroundOverlayBlend,
-		filter: `blur( ${attributes.backgroundOverlayFilterBlur / 10}px ) brightness( ${attributes.backgroundOverlayFilterBrightness / 10 } ) contrast( ${attributes.backgroundOverlayFilterContrast / 10 } ) grayscale( ${attributes.backgroundOverlayFilterGrayscale / 100 } ) hue-rotate( ${attributes.backgroundOverlayFilterHue }deg ) saturate( ${attributes.backgroundOverlayFilterSaturate / 10 } )`
-	};
-
-	let innerStyle = {};
-
-	if (attributes.columnsWidth) {
-		innerStyle = {maxWidth: attributes.columnsWidth + 'px'};
-	}
+	// if (columnsWidth) {
+	// 	innerStyle = {maxWidth: columnsWidth + 'px'};
+	// }
 
 	const classes = classnames(
 		className,
-		`has-${attributes.columns}-columns`,
-		`has-desktop-${attributes.layout}-layout`,
-		`has-tablet-${attributes.layoutTablet}-layout`,
-		`has-mobile-${attributes.layoutMobile}-layout`,
-		`has-${attributes.columnsGap}-gap`,
-		`has-vertical-${attributes.verticalAlign}`,
-		`has-horizontal-${attributes.horizontalAlign}`,
-		{'has-reverse-columns-tablet': (attributes.reverseColumnsTablet && !attributes.hideTablet && 'collapsedRows' === attributes.layoutTablet)},
-		{'has-reverse-columns-mobile': (attributes.reverseColumnsMobile && !attributes.hideMobile && 'collapsedRows' === attributes.layoutMobile)},
+		`has-${columns}-columns`,
+		`has-desktop-${layout}-layout`,
+		`has-tablet-${layoutTablet}-layout`,
+		`has-mobile-${layoutMobile}-layout`,
+		`has-${columnsGap}-gap`,
+		`has-vertical-${verticalAlign}`,
+		// `has-horizontal-${horizontalAlign}`,
+		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
+		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
 		{'has-viewport-desktop': isDesktop},
 		{'has-viewport-tablet': isTablet},
 		{'has-viewport-mobile': isMobile}
@@ -227,7 +149,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 
 	const updateColumnsWidth = (columns, layout) => {
 		(sectionBlock.innerBlocks).map((innerBlock, i) => {
-			updateBlockAttributes( innerBlock.clientId, {
+			updateBlockAttributes(innerBlock.clientId, {
 				columnWidth: layouts[columns][layout][i]
 			});
 		});
@@ -251,83 +173,11 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		}
 	};
 
-	let getDividerTopWidth = () => {
-		let value;
-		if (isDesktop) {
-			value = attributes.dividerTopWidth;
-		}
-
-		if (isTablet) {
-			value = attributes.dividerTopWidthTablet;
-		}
-
-		if (isMobile) {
-			value = attributes.dividerTopWidthMobile;
-		}
-		return value;
+	const getColumnsTemplate = cols => {
+		return times(cols, i => ['smart-blocks/column', {columnWidth: layouts[cols][layout][i]}]);
 	};
 
-	getDividerTopWidth = getDividerTopWidth();
-
-	let getDividerBottomWidth = () => {
-		let value;
-		if (isDesktop) {
-			value = attributes.dividerBottomWidth;
-		}
-
-		if (isTablet) {
-			value = attributes.dividerBottomWidthTablet;
-		}
-
-		if (isMobile) {
-			value = attributes.dividerBottomWidthMobile;
-		}
-		return value;
-	};
-
-	getDividerBottomWidth = getDividerBottomWidth();
-
-	let getDividerTopHeight = () => {
-		let value;
-		if (isDesktop) {
-			value = attributes.dividerTopHeight;
-		}
-
-		if (isTablet) {
-			value = attributes.dividerTopHeightTablet;
-		}
-
-		if (isMobile) {
-			value = attributes.dividerTopHeightMobile;
-		}
-		return value;
-	};
-
-	getDividerTopHeight = getDividerTopHeight();
-
-	let getDividerBottomHeight = () => {
-		let value;
-		if (isDesktop) {
-			value = attributes.dividerBottomHeight;
-		}
-
-		if (isTablet) {
-			value = attributes.dividerBottomHeightTablet;
-		}
-
-		if (isMobile) {
-			value = attributes.dividerBottomHeightMobile;
-		}
-		return value;
-	};
-
-	getDividerBottomHeight = getDividerBottomHeight();
-
-	const getColumnsTemplate = columns => {
-		return times(columns, i => ['smart-blocks/column', {columnWidth: layouts[columns][attributes.layout][i]}]);
-	};
-
-	if (!attributes.columns) {
+	if (!columns) {
 		return (<LayoutSelector clientId={clientId} setupColumns={setupColumns} />);
 	}
 
@@ -344,27 +194,15 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 				attributes={attributes}
 				setAttributes={setAttributes}
 				updateColumnsWidth={updateColumnsWidth}
-				dividerViewType={dividerViewType}
-				setDividerViewType={setDividerViewType}
 			/>
 
-			<Tag
-				className={classes}
-				id={attributes.id}
-				style={style}
-			>
-				<div
-					className="wp-block-smart-blocks-columns-overlay"
-					style={overlayStyle}
-				>
-				</div>
-				<div
-					className="innerblocks-wrap"
-					style={innerStyle}
+			<Tag className={classes} id={id}>
+				<div className="innerblocks-wrap"
+				/* style={innerStyle} */
 				>
 					<InnerBlocks
 						allowedBlocks={['smart-blocks/column']}
-						template={getColumnsTemplate(attributes.columns)}
+						template={getColumnsTemplate(columns)}
 						templateLock="all"
 					/>
 				</div>

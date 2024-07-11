@@ -808,15 +808,25 @@
 .wp-block-smart-icon-buttom-group.components-button-group .components-button {
     flex: 1;
     justify-content: center;
-    border: 1px solid #000;
+    border: 0;
     height: 30px;
     line-height: 28px;
+    box-shadow: inset 0 0 0 1px #d7d9dc;
+    color: #485164;
 }
-.wp-block-smart-icon-buttom-group.components-button-group .components-button.is-primary:not(:disabled):not([aria-disabled="true"]):not(.is-default):hover {
-    background: #007eb1;
+.wp-block-smart-icon-buttom-group.components-button-group svg {
+    height: 20px !important;
+    width: 20px !important;
+}
+.wp-block-smart-icon-buttom-group.components-button-group .components-button.is-primary:not(:disabled):not([aria-disabled="true"]):not(.is-default) {
+    background: #eaecf5;
     border-color: #00435d;
-    box-shadow: inset 0 -1px 0 #00435d;
-    color: #fff;
+    box-shadow: inset 0 0 0 1px #293056;
+    color: #293056;
+}
+.wp-block-smart-icon-buttom-group.components-button-group .components-button:not(:disabled):not([aria-disabled="true"]):not(.is-default):hover {
+    box-shadow: inset 0 0 0 1px #293056;
+    z-index: 1;
 }
 .wp-block-smart-icon-buttom-group.components-button-group .wp-block-smart-icon-buttom-group-custom-icon {
     display: inline-block;

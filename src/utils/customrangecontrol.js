@@ -16,11 +16,11 @@ const CustomRangeControl = ({ label, min = 1, max = 20, steps, value, onChange, 
 
     return <div className={`sb-field-range sb-field ${responsive ? 'sb-responsive' : ''}`}>
         <div className="sb-d-flex sb-align-center">
-            {label &&
-                (<div>
+            {label && (
+                <div>
                     <label htmlFor="input">{label}</label>
-                </div>)
-            }
+                </div>
+            )}
             {responsive && (<ResponsiveDropdown/>)}
             {useUnit && (
                 <div class="sb-unit-btn-group sb-ml-auto">

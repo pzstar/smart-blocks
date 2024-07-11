@@ -431,3 +431,50 @@ export const SingleNews2 = () => {
         <path fill="#fff" d="M10.2 142.83h27.2v3.4H10.2z" opacity=".8" />
     </svg>
 }
+
+
+
+export const AlignFlexStart = () => {
+    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 1H1v1h18V1zM14 3h-3v6h3V3zM9 3H6v8h3V3z"></path></svg>
+}
+
+export const AlignCenter = () => {
+    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 9.5H1v1h18v-1z"></path><path d="M14 7h-3v6h3V7zM9 6H6v8h3V6z"></path></svg>
+}
+
+export const AlignFlexEnd = () => {
+    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 18H1v1h18v-1zM14 11h-3v6h3v-6zM9 9H6v8h3V9z"></path></svg>
+}
+
+export const AlignStretch = () => {
+    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 18H1v1h18v-1zM19 1H1v1h18V1zM14 3h-3v14h3V3zM9 3H6v14h3V3z"></path></svg>
+}
+
+export const AlignBaseline = () => {
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" size="24"><path d="M1 14.1h18v1H1zM11.4 11.1h-3l-.6 2H6.5l2.6-8.3h1.7l2.6 8.3H12l-.6-2zm-2.6-1h2.4L10 5.9l-1.2 4.2z"></path></svg>
+}
+
+
+export const JustifyFlexStart = () => {
+    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M2 1H1v18h1V1zM6 5H3v10h3V5zM10 5H7v10h3V5z"></path></svg>
+}
+
+export const JustifyCenter = () => {
+    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M10.5 1h-1v18h1V1zM8 5H5v10h3V5zM15 5h-3v10h3V5z"></path></svg>
+}
+
+export const JustifyFlexEnd = () => {
+    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 1h-1v18h1V1zM13 5h-3v10h3V5zM17 5h-3v10h3V5z"></path></svg>
+}
+
+export const JustifySpaceBetween = () => {
+    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M20 1h-1v18h1V1zM1 1H0v18h1V1zM5 5H2v10h3V5zM18 5h-3v10h3V5z"></path></svg>
+}
+
+export const JustifySpaceAround = () => {
+    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M20 1h-1v18h1V1zM1 1H0v18h1V1zM7 5H4v10h3V5zM16 5h-3v10h3V5z"></path></svg>
+}
+
+export const JustifySpaceEvenly = () => {
+    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M20 1h-1v18h1V1zM1 1H0v18h1V1zM8 5H5v10h3V5zM15 5h-3v10h3V5z"></path></svg>
+}

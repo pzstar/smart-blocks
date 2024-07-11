@@ -17,8 +17,12 @@ const attributes = {
 		default: 'equal'
 	},
 	columnsGap: {
-		type: 'string',
-		default: 'default'
+        type: 'object',
+        default: {
+            sm: 0,
+            md: 0,
+            lg: 0
+        }
 	},
 
 	blockMargin : {
@@ -71,18 +75,43 @@ const attributes = {
     },
 
 	columnsWidth: {
-		type: 'number'
+        type: 'object',
+        default: {
+            sm: 0,
+            md: 0,
+            lg: 0
+        }
 	},
 	horizontalAlign: {
-		type: 'string',
-		default: 'unset'
+        type: 'object',
+        default: {
+            sm: null,
+            md: null,
+            lg: null
+        }
+	},
+	columnAlignment: {
+        type: 'object',
+        default: {
+            sm: null,
+            md: null,
+            lg: null
+        }
+	},
+	columnJustify: {
+        type: 'object',
+        default: {
+            sm: null,
+            md: null,
+            lg: null
+        }
 	},
 	columnsHeight: {
 		type: 'string',
 		default: 'auto'
 	},
 
-	columnHeightCustom: {
+	columnsHeightCustom: {
         type: 'object',
         default: {
             sm: 0,
@@ -118,7 +147,8 @@ const attributes = {
 	columnsHTMLTag: {
 		type: 'string',
 		default: 'div'
-	}
+	},
+
 };
 
 export default attributes;

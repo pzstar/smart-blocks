@@ -130,23 +130,22 @@ if (!class_exists('Smart_Blocks')) {
                 );
             }
 
-            $blocks = array(
-                // 'template-import',
-                // 'columns',
-                // 'column',
-            );
+            // $blocks = array(
+            //     'template-import',
+            //     'columns',
+            //     'column',
+            // );
 
-            foreach ($blocks as $block) {
-                register_block_type(
-                        'smart-blocks/' . $block, array(
-                    'api_version' => 2,
-                    'editor_script' => 'sb-blocks',
-                    'editor_style' => 'sb-block-editor',
-                    'style' => 'sb-style',
-                    'script' => 'sb-script',
-                        )
-                );
-            }
+            // foreach ($blocks as $block) {
+            //     register_block_type(
+            //             'smart-blocks/' . $block, array(
+            //         'editor_script' => 'sb-blocks',
+            //         'editor_style' => 'sb-block-editor',
+            //         'style' => 'sb-style',
+            //         'script' => 'sb-script',
+            //             )
+            //     );
+            // }
         }
 
         /**
