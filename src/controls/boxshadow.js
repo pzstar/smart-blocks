@@ -4,7 +4,7 @@ import Color from './color';
 import AdvancedRadio from './advancedradio';
 import { ClearIcon } from './svgicons';
 
-const BoxShadow = ({ label, values, onChange }) => {
+const BoxShadowControl = ({ label, values, onChange }) => {
     !values ?
         values = {
             "horizontal": null,
@@ -128,4 +128,4 @@ const BoxShadow = ({ label, values, onChange }) => {
     </>;
 }
 
-export default BoxShadow;
+export default BoxShadowControl;

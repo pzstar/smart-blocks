@@ -11,7 +11,6 @@ const Save = ({attributes, className}) => {
         layout,
         layoutTablet,
         layoutMobile,
-        columnsGap,
         verticalAlign,
         horizontalAlign,
         reverseColumnsTablet,
@@ -39,7 +38,6 @@ const Save = ({attributes, className}) => {
 		{'hide-in-mobile': hideMobile},
 		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
 		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
-		`has-${columnsGap}-gap`,
 		`has-vertical-${verticalAlign}`
 	);
 

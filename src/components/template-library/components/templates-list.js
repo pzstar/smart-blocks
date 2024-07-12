@@ -55,14 +55,6 @@ const TemplatesList = ({preview, isLoading, data, tab, selectedTemplateContent, 
 					);
 				}
 			})}
-
-			<div ariaLabel={__('Coming Soon', 'smart-blocks')} className="library-modal-content__item">
-				<div className="library-modal-content__preview">
-					<LazyLoad>
-						<img src={'https://img.freepik.com/free-vector/abstract-grunge-style-coming-soon-with-black-splatter_1017-26690.jpg?t=st=1720613018~exp=1720616618~hmac=ad70d17f60f4e9888b53e4e8255f41abd9087a5590e3ba0b2bd10e464f2db55c&w=1380'} />
-					</LazyLoad>
-				</div>
-			</div>
 		</div>
 	);
 };

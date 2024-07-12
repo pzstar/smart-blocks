@@ -46,15 +46,15 @@ class Smart_blocks_Template_Library {
 		}
 
 		$templates_list = array(
-			// array(
-			// 	'title' => __('Header with Features', 'smart-blocks'),
-			// 	'type' => 'block',
-			// 	'author' => __('Smart Block', 'smart-blocks'),
-			// 	'keywords' => array('header', 'features', 'services'),
-			// 	'categories' => array('header', 'services'),
-			// 	'template_url' => 'https://raw./template.json',
-			// 	'screenshot_url' => 'https://raw./screenshot.png',
-			// ),
+			array(
+				'title' => __('Header with Features', 'smart-blocks'),
+				'type' => 'block',
+				'author' => __('Smart Block', 'smart-blocks'),
+				'keywords' => array('header', 'features', 'services'),
+				'categories' => array('header', 'services'),
+				'template_url' => 'https://hashthemesu4.github.io/import.json',
+				'screenshot_url' => 'https://img.freepik.com/free-vector/landing-page-design-mocksite_23-2148156143.jpg?w=740&t=st=1720767823~exp=1720768423~hmac=fd994d5f3fe99b3d609cc3e23f9bae94abefe465618aa8f2f221671fe8e06b13',
+			),
 		);
 		$templates = apply_filters('smart_block_templates', $templates_list);
 		return rest_ensure_response($templates);

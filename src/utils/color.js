@@ -6,9 +6,9 @@ const Color = ({ label, value, onChange, enableAlpha }) => {
         onChange(e.hex);
     }
     const onClearHandler = (e) => {
-        onChange(undefined);
+        onChange(null);
     }
-    !value ? value = undefined : value;
+    !value ? value = null : value;
     return <>
         <div className="sb-field sb-field-color sb-inline-block ">
             {label && (<label>{label}</label>)}

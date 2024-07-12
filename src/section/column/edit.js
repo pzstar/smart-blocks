@@ -20,36 +20,64 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 		id,
 		columnWidth,
 		columnsHTMLTag,
-		blockMargin,
-		blockPadding,
-		style
+		columnMarginSmTop,
+		columnMarginSmRight,
+		columnMarginSmBottom,
+		columnMarginSmLeft,
+		columnMarginMdTop,
+		columnMarginMdRight,
+		columnMarginMdBottom,
+		columnMarginMdLeft,
+		columnMarginTop,
+		columnMarginRight,
+		columnMarginBottom,
+		columnMarginLeft,
+		columnMarginUnit,
+
+		columnPaddingSmTop,
+		columnPaddingSmRight,
+		columnPaddingSmBottom,
+		columnPaddingSmLeft,
+		columnPaddingMdTop,
+		columnPaddingMdRight,
+		columnPaddingMdBottom,
+		columnPaddingMdLeft,
+		columnPaddingTop,
+		columnPaddingRight,
+		columnPaddingBottom,
+		columnPaddingLeft,
+		columnPaddingUnit,
+
+		style,
+        columnBgColor
     } = attributes;
 
     const stylesCSS = `#${id} {
-        ${blockMargin.sm.top ? '--sb-block-margin-top-sm: ' + blockMargin.sm.top + blockMargin.unit + ';' : ''}
-        ${blockMargin.sm.right ? '--sb-block-margin-right-sm: ' + blockMargin.sm.right + blockMargin.unit + ';' : ''}
-        ${blockMargin.sm.bottom ? '--sb-block-margin-bottom-sm: ' + blockMargin.sm.bottom + blockMargin.unit + ';' : ''}
-        ${blockMargin.sm.left ? '--sb-block-margin-left-sm: ' + blockMargin.sm.left + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.top ? '--sb-block-margin-top-md: ' + blockMargin.md.top + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.right ? '--sb-block-margin-right-md: ' + blockMargin.md.right + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.bottom ? '--sb-block-margin-bottom-md: ' + blockMargin.md.bottom + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.left ? '--sb-block-margin-left-md: ' + blockMargin.md.left + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.top ? '--sb-block-margin-top-lg: ' + blockMargin.lg.top + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.right ? '--sb-block-margin-right-lg: ' + blockMargin.lg.right + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.bottom ? '--sb-block-margin-bottom-lg: ' + blockMargin.lg.bottom + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.left ? '--sb-block-margin-left-lg: ' + blockMargin.lg.left + blockMargin.unit + ';' : ''}
-        ${blockPadding.sm.top ? '--sb-block-padding-top-sm: ' + blockPadding.sm.top + blockPadding.unit + ';' : ''}
-        ${blockPadding.sm.right ? '--sb-block-padding-right-sm: ' + blockPadding.sm.right + blockPadding.unit + ';' : ''}
-        ${blockPadding.sm.bottom ? '--sb-block-padding-bottom-sm: ' + blockPadding.sm.bottom + blockPadding.unit + ';' : ''}
-        ${blockPadding.sm.left ? '--sb-block-padding-left-sm: ' + blockPadding.sm.left + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.top ? '--sb-block-padding-top-md: ' + blockPadding.md.top + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.right ? '--sb-block-padding-right-md: ' + blockPadding.md.right + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.bottom ? '--sb-block-padding-bottom-md: ' + blockPadding.md.bottom + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.left ? '--sb-block-padding-left-md: ' + blockPadding.md.left + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.top ? '--sb-block-padding-top-lg: ' + blockPadding.lg.top + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.right ? '--sb-block-padding-right-lg: ' + blockPadding.lg.right + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.bottom ? '--sb-block-padding-bottom-lg: ' + blockPadding.lg.bottom + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.left ? '--sb-block-padding-left-lg: ' + blockPadding.lg.left + blockPadding.unit + ';' : ''}
+        ${columnMarginSmTop ? '--sb-column-margin-top-sm: ' + columnMarginSmTop + columnMarginUnit + ';' : ''}
+        ${columnMarginSmRight ? '--sb-column-margin-right-sm: ' + columnMarginSmRight + columnMarginUnit + ';' : ''}
+        ${columnMarginSmBottom ? '--sb-column-margin-bottom-sm: ' + columnMarginSmBottom + columnMarginUnit + ';' : ''}
+        ${columnMarginSmLeft ? '--sb-column-margin-left-sm: ' + columnMarginSmLeft + columnMarginUnit + ';' : ''}
+        ${columnMarginMdTop ? '--sb-column-margin-top-md: ' + columnMarginMdTop + columnMarginUnit + ';' : ''}
+        ${columnMarginMdRight ? '--sb-column-margin-right-md: ' + columnMarginMdRight + columnMarginUnit + ';' : ''}
+        ${columnMarginMdBottom ? '--sb-column-margin-bottom-md: ' + columnMarginMdBottom + columnMarginUnit + ';' : ''}
+        ${columnMarginMdLeft ? '--sb-column-margin-left-md: ' + columnMarginMdLeft + columnMarginUnit + ';' : ''}
+        ${columnMarginTop ? '--sb-column-margin-top-lg: ' + columnMarginTop + columnMarginUnit + ';' : ''}
+        ${columnMarginRight ? '--sb-column-margin-right-lg: ' + columnMarginRight + columnMarginUnit + ';' : ''}
+        ${columnMarginBottom ? '--sb-column-margin-bottom-lg: ' + columnMarginBottom + columnMarginUnit + ';' : ''}
+        ${columnMarginLeft ? '--sb-column-margin-left-lg: ' + columnMarginLeft + columnMarginUnit + ';' : ''}
+        ${columnPaddingSmTop ? '--sb-column-padding-top-sm: ' + columnPaddingSmTop + columnPaddingUnit + ';' : ''}
+        ${columnPaddingSmRight ? '--sb-column-padding-right-sm: ' + columnPaddingSmRight + columnPaddingUnit + ';' : ''}
+        ${columnPaddingSmBottom ? '--sb-column-padding-bottom-sm: ' + columnPaddingSmBottom + columnPaddingUnit + ';' : ''}
+        ${columnPaddingSmLeft ? '--sb-column-padding-left-sm: ' + columnPaddingSmLeft + columnPaddingUnit + ';' : ''}
+        ${columnPaddingMdTop ? '--sb-column-padding-top-md: ' + columnPaddingMdTop + columnPaddingUnit + ';' : ''}
+        ${columnPaddingMdRight ? '--sb-column-padding-right-md: ' + columnPaddingMdRight + columnPaddingUnit + ';' : ''}
+        ${columnPaddingMdBottom ? '--sb-column-padding-bottom-md: ' + columnPaddingMdBottom + columnPaddingUnit + ';' : ''}
+        ${columnPaddingMdLeft ? '--sb-column-padding-left-md: ' + columnPaddingMdLeft + columnPaddingUnit + ';' : ''}
+        ${columnPaddingTop ? '--sb-column-padding-top-lg: ' + columnPaddingTop + columnPaddingUnit + ';' : ''}
+        ${columnPaddingRight ? '--sb-column-padding-right-lg: ' + columnPaddingRight + columnPaddingUnit + ';' : ''}
+        ${columnPaddingBottom ? '--sb-column-padding-bottom-lg: ' + columnPaddingBottom + columnPaddingUnit + ';' : ''}
+        ${columnPaddingLeft ? '--sb-column-padding-left-lg: ' + columnPaddingLeft + columnPaddingUnit + ';' : ''}
+        ${columnBgColor ? '--sb-column-bg-color: ' + columnBgColor + ';' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 

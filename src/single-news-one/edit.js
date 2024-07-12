@@ -29,6 +29,7 @@ import Border from '../utils/border';
 import BoxShadow from '../utils/boxshadow';
 import { checkDefault, getFontClass } from '../utils/helper';
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../utils/svgicons';
+import classnames from 'classnames';
 
 export default function Edit({ attributes, setAttributes }) {
     const [activeTab, setActiveTab] = useState('layout');

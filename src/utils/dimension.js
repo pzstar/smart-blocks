@@ -10,29 +10,29 @@ const Dimension = ({ min, max, label, values, onChange, responsive, units }) => 
 	const allUnits = units ? units : ["px", "em", "%"];
 	!values ? values = responsive ? {
 		"sm": {
-			"top": undefined,
-			"left": undefined,
-			"right": undefined,
-			"bottom": undefined
+			"top": null,
+			"left": null,
+			"right": null,
+			"bottom": null
 		},
 		"md": {
-			"top": undefined,
-			"left": undefined,
-			"right": undefined,
-			"bottom": undefined
+			"top": null,
+			"left": null,
+			"right": null,
+			"bottom": null
 		},
 		"lg": {
-			"top": undefined,
-			"left": undefined,
-			"right": undefined,
-			"bottom": undefined
+			"top": null,
+			"left": null,
+			"right": null,
+			"bottom": null
 		},
 		"unit": "px"
 	} : {
-		"top": undefined,
-		"left": undefined,
-		"right": undefined,
-		"bottom": undefined,
+		"top": null,
+		"left": null,
+		"right": null,
+		"bottom": null,
 		"unit": "px"
 	} : '';
 

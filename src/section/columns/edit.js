@@ -13,9 +13,7 @@ import { useEffect, useState } from '@wordpress/element';
  */
 import defaultAttributes from './attributes.js';
 import layouts from '../layouts.js';
-import Controls from './controls.js';
 import Inspector from './inspector.js';
-import BlockNavigatorControl from '../../components/block-navigator-control/index.js';
 import {blockInit} from '../../helpers/block-utility.js';
 import LayoutSelector from './layoutselector.js';
 
@@ -23,71 +21,185 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 	const {
 		id,
         columns,
+
         columnsWidth,
+		columnsWidthMd,
+		columnsWidthSm,
+
         columnsHTMLTag,
         layout,
         layoutTablet,
         layoutMobile,
+
         columnsGap,
-        verticalAlign,
-        horizontalAlign,
+        columnsGapSm,
+        columnsGapMd,
+
         reverseColumnsTablet,
         reverseColumnsMobile,
         hideTablet,
         hideMobile,
-        blockMargin,
-        blockPadding,
+        borderNormal,
+        borderHover,
+        borderNormalColor,
+        borderHoverColor,
+
+        borderNormalWidthTop,
+        borderNormalWidthLeft,
+        borderNormalWidthRight,
+        borderNormalWidthBottom,
+        borderNormalWidthUnit,
+        borderHoverWidthTop,
+        borderHoverWidthLeft,
+        borderHoverWidthRight,
+        borderHoverWidthBottom,
+        borderHoverWidthUnit,
+        borderNormalRadiusTop,
+        borderNormalRadiusLeft,
+        borderNormalRadiusRight,
+        borderNormalRadiusBottom,
+        borderNormalRadiusUnit,
+        borderHoverRadiusTop,
+        borderHoverRadiusLeft,
+        borderHoverRadiusRight,
+        borderHoverRadiusBottom,
+        borderHoverRadiusUnit,
+
+        borderNormalBoxShadow,
+        borderHoverBoxShadow,
+        blockBgColor,
         columnsHeight,
+
         columnsHeightCustom,
-        columnAlignment,
-        columnJustify,
-        style
+        columnsHeightCustomSm,
+        columnsHeightCustomMd,
+
+        style,
+
+        horizontalAlign,
+		horizontalAlignSm,
+		horizontalAlignMd,
+		columnAlignment,
+		columnAlignmentSm,
+		columnAlignmentMd,
+		columnJustify,
+		columnJustifySm,
+		columnJustifyMd,
+
+		columnsMarginSmTop,
+		columnsMarginSmRight,
+		columnsMarginSmBottom,
+		columnsMarginSmLeft,
+		columnsMarginMdTop,
+		columnsMarginMdRight,
+		columnsMarginMdBottom,
+		columnsMarginMdLeft,
+		columnsMarginTop,
+		columnsMarginRight,
+		columnsMarginBottom,
+		columnsMarginLeft,
+		columnsMarginUnit,
+
+		columnsPaddingSmTop,
+		columnsPaddingSmRight,
+		columnsPaddingSmBottom,
+		columnsPaddingSmLeft,
+		columnsPaddingMdTop,
+		columnsPaddingMdRight,
+		columnsPaddingMdBottom,
+		columnsPaddingMdLeft,
+		columnsPaddingTop,
+		columnsPaddingRight,
+		columnsPaddingBottom,
+		columnsPaddingLeft,
+		columnsPaddingUnit,
     } = attributes;
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
 
 	const stylesCSS = `#${id} {
-        ${columnsWidth.sm ? '--sb-column-width-sm: ' + columnsWidth.sm + 'px;' : ''}
-        ${columnsWidth.md ? '--sb-column-width-md: ' + columnsWidth.md + 'px;' : ''}
-        ${columnsWidth.lg ? '--sb-column-width-lg: ' + columnsWidth.lg + 'px;' : ''}
-        ${horizontalAlign.sm ? '--sb-horizontal-align-sm: ' + horizontalAlign.sm + ';' : ''}
-        ${horizontalAlign.md ? '--sb-horizontal-align-md: ' + horizontalAlign.md + ';' : ''}
-        ${horizontalAlign.lg ? '--sb-horizontal-align-lg: ' + horizontalAlign.lg + ';' : ''}
-        ${columnsGap.sm ? '--sb-column-gap-sm: ' + columnsGap.sm + ';' : ''}
-        ${columnsGap.md ? '--sb-column-gap-md: ' + columnsGap.md + ';' : ''}
-        ${columnsGap.lg ? '--sb-column-gap-lg: ' + columnsGap.lg + ';' : ''}
-        ${columnAlignment.sm ? '--sb-horizontal-align-sm: ' + columnAlignment.sm + ';' : ''}
-        ${columnAlignment.md ? '--sb-horizontal-align-md: ' + columnAlignment.md + ';' : ''}
-        ${columnAlignment.lg ? '--sb-horizontal-align-lg: ' + columnAlignment.lg + ';' : ''}
-        ${columnJustify.sm ? '--sb-horizontal-align-sm: ' + columnJustify.sm + ';' : ''}
-        ${columnJustify.md ? '--sb-horizontal-align-md: ' + columnJustify.md + ';' : ''}
-        ${columnJustify.lg ? '--sb-horizontal-align-lg: ' + columnJustify.lg + ';' : ''}
-        ${columnsHeight == 'custom' && columnsHeightCustom.sm ? '--sb-column-width-sm: ' + columnsHeightCustom.sm + 'px;' : ''}
-        ${columnsHeight == 'custom' && columnsHeightCustom.md ? '--sb-column-width-md: ' + columnsHeightCustom.md + 'px;' : ''}
-        ${columnsHeight == 'custom' && columnsHeightCustom.lg ? '--sb-column-width-lg: ' + columnsHeightCustom.lg + 'px;' : ''}
-        ${blockMargin.sm.top ? '--sb-block-margin-top-sm: ' + blockMargin.sm.top + blockMargin.unit + ';' : ''}
-        ${blockMargin.sm.right ? '--sb-block-margin-right-sm: ' + blockMargin.sm.right + blockMargin.unit + ';' : ''}
-        ${blockMargin.sm.bottom ? '--sb-block-margin-bottom-sm: ' + blockMargin.sm.bottom + blockMargin.unit + ';' : ''}
-        ${blockMargin.sm.left ? '--sb-block-margin-left-sm: ' + blockMargin.sm.left + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.top ? '--sb-block-margin-top-md: ' + blockMargin.md.top + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.right ? '--sb-block-margin-right-md: ' + blockMargin.md.right + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.bottom ? '--sb-block-margin-bottom-md: ' + blockMargin.md.bottom + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.left ? '--sb-block-margin-left-md: ' + blockMargin.md.left + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.top ? '--sb-block-margin-top-lg: ' + blockMargin.lg.top + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.right ? '--sb-block-margin-right-lg: ' + blockMargin.lg.right + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.bottom ? '--sb-block-margin-bottom-lg: ' + blockMargin.lg.bottom + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.left ? '--sb-block-margin-left-lg: ' + blockMargin.lg.left + blockMargin.unit + ';' : ''}
-        ${blockPadding.sm.top ? '--sb-block-padding-top-sm: ' + blockPadding.sm.top + blockPadding.unit + ';' : ''}
-        ${blockPadding.sm.right ? '--sb-block-padding-right-sm: ' + blockPadding.sm.right + blockPadding.unit + ';' : ''}
-        ${blockPadding.sm.bottom ? '--sb-block-padding-bottom-sm: ' + blockPadding.sm.bottom + blockPadding.unit + ';' : ''}
-        ${blockPadding.sm.left ? '--sb-block-padding-left-sm: ' + blockPadding.sm.left + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.top ? '--sb-block-padding-top-md: ' + blockPadding.md.top + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.right ? '--sb-block-padding-right-md: ' + blockPadding.md.right + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.bottom ? '--sb-block-padding-bottom-md: ' + blockPadding.md.bottom + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.left ? '--sb-block-padding-left-md: ' + blockPadding.md.left + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.top ? '--sb-block-padding-top-lg: ' + blockPadding.lg.top + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.right ? '--sb-block-padding-right-lg: ' + blockPadding.lg.right + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.bottom ? '--sb-block-padding-bottom-lg: ' + blockPadding.lg.bottom + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.left ? '--sb-block-padding-left-lg: ' + blockPadding.lg.left + blockPadding.unit + ';' : ''}
+        ${columnsWidthSm ? '--sb-column-width-sm: ' + columnsWidthSm + 'px;' : ''}
+        ${columnsWidthMd ? '--sb-column-width-md: ' + columnsWidthMd + 'px;' : ''}
+        ${columnsWidth ? '--sb-column-width-lg: ' + columnsWidth + 'px;' : ''}
+
+        ${horizontalAlignSm ? '--sb-horizontal-align-sm: ' + horizontalAlignSm + ';' : ''}
+        ${horizontalAlignMd ? '--sb-horizontal-align-md: ' + horizontalAlignMd + ';' : ''}
+        ${horizontalAlign ? '--sb-horizontal-align-lg: ' + horizontalAlign + ';' : ''}
+
+        ${columnsGapSm ? '--sb-column-gap-sm: ' + columnsGapSm + ';' : ''}
+        ${columnsGapMd ? '--sb-column-gap-md: ' + columnsGapMd + ';' : ''}
+        ${columnsGap ? '--sb-column-gap-lg: ' + columnsGap + ';' : ''}
+
+        ${columnAlignmentSm ? '--sb-horizontal-align-sm: ' + columnAlignmentSm + ';' : ''}
+        ${columnAlignmentMd ? '--sb-horizontal-align-md: ' + columnAlignmentMd + ';' : ''}
+        ${columnAlignment ? '--sb-horizontal-align-lg: ' + columnAlignment + ';' : ''}
+
+        ${columnJustifySm ? '--sb-horizontal-align-sm: ' + columnJustifySm + ';' : ''}
+        ${columnJustifyMd ? '--sb-horizontal-align-md: ' + columnJustifyMd + ';' : ''}
+        ${columnJustify ? '--sb-horizontal-align-lg: ' + columnJustify + ';' : ''}
+
+        ${columnsHeight == 'custom' && columnsHeightCustomSm ? '--sb-column-width-sm: ' + columnsHeightCustomSm + 'px;' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustomMd ? '--sb-column-width-md: ' + columnsHeightCustomMd + 'px;' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustom ? '--sb-column-width-lg: ' + columnsHeightCustom + 'px;' : ''}
+
+        ${columnsMarginSmTop ? '--sb-block-margin-top-sm: ' + columnsMarginSmTop + columnsMarginUnit + ';' : ''}
+        ${columnsMarginSmRight ? '--sb-block-margin-right-sm: ' + columnsMarginSmRight + columnsMarginUnit + ';' : ''}
+        ${columnsMarginSmBottom ? '--sb-block-margin-bottom-sm: ' + columnsMarginSmBottom + columnsMarginUnit + ';' : ''}
+        ${columnsMarginSmLeft ? '--sb-block-margin-left-sm: ' + columnsMarginSmLeft + columnsMarginUnit + ';' : ''}
+        ${columnsMarginMdTop ? '--sb-block-margin-top-md: ' + columnsMarginMdTop + columnsMarginUnit + ';' : ''}
+        ${columnsMarginMdRight ? '--sb-block-margin-right-md: ' + columnsMarginMdRight + columnsMarginUnit + ';' : ''}
+        ${columnsMarginMdBottom ? '--sb-block-margin-bottom-md: ' + columnsMarginMdBottom + columnsMarginUnit + ';' : ''}
+        ${columnsMarginMdLeft ? '--sb-block-margin-left-md: ' + columnsMarginMdLeft + columnsMarginUnit + ';' : ''}
+        ${columnsMarginTop ? '--sb-block-margin-top-lg: ' + columnsMarginTop + columnsMarginUnit + ';' : ''}
+        ${columnsMarginRight ? '--sb-block-margin-right-lg: ' + columnsMarginRight + columnsMarginUnit + ';' : ''}
+        ${columnsMarginBottom ? '--sb-block-margin-bottom-lg: ' + columnsMarginBottom + columnsMarginUnit + ';' : ''}
+        ${columnsMarginLeft ? '--sb-block-margin-left-lg: ' + columnsMarginLeft + columnsMarginUnit + ';' : ''}
+
+        ${columnsPaddingSmTop ? '--sb-block-padding-top-sm: ' + columnsPaddingSmTop + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingSmRight ? '--sb-block-padding-right-sm: ' + columnsPaddingSmRight + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingSmBottom ? '--sb-block-padding-bottom-sm: ' + columnsPaddingSmBottom + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingSmLeft ? '--sb-block-padding-left-sm: ' + columnsPaddingSmLeft + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingMdTop ? '--sb-block-padding-top-md: ' + columnsPaddingMdTop + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingMdRight ? '--sb-block-padding-right-md: ' + columnsPaddingMdRight + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingMdBottom ? '--sb-block-padding-bottom-md: ' + columnsPaddingMdBottom + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingMdLeft ? '--sb-block-padding-left-md: ' + columnsPaddingMdLeft + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingTop ? '--sb-block-padding-top-lg: ' + columnsPaddingTop + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingRight ? '--sb-block-padding-right-lg: ' + columnsPaddingRight + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingBottom ? '--sb-block-padding-bottom-lg: ' + columnsPaddingBottom + columnsPaddingUnit + ';' : ''}
+        ${columnsPaddingLeft ? '--sb-block-padding-left-lg: ' + columnsPaddingLeft + columnsPaddingUnit + ';' : ''}
+
+        ${borderNormal ? '--sb-border-normal: ' + borderNormal + ';' : ''}
+        ${borderHover ? '--sb-border-hover: ' + borderNormal + ';' : ''}
+        ${borderNormalColor ? '--sb-border-normal-color: ' + borderNormalColor + ';' : ''}
+        ${borderHoverColor ? '--sb-border-hover-color: ' + borderHoverColor + ';' : ''}
+        ${borderNormalWidthTop ? '--sb-border-normal-width-top: ' + borderNormalWidthTop + borderNormalWidthUnit + ';' : ''}
+        ${borderNormalWidthRight ? '--sb-border-normal-width-right: ' + borderNormalWidthRight + borderNormalWidthUnit + ';' : ''}
+        ${borderNormalWidthBottom ? '--sb-border-normal-width-bottom: ' + borderNormalWidthBottom + borderNormalWidthUnit + ';' : ''}
+        ${borderNormalWidthLeft ? '--sb-border-normal-width-left: ' + borderNormalWidthLeft + borderNormalWidthUnit + ';' : ''}
+        ${borderHoverWidthTop ? '--sb-border-hover-width-top: ' + borderHoverWidthTop + borderHoverWidthUnit + ';' : ''}
+        ${borderHoverWidthRight ? '--sb-border-hover-width-right: ' + borderHoverWidthRight + borderHoverWidthUnit + ';' : ''}
+        ${borderHoverWidthBottom ? '--sb-border-hover-width-bottom: ' + borderHoverWidthBottom + borderHoverWidthUnit + ';' : ''}
+        ${borderHoverWidthLeft ? '--sb-border-hover-width-left: ' + borderHoverWidthLeft + borderHoverWidthUnit + ';' : ''}
+        ${borderNormalRadiusTop ? '--sb-border-normal-radius-top: ' + borderNormalRadiusTop + borderNormalRadiusUnit + ';' : ''}
+        ${borderNormalRadiusRight ? '--sb-border-normal-radius-right: ' + borderNormalRadiusRight + borderNormalRadiusUnit + ';' : ''}
+        ${borderNormalRadiusBottom ? '--sb-border-normal-radius-bottom: ' + borderNormalRadiusBottom + borderNormalRadiusUnit + ';' : ''}
+        ${borderNormalRadiusLeft ? '--sb-border-normal-radius-left: ' + borderNormalRadiusLeft + borderNormalRadiusUnit + ';' : ''}
+        ${borderHoverRadiusTop ? '--sb-border-hover-radius-top: ' + borderHoverRadiusTop + borderHoverRadiusUnit + ';' : ''}
+        ${borderHoverRadiusRight ? '--sb-border-hover-radius-right: ' + borderHoverRadiusRight + borderHoverRadiusUnit + ';' : ''}
+        ${borderHoverRadiusBottom ? '--sb-border-hover-radius-bottom: ' + borderHoverRadiusBottom + borderHoverRadiusUnit + ';' : ''}
+        ${borderHoverRadiusLeft ? '--sb-border-hover-radius-left: ' + borderHoverRadiusLeft + borderHoverRadiusUnit + ';' : ''}
+        ${borderNormalBoxShadow.horizontal ? '--sb-border-normal-box-shadow-horizontal: ' + borderNormalBoxShadow.horizontal + 'px;' : ''}
+        ${borderNormalBoxShadow.vertical ? '--sb-border-normal-box-shadow-vertical: ' + borderNormalBoxShadow.vertical + 'px;' : ''}
+        ${borderNormalBoxShadow.blur ? '--sb-border-normal-box-shadow-blur: ' + borderNormalBoxShadow.blur + 'px;' : ''}
+        ${borderNormalBoxShadow.spread ? '--sb-border-normal-box-shadow-spread: ' + borderNormalBoxShadow.spread + 'px;' : ''}
+        ${borderNormalBoxShadow.color ? '--sb-border-normal-box-shadow-color: ' + borderNormalBoxShadow.color + ';' : ''}
+        ${borderNormalBoxShadow.inset ? '--sb-border-normal-box-shadow-inset: ' + borderNormalBoxShadow.inset + ';' : ''}
+        ${borderHoverBoxShadow.horizontal ? '--sb-border-hover-box-shadow-horizontal: ' + borderHoverBoxShadow.horizontal + 'px;' : ''}
+        ${borderHoverBoxShadow.vertical ? '--sb-border-hover-box-shadow-vertical: ' + borderHoverBoxShadow.vertical + 'px;' : ''}
+        ${borderHoverBoxShadow.blur ? '--sb-border-hover-box-shadow-blur: ' + borderHoverBoxShadow.blur + 'px;' : ''}
+        ${borderHoverBoxShadow.spread ? '--sb-border-hover-box-shadow-spread: ' + borderHoverBoxShadow.spread + 'px;' : ''}
+        ${borderHoverBoxShadow.color ? '--sb-border-hover-box-shadow-color: ' + borderHoverBoxShadow.color + ';' : ''}
+        ${borderHoverBoxShadow.inset ? '--sb-border-hover-box-shadow-inset: ' + borderHoverBoxShadow.inset + ';' : ''}
+        ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
@@ -126,22 +238,12 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 
 	const Tag = columnsHTMLTag;
 
-
-	// let innerStyle = {};
-
-	// if (columnsWidth) {
-	// 	innerStyle = {maxWidth: columnsWidth + 'px'};
-	// }
-
 	const classes = classnames(
 		className,
 		`has-${columns}-columns`,
 		`has-desktop-${layout}-layout`,
 		`has-tablet-${layoutTablet}-layout`,
 		`has-mobile-${layoutMobile}-layout`,
-		`has-${columnsGap}-gap`,
-		`has-vertical-${verticalAlign}`,
-		// `has-horizontal-${horizontalAlign}`,
 		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
 		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
 		{'has-viewport-desktop': isDesktop},
@@ -188,12 +290,6 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
             <style jsx>
                 {style}
             </style>
-			<BlockNavigatorControl clientId={clientId} />
-
-			<Controls
-				attributes={attributes}
-				setAttributes={setAttributes}
-			/>
 
 			<Inspector
 				attributes={attributes}
@@ -202,9 +298,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 			/>
 
 			<Tag className={classes} id={id}>
-				<div className="innerblocks-wrap"
-				/* style={innerStyle} */
-				>
+				<div className="innerblocks-wrap">
 					<InnerBlocks
 						allowedBlocks={['smart-blocks/column']}
 						template={getColumnsTemplate(columns)}

@@ -19,7 +19,8 @@ import {
  * Internal dependencies
  */
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
-import Dimension from '../../utils/dimension';
+import DimensionControl from '../../controls/dimension';
+import Color from '../../utils/color';
 
 const Inspector = ({
 	attributes,
@@ -29,11 +30,37 @@ const Inspector = ({
 	adjacentBlock,
 	parentBlock,
 	updateBlockAttributes,
-	adjacentBlockClientId
+	adjacentBlockClientId,
+	columnBgColor,
 }) => {
 	const {
-        blockMargin,
-        blockPadding
+		columnMarginSmTop,
+		columnMarginSmRight,
+		columnMarginSmBottom,
+		columnMarginSmLeft,
+		columnMarginMdTop,
+		columnMarginMdRight,
+		columnMarginMdBottom,
+		columnMarginMdLeft,
+		columnMarginTop,
+		columnMarginRight,
+		columnMarginBottom,
+		columnMarginLeft,
+		columnMarginUnit,
+		columnPaddingSmTop,
+		columnPaddingSmRight,
+		columnPaddingSmBottom,
+		columnPaddingSmLeft,
+		columnPaddingMdTop,
+		columnPaddingMdRight,
+		columnPaddingMdBottom,
+		columnPaddingMdLeft,
+		columnPaddingTop,
+		columnPaddingRight,
+		columnPaddingBottom,
+		columnPaddingLeft,
+		columnPaddingUnit,
+		columnWidth
     } = attributes;
 
 	const getView = useSelect((select) => {
@@ -152,23 +179,94 @@ const Inspector = ({
 									title={__('Layout', 'smart-blocks')}
 									initialOpen={false}
 								>
-									<Dimension
+									<DimensionControl
                                         label={__('Margin', 'smart-blocks')}
                                         min="0"
                                         max="100"
-                                        values={blockMargin}
-                                        onChange={(blockMargin) => setAttributes({ blockMargin })}
                                         responsive={!0}
+
+                                        dimensionTop={columnMarginTop}
+                                        setDimensionTop={value => setAttributes({columnMarginTop: value})}
+                                        dimensionMdTop={columnMarginMdTop}
+                                        setDimensionMdTop={value => setAttributes({columnMarginMdTop: value})}
+                                        dimensionSmTop={columnMarginSmTop}
+                                        setDimensionSmTop={value => setAttributes({columnMarginSmTop: value})}
+
+                                        dimensionLeft={columnMarginLeft}
+                                        setDimensionLeft={value => setAttributes({columnMarginLeft: value})}
+                                        dimensionMdLeft={columnMarginMdLeft}
+                                        setDimensionMdLeft={value => setAttributes({columnMarginMdLeft: value})}
+                                        dimensionSmLeft={columnMarginSmLeft}
+                                        setDimensionSmLeft={value => setAttributes({columnMarginSmLeft: value})}
+
+                                        dimensionRight={columnMarginRight}
+                                        setDimensionRight={value => setAttributes({columnMarginRight: value})}
+                                        dimensionMdRight={columnMarginMdRight}
+                                        setDimensionMdRight={value => setAttributes({columnMarginMdRight: value})}
+                                        dimensionSmRight={columnMarginSmRight}
+                                        setDimensionSmRight={value => setAttributes({columnMarginSmRight: value})}
+
+                                        dimensionBottom={columnMarginBottom}
+                                        setDimensionBottom={value => setAttributes({columnMarginBottom: value})}
+                                        dimensionMdBottom={columnMarginMdBottom}
+                                        setDimensionMdBottom={value => setAttributes({columnMarginMdBottom: value})}
+                                        dimensionSmBottom={columnMarginSmBottom}
+                                        setDimensionSmBottom={value => setAttributes({columnMarginSmBottom: value})}
+
+                                        unit={columnMarginUnit}
+                                        setUnit={value => setAttributes({columnMarginUnit: value})}
                                     />
-                                    <Dimension
+                                    <DimensionControl
                                         label={__('Padding', 'smart-blocks')}
                                         min="0"
                                         max="100"
-                                        values={blockPadding}
-                                        onChange={(blockPadding) => setAttributes({ blockPadding })}
                                         responsive={!0}
+
+                                        dimensionTop={columnPaddingTop}
+                                        setDimensionTop={value => setAttributes({columnPaddingTop: value})}
+                                        dimensionMdTop={columnPaddingMdTop}
+                                        setDimensionMdTop={value => setAttributes({columnPaddingMdTop: value})}
+                                        dimensionSmTop={columnPaddingSmTop}
+                                        setDimensionSmTop={value => setAttributes({columnPaddingSmTop: value})}
+
+                                        dimensionLeft={columnPaddingLeft}
+                                        setDimensionLeft={value => setAttributes({columnPaddingLeft: value})}
+                                        dimensionMdLeft={columnPaddingMdLeft}
+                                        setDimensionMdLeft={value => setAttributes({columnPaddingMdLeft: value})}
+                                        dimensionSmLeft={columnPaddingSmLeft}
+                                        setDimensionSmLeft={value => setAttributes({columnPaddingSmLeft: value})}
+
+                                        dimensionRight={columnPaddingRight}
+                                        setDimensionRight={value => setAttributes({columnPaddingRight: value})}
+                                        dimensionMdRight={columnPaddingMdRight}
+                                        setDimensionMdRight={value => setAttributes({columnPaddingMdRight: value})}
+                                        dimensionSmRight={columnPaddingSmRight}
+                                        setDimensionSmRight={value => setAttributes({columnPaddingSmRight: value})}
+
+                                        dimensionBottom={columnPaddingBottom}
+                                        setDimensionBottom={value => setAttributes({columnPaddingBottom: value})}
+                                        dimensionMdBottom={columnPaddingMdBottom}
+                                        setDimensionMdBottom={value => setAttributes({columnPaddingMdBottom: value})}
+                                        dimensionSmBottom={columnPaddingSmBottom}
+                                        setDimensionSmBottom={value => setAttributes({columnPaddingSmBottom: value})}
+
+                                        unit={columnPaddingUnit}
+                                        setUnit={value => setAttributes({columnPaddingUnit: value})}
                                     />
 								</PanelBody>
+
+                                <PanelBody
+                                    title={__('Background', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <Color
+                                        label={__('Background Color', 'smart-blocks')}
+                                        enableAlpha
+                                        value={columnBgColor}
+                                        onChange={(columnBgColor) => setAttributes({ columnBgColor })}
+                                    />
+                                </PanelBody>
+
 								<PanelBody
 									title={__('Section Settings', 'smart-blocks')}
 									initialOpen={false}

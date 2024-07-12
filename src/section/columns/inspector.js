@@ -21,9 +21,10 @@ import {
  * Internal dependencies
  */
 import LayoutControl from '../components/layout-control';
-import Dimension from '../../utils/dimension';
+import DimensionControl from '../../controls/dimension';
+import RangeSliderControl from '../../controls/rangeslider';
+import ButtonGroupControl from '../../controls/buttongroup';
 import CustomRangeControl from '../../utils/customrangecontrol';
-import ButtonsGroupControl from '../../utils/buttonsgroupcontrol';
 import {
 	LayoutIcon,
 	StyleIcon,
@@ -40,6 +41,10 @@ import {
 	JustifySpaceAround,
 	JustifySpaceEvenly
 } from '../../utils/svgicons';
+import Tabs from '../../utils/tabs';
+import Border from '../../utils/border';
+import BoxShadow from '../../utils/boxshadow';
+import Color from '../../utils/color';
 
 const Inspector = ({
 	attributes,
@@ -48,24 +53,98 @@ const Inspector = ({
 }) => {
 	const {
 		columns,
-        blockMargin,
-        blockPadding,
+        borderNormal,
+        borderHover,
+        borderNormalColor,
+        borderHoverColor,
+
+        borderNormalWidthTop,
+        borderNormalWidthLeft,
+        borderNormalWidthRight,
+        borderNormalWidthBottom,
+        borderNormalWidthUnit,
+        borderHoverWidthTop,
+        borderHoverWidthLeft,
+        borderHoverWidthRight,
+        borderHoverWidthBottom,
+        borderHoverWidthUnit,
+        borderNormalRadiusTop,
+        borderNormalRadiusLeft,
+        borderNormalRadiusRight,
+        borderNormalRadiusBottom,
+        borderNormalRadiusUnit,
+        borderHoverRadiusTop,
+        borderHoverRadiusLeft,
+        borderHoverRadiusRight,
+        borderHoverRadiusBottom,
+        borderHoverRadiusUnit,
+
+        borderNormalBoxShadow,
+        borderHoverBoxShadow,
+        blockBgColor,
+
 		horizontalAlign,
+		horizontalAlignSm,
+		horizontalAlignMd,
+		columnAlignment,
+		columnAlignmentSm,
+		columnAlignmentMd,
+		columnJustify,
+		columnJustifySm,
+		columnJustifyMd,
+
 		layout,
 		layoutTablet,
 		layoutMobile,
+
 		columnsGap,
+		columnsGapMd,
+		columnsGapSm,
+
 		columnsWidth,
+		columnsWidthMd,
+		columnsWidthSm,
+
 		columnsHeight,
+
 		columnsHeightCustom,
+		columnsHeightCustomSm,
+		columnsHeightCustomMd,
+
 		hide,
 		hideTablet,
 		hideMobile,
 		reverseColumnsTablet,
 		reverseColumnsMobile,
 		columnsHTMLTag,
-		columnAlignment,
-		columnJustify
+
+		columnsMarginSmTop,
+		columnsMarginSmRight,
+		columnsMarginSmBottom,
+		columnsMarginSmLeft,
+		columnsMarginMdTop,
+		columnsMarginMdRight,
+		columnsMarginMdBottom,
+		columnsMarginMdLeft,
+		columnsMarginTop,
+		columnsMarginRight,
+		columnsMarginBottom,
+		columnsMarginLeft,
+		columnsMarginUnit,
+
+		columnsPaddingSmTop,
+		columnsPaddingSmRight,
+		columnsPaddingSmBottom,
+		columnsPaddingSmLeft,
+		columnsPaddingMdTop,
+		columnsPaddingMdRight,
+		columnsPaddingMdBottom,
+		columnsPaddingMdLeft,
+		columnsPaddingTop,
+		columnsPaddingRight,
+		columnsPaddingBottom,
+		columnsPaddingLeft,
+		columnsPaddingUnit,
     } = attributes;
 
 	const getView = useSelect((select) => {
@@ -135,13 +214,6 @@ const Inspector = ({
 			setAttributes({layoutMobile: value});
 		}
 	};
-
-	const changeColumnsWidth = value => {
-		if (( 0 <= value && 1200 >= value) || undefined === value) {
-			setAttributes({columnsWidth: value});
-		}
-	};
-
 
 
 	const changeHideStatus = (value, type) => {
@@ -236,28 +308,34 @@ const Inspector = ({
 										onClick={changeLayout}
 									/>
 
-									<CustomRangeControl
+									<RangeSliderControl
 	                                    label={__('Column Gap', 'smart-blocks')}
-	                                    value={columnsGap}
-	                                    onChange={(columnsGap) => setAttributes({columnsGap})}
 	                                    min={ 0 }
 	                                    max={ 50 }
 	                                    responsive={!0}
+	                                    value={columnsGap}
+	                                    setValue={(value) => setAttributes({columnsGap: value})}
+	                                    valueSm={columnsGapSm}
+	                                    setValueSm={(value) => setAttributes({columnsGapSm: value})}
+	                                    valueMd={columnsGapMd}
+	                                    setValueMd={(value) => setAttributes({columnsGapMd: value})}
 	                                />
 
-									<CustomRangeControl
+									<RangeSliderControl
 										label={__('Content Max Width', 'smart-blocks')}
-										value={columnsWidth}
-										onChange={(columnsWidth) => setAttributes({columnsWidth})}
 										min={ 0 }
 										max={ 1800 }
 										responsive={!0}
+										value={columnsWidth}
+										setValue={(value) => setAttributes({columnsWidth: value})}
+	                                    valueSm={columnsWidthSm}
+	                                    setValueSm={(value) => setAttributes({columnsWidthSm: value})}
+	                                    valueMd={columnsWidthMd}
+	                                    setValueMd={(value) => setAttributes({columnsWidthMd: value})}
 									/>
 
-									<ButtonsGroupControl
+									<ButtonGroupControl
 										label={__('Content Horizontal Align', 'smart-blocks')}
-										value={horizontalAlign}
-										onChange={(horizontalAlign) => setAttributes({horizontalAlign})}
 										responsive={!0}
 										options={[
 											{
@@ -276,12 +354,16 @@ const Inspector = ({
 												label: __('Right', 'smart-blocks')
 											}
 										]}
+										value={horizontalAlign}
+										setValue={(value) => setAttributes({horizontalAlign: value})}
+										valueSm={horizontalAlignSm}
+										setValueSm={(value) => setAttributes({horizontalAlignSm: value})}
+										valueMd={horizontalAlignMd}
+										setValueMd={(value) => setAttributes({horizontalAlignMd: value})}
 									/>
 
-									<ButtonsGroupControl
+									<ButtonGroupControl
 										label={__('Column Alignment', 'smart-blocks')}
-										value={columnAlignment}
-										onChange={(columnAlignment) => setAttributes({columnAlignment})}
 										responsive={!0}
 										options={[
 											{
@@ -310,12 +392,16 @@ const Inspector = ({
 												label: __('Baseline', 'smart-blocks')
 											}
 										]}
+										value={columnAlignment}
+										setValue={(value) => setAttributes({columnAlignment: value})}
+										valueSm={columnAlignmentSm}
+										setValueSm={(value) => setAttributes({columnAlignmentSm: value})}
+										valueMd={columnAlignmentMd}
+										setValueMd={(value) => setAttributes({columnAlignmentMd: value})}
 									/>
 
-									<ButtonsGroupControl
+									<ButtonGroupControl
 										label={__('Column Justify', 'smart-blocks')}
-										value={columnJustify}
-										onChange={(columnJustify) => setAttributes({columnJustify})}
 										responsive={!0}
 										options={[
 											{
@@ -349,6 +435,12 @@ const Inspector = ({
 												label: __('Space Evenly', 'smart-blocks')
 											}
 										]}
+										value={columnJustify}
+										setValue={(value) => setAttributes({columnJustify: value})}
+										valueSm={columnJustifySm}
+										setValueSm={(value) => setAttributes({columnJustifySm: value})}
+										valueMd={columnJustifyMd}
+										setValueMd={(value) => setAttributes({columnJustifyMd: value})}
 									/>
 
 								</PanelBody>
@@ -370,13 +462,17 @@ const Inspector = ({
 									/>
 
 									{'custom' === columnsHeight && (
-										<CustomRangeControl
+										<RangeSliderControl
 		                                    label={__('Custom Height', 'smart-blocks')}
-		                                    value={columnsHeightCustom}
-		                                    onChange={(columnsHeightCustom) => setAttributes({ columnsHeightCustom })}
 		                                    min={1}
 		                                    max={100}
 		                                    responsive={!0}
+		                                    value={columnsHeightCustom}
+		                                    setValue={(value) => setAttributes({columnsHeightCustom: value})}
+											valueSm={columnsHeightCustomSm}
+											setValueSm={(value) => setAttributes({columnsHeightCustomSm: value})}
+											valueMd={columnsHeightCustomMd}
+											setValueMd={(value) => setAttributes({columnsHeightCustomMd: value})}
 		                                />
 									)}
 								</PanelBody>
@@ -390,23 +486,197 @@ const Inspector = ({
 									title={__('Layout', 'smart-blocks')}
 									initialOpen={false}
 								>
-									<Dimension
+									<DimensionControl
                                         label={__('Margin', 'smart-blocks')}
                                         min="0"
                                         max="100"
-                                        values={blockMargin}
-                                        onChange={(blockMargin) => setAttributes({ blockMargin })}
                                         responsive={!0}
+
+                                        dimensionTop={columnsMarginTop}
+                                        setDimensionTop={value => setAttributes({columnsMarginTop: value})}
+                                        dimensionMdTop={columnsMarginMdTop}
+                                        setDimensionMdTop={value => setAttributes({columnsMarginMdTop: value})}
+                                        dimensionSmTop={columnsMarginSmTop}
+                                        setDimensionSmTop={value => setAttributes({columnsMarginSmTop: value})}
+
+                                        dimensionLeft={columnsMarginLeft}
+                                        setDimensionLeft={value => setAttributes({columnsMarginLeft: value})}
+                                        dimensionMdLeft={columnsMarginMdLeft}
+                                        setDimensionMdLeft={value => setAttributes({columnsMarginMdLeft: value})}
+                                        dimensionSmLeft={columnsMarginSmLeft}
+                                        setDimensionSmLeft={value => setAttributes({columnsMarginSmLeft: value})}
+
+                                        dimensionRight={columnsMarginRight}
+                                        setDimensionRight={value => setAttributes({columnsMarginRight: value})}
+                                        dimensionMdRight={columnsMarginMdRight}
+                                        setDimensionMdRight={value => setAttributes({columnsMarginMdRight: value})}
+                                        dimensionSmRight={columnsMarginSmRight}
+                                        setDimensionSmRight={value => setAttributes({columnsMarginSmRight: value})}
+
+                                        dimensionBottom={columnsMarginBottom}
+                                        setDimensionBottom={value => setAttributes({columnsMarginBottom: value})}
+                                        dimensionMdBottom={columnsMarginMdBottom}
+                                        setDimensionMdBottom={value => setAttributes({columnsMarginMdBottom: value})}
+                                        dimensionSmBottom={columnsMarginSmBottom}
+                                        setDimensionSmBottom={value => setAttributes({columnsMarginSmBottom: value})}
+
+                                        unit={columnsMarginUnit}
+                                        setUnit={value => setAttributes({columnsMarginUnit: value})}
                                     />
-                                    <Dimension
+
+                                    <DimensionControl
                                         label={__('Padding', 'smart-blocks')}
                                         min="0"
                                         max="100"
-                                        values={blockPadding}
-                                        onChange={(blockPadding) => setAttributes({ blockPadding })}
                                         responsive={!0}
+
+                                        dimensionTop={columnsPaddingTop}
+                                        setDimensionTop={value => setAttributes({columnsPaddingTop: value})}
+                                        dimensionMdTop={columnsPaddingMdTop}
+                                        setDimensionMdTop={value => setAttributes({columnsPaddingMdTop: value})}
+                                        dimensionSmTop={columnsPaddingSmTop}
+                                        setDimensionSmTop={value => setAttributes({columnsPaddingSmTop: value})}
+
+                                        dimensionLeft={columnsPaddingLeft}
+                                        setDimensionLeft={value => setAttributes({columnsPaddingLeft: value})}
+                                        dimensionMdLeft={columnsPaddingMdLeft}
+                                        setDimensionMdLeft={value => setAttributes({columnsPaddingMdLeft: value})}
+                                        dimensionSmLeft={columnsPaddingSmLeft}
+                                        setDimensionSmLeft={value => setAttributes({columnsPaddingSmLeft: value})}
+
+                                        dimensionRight={columnsPaddingRight}
+                                        setDimensionRight={value => setAttributes({columnsPaddingRight: value})}
+                                        dimensionMdRight={columnsPaddingMdRight}
+                                        setDimensionMdRight={value => setAttributes({columnsPaddingMdRight: value})}
+                                        dimensionSmRight={columnsPaddingSmRight}
+                                        setDimensionSmRight={value => setAttributes({columnsPaddingSmRight: value})}
+
+                                        dimensionBottom={columnsPaddingBottom}
+                                        setDimensionBottom={value => setAttributes({columnsPaddingBottom: value})}
+                                        dimensionMdBottom={columnsPaddingMdBottom}
+                                        setDimensionMdBottom={value => setAttributes({columnsPaddingMdBottom: value})}
+                                        dimensionSmBottom={columnsPaddingSmBottom}
+                                        setDimensionSmBottom={value => setAttributes({columnsPaddingSmBottom: value})}
+
+                                        unit={columnsPaddingUnit}
+                                        setUnit={value => setAttributes({columnsPaddingUnit: value})}
                                     />
 								</PanelBody>
+
+								<PanelBody
+                                    title={__('Border', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <Tabs>
+                                        <div tabTitle={__("Normal", 'smart-blocks')}>
+                                            <Border
+                                                value={borderNormal}
+                                                setValue={(borderNormal) => setAttributes({ borderNormal })}
+                                            />
+                                            {borderNormal && (
+                                                <Color
+                                                    label={__('Border Color', 'smart-blocks')}
+                                                    enableAlpha
+                                                    value={borderNormalColor}
+                                                    onChange={(borderNormalColor) => setAttributes({ borderNormalColor })}
+                                                />
+                                            )}
+                                            <DimensionControl
+                                                label={__('Border Width', 'smart-blocks')}
+                                                units={['px', 'em']}
+                                                dimensionTop={borderNormalWidthTop}
+		                                        setDimensionTop={value => setAttributes({borderNormalWidthTop: value})}
+		                                        dimensionLeft={borderNormalWidthLeft}
+		                                        setDimensionLeft={value => setAttributes({borderNormalWidthLeft: value})}
+		                                        dimensionRight={borderNormalWidthRight}
+		                                        setDimensionRight={value => setAttributes({borderNormalWidthRight: value})}
+		                                        dimensionBottom={borderNormalWidthBottom}
+		                                        setDimensionBottom={value => setAttributes({borderNormalWidthBottom: value})}
+
+		                                        unit={borderNormalWidthUnit}
+		                                        setUnit={value => setAttributes({borderNormalWidthUnit: value})}
+                                            />
+                                            <DimensionControl
+                                                label={__('Border Radius', 'smart-blocks')}
+                                                dimensionTop={borderNormalRadiusTop}
+		                                        setDimensionTop={value => setAttributes({borderNormalRadiusTop: value})}
+		                                        dimensionLeft={borderNormalRadiusLeft}
+		                                        setDimensionLeft={value => setAttributes({borderNormalRadiusLeft: value})}
+		                                        dimensionRight={borderNormalRadiusRight}
+		                                        setDimensionRight={value => setAttributes({borderNormalRadiusRight: value})}
+		                                        dimensionBottom={borderNormalRadiusBottom}
+		                                        setDimensionBottom={value => setAttributes({borderNormalRadiusBottom: value})}
+
+		                                        unit={borderNormalRadiusUnit}
+		                                        setUnit={value => setAttributes({borderNormalRadiusUnit: value})}
+                                            />
+                                            <BoxShadow
+                                                values={borderNormalBoxShadow}
+                                                onChange={(borderNormalBoxShadow) => setAttributes({ borderNormalBoxShadow })}
+                                            />
+                                        </div>
+                                        <div tabTitle={__("Hover", 'smart-blocks')}>
+                                            <Border
+                                                value={borderHover}
+                                                setValue={(borderHover) => setAttributes({ borderHover })}
+                                            />
+                                            {borderHover && (
+                                                <Color
+                                                    label={__('Border Color', 'smart-blocks')}
+                                                    enableAlpha
+                                                    value={borderHoverColor}
+                                                    onChange={(borderHoverColor) => setAttributes({ borderHoverColor })}
+                                                />
+                                            )}
+                                            <DimensionControl
+                                                label={__('Border Width', 'smart-blocks')}
+                                                units={['px', 'em']}
+                                                dimensionTop={borderHoverWidthTop}
+		                                        setDimensionTop={value => setAttributes({borderHoverWidthTop: value})}
+		                                        dimensionLeft={borderHoverWidthLeft}
+		                                        setDimensionLeft={value => setAttributes({borderHoverWidthLeft: value})}
+		                                        dimensionRight={borderHoverWidthRight}
+		                                        setDimensionRight={value => setAttributes({borderHoverWidthRight: value})}
+		                                        dimensionBottom={borderHoverWidthBottom}
+		                                        setDimensionBottom={value => setAttributes({borderHoverWidthBottom: value})}
+
+		                                        unit={borderHoverWidthUnit}
+		                                        setUnit={value => setAttributes({borderHoverWidthUnit: value})}
+                                            />
+                                            <DimensionControl
+                                                label={__('Border Radius', 'smart-blocks')}
+                                                dimensionTop={borderHoverRadiusTop}
+		                                        setDimensionTop={value => setAttributes({borderHoverRadiusTop: value})}
+		                                        dimensionLeft={borderHoverRadiusLeft}
+		                                        setDimensionLeft={value => setAttributes({borderHoverRadiusLeft: value})}
+		                                        dimensionRight={borderHoverRadiusRight}
+		                                        setDimensionRight={value => setAttributes({borderHoverRadiusRight: value})}
+		                                        dimensionBottom={borderHoverRadiusBottom}
+		                                        setDimensionBottom={value => setAttributes({borderHoverRadiusBottom: value})}
+
+		                                        unit={borderHoverRadiusUnit}
+		                                        setUnit={value => setAttributes({borderHoverRadiusUnit: value})}
+                                            />
+                                            <BoxShadow
+                                                values={borderHoverBoxShadow}
+                                                onChange={(borderHoverBoxShadow) => setAttributes({ borderHoverBoxShadow })}
+                                            />
+                                        </div>
+                                    </Tabs>
+                                </PanelBody>
+
+                                <PanelBody
+                                    title={__('Background', 'smart-blocks')}
+                                    initialOpen={false}
+                                >
+                                    <Color
+                                        label={__('Background Color', 'smart-blocks')}
+                                        enableAlpha
+                                        value={blockBgColor}
+                                        onChange={(blockBgColor) => setAttributes({ blockBgColor })}
+                                    />
+                                </PanelBody>
+
 								<PanelBody
 									title={ __( 'Responsive', 'smart-blocks' ) }
 									initialOpen={false}
