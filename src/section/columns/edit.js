@@ -6,7 +6,7 @@ import { useViewportMatch } from '@wordpress/compose';
 import { useDispatch, useSelect } from '@wordpress/data';
 import { InnerBlocks } from '@wordpress/block-editor';
 
-import { Fragment, useEffect, useState } from '@wordpress/element';
+import { useEffect, useState } from '@wordpress/element';
 
 /**
  * Internal dependencies
@@ -40,7 +40,8 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         columnsHeight,
         columnsHeightCustom,
         columnAlignment,
-        columnJustify
+        columnJustify,
+        style
     } = attributes;
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
 
@@ -88,6 +89,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         ${blockPadding.lg.bottom ? '--sb-block-padding-bottom-lg: ' + blockPadding.lg.bottom + blockPadding.unit + ';' : ''}
         ${blockPadding.lg.left ? '--sb-block-padding-left-lg: ' + blockPadding.lg.left + blockPadding.unit + ';' : ''}
     }`
+    setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
 	const { sectionBlock, isViewportAvailable, isPreviewDesktop, isPreviewTablet, isPreviewMobile } = useSelect( select => {
 		const { getBlock } = select( 'core/block-editor' );
@@ -182,7 +184,10 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 	}
 
 	return (
-		<Fragment>
+		<>
+            <style jsx>
+                {style}
+            </style>
 			<BlockNavigatorControl clientId={clientId} />
 
 			<Controls
@@ -207,7 +212,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 					/>
 				</div>
 			</Tag>
-		</Fragment>
+		</>
 	);
 };
 

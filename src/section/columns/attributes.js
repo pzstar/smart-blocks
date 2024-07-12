@@ -2,6 +2,9 @@ const attributes = {
 	id: {
 		type: 'string'
 	},
+    style: {
+        type: 'string'
+    },
 	columns: {
 		type: 'number'
 	},

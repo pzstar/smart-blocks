@@ -93,6 +93,23 @@ if (!class_exists('Smart_Blocks')) {
 
             $block_render = new Smart_Blocks_Blocks_Render();
             $blocks = array(
+                'template-import',
+                'columns',
+                'column',
+            );
+
+            foreach ($blocks as $block) {
+                register_block_type(
+                        'smart-blocks/' . $block, array(
+                    'editor_script' => 'sb-blocks',
+                    'editor_style' => 'sb-block-editor',
+                    'style' => 'sb-style',
+                    'script' => 'sb-script',
+                        )
+                );
+            }
+
+            $news_blocks = array(
                 'news-module-one',
                 'news-module-two',
                 'news-module-three',
@@ -116,7 +133,7 @@ if (!class_exists('Smart_Blocks')) {
                 'single-news-two',
                 'ticker-module'
             );
-            foreach ($blocks as $block) {
+            foreach ($news_blocks as $block) {
                 register_block_type(
                         'smart-blocks/' . $block, array(
                     'api_version' => 2,
@@ -129,23 +146,6 @@ if (!class_exists('Smart_Blocks')) {
                         )
                 );
             }
-
-            // $blocks = array(
-            //     'template-import',
-            //     'columns',
-            //     'column',
-            // );
-
-            // foreach ($blocks as $block) {
-            //     register_block_type(
-            //             'smart-blocks/' . $block, array(
-            //         'editor_script' => 'sb-blocks',
-            //         'editor_style' => 'sb-block-editor',
-            //         'style' => 'sb-style',
-            //         'script' => 'sb-script',
-            //             )
-            //     );
-            // }
         }
 
         /**
