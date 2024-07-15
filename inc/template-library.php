@@ -7,7 +7,7 @@ class Smart_blocks_Template_Library {
 	}
 
 	public function register_routes() {
-		register_rest_route('smart-blocks/v1/', 'fetch_templates', array(
+		register_rest_route('smart-blocks/v1', '/fetch_templates', array(
 			array(
 				'methods' => \WP_REST_Server::READABLE,
 				'callback' => array($this, 'fetch_templates'),
@@ -17,7 +17,7 @@ class Smart_blocks_Template_Library {
 			),
 		));
 
-		register_rest_route('smart-blocks/v1/', 'import_template', array(
+		register_rest_route('smart-blocks/v1', '/import_template', array(
 			array(
 				'methods' => \WP_REST_Server::READABLE,
 				'callback' => array($this, 'import_template'),
