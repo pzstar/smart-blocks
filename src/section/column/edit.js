@@ -169,7 +169,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 	};
 
 	const onResizeStart = () => {
-		const handle = document.querySelector(`#block-${ clientId } .wp-smart-block-column-resize-container-handle .components-resizable-box__handle`);
+		const handle = document.querySelector(`#block-${ clientId } .sb-column-resize-container-handle .components-resizable-box__handle`);
 		const handleTooltipLeft = document.createElement('div');
 		const handleTooltipRight = document.createElement('div');
 
@@ -231,11 +231,11 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 			/>
 
 			<ResizableBox
-				className="block-library-spacer__resize-container wp-smart-block-column-resize-container"
+				className="block-library-spacer__resize-container sb-column-resize-container"
 				enable={{
 					right: adjacentBlockClientId ? true : false
 				}}
-				handleWrapperClass="wp-smart-block-column-resize-container-handle"
+				handleWrapperClass="sb-column-resize-container-handle"
 				onResizeStart={onResizeStart}
 				onResize={onResize}
 				onResizeStop={onResizeStop}
