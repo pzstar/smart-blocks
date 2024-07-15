@@ -19,33 +19,20 @@ const BoxShadowControl = ({
     valueInset,
     setValueInset
 }) => {
-    !values ?
-        values = {
-            "horizontal": undefined,
-            "vertical": undefined,
-            "blur": undefined,
-            "spread": undefined,
-            "color": undefined,
-            "inset": undefined
-        } : values;
-
-    const onClearHandler = (e) => {
-        onChange({
-            "horizontal": undefined,
-            "vertical": undefined,
-            "blur": undefined,
-            "spread": undefined,
-            "color": undefined,
-            "inset": undefined
-        });
-    }
     return <>
         <div className="sb-field sb-flex sb-field-boxshadow sb-inline-block ">
             <label className="sb-mb-0">{__("Box Shadow", 'smart-blocks')}</label>
             <div className="sb-flex">
                 <Tooltip text={__('Clear', 'smart-blocks')}>
                     <div className="sb-reset-color"
-                        onClick={onClearHandler}>
+                        onClick={(e) => {
+                            setValueHorizontal(undefined);
+                            setValueVertical(undefined);
+                            setValueBlur(undefined);
+                            setValueSpread(undefined);
+                            setValueColor(undefined);
+                            setValueInset(undefined);
+                        }}>
                         <span className="sb-border-clear sb-flex" role="button">
                             <ClearIcon />
                         </span>
@@ -83,31 +70,31 @@ const BoxShadowControl = ({
                                 <TextControl
                                     label={__('Blur', 'smart-blocks')}
                                     type={"number"}
-                                    value={values['blur'] || ""}
+                                    value={valueBlur}
                                     onChange={(e) => setValueBlur(e)}
                                 />
                                 <TextControl
                                     label={__('Spread', 'smart-blocks')}
                                     type={"number"}
-                                    value={values['spread'] || ""}
+                                    value={valueSpread}
                                     onChange={(e) => setValueSpread(e)}
                                 />
                             </div>
 
                             <ColorControl
                                 label={__("Color", 'smart-blocks')}
-                                value={values['color']}
+                                value={valueColor}
                                 setValue={(e) => setValueColor(e)}
                                 enableAlpha
                             />
 
                             <AdvancedRadio
                                 label={__("Inset", 'smart-blocks')}
-                                value={values['inset']}
+                                value={valueInset}
                                 setValue={((e) => setValueInset(e))}
                                 options={[
-                                    { label: __("Inset"), value: "inset", title: __("Inset") },
-                                    { label: __("Outset"), value: "", title: __("Outset") }
+                                    {label: __("Inset"), value: "inset", title: __("Inset")},
+                                    {label: __("Outset"), value: "", title: __("Outset")}
                                 ]}
                             />
                         </>

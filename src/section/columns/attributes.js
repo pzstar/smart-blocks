@@ -294,28 +294,45 @@ const attributes = {
         default: 'px'
     },
 
-    borderNormalBoxShadow: {
-        type: 'object',
-        default: {
-            horizontal: undefined,
-            vertical: undefined,
-            blur: undefined,
-            spread: undefined,
-            color: undefined,
-            inset: undefined
-        }
+    borderNormalBoxShadowHorizontal: {
+        type: 'string'
     },
-    borderHoverBoxShadow: {
-        type: 'object',
-        default: {
-            horizontal: undefined,
-            vertical: undefined,
-            blur: undefined,
-            spread: undefined,
-            color: undefined,
-            inset: undefined
-        }
+    borderNormalBoxShadowVertical: {
+        type: 'string'
     },
+    borderNormalBoxShadowBlur: {
+        type: 'string'
+    },
+    borderNormalBoxShadowSpread: {
+        type: 'string'
+    },
+    borderNormalBoxShadowColor: {
+        type: 'string'
+    },
+    borderNormalBoxShadowInset: {
+        type: 'string'
+    },
+
+
+    borderHoverBoxShadowHorizontal: {
+        type: 'string'
+    },
+    borderHoverBoxShadowVertical: {
+        type: 'string'
+    },
+    borderHoverBoxShadowBlur: {
+        type: 'string'
+    },
+    borderHoverBoxShadowSpread: {
+        type: 'string'
+    },
+    borderHoverBoxShadowColor: {
+        type: 'string'
+    },
+    borderHoverBoxShadowInset: {
+        type: 'string'
+    },
+
 
     sectionBgImgURL: {
         type: 'string'

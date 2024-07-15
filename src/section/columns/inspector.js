@@ -26,6 +26,7 @@ import RangeSliderControl from '../../controls/rangeslider';
 import ButtonGroupControl from '../../controls/buttongroup';
 import ColorControl from '../../controls/color';
 import ImageBackgroundControl from '../../controls/imagebackground';
+import BoxShadowControl from '../../controls/boxshadow';
 import {
 	LayoutIcon,
 	StyleIcon,
@@ -44,7 +45,6 @@ import {
 } from '../../utils/svgicons';
 import Tabs from '../../utils/tabs';
 import Border from '../../utils/border';
-import BoxShadow from '../../utils/boxshadow';
 
 const Inspector = ({
 	attributes,
@@ -79,8 +79,18 @@ const Inspector = ({
         borderHoverRadiusBottom,
         borderHoverRadiusUnit,
 
-        borderNormalBoxShadow,
-        borderHoverBoxShadow,
+        borderNormalBoxShadowHorizontal,
+        borderNormalBoxShadowVertical,
+        borderNormalBoxShadowBlur,
+        borderNormalBoxShadowSpread,
+        borderNormalBoxShadowColor,
+        borderNormalBoxShadowInset,
+        borderHoverBoxShadowHorizontal,
+        borderHoverBoxShadowVertical,
+        borderHoverBoxShadowBlur,
+        borderHoverBoxShadowSpread,
+        borderHoverBoxShadowColor,
+        borderHoverBoxShadowInset,
         sectionBgColor,
 
 		horizontalAlign,
@@ -614,9 +624,19 @@ const Inspector = ({
 		                                        unit={borderNormalRadiusUnit}
 		                                        setUnit={value => setAttributes({borderNormalRadiusUnit: value})}
                                             />
-                                            <BoxShadow
-                                                values={borderNormalBoxShadow}
-                                                onChange={(borderNormalBoxShadow) => setAttributes({ borderNormalBoxShadow })}
+                                            <BoxShadowControl
+                                                valueHorizontal={borderNormalBoxShadowHorizontal}
+                                                setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({ borderNormalBoxShadowHorizontal })}
+                                                valueVertical={borderNormalBoxShadowVertical}
+                                                setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({ borderNormalBoxShadowVertical })}
+                                                valueBlur={borderNormalBoxShadowBlur}
+                                                setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({ borderNormalBoxShadowBlur })}
+                                                valueSpread={borderNormalBoxShadowSpread}
+                                                setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({ borderNormalBoxShadowSpread })}
+                                                valueColor={borderNormalBoxShadowColor}
+                                                setValueColor={(borderNormalBoxShadowColor) => setAttributes({ borderNormalBoxShadowColor })}
+                                                valueInset={borderNormalBoxShadowInset}
+                                                setValueInset={(borderNormalBoxShadowInset) => setAttributes({ borderNormalBoxShadowInset })}
                                             />
                                         </div>
                                         <div tabTitle={__("Hover", 'smart-blocks')}>
@@ -661,9 +681,19 @@ const Inspector = ({
 		                                        unit={borderHoverRadiusUnit}
 		                                        setUnit={value => setAttributes({borderHoverRadiusUnit: value})}
                                             />
-                                            <BoxShadow
-                                                values={borderHoverBoxShadow}
-                                                onChange={(borderHoverBoxShadow) => setAttributes({ borderHoverBoxShadow })}
+                                            <BoxShadowControl
+                                                valueHorizontal={borderHoverBoxShadowHorizontal}
+                                                setValueHorizontal={(borderHoverBoxShadowHorizontal) => setAttributes({ borderHoverBoxShadowHorizontal })}
+                                                valueVertical={borderHoverBoxShadowVertical}
+                                                setValueVertical={(borderHoverBoxShadowVertical) => setAttributes({ borderHoverBoxShadowVertical })}
+                                                valueBlur={borderHoverBoxShadowBlur}
+                                                setValueBlur={(borderHoverBoxShadowBlur) => setAttributes({ borderHoverBoxShadowBlur })}
+                                                valueSpread={borderHoverBoxShadowSpread}
+                                                setValueSpread={(borderHoverBoxShadowSpread) => setAttributes({ borderHoverBoxShadowSpread })}
+                                                valueColor={borderHoverBoxShadowColor}
+                                                setValueColor={(borderHoverBoxShadowColor) => setAttributes({ borderHoverBoxShadowColor })}
+                                                valueInset={borderHoverBoxShadowInset}
+                                                setValueInset={(borderHoverBoxShadowInset) => setAttributes({ borderHoverBoxShadowInset })}
                                             />
                                         </div>
                                     </Tabs>
