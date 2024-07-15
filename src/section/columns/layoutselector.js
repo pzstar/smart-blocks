@@ -15,9 +15,9 @@ const LayoutSelector = ({ clientId, setupColumns }) => {
 			instructions={__('Select a variation to start with', 'smart-blocks')}
 			icon={<Icon icon={columnsIcon} />}
 			isColumnLayout={true}
-			className="wp-block-sb-onboarding-component"
+			className="sb-onboarding-component"
 		>
-			<div className="wp-block-sb-layout-picker">
+			<div className="sb-layout-picker">
 				<Tooltip text={__('Equal', 'smart-blocks')}>
 					<Button
 						isLarge
