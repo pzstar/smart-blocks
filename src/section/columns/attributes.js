@@ -358,6 +358,10 @@ const attributes = {
     sectionBgRepeat: {
         type: 'string',
         default: 'repeat'
+    },
+    sectionContentWidth: {
+        type: 'string',
+        enum: ['full', 'boxed']
     }
 };
 

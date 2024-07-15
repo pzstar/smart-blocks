@@ -133,7 +133,9 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         borderHoverBoxShadowBlur,
         borderHoverBoxShadowSpread,
         borderHoverBoxShadowColor,
-        borderHoverBoxShadowInset
+        borderHoverBoxShadowInset,
+
+        sectionContentWidth
     } = attributes;
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
 
@@ -275,7 +277,8 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
 		{'has-viewport-desktop': isDesktop},
 		{'has-viewport-tablet': isTablet},
-		{'has-viewport-mobile': isMobile}
+		{'has-viewport-mobile': isMobile},
+		`has-${sectionContentWidth}-width`
 	);
 
 	const updateColumnsWidth = (columns, layout) => {

@@ -6,20 +6,16 @@ const Save = ({attributes, className}) => {
 	const {
 		id,
         columns,
-        columnsWidth,
         columnsHTMLTag,
         layout,
         layoutTablet,
         layoutMobile,
-        verticalAlign,
-        horizontalAlign,
         reverseColumnsTablet,
         reverseColumnsMobile,
         hide,
         hideTablet,
         hideMobile,
-        blockMargin,
-        blockPadding
+        sectionContentWidth
     } = attributes;
 
 	const Tag = columnsHTMLTag;
@@ -38,7 +34,7 @@ const Save = ({attributes, className}) => {
 		{'hide-in-mobile': hideMobile},
 		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
 		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
-		`has-vertical-${verticalAlign}`
+		`has-${sectionContentWidth}-width`
 	);
 
 	return (

@@ -26,6 +26,11 @@ registerBlockType('smart-blocks/template-import', {
     },
     category: "smart-blocks-block-modules",
     title: __("Template Library", 'smart-blocks'),
+    attributes: {
+        isLibraryOpen: {
+            type: 'boolean'
+        }
+    },
     description: __("Import Blocks and Templates Library", 'smart-blocks'),
     keywords: ["Import", "Template", "Block", "Widget", "Section", "Patterns", "Reusable", "Library", "Tools"],
     /**

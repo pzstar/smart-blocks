@@ -161,7 +161,9 @@ const Inspector = ({
         sectionBgAttachment,
         sectionBgSize,
         sectionBgPosition,
-        sectionBgRepeat
+        sectionBgRepeat,
+
+        sectionContentWidth
     } = attributes;
 
 	const getView = useSelect((select) => {
@@ -254,9 +256,6 @@ const Inspector = ({
 		}
 	};
 
-	const changeColumnsHTMLTag = value => {
-		setAttributes({columnsHTMLTag: value});
-	};
 
 	const changeID = value => {
 		setAttributes({id: value});
@@ -337,6 +336,16 @@ const Inspector = ({
 	                                    valueMd={columnsGapMd}
 	                                    setValueMd={(value) => setAttributes({columnsGapMd: value})}
 	                                />
+
+	                                <SelectControl
+										label={__('Content Width', 'smart-blocks')}
+										value={sectionContentWidth}
+										options={[
+											{label: __('Full Width', 'smart-blocks'), value: 'full'},
+											{label: __('Boxed', 'smart-blocks'), value: 'boxed'},
+										]}
+										onChange={value => setAttributes({sectionContentWidth: value})}
+									/>
 
 									<RangeSliderControl
 										label={__('Content Max Width', 'smart-blocks')}
@@ -785,7 +794,7 @@ const Inspector = ({
 											{label: 'article', value: 'article'},
 											{label: 'main', value: 'main'}
 										]}
-										onChange={changeColumnsHTMLTag}
+										onChange={value => setAttributes({columnsHTMLTag: value})}
 									/>
 								</PanelBody>
 							</>
