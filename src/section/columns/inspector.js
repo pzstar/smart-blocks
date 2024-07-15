@@ -27,6 +27,7 @@ import ButtonGroupControl from '../../controls/buttongroup';
 import ColorControl from '../../controls/color';
 import ImageBackgroundControl from '../../controls/imagebackground';
 import BoxShadowControl from '../../controls/boxshadow';
+import BorderControl from '../../controls/border';
 import {
 	LayoutIcon,
 	StyleIcon,
@@ -44,7 +45,6 @@ import {
 	JustifySpaceEvenly
 } from '../../utils/svgicons';
 import Tabs from '../../utils/tabs';
-import Border from '../../utils/border';
 
 const Inspector = ({
 	attributes,
@@ -583,7 +583,7 @@ const Inspector = ({
                                 >
                                     <Tabs>
                                         <div tabTitle={__("Normal", 'smart-blocks')}>
-                                            <Border
+                                            <BorderControl
                                                 value={borderNormal}
                                                 setValue={(borderNormal) => setAttributes({ borderNormal })}
                                             />
@@ -640,7 +640,7 @@ const Inspector = ({
                                             />
                                         </div>
                                         <div tabTitle={__("Hover", 'smart-blocks')}>
-                                            <Border
+                                            <BorderControl
                                                 value={borderHover}
                                                 setValue={(borderHover) => setAttributes({ borderHover })}
                                             />
