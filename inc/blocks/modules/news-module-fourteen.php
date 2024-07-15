@@ -15,7 +15,7 @@ class Smart_Blocks_News_Module_Fourteen {
         $post_image_size = $this->attributes['postImageSize'];
         $post_column = $this->attributes['noOfCol'];
         $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
-        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-fourteen wp-block-smart-blocks']) . '>';
+        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-fourteen wp-block-sb']) . '>';
 
         $content_rendered .= $this->render_header();
 

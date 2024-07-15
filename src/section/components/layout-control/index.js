@@ -48,12 +48,12 @@ const LayoutControl = ({
 	            }
 	            <ResponsiveDropdown/>
 	        </div>
-			<div className="wp-block-smart-blocks-columns-layout-control">
+			<div className="sb-blocks-columns-layout-control">
 				{ 1 === columns && (
 					<Tooltip text={ __( 'Single Row', 'smart-blocks' ) } >
 						<Button
 							className={ classnames(
-								'wp-block-smart-blocks-column-layout',
+								'sb-blocks-column-layout',
 								{ 'selected': 'equal' === value }
 							) }
 							onClick={ () => onClick( 'equal' ) }
@@ -68,7 +68,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( 'Equal', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'equal' === value }
 								) }
 								onClick={ () => onClick( 'equal' ) }
@@ -83,7 +83,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( '1:2', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'oneTwo' === value }
 								) }
 								onClick={ () => onClick( 'oneTwo' ) }
@@ -98,7 +98,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( '2:1', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'twoOne' === value }
 								) }
 								onClick={ () => onClick( 'twoOne' ) }
@@ -114,7 +114,7 @@ const LayoutControl = ({
 							<Tooltip text={ __( 'Collapsed Rows', 'smart-blocks' ) } >
 								<Button
 									className={ classnames(
-										'wp-block-smart-blocks-column-layout',
+										'sb-blocks-column-layout',
 										{ 'selected': 'collapsedRows' === value }
 									) }
 									onClick={ () => onClick( 'collapsedRows' ) }
@@ -132,7 +132,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( 'Equal', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'equal' === value }
 								) }
 								onClick={ () => onClick( 'equal' ) }
@@ -148,7 +148,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( '1:1:2', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'oneOneTwo' === value }
 								) }
 								onClick={ () => onClick( 'oneOneTwo' ) }
@@ -164,7 +164,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( '2:1:1', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'twoOneOne' === value }
 								) }
 								onClick={ () => onClick( 'twoOneOne' ) }
@@ -180,7 +180,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( '1:2:1', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'oneTwoOne' === value }
 								) }
 								onClick={ () => onClick( 'oneTwoOne' ) }
@@ -196,7 +196,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( '1:3:1', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'oneThreeOne' === value }
 								) }
 								onClick={ () => onClick( 'oneThreeOne' ) }
@@ -213,7 +213,7 @@ const LayoutControl = ({
 							<Tooltip text={ __( 'Collapsed Rows', 'smart-blocks' ) } >
 								<Button
 									className={ classnames(
-										'wp-block-smart-blocks-column-layout',
+										'sb-blocks-column-layout',
 										{ 'selected': 'collapsedRows' === value }
 									) }
 									onClick={ () => onClick( 'collapsedRows' ) }
@@ -231,7 +231,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( 'Equal', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'equal' === value }
 								) }
 								onClick={ () => onClick( 'equal' ) }
@@ -250,7 +250,7 @@ const LayoutControl = ({
 								<Tooltip text={ __( 'Two Column Grid', 'smart-blocks' ) } >
 									<Button
 										className={ classnames(
-											'wp-block-smart-blocks-column-layout',
+											'sb-blocks-column-layout',
 											{ 'selected': 'twoColumnGrid' === value }
 										) }
 										onClick={ () => onClick( 'twoColumnGrid' ) }
@@ -266,7 +266,7 @@ const LayoutControl = ({
 								<Tooltip text={ __( 'Collapsed Rows', 'smart-blocks' ) } >
 									<Button
 										className={ classnames(
-											'wp-block-smart-blocks-column-layout',
+											'sb-blocks-column-layout',
 											{ 'selected': 'collapsedRows' === value }
 										) }
 										onClick={ () => onClick( 'collapsedRows' ) }
@@ -285,7 +285,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( 'Equal', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'equal' === value }
 								) }
 								onClick={ () => onClick( 'equal' ) }
@@ -304,7 +304,7 @@ const LayoutControl = ({
 							<Tooltip text={ __( 'Collapsed Rows', 'smart-blocks' ) } >
 								<Button
 									className={ classnames(
-										'wp-block-smart-blocks-column-layout',
+										'sb-blocks-column-layout',
 										{ 'selected': 'collapsedRows' === value }
 									) }
 									onClick={ () => onClick( 'collapsedRows' ) }
@@ -322,7 +322,7 @@ const LayoutControl = ({
 						<Tooltip text={ __( 'Equal', 'smart-blocks' ) } >
 							<Button
 								className={ classnames(
-									'wp-block-smart-blocks-column-layout',
+									'sb-blocks-column-layout',
 									{ 'selected': 'equal' === value }
 								) }
 								onClick={ () => onClick( 'equal' ) }
@@ -343,7 +343,7 @@ const LayoutControl = ({
 								<Tooltip text={ __( 'Two Column Grid', 'smart-blocks' ) } >
 									<Button
 										className={ classnames(
-											'wp-block-smart-blocks-column-layout',
+											'sb-blocks-column-layout',
 											{ 'selected': 'twoColumnGrid' === value }
 										) }
 										onClick={ () => onClick( 'twoColumnGrid' ) }
@@ -360,7 +360,7 @@ const LayoutControl = ({
 								<Tooltip text={ __( 'Three Column Grid', 'smart-blocks' ) } >
 									<Button
 										className={ classnames(
-											'wp-block-smart-blocks-column-layout',
+											'sb-blocks-column-layout',
 											{ 'selected': 'threeColumnGrid' === value }
 										) }
 										onClick={ () => onClick( 'threeColumnGrid' ) }
@@ -377,7 +377,7 @@ const LayoutControl = ({
 								<Tooltip text={ __( 'Collapsed Rows', 'smart-blocks' ) } >
 									<Button
 										className={ classnames(
-											'wp-block-smart-blocks-column-layout',
+											'sb-blocks-column-layout',
 											{ 'selected': 'collapsedRows' === value }
 										) }
 										onClick={ () => onClick( 'collapsedRows' ) }

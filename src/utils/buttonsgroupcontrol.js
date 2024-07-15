@@ -10,7 +10,7 @@ const ButtonsGroupControl = ({ label, options = {}, steps, value, onChange, resp
 
     const onChangeValue = (input) => {
         if (value === input) {
-            return onChange(null);
+            return onChange(undefined);
         }
         return onChange(input);
     };
@@ -34,7 +34,7 @@ const ButtonsGroupControl = ({ label, options = {}, steps, value, onChange, resp
             {responsive ?
                 (<>
                     {getView == 'Mobile' && (
-                        <ButtonGroup className="wp-block-smart-icon-buttom-group">
+                        <ButtonGroup className="sb-icon-buttom-group">
                             {options.map((alignment)=> {return (
                                 <Button
                                     icon={alignment.icon}
@@ -43,7 +43,7 @@ const ButtonsGroupControl = ({ label, options = {}, steps, value, onChange, resp
                                     isLarge
                                     isPrimary={alignment.value === value?.sm}
                                     onClick={(e) => {
-                                        value['sm'] = alignment.value === value?.sm ? null : alignment.value;
+                                        value['sm'] = alignment.value === value?.sm ? undefined : alignment.value;
                                         onChange({ ...value });
                                     }}
                                 />)
@@ -51,7 +51,7 @@ const ButtonsGroupControl = ({ label, options = {}, steps, value, onChange, resp
                         </ButtonGroup>
                     )}
                     {getView == 'Tablet' && (
-                        <ButtonGroup className="wp-block-smart-icon-buttom-group">
+                        <ButtonGroup className="sb-icon-buttom-group">
                             {options.map((alignment)=> {return (
                                 <Button
                                     icon={alignment.icon}
@@ -60,7 +60,7 @@ const ButtonsGroupControl = ({ label, options = {}, steps, value, onChange, resp
                                     isLarge
                                     isPrimary={alignment.value === value?.md}
                                     onClick={(e) => {
-                                        value['md'] = alignment.value === value?.md ? null : alignment.value;
+                                        value['md'] = alignment.value === value?.md ? undefined : alignment.value;
                                         onChange({ ...value });
                                     }}
                                 />)
@@ -68,7 +68,7 @@ const ButtonsGroupControl = ({ label, options = {}, steps, value, onChange, resp
                         </ButtonGroup>
                     )}
                     {getView == 'Desktop' && (
-                        <ButtonGroup className="wp-block-smart-icon-buttom-group">
+                        <ButtonGroup className="sb-icon-buttom-group">
                             {options.map((alignment)=> {return (
                                 <Button
                                     icon={alignment.icon}
@@ -77,7 +77,7 @@ const ButtonsGroupControl = ({ label, options = {}, steps, value, onChange, resp
                                     isLarge
                                     isPrimary={alignment.value === value?.lg}
                                     onClick={(e) => {
-                                        value['lg'] = alignment.value === value?.lg ? null : alignment.value;
+                                        value['lg'] = alignment.value === value?.lg ? undefined : alignment.value;
                                         onChange({ ...value });
                                     }}
                                 />)
@@ -86,7 +86,7 @@ const ButtonsGroupControl = ({ label, options = {}, steps, value, onChange, resp
                     )}
                 </>) :
                 (
-                    <ButtonGroup className="wp-block-smart-icon-buttom-group">
+                    <ButtonGroup className="sb-icon-buttom-group">
                         {options.map((alignment)=> {return (
                             <Button
                                 icon={alignment.icon}

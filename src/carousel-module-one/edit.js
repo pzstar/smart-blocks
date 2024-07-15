@@ -1024,7 +1024,7 @@ export default function Edit({ attributes, setAttributes }) {
             </InspectorControls>
             <div id={id}>
                 <div {...useBlockProps({
-                    className: "wp-block-smart-blocks sb-carousel-block"
+                    className: "sb-blocks sb-carousel-block"
                 })}>
                     <h2 className={headerClasses}>
                         <RichText

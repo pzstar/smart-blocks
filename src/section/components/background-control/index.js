@@ -22,7 +22,7 @@ const BackgroundControl = ({
 	const id = `inspector-background-control-${ instanceId }`;
 
 	return (
-		<div id={ id } className="components-base-control wp-block-smart-blocks-columns-background-control">
+		<div id={ id } className="components-base-control sb-blocks-columns-background-control">
 			<div className="components-base-control__field">
 				<div className="components-base-control__title">
 					<label className="components-base-control__label">{ label }</label>

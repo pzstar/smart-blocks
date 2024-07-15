@@ -7,12 +7,12 @@ import { ClearIcon } from './svgicons';
 const BoxShadow = ({ label, values, onChange }) => {
     !values ?
         values = {
-            "horizontal": null,
-            "vertical": null,
-            "blur": null,
-            "spread": null,
-            "color": null,
-            "inset": null
+            "horizontal": undefined,
+            "vertical": undefined,
+            "blur": undefined,
+            "spread": undefined,
+            "color": undefined,
+            "inset": undefined
         } : values;
 
     const onHorizontalChangeHandler = (e) => {
@@ -41,12 +41,12 @@ const BoxShadow = ({ label, values, onChange }) => {
     }
     const onClearHandler = (e) => {
         onChange({
-            "horizontal": null,
-            "vertical": null,
-            "blur": null,
-            "spread": null,
-            "color": null,
-            "inset": null
+            "horizontal": undefined,
+            "vertical": undefined,
+            "blur": undefined,
+            "spread": undefined,
+            "color": undefined,
+            "inset": undefined
         });
     }
     return <>

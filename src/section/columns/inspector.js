@@ -24,7 +24,8 @@ import LayoutControl from '../components/layout-control';
 import DimensionControl from '../../controls/dimension';
 import RangeSliderControl from '../../controls/rangeslider';
 import ButtonGroupControl from '../../controls/buttongroup';
-import CustomRangeControl from '../../utils/customrangecontrol';
+import ColorControl from '../../controls/color';
+import ImageBackgroundControl from '../../controls/imagebackground';
 import {
 	LayoutIcon,
 	StyleIcon,
@@ -44,7 +45,6 @@ import {
 import Tabs from '../../utils/tabs';
 import Border from '../../utils/border';
 import BoxShadow from '../../utils/boxshadow';
-import Color from '../../utils/color';
 
 const Inspector = ({
 	attributes,
@@ -81,7 +81,7 @@ const Inspector = ({
 
         borderNormalBoxShadow,
         borderHoverBoxShadow,
-        blockBgColor,
+        sectionBgColor,
 
 		horizontalAlign,
 		horizontalAlignSm,
@@ -145,6 +145,13 @@ const Inspector = ({
 		columnsPaddingBottom,
 		columnsPaddingLeft,
 		columnsPaddingUnit,
+
+		sectionBgImgURL,
+        sectionBgImgID,
+        sectionBgAttachment,
+        sectionBgSize,
+        sectionBgPosition,
+        sectionBgRepeat
     } = attributes;
 
 	const getView = useSelect((select) => {
@@ -479,9 +486,6 @@ const Inspector = ({
 							</>
                         ) || 'style' === activeTab && (
 							<>
-							</>
-                        ) || 'advanced' === activeTab && (
-							<>
 								<PanelBody
 									title={__('Layout', 'smart-blocks')}
 									initialOpen={false}
@@ -574,11 +578,11 @@ const Inspector = ({
                                                 setValue={(borderNormal) => setAttributes({ borderNormal })}
                                             />
                                             {borderNormal && (
-                                                <Color
+                                                <ColorControl
                                                     label={__('Border Color', 'smart-blocks')}
                                                     enableAlpha
                                                     value={borderNormalColor}
-                                                    onChange={(borderNormalColor) => setAttributes({ borderNormalColor })}
+                                                    setValue={(borderNormalColor) => setAttributes({ borderNormalColor })}
                                                 />
                                             )}
                                             <DimensionControl
@@ -621,11 +625,11 @@ const Inspector = ({
                                                 setValue={(borderHover) => setAttributes({ borderHover })}
                                             />
                                             {borderHover && (
-                                                <Color
+                                                <ColorControl
                                                     label={__('Border Color', 'smart-blocks')}
                                                     enableAlpha
                                                     value={borderHoverColor}
-                                                    onChange={(borderHoverColor) => setAttributes({ borderHoverColor })}
+                                                    setValue={(borderHoverColor) => setAttributes({ borderHoverColor })}
                                                 />
                                             )}
                                             <DimensionControl
@@ -669,16 +673,34 @@ const Inspector = ({
                                     title={__('Background', 'smart-blocks')}
                                     initialOpen={false}
                                 >
-                                    <Color
+                                    <ColorControl
                                         label={__('Background Color', 'smart-blocks')}
-                                        enableAlpha
-                                        value={blockBgColor}
-                                        onChange={(blockBgColor) => setAttributes({ blockBgColor })}
+                                        enableAlpha={!0}
+                                        value={sectionBgColor}
+                                        setValue={(sectionBgColor) => setAttributes({sectionBgColor})}
+                                    />
+
+                                    <ImageBackgroundControl
+                                    	label={__("Background Image", 'smart-blocks')}
+                                    	imageURL={sectionBgImgURL}
+                                    	setImageURL={value => setAttributes({sectionBgImgURL: value})}
+                                    	imageID={sectionBgImgID}
+                                    	setImageID={value => setAttributes({sectionBgImgID: value})}
+                                    	imageAttachment={sectionBgAttachment}
+                                    	setImageAttachment={value => setAttributes({sectionBgAttachment: value})}
+                                    	imageSize={sectionBgSize}
+                                    	setImageSize={value => setAttributes({sectionBgSize: value})}
+                                    	imagePosition={sectionBgPosition}
+                                    	setImagePosition={value => setAttributes({sectionBgPosition: value})}
+                                    	imageRepeat={sectionBgRepeat}
+                                    	setImageRepeat={value => setAttributes({sectionBgRepeat: value})}
                                     />
                                 </PanelBody>
-
+							</>
+                        ) || 'advanced' === activeTab && (
+							<>
 								<PanelBody
-									title={ __( 'Responsive', 'smart-blocks' ) }
+									title={__('Responsive', 'smart-blocks')}
 									initialOpen={false}
 								>
 									<ToggleControl

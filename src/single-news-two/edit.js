@@ -776,7 +776,7 @@ export default function Edit({ attributes, setAttributes }) {
             </InspectorControls>
             <div id={id}>
                 <div {...useBlockProps({
-                    className: "wp-block-smart-blocks sb-single-post"
+                    className: "sb-blocks sb-single-post"
                 })}>
                     <div className="sb-single-post-two">
                         {filterOption == 'single-post' ? selectPosts && postId ? postInner(selectPosts.filter(spost => spost.id == postId)[0]) : posts && posts.map((post) => (postInner(post))) : posts && posts.map((post) => (postInner(post)))}

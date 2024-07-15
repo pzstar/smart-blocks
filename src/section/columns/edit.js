@@ -67,7 +67,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 
         borderNormalBoxShadow,
         borderHoverBoxShadow,
-        blockBgColor,
+        sectionBgColor,
         columnsHeight,
 
         columnsHeightCustom,
@@ -113,33 +113,40 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		columnsPaddingBottom,
 		columnsPaddingLeft,
 		columnsPaddingUnit,
+
+		sectionBgImgURL,
+        sectionBgImgID,
+        sectionBgAttachment,
+        sectionBgSize,
+        sectionBgPosition,
+        sectionBgRepeat
     } = attributes;
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
 
 	const stylesCSS = `#${id} {
-        ${columnsWidthSm ? '--sb-column-width-sm: ' + columnsWidthSm + 'px;' : ''}
-        ${columnsWidthMd ? '--sb-column-width-md: ' + columnsWidthMd + 'px;' : ''}
-        ${columnsWidth ? '--sb-column-width-lg: ' + columnsWidth + 'px;' : ''}
+        ${columnsWidthSm ? '--sb-columns-width-sm: ' + columnsWidthSm + 'px;' : ''}
+        ${columnsWidthMd ? '--sb-columns-width-md: ' + columnsWidthMd + 'px;' : ''}
+        ${columnsWidth ? '--sb-columns-width-lg: ' + columnsWidth + 'px;' : ''}
 
         ${horizontalAlignSm ? '--sb-horizontal-align-sm: ' + horizontalAlignSm + ';' : ''}
         ${horizontalAlignMd ? '--sb-horizontal-align-md: ' + horizontalAlignMd + ';' : ''}
         ${horizontalAlign ? '--sb-horizontal-align-lg: ' + horizontalAlign + ';' : ''}
 
-        ${columnsGapSm ? '--sb-column-gap-sm: ' + columnsGapSm + ';' : ''}
-        ${columnsGapMd ? '--sb-column-gap-md: ' + columnsGapMd + ';' : ''}
-        ${columnsGap ? '--sb-column-gap-lg: ' + columnsGap + ';' : ''}
+        ${columnsGapSm ? '--sb-columns-gap-sm: ' + columnsGapSm + ';' : ''}
+        ${columnsGapMd ? '--sb-columns-gap-md: ' + columnsGapMd + ';' : ''}
+        ${columnsGap ? '--sb-columns-gap-lg: ' + columnsGap + ';' : ''}
 
-        ${columnAlignmentSm ? '--sb-horizontal-align-sm: ' + columnAlignmentSm + ';' : ''}
-        ${columnAlignmentMd ? '--sb-horizontal-align-md: ' + columnAlignmentMd + ';' : ''}
-        ${columnAlignment ? '--sb-horizontal-align-lg: ' + columnAlignment + ';' : ''}
+        ${columnAlignmentSm ? '--sb-columns-align-sm: ' + columnAlignmentSm + ';' : ''}
+        ${columnAlignmentMd ? '--sb-columns-align-md: ' + columnAlignmentMd + ';' : ''}
+        ${columnAlignment ? '--sb-columns-align-lg: ' + columnAlignment + ';' : ''}
 
-        ${columnJustifySm ? '--sb-horizontal-align-sm: ' + columnJustifySm + ';' : ''}
-        ${columnJustifyMd ? '--sb-horizontal-align-md: ' + columnJustifyMd + ';' : ''}
-        ${columnJustify ? '--sb-horizontal-align-lg: ' + columnJustify + ';' : ''}
+        ${columnJustifySm ? '--sb-columns-justify-sm: ' + columnJustifySm + ';' : ''}
+        ${columnJustifyMd ? '--sb-columns-justify-md: ' + columnJustifyMd + ';' : ''}
+        ${columnJustify ? '--sb-columns-justify-lg: ' + columnJustify + ';' : ''}
 
-        ${columnsHeight == 'custom' && columnsHeightCustomSm ? '--sb-column-width-sm: ' + columnsHeightCustomSm + 'px;' : ''}
-        ${columnsHeight == 'custom' && columnsHeightCustomMd ? '--sb-column-width-md: ' + columnsHeightCustomMd + 'px;' : ''}
-        ${columnsHeight == 'custom' && columnsHeightCustom ? '--sb-column-width-lg: ' + columnsHeightCustom + 'px;' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustomSm ? '--sb-columns-width-sm: ' + columnsHeightCustomSm + 'px;' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustomMd ? '--sb-columns-width-md: ' + columnsHeightCustomMd + 'px;' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustom ? '--sb-columns-width-lg: ' + columnsHeightCustom + 'px;' : ''}
 
         ${columnsMarginSmTop ? '--sb-block-margin-top-sm: ' + columnsMarginSmTop + columnsMarginUnit + ';' : ''}
         ${columnsMarginSmRight ? '--sb-block-margin-right-sm: ' + columnsMarginSmRight + columnsMarginUnit + ';' : ''}
@@ -199,7 +206,13 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         ${borderHoverBoxShadow.spread ? '--sb-border-hover-box-shadow-spread: ' + borderHoverBoxShadow.spread + 'px;' : ''}
         ${borderHoverBoxShadow.color ? '--sb-border-hover-box-shadow-color: ' + borderHoverBoxShadow.color + ';' : ''}
         ${borderHoverBoxShadow.inset ? '--sb-border-hover-box-shadow-inset: ' + borderHoverBoxShadow.inset + ';' : ''}
-        ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
+        ${sectionBgColor ? '--sb-section-bg-color: ' + sectionBgColor + ';' : ''}
+
+		${sectionBgImgURL ? '--sb-section-bg-img-url: ' + sectionBgImgURL + ';' : ''}
+		${sectionBgAttachment ? '--sb-section-bg-img-attachment: ' + sectionBgAttachment + ';' : ''}
+		${sectionBgSize ? '--sb-section-bg-img-size: ' + sectionBgSize + ';' : ''}
+		${sectionBgPosition ? '--sb-section-bg-img-position: ' + sectionBgPosition + ';' : ''}
+		${sectionBgRepeat ? '--sb-section-bg-img-repeat: ' + sectionBgRepeat + ';' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 

@@ -215,7 +215,7 @@ const attributes = {
     borderHoverColor: {
         type: 'string'
     },
-    blockBgColor: {
+    sectionBgColor: {
         type: 'string'
     },
 
@@ -297,24 +297,50 @@ const attributes = {
     borderNormalBoxShadow: {
         type: 'object',
         default: {
-            horizontal: null,
-            vertical: null,
-            blur: null,
-            spread: null,
-            color: null,
-            inset: null
+            horizontal: undefined,
+            vertical: undefined,
+            blur: undefined,
+            spread: undefined,
+            color: undefined,
+            inset: undefined
         }
     },
     borderHoverBoxShadow: {
         type: 'object',
         default: {
-            horizontal: null,
-            vertical: null,
-            blur: null,
-            spread: null,
-            color: null,
-            inset: null
+            horizontal: undefined,
+            vertical: undefined,
+            blur: undefined,
+            spread: undefined,
+            color: undefined,
+            inset: undefined
         }
+    },
+
+    sectionBgImgURL: {
+        type: 'string'
+    },
+    sectionBgImageID: {
+        type: 'string'
+    },
+    sectionBgAttachment: {
+        type: 'string',
+        default: 'scroll'
+    },
+    sectionBgSize: {
+        type: 'string',
+        default: 'auto'
+    },
+    sectionBgPosition: {
+        type: 'string',
+        default: 'top left'
+    },
+    sectionBgPosition: {
+        type: 'string'
+    },
+    sectionBgRepeat: {
+        type: 'string',
+        default: 'repeat'
     }
 };
 

@@ -38,7 +38,7 @@ const ButtonGroupControl = ({
             {responsive ?
                 (<>
                     {getView == 'Mobile' && (
-                        <ButtonGroup className="wp-block-smart-icon-buttom-group">
+                        <ButtonGroup className="sb-icon-buttom-group">
                             {options.map((alignment)=> {return (
                                 <Button
                                     icon={alignment.icon}
@@ -52,7 +52,7 @@ const ButtonGroupControl = ({
                         </ButtonGroup>
                     )}
                     {getView == 'Tablet' && (
-                        <ButtonGroup className="wp-block-smart-icon-buttom-group">
+                        <ButtonGroup className="sb-icon-buttom-group">
                             {options.map((alignment)=> {return (
                                 <Button
                                     icon={alignment.icon}
@@ -66,7 +66,7 @@ const ButtonGroupControl = ({
                         </ButtonGroup>
                     )}
                     {getView == 'Desktop' && (
-                        <ButtonGroup className="wp-block-smart-icon-buttom-group">
+                        <ButtonGroup className="sb-icon-buttom-group">
                             {options.map((alignment)=> {return (
                                 <Button
                                     icon={alignment.icon}
@@ -81,7 +81,7 @@ const ButtonGroupControl = ({
                     )}
                 </>) :
                 (
-                    <ButtonGroup className="wp-block-smart-icon-buttom-group">
+                    <ButtonGroup className="sb-icon-buttom-group">
                         {options.map((alignment)=> {return (
                             <Button
                                 icon={alignment.icon}

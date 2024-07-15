@@ -29,7 +29,7 @@ class Smart_Blocks_Carousel_Module_One {
             'dots' => $this->attributes['dots'] ? true : false
         );
         $params = json_encode($params);
-        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-carousel-block wp-block-smart-blocks']) . '>';
+        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-carousel-block wp-block-sb']) . '>';
         $content_rendered .= $this->render_header();
 
         $content_rendered .= '<div class="sb-carousel-block-wrap owl-carousel" data-params=' . $params . '>';

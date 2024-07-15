@@ -20,7 +20,7 @@ import {
  */
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import DimensionControl from '../../controls/dimension';
-import Color from '../../utils/color';
+import ColorControl from '../../controls/color';
 
 const Inspector = ({
 	attributes,
@@ -31,7 +31,6 @@ const Inspector = ({
 	parentBlock,
 	updateBlockAttributes,
 	adjacentBlockClientId,
-	columnBgColor,
 }) => {
 	const {
 		columnMarginSmTop,
@@ -60,7 +59,8 @@ const Inspector = ({
 		columnPaddingBottom,
 		columnPaddingLeft,
 		columnPaddingUnit,
-		columnWidth
+		columnWidth,
+		columnBgColor
     } = attributes;
 
 	const getView = useSelect((select) => {
@@ -172,9 +172,6 @@ const Inspector = ({
 							</>
                         ) || 'style' === activeTab && (
 							<>
-							</>
-                        ) || 'advanced' === activeTab && (
-                        	<>
 	                        	<PanelBody
 									title={__('Layout', 'smart-blocks')}
 									initialOpen={false}
@@ -259,14 +256,16 @@ const Inspector = ({
                                     title={__('Background', 'smart-blocks')}
                                     initialOpen={false}
                                 >
-                                    <Color
+                                    <ColorControl
                                         label={__('Background Color', 'smart-blocks')}
-                                        enableAlpha
+                                        enableAlpha={!0}
                                         value={columnBgColor}
-                                        onChange={(columnBgColor) => setAttributes({ columnBgColor })}
+                                        setValue={(columnBgColor) => setAttributes({ columnBgColor })}
                                     />
                                 </PanelBody>
-
+							</>
+                        ) || 'advanced' === activeTab && (
+                        	<>
 								<PanelBody
 									title={__('Section Settings', 'smart-blocks')}
 									initialOpen={false}

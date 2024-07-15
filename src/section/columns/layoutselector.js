@@ -21,7 +21,7 @@ const LayoutSelector = ({ clientId, setupColumns }) => {
 				<Tooltip text={__('Equal', 'smart-blocks')}>
 					<Button
 						isLarge
-						className="wp-block-smart-blocks-column-layout"
+						className="sb-blocks-column-layout"
 						onClick={() => setupColumns(2, 'equal')}
 					>
 						<SVG viewBox="0 0 48 48" xmlns="http://www.w3.org/1999/xlink">
@@ -34,7 +34,7 @@ const LayoutSelector = ({ clientId, setupColumns }) => {
 				<Tooltip text={__('1:2', 'smart-blocks')}>
 					<Button
 						isLarge
-						className="wp-block-smart-blocks-column-layout"
+						className="sb-blocks-column-layout"
 						onClick={() => setupColumns(2, 'oneTwo')}
 					>
 						<SVG viewBox="0 0 48 48" xmlns="http://www.w3.org/1999/xlink">
@@ -47,7 +47,7 @@ const LayoutSelector = ({ clientId, setupColumns }) => {
 				<Tooltip text={__('2:1', 'smart-blocks')}>
 					<Button
 						isLarge
-						className="wp-block-smart-blocks-column-layout"
+						className="sb-blocks-column-layout"
 						onClick={() => setupColumns(2, 'twoOne')}
 					>
 						<SVG viewBox="0 0 48 48" xmlns="http://www.w3.org/1999/xlink">
@@ -60,7 +60,7 @@ const LayoutSelector = ({ clientId, setupColumns }) => {
 				<Tooltip text={__('Equal', 'smart-blocks')}>
 					<Button
 						isLarge
-						className="wp-block-smart-blocks-column-layout"
+						className="sb-blocks-column-layout"
 						onClick={() => setupColumns(3, 'equal')}
 					>
 						<SVG viewBox="0 0 48 48" xmlns="http://www.w3.org/1999/xlink">
@@ -74,7 +74,7 @@ const LayoutSelector = ({ clientId, setupColumns }) => {
 				<Tooltip text={__('1:1:2', 'smart-blocks')}>
 					<Button
 						isLarge
-						className="wp-block-smart-blocks-column-layout"
+						className="sb-blocks-column-layout"
 						onClick={() => setupColumns(3, 'oneOneTwo')}
 					>
 						<SVG viewBox="0 0 48 48" xmlns="http://www.w3.org/1999/xlink">
@@ -88,7 +88,7 @@ const LayoutSelector = ({ clientId, setupColumns }) => {
 				<Tooltip text={__('2:1:1', 'smart-blocks')}>
 					<Button
 						isLarge
-						className="wp-block-smart-blocks-column-layout"
+						className="sb-blocks-column-layout"
 						onClick={() => setupColumns(3, 'twoOneOne')}
 					>
 						<SVG viewBox="0 0 48 48" xmlns="http://www.w3.org/1999/xlink">
@@ -102,7 +102,7 @@ const LayoutSelector = ({ clientId, setupColumns }) => {
 				<Tooltip text={__('Equal', 'smart-blocks')}>
 					<Button
 						isLarge
-						className="wp-block-smart-blocks-column-layout"
+						className="sb-blocks-column-layout"
 						onClick={() => setupColumns(4, 'equal')}
 					>
 						<SVG viewBox="0 0 48 48" xmlns="http://www.w3.org/1999/xlink">

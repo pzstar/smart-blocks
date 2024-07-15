@@ -1,52 +1,42 @@
 import { __ } from '@wordpress/i18n';
 import { Tooltip, TextControl, Dropdown, Dashicon } from '@wordpress/components';
-import Color from './color';
+import ColorControl from './color';
 import AdvancedRadio from './advancedradio';
-import { ClearIcon } from './svgicons';
+import { ClearIcon } from '../utils/svgicons';
 
-const BoxShadowControl = ({ label, values, onChange }) => {
+const BoxShadowControl = ({
+    label,
+    valueHorizontal,
+    setValueHorizontal,
+    valueVertical,
+    setValueVertical,
+    valueBlur,
+    setValueBlur,
+    valueSpread,
+    setValueSpread,
+    valueColor,
+    setValueColor,
+    valueInset,
+    setValueInset
+}) => {
     !values ?
         values = {
-            "horizontal": null,
-            "vertical": null,
-            "blur": null,
-            "spread": null,
-            "color": null,
-            "inset": null
+            "horizontal": undefined,
+            "vertical": undefined,
+            "blur": undefined,
+            "spread": undefined,
+            "color": undefined,
+            "inset": undefined
         } : values;
 
-    const onHorizontalChangeHandler = (e) => {
-        values['horizontal'] = e;
-        onChange({ ...values })
-    }
-    const onVerticalChangeHandler = (e) => {
-        values['vertical'] = e;
-        onChange({ ...values })
-    }
-    const onBlurChangeHandler = (e) => {
-        values['blur'] = e;
-        onChange({ ...values })
-    }
-    const onSpreadChangeHandler = (e) => {
-        values['spread'] = e;
-        onChange({ ...values })
-    }
-    const onColorChangeHandler = (e) => {
-        values['color'] = e;
-        onChange({ ...values })
-    }
-    const onInsetChangeHandler = (e) => {
-        values['inset'] = e;
-        onChange({ ...values })
-    }
     const onClearHandler = (e) => {
         onChange({
-            "horizontal": null,
-            "vertical": null,
-            "blur": null,
-            "spread": null,
-            "color": null,
-            "inset": null
+            "horizontal": undefined,
+            "vertical": undefined,
+            "blur": undefined,
+            "spread": undefined,
+            "color": undefined,
+            "inset": undefined
         });
     }
     return <>
@@ -81,40 +71,40 @@ const BoxShadowControl = ({ label, values, onChange }) => {
                                 <TextControl
                                     label={__('X', 'smart-blocks')}
                                     type={"number"}
-                                    value={values['horizontal'] || ""}
-                                    onChange={onHorizontalChangeHandler}
+                                    value={valueHorizontal}
+                                    onChange={(e) => setValueHorizontal(e)}
                                 />
                                 <TextControl
                                     label={__('Y', 'smart-blocks')}
                                     type={"number"}
-                                    value={values['vertical'] || ""}
-                                    onChange={onVerticalChangeHandler}
+                                    value={valueVertical}
+                                    onChange={(e) => setValueVertical(e)}
                                 />
                                 <TextControl
                                     label={__('Blur', 'smart-blocks')}
                                     type={"number"}
                                     value={values['blur'] || ""}
-                                    onChange={onBlurChangeHandler}
+                                    onChange={(e) => setValueBlur(e)}
                                 />
                                 <TextControl
                                     label={__('Spread', 'smart-blocks')}
                                     type={"number"}
                                     value={values['spread'] || ""}
-                                    onChange={onSpreadChangeHandler}
+                                    onChange={(e) => setValueSpread(e)}
                                 />
                             </div>
 
-                            <Color
+                            <ColorControl
                                 label={__("Color", 'smart-blocks')}
                                 value={values['color']}
-                                onChange={onColorChangeHandler}
+                                setValue={(e) => setValueColor(e)}
                                 enableAlpha
                             />
 
                             <AdvancedRadio
                                 label={__("Inset", 'smart-blocks')}
                                 value={values['inset']}
-                                onChange={onInsetChangeHandler}
+                                setValue={((e) => setValueInset(e))}
                                 options={[
                                     { label: __("Inset"), value: "inset", title: __("Inset") },
                                     { label: __("Outset"), value: "", title: __("Outset") }

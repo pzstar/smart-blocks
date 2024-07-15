@@ -11,7 +11,7 @@ class Smart_Blocks_Single_News_One {
         $this->attributes = $attributes;
         $content_rendered = '';
         $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
-        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-single-post wp-block-smart-blocks']) . '>';
+        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-single-post wp-block-sb']) . '>';
 
         $args = $this->query_args();
         $post_query = new \WP_Query($args);

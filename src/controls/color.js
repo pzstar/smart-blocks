@@ -1,12 +1,12 @@
 import { __ } from '@wordpress/i18n';
 import { Tooltip, Dropdown, ColorPicker } from '@wordpress/components';
-import { ClearIcon } from './svgicons';
-const Color = ({ label, value, onChange, enableAlpha }) => {
+import { ClearIcon } from '../utils/svgicons';
+const ColorControl = ({ label, value, setValue, enableAlpha }) => {
     const onChangeHandler = (e) => {
-        e ? onChange(e.hex) : '';
+        setValue(e.hex);
     }
-    const onClearHandler = () => {
-        onChange(undefined);
+    const onClearHandler = (e) => {
+        setValue(undefined);
     }
 
     return <>
@@ -56,6 +56,7 @@ const Color = ({ label, value, onChange, enableAlpha }) => {
                                 <ColorPicker
                                     color={value ? value : undefined}
                                     onChangeComplete={onChangeHandler}
+                                    disableAlpha
                                 />
                             )
                             }
@@ -68,4 +69,4 @@ const Color = ({ label, value, onChange, enableAlpha }) => {
     </>;
 }
 
-export default Color;
+export default ColorControl;

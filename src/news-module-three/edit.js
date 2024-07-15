@@ -984,7 +984,7 @@ export default function Edit({ attributes, setAttributes }) {
             </InspectorControls>
             <div id={id}>
                 <div {...useBlockProps({
-                    className: "wp-block-smart-blocks sb-news-module-three"
+                    className: "sb-blocks sb-news-module-three"
                 })}>
                     <h2 className={headerClasses}>
                         <RichText

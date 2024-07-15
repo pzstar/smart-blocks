@@ -896,7 +896,7 @@ export default function Edit({ attributes, setAttributes }) {
             </InspectorControls>
             <div id={id}>
                 <div {...useBlockProps({
-                    className: "wp-block-smart-blocks sb-tile-block-wrap"
+                    className: "sb-blocks sb-tile-block-wrap"
                 })}>
                     <h2 className={headerClasses}>
                         <RichText

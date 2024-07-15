@@ -12,12 +12,12 @@ const RangeSliderControl = ({
     useUnit,
     responsive,
 
-    valueSm,
-    valueMd,
     value,
+    setValue,
+    valueSm,
     setValueSm,
-    setValueMd,
-    setValue
+    valueMd,
+    setValueMd
 }) => {
 
     const getView = useSelect(select => {

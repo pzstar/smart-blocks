@@ -19,21 +19,21 @@ const Typography = ({ label, values, onChange }) => {
 		"textTransform": 'inherit',
 		"textDecoration": 'inherit',
 		"fontSize": {
-			"sm": null,
-			"md": null,
-			"lg": null,
+			"sm": undefined,
+			"md": undefined,
+			"lg": undefined,
 			"unit": "px"
 		},
 		"letterSpacing": {
-			"sm": null,
-			"md": null,
-			"lg": null,
+			"sm": undefined,
+			"md": undefined,
+			"lg": undefined,
 			"unit": "px"
 		},
 		"lineHeight": {
-			"sm": null,
-			"md": null,
-			"lg": null,
+			"sm": undefined,
+			"md": undefined,
+			"lg": undefined,
 			"unit": "px"
 		}
 	};
@@ -80,21 +80,21 @@ const Typography = ({ label, values, onChange }) => {
 			"textTransform": 'inherit',
 			"textDecoration": 'inherit',
 			"fontSize": {
-				"sm": null,
-				"md": null,
-				"lg": null,
+				"sm": undefined,
+				"md": undefined,
+				"lg": undefined,
 				"unit": "px"
 			},
 			"letterSpacing": {
-				"sm": null,
-				"md": null,
-				"lg": null,
+				"sm": undefined,
+				"md": undefined,
+				"lg": undefined,
 				"unit": "px"
 			},
 			"lineHeight": {
-				"sm": null,
-				"md": null,
-				"lg": null,
+				"sm": undefined,
+				"md": undefined,
+				"lg": undefined,
 				"unit": "px"
 			}
 		});
@@ -141,7 +141,7 @@ const Typography = ({ label, values, onChange }) => {
 										<div className="sb-field-child">
 											<div className="sb-popup-select ">
 												<select
-													value={values ? values['family'] : null}
+													value={values ? values['family'] : undefined}
 													onChange={onFontChangeHandler}>
 													{GoogleFontsList && GoogleFontsList.map((font, index) => {
 														return <option value={font.family} key={index}>{`${font.family != 'inherit' ? font.family : 'Default'}`}</option>;
@@ -156,7 +156,7 @@ const Typography = ({ label, values, onChange }) => {
 										<div className="sb-field-child">
 											<div className="sb-popup-select ">
 												<select
-													value={values ? values['weight'] : null}
+													value={values ? values['weight'] : undefined}
 													onChange={onWeightChangeHandler}>
 													{!(values && values['family'] && values['family'] != 'inherit') && (<option value="inherit">Default</option>)}
 													{Object.keys(allWeights).sort().map((key) => {
@@ -173,7 +173,7 @@ const Typography = ({ label, values, onChange }) => {
 										<div className="sb-field-child">
 											<div className="sb-popup-select ">
 												<select
-													value={values ? values['textTransform'] : null}
+													value={values ? values['textTransform'] : undefined}
 													onChange={onTextTransformChangeHandler}>
 													<option value="inherit">Default</option>
 													<option value="none">None</option>
@@ -189,7 +189,7 @@ const Typography = ({ label, values, onChange }) => {
 										<div className="sb-field-child">
 											<div className="sb-popup-select ">
 												<select
-													value={values ? values['textDecoration'] : null}
+													value={values ? values['textDecoration'] : undefined}
 													onChange={onTextDecorationChangeHandler}>
 													<option value="inherit">Default</option>
 													<option value="none">None</option>

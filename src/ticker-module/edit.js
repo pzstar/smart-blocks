@@ -607,7 +607,7 @@ export default function Edit({ attributes, setAttributes }) {
             </InspectorControls>
             <div id={id}>
                 <div {...useBlockProps({
-                    className: "wp-block-smart-blocks sb-ticker"
+                    className: "sb-blocks sb-ticker"
                 })}>
 
                     {tickerTitle && (
