@@ -22,15 +22,13 @@ const attributes = {
 
     columnsGapSm: {
         type: 'string',
-        default: 0
     },
     columnsGapMd: {
         type: 'string',
-        default: 0
     },
     columnsGap: {
         type: 'string',
-        default: 0
+        default: 20
     },
 
 	columnsMarginSmTop: {

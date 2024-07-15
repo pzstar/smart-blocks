@@ -48,7 +48,7 @@ const LayoutControl = ({
 	            }
 	            <ResponsiveDropdown/>
 	        </div>
-			<div className="sb-blocks-columns-layout-control">
+			<div className="sb-blocks-columns-layout-control sb-field sb-responsive">
 				{ 1 === columns && (
 					<Tooltip text={ __( 'Single Row', 'smart-blocks' ) } >
 						<Button

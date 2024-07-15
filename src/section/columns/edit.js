@@ -148,9 +148,9 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         ${horizontalAlignMd ? '--sb-horizontal-align-md: ' + horizontalAlignMd + ';' : ''}
         ${horizontalAlign ? '--sb-horizontal-align-lg: ' + horizontalAlign + ';' : ''}
 
-        ${columnsGapSm ? '--sb-columns-gap-sm: ' + columnsGapSm + ';' : ''}
-        ${columnsGapMd ? '--sb-columns-gap-md: ' + columnsGapMd + ';' : ''}
-        ${columnsGap ? '--sb-columns-gap-lg: ' + columnsGap + ';' : ''}
+        ${columnsGapSm ? '--sb-columns-gap-sm: ' + columnsGapSm + 'px;' : ''}
+        ${columnsGapMd ? '--sb-columns-gap-md: ' + columnsGapMd + 'px;' : ''}
+        ${columnsGap ? '--sb-columns-gap-lg: ' + columnsGap + 'px;' : ''}
 
         ${columnAlignmentSm ? '--sb-columns-align-sm: ' + columnAlignmentSm + ';' : ''}
         ${columnAlignmentMd ? '--sb-columns-align-md: ' + columnAlignmentMd + ';' : ''}
