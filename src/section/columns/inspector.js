@@ -327,7 +327,7 @@ const Inspector = ({
 									<RangeSliderControl
 	                                    label={__('Column Gap', 'smart-blocks')}
 	                                    min={ 0 }
-	                                    max={ 50 }
+	                                    max={ 100 }
 	                                    responsive={!0}
 	                                    value={columnsGap}
 	                                    setValue={(value) => setAttributes({columnsGap: value})}
@@ -358,34 +358,6 @@ const Inspector = ({
 	                                    setValueSm={(value) => setAttributes({columnsWidthSm: value})}
 	                                    valueMd={columnsWidthMd}
 	                                    setValueMd={(value) => setAttributes({columnsWidthMd: value})}
-									/>
-
-									<ButtonGroupControl
-										label={__('Content Horizontal Align', 'smart-blocks')}
-										responsive={!0}
-										options={[
-											{
-												value: 'flex-start',
-												icon: 'editor-alignleft',
-												label: __('Left', 'smart-blocks')
-											},
-											{
-												value: 'center',
-												icon: 'editor-aligncenter',
-												label: __('Center', 'smart-blocks')
-											},
-											{
-												value: 'right',
-												icon: 'editor-alignright',
-												label: __('Right', 'smart-blocks')
-											}
-										]}
-										value={horizontalAlign}
-										setValue={(value) => setAttributes({horizontalAlign: value})}
-										valueSm={horizontalAlignSm}
-										setValueSm={(value) => setAttributes({horizontalAlignSm: value})}
-										valueMd={horizontalAlignMd}
-										setValueMd={(value) => setAttributes({horizontalAlignMd: value})}
 									/>
 
 									<ButtonGroupControl
@@ -467,6 +439,34 @@ const Inspector = ({
 										setValueSm={(value) => setAttributes({columnJustifySm: value})}
 										valueMd={columnJustifyMd}
 										setValueMd={(value) => setAttributes({columnJustifyMd: value})}
+									/>
+                                    
+                                    <ButtonGroupControl
+										label={__('Content Horizontal Align', 'smart-blocks')}
+										responsive={!0}
+										options={[
+											{
+												value: 'flex-start',
+												icon: 'editor-alignleft',
+												label: __('Left', 'smart-blocks')
+											},
+											{
+												value: 'center',
+												icon: 'editor-aligncenter',
+												label: __('Center', 'smart-blocks')
+											},
+											{
+												value: 'right',
+												icon: 'editor-alignright',
+												label: __('Right', 'smart-blocks')
+											}
+										]}
+										value={horizontalAlign}
+										setValue={(value) => setAttributes({horizontalAlign: value})}
+										valueSm={horizontalAlignSm}
+										setValueSm={(value) => setAttributes({horizontalAlignSm: value})}
+										valueMd={horizontalAlignMd}
+										setValueMd={(value) => setAttributes({horizontalAlignMd: value})}
 									/>
 
 								</PanelBody>

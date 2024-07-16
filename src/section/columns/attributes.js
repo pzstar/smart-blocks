@@ -118,15 +118,13 @@ const attributes = {
 
 	columnsWidthSm: {
         type: 'string',
-        default: 0
+        default: 1170
     },
     columnsWidthMd: {
         type: 'string',
-        default: 0
     },
     columnsWidth: {
         type: 'string',
-        default: 0
 	},
 
 	horizontalAlign: {
@@ -359,6 +357,7 @@ const attributes = {
     },
     sectionContentWidth: {
         type: 'string',
+        default: 'boxed',
         enum: ['full', 'boxed']
     }
 };

@@ -39,7 +39,7 @@ const Save = ({attributes, className}) => {
 
 	return (
 		<Tag className={classes} id={id}>
-			<div className="innerblocks-wrap">
+			<div className="wp-block-smart-blocks-innerblocks-wrap">
 				<InnerBlocks.Content />
 			</div>
 		</Tag>
