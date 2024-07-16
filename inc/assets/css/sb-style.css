@@ -28,7 +28,7 @@ a {
     text-align: right;
 }
 
-/* Column */
+/* Columns */
 .wp-block-smart-blocks-columns{
     margin-top: var(--sb-columns-margin-top-lg, 0);
     margin-bottom: var(--sb-columns-margin-bottom-lg, 0);
@@ -70,6 +70,32 @@ a {
 
 .wp-block-smart-blocks-columns.has-boxed-width > .wp-block-smart-blocks-innerblocks-wrap{
     max-width: var(--sb-columns-width-lg, 1170px);
+}
+
+/* Column */
+.wp-block-smart-blocks-column{
+    margin-top: var(--sb-column-margin-top-lg, 0);
+    margin-bottom: var(--sb-column-margin-bottom-lg, 0);
+    margin-left: var(--sb-column-margin-left-lg, 0);
+    margin-right: var(--sb-column-margin-right-lg, 0);
+    padding-top: var(--sb-column-padding-top-lg, 0);
+    padding-bottom: var(--sb-column-padding-bottom-lg, 0);
+    padding-left: var(--sb-column-padding-left-lg, 0);
+    padding-right: var(--sb-column-padding-right-lg, 0);
+    border-style: var(--sb-column-border-normal, solid);
+    border-color: var(--sb-column-border-normal-color, transparent);
+    border-top-width: var(--sb-column-border-normal-width-top, 0);
+    border-bottom-width: var(--sb-column-border-normal-width-bottom, 0);
+    border-left-width: var(--sb-column-border-normal-width-left, 0);
+    border-right-width: var(--sb-column-border-normal-width-right, 0);
+    border-radius: var(--sb-column-border-normal-radius-top, 0) var(--sb-column-border-normal-radius-right, 0) var(--sb-column-border-normal-radius-bottom, 0) var(--sb-column-border-normal-radius-left, 0);
+    box-shadow: var(--sb-column-border-normal-box-shadow-inset, ) var(--sb-column-border-normal-box-shadow-horizontal, 0) var(--sb-column-border-normal-box-shadow-vertical, 0) var(--sb-column-border-normal-box-shadow-blur, 0)  var(--sb-column-border-normal-box-shadow-spread, 0) var(--sb-column-border-normal-box-shadow-color, transparent); 
+    background-image: var(--sb-column-bg-img-url);
+    background-attachment: var(--sb-column-bg-img-attachment);
+    background-position: var(--sb-column-bg-img-position);
+    background-repeat: var(--sb-column-bg-img-repeat);
+    background-size: var(--sb-column-bg-img-size);
+    background-color: var(--sb-column-bg-color, transparent); 
 }
 
 /* Block Title */
