@@ -126,6 +126,11 @@ const attributes = {
     columnsWidth: {
         type: 'string',
 	},
+    columnsWidthUnit: {
+        type: 'string',
+        enum: ['px', 'em', '%', 'vw'],
+        default: 'px'
+    },
 
 	horizontalAlign: {
         type: 'string'
@@ -173,6 +178,11 @@ const attributes = {
     },
     columnsHeightCustomMd: {
         type: 'string'
+    },
+    columnsHeightCustomUnit: {
+        type: 'string',
+        enum: ['px', 'em', '%', 'vh'],
+        default: 'px'
     },
 
 	hide: {

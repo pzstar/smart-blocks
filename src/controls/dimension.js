@@ -8,14 +8,11 @@ const DimensionControl = ({
 	min,
 	max,
 	label,
-	// values,
-	// onChange,
 	responsive,
 	units,
 
 	unit,
 	setUnit,
-
 
 	dimensionTop,
 	setDimensionTop,
@@ -162,7 +159,14 @@ const DimensionControl = ({
 									return <button
 										className={`${unit === unt ? "active" : ""}`}
 										value={unt}
-										onClick={(e) => setUnit(e.target.value)}
+										onClick={(e) => {
+											setUnit(e.target.value);
+											sides.map((sde, index) => {
+												callFunctionByName(`setDimension${sde}`, '');
+												callFunctionByName(`setDimensionMd${sde}`, '');
+												callFunctionByName(`setDimensionSm${sde}`, '');
+											});
+										}}
 									>{unt}
 									</button>
 								})}
@@ -230,7 +234,12 @@ const DimensionControl = ({
 									return <button
 										className={`${unit === unt ? "active" : ""}`}
 										value={unt}
-										onClick={(e) => setUnit(e.target.value)}
+										onClick={(e) => {
+											setUnit(e.target.value);
+											sides.map((sde, index) => {
+												callFunctionByName(`setDimension${sde}`, '');
+											});
+										}}
 									>{unt}
 									</button>
 								})}

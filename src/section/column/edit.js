@@ -12,6 +12,7 @@ import defaultAttributes from './attributes.js';
 import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import { blockInit } from '../../helpers/block-utility.js';
+import { responsiveDimensionVars } from '../../utils/helper';
 
 export default function Edit({attributes, setAttributes, className, isSelected, clientId, toggleSelection}) {
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
@@ -53,30 +54,12 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
     } = attributes;
 
     const stylesCSS = `#${id} {
-        ${columnMarginSmTop ? '--sb-column-margin-top-sm: ' + columnMarginSmTop + columnMarginUnit + ';' : ''}
-        ${columnMarginSmRight ? '--sb-column-margin-right-sm: ' + columnMarginSmRight + columnMarginUnit + ';' : ''}
-        ${columnMarginSmBottom ? '--sb-column-margin-bottom-sm: ' + columnMarginSmBottom + columnMarginUnit + ';' : ''}
-        ${columnMarginSmLeft ? '--sb-column-margin-left-sm: ' + columnMarginSmLeft + columnMarginUnit + ';' : ''}
-        ${columnMarginMdTop ? '--sb-column-margin-top-md: ' + columnMarginMdTop + columnMarginUnit + ';' : ''}
-        ${columnMarginMdRight ? '--sb-column-margin-right-md: ' + columnMarginMdRight + columnMarginUnit + ';' : ''}
-        ${columnMarginMdBottom ? '--sb-column-margin-bottom-md: ' + columnMarginMdBottom + columnMarginUnit + ';' : ''}
-        ${columnMarginMdLeft ? '--sb-column-margin-left-md: ' + columnMarginMdLeft + columnMarginUnit + ';' : ''}
-        ${columnMarginTop ? '--sb-column-margin-top-lg: ' + columnMarginTop + columnMarginUnit + ';' : ''}
-        ${columnMarginRight ? '--sb-column-margin-right-lg: ' + columnMarginRight + columnMarginUnit + ';' : ''}
-        ${columnMarginBottom ? '--sb-column-margin-bottom-lg: ' + columnMarginBottom + columnMarginUnit + ';' : ''}
-        ${columnMarginLeft ? '--sb-column-margin-left-lg: ' + columnMarginLeft + columnMarginUnit + ';' : ''}
-        ${columnPaddingSmTop ? '--sb-column-padding-top-sm: ' + columnPaddingSmTop + columnPaddingUnit + ';' : ''}
-        ${columnPaddingSmRight ? '--sb-column-padding-right-sm: ' + columnPaddingSmRight + columnPaddingUnit + ';' : ''}
-        ${columnPaddingSmBottom ? '--sb-column-padding-bottom-sm: ' + columnPaddingSmBottom + columnPaddingUnit + ';' : ''}
-        ${columnPaddingSmLeft ? '--sb-column-padding-left-sm: ' + columnPaddingSmLeft + columnPaddingUnit + ';' : ''}
-        ${columnPaddingMdTop ? '--sb-column-padding-top-md: ' + columnPaddingMdTop + columnPaddingUnit + ';' : ''}
-        ${columnPaddingMdRight ? '--sb-column-padding-right-md: ' + columnPaddingMdRight + columnPaddingUnit + ';' : ''}
-        ${columnPaddingMdBottom ? '--sb-column-padding-bottom-md: ' + columnPaddingMdBottom + columnPaddingUnit + ';' : ''}
-        ${columnPaddingMdLeft ? '--sb-column-padding-left-md: ' + columnPaddingMdLeft + columnPaddingUnit + ';' : ''}
-        ${columnPaddingTop ? '--sb-column-padding-top-lg: ' + columnPaddingTop + columnPaddingUnit + ';' : ''}
-        ${columnPaddingRight ? '--sb-column-padding-right-lg: ' + columnPaddingRight + columnPaddingUnit + ';' : ''}
-        ${columnPaddingBottom ? '--sb-column-padding-bottom-lg: ' + columnPaddingBottom + columnPaddingUnit + ';' : ''}
-        ${columnPaddingLeft ? '--sb-column-padding-left-lg: ' + columnPaddingLeft + columnPaddingUnit + ';' : ''}
+    	${responsiveDimensionVars('column-margin', columnMarginTop, columnMarginRight, columnMarginBottom, columnMarginLeft,
+    		columnMarginSmTop, columnMarginSmRight, columnMarginSmBottom, columnMarginSmLeft,
+    		columnMarginMdTop, columnMarginMdRight, columnMarginMdBottom, columnMarginMdLeft, columnMarginUnit)}
+    	${responsiveDimensionVars('column-padding', columnPaddingTop, columnPaddingRight, columnPaddingBottom, columnPaddingLeft,
+    		columnPaddingSmTop, columnPaddingSmRight, columnPaddingSmBottom, columnPaddingSmLeft,
+    		columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
         ${columnBgColor ? '--sb-column-bg-color: ' + columnBgColor + ';' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });

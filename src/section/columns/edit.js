@@ -16,6 +16,7 @@ import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import {blockInit} from '../../helpers/block-utility.js';
 import LayoutSelector from './layoutselector.js';
+import { responsiveDimensionVars, dimensionVars } from '../../utils/helper';
 
 const Edit = ({attributes, setAttributes, className, clientId}) => {
 	const {
@@ -25,6 +26,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         columnsWidth,
 		columnsWidthMd,
 		columnsWidthSm,
+		columnsWidthUnit,
 
         columnsHTMLTag,
         layout,
@@ -73,6 +75,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         columnsHeightCustom,
         columnsHeightCustomSm,
         columnsHeightCustomMd,
+        columnsHeightCustomUnit,
 
         style,
 
@@ -140,9 +143,9 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
 
 	const stylesCSS = `#${id} {
-        ${columnsWidthSm ? '--sb-columns-width-sm: ' + columnsWidthSm + 'px;' : ''}
-        ${columnsWidthMd ? '--sb-columns-width-md: ' + columnsWidthMd + 'px;' : ''}
-        ${columnsWidth ? '--sb-columns-width-lg: ' + columnsWidth + 'px;' : ''}
+        ${columnsWidthSm ? '--sb-columns-width-sm: ' + columnsWidthSm + columnsWidthUnit + ';' : ''}
+        ${columnsWidthMd ? '--sb-columns-width-md: ' + columnsWidthMd + columnsWidthUnit + ';' : ''}
+        ${columnsWidth ? '--sb-columns-width-lg: ' + columnsWidth + columnsWidthUnit + ';' : ''}
 
         ${horizontalAlignSm ? '--sb-columns-horizontal-align-sm: ' + horizontalAlignSm + ';' : ''}
         ${horizontalAlignMd ? '--sb-columns-horizontal-align-md: ' + horizontalAlignMd + ';' : ''}
@@ -160,68 +163,42 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         ${columnJustifyMd ? '--sb-columns-justify-md: ' + columnJustifyMd + ';' : ''}
         ${columnJustify ? '--sb-columns-justify-lg: ' + columnJustify + ';' : ''}
 
-        ${columnsHeight == 'custom' && columnsHeightCustomSm ? '--sb-columns-width-sm: ' + columnsHeightCustomSm + 'px;' : ''}
-        ${columnsHeight == 'custom' && columnsHeightCustomMd ? '--sb-columns-width-md: ' + columnsHeightCustomMd + 'px;' : ''}
-        ${columnsHeight == 'custom' && columnsHeightCustom ? '--sb-columns-width-lg: ' + columnsHeightCustom + 'px;' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustomSm ? '--sb-columns-height-sm: ' + columnsHeightCustomSm + columnsHeightCustomUnit + ';' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustomMd ? '--sb-columns-height-md: ' + columnsHeightCustomMd + columnsHeightCustomUnit + ';' : ''}
+        ${columnsHeight == 'custom' && columnsHeightCustom ? '--sb-columns-height-lg: ' + columnsHeightCustom + columnsHeightCustomUnit + ';' : ''}
 
-        ${columnsMarginSmTop ? '--sb-columns-margin-top-sm: ' + columnsMarginSmTop + columnsMarginUnit + ';' : ''}
-        ${columnsMarginSmRight ? '--sb-columns-margin-right-sm: ' + columnsMarginSmRight + columnsMarginUnit + ';' : ''}
-        ${columnsMarginSmBottom ? '--sb-columns-margin-bottom-sm: ' + columnsMarginSmBottom + columnsMarginUnit + ';' : ''}
-        ${columnsMarginSmLeft ? '--sb-columns-margin-left-sm: ' + columnsMarginSmLeft + columnsMarginUnit + ';' : ''}
-        ${columnsMarginMdTop ? '--sb-columns-margin-top-md: ' + columnsMarginMdTop + columnsMarginUnit + ';' : ''}
-        ${columnsMarginMdRight ? '--sb-columns-margin-right-md: ' + columnsMarginMdRight + columnsMarginUnit + ';' : ''}
-        ${columnsMarginMdBottom ? '--sb-columns-margin-bottom-md: ' + columnsMarginMdBottom + columnsMarginUnit + ';' : ''}
-        ${columnsMarginMdLeft ? '--sb-columns-margin-left-md: ' + columnsMarginMdLeft + columnsMarginUnit + ';' : ''}
-        ${columnsMarginTop ? '--sb-columns-margin-top-lg: ' + columnsMarginTop + columnsMarginUnit + ';' : ''}
-        ${columnsMarginRight ? '--sb-columns-margin-right-lg: ' + columnsMarginRight + columnsMarginUnit + ';' : ''}
-        ${columnsMarginBottom ? '--sb-columns-margin-bottom-lg: ' + columnsMarginBottom + columnsMarginUnit + ';' : ''}
-        ${columnsMarginLeft ? '--sb-columns-margin-left-lg: ' + columnsMarginLeft + columnsMarginUnit + ';' : ''}
-
-        ${columnsPaddingSmTop ? '--sb-columns-padding-top-sm: ' + columnsPaddingSmTop + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingSmRight ? '--sb-columns-padding-right-sm: ' + columnsPaddingSmRight + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingSmBottom ? '--sb-columns-padding-bottom-sm: ' + columnsPaddingSmBottom + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingSmLeft ? '--sb-columns-padding-left-sm: ' + columnsPaddingSmLeft + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingMdTop ? '--sb-columns-padding-top-md: ' + columnsPaddingMdTop + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingMdRight ? '--sb-columns-padding-right-md: ' + columnsPaddingMdRight + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingMdBottom ? '--sb-columns-padding-bottom-md: ' + columnsPaddingMdBottom + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingMdLeft ? '--sb-columns-padding-left-md: ' + columnsPaddingMdLeft + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingTop ? '--sb-columns-padding-top-lg: ' + columnsPaddingTop + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingRight ? '--sb-columns-padding-right-lg: ' + columnsPaddingRight + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingBottom ? '--sb-columns-padding-bottom-lg: ' + columnsPaddingBottom + columnsPaddingUnit + ';' : ''}
-        ${columnsPaddingLeft ? '--sb-columns-padding-left-lg: ' + columnsPaddingLeft + columnsPaddingUnit + ';' : ''}
+        ${responsiveDimensionVars('columns-margin', columnsMarginTop, columnsMarginRight, columnsMarginBottom, columnsMarginLeft,
+    		columnsMarginSmTop, columnsMarginSmRight, columnsMarginSmBottom, columnsMarginSmLeft,
+    		columnsMarginMdTop, columnsMarginMdRight, columnsMarginMdBottom, columnsMarginMdLeft, columnsMarginUnit)}
+    	${responsiveDimensionVars('columns-padding', columnsPaddingTop, columnsPaddingRight, columnsPaddingBottom, columnsPaddingLeft,
+    		columnsPaddingSmTop, columnsPaddingSmRight, columnsPaddingSmBottom, columnsPaddingSmLeft,
+    		columnsPaddingMdTop, columnsPaddingMdRight, columnsPaddingMdBottom, columnsPaddingMdLeft, columnsPaddingUnit)}
 
         ${borderNormal ? '--sb-columns-border-normal: ' + borderNormal + ';' : ''}
         ${borderHover ? '--sb-columns-border-hover: ' + borderNormal + ';' : ''}
         ${borderNormalColor ? '--sb-columns-border-normal-color: ' + borderNormalColor + ';' : ''}
         ${borderHoverColor ? '--sb-columns-border-hover-color: ' + borderHoverColor + ';' : ''}
-        ${borderNormalWidthTop ? '--sb-columns-border-normal-width-top: ' + borderNormalWidthTop + borderNormalWidthUnit + ';' : ''}
-        ${borderNormalWidthRight ? '--sb-columns-border-normal-width-right: ' + borderNormalWidthRight + borderNormalWidthUnit + ';' : ''}
-        ${borderNormalWidthBottom ? '--sb-columns-border-normal-width-bottom: ' + borderNormalWidthBottom + borderNormalWidthUnit + ';' : ''}
-        ${borderNormalWidthLeft ? '--sb-columns-border-normal-width-left: ' + borderNormalWidthLeft + borderNormalWidthUnit + ';' : ''}
-        ${borderHoverWidthTop ? '--sb-columns-border-hover-width-top: ' + borderHoverWidthTop + borderHoverWidthUnit + ';' : ''}
-        ${borderHoverWidthRight ? '--sb-columns-border-hover-width-right: ' + borderHoverWidthRight + borderHoverWidthUnit + ';' : ''}
-        ${borderHoverWidthBottom ? '--sb-columns-border-hover-width-bottom: ' + borderHoverWidthBottom + borderHoverWidthUnit + ';' : ''}
-        ${borderHoverWidthLeft ? '--sb-columns-border-hover-width-left: ' + borderHoverWidthLeft + borderHoverWidthUnit + ';' : ''}
-        ${borderNormalRadiusTop ? '--sb-columns-border-normal-radius-top: ' + borderNormalRadiusTop + borderNormalRadiusUnit + ';' : ''}
-        ${borderNormalRadiusRight ? '--sb-columns-border-normal-radius-right: ' + borderNormalRadiusRight + borderNormalRadiusUnit + ';' : ''}
-        ${borderNormalRadiusBottom ? '--sb-columns-border-normal-radius-bottom: ' + borderNormalRadiusBottom + borderNormalRadiusUnit + ';' : ''}
-        ${borderNormalRadiusLeft ? '--sb-columns-border-normal-radius-left: ' + borderNormalRadiusLeft + borderNormalRadiusUnit + ';' : ''}
-        ${borderHoverRadiusTop ? '--sb-columns-border-hover-radius-top: ' + borderHoverRadiusTop + borderHoverRadiusUnit + ';' : ''}
-        ${borderHoverRadiusRight ? '--sb-columns-border-hover-radius-right: ' + borderHoverRadiusRight + borderHoverRadiusUnit + ';' : ''}
-        ${borderHoverRadiusBottom ? '--sb-columns-border-hover-radius-bottom: ' + borderHoverRadiusBottom + borderHoverRadiusUnit + ';' : ''}
-        ${borderHoverRadiusLeft ? '--sb-columns-border-hover-radius-left: ' + borderHoverRadiusLeft + borderHoverRadiusUnit + ';' : ''}
+
+
+        ${dimensionVars('columns-border-normal-width', borderNormalWidthTop, borderNormalWidthRight, borderNormalWidthBottom, borderNormalWidthLeft, borderNormalWidthUnit)}
+        ${dimensionVars('columns-border-hover-width', borderHoverWidthTop, borderHoverWidthRight, borderHoverWidthBottom, borderHoverWidthLeft, borderHoverWidthUnit)}
+        ${dimensionVars('columns-border-normal-radius', borderNormalRadiusTop, borderNormalRadiusRight, borderNormalRadiusBottom, borderNormalRadiusLeft, borderNormalRadiusUnit)}
+        ${dimensionVars('columns-border-hover-radius', borderHoverRadiusTop, borderHoverRadiusRight, borderHoverRadiusBottom, borderHoverRadiusLeft, borderHoverRadiusUnit)}
+
         ${borderNormalBoxShadowHorizontal ? '--sb-columns-border-normal-box-shadow-horizontal: ' + borderNormalBoxShadowHorizontal + 'px;' : ''}
         ${borderNormalBoxShadowVertical ? '--sb-columns-border-normal-box-shadow-vertical: ' + borderNormalBoxShadowVertical + 'px;' : ''}
         ${borderNormalBoxShadowBlur ? '--sb-columns-border-normal-box-shadow-blur: ' + borderNormalBoxShadowBlur + 'px;' : ''}
         ${borderNormalBoxShadowSpread ? '--sb-columns-border-normal-box-shadow-spread: ' + borderNormalBoxShadowSpread + 'px;' : ''}
         ${borderNormalBoxShadowColor ? '--sb-columns-border-normal-box-shadow-color: ' + borderNormalBoxShadowColor + ';' : ''}
         ${borderNormalBoxShadowInset ? '--sb-columns-border-normal-box-shadow-inset: ' + borderNormalBoxShadowInset + ';' : ''}
+
         ${borderHoverBoxShadowHorizontal ? '--sb-columns-border-hover-box-shadow-horizontal: ' + borderHoverBoxShadowHorizontal + 'px;' : ''}
         ${borderHoverBoxShadowVertical ? '--sb-columns-border-hover-box-shadow-vertical: ' + borderHoverBoxShadowVertical + 'px;' : ''}
         ${borderHoverBoxShadowBlur ? '--sb-columns-border-hover-box-shadow-blur: ' + borderHoverBoxShadowBlur + 'px;' : ''}
         ${borderHoverBoxShadowSpread ? '--sb-columns-border-hover-box-shadow-spread: ' + borderHoverBoxShadowSpread + 'px;' : ''}
         ${borderHoverBoxShadowColor ? '--sb-columns-border-hover-box-shadow-color: ' + borderHoverBoxShadowColor + ';' : ''}
         ${borderHoverBoxShadowInset ? '--sb-columns-border-hover-box-shadow-inset: ' + borderHoverBoxShadowInset + ';' : ''}
+
         ${sectionBgColor ? '--sb-columns-bg-color: ' + sectionBgColor + ';' : ''}
 
 		${sectionBgImgURL ? '--sb-columns-bg-img-url: url(' + sectionBgImgURL + ');' : ''}

@@ -3,17 +3,11 @@ import { __ } from '@wordpress/i18n';
 import { Button, Dashicon, Icon, Path, Placeholder, Rect, SVG, Tooltip } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 
-/**
- * Internal dependencies
- */
-import { columnsIcon } from '../../helpers/icons.js';
-
 const LayoutSelector = ({ clientId, setupColumns }) => {
 	return (
 		<Placeholder
 			label={__('Section', 'smart-blocks')}
 			instructions={__('Select a variation to start with', 'smart-blocks')}
-			icon={<Icon icon={columnsIcon} />}
 			isColumnLayout={true}
 			className="sb-onboarding-component"
 		>

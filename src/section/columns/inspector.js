@@ -114,12 +114,14 @@ const Inspector = ({
 		columnsWidth,
 		columnsWidthMd,
 		columnsWidthSm,
+		columnsWidthUnit,
 
 		columnsHeight,
 
 		columnsHeightCustom,
 		columnsHeightCustomSm,
 		columnsHeightCustomMd,
+		columnsHeightCustomUnit,
 
 		hide,
 		hideTablet,
@@ -358,6 +360,10 @@ const Inspector = ({
 	                                    setValueSm={(value) => setAttributes({columnsWidthSm: value})}
 	                                    valueMd={columnsWidthMd}
 	                                    setValueMd={(value) => setAttributes({columnsWidthMd: value})}
+	                                    useUnit={!0}
+	                                    units={['px', 'em', '%', 'vw']}
+	                                    unit={columnsWidthUnit}
+	                                    setUnit={(value) => setAttributes({columnsWidthUnit: value})}
 									/>
 
 									<ButtonGroupControl
@@ -499,6 +505,10 @@ const Inspector = ({
 											setValueSm={(value) => setAttributes({columnsHeightCustomSm: value})}
 											valueMd={columnsHeightCustomMd}
 											setValueMd={(value) => setAttributes({columnsHeightCustomMd: value})}
+											useUnit={!0}
+											units={['px', 'em', '%', 'vh']}
+											unit={columnsHeightCustomUnit}
+											setUnit={(value) => setAttributes({columnsHeightCustomUnit: value})}
 		                                />
 									)}
 								</PanelBody>

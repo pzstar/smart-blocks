@@ -22,4 +22,26 @@ const getFontClass = (family = '', weight = '', textTransform = '', textDecorati
     return retrun_classes.join(" ");
 }
 
-export { checkDefault, getFontClass };
+const dimensionVars = (varname, top, right, bottom, left, unit) => {
+    return `--sb-${varname}-top: ${top ? (top + unit) : ''};
+        --sb-${varname}-right: ${right ? (right + unit) : ''};
+        --sb-${varname}-bottom: ${bottom ? (bottom + unit) : ''};
+        --sb-${varname}-left: ${left ? (left + unit): ''};`;
+}
+
+const responsiveDimensionVars = (varname, top, right, bottom, left, topSm, rightSm, bottomSm, leftSm, topMd, rightMd, bottomMd, leftMd, unit) => {
+    return `--sb-${varname}-top-sm: ${topSm ? (topSm + unit) : ''};
+        --sb-${varname}-right-sm: ${rightSm ? (rightSm + unit) : ''};
+        --sb-${varname}-bottom-sm: ${bottomSm ? (bottomSm + unit) : ''};
+        --sb-${varname}-left-sm: ${leftSm ? (leftSm + unit): ''};
+        --sb-${varname}-top-md: ${topMd ? (topMd + unit) : ''};
+        --sb-${varname}-right-md: ${rightMd ? (rightMd + unit) : ''};
+        --sb-${varname}-bottom-md: ${bottomMd ? (bottomMd + unit) : ''};
+        --sb-${varname}-left-md: ${leftMd ? (leftMd + unit) : ''};
+        --sb-${varname}-top-lg: ${top ? (top + unit) : ''};
+        --sb-${varname}-right-lg: ${right ? (right + unit) : ''};
+        --sb-${varname}-bottom-lg: ${bottom ? (bottom + unit) : ''};
+        --sb-${varname}-left-lg: ${left ? (left + unit) : ''};`;
+}
+
+export { checkDefault, getFontClass, responsiveDimensionVars, dimensionVars };

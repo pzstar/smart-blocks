@@ -7,8 +7,6 @@ const RangeSliderControl = ({
     min,
     max,
     steps,
-    // value,
-    // onChange,
     useUnit,
     responsive,
 
@@ -17,8 +15,12 @@ const RangeSliderControl = ({
     valueSm,
     setValueSm,
     valueMd,
-    setValueMd
+    setValueMd,
+    units,
+    unit,
+    setUnit
 }) => {
+    const allUnits = units ? units : ["px", "em", "%"];
 
     const getView = useSelect(select => {
         const { getView } = select( 'smart-blocks/data' );
@@ -36,24 +38,19 @@ const RangeSliderControl = ({
             {responsive && (<ResponsiveDropdown/>)}
             {useUnit && (
                 <div class="sb-unit-btn-group sb-ml-auto">
-                    <button
-                        className={`${value['unit'] === 'px' ? "active" : ""}`}
-                        value="px"
-                        onClick={onClickUnit}
-                    >px
-                    </button>
-                    <button
-                        className={`${value['unit'] === 'em' ? "active" : ""}`}
-                        value="em"
-                        onClick={onClickUnit}
-                    >em
-                    </button>
-                    <button
-                        className={`${value['unit'] === '%' ? "active" : ""}`}
-                        value="%"
-                        onClick={onClickUnit}
-                    >%
-                    </button>
+                    {allUnits.map((unt, index) => {
+                        return <button
+                            className={`${unit === unt ? "active" : ""}`}
+                            value={unt}
+                            onClick={(e) => {
+                                setUnit(e.target.value);
+                                setValue('');
+                                setValueSm('');
+                                setValueMd('');
+                            }}
+                        >{unt}
+                        </button>
+                    })}
                 </div>
             )}
         </div>
