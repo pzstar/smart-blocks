@@ -23,7 +23,7 @@ class Smart_Blocks_News_Module_Two {
             $query->the_post();
             $index = $query->current_post + 1;
             $last = $query->post_count;
-            $title_class = $index == 1 ? 'sb-large-title ' . smart_blocks_get_font_class($this->attributes['featuredTypography']) : smart_blocks_get_font_class($this->attributes['sideTypography']);
+            $title_class = $index == 1 ? 'sb-large-title ' . smart_blocks_get_font_class($this->attributes['featuredTypographyFamily'], $this->attributes['featuredTypographyWeight'], $this->attributes['featuredTypographyTextTransform'], $this->attributes['featuredTypographyTextDecoration']) : smart_blocks_get_font_class($this->attributes['sideTypographyFamily'], $this->attributes['sideTypographyWeight'], $this->attributes['sideTypographyTextTransform'], $this->attributes['sideTypographyTextDecoration']);
 
             if ($index == 1) {
                 $content_rendered .= '<div class="col1">';
@@ -73,7 +73,7 @@ class Smart_Blocks_News_Module_Two {
     public function render_header() {
         $content = '';
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
+            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypographyFamily'], $this->attributes['headerTitleTypographyWeight'], $this->attributes['headerTitleTypographyTextTransform'], $this->attributes['headerTitleTypographyTextDecoration']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';

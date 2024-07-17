@@ -38,6 +38,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
         public function render_block_asset($block_content, $block) {
             $blockAttrs = $block['attrs'];
             $block_css = '';
+            $block_css .= var_dump($blockAttrs);
             foreach ($blockAttrs as $attrs) {
                 if (isset($attrs['family'])) {
                     self::blocks_google_font($attrs['family'], $attrs['weight'] ? str_replace('italic', 'i', $attrs['weight']) : 400);
@@ -191,9 +192,17 @@ if (!class_exists('Smart_Blocks_CSS')) {
                 if (is_array($block)) {
                     $block_css .= self::get_inner_block_css($block);
                     $blockAttrs = $block['attrs'];
-                    foreach ($blockAttrs as $attrs) {
-                        if (isset($attrs['family'])) {
-                            self::blocks_google_font($attrs['family'], $attrs['weight'] ? str_replace('italic', 'i', $attrs['weight']) : 400);
+                    foreach ($blockAttrs as $attrs => $value) {
+                        $family = '';
+                        $weight = '';
+                        if (str_contains($attrs, 'Family')) {
+                            $family = $value;
+                        }
+                        if (str_contains($attrs, 'Weight')) {
+                            $weight = $value;
+                        }
+                        if($family && $family != 'inherit') {
+                            self::blocks_google_font($family, $weight ? str_replace('italic', 'i', $weight) : 400);
                         }
                     }
                     // Get CSS for the Block.

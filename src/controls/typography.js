@@ -41,7 +41,7 @@ const TypographyControl = ({
 	valueLineHeightUnit,
 	setValueLineHeightUnit
 }) => {
-	const [allWeights, setAllWeights] = useState(GoogleFontsList.filter(GoogleFontsList => GoogleFontsList.family === selectedFamily)[0].variants);
+	const [allWeights, setAllWeights] = useState(GoogleFontsList.filter(font => font.family === (valueFamily ? valueFamily : 'inherit'))[0].variants);
 
 	const onClearHandler = (e) => {
 		setValueFamily('Default');
@@ -105,12 +105,13 @@ const TypographyControl = ({
 												<select
 													value={valueFamily}
 													onChange={(e) => {
-														setAllWeights(GoogleFontsList.filter(GoogleFontsList => GoogleFontsList.family === selectedFamily)[0].variants);
-														setValueFamily(e.target.value);
+														const fontFamilyValue = e.target.value;
+														setValueFamily(fontFamilyValue);
+														setAllWeights(GoogleFontsList.filter(font => font.family === fontFamilyValue)[0].variants);
 														setValueWeight('400');
 													}}>
 													{GoogleFontsList && GoogleFontsList.map((font, index) => {
-														return <option value={fontFamily} key={index}>{`${fontFamily != 'inherit' ? fontFamily : 'Default'}`}</option>;
+														return <option value={font.family} key={index}>{`${font.family != 'inherit' ? font.family : 'Default'}`}</option>;
 													}
 													)}
 												</select>

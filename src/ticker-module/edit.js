@@ -16,18 +16,18 @@ import {
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import classnames from 'classnames';
-import Typography from '../utils/typography';
+import TypographyControl from '../controls/typography';
 import GoogleFontLoad from '../utils/googlefontload';
-import Color from '../utils/color';
+import ColorControl from '../controls/color';
 import Tabs from '../utils/tabs';
-import Select from '../utils/select';
-import Dimension from '../utils/dimension';
+import SelectControl from '../controls/select';
+import DimensionControl from '../controls/dimension';
 import QueryTaxonomyControls from '../utils/querytaxonomycontrols';
-import CustomRangeControl from '../utils/customrangecontrol';
-import TokenMultiSelectControl from '../utils/token-multiselect-control';
+import RangeSliderControl from '../controls/rangeslider';
+import MultiSelectControl from '../controls/multiselect';
 import OwlCarousel from 'react-owl-carousel';
-import Border from '../utils/border';
-import BoxShadow from '../utils/boxshadow';
+import BorderControl from '../controls/border';
+import BoxShadowControl from '../controls/boxshadow';
 import { checkDefault } from '../utils/helper';
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../utils/svgicons';
 
@@ -40,7 +40,24 @@ export default function Edit({ attributes, setAttributes }) {
         orderBy,
         excludePosts,
         categories,
-        tickerTitleTypography,
+
+        tickerTitleTypographyFamily,
+        tickerTitleTypographyWeight,
+        tickerTitleTypographyTextTransform,
+        tickerTitleTypographyTextDecoration,
+        tickerTitleTypographyFontSizeSm,
+        tickerTitleTypographyFontSizeMd,
+        tickerTitleTypographyFontSize,
+        tickerTitleTypographyFontSizeUnit,
+        tickerTitleTypographyLetterSpacingSm,
+        tickerTitleTypographyLetterSpacingMd,
+        tickerTitleTypographyLetterSpacing,
+        tickerTitleTypographyLetterSpacingUnit,
+        tickerTitleTypographyLineHeightSm,
+        tickerTitleTypographyLineHeightMd,
+        tickerTitleTypographyLineHeight,
+        tickerTitleTypographyLineHeightUnit,
+
         postsPostType,
         offset,
         autoplay,
@@ -53,23 +70,98 @@ export default function Edit({ attributes, setAttributes }) {
         tickerContentBgColor,
         tickerContentColor,
         tickerContentHoverColor,
-        tickerContentTypography,
+
+        tickerContentTypographyFamily,
+        tickerContentTypographyWeight,
+        tickerContentTypographyTextTransform,
+        tickerContentTypographyTextDecoration,
+        tickerContentTypographyFontSizeSm,
+        tickerContentTypographyFontSizeMd,
+        tickerContentTypographyFontSize,
+        tickerContentTypographyFontSizeUnit,
+        tickerContentTypographyLetterSpacingSm,
+        tickerContentTypographyLetterSpacingMd,
+        tickerContentTypographyLetterSpacing,
+        tickerContentTypographyLetterSpacingUnit,
+        tickerContentTypographyLineHeightSm,
+        tickerContentTypographyLineHeightMd,
+        tickerContentTypographyLineHeight,
+        tickerContentTypographyLineHeightUnit,
+
         navNormalBgColor,
         navIconNormalColor,
         navHoverBgColor,
         navIconHoverColor,
-        blockMargin,
-        blockPadding,
+        blockMarginSmTop,
+        blockMarginSmLeft,
+        blockMarginSmRight,
+        blockMarginSmBottom,
+        blockMarginMdTop,
+        blockMarginMdLeft,
+        blockMarginMdRight,
+        blockMarginMdBottom,
+        blockMarginTop,
+        blockMarginLeft,
+        blockMarginRight,
+        blockMarginBottom,
+        blockMarginUnit,
+
+        blockPaddingSmTop,
+        blockPaddingSmLeft,
+        blockPaddingSmRight,
+        blockPaddingSmBottom,
+        blockPaddingMdTop,
+        blockPaddingMdLeft,
+        blockPaddingMdRight,
+        blockPaddingMdBottom,
+        blockPaddingTop,
+        blockPaddingLeft,
+        blockPaddingRight,
+        blockPaddingBottom,
+        blockPaddingUnit,
+
         borderNormal,
         borderHover,
         borderNormalColor,
         borderHoverColor,
-        borderNormalWidth,
-        borderHoverWidth,
-        borderNormalRadius,
-        borderHoverRadius,
-        borderNormalBoxShadow,
-        borderHoverBoxShadow,
+
+        borderNormalWidthTop,
+        borderNormalWidthLeft,
+        borderNormalWidthRight,
+        borderNormalWidthBottom,
+        borderNormalWidthUnit,
+
+        borderHoverWidthTop,
+        borderHoverWidthLeft,
+        borderHoverWidthRight,
+        borderHoverWidthBottom,
+        borderHoverWidthUnit,
+
+        borderNormalRadiusTop,
+        borderNormalRadiusLeft,
+        borderNormalRadiusRight,
+        borderNormalRadiusBottom,
+        borderNormalRadiusUnit,
+
+        borderHoverRadiusTop,
+        borderHoverRadiusLeft,
+        borderHoverRadiusRight,
+        borderHoverRadiusBottom,
+        borderHoverRadiusUnit,
+
+        borderNormalBoxShadowHorizontal,
+        borderNormalBoxShadowVertical,
+        borderNormalBoxShadowBlur,
+        borderNormalBoxShadowSpread,
+        borderNormalBoxShadowColor,
+        borderNormalBoxShadowInset,
+
+        borderHoverBoxShadowHorizontal,
+        borderHoverBoxShadowVertical,
+        borderHoverBoxShadowBlur,
+        borderHoverBoxShadowSpread,
+        borderHoverBoxShadowColor,
+        borderHoverBoxShadowInset,
         blockBgColor
     } = attributes;
 
@@ -79,73 +171,73 @@ export default function Edit({ attributes, setAttributes }) {
         ${borderHover ? '--sb-border-hover: ' + borderNormal + ';' : ''}
         ${borderNormalColor ? '--sb-border-normal-color: ' + borderNormalColor + ';' : ''}
         ${borderHoverColor ? '--sb-border-hover-color: ' + borderHoverColor + ';' : ''}
-        ${borderNormalWidth.top ? '--sb-border-normal-width-top: ' + borderNormalWidth.top + borderNormalWidth.unit + ';' : ''}
-        ${borderNormalWidth.right ? '--sb-border-normal-width-right: ' + borderNormalWidth.right + borderNormalWidth.unit + ';' : ''}
-        ${borderNormalWidth.bottom ? '--sb-border-normal-width-bottom: ' + borderNormalWidth.bottom + borderNormalWidth.unit + ';' : ''}
-        ${borderNormalWidth.left ? '--sb-border-normal-width-left: ' + borderNormalWidth.left + borderNormalWidth.unit + ';' : ''}
-        ${borderHoverWidth.top ? '--sb-border-hover-width-top: ' + borderHoverWidth.top + borderHoverWidth.unit + ';' : ''}
-        ${borderHoverWidth.right ? '--sb-border-hover-width-right: ' + borderHoverWidth.right + borderHoverWidth.unit + ';' : ''}
-        ${borderHoverWidth.bottom ? '--sb-border-hover-width-bottom: ' + borderHoverWidth.bottom + borderHoverWidth.unit + ';' : ''}
-        ${borderHoverWidth.left ? '--sb-border-hover-width-left: ' + borderHoverWidth.left + borderHoverWidth.unit + ';' : ''}
-        ${borderNormalRadius.top ? '--sb-border-normal-radius-top: ' + borderNormalRadius.top + borderNormalRadius.unit + ';' : ''}
-        ${borderNormalRadius.right ? '--sb-border-normal-radius-right: ' + borderNormalRadius.right + borderNormalRadius.unit + ';' : ''}
-        ${borderNormalRadius.bottom ? '--sb-border-normal-radius-bottom: ' + borderNormalRadius.bottom + borderNormalRadius.unit + ';' : ''}
-        ${borderNormalRadius.left ? '--sb-border-normal-radius-left: ' + borderNormalRadius.left + borderNormalRadius.unit + ';' : ''}
-        ${borderHoverRadius.top ? '--sb-border-hover-radius-top: ' + borderHoverRadius.top + borderHoverRadius.unit + ';' : ''}
-        ${borderHoverRadius.right ? '--sb-border-hover-radius-right: ' + borderHoverRadius.right + borderHoverRadius.unit + ';' : ''}
-        ${borderHoverRadius.bottom ? '--sb-border-hover-radius-bottom: ' + borderHoverRadius.bottom + borderHoverRadius.unit + ';' : ''}
-        ${borderHoverRadius.left ? '--sb-border-hover-radius-left: ' + borderHoverRadius.left + borderHoverRadius.unit + ';' : ''}
-        ${borderNormalBoxShadow.horizontal ? '--sb-border-normal-box-shadow-horizontal: ' + borderNormalBoxShadow.horizontal + 'px;' : ''}
-        ${borderNormalBoxShadow.vertical ? '--sb-border-normal-box-shadow-vertical: ' + borderNormalBoxShadow.vertical + 'px;' : ''}
-        ${borderNormalBoxShadow.blur ? '--sb-border-normal-box-shadow-blur: ' + borderNormalBoxShadow.blur + 'px;' : ''}
-        ${borderNormalBoxShadow.spread ? '--sb-border-normal-box-shadow-spread: ' + borderNormalBoxShadow.spread + 'px;' : ''}
-        ${borderNormalBoxShadow.color ? '--sb-border-normal-box-shadow-color: ' + borderNormalBoxShadow.color + ';' : ''}
-        ${borderNormalBoxShadow.inset ? '--sb-border-normal-box-shadow-inset: ' + borderNormalBoxShadow.inset + ';' : ''}
-        ${borderHoverBoxShadow.horizontal ? '--sb-border-hover-box-shadow-horizontal: ' + borderHoverBoxShadow.horizontal + 'px;' : ''}
-        ${borderHoverBoxShadow.vertical ? '--sb-border-hover-box-shadow-vertical: ' + borderHoverBoxShadow.vertical + 'px;' : ''}
-        ${borderHoverBoxShadow.blur ? '--sb-border-hover-box-shadow-blur: ' + borderHoverBoxShadow.blur + 'px;' : ''}
-        ${borderHoverBoxShadow.spread ? '--sb-border-hover-box-shadow-spread: ' + borderHoverBoxShadow.spread + 'px;' : ''}
-        ${borderHoverBoxShadow.color ? '--sb-border-hover-box-shadow-color: ' + borderHoverBoxShadow.color + ';' : ''}
-        ${borderHoverBoxShadow.inset ? '--sb-border-hover-box-shadow-inset: ' + borderHoverBoxShadow.inset + ';' : ''}
+        ${borderNormalWidthTop ? '--sb-border-normal-width-top: ' + borderNormalWidthTop + borderNormalWidthUnit + ';' : ''}
+        ${borderNormalWidthRight ? '--sb-border-normal-width-right: ' + borderNormalWidthRight + borderNormalWidthUnit + ';' : ''}
+        ${borderNormalWidthBottom ? '--sb-border-normal-width-bottom: ' + borderNormalWidthBottom + borderNormalWidthUnit + ';' : ''}
+        ${borderNormalWidthLeft ? '--sb-border-normal-width-left: ' + borderNormalWidthLeft + borderNormalWidthUnit + ';' : ''}
+        ${borderHoverWidthTop ? '--sb-border-hover-width-top: ' + borderHoverWidthTop + borderHoverWidthUnit + ';' : ''}
+        ${borderHoverWidthRight ? '--sb-border-hover-width-right: ' + borderHoverWidthRight + borderHoverWidthUnit + ';' : ''}
+        ${borderHoverWidthBottom ? '--sb-border-hover-width-bottom: ' + borderHoverWidthBottom + borderHoverWidthUnit + ';' : ''}
+        ${borderHoverWidthLeft ? '--sb-border-hover-width-left: ' + borderHoverWidthLeft + borderHoverWidthUnit + ';' : ''}
+        ${borderNormalRadiusTop ? '--sb-border-normal-radius-top: ' + borderNormalRadiusTop + borderNormalRadiusUnit + ';' : ''}
+        ${borderNormalRadiusRight ? '--sb-border-normal-radius-right: ' + borderNormalRadiusRight + borderNormalRadiusUnit + ';' : ''}
+        ${borderNormalRadiusBottom ? '--sb-border-normal-radius-bottom: ' + borderNormalRadiusBottom + borderNormalRadiusUnit + ';' : ''}
+        ${borderNormalRadiusLeft ? '--sb-border-normal-radius-left: ' + borderNormalRadiusLeft + borderNormalRadiusUnit + ';' : ''}
+        ${borderHoverRadiusTop ? '--sb-border-hover-radius-top: ' + borderHoverRadiusTop + borderHoverRadiusUnit + ';' : ''}
+        ${borderHoverRadiusRight ? '--sb-border-hover-radius-right: ' + borderHoverRadiusRight + borderHoverRadiusUnit + ';' : ''}
+        ${borderHoverRadiusBottom ? '--sb-border-hover-radius-bottom: ' + borderHoverRadiusBottom + borderHoverRadiusUnit + ';' : ''}
+        ${borderHoverRadiusLeft ? '--sb-border-hover-radius-left: ' + borderHoverRadiusLeft + borderHoverRadiusUnit + ';' : ''}
+        ${borderNormalBoxShadowHorizontal ? '--sb-border-normal-box-shadow-horizontal: ' + borderNormalBoxShadowHorizontal + 'px;' : ''}
+        ${borderNormalBoxShadowVertical ? '--sb-border-normal-box-shadow-vertical: ' + borderNormalBoxShadowVertical + 'px;' : ''}
+        ${borderNormalBoxShadowBlur ? '--sb-border-normal-box-shadow-blur: ' + borderNormalBoxShadowBlur + 'px;' : ''}
+        ${borderNormalBoxShadowSpread ? '--sb-border-normal-box-shadow-spread: ' + borderNormalBoxShadowSpread + 'px;' : ''}
+        ${borderNormalBoxShadowColor ? '--sb-border-normal-box-shadow-color: ' + borderNormalBoxShadowColor + ';' : ''}
+        ${borderNormalBoxShadowInset ? '--sb-border-normal-box-shadow-inset: ' + borderNormalBoxShadowInset + ';' : ''}
+        ${borderHoverBoxShadowHorizontal ? '--sb-border-hover-box-shadow-horizontal: ' + borderHoverBoxShadowHorizontal + 'px;' : ''}
+        ${borderHoverBoxShadowVertical ? '--sb-border-hover-box-shadow-vertical: ' + borderHoverBoxShadowVertical + 'px;' : ''}
+        ${borderHoverBoxShadowBlur ? '--sb-border-hover-box-shadow-blur: ' + borderHoverBoxShadowBlur + 'px;' : ''}
+        ${borderHoverBoxShadowSpread ? '--sb-border-hover-box-shadow-spread: ' + borderHoverBoxShadowSpread + 'px;' : ''}
+        ${borderHoverBoxShadowColor ? '--sb-border-hover-box-shadow-color: ' + borderHoverBoxShadowColor + ';' : ''}
+        ${borderHoverBoxShadowInset ? '--sb-border-hover-box-shadow-inset: ' + borderHoverBoxShadowInset + ';' : ''}
         ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
-        ${blockMargin.sm.top ? '--sb-block-margin-top-sm: ' + blockMargin.sm.top + blockMargin.unit + ';' : ''}
-        ${blockMargin.sm.right ? '--sb-block-margin-right-sm: ' + blockMargin.sm.right + blockMargin.unit + ';' : ''}
-        ${blockMargin.sm.bottom ? '--sb-block-margin-bottom-sm: ' + blockMargin.sm.bottom + blockMargin.unit + ';' : ''}
-        ${blockMargin.sm.left ? '--sb-block-margin-left-sm: ' + blockMargin.sm.left + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.top ? '--sb-block-margin-top-md: ' + blockMargin.md.top + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.right ? '--sb-block-margin-right-md: ' + blockMargin.md.right + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.bottom ? '--sb-block-margin-bottom-md: ' + blockMargin.md.bottom + blockMargin.unit + ';' : ''}
-        ${blockMargin.md.left ? '--sb-block-margin-left-md: ' + blockMargin.md.left + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.top ? '--sb-block-margin-top-lg: ' + blockMargin.lg.top + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.right ? '--sb-block-margin-right-lg: ' + blockMargin.lg.right + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.bottom ? '--sb-block-margin-bottom-lg: ' + blockMargin.lg.bottom + blockMargin.unit + ';' : ''}
-        ${blockMargin.lg.left ? '--sb-block-margin-left-lg: ' + blockMargin.lg.left + blockMargin.unit + ';' : ''}
-        ${blockPadding.sm.top ? '--sb-block-padding-top-sm: ' + blockPadding.sm.top + blockPadding.unit + ';' : ''}
-        ${blockPadding.sm.right ? '--sb-block-padding-right-sm: ' + blockPadding.sm.right + blockPadding.unit + ';' : ''}
-        ${blockPadding.sm.bottom ? '--sb-block-padding-bottom-sm: ' + blockPadding.sm.bottom + blockPadding.unit + ';' : ''}
-        ${blockPadding.sm.left ? '--sb-block-padding-left-sm: ' + blockPadding.sm.left + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.top ? '--sb-block-padding-top-md: ' + blockPadding.md.top + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.right ? '--sb-block-padding-right-md: ' + blockPadding.md.right + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.bottom ? '--sb-block-padding-bottom-md: ' + blockPadding.md.bottom + blockPadding.unit + ';' : ''}
-        ${blockPadding.md.left ? '--sb-block-padding-left-md: ' + blockPadding.md.left + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.top ? '--sb-block-padding-top-lg: ' + blockPadding.lg.top + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.right ? '--sb-block-padding-right-lg: ' + blockPadding.lg.right + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.bottom ? '--sb-block-padding-bottom-lg: ' + blockPadding.lg.bottom + blockPadding.unit + ';' : ''}
-        ${blockPadding.lg.left ? '--sb-block-padding-left-lg: ' + blockPadding.lg.left + blockPadding.unit + ';' : ''}
-        ${tickerTitleTypography.family ? '--sb-ticker-title-typo-family: ' + checkDefault(tickerTitleTypography.family) + ';' : ''}
-        ${tickerTitleTypography.weight ? '--sb-ticker-title-typo-weight: ' + checkDefault(tickerTitleTypography.weight.replace(/\D/g, ''), tickerTitleTypography.weight) + ';' : ''}
-        ${tickerTitleTypography.weight ? '--sb-ticker-title-typo-style: ' + checkDefault(tickerTitleTypography.weight.replace(/\d+/g, ''), tickerTitleTypography.weight) + ';' : ''}
-        ${tickerTitleTypography.textTransform ? '--sb-ticker-title-typo-tt: ' + tickerTitleTypography.textTransform + ';' : ''}
-        ${tickerTitleTypography.textDecoration ? '--sb-ticker-title-typo-td: ' + tickerTitleTypography.textDecoration + ';' : ''}
-        ${tickerTitleTypography.fontSize.sm ? '--sb-ticker-title-typo-fs-sm: ' + tickerTitleTypography.fontSize.sm + tickerTitleTypography.fontSize.unit + ';' : ''}
-        ${tickerTitleTypography.fontSize.md ? '--sb-ticker-title-typo-fs-md: ' + tickerTitleTypography.fontSize.md + tickerTitleTypography.fontSize.unit + ';' : ''}
-        ${tickerTitleTypography.fontSize.lg ? '--sb-ticker-title-typo-fs-lg: ' + tickerTitleTypography.fontSize.lg + tickerTitleTypography.fontSize.unit + ';' : ''}
-        ${tickerTitleTypography.letterSpacing.sm ? '--sb-ticker-title-typo-ls-sm: ' + tickerTitleTypography.letterSpacing.sm + tickerTitleTypography.letterSpacing.unit + ';' : ''}
-        ${tickerTitleTypography.letterSpacing.md ? '--sb-ticker-title-typo-ls-md: ' + tickerTitleTypography.letterSpacing.md + tickerTitleTypography.letterSpacing.unit + ';' : ''}
-        ${tickerTitleTypography.letterSpacing.lg ? '--sb-ticker-title-typo-ls-lg: ' + tickerTitleTypography.letterSpacing.lg + tickerTitleTypography.letterSpacing.unit + ';' : ''}
-        ${tickerTitleTypography.lineHeight.sm ? '--sb-ticker-title-typo-lh-sm: ' + tickerTitleTypography.lineHeight.sm + tickerTitleTypography.lineHeight.unit + ';' : ''}
-        ${tickerTitleTypography.lineHeight.md ? '--sb-ticker-title-typo-lh-md: ' + tickerTitleTypography.lineHeight.md + tickerTitleTypography.lineHeight.unit + ';' : ''}
-        ${tickerTitleTypography.lineHeight.lg ? '--sb-ticker-title-typo-lh-lg: ' + tickerTitleTypography.lineHeight.lg + tickerTitleTypography.lineHeight.unit + ';' : ''}
+        ${blockMarginSmTop ? '--sb-block-margin-top-sm: ' + blockMarginSmTop + blockMarginUnit + ';' : ''}
+        ${blockMarginSmRight ? '--sb-block-margin-right-sm: ' + blockMarginSmRight + blockMarginUnit + ';' : ''}
+        ${blockMarginSmBottom ? '--sb-block-margin-bottom-sm: ' + blockMarginSmBottom + blockMarginUnit + ';' : ''}
+        ${blockMarginSmLeft ? '--sb-block-margin-left-sm: ' + blockMarginSmLeft + blockMarginUnit + ';' : ''}
+        ${blockMarginMdTop ? '--sb-block-margin-top-md: ' + blockMarginMdTop + blockMarginUnit + ';' : ''}
+        ${blockMarginMdRight ? '--sb-block-margin-right-md: ' + blockMarginMdRight + blockMarginUnit + ';' : ''}
+        ${blockMarginMdBottom ? '--sb-block-margin-bottom-md: ' + blockMarginMdBottom + blockMarginUnit + ';' : ''}
+        ${blockMarginMdLeft ? '--sb-block-margin-left-md: ' + blockMarginMdLeft + blockMarginUnit + ';' : ''}
+        ${blockMarginTop ? '--sb-block-margin-top-lg: ' + blockMarginTop + blockMarginUnit + ';' : ''}
+        ${blockMarginRight ? '--sb-block-margin-right-lg: ' + blockMarginRight + blockMarginUnit + ';' : ''}
+        ${blockMarginBottom ? '--sb-block-margin-bottom-lg: ' + blockMarginBottom + blockMarginUnit + ';' : ''}
+        ${blockMarginLeft ? '--sb-block-margin-left-lg: ' + blockMarginLeft + blockMarginUnit + ';' : ''}
+        ${blockPaddingSmTop ? '--sb-block-padding-top-sm: ' + blockPaddingSmTop + blockPaddingUnit + ';' : ''}
+        ${blockPaddingSmRight ? '--sb-block-padding-right-sm: ' + blockPaddingSmRight + blockPaddingUnit + ';' : ''}
+        ${blockPaddingSmBottom ? '--sb-block-padding-bottom-sm: ' + blockPaddingSmBottom + blockPaddingUnit + ';' : ''}
+        ${blockPaddingSmLeft ? '--sb-block-padding-left-sm: ' + blockPaddingSmLeft + blockPaddingUnit + ';' : ''}
+        ${blockPaddingMdTop ? '--sb-block-padding-top-md: ' + blockPaddingMdTop + blockPaddingUnit + ';' : ''}
+        ${blockPaddingMdRight ? '--sb-block-padding-right-md: ' + blockPaddingMdRight + blockPaddingUnit + ';' : ''}
+        ${blockPaddingMdBottom ? '--sb-block-padding-bottom-md: ' + blockPaddingMdBottom + blockPaddingUnit + ';' : ''}
+        ${blockPaddingMdLeft ? '--sb-block-padding-left-md: ' + blockPaddingMdLeft + blockPaddingUnit + ';' : ''}
+        ${blockPaddingTop ? '--sb-block-padding-top-lg: ' + blockPaddingTop + blockPaddingUnit + ';' : ''}
+        ${blockPaddingRight ? '--sb-block-padding-right-lg: ' + blockPaddingRight + blockPaddingUnit + ';' : ''}
+        ${blockPaddingBottom ? '--sb-block-padding-bottom-lg: ' + blockPaddingBottom + blockPaddingUnit + ';' : ''}
+        ${blockPaddingLeft ? '--sb-block-padding-left-lg: ' + blockPaddingLeft + blockPaddingUnit + ';' : ''}
+        ${tickerTitleTypographyFamily ? '--sb-ticker-title-typo-family: ' + checkDefault(tickerTitleTypographyFamily) + ';' : ''}
+        ${tickerTitleTypographyWeight ? '--sb-ticker-title-typo-weight: ' + checkDefault(tickerTitleTypographyWeight.replace(/\D/g, ''), tickerTitleTypographyWeight) + ';' : ''}
+        ${tickerTitleTypographyWeight ? '--sb-ticker-title-typo-style: ' + checkDefault(tickerTitleTypographyWeight.replace(/\d+/g, ''), tickerTitleTypographyWeight) + ';' : ''}
+        ${tickerTitleTypographyTextTransform ? '--sb-ticker-title-typo-tt: ' + tickerTitleTypographyTextTransform + ';' : ''}
+        ${tickerTitleTypographyTextDecoration ? '--sb-ticker-title-typo-td: ' + tickerTitleTypographyTextDecoration + ';' : ''}
+        ${tickerTitleTypographyFontSizeSm ? '--sb-ticker-title-typo-fs-sm: ' + tickerTitleTypographyFontSizeSm + tickerTitleTypographyFontSizeUnit + ';' : ''}
+        ${tickerTitleTypographyFontSizeMd ? '--sb-ticker-title-typo-fs-md: ' + tickerTitleTypographyFontSizeMd + tickerTitleTypographyFontSizeUnit + ';' : ''}
+        ${tickerTitleTypographyFontSize ? '--sb-ticker-title-typo-fs-lg: ' + tickerTitleTypographyFontSize + tickerTitleTypographyFontSizeUnit + ';' : ''}
+        ${tickerTitleTypographyLetterSpacingSm ? '--sb-ticker-title-typo-ls-sm: ' + tickerTitleTypographyLetterSpacingSm + tickerTitleTypographyLetterSpacingUnit + ';' : ''}
+        ${tickerTitleTypographyLetterSpacingMd ? '--sb-ticker-title-typo-ls-md: ' + tickerTitleTypographyLetterSpacingMd + tickerTitleTypographyLetterSpacingUnit + ';' : ''}
+        ${tickerTitleTypographyLetterSpacing ? '--sb-ticker-title-typo-ls-lg: ' + tickerTitleTypographyLetterSpacing + tickerTitleTypographyLetterSpacingUnit + ';' : ''}
+        ${tickerTitleTypographyLineHeightSm ? '--sb-ticker-title-typo-lh-sm: ' + tickerTitleTypographyLineHeightSm + tickerTitleTypographyLineHeightUnit + ';' : ''}
+        ${tickerTitleTypographyLineHeightMd ? '--sb-ticker-title-typo-lh-md: ' + tickerTitleTypographyLineHeightMd + tickerTitleTypographyLineHeightUnit + ';' : ''}
+        ${tickerTitleTypographyLineHeight ? '--sb-ticker-title-typo-lh-lg: ' + tickerTitleTypographyLineHeight + tickerTitleTypographyLineHeightUnit + ';' : ''}
         ${tickerTitleBgColor ? '--sb-ticker-title-bg-color: ' + tickerTitleBgColor + ';' : ''}
         ${tickerTitleColor ? '--sb-ticker-title-color: ' + tickerTitleColor + ';' : ''}
         ${tickerContentBgColor ? '--sb-ticker-content-bg-color: ' + tickerContentBgColor + ';' : ''}
@@ -155,20 +247,20 @@ export default function Edit({ attributes, setAttributes }) {
         ${navIconNormalColor ? '--sb-nav-icon-normal-color: ' + navIconNormalColor + ';' : ''}
         ${navHoverBgColor ? '--sb-nav-hover-bg-color: ' + navHoverBgColor + ';' : ''}
         ${navIconHoverColor ? '--sb-nav-icon-hover-color: ' + navIconHoverColor + ';' : ''}
-        ${tickerContentTypography.family ? '--sb-ticker-content-typo-family: ' + checkDefault(tickerContentTypography.family) + ';' : ''}
-        ${tickerContentTypography.weight ? '--sb-ticker-content-typo-weight: ' + checkDefault(tickerContentTypography.weight.replace(/\D/g, ''), tickerContentTypography.weight) + ';' : ''}
-        ${tickerContentTypography.weight ? '--sb-ticker-content-typo-style: ' + checkDefault(tickerContentTypography.weight.replace(/\d+/g, ''), tickerContentTypography.weight) + ';' : ''}
-        ${tickerContentTypography.textTransform ? '--sb-ticker-content-typo-tt: ' + tickerContentTypography.textTransform + ';' : ''}
-        ${tickerContentTypography.textDecoration ? '--sb-ticker-content-typo-td: ' + tickerContentTypography.textDecoration + ';' : ''}
-        ${tickerContentTypography.fontSize.sm ? '--sb-ticker-content-typo-fs-sm: ' + tickerContentTypography.fontSize.sm + tickerContentTypography.fontSize.unit + ';' : ''}
-        ${tickerContentTypography.fontSize.md ? '--sb-ticker-content-typo-fs-md: ' + tickerContentTypography.fontSize.md + tickerContentTypography.fontSize.unit + ';' : ''}
-        ${tickerContentTypography.fontSize.lg ? '--sb-ticker-content-typo-fs-lg: ' + tickerContentTypography.fontSize.lg + tickerContentTypography.fontSize.unit + ';' : ''}
-        ${tickerContentTypography.letterSpacing.sm ? '--sb-ticker-content-typo-ls-sm: ' + tickerContentTypography.letterSpacing.sm + tickerContentTypography.letterSpacing.unit + ';' : ''}
-        ${tickerContentTypography.letterSpacing.md ? '--sb-ticker-content-typo-ls-md: ' + tickerContentTypography.letterSpacing.md + tickerContentTypography.letterSpacing.unit + ';' : ''}
-        ${tickerContentTypography.letterSpacing.lg ? '--sb-ticker-content-typo-ls-lg: ' + tickerContentTypography.letterSpacing.lg + tickerContentTypography.letterSpacing.unit + ';' : ''}
-        ${tickerContentTypography.lineHeight.sm ? '--sb-ticker-content-typo-lh-sm: ' + tickerContentTypography.lineHeight.sm + tickerContentTypography.lineHeight.unit + ';' : ''}
-        ${tickerContentTypography.lineHeight.md ? '--sb-ticker-content-typo-lh-md: ' + tickerContentTypography.lineHeight.md + tickerContentTypography.lineHeight.unit + ';' : ''}
-        ${tickerContentTypography.lineHeight.lg ? '--sb-ticker-content-typo-lh-lg: ' + tickerContentTypography.lineHeight.lg + tickerContentTypography.lineHeight.unit + ';' : ''}
+        ${tickerContentTypographyFamily ? '--sb-ticker-content-typo-family: ' + checkDefault(tickerContentTypographyFamily) + ';' : ''}
+        ${tickerContentTypographyWeight ? '--sb-ticker-content-typo-weight: ' + checkDefault(tickerContentTypographyWeight.replace(/\D/g, ''), tickerContentTypographyWeight) + ';' : ''}
+        ${tickerContentTypographyWeight ? '--sb-ticker-content-typo-style: ' + checkDefault(tickerContentTypographyWeight.replace(/\d+/g, ''), tickerContentTypographyWeight) + ';' : ''}
+        ${tickerContentTypographyTextTransform ? '--sb-ticker-content-typo-tt: ' + tickerContentTypographyTextTransform + ';' : ''}
+        ${tickerContentTypographyTextDecoration ? '--sb-ticker-content-typo-td: ' + tickerContentTypographyTextDecoration + ';' : ''}
+        ${tickerContentTypographyFontSizeSm ? '--sb-ticker-content-typo-fs-sm: ' + tickerContentTypographyFontSizeSm + tickerContentTypographyFontSizeUnit + ';' : ''}
+        ${tickerContentTypographyFontSizeMd ? '--sb-ticker-content-typo-fs-md: ' + tickerContentTypographyFontSizeMd + tickerContentTypographyFontSizeUnit + ';' : ''}
+        ${tickerContentTypographyFontSize ? '--sb-ticker-content-typo-fs-lg: ' + tickerContentTypographyFontSize + tickerContentTypographyFontSizeUnit + ';' : ''}
+        ${tickerContentTypographyLetterSpacingSm ? '--sb-ticker-content-typo-ls-sm: ' + tickerContentTypographyLetterSpacingSm + tickerContentTypographyLetterSpacingUnit + ';' : ''}
+        ${tickerContentTypographyLetterSpacingMd ? '--sb-ticker-content-typo-ls-md: ' + tickerContentTypographyLetterSpacingMd + tickerContentTypographyLetterSpacingUnit + ';' : ''}
+        ${tickerContentTypographyLetterSpacing ? '--sb-ticker-content-typo-ls-lg: ' + tickerContentTypographyLetterSpacing + tickerContentTypographyLetterSpacingUnit + ';' : ''}
+        ${tickerContentTypographyLineHeightSm ? '--sb-ticker-content-typo-lh-sm: ' + tickerContentTypographyLineHeightSm + tickerContentTypographyLineHeightUnit + ';' : ''}
+        ${tickerContentTypographyLineHeightMd ? '--sb-ticker-content-typo-lh-md: ' + tickerContentTypographyLineHeightMd + tickerContentTypographyLineHeightUnit + ';' : ''}
+        ${tickerContentTypographyLineHeight ? '--sb-ticker-content-typo-lh-lg: ' + tickerContentTypographyLineHeight + tickerContentTypographyLineHeightUnit + ';' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
@@ -339,10 +431,10 @@ export default function Edit({ attributes, setAttributes }) {
                                         onChange={(autoplay) => setAttributes({ autoplay })}
                                     />
                                     {autoplay && (
-                                        <CustomRangeControl
+                                        <RangeSliderControl
                                             label={__('Ticker Pause Duration', 'smart-blocks')}
                                             value={pause}
-                                            onChange={(pause) => setAttributes({ pause })}
+                                            setValue={(pause) => setAttributes({ pause })}
                                             min={1}
                                             max={20}
                                         />)
@@ -353,7 +445,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     initialOpen={false}
                                 >
 
-                                    <Select
+                                    <SelectControl
                                         label={__('Source', 'smart-blocks')}
                                         value={postsPostType}
                                         onChange={(postsPostType) => setAttributes({ postsPostType })}
@@ -366,14 +458,14 @@ export default function Edit({ attributes, setAttributes }) {
                                         onChange={(categories) => setAttributes({ categories })}
                                     />
 
-                                    <TokenMultiSelectControl
+                                    <MultiSelectControl
                                         label={__('Exclude Posts', 'smart-blocks')}
                                         options={allPostsSelect}
                                         value={excludePosts}
                                         onChange={(excludePosts) => setAttributes({ excludePosts })}
                                     />
 
-                                    <Select
+                                    <SelectControl
                                         label={__('Order By', 'smart-blocks')}
                                         value={orderBy}
                                         onChange={(orderBy) => setAttributes({ orderBy })}
@@ -387,7 +479,7 @@ export default function Edit({ attributes, setAttributes }) {
                                         ]}
                                     />
 
-                                    <Select
+                                    <SelectControl
                                         label={__('Order', 'smart-blocks')}
                                         value={order}
                                         onChange={(order) => setAttributes({ order })}
@@ -397,18 +489,18 @@ export default function Edit({ attributes, setAttributes }) {
                                         ]}
                                     />
 
-                                    <CustomRangeControl
+                                    <RangeSliderControl
                                         label={__('Offset', 'smart-blocks')}
                                         value={offset}
-                                        onChange={(offset) => setAttributes({ offset })}
+                                        setValue={(offset) => setAttributes({ offset })}
                                         min={0}
                                         max={10}
                                     />
 
-                                    <CustomRangeControl
+                                    <RangeSliderControl
                                         label={__('No of Posts', 'smart-blocks')}
                                         value={noOfPosts}
-                                        onChange={(noOfPosts) => setAttributes({ noOfPosts })}
+                                        setValue={(noOfPosts) => setAttributes({ noOfPosts })}
                                         min={0}
                                         max={20}
                                     />
@@ -420,48 +512,110 @@ export default function Edit({ attributes, setAttributes }) {
                                     title={__('Title', 'smart-blocks')}
                                     initialOpen={false}
                                 >
-                                    <Typography
+                                    <TypographyControl
                                         label={__('Typography', 'smart-blocks')}
-                                        values={tickerTitleTypography}
-                                        onChange={(tickerTitleTypography) => setAttributes({ tickerTitleTypography })} />
-                                    <Color
+                                        valueFamily={tickerTitleTypographyFamily}
+                                        setValueFamily={value => setAttributes({tickerTitleTypographyFamily: value})}
+                                        valueWeight={tickerTitleTypographyWeight}
+                                        setValueWeight={value => setAttributes({tickerTitleTypographyWeight: value})}
+                                        valueTextTransform={tickerTitleTypographyTextTransform}
+                                        setValueTextTransform={value => setAttributes({tickerTitleTypographyTextTransform: value})}
+                                        valueTextDecoration={tickerTitleTypographyTextDecoration}
+                                        setValueTextDecoration={value => setAttributes({tickerTitleTypographyTextDecoration: value})}
+                                        valueFontSizeSm={tickerTitleTypographyFontSizeSm}
+                                        setValueFontSizeSm={value => setAttributes({tickerTitleTypographyFontSizeSm: value})}
+                                        valueFontSizeMd={tickerTitleTypographyFontSizeMd}
+                                        setValueFontSizeMd={value => setAttributes({tickerTitleTypographyFontSizeMd: value})}
+                                        valueFontSize={tickerTitleTypographyFontSize}
+                                        setValueFontSize={value => setAttributes({tickerTitleTypographyFontSize: value})}
+                                        valueFontSizeUnit={tickerTitleTypographyFontSizeUnit}
+                                        setValueFontSizeUnit={value => setAttributes({tickerTitleTypographyFontSizeUnit: value})}
+                                        valueLetterSpacingSm={tickerTitleTypographyLetterSpacingSm}
+                                        setValueLetterSpacingSm={value => setAttributes({tickerTitleTypographyLetterSpacingSm: value})}
+                                        valueLetterSpacingMd={tickerTitleTypographyLetterSpacingMd}
+                                        setValueLetterSpacingMd={value => setAttributes({tickerTitleTypographyLetterSpacingMd: value})}
+                                        valueLetterSpacing={tickerTitleTypographyLetterSpacing}
+                                        setValueLetterSpacing={value => setAttributes({tickerTitleTypographyLetterSpacing: value})}
+                                        valueLetterSpacingUnit={tickerTitleTypographyLetterSpacingUnit}
+                                        setValueLetterSpacingUnit={value => setAttributes({tickerTitleTypographyLetterSpacingUnit: value})}
+                                        valueLineHeightSm={tickerTitleTypographyLineHeightSm}
+                                        setValueLineHeightSm={value => setAttributes({tickerTitleTypographyLineHeightSm: value})}
+                                        valueLineHeightMd={tickerTitleTypographyLineHeightMd}
+                                        setValueLineHeightMd={value => setAttributes({tickerTitleTypographyLineHeightMd: value})}
+                                        valueLineHeight={tickerTitleTypographyLineHeight}
+                                        setValueLineHeight={value => setAttributes({tickerTitleTypographyLineHeight: value})}
+                                        valueLineHeightUnit={tickerTitleTypographyLineHeightUnit}
+                                        setValueLineHeightUnit={value => setAttributes({tickerTitleTypographyLineHeightUnit: value})}
+                                    />
+                                    <ColorControl
                                         label={__('Background Color', 'smart-blocks')}
                                         enableAlpha
                                         value={tickerTitleBgColor}
-                                        onChange={(tickerTitleBgColor) => setAttributes({ tickerTitleBgColor })}
+                                        setValue={(tickerTitleBgColor) => setAttributes({ tickerTitleBgColor })}
                                     />
-                                    <Color
+                                    <ColorControl
                                         label={__('Text Color', 'smart-blocks')}
                                         enableAlpha
                                         value={tickerTitleColor}
-                                        onChange={(tickerTitleColor) => setAttributes({ tickerTitleColor })}
+                                        setValue={(tickerTitleColor) => setAttributes({ tickerTitleColor })}
                                     />
                                 </PanelBody>
                                 <PanelBody
                                     title="Content"
                                     initialOpen={false}
                                 >
-                                    <Typography
+                                    <TypographyControl
                                         label={__('Typography', 'smart-blocks')}
-                                        values={tickerContentTypography}
-                                        onChange={(tickerContentTypography) => setAttributes({ tickerContentTypography })} />
-                                    <Color
+                                        valueFamily={tickerContentTypographyFamily}
+                                        setValueFamily={value => setAttributes({tickerContentTypographyFamily: value})}
+                                        valueWeight={tickerContentTypographyWeight}
+                                        setValueWeight={value => setAttributes({tickerContentTypographyWeight: value})}
+                                        valueTextTransform={tickerContentTypographyTextTransform}
+                                        setValueTextTransform={value => setAttributes({tickerContentTypographyTextTransform: value})}
+                                        valueTextDecoration={tickerContentTypographyTextDecoration}
+                                        setValueTextDecoration={value => setAttributes({tickerContentTypographyTextDecoration: value})}
+                                        valueFontSizeSm={tickerContentTypographyFontSizeSm}
+                                        setValueFontSizeSm={value => setAttributes({tickerContentTypographyFontSizeSm: value})}
+                                        valueFontSizeMd={tickerContentTypographyFontSizeMd}
+                                        setValueFontSizeMd={value => setAttributes({tickerContentTypographyFontSizeMd: value})}
+                                        valueFontSize={tickerContentTypographyFontSize}
+                                        setValueFontSize={value => setAttributes({tickerContentTypographyFontSize: value})}
+                                        valueFontSizeUnit={tickerContentTypographyFontSizeUnit}
+                                        setValueFontSizeUnit={value => setAttributes({tickerContentTypographyFontSizeUnit: value})}
+                                        valueLetterSpacingSm={tickerContentTypographyLetterSpacingSm}
+                                        setValueLetterSpacingSm={value => setAttributes({tickerContentTypographyLetterSpacingSm: value})}
+                                        valueLetterSpacingMd={tickerContentTypographyLetterSpacingMd}
+                                        setValueLetterSpacingMd={value => setAttributes({tickerContentTypographyLetterSpacingMd: value})}
+                                        valueLetterSpacing={tickerContentTypographyLetterSpacing}
+                                        setValueLetterSpacing={value => setAttributes({tickerContentTypographyLetterSpacing: value})}
+                                        valueLetterSpacingUnit={tickerContentTypographyLetterSpacingUnit}
+                                        setValueLetterSpacingUnit={value => setAttributes({tickerContentTypographyLetterSpacingUnit: value})}
+                                        valueLineHeightSm={tickerContentTypographyLineHeightSm}
+                                        setValueLineHeightSm={value => setAttributes({tickerContentTypographyLineHeightSm: value})}
+                                        valueLineHeightMd={tickerContentTypographyLineHeightMd}
+                                        setValueLineHeightMd={value => setAttributes({tickerContentTypographyLineHeightMd: value})}
+                                        valueLineHeight={tickerContentTypographyLineHeight}
+                                        setValueLineHeight={value => setAttributes({tickerContentTypographyLineHeight: value})}
+                                        valueLineHeightUnit={tickerContentTypographyLineHeightUnit}
+                                        setValueLineHeightUnit={value => setAttributes({tickerContentTypographyLineHeightUnit: value})}
+                                    />
+                                    <ColorControl
                                         label={__('Background Color', 'smart-blocks')}
                                         enableAlpha
                                         value={tickerContentBgColor}
-                                        onChange={(tickerContentBgColor) => setAttributes({ tickerContentBgColor })}
+                                        setValue={(tickerContentBgColor) => setAttributes({ tickerContentBgColor })}
                                     />
-                                    <Color
+                                    <ColorControl
                                         label={__('Text Color', 'smart-blocks')}
                                         enableAlpha
                                         value={tickerContentColor}
-                                        onChange={(tickerContentColor) => setAttributes({ tickerContentColor })}
+                                        setValue={(tickerContentColor) => setAttributes({ tickerContentColor })}
                                     />
-                                    <Color
+                                    <ColorControl
                                         label={__('Text Color (Hover)', 'smart-blocks')}
                                         enableAlpha
                                         value={tickerContentHoverColor}
-                                        onChange={(tickerContentHoverColor) => setAttributes({ tickerContentHoverColor })}
+                                        setValue={(tickerContentHoverColor) => setAttributes({ tickerContentHoverColor })}
                                     />
                                 </PanelBody>
                                 <PanelBody
@@ -470,31 +624,31 @@ export default function Edit({ attributes, setAttributes }) {
                                 >
                                     <Tabs>
                                         <div tabTitle={__("Normal", 'smart-blocks')}>
-                                            <Color
+                                            <ColorControl
                                                 label={__('Background Color', 'smart-blocks')}
                                                 enableAlpha
                                                 value={navNormalBgColor}
-                                                onChange={(navNormalBgColor) => setAttributes({ navNormalBgColor })}
+                                                setValue={(navNormalBgColor) => setAttributes({ navNormalBgColor })}
                                             />
-                                            <Color
+                                            <ColorControl
                                                 label={__('Icon Color', 'smart-blocks')}
                                                 enableAlpha
                                                 value={navIconNormalColor}
-                                                onChange={(navIconNormalColor) => setAttributes({ navIconNormalColor })}
+                                                setValue={(navIconNormalColor) => setAttributes({ navIconNormalColor })}
                                             />
                                         </div>
                                         <div tabTitle={__("Hover", 'smart-blocks')}>
-                                            <Color
+                                            <ColorControl
                                                 label={__('Background Color(Hover)', 'smart-blocks')}
                                                 enableAlpha
                                                 value={navHoverBgColor}
-                                                onChange={(navHoverBgColor) => setAttributes({ navHoverBgColor })}
+                                                setValue={(navHoverBgColor) => setAttributes({ navHoverBgColor })}
                                             />
-                                            <Color
+                                            <ColorControl
                                                 label={__('Text Color(Hover)', 'smart-blocks')}
                                                 enableAlpha
                                                 value={navIconHoverColor}
-                                                onChange={(navIconHoverColor) => setAttributes({ navIconHoverColor })}
+                                                setValue={(navIconHoverColor) => setAttributes({ navIconHoverColor })}
                                             />
                                         </div>
                                     </Tabs>
@@ -506,20 +660,76 @@ export default function Edit({ attributes, setAttributes }) {
                                     title={__('Layout', 'smart-blocks')}
                                     initialOpen={false}
                                 >
-                                    <Dimension
+                                    <DimensionControl
                                         label={__('Margin', 'smart-blocks')}
                                         min="0"
                                         max="100"
-                                        values={blockMargin}
-                                        onChange={(blockMargin) => setAttributes({ blockMargin })}
+                                        dimensionTop={blockMarginTop}
+                                        setDimensionTop={value => setAttributes({blockMarginTop: value})}
+                                        dimensionMdTop={blockMarginMdTop}
+                                        setDimensionMdTop={value => setAttributes({blockMarginMdTop: value})}
+                                        dimensionSmTop={blockMarginSmTop}
+                                        setDimensionSmTop={value => setAttributes({blockMarginSmTop: value})}
+
+                                        dimensionLeft={blockMarginLeft}
+                                        setDimensionLeft={value => setAttributes({blockMarginLeft: value})}
+                                        dimensionMdLeft={blockMarginMdLeft}
+                                        setDimensionMdLeft={value => setAttributes({blockMarginMdLeft: value})}
+                                        dimensionSmLeft={blockMarginSmLeft}
+                                        setDimensionSmLeft={value => setAttributes({blockMarginSmLeft: value})}
+
+                                        dimensionRight={blockMarginRight}
+                                        setDimensionRight={value => setAttributes({blockMarginRight: value})}
+                                        dimensionMdRight={blockMarginMdRight}
+                                        setDimensionMdRight={value => setAttributes({blockMarginMdRight: value})}
+                                        dimensionSmRight={blockMarginSmRight}
+                                        setDimensionSmRight={value => setAttributes({blockMarginSmRight: value})}
+
+                                        dimensionBottom={blockMarginBottom}
+                                        setDimensionBottom={value => setAttributes({blockMarginBottom: value})}
+                                        dimensionMdBottom={blockMarginMdBottom}
+                                        setDimensionMdBottom={value => setAttributes({blockMarginMdBottom: value})}
+                                        dimensionSmBottom={blockMarginSmBottom}
+                                        setDimensionSmBottom={value => setAttributes({blockMarginSmBottom: value})}
+
+                                        unit={blockMarginUnit}
+                                        setUnit={value => setAttributes({blockMarginUnit: value})}
                                         responsive={!0}
                                     />
-                                    <Dimension
+                                    <DimensionControl
                                         label={__('Padding', 'smart-blocks')}
                                         min="0"
                                         max="100"
-                                        values={blockPadding}
-                                        onChange={(blockPadding) => setAttributes({ blockPadding })}
+                                        dimensionTop={blockPaddingTop}
+                                        setDimensionTop={value => setAttributes({blockPaddingTop: value})}
+                                        dimensionMdTop={blockPaddingMdTop}
+                                        setDimensionMdTop={value => setAttributes({blockPaddingMdTop: value})}
+                                        dimensionSmTop={blockPaddingSmTop}
+                                        setDimensionSmTop={value => setAttributes({blockPaddingSmTop: value})}
+
+                                        dimensionLeft={blockPaddingLeft}
+                                        setDimensionLeft={value => setAttributes({blockPaddingLeft: value})}
+                                        dimensionMdLeft={blockPaddingMdLeft}
+                                        setDimensionMdLeft={value => setAttributes({blockPaddingMdLeft: value})}
+                                        dimensionSmLeft={blockPaddingSmLeft}
+                                        setDimensionSmLeft={value => setAttributes({blockPaddingSmLeft: value})}
+
+                                        dimensionRight={blockPaddingRight}
+                                        setDimensionRight={value => setAttributes({blockPaddingRight: value})}
+                                        dimensionMdRight={blockPaddingMdRight}
+                                        setDimensionMdRight={value => setAttributes({blockPaddingMdRight: value})}
+                                        dimensionSmRight={blockPaddingSmRight}
+                                        setDimensionSmRight={value => setAttributes({blockPaddingSmRight: value})}
+
+                                        dimensionBottom={blockPaddingBottom}
+                                        setDimensionBottom={value => setAttributes({blockPaddingBottom: value})}
+                                        dimensionMdBottom={blockPaddingMdBottom}
+                                        setDimensionMdBottom={value => setAttributes({blockPaddingMdBottom: value})}
+                                        dimensionSmBottom={blockPaddingSmBottom}
+                                        setDimensionSmBottom={value => setAttributes({blockPaddingSmBottom: value})}
+
+                                        unit={blockPaddingUnit}
+                                        setUnit={value => setAttributes({blockPaddingUnit: value})}
                                         responsive={!0}
                                     />
                                 </PanelBody>
@@ -530,61 +740,129 @@ export default function Edit({ attributes, setAttributes }) {
                                 >
                                     <Tabs>
                                         <div tabTitle={__("Normal", 'smart-blocks')}>
-                                            <Border
+                                            <BorderControl
                                                 value={borderNormal}
                                                 setValue={(borderNormal) => setAttributes({ borderNormal })}
                                             />
                                             {borderNormal && (
-                                                <Color
+                                                <ColorControl
                                                     label={__('Border Color', 'smart-blocks')}
                                                     enableAlpha
                                                     value={borderNormalColor}
-                                                    onChange={(borderNormalColor) => setAttributes({ borderNormalColor })}
+                                                    setValue={(borderNormalColor) => setAttributes({ borderNormalColor })}
                                                 />
                                             )}
-                                            <Dimension
+                                            <DimensionControl
                                                 label={__('Border Width', 'smart-blocks')}
-                                                values={borderNormalWidth}
-                                                onChange={(borderNormalWidth) => setAttributes({ borderNormalWidth })}
+                                                dimensionTop={borderNormalWidthTop}
+                                                setDimensionTop={value => setAttributes({borderNormalWidthTop: value})}
+
+                                                dimensionLeft={borderNormalWidthLeft}
+                                                setDimensionLeft={value => setAttributes({borderNormalWidthLeft: value})}
+
+                                                dimensionRight={borderNormalWidthRight}
+                                                setDimensionRight={value => setAttributes({borderNormalWidthRight: value})}
+
+                                                dimensionBottom={borderNormalWidthBottom}
+                                                setDimensionBottom={value => setAttributes({borderNormalWidthBottom: value})}
+
+                                                unit={borderNormalWidthUnit}
+                                                setUnit={value => setAttributes({borderNormalWidthUnit: value})}
                                                 units={['px', 'em']}
                                             />
-                                            <Dimension
+                                            <DimensionControl
                                                 label={__('Border Radius', 'smart-blocks')}
-                                                values={borderNormalRadius}
-                                                onChange={(borderNormalRadius) => setAttributes({ borderNormalRadius })}
+                                                dimensionTop={borderNormalRadiusTop}
+                                                setDimensionTop={value => setAttributes({borderNormalRadiusTop: value})}
+
+                                                dimensionLeft={borderNormalRadiusLeft}
+                                                setDimensionLeft={value => setAttributes({borderNormalRadiusLeft: value})}
+
+                                                dimensionRight={borderNormalRadiusRight}
+                                                setDimensionRight={value => setAttributes({borderNormalRadiusRight: value})}
+
+                                                dimensionBottom={borderNormalRadiusBottom}
+                                                setDimensionBottom={value => setAttributes({borderNormalRadiusBottom: value})}
+
+                                                unit={borderNormalRadiusUnit}
+                                                setUnit={value => setAttributes({borderNormalRadiusUnit: value})}
                                             />
-                                            <BoxShadow
-                                                values={borderNormalBoxShadow}
-                                                onChange={(borderNormalBoxShadow) => setAttributes({ borderNormalBoxShadow })}
+                                             <BoxShadowControl
+                                                valueHorizontal={borderNormalBoxShadowHorizontal}
+                                                setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({ borderNormalBoxShadowHorizontal })}
+                                                valueVertical={borderNormalBoxShadowVertical}
+                                                setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({ borderNormalBoxShadowVertical })}
+                                                valueBlur={borderNormalBoxShadowBlur}
+                                                setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({ borderNormalBoxShadowBlur })}
+                                                valueSpread={borderNormalBoxShadowSpread}
+                                                setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({ borderNormalBoxShadowSpread })}
+                                                valueColor={borderNormalBoxShadowColor}
+                                                setValueColor={(borderNormalBoxShadowColor) => setAttributes({ borderNormalBoxShadowColor })}
+                                                valueInset={borderNormalBoxShadowInset}
+                                                setValueInset={(borderNormalBoxShadowInset) => setAttributes({ borderNormalBoxShadowInset })}
                                             />
                                         </div>
                                         <div tabTitle={__("Hover", 'smart-blocks')}>
-                                            <Border
+                                            <BorderControl
                                                 value={borderHover}
                                                 setValue={(borderHover) => setAttributes({ borderHover })}
                                             />
                                             {borderHover && (
-                                                <Color
+                                                <ColorControl
                                                     label={__('Border Color', 'smart-blocks')}
                                                     enableAlpha
                                                     value={borderHoverColor}
-                                                    onChange={(borderHoverColor) => setAttributes({ borderHoverColor })}
+                                                    setValue={(borderHoverColor) => setAttributes({ borderHoverColor })}
                                                 />
                                             )}
-                                            <Dimension
+                                            <DimensionControl
                                                 label={__('Border Width', 'smart-blocks')}
-                                                values={borderHoverWidth}
-                                                onChange={(borderHoverWidth) => setAttributes({ borderHoverWidth })}
+                                                dimensionTop={borderHoverWidthTop}
+                                                setDimensionTop={value => setAttributes({borderHoverWidthTop: value})}
+
+                                                dimensionLeft={borderHoverWidthLeft}
+                                                setDimensionLeft={value => setAttributes({borderHoverWidthLeft: value})}
+
+                                                dimensionRight={borderHoverWidthRight}
+                                                setDimensionRight={value => setAttributes({borderHoverWidthRight: value})}
+
+                                                dimensionBottom={borderHoverWidthBottom}
+                                                setDimensionBottom={value => setAttributes({borderHoverWidthBottom: value})}
+
+                                                unit={borderHoverWidthUnit}
+                                                setUnit={value => setAttributes({borderHoverWidthUnit: value})}
                                                 units={['px', 'em']}
                                             />
-                                            <Dimension
+                                            <DimensionControl
                                                 label={__('Border Radius', 'smart-blocks')}
-                                                values={borderHoverRadius}
-                                                onChange={(borderHoverRadius) => setAttributes({ borderHoverRadius })}
+                                                dimensionTop={borderHoverRadiusTop}
+                                                setDimensionTop={value => setAttributes({borderHoverRadiusTop: value})}
+
+                                                dimensionLeft={borderHoverRadiusLeft}
+                                                setDimensionLeft={value => setAttributes({borderHoverRadiusLeft: value})}
+
+                                                dimensionRight={borderHoverRadiusRight}
+                                                setDimensionRight={value => setAttributes({borderHoverRadiusRight: value})}
+
+                                                dimensionBottom={borderHoverRadiusBottom}
+                                                setDimensionBottom={value => setAttributes({borderHoverRadiusBottom: value})}
+
+                                                unit={borderHoverRadiusUnit}
+                                                setUnit={value => setAttributes({borderHoverRadiusUnit: value})}
                                             />
-                                            <BoxShadow
-                                                values={borderHoverBoxShadow}
-                                                onChange={(borderHoverBoxShadow) => setAttributes({ borderHoverBoxShadow })}
+                                            <BoxShadowControl
+                                                valueHorizontal={borderHoverBoxShadowHorizontal}
+                                                setValueHorizontal={(borderHoverBoxShadowHorizontal) => setAttributes({ borderHoverBoxShadowHorizontal })}
+                                                valueVertical={borderHoverBoxShadowVertical}
+                                                setValueVertical={(borderHoverBoxShadowVertical) => setAttributes({ borderHoverBoxShadowVertical })}
+                                                valueBlur={borderHoverBoxShadowBlur}
+                                                setValueBlur={(borderHoverBoxShadowBlur) => setAttributes({ borderHoverBoxShadowBlur })}
+                                                valueSpread={borderHoverBoxShadowSpread}
+                                                setValueSpread={(borderHoverBoxShadowSpread) => setAttributes({ borderHoverBoxShadowSpread })}
+                                                valueColor={borderHoverBoxShadowColor}
+                                                setValueColor={(borderHoverBoxShadowColor) => setAttributes({ borderHoverBoxShadowColor })}
+                                                valueInset={borderHoverBoxShadowInset}
+                                                setValueInset={(borderHoverBoxShadowInset) => setAttributes({ borderHoverBoxShadowInset })}
                                             />
                                         </div>
                                     </Tabs>
@@ -593,11 +871,11 @@ export default function Edit({ attributes, setAttributes }) {
                                     title={__('Background', 'smart-blocks')}
                                     initialOpen={false}
                                 >
-                                    <Color
+                                    <ColorControl
                                         label={__('Background Color', 'smart-blocks')}
                                         enableAlpha
                                         value={blockBgColor}
-                                        onChange={(blockBgColor) => setAttributes({ blockBgColor })}
+                                        setValue={(blockBgColor) => setAttributes({ blockBgColor })}
                                     />
                                 </PanelBody>
                             </>

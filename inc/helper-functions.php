@@ -182,18 +182,19 @@ if (!function_exists('smart_blocks_get_relative_dates')) {
 
 if (!function_exists('smart_blocks_get_font_class')) {
 
-    function smart_blocks_get_font_class($attr) {
+    function smart_blocks_get_font_class($family = '', $weight = '', $textTransform = '', $textDecoration = '') {
         $retrun_classes = array();
-        if (isset($attr['family']) && (strtolower($attr['family']) != 'inherit')) {
+
+        if (strtolower($family) != 'inherit') {
             $retrun_classes[] = 'sb-ff';
         }
-        if (isset($attr['weight']) && (strtolower($attr['weight']) != 'inherit')) {
+        if (strtolower($weight) != 'inherit') {
             $retrun_classes[] = 'sb-fw';
         }
-        if (isset($attr['textTransform']) && (strtolower($attr['textTransform']) != 'inherit')) {
+        if (strtolower($textTransform) != 'inherit') {
             $retrun_classes[] = 'sb-tt';
         }
-        if (isset($attr['textDecoration']) && (strtolower($attr['textDecoration']) != 'inherit')) {
+        if (strtolower($textDecoration) != 'inherit') {
             $retrun_classes[] = 'sb-td';
         }
         return implode(' ', $retrun_classes);

@@ -36,7 +36,7 @@ class Smart_Blocks_Single_News_Two {
                 $content_rendered .= '</div>';
 
                 $content_rendered .= '<div class="sb-post-content sb-align-' . $this->attributes['contentAlignment'] . '">';
-                $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['postTypography']) . '"><a href="' . get_the_permalink() . '">' . esc_html(get_the_title()) . '</a></h3>';
+                $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['postTypographyFamily'], $this->attributes['postTypographyWeight'], $this->attributes['postTypographyTextTransform'], $this->attributes['postTypographyTextDecoration']) . '"><a href="' . get_the_permalink() . '">' . esc_html(get_the_title()) . '</a></h3>';
 
                 $content_rendered .= $this->get_post_meta();
 

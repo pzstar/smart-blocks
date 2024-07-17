@@ -39,7 +39,7 @@ class Smart_Blocks_News_Module_Six {
 
                 $content_rendered .= '</div>';
                 $content_rendered .= '<div class="sb-post-content sb-gradient-overlay">';
-                $content_rendered .= '<h3 class="sb-large-title sb-post-title ' . smart_blocks_get_font_class($this->attributes['topTypography']) . '"><span>' . get_the_title() . '</span></h3>';
+                $content_rendered .= '<h3 class="sb-large-title sb-post-title ' . smart_blocks_get_font_class($this->attributes['topTypographyFamily'], $this->attributes['topTypographyWeight'], $this->attributes['topTypographyTextTransform'], $this->attributes['topTypographyTextDecoration']) . '"><span>' . get_the_title() . '</span></h3>';
                 $content_rendered .= $this->get_post_meta($index);
                 $content_rendered .= '</div>';
                 $content_rendered .= '</a>';
@@ -73,7 +73,7 @@ class Smart_Blocks_News_Module_Six {
                 $content_rendered .= '</div>';
 
                 $content_rendered .= '<div class="sb-post-content">';
-                $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['bottomTypography']) . '"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+                $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['bottomTypographyFamily'], $this->attributes['bottomTypographyWeight'], $this->attributes['bottomTypographyTextTransform'], $this->attributes['bottomTypographyTextDecoration']) . '"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
                 $content_rendered .= $this->get_post_meta($index);
                 $content_rendered .= '<div class="sb-excerpt">';
                 $content_rendered .= $this->get_post_excerpt($index);
@@ -97,7 +97,7 @@ class Smart_Blocks_News_Module_Six {
         $content = '';
 
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
+            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypographyFamily'], $this->attributes['headerTitleTypographyWeight'], $this->attributes['headerTitleTypographyTextTransform'], $this->attributes['headerTitleTypographyTextDecoration']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';

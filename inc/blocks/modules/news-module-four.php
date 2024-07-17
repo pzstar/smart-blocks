@@ -24,7 +24,7 @@ class Smart_Blocks_News_Module_Four {
             $query->the_post();
             $index = $query->current_post + 1;
             $last = $query->post_count;
-            $title_class = ($index == 1 || $index == 2) ? 'sb-big-title ' . smart_blocks_get_font_class($this->attributes['topTypography']) : smart_blocks_get_font_class($this->attributes['bottomTypography']);
+            $title_class = ($index == 1 || $index == 2) ? 'sb-big-title ' . smart_blocks_get_font_class($this->attributes['topTypographyFamily'], $this->attributes['topTypographyWeight'], $this->attributes['topTypographyTextTransform'], $this->attributes['topTypographyTextDecoration']) : smart_blocks_get_font_class($this->attributes['bottomTypographyFamily'], $this->attributes['bottomTypographyWeight'], $this->attributes['bottomTypographyTextTransform'], $this->attributes['bottomTypographyTextDecoration']);
             $content_rendered .= '<div class="sb-post-item">';
             $content_rendered .= '<div class="sb-post-thumb">';
             $content_rendered .= '<a href="' . get_the_permalink() . '">';
@@ -63,7 +63,7 @@ class Smart_Blocks_News_Module_Four {
         $content = '';
 
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
+            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypographyFamily'], $this->attributes['headerTitleTypographyWeight'], $this->attributes['headerTitleTypographyTextTransform'], $this->attributes['headerTitleTypographyTextDecoration']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';

@@ -49,7 +49,7 @@ const initialState = {
 	selectedSuggestionScroll: false,
 };
 
-class TokenMultiSelectControl extends Component {
+class MultiSelectControl extends Component {
 	constructor() {
 		super(...arguments);
 		this.state = initialState;
@@ -702,7 +702,7 @@ class TokenMultiSelectControl extends Component {
 	}
 }
 
-TokenMultiSelectControl.defaultProps = {
+MultiSelectControl.defaultProps = {
 	options: Object.freeze([]),
 	maxSuggestions: 100,
 	value: Object.freeze([]),
@@ -720,4 +720,4 @@ TokenMultiSelectControl.defaultProps = {
 	},
 };
 
-export default withSpokenMessages(withInstanceId(TokenMultiSelectControl));
+export default withSpokenMessages(withInstanceId(MultiSelectControl));

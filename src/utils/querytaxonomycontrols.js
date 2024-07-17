@@ -1,5 +1,5 @@
 import { useSelect } from '@wordpress/data';
-import TokenMultiSelectControl from './token-multiselect-control';
+import MultiSelectControl from '../controls/multiselect';
 const QueryTaxonomyControls = ({ postType, value, onChange }) => {
 	const allTaxonomies = useSelect((select) => {
 		var allTax = [];
@@ -43,7 +43,7 @@ const QueryTaxonomyControls = ({ postType, value, onChange }) => {
 		{allTaxonomies && allTaxonomies.map((tax, i) => {
 			const selectedValue = value ? value[tax.value] ? value[tax.value] : [] : [];
 			return <div key={i}>
-				<TokenMultiSelectControl
+				<MultiSelectControl
 					label={tax.label}
 					options={termOptions(tax.value)}
 					value={selectedValue}

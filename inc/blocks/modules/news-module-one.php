@@ -22,7 +22,7 @@ class Smart_Blocks_News_Module_One {
             $query->the_post();
             $index = $query->current_post + 1;
             $image_size = ($index == 1) ? $featured_post_image_size : $side_post_image_size;
-            $title_class = $index == 1 ? 'sb-large-title ' . smart_blocks_get_font_class($this->attributes['featuredTypography']) : 'sb-big-title ' . smart_blocks_get_font_class($this->attributes['sideTypography']);
+            $title_class = $index == 1 ? 'sb-large-title ' . smart_blocks_get_font_class($this->attributes['featuredTypographyFamily'], $this->attributes['featuredTypographyWeight'], $this->attributes['featuredTypographyTextTransform'], $this->attributes['featuredTypographyTextDecoration']) : 'sb-big-title ' . smart_blocks_get_font_class($this->attributes['sideTypographyFamily'], $this->attributes['sideTypographyWeight'], $this->attributes['sideTypographyTextTransform'], $this->attributes['sideTypographyTextDecoration']);
             $image_height = $index == 1 ? $this->attributes['featuredImageHeight'] : $this->attributes['sideImageHeight'];
             $content_rendered .= '<div class="sb-post-item">';
             $content_rendered .= '<div class="sb-post-thumb">';
@@ -65,7 +65,7 @@ class Smart_Blocks_News_Module_One {
         $content = '';
 
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . esc_attr($this->attributes['headerStyle']) . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
+            $content .= '<h2 class="sb-block-title ' . esc_attr($this->attributes['headerStyle']) . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypographyFamily'], $this->attributes['headerTitleTypographyWeight'], $this->attributes['headerTitleTypographyTextTransform'], $this->attributes['headerTitleTypographyTextDecoration']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';

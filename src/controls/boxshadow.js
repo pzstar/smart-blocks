@@ -84,7 +84,7 @@ const BoxShadowControl = ({
                             <ColorControl
                                 label={__("Color", 'smart-blocks')}
                                 value={valueColor}
-                                setValue={(e) => setValueColor(e)}
+                                setValue={value => setValueColor(value)}
                                 enableAlpha
                             />
 

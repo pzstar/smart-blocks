@@ -5,18 +5,18 @@ const checkDefault = (check, checkDiff = 'undefined') => {
     return (!check || check.toLowerCase() == 'default') ? 'inherit' : check;
 }
 
-const getFontClass = (attr) => {
+const getFontClass = (family = '', weight = '', textTransform = '', textDecoration = '') => {
     var retrun_classes = [];
-    if (attr && attr.family && attr.family.toLowerCase() != 'inherit') {
+    if (family && family.toLowerCase() != 'inherit') {
         retrun_classes.push('sb-ff');
     }
-    if (attr && attr.weight && attr.weight.toLowerCase() != 'inherit') {
+    if (weight && weight.toLowerCase() != 'inherit') {
         retrun_classes.push('sb-fw');
     }
-    if (attr && attr.textTransform && attr.textTransform.toLowerCase() != 'inherit') {
+    if (textTransform && textTransform.toLowerCase() != 'inherit') {
         retrun_classes.push('sb-tt');
     }
-    if (attr && attr.textDecoration && attr.textDecoration.toLowerCase() != 'inherit') {
+    if (textDecoration && textDecoration.toLowerCase() != 'inherit') {
         retrun_classes.push('sb-td');
     }
     return retrun_classes.join(" ");

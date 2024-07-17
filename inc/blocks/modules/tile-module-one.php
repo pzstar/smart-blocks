@@ -43,7 +43,7 @@ class Smart_Blocks_Tile_Module_One {
                 }
                 $content_rendered .= '<div class="sb-title-container">';
                 $content_rendered .= '<a href="' . get_the_permalink() . '">';
-                $content_rendered .= '<h3 class="sb-large-title sb-post-title ' . smart_blocks_get_font_class($this->attributes['featuredTypography']) . '"><span>' . get_the_title() . '</span></h3>';
+                $content_rendered .= '<h3 class="sb-large-title sb-post-title ' . smart_blocks_get_font_class($this->attributes['featuredTypographyFamily'], $this->attributes['featuredTypographyWeight'], $this->attributes['featuredTypographyTextTransform'], $this->attributes['featuredTypographyTextDecoration']) . '"><span>' . get_the_title() . '</span></h3>';
                 $content_rendered .= $this->get_post_meta($index);
                 $content_rendered .= '</a>';
                 $content_rendered .= '</div>';
@@ -67,7 +67,7 @@ class Smart_Blocks_Tile_Module_One {
 
                     $content_rendered .= '<div class="sb-title-container">';
                     $content_rendered .= '<a href="' . get_the_permalink() . '">';
-                    $content_rendered .= '<h3 class="sb-mid-title sb-post-title ' . smart_blocks_get_font_class($this->attributes['sideTypography']) . '"><span>' . get_the_title() . '</span></h3>';
+                    $content_rendered .= '<h3 class="sb-mid-title sb-post-title ' . smart_blocks_get_font_class($this->attributes['sideTypographyFamily'], $this->attributes['sideTypographyWeight'], $this->attributes['sideTypographyTextTransform'], $this->attributes['sideTypographyTextDecoration']) . '"><span>' . get_the_title() . '</span></h3>';
                     $content_rendered .= $this->get_post_meta($index);
                     $content_rendered .= '</a>';
                     $content_rendered .= '</div>';
@@ -91,7 +91,7 @@ class Smart_Blocks_Tile_Module_One {
 
                     $content_rendered .= '<div class="sb-title-container">';
                     $content_rendered .= '<a href="' . get_the_permalink() . '">';
-                    $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['sideTypography']) . '"><span>' . get_the_title() . '</span></h3>';
+                    $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['sideTypographyFamily'], $this->attributes['sideTypographyWeight'], $this->attributes['sideTypographyTextTransform'], $this->attributes['sideTypographyTextDecoration']) . '"><span>' . get_the_title() . '</span></h3>';
                     $content_rendered .= $this->get_post_meta($index);
                     $content_rendered .= '</a>';
                     $content_rendered .= '</div>';
@@ -113,7 +113,7 @@ class Smart_Blocks_Tile_Module_One {
     public function render_header() {
         $content = '';
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
+            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypographyFamily'], $this->attributes['headerTitleTypographyWeight'], $this->attributes['headerTitleTypographyTextTransform'], $this->attributes['headerTitleTypographyTextDecoration']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';

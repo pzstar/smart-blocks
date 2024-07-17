@@ -38,7 +38,7 @@ class Smart_Blocks_News_Module_Fifteen {
             if ($display_cat == 'yes') {
                 $content_rendered .= smart_blocks_get_the_primary_category();
             }
-            $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['postTypography']) . '"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+            $content_rendered .= '<h3 class="sb-post-title ' . smart_blocks_get_font_class($this->attributes['postTypographyFamily'], $this->attributes['postTypographyWeight'], $this->attributes['postTypographyTextTransform'], $this->attributes['postTypographyTextDecoration']) . '"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
             $content_rendered .= $this->get_post_meta();
             $content_rendered .= '</div>';
             $content_rendered .= '</div>';
@@ -55,7 +55,7 @@ class Smart_Blocks_News_Module_Fifteen {
         $content = '';
 
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypography']) . '">';
+            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypographyFamily'], $this->attributes['headerTitleTypographyWeight'], $this->attributes['headerTitleTypographyTextTransform'], $this->attributes['headerTitleTypographyTextDecoration']) . '">';
             $content .= '<span>';
             $content .= $this->attributes['headerTitle'];
             $content .= '</span>';

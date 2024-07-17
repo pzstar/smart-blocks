@@ -24,168 +24,422 @@ function smart_blocks_attributes_news_module_one() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "featuredTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "sideTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "featuredTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "sideTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -232,30 +486,51 @@ function smart_blocks_attributes_news_module_one() {
             "type" => "number",
             "default" => 0
         ],
-        "featuredTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+
+
+        "featuredTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "featuredTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "featuredImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -312,30 +587,49 @@ function smart_blocks_attributes_news_module_one() {
             "type" => "boolean",
             "default" => true
         ],
-        "sideTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "sideTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "sideTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -376,168 +670,424 @@ function smart_blocks_attributes_news_module_two() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "featuredTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "sideTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "featuredTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "sideTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -583,30 +1133,49 @@ function smart_blocks_attributes_news_module_two() {
         "offset" => [
             "type" => "number"
         ],
-        "featuredTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "featuredTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "featuredTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "featuredImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -663,30 +1232,49 @@ function smart_blocks_attributes_news_module_two() {
             "type" => "boolean",
             "default" => true
         ],
-        "sideTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "sideTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "sideTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -727,168 +1315,426 @@ function smart_blocks_attributes_news_module_three() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "featuredTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "sideTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "featuredTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "sideTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -940,30 +1786,50 @@ function smart_blocks_attributes_news_module_three() {
         "offset" => [
             "type" => "number"
         ],
-        "featuredTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+
+        "featuredTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "featuredTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "featuredImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -1008,30 +1874,50 @@ function smart_blocks_attributes_news_module_three() {
             "type" => "boolean",
             "default" => true
         ],
-        "sideTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+
+        "sideTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "sideTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -1072,168 +1958,428 @@ function smart_blocks_attributes_news_module_four() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "topTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "bottomTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "topTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "topTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "topTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "topTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "topTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "topTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "topTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "bottomTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "bottomTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "bottomTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "bottomTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "bottomTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "bottomTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "bottomTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -1279,30 +2425,49 @@ function smart_blocks_attributes_news_module_four() {
         "offset" => [
             "type" => "number"
         ],
-        "topTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "topTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "topTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "topTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "topTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "topTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "topTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "topTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "topTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "topTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "topTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "topTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "topTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "topTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "topImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -1351,30 +2516,49 @@ function smart_blocks_attributes_news_module_four() {
             "type" => "boolean",
             "default" => true
         ],
-        "bottomTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "bottomTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "bottomTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -1415,168 +2599,428 @@ function smart_blocks_attributes_news_module_five() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "featuredTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "listingTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "featuredTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "listingTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "listingTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "listingTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -1622,30 +3066,50 @@ function smart_blocks_attributes_news_module_five() {
         "offset" => [
             "type" => "number"
         ],
-        "featuredTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "featuredTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "featuredTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "featuredImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -1698,30 +3162,49 @@ function smart_blocks_attributes_news_module_five() {
             "type" => "boolean",
             "default" => true
         ],
-        "listingTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "listingTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "listingTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -1762,168 +3245,425 @@ function smart_blocks_attributes_news_module_six() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "topTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "bottomTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "topTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "topTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "topTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "topTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "topTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "topTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "topTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "topTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "bottomTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "bottomTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "bottomTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "bottomTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "bottomTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "bottomTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "bottomTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "bottomTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -1973,30 +3713,50 @@ function smart_blocks_attributes_news_module_six() {
         "offset" => [
             "type" => "number"
         ],
-        "topTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+
+        "topTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "topTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "topTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "topTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "topTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "topTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "topTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "topTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "topTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "topTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "topTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "topTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "topTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "topImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -2045,30 +3805,49 @@ function smart_blocks_attributes_news_module_six() {
             "type" => "boolean",
             "default" => true
         ],
-        "bottomTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "bottomTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "bottomTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "bottomTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -2109,168 +3888,424 @@ function smart_blocks_attributes_news_module_seven() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "featuredTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "listingTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "featuredTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "listingTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "listingTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "listingTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -2316,30 +4351,49 @@ function smart_blocks_attributes_news_module_seven() {
         "offset" => [
             "type" => "number"
         ],
-        "featuredTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "featuredTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "featuredTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "featuredImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -2392,30 +4446,49 @@ function smart_blocks_attributes_news_module_seven() {
             "type" => "boolean",
             "default" => true
         ],
-        "listingTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "listingTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "listingTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -2456,168 +4529,423 @@ function smart_blocks_attributes_news_module_eight() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "featuredTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "sideTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "featuredTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "sideTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -2663,30 +4991,49 @@ function smart_blocks_attributes_news_module_eight() {
         "offset" => [
             "type" => "number"
         ],
-        "featuredTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "featuredTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "featuredTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "featuredImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -2739,30 +5086,49 @@ function smart_blocks_attributes_news_module_eight() {
             "type" => "boolean",
             "default" => true
         ],
-        "sideTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "sideTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "sideTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -2803,168 +5169,422 @@ function smart_blocks_attributes_news_module_nine() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "featuredTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "listingTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "featuredTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "listingTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "listingTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "listingTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -3011,30 +5631,49 @@ function smart_blocks_attributes_news_module_nine() {
             "type" => "number",
             "default" => 0
         ],
-        "featuredTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "featuredTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "featuredTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "featuredImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -3091,30 +5730,49 @@ function smart_blocks_attributes_news_module_nine() {
             "type" => "boolean",
             "default" => true
         ],
-        "listingTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "listingTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "listingTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -3159,114 +5817,284 @@ function smart_blocks_attributes_news_module_ten() {
             "type" => "number",
             "default" => 5
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "listingTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "listingTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "listingTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "listingTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "listingTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "listingTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -3341,30 +6169,49 @@ function smart_blocks_attributes_news_module_ten() {
             "type" => "boolean",
             "default" => true
         ],
-        "listingTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "listingTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "listingTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "listingTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -3405,114 +6252,284 @@ function smart_blocks_attributes_news_module_eleven() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "postTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "postTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -3579,30 +6596,49 @@ function smart_blocks_attributes_news_module_eleven() {
             "type" => "boolean",
             "default" => true
         ],
-        "postTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "postTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "postTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -3643,114 +6679,286 @@ function smart_blocks_attributes_news_module_twelve() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "postTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "postTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -3817,30 +7025,49 @@ function smart_blocks_attributes_news_module_twelve() {
             "type" => "boolean",
             "default" => true
         ],
-        "postTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "postTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "postTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -3881,141 +7108,354 @@ function smart_blocks_attributes_news_module_thirteen() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "postTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "postTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -4092,30 +7532,49 @@ function smart_blocks_attributes_news_module_thirteen() {
             "type" => "boolean",
             "default" => true
         ],
-        "postTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "postTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "postTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -4164,141 +7623,352 @@ function smart_blocks_attributes_news_module_fourteen() {
             "type" => "number",
             "default" => 4
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "postTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "postTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -4372,30 +8042,49 @@ function smart_blocks_attributes_news_module_fourteen() {
             "type" => "boolean",
             "default" => true
         ],
-        "postTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "postTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "postTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -4436,114 +8125,284 @@ function smart_blocks_attributes_news_module_fifteen() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "postTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "postTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -4610,30 +8469,49 @@ function smart_blocks_attributes_news_module_fifteen() {
             "type" => "boolean",
             "default" => true
         ],
-        "postTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "postTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "postTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -4674,141 +8552,354 @@ function smart_blocks_attributes_tile_module_one() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "featuredTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "sideTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "featuredTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "sideTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -4852,30 +8943,49 @@ function smart_blocks_attributes_tile_module_one() {
             "type" => "number",
             "default" => 0
         ],
-        "featuredTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "featuredTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "featuredTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "featuredImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -4920,30 +9030,49 @@ function smart_blocks_attributes_tile_module_one() {
             "type" => "boolean",
             "default" => true
         ],
-        "sideTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "sideTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "sideTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -4991,141 +9120,353 @@ function smart_blocks_attributes_tile_module_two() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "featuredTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "sideTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "featuredTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "featuredTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "featuredTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "featuredTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "sideTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "sideTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "sideTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "sideTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -5169,30 +9510,49 @@ function smart_blocks_attributes_tile_module_two() {
             "type" => "number",
             "default" => 0
         ],
-        "featuredTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "featuredTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "featuredTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "featuredTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "featuredImageSize" => [
             "type" => "string",
             "default" => "large"
@@ -5233,30 +9593,50 @@ function smart_blocks_attributes_tile_module_two() {
             "type" => "boolean",
             "default" => true
         ],
-        "sideTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "sideTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "sideTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "sideTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -5304,114 +9684,285 @@ function smart_blocks_attributes_tile_module_three() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "postTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "postTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -5475,30 +10026,49 @@ function smart_blocks_attributes_tile_module_three() {
             "type" => "boolean",
             "default" => true
         ],
-        "postTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "postTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "postTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -5546,141 +10116,352 @@ function smart_blocks_attributes_carousel_module_one() {
         "headerLongBorderColor" => [
             "type" => "string"
         ],
-        "headerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "headerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "categoryTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "postTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "headerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
         ],
+        "headerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "headerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "headerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "categoryTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "categoryTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "categoryTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "categoryTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "postTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -5751,30 +10532,49 @@ function smart_blocks_attributes_carousel_module_one() {
             "type" => "boolean",
             "default" => true
         ],
-        "postTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "postTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "postTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -5788,33 +10588,50 @@ function smart_blocks_attributes_carousel_module_one() {
             "default" => true
         ],
         "pauseDuration" => [
-            "type" => "number",
+            "type" => "string",
             "default" => 5
         ],
+
+        "noOfSlidesSm" => [
+            "type" => "string",
+            "default" => 1
+        ],
+        "noOfSlidesMd" => [
+            "type" => "string",
+            "default" => 2
+        ],
         "noOfSlides" => [
-            "type" => "object",
-            "default" => [
-                "sm" => 1,
-                "md" => 2,
-                "lg" => 3
-            ]
+            "type" => "string",
+            "default" => 3
+        ],
+
+
+        "slidesMarginSm" => [
+            "type" => "string",
+            "default" => 30
+        ],
+        "slidesMarginMd" => [
+            "type" => "string",
+            "default" => 30
         ],
         "slidesMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => 30,
-                "md" => 30,
-                "lg" => 30
-            ]
+            "type" => "string",
+            "default" => 30
+        ],
+
+        "slidesStagepaddingSm" => [
+            "type" => "string",
+            "default" => 0
+        ],
+        "slidesStagepaddingMd" => [
+            "type" => "string",
+            "default" => 0
         ],
         "slidesStagepadding" => [
-            "type" => "object",
-            "default" => [
-                "sm" => 0,
-                "md" => 0,
-                "lg" => 0
-            ]
+            "type" => "string",
+            "default" => 0
         ],
+
         "nav" => [
             "type" => "boolean",
             "default" => true
@@ -5864,138 +10681,304 @@ function smart_blocks_attributes_single_news_one() {
         "style" => [
             "type" => "string"
         ],
-        "postTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "postTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "postTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "postTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
+        "postTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "contentBgColor" => [
             "type" => "string"
         ],
-        "contentPadding" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+
+        "contentPaddingSmTop" => [
+            "type" => "string"
         ],
-        "contentMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+        "contentPaddingSmLeft" => [
+            "type" => "string"
         ],
+        "contentPaddingSmRight" => [
+            "type" => "string"
+        ],
+        "contentPaddingSmBottom" => [
+            "type" => "string"
+        ],
+        "contentPaddingMdTop" => [
+            "type" => "string"
+        ],
+        "contentPaddingMdLeft" => [
+            "type" => "string"
+        ],
+        "contentPaddingMdRight" => [
+            "type" => "string"
+        ],
+        "contentPaddingMdBottom" => [
+            "type" => "string"
+        ],
+        "contentPaddingTop" => [
+            "type" => "string"
+        ],
+        "contentPaddingLeft" => [
+            "type" => "string"
+        ],
+        "contentPaddingRight" => [
+            "type" => "string"
+        ],
+        "contentPaddingBottom" => [
+            "type" => "string"
+        ],
+        "contentPaddingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "contentMarginSmTop" => [
+            "type" => "string"
+        ],
+        "contentMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "contentMarginSmRight" => [
+            "type" => "string"
+        ],
+        "contentMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "contentMarginMdTop" => [
+            "type" => "string"
+        ],
+        "contentMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "contentMarginMdRight" => [
+            "type" => "string"
+        ],
+        "contentMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "contentMarginTop" => [
+            "type" => "string"
+        ],
+        "contentMarginLeft" => [
+            "type" => "string"
+        ],
+        "contentMarginRight" => [
+            "type" => "string"
+        ],
+        "contentMarginBottom" => [
+            "type" => "string"
+        ],
+        "contentMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "titleColor" => [
             "type" => "string"
         ],
@@ -6041,54 +11024,91 @@ function smart_blocks_attributes_single_news_one() {
             "type" => "number",
             "default" => 200
         ],
-        "excerptMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "excerptMarginSmTop" => [
+            "type" => "string"
         ],
-        "metasMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+        "excerptMarginSmLeft" => [
+            "type" => "string"
         ],
+        "excerptMarginSmRight" => [
+            "type" => "string"
+        ],
+        "excerptMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "excerptMarginMdTop" => [
+            "type" => "string"
+        ],
+        "excerptMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "excerptMarginMdRight" => [
+            "type" => "string"
+        ],
+        "excerptMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "excerptMarginTop" => [
+            "type" => "string"
+        ],
+        "excerptMarginLeft" => [
+            "type" => "string"
+        ],
+        "excerptMarginRight" => [
+            "type" => "string"
+        ],
+        "excerptMarginBottom" => [
+            "type" => "string"
+        ],
+        "excerptMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+        "metasMarginSmTop" => [
+            "type" => "string"
+        ],
+        "metasMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "metasMarginSmRight" => [
+            "type" => "string"
+        ],
+        "metasMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "metasMarginMdTop" => [
+            "type" => "string"
+        ],
+        "metasMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "metasMarginMdRight" => [
+            "type" => "string"
+        ],
+        "metasMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "metasMarginTop" => [
+            "type" => "string"
+        ],
+        "metasMarginLeft" => [
+            "type" => "string"
+        ],
+        "metasMarginRight" => [
+            "type" => "string"
+        ],
+        "metasMarginBottom" => [
+            "type" => "string"
+        ],
+        "metasMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -6104,30 +11124,49 @@ function smart_blocks_attributes_single_news_one() {
         "excerptColor" => [
             "type" => "string"
         ],
-        "postTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "postTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "postTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "filterOption" => [
             "type" => "string",
             "default" => "single-post"
@@ -6148,87 +11187,215 @@ function smart_blocks_attributes_single_news_two() {
         "style" => [
             "type" => "string"
         ],
-        "excerptTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "excerptTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "postTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "excerptTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "metasTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "excerptTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
+        "excerptTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "excerptTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "excerptTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "excerptTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "postTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "postTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "postTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "postTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "metasTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "metasTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "metasTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "metasTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "categoryBackgroundColor" => [
             "type" => "string"
         ],
@@ -6294,30 +11461,49 @@ function smart_blocks_attributes_single_news_two() {
             "type" => "boolean",
             "default" => true
         ],
-        "postTitleMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+        "postTitleMarginSmTop" => [
+            "type" => "string"
         ],
+        "postTitleMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginTop" => [
+            "type" => "string"
+        ],
+        "postTitleMarginLeft" => [
+            "type" => "string"
+        ],
+        "postTitleMarginRight" => [
+            "type" => "string"
+        ],
+        "postTitleMarginBottom" => [
+            "type" => "string"
+        ],
+        "postTitleMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "dateFormat" => [
             "type" => "string",
             "default" => "default"
@@ -6326,102 +11512,177 @@ function smart_blocks_attributes_single_news_two() {
             "type" => "string",
             "default" => "F j, Y"
         ],
-        "contentPadding" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+
+
+        "contentPaddingSmTop" => [
+            "type" => "string"
         ],
-        "contentMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+        "contentPaddingSmLeft" => [
+            "type" => "string"
         ],
-        "metasMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+        "contentPaddingSmRight" => [
+            "type" => "string"
         ],
-        "excerptMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+        "contentPaddingSmBottom" => [
+            "type" => "string"
         ],
+        "contentPaddingMdTop" => [
+            "type" => "string"
+        ],
+        "contentPaddingMdLeft" => [
+            "type" => "string"
+        ],
+        "contentPaddingMdRight" => [
+            "type" => "string"
+        ],
+        "contentPaddingMdBottom" => [
+            "type" => "string"
+        ],
+        "contentPaddingTop" => [
+            "type" => "string"
+        ],
+        "contentPaddingLeft" => [
+            "type" => "string"
+        ],
+        "contentPaddingRight" => [
+            "type" => "string"
+        ],
+        "contentPaddingBottom" => [
+            "type" => "string"
+        ],
+        "contentPaddingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "contentMarginSmTop" => [
+            "type" => "string"
+        ],
+        "contentMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "contentMarginSmRight" => [
+            "type" => "string"
+        ],
+        "contentMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "contentMarginMdTop" => [
+            "type" => "string"
+        ],
+        "contentMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "contentMarginMdRight" => [
+            "type" => "string"
+        ],
+        "contentMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "contentMarginTop" => [
+            "type" => "string"
+        ],
+        "contentMarginLeft" => [
+            "type" => "string"
+        ],
+        "contentMarginRight" => [
+            "type" => "string"
+        ],
+        "contentMarginBottom" => [
+            "type" => "string"
+        ],
+        "contentMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+        "metasMarginSmTop" => [
+            "type" => "string"
+        ],
+        "metasMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "metasMarginSmRight" => [
+            "type" => "string"
+        ],
+        "metasMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "metasMarginMdTop" => [
+            "type" => "string"
+        ],
+        "metasMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "metasMarginMdRight" => [
+            "type" => "string"
+        ],
+        "metasMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "metasMarginTop" => [
+            "type" => "string"
+        ],
+        "metasMarginLeft" => [
+            "type" => "string"
+        ],
+        "metasMarginRight" => [
+            "type" => "string"
+        ],
+        "metasMarginBottom" => [
+            "type" => "string"
+        ],
+        "metasMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+        "excerptMarginSmTop" => [
+            "type" => "string"
+        ],
+        "excerptMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "excerptMarginSmRight" => [
+            "type" => "string"
+        ],
+        "excerptMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "excerptMarginMdTop" => [
+            "type" => "string"
+        ],
+        "excerptMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "excerptMarginMdRight" => [
+            "type" => "string"
+        ],
+        "excerptMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "excerptMarginTop" => [
+            "type" => "string"
+        ],
+        "excerptMarginLeft" => [
+            "type" => "string"
+        ],
+        "excerptMarginRight" => [
+            "type" => "string"
+        ],
+        "excerptMarginBottom" => [
+            "type" => "string"
+        ],
+        "excerptMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
         "excerptColor" => [
             "type" => "string"
         ],
@@ -6452,60 +11713,146 @@ function smart_blocks_attributes_ticker_module() {
         "style" => [
             "type" => "string"
         ],
-        "tickerTitleTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+
+
+        "tickerTitleTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
-        "tickerContentTypography" => [
-            "type" => "object",
-            "default" => [
-                "family" => 'inherit',
-                "weight" => 'inherit',
-                "textTransform" => 'inherit',
-                "textDecoration" => 'inherit',
-                "fontSize" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "letterSpacing" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ],
-                "lineHeight" => [
-                    "sm" => null,
-                    "md" => null,
-                    "lg" => null,
-                    "unit" => "px"
-                ]
-            ]
+        "tickerTitleTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
         ],
+        "tickerTitleTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "tickerTitleTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "tickerTitleTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerTitleTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerTitleTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerTitleTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "tickerTitleTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerTitleTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerTitleTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerTitleTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "tickerTitleTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerTitleTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerTitleTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerTitleTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "tickerContentTypographyFamily" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "tickerContentTypographyWeight" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "tickerContentTypographyTextTransform" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "tickerContentTypographyTextDecoration" => [
+            "type" => "string",
+            "default" => 'inherit'
+        ],
+        "tickerContentTypographyFontSizeSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerContentTypographyFontSizeMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerContentTypographyFontSize" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerContentTypographyFontSizeUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "tickerContentTypographyLetterSpacingSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerContentTypographyLetterSpacingMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerContentTypographyLetterSpacing" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerContentTypographyLetterSpacingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+        "tickerContentTypographyLineHeightSm" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerContentTypographyLineHeightMd" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerContentTypographyLineHeight" => [
+            "type" => "string",
+            "default" => null
+        ],
+        "tickerContentTypographyLineHeightUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
         "postsPostType" => [
             "type" => "string",
             "default" => "post"
@@ -6592,116 +11939,204 @@ function smart_blocks_global_attributes() {
         "blockBgColor" => [
             "type" => "string"
         ],
-        "borderNormalWidth" => [
-            "type" => "object",
-            "default" => [
-                "top" => null,
-                "left" => null,
-                "right" => null,
-                "bottom" => null,
-                "unit" => "px"
-            ]
+
+
+        "borderNormalWidthTop" => [
+            "type" => "string"
         ],
-        "borderHoverWidth" => [
-            "type" => "object",
-            "default" => [
-                "top" => null,
-                "left" => null,
-                "right" => null,
-                "bottom" => null,
-                "unit" => "px"
-            ]
+        "borderNormalWidthLeft" => [
+            "type" => "string"
         ],
-        "borderNormalRadius" => [
-            "type" => "object",
-            "default" => [
-                "top" => null,
-                "left" => null,
-                "right" => null,
-                "bottom" => null,
-                "unit" => "px"
-            ]
+        "borderNormalWidthRight" => [
+            "type" => "string"
         ],
-        "borderHoverRadius" => [
-            "type" => "object",
-            "default" => [
-                "top" => null,
-                "left" => null,
-                "right" => null,
-                "bottom" => null,
-                "unit" => "px"
-            ]
+        "borderNormalWidthBottom" => [
+            "type" => "string"
         ],
-        "borderNormalBoxShadow" => [
-            "type" => "object",
-            "default" => [
-                "horizontal" => null,
-                "vertical" => null,
-                "blur" => null,
-                "spread" => null,
-                "color" => null,
-                "inset" => null
-            ]
+        "borderNormalWidthUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
         ],
-        "borderHoverBoxShadow" => [
-            "type" => "object",
-            "default" => [
-                "horizontal" => null,
-                "vertical" => null,
-                "blur" => null,
-                "spread" => null,
-                "color" => null,
-                "inset" => null
-            ]
+
+        "borderHoverWidthTop" => [
+            "type" => "string"
         ],
-        "blockMargin" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
+        "borderHoverWidthLeft" => [
+            "type" => "string"
         ],
-        "blockPadding" => [
-            "type" => "object",
-            "default" => [
-                "sm" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "md" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "lg" => [
-                    "top" => null,
-                    "left" => null,
-                    "right" => null,
-                    "bottom" => null
-                ],
-                "unit" => "px"
-            ]
-        ]
+        "borderHoverWidthRight" => [
+            "type" => "string"
+        ],
+        "borderHoverWidthBottom" => [
+            "type" => "string"
+        ],
+        "borderHoverWidthUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "borderNormalRadiusTop" => [
+            "type" => "string"
+        ],
+        "borderNormalRadiusLeft" => [
+            "type" => "string"
+        ],
+        "borderNormalRadiusRight" => [
+            "type" => "string"
+        ],
+        "borderNormalRadiusBottom" => [
+            "type" => "string"
+        ],
+        "borderNormalRadiusUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+        "borderHoverRadiusTop" => [
+            "type" => "string"
+        ],
+        "borderHoverRadiusLeft" => [
+            "type" => "string"
+        ],
+        "borderHoverRadiusRight" => [
+            "type" => "string"
+        ],
+        "borderHoverRadiusBottom" => [
+            "type" => "string"
+        ],
+        "borderHoverRadiusUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+
+        "borderNormalBoxShadowHorizontal" => [
+            "type" => "string"
+        ],
+        "borderNormalBoxShadowVertical" => [
+            "type" => "string"
+        ],
+        "borderNormalBoxShadowBlur" => [
+            "type" => "string"
+        ],
+        "borderNormalBoxShadowSpread" => [
+            "type" => "string"
+        ],
+        "borderNormalBoxShadowColor" => [
+            "type" => "string"
+        ],
+        "borderNormalBoxShadowInset" => [
+            "type" => "string"
+        ],
+
+        "borderHoverBoxShadowHorizontal" => [
+            "type" => "string"
+        ],
+        "borderHoverBoxShadowVertical" => [
+            "type" => "string"
+        ],
+        "borderHoverBoxShadowBlur" => [
+            "type" => "string"
+        ],
+        "borderHoverBoxShadowSpread" => [
+            "type" => "string"
+        ],
+        "borderHoverBoxShadowColor" => [
+            "type" => "string"
+        ],
+        "borderHoverBoxShadowInset" => [
+            "type" => "string"
+        ],
+
+
+        "blockMarginSmTop" => [
+            "type" => "string"
+        ],
+        "blockMarginSmLeft" => [
+            "type" => "string"
+        ],
+        "blockMarginSmRight" => [
+            "type" => "string"
+        ],
+        "blockMarginSmBottom" => [
+            "type" => "string"
+        ],
+        "blockMarginMdTop" => [
+            "type" => "string"
+        ],
+        "blockMarginMdLeft" => [
+            "type" => "string"
+        ],
+        "blockMarginMdRight" => [
+            "type" => "string"
+        ],
+        "blockMarginMdBottom" => [
+            "type" => "string"
+        ],
+        "blockMarginTop" => [
+            "type" => "string"
+        ],
+        "blockMarginLeft" => [
+            "type" => "string"
+        ],
+        "blockMarginRight" => [
+            "type" => "string"
+        ],
+        "blockMarginBottom" => [
+            "type" => "string"
+        ],
+        "blockMarginUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
+
+        "blockPaddingSmTop" => [
+            "type" => "string"
+        ],
+        "blockPaddingSmLeft" => [
+            "type" => "string"
+        ],
+        "blockPaddingSmRight" => [
+            "type" => "string"
+        ],
+        "blockPaddingSmBottom" => [
+            "type" => "string"
+        ],
+        "blockPaddingMdTop" => [
+            "type" => "string"
+        ],
+        "blockPaddingMdLeft" => [
+            "type" => "string"
+        ],
+        "blockPaddingMdRight" => [
+            "type" => "string"
+        ],
+        "blockPaddingMdBottom" => [
+            "type" => "string"
+        ],
+        "blockPaddingTop" => [
+            "type" => "string"
+        ],
+        "blockPaddingLeft" => [
+            "type" => "string"
+        ],
+        "blockPaddingRight" => [
+            "type" => "string"
+        ],
+        "blockPaddingBottom" => [
+            "type" => "string"
+        ],
+        "blockPaddingUnit" => [
+            "type" => "string",
+            "enum" => ['px', 'em', '%'],
+            "default" => 'px'
+        ],
     ];
     return $attrs;
 }
