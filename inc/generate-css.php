@@ -38,7 +38,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
         public function render_block_asset($block_content, $block) {
             $blockAttrs = $block['attrs'];
             $block_css = '';
-            $block_css .= var_dump($blockAttrs);
+            //$block_css .= $blockAttrs;
             foreach ($blockAttrs as $attrs) {
                 if (isset($attrs['family'])) {
                     self::blocks_google_font($attrs['family'], $attrs['weight'] ? str_replace('italic', 'i', $attrs['weight']) : 400);

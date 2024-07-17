@@ -152,7 +152,6 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		${responsiveSliderVars('columns-gap', columnsGap, columnsGapSm, columnsGapMd, 'px')}
 		${responsiveSliderVars('columns-align', columnAlignment, columnAlignmentSm, columnAlignmentMd, '')}
 		${responsiveSliderVars('columns-justify', columnJustify, columnJustifySm, columnJustifyMd, '')}
-		${columnsHeight == 'custom' && responsiveSliderVars('columns-height', columnsHeightCustom, columnsHeightCustomSm, columnsHeightCustomMd, columnsHeightCustomUnit)}
 
 
         ${responsiveDimensionVars('columns-margin', columnsMarginTop, columnsMarginRight, columnsMarginBottom, columnsMarginLeft,

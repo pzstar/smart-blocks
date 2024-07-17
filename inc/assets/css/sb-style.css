@@ -73,6 +73,26 @@ a {
 }
 
 /* Column */
+.wp-block-smart-blocks-columns.has-2-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column{
+    flex: 1 1 calc(var(--sb-column-width) - var(--sb-columns-gap-lg) * 1/2);
+}
+
+.wp-block-smart-blocks-columns.has-3-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column{
+    flex: 1 1 calc(var(--sb-column-width) - var(--sb-columns-gap-lg) * 1/3);
+}
+
+.wp-block-smart-blocks-columns.has-4-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column{
+    flex: 1 1 calc(var(--sb-column-width) - var(--sb-columns-gap-lg) * 1/4);
+}
+
+.wp-block-smart-blocks-columns.has-5-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column{
+    flex: 1 1 calc(var(--sb-column-width) - var(--sb-columns-gap-lg) * 1/5);
+}
+
+.wp-block-smart-blocks-columns.has-6-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column{
+    flex: 1 1 calc(var(--sb-column-width) - var(--sb-columns-gap-lg) * 1/6);
+}
+    
 .wp-block-smart-blocks-column{
     margin-top: var(--sb-column-margin-top-lg, 0);
     margin-bottom: var(--sb-column-margin-bottom-lg, 0);

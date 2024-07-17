@@ -54,6 +54,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
     } = attributes;
 
     const stylesCSS = `#${id} {
+        ${'--sb-column-width: ' + columnWidth + '%;'}
     	${responsiveDimensionVars('column-margin', columnMarginTop, columnMarginRight, columnMarginBottom, columnMarginLeft,
     		columnMarginSmTop, columnMarginSmRight, columnMarginSmBottom, columnMarginSmLeft,
     		columnMarginMdTop, columnMarginMdRight, columnMarginMdBottom, columnMarginMdLeft, columnMarginUnit)}

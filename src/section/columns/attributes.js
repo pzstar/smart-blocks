@@ -1,24 +1,24 @@
 const attributes = {
-	id: {
-		type: 'string'
-	},
+    id: {
+        type: 'string'
+    },
     style: {
         type: 'string'
     },
-	columns: {
-		type: 'number'
-	},
-	layout: {
-		type: 'string'
-	},
-	layoutTablet: {
-		type: 'string',
-		default: 'equal'
-	},
-	layoutMobile: {
-		type: 'string',
-		default: 'equal'
-	},
+    columns: {
+        type: 'number'
+    },
+    layout: {
+        type: 'string'
+    },
+    layoutTablet: {
+        type: 'string',
+        default: 'equal'
+    },
+    layoutMobile: {
+        type: 'string',
+        default: 'equal'
+    },
 
     columnsGapSm: {
         type: 'string',
@@ -31,7 +31,7 @@ const attributes = {
         default: 20
     },
 
-	columnsMarginSmTop: {
+    columnsMarginSmTop: {
         type: 'string'
     },
     columnsMarginSmLeft: {
@@ -72,7 +72,6 @@ const attributes = {
         enum: ['px', 'em', '%'],
         default: 'px'
     },
-
 
     columnsPaddingSmTop: {
         type: 'string'
@@ -116,7 +115,7 @@ const attributes = {
         default: 'px'
     },
 
-	columnsWidthSm: {
+    columnsWidthSm: {
         type: 'string',
         default: 1170
     },
@@ -125,26 +124,26 @@ const attributes = {
     },
     columnsWidth: {
         type: 'string',
-	},
+    },
     columnsWidthUnit: {
         type: 'string',
         enum: ['px', 'em', '%', 'vw'],
         default: 'px'
     },
 
-	horizontalAlign: {
+    horizontalAlign: {
         type: 'string'
     },
     horizontalAlignSm: {
         type: 'string'
-	},
+    },
     horizontalAlignMd: {
         type: 'string'
     },
 
-	columnAlignment: {
+    columnAlignment: {
         type: 'string'
-	},
+    },
     columnAlignmentSm: {
         type: 'string'
     },
@@ -152,10 +151,10 @@ const attributes = {
         type: 'string'
     },
 
-	columnJustify: {
+    columnJustify: {
         type: 'string',
         default: 0
-	},
+    },
     columnJustifySm: {
         type: 'string',
         default: 0
@@ -165,14 +164,14 @@ const attributes = {
         default: 0
     },
 
-	columnsHeight: {
-		type: 'string',
-		default: 'auto'
-	},
+    columnsHeight: {
+        type: 'string',
+        default: 'auto'
+    },
 
-	columnsHeightCustom: {
+    columnsHeightCustom: {
         type: 'string'
-	},
+    },
     columnsHeightCustomSm: {
         type: 'string'
     },
@@ -185,30 +184,30 @@ const attributes = {
         default: 'px'
     },
 
-	hide: {
-		type: 'boolean',
-		default: false
-	},
-	hideTablet: {
-		type: 'boolean',
-		default: false
-	},
-	hideMobile: {
-		type: 'boolean',
-		default: false
-	},
-	reverseColumnsTablet: {
-		type: 'boolean',
-		default: false
-	},
-	reverseColumnsMobile: {
-		type: 'boolean',
-		default: false
-	},
-	columnsHTMLTag: {
-		type: 'string',
-		default: 'div'
-	},
+    hide: {
+        type: 'boolean',
+        default: false
+    },
+    hideTablet: {
+        type: 'boolean',
+        default: false
+    },
+    hideMobile: {
+        type: 'boolean',
+        default: false
+    },
+    reverseColumnsTablet: {
+        type: 'boolean',
+        default: false
+    },
+    reverseColumnsMobile: {
+        type: 'boolean',
+        default: false
+    },
+    columnsHTMLTag: {
+        type: 'string',
+        default: 'div'
+    },
     borderNormal: {
         type: 'string'
     },
@@ -243,7 +242,6 @@ const attributes = {
         default: 'px'
     },
 
-
     borderHoverWidthTop: {
         type: 'string',
     },
@@ -262,7 +260,6 @@ const attributes = {
         default: 'px'
     },
 
-
     borderNormalRadiusTop: {
         type: 'string',
     },
@@ -280,7 +277,6 @@ const attributes = {
         enum: ['px', 'em', '%'],
         default: 'px'
     },
-
 
     borderHoverRadiusTop: {
         type: 'string',
@@ -319,7 +315,6 @@ const attributes = {
         type: 'string'
     },
 
-
     borderHoverBoxShadowHorizontal: {
         type: 'string'
     },
@@ -338,7 +333,6 @@ const attributes = {
     borderHoverBoxShadowInset: {
         type: 'string'
     },
-
 
     sectionBgImgURL: {
         type: 'string'
