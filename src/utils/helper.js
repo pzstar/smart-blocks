@@ -44,4 +44,19 @@ const responsiveDimensionVars = (varname, top, right, bottom, left, topSm, right
         --sb-${varname}-left-lg: ${left ? (left + unit) : 'initial'};`;
 }
 
-export { checkDefault, getFontClass, responsiveDimensionVars, dimensionVars };
+const responsiveSliderVars = (varname, valueLg, valueSm, valueMd, unit) => {
+    return `--sb-${varname}-sm: ${valueSm ? (valueSm + unit) : ''};
+        --sb-${varname}-md: ${valueMd ? (valueMd + unit) : ''};
+        --sb-${varname}-lg: ${valueLg ? (valueLg + unit) : ''};`;
+}
+
+const boxShadowVars = (varname, horizontal, vertical, blur, spread, color, inset, unit) => {
+    return `--sb-${varname}-horizontal: ${horizontal ? (horizontal + unit) : ''};
+        --sb-${varname}-vertical: ${vertical ? (vertical + unit) : ''};
+        --sb-${varname}-blur: ${blur ? (blur + unit) : ''};
+        --sb-${varname}-spread: ${spread ? (spread + unit) : ''};
+        --sb-${varname}-color: ${color ? color : ''};
+        --sb-${varname}-inset: ${inset ? inset : ''};`;
+}
+
+export { checkDefault, getFontClass, responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars };
