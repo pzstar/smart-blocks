@@ -16,7 +16,7 @@ import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import {blockInit} from '../../helpers/block-utility.js';
 import LayoutSelector from './layoutselector.js';
-import { responsiveDimensionVars, dimensionVars } from '../../utils/helper';
+import { responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars } from '../../utils/helper';
 
 const Edit = ({attributes, setAttributes, className, clientId}) => {
 	const {
@@ -138,34 +138,22 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         borderHoverBoxShadowColor,
         borderHoverBoxShadowInset,
 
-        sectionContentWidth
+        sectionContentWidth,
+
+        sectionFlexDirection,
+        sectionFlexDirectionMd,
+        sectionFlexDirectionSm
     } = attributes;
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
 
 	const stylesCSS = `#${id} {
-        ${columnsWidthSm ? '--sb-columns-width-sm: ' + columnsWidthSm + columnsWidthUnit + ';' : ''}
-        ${columnsWidthMd ? '--sb-columns-width-md: ' + columnsWidthMd + columnsWidthUnit + ';' : ''}
-        ${columnsWidth ? '--sb-columns-width-lg: ' + columnsWidth + columnsWidthUnit + ';' : ''}
+		${responsiveSliderVars('columns-width', columnsWidth, columnsWidthSm, columnsWidthMd, columnsWidthUnit)}
+		${responsiveSliderVars('columns-horizontal-align', horizontalAlign, horizontalAlignSm, horizontalAlignMd, '')}
+		${responsiveSliderVars('columns-gap', columnsGap, columnsGapSm, columnsGapMd, 'px')}
+		${responsiveSliderVars('columns-align', columnAlignment, columnAlignmentSm, columnAlignmentMd, '')}
+		${responsiveSliderVars('columns-justify', columnJustify, columnJustifySm, columnJustifyMd, '')}
+		${columnsHeight == 'custom' && responsiveSliderVars('columns-height', columnsHeightCustom, columnsHeightCustomSm, columnsHeightCustomMd, columnsHeightCustomUnit)}
 
-        ${horizontalAlignSm ? '--sb-columns-horizontal-align-sm: ' + horizontalAlignSm + ';' : ''}
-        ${horizontalAlignMd ? '--sb-columns-horizontal-align-md: ' + horizontalAlignMd + ';' : ''}
-        ${horizontalAlign ? '--sb-columns-horizontal-align-lg: ' + horizontalAlign + ';' : ''}
-
-        ${columnsGapSm ? '--sb-columns-gap-sm: ' + columnsGapSm + 'px;' : ''}
-        ${columnsGapMd ? '--sb-columns-gap-md: ' + columnsGapMd + 'px;' : ''}
-        ${columnsGap ? '--sb-columns-gap-lg: ' + columnsGap + 'px;' : ''}
-
-        ${columnAlignmentSm ? '--sb-columns-align-sm: ' + columnAlignmentSm + ';' : ''}
-        ${columnAlignmentMd ? '--sb-columns-align-md: ' + columnAlignmentMd + ';' : ''}
-        ${columnAlignment ? '--sb-columns-align-lg: ' + columnAlignment + ';' : ''}
-
-        ${columnJustifySm ? '--sb-columns-justify-sm: ' + columnJustifySm + ';' : ''}
-        ${columnJustifyMd ? '--sb-columns-justify-md: ' + columnJustifyMd + ';' : ''}
-        ${columnJustify ? '--sb-columns-justify-lg: ' + columnJustify + ';' : ''}
-
-        ${columnsHeight == 'custom' && columnsHeightCustomSm ? '--sb-columns-height-sm: ' + columnsHeightCustomSm + columnsHeightCustomUnit + ';' : ''}
-        ${columnsHeight == 'custom' && columnsHeightCustomMd ? '--sb-columns-height-md: ' + columnsHeightCustomMd + columnsHeightCustomUnit + ';' : ''}
-        ${columnsHeight == 'custom' && columnsHeightCustom ? '--sb-columns-height-lg: ' + columnsHeightCustom + columnsHeightCustomUnit + ';' : ''}
 
         ${responsiveDimensionVars('columns-margin', columnsMarginTop, columnsMarginRight, columnsMarginBottom, columnsMarginLeft,
     		columnsMarginSmTop, columnsMarginSmRight, columnsMarginSmBottom, columnsMarginSmLeft,
@@ -185,19 +173,9 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         ${dimensionVars('columns-border-normal-radius', borderNormalRadiusTop, borderNormalRadiusRight, borderNormalRadiusBottom, borderNormalRadiusLeft, borderNormalRadiusUnit)}
         ${dimensionVars('columns-border-hover-radius', borderHoverRadiusTop, borderHoverRadiusRight, borderHoverRadiusBottom, borderHoverRadiusLeft, borderHoverRadiusUnit)}
 
-        ${borderNormalBoxShadowHorizontal ? '--sb-columns-border-normal-box-shadow-horizontal: ' + borderNormalBoxShadowHorizontal + 'px;' : ''}
-        ${borderNormalBoxShadowVertical ? '--sb-columns-border-normal-box-shadow-vertical: ' + borderNormalBoxShadowVertical + 'px;' : ''}
-        ${borderNormalBoxShadowBlur ? '--sb-columns-border-normal-box-shadow-blur: ' + borderNormalBoxShadowBlur + 'px;' : ''}
-        ${borderNormalBoxShadowSpread ? '--sb-columns-border-normal-box-shadow-spread: ' + borderNormalBoxShadowSpread + 'px;' : ''}
-        ${borderNormalBoxShadowColor ? '--sb-columns-border-normal-box-shadow-color: ' + borderNormalBoxShadowColor + ';' : ''}
-        ${borderNormalBoxShadowInset ? '--sb-columns-border-normal-box-shadow-inset: ' + borderNormalBoxShadowInset + ';' : ''}
 
-        ${borderHoverBoxShadowHorizontal ? '--sb-columns-border-hover-box-shadow-horizontal: ' + borderHoverBoxShadowHorizontal + 'px;' : ''}
-        ${borderHoverBoxShadowVertical ? '--sb-columns-border-hover-box-shadow-vertical: ' + borderHoverBoxShadowVertical + 'px;' : ''}
-        ${borderHoverBoxShadowBlur ? '--sb-columns-border-hover-box-shadow-blur: ' + borderHoverBoxShadowBlur + 'px;' : ''}
-        ${borderHoverBoxShadowSpread ? '--sb-columns-border-hover-box-shadow-spread: ' + borderHoverBoxShadowSpread + 'px;' : ''}
-        ${borderHoverBoxShadowColor ? '--sb-columns-border-hover-box-shadow-color: ' + borderHoverBoxShadowColor + ';' : ''}
-        ${borderHoverBoxShadowInset ? '--sb-columns-border-hover-box-shadow-inset: ' + borderHoverBoxShadowInset + ';' : ''}
+        ${boxShadowVars('columns-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
+        ${boxShadowVars('columns-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
         ${sectionBgColor ? '--sb-columns-bg-color: ' + sectionBgColor + ';' : ''}
 
@@ -255,7 +233,10 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		{'has-viewport-desktop': isDesktop},
 		{'has-viewport-tablet': isTablet},
 		{'has-viewport-mobile': isMobile},
-		`has-${sectionContentWidth}-width`
+		`has-${sectionContentWidth}-width`,
+		`has-flex-direction-${sectionFlexDirection}`,
+		`has-flex-direction-sm-${sectionFlexDirectionSm}`,
+		`has-flex-direction-md-${sectionFlexDirectionMd}`
 	);
 
 	const updateColumnsWidth = (columns, layout) => {

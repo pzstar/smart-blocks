@@ -369,6 +369,16 @@ const attributes = {
         type: 'string',
         default: 'boxed',
         enum: ['full', 'boxed']
+    },
+
+    sectionFlexDirection: {
+        type: 'string'
+    },
+    sectionFlexDirectionSm: {
+        type: 'string'
+    },
+    sectionFlexDirectionMd: {
+        type: 'string'
     }
 };
 

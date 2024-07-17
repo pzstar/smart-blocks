@@ -165,7 +165,11 @@ const Inspector = ({
         sectionBgPosition,
         sectionBgRepeat,
 
-        sectionContentWidth
+        sectionContentWidth,
+
+        sectionFlexDirection,
+        sectionFlexDirectionSm,
+        sectionFlexDirectionMd
     } = attributes;
 
 	const getView = useSelect((select) => {
@@ -364,6 +368,39 @@ const Inspector = ({
 	                                    units={['px', 'em', '%', 'vw']}
 	                                    unit={columnsWidthUnit}
 	                                    setUnit={(value) => setAttributes({columnsWidthUnit: value})}
+									/>
+
+									<ButtonGroupControl
+										label={__('Direction', 'smart-blocks')}
+										responsive={!0}
+										options={[
+											{
+												value: 'right',
+												icon: <Dashicon icon="arrow-right-alt"/>,
+												label: __('Flex Start', 'smart-blocks')
+											},
+											{
+												value: 'bottom',
+												icon: <Dashicon icon="arrow-down-alt"/>,
+												label: __('Center', 'smart-blocks')
+											},
+											{
+												value: 'left',
+												icon: <Dashicon icon="arrow-left-alt"/>,
+												label: __('Flex End', 'smart-blocks')
+											},
+											{
+												value: 'top',
+												icon: <Dashicon icon="arrow-up-alt"/>,
+												label: __('Stretch', 'smart-blocks')
+											},
+										]}
+										value={sectionFlexDirection}
+										setValue={(value) => setAttributes({sectionFlexDirection: value})}
+										valueSm={sectionFlexDirectionSm}
+										setValueSm={(value) => setAttributes({sectionFlexDirectionSm: value})}
+										valueMd={sectionFlexDirectionMd}
+										setValueMd={(value) => setAttributes({sectionFlexDirectionMd: value})}
 									/>
 
 									<ButtonGroupControl

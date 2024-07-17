@@ -49,8 +49,8 @@ const ImageBackgroundControl = ({
                             <div
                                 className="sb-image-container-delete"
                                 onClick={() => {
-                                    setImageID(undefined);
-                                    setImageURL(undefined);
+                                    setImageID('');
+                                    setImageURL('');
                                 }}
                             >
                                 <Dashicon icon="trash" />
@@ -63,8 +63,8 @@ const ImageBackgroundControl = ({
                         isSecondary
                         className="sb-image-container-delete-button"
                         onClick={() => {
-                            setImageID(undefined);
-                            setImageURL(undefined);
+                            setImageID('');
+                            setImageURL('');
                         }}
                     >
                         {__('Remove Image', 'smart-blocks')}
@@ -75,8 +75,7 @@ const ImageBackgroundControl = ({
                         value={imageAttachment}
                         options={ [
                             {label: __('Scroll', 'smart-blocks'), value: 'scroll'},
-                            {label: __('Fixed', 'smart-blocks'), value: 'fixed'},
-                            {label: __('Local', 'smart-blocks'), value: 'local'}
+                            {label: __('Fixed', 'smart-blocks'), value: 'fixed'}
                         ]}
                         onChange={value => setImageAttachment(value)}
                     />
