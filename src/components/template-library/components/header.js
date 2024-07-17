@@ -30,15 +30,15 @@ const Header = ({
 }) => {
 	const getOptions = () => {
 		let categories = {};
-		categories = ('block' === tab ? blocksCategories : templateCategories ).map(i => {
+		categories = ('block' === tab ? blocksCategories : templateCategories).map(i => {
 			return i = {
-				label: startCase( toLower( i ) ),
+				label: startCase(toLower(i)),
 				value: i
 			};
 		});
 
 		const options = [
-			{label: __( 'All Categories', 'smart-blocks' ), value: 'all'},
+			{ label: __('All Categories', 'smart-blocks'), value: 'all' },
 			...categories
 		];
 		return options;
@@ -50,17 +50,17 @@ const Header = ({
 		<div className="library-modal-control-panel">
 			<div className="library-modal-header">
 				<div className="library-modal-header-logo">
-					{ preview ? (
+					{preview ? (
 						<Button
 							className="library-modal-header-tabs-button back-to-library"
-							ariaLabel={ __( 'Back to Library', 'smart-blocks' ) }
-							onClick={ () => setPreview( false ) }
+							ariaLabel={__('Back to Library', 'smart-blocks')}
+							onClick={() => setPreview(false)}
 						>
-							<Dashicon icon="arrow-left-alt" /> { __( 'Back to Library', 'smart-blocks' ) }
+							<Dashicon icon="arrow-left-alt" /> {__('Back to Library', 'smart-blocks')}
 						</Button>
 					) :
 						<div className="library-modal-header-tabs-button">
-							<Icon icon={ Tile1 } />
+							<Icon icon={Tile1} />
 						</div>
 					}
 				</div>
@@ -69,42 +69,42 @@ const Header = ({
 					<div className="library-modal-header-tabs">
 						<Button
 							className={classnames('library-modal-header-tabs-button', { 'is-selected': 'block' === tab })}
-							onClick={ () => changeTab( 'block' ) }
+							onClick={() => changeTab('block')}
 						>
 							<Dashicon icon="screenoptions" />
-							{ __( 'Blocks', 'smart-blocks' ) }
+							{__('Blocks', 'smart-blocks')}
 						</Button>
 
 						<Button
-							className={ classnames(
+							className={classnames(
 								'library-modal-header-tabs-button',
 								{ 'is-selected': 'template' === tab }
-							) }
-							onClick={ () => changeTab( 'template' ) }
+							)}
+							onClick={() => changeTab('template')}
 						>
 							<Dashicon icon="editor-table" />
-							{ __( 'Templates', 'smart-blocks' ) }
+							{__('Templates', 'smart-blocks')}
 						</Button>
 					</div>
 				)}
 
 				<div className="library-modal-header-actions">
-					{ preview && (
+					{preview && (
 						<Button
 							className="library-modal-header-tabs-button insert-button"
-							onClick={ () => importTemplate( selectedTemplate.template_url ) }
+							onClick={() => importTemplate(selectedTemplate.template_url)}
 							tabindex="0"
 						>
-							<Dashicon icon="arrow-down-alt" size={ 16 } />
-							{ __( 'Insert', 'smart-blocks' ) }
+							<Dashicon icon="arrow-down-alt" size={16} />
+							{__('Insert', 'smart-blocks')}
 						</Button>
-					) }
+					)}
 
-					<Tooltip text={ __( 'Close', 'smart-blocks' ) }>
+					<Tooltip text={__('Close', 'smart-blocks')}>
 						<Button
 							className="library-modal-header-tabs-button"
-							aria-label={ __( 'Close settings', 'smart-blocks' ) }
-							onClick={ close }
+							aria-label={__('Close settings', 'smart-blocks')}
+							onClick={close}
 						>
 							<Dashicon icon="no-alt" />
 						</Button>
@@ -115,17 +115,17 @@ const Header = ({
 			{!preview && (
 				<div className="library-modal-actions">
 					<SelectControl
-						className = "library-modal-category-control"
-						value = {'all' === selectedCategory ? 'all' : selectedCategory}
-						onChange = { selectCategory }
-						options = { options }
+						className="library-modal-category-control"
+						value={'all' === selectedCategory ? 'all' : selectedCategory}
+						onChange={selectCategory}
+						options={options}
 					/>
 					<TextControl
-						type = "text"
-						value = { search || '' }
-						placeholder = { __( 'Search', 'smart-blocks' ) }
-						className ="library-modal-search-control"
-						onChange = {changeSearch}
+						type="text"
+						value={search || ''}
+						placeholder={__('Search', 'smart-blocks')}
+						className="library-modal-search-control"
+						onChange={changeSearch}
 					/>
 				</div>
 			)}

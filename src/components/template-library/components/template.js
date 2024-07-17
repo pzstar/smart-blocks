@@ -3,7 +3,7 @@ import LazyLoad from 'react-lazy-load';
 import { __ } from '@wordpress/i18n';
 import { Button } from '@wordpress/components';
 
-const Template = ({template, importPreview, importTemplate}) => {
+const Template = ({ template, importPreview, importTemplate }) => {
 	return (
 		<div ariaLabel={template.title || __('Untitled Template', 'smart-blocks')} className="library-modal-content__item" tabindex="0">
 			<div className="library-modal-content__preview">

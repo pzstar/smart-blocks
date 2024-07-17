@@ -93,8 +93,8 @@ const BoxShadowControl = ({
                                 value={valueInset}
                                 setValue={((e) => setValueInset(e))}
                                 options={[
-                                    {label: __("Inset"), value: "inset", title: __("Inset")},
-                                    {label: __("Outset"), value: "", title: __("Outset")}
+                                    { label: __("Inset"), value: "inset", title: __("Inset") },
+                                    { label: __("Outset"), value: "", title: __("Outset") }
                                 ]}
                             />
                         </>

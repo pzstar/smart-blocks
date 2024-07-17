@@ -514,7 +514,7 @@ export default function Edit({ attributes, setAttributes }) {
                 <div className="sb-field sb-head-panel-tabs">
                     <div className="sb-panel-tabs-wrap">
                         <Button
-                            className={classnames('sb-panel-tab', {'active-tab': 'layout' === activeTab})}
+                            className={classnames('sb-panel-tab', { 'active-tab': 'layout' === activeTab })}
                             onClick={() => setActiveTab('layout')}
                         >
                             <span className="dashicons">
@@ -524,7 +524,7 @@ export default function Edit({ attributes, setAttributes }) {
                         </Button>
 
                         <Button
-                            className={classnames('sb-panel-tab', {'active-tab': 'style' === activeTab})}
+                            className={classnames('sb-panel-tab', { 'active-tab': 'style' === activeTab })}
                             onClick={() => setActiveTab('style')}
                         >
                             <span className="dashicons">
@@ -534,7 +534,7 @@ export default function Edit({ attributes, setAttributes }) {
                         </Button>
 
                         <Button
-                            className={classnames('sb-panel-tab', {'active-tab': 'advanced' === activeTab})}
+                            className={classnames('sb-panel-tab', { 'active-tab': 'advanced' === activeTab })}
                             onClick={() => setActiveTab('advanced')}
                         >
                             <span className="dashicons">
@@ -713,69 +713,69 @@ export default function Edit({ attributes, setAttributes }) {
                                     <DimensionControl
                                         label={__('Content Padding', 'smart-blocks')}
                                         dimensionTop={contentPaddingTop}
-                                        setDimensionTop={value => setAttributes({contentPaddingTop: value})}
+                                        setDimensionTop={value => setAttributes({ contentPaddingTop: value })}
                                         dimensionMdTop={contentPaddingMdTop}
-                                        setDimensionMdTop={value => setAttributes({contentPaddingMdTop: value})}
+                                        setDimensionMdTop={value => setAttributes({ contentPaddingMdTop: value })}
                                         dimensionSmTop={contentPaddingSmTop}
-                                        setDimensionSmTop={value => setAttributes({contentPaddingSmTop: value})}
+                                        setDimensionSmTop={value => setAttributes({ contentPaddingSmTop: value })}
 
                                         dimensionLeft={contentPaddingLeft}
-                                        setDimensionLeft={value => setAttributes({contentPaddingLeft: value})}
+                                        setDimensionLeft={value => setAttributes({ contentPaddingLeft: value })}
                                         dimensionMdLeft={contentPaddingMdLeft}
-                                        setDimensionMdLeft={value => setAttributes({contentPaddingMdLeft: value})}
+                                        setDimensionMdLeft={value => setAttributes({ contentPaddingMdLeft: value })}
                                         dimensionSmLeft={contentPaddingSmLeft}
-                                        setDimensionSmLeft={value => setAttributes({contentPaddingSmLeft: value})}
+                                        setDimensionSmLeft={value => setAttributes({ contentPaddingSmLeft: value })}
 
                                         dimensionRight={contentPaddingRight}
-                                        setDimensionRight={value => setAttributes({contentPaddingRight: value})}
+                                        setDimensionRight={value => setAttributes({ contentPaddingRight: value })}
                                         dimensionMdRight={contentPaddingMdRight}
-                                        setDimensionMdRight={value => setAttributes({contentPaddingMdRight: value})}
+                                        setDimensionMdRight={value => setAttributes({ contentPaddingMdRight: value })}
                                         dimensionSmRight={contentPaddingSmRight}
-                                        setDimensionSmRight={value => setAttributes({contentPaddingSmRight: value})}
+                                        setDimensionSmRight={value => setAttributes({ contentPaddingSmRight: value })}
 
                                         dimensionBottom={contentPaddingBottom}
-                                        setDimensionBottom={value => setAttributes({contentPaddingBottom: value})}
+                                        setDimensionBottom={value => setAttributes({ contentPaddingBottom: value })}
                                         dimensionMdBottom={contentPaddingMdBottom}
-                                        setDimensionMdBottom={value => setAttributes({contentPaddingMdBottom: value})}
+                                        setDimensionMdBottom={value => setAttributes({ contentPaddingMdBottom: value })}
                                         dimensionSmBottom={contentPaddingSmBottom}
-                                        setDimensionSmBottom={value => setAttributes({contentPaddingSmBottom: value})}
+                                        setDimensionSmBottom={value => setAttributes({ contentPaddingSmBottom: value })}
 
                                         unit={contentPaddingUnit}
-                                        setUnit={value => setAttributes({contentPaddingUnit: value})}
+                                        setUnit={value => setAttributes({ contentPaddingUnit: value })}
                                         responsive={!0}
                                     />
                                     <DimensionControl
                                         label={__('Content Margin', 'smart-blocks')}
                                         dimensionTop={contentMarginTop}
-                                        setDimensionTop={value => setAttributes({contentMarginTop: value})}
+                                        setDimensionTop={value => setAttributes({ contentMarginTop: value })}
                                         dimensionMdTop={contentMarginMdTop}
-                                        setDimensionMdTop={value => setAttributes({contentMarginMdTop: value})}
+                                        setDimensionMdTop={value => setAttributes({ contentMarginMdTop: value })}
                                         dimensionSmTop={contentMarginSmTop}
-                                        setDimensionSmTop={value => setAttributes({contentMarginSmTop: value})}
+                                        setDimensionSmTop={value => setAttributes({ contentMarginSmTop: value })}
 
                                         dimensionLeft={contentMarginLeft}
-                                        setDimensionLeft={value => setAttributes({contentMarginLeft: value})}
+                                        setDimensionLeft={value => setAttributes({ contentMarginLeft: value })}
                                         dimensionMdLeft={contentMarginMdLeft}
-                                        setDimensionMdLeft={value => setAttributes({contentMarginMdLeft: value})}
+                                        setDimensionMdLeft={value => setAttributes({ contentMarginMdLeft: value })}
                                         dimensionSmLeft={contentMarginSmLeft}
-                                        setDimensionSmLeft={value => setAttributes({contentMarginSmLeft: value})}
+                                        setDimensionSmLeft={value => setAttributes({ contentMarginSmLeft: value })}
 
                                         dimensionRight={contentMarginRight}
-                                        setDimensionRight={value => setAttributes({contentMarginRight: value})}
+                                        setDimensionRight={value => setAttributes({ contentMarginRight: value })}
                                         dimensionMdRight={contentMarginMdRight}
-                                        setDimensionMdRight={value => setAttributes({contentMarginMdRight: value})}
+                                        setDimensionMdRight={value => setAttributes({ contentMarginMdRight: value })}
                                         dimensionSmRight={contentMarginSmRight}
-                                        setDimensionSmRight={value => setAttributes({contentMarginSmRight: value})}
+                                        setDimensionSmRight={value => setAttributes({ contentMarginSmRight: value })}
 
                                         dimensionBottom={contentMarginBottom}
-                                        setDimensionBottom={value => setAttributes({contentMarginBottom: value})}
+                                        setDimensionBottom={value => setAttributes({ contentMarginBottom: value })}
                                         dimensionMdBottom={contentMarginMdBottom}
-                                        setDimensionMdBottom={value => setAttributes({contentMarginMdBottom: value})}
+                                        setDimensionMdBottom={value => setAttributes({ contentMarginMdBottom: value })}
                                         dimensionSmBottom={contentMarginSmBottom}
-                                        setDimensionSmBottom={value => setAttributes({contentMarginSmBottom: value})}
+                                        setDimensionSmBottom={value => setAttributes({ contentMarginSmBottom: value })}
 
                                         unit={contentMarginUnit}
-                                        setUnit={value => setAttributes({contentMarginUnit: value})}
+                                        setUnit={value => setAttributes({ contentMarginUnit: value })}
                                         responsive={!0}
                                     />
                                 </PanelBody>
@@ -792,70 +792,70 @@ export default function Edit({ attributes, setAttributes }) {
                                     <TypographyControl
                                         label={__('Typography', 'smart-blocks')}
                                         valueFamily={postTypographyFamily}
-                                        setValueFamily={value => setAttributes({postTypographyFamily: value})}
+                                        setValueFamily={value => setAttributes({ postTypographyFamily: value })}
                                         valueWeight={postTypographyWeight}
-                                        setValueWeight={value => setAttributes({postTypographyWeight: value})}
+                                        setValueWeight={value => setAttributes({ postTypographyWeight: value })}
                                         valueTextTransform={postTypographyTextTransform}
-                                        setValueTextTransform={value => setAttributes({postTypographyTextTransform: value})}
+                                        setValueTextTransform={value => setAttributes({ postTypographyTextTransform: value })}
                                         valueTextDecoration={postTypographyTextDecoration}
-                                        setValueTextDecoration={value => setAttributes({postTypographyTextDecoration: value})}
+                                        setValueTextDecoration={value => setAttributes({ postTypographyTextDecoration: value })}
                                         valueFontSizeSm={postTypographyFontSizeSm}
-                                        setValueFontSizeSm={value => setAttributes({postTypographyFontSizeSm: value})}
+                                        setValueFontSizeSm={value => setAttributes({ postTypographyFontSizeSm: value })}
                                         valueFontSizeMd={postTypographyFontSizeMd}
-                                        setValueFontSizeMd={value => setAttributes({postTypographyFontSizeMd: value})}
+                                        setValueFontSizeMd={value => setAttributes({ postTypographyFontSizeMd: value })}
                                         valueFontSize={postTypographyFontSize}
-                                        setValueFontSize={value => setAttributes({postTypographyFontSize: value})}
+                                        setValueFontSize={value => setAttributes({ postTypographyFontSize: value })}
                                         valueFontSizeUnit={postTypographyFontSizeUnit}
-                                        setValueFontSizeUnit={value => setAttributes({postTypographyFontSizeUnit: value})}
+                                        setValueFontSizeUnit={value => setAttributes({ postTypographyFontSizeUnit: value })}
                                         valueLetterSpacingSm={postTypographyLetterSpacingSm}
-                                        setValueLetterSpacingSm={value => setAttributes({postTypographyLetterSpacingSm: value})}
+                                        setValueLetterSpacingSm={value => setAttributes({ postTypographyLetterSpacingSm: value })}
                                         valueLetterSpacingMd={postTypographyLetterSpacingMd}
-                                        setValueLetterSpacingMd={value => setAttributes({postTypographyLetterSpacingMd: value})}
+                                        setValueLetterSpacingMd={value => setAttributes({ postTypographyLetterSpacingMd: value })}
                                         valueLetterSpacing={postTypographyLetterSpacing}
-                                        setValueLetterSpacing={value => setAttributes({postTypographyLetterSpacing: value})}
+                                        setValueLetterSpacing={value => setAttributes({ postTypographyLetterSpacing: value })}
                                         valueLetterSpacingUnit={postTypographyLetterSpacingUnit}
-                                        setValueLetterSpacingUnit={value => setAttributes({postTypographyLetterSpacingUnit: value})}
+                                        setValueLetterSpacingUnit={value => setAttributes({ postTypographyLetterSpacingUnit: value })}
                                         valueLineHeightSm={postTypographyLineHeightSm}
-                                        setValueLineHeightSm={value => setAttributes({postTypographyLineHeightSm: value})}
+                                        setValueLineHeightSm={value => setAttributes({ postTypographyLineHeightSm: value })}
                                         valueLineHeightMd={postTypographyLineHeightMd}
-                                        setValueLineHeightMd={value => setAttributes({postTypographyLineHeightMd: value})}
+                                        setValueLineHeightMd={value => setAttributes({ postTypographyLineHeightMd: value })}
                                         valueLineHeight={postTypographyLineHeight}
-                                        setValueLineHeight={value => setAttributes({postTypographyLineHeight: value})}
+                                        setValueLineHeight={value => setAttributes({ postTypographyLineHeight: value })}
                                         valueLineHeightUnit={postTypographyLineHeightUnit}
-                                        setValueLineHeightUnit={value => setAttributes({postTypographyLineHeightUnit: value})}
+                                        setValueLineHeightUnit={value => setAttributes({ postTypographyLineHeightUnit: value })}
                                     />
                                     <DimensionControl
                                         label={__('Margin', 'smart-blocks')}
                                         dimensionTop={postTitleMarginTop}
-                                        setDimensionTop={value => setAttributes({postTitleMarginTop: value})}
+                                        setDimensionTop={value => setAttributes({ postTitleMarginTop: value })}
                                         dimensionMdTop={postTitleMarginMdTop}
-                                        setDimensionMdTop={value => setAttributes({postTitleMarginMdTop: value})}
+                                        setDimensionMdTop={value => setAttributes({ postTitleMarginMdTop: value })}
                                         dimensionSmTop={postTitleMarginSmTop}
-                                        setDimensionSmTop={value => setAttributes({postTitleMarginSmTop: value})}
+                                        setDimensionSmTop={value => setAttributes({ postTitleMarginSmTop: value })}
 
                                         dimensionLeft={postTitleMarginLeft}
-                                        setDimensionLeft={value => setAttributes({postTitleMarginLeft: value})}
+                                        setDimensionLeft={value => setAttributes({ postTitleMarginLeft: value })}
                                         dimensionMdLeft={postTitleMarginMdLeft}
-                                        setDimensionMdLeft={value => setAttributes({postTitleMarginMdLeft: value})}
+                                        setDimensionMdLeft={value => setAttributes({ postTitleMarginMdLeft: value })}
                                         dimensionSmLeft={postTitleMarginSmLeft}
-                                        setDimensionSmLeft={value => setAttributes({postTitleMarginSmLeft: value})}
+                                        setDimensionSmLeft={value => setAttributes({ postTitleMarginSmLeft: value })}
 
                                         dimensionRight={postTitleMarginRight}
-                                        setDimensionRight={value => setAttributes({postTitleMarginRight: value})}
+                                        setDimensionRight={value => setAttributes({ postTitleMarginRight: value })}
                                         dimensionMdRight={postTitleMarginMdRight}
-                                        setDimensionMdRight={value => setAttributes({postTitleMarginMdRight: value})}
+                                        setDimensionMdRight={value => setAttributes({ postTitleMarginMdRight: value })}
                                         dimensionSmRight={postTitleMarginSmRight}
-                                        setDimensionSmRight={value => setAttributes({postTitleMarginSmRight: value})}
+                                        setDimensionSmRight={value => setAttributes({ postTitleMarginSmRight: value })}
 
                                         dimensionBottom={postTitleMarginBottom}
-                                        setDimensionBottom={value => setAttributes({postTitleMarginBottom: value})}
+                                        setDimensionBottom={value => setAttributes({ postTitleMarginBottom: value })}
                                         dimensionMdBottom={postTitleMarginMdBottom}
-                                        setDimensionMdBottom={value => setAttributes({postTitleMarginMdBottom: value})}
+                                        setDimensionMdBottom={value => setAttributes({ postTitleMarginMdBottom: value })}
                                         dimensionSmBottom={postTitleMarginSmBottom}
-                                        setDimensionSmBottom={value => setAttributes({postTitleMarginSmBottom: value})}
+                                        setDimensionSmBottom={value => setAttributes({ postTitleMarginSmBottom: value })}
 
                                         unit={postTitleMarginUnit}
-                                        setUnit={value => setAttributes({postTitleMarginUnit: value})}
+                                        setUnit={value => setAttributes({ postTitleMarginUnit: value })}
                                         responsive={!0}
                                     />
                                 </PanelBody>
@@ -872,37 +872,37 @@ export default function Edit({ attributes, setAttributes }) {
                                     <TypographyControl
                                         label={__('Typography', 'smart-blocks')}
                                         valueFamily={metasTypographyFamily}
-                                        setValueFamily={value => setAttributes({metasTypographyFamily: value})}
+                                        setValueFamily={value => setAttributes({ metasTypographyFamily: value })}
                                         valueWeight={metasTypographyWeight}
-                                        setValueWeight={value => setAttributes({metasTypographyWeight: value})}
+                                        setValueWeight={value => setAttributes({ metasTypographyWeight: value })}
                                         valueTextTransform={metasTypographyTextTransform}
-                                        setValueTextTransform={value => setAttributes({metasTypographyTextTransform: value})}
+                                        setValueTextTransform={value => setAttributes({ metasTypographyTextTransform: value })}
                                         valueTextDecoration={metasTypographyTextDecoration}
-                                        setValueTextDecoration={value => setAttributes({metasTypographyTextDecoration: value})}
+                                        setValueTextDecoration={value => setAttributes({ metasTypographyTextDecoration: value })}
                                         valueFontSizeSm={metasTypographyFontSizeSm}
-                                        setValueFontSizeSm={value => setAttributes({metasTypographyFontSizeSm: value})}
+                                        setValueFontSizeSm={value => setAttributes({ metasTypographyFontSizeSm: value })}
                                         valueFontSizeMd={metasTypographyFontSizeMd}
-                                        setValueFontSizeMd={value => setAttributes({metasTypographyFontSizeMd: value})}
+                                        setValueFontSizeMd={value => setAttributes({ metasTypographyFontSizeMd: value })}
                                         valueFontSize={metasTypographyFontSize}
-                                        setValueFontSize={value => setAttributes({metasTypographyFontSize: value})}
+                                        setValueFontSize={value => setAttributes({ metasTypographyFontSize: value })}
                                         valueFontSizeUnit={metasTypographyFontSizeUnit}
-                                        setValueFontSizeUnit={value => setAttributes({metasTypographyFontSizeUnit: value})}
+                                        setValueFontSizeUnit={value => setAttributes({ metasTypographyFontSizeUnit: value })}
                                         valueLetterSpacingSm={metasTypographyLetterSpacingSm}
-                                        setValueLetterSpacingSm={value => setAttributes({metasTypographyLetterSpacingSm: value})}
+                                        setValueLetterSpacingSm={value => setAttributes({ metasTypographyLetterSpacingSm: value })}
                                         valueLetterSpacingMd={metasTypographyLetterSpacingMd}
-                                        setValueLetterSpacingMd={value => setAttributes({metasTypographyLetterSpacingMd: value})}
+                                        setValueLetterSpacingMd={value => setAttributes({ metasTypographyLetterSpacingMd: value })}
                                         valueLetterSpacing={metasTypographyLetterSpacing}
-                                        setValueLetterSpacing={value => setAttributes({metasTypographyLetterSpacing: value})}
+                                        setValueLetterSpacing={value => setAttributes({ metasTypographyLetterSpacing: value })}
                                         valueLetterSpacingUnit={metasTypographyLetterSpacingUnit}
-                                        setValueLetterSpacingUnit={value => setAttributes({metasTypographyLetterSpacingUnit: value})}
+                                        setValueLetterSpacingUnit={value => setAttributes({ metasTypographyLetterSpacingUnit: value })}
                                         valueLineHeightSm={metasTypographyLineHeightSm}
-                                        setValueLineHeightSm={value => setAttributes({metasTypographyLineHeightSm: value})}
+                                        setValueLineHeightSm={value => setAttributes({ metasTypographyLineHeightSm: value })}
                                         valueLineHeightMd={metasTypographyLineHeightMd}
-                                        setValueLineHeightMd={value => setAttributes({metasTypographyLineHeightMd: value})}
+                                        setValueLineHeightMd={value => setAttributes({ metasTypographyLineHeightMd: value })}
                                         valueLineHeight={metasTypographyLineHeight}
-                                        setValueLineHeight={value => setAttributes({metasTypographyLineHeight: value})}
+                                        setValueLineHeight={value => setAttributes({ metasTypographyLineHeight: value })}
                                         valueLineHeightUnit={metasTypographyLineHeightUnit}
-                                        setValueLineHeightUnit={value => setAttributes({metasTypographyLineHeightUnit: value})}
+                                        setValueLineHeightUnit={value => setAttributes({ metasTypographyLineHeightUnit: value })}
                                     />
                                 </PanelBody>
                                 <PanelBody
@@ -918,37 +918,37 @@ export default function Edit({ attributes, setAttributes }) {
                                     <TypographyControl
                                         label={__('Typography', 'smart-blocks')}
                                         valueFamily={excerptTypographyFamily}
-                                        setValueFamily={value => setAttributes({excerptTypographyFamily: value})}
+                                        setValueFamily={value => setAttributes({ excerptTypographyFamily: value })}
                                         valueWeight={excerptTypographyWeight}
-                                        setValueWeight={value => setAttributes({excerptTypographyWeight: value})}
+                                        setValueWeight={value => setAttributes({ excerptTypographyWeight: value })}
                                         valueTextTransform={excerptTypographyTextTransform}
-                                        setValueTextTransform={value => setAttributes({excerptTypographyTextTransform: value})}
+                                        setValueTextTransform={value => setAttributes({ excerptTypographyTextTransform: value })}
                                         valueTextDecoration={excerptTypographyTextDecoration}
-                                        setValueTextDecoration={value => setAttributes({excerptTypographyTextDecoration: value})}
+                                        setValueTextDecoration={value => setAttributes({ excerptTypographyTextDecoration: value })}
                                         valueFontSizeSm={excerptTypographyFontSizeSm}
-                                        setValueFontSizeSm={value => setAttributes({excerptTypographyFontSizeSm: value})}
+                                        setValueFontSizeSm={value => setAttributes({ excerptTypographyFontSizeSm: value })}
                                         valueFontSizeMd={excerptTypographyFontSizeMd}
-                                        setValueFontSizeMd={value => setAttributes({excerptTypographyFontSizeMd: value})}
+                                        setValueFontSizeMd={value => setAttributes({ excerptTypographyFontSizeMd: value })}
                                         valueFontSize={excerptTypographyFontSize}
-                                        setValueFontSize={value => setAttributes({excerptTypographyFontSize: value})}
+                                        setValueFontSize={value => setAttributes({ excerptTypographyFontSize: value })}
                                         valueFontSizeUnit={excerptTypographyFontSizeUnit}
-                                        setValueFontSizeUnit={value => setAttributes({excerptTypographyFontSizeUnit: value})}
+                                        setValueFontSizeUnit={value => setAttributes({ excerptTypographyFontSizeUnit: value })}
                                         valueLetterSpacingSm={excerptTypographyLetterSpacingSm}
-                                        setValueLetterSpacingSm={value => setAttributes({excerptTypographyLetterSpacingSm: value})}
+                                        setValueLetterSpacingSm={value => setAttributes({ excerptTypographyLetterSpacingSm: value })}
                                         valueLetterSpacingMd={excerptTypographyLetterSpacingMd}
-                                        setValueLetterSpacingMd={value => setAttributes({excerptTypographyLetterSpacingMd: value})}
+                                        setValueLetterSpacingMd={value => setAttributes({ excerptTypographyLetterSpacingMd: value })}
                                         valueLetterSpacing={excerptTypographyLetterSpacing}
-                                        setValueLetterSpacing={value => setAttributes({excerptTypographyLetterSpacing: value})}
+                                        setValueLetterSpacing={value => setAttributes({ excerptTypographyLetterSpacing: value })}
                                         valueLetterSpacingUnit={excerptTypographyLetterSpacingUnit}
-                                        setValueLetterSpacingUnit={value => setAttributes({excerptTypographyLetterSpacingUnit: value})}
+                                        setValueLetterSpacingUnit={value => setAttributes({ excerptTypographyLetterSpacingUnit: value })}
                                         valueLineHeightSm={excerptTypographyLineHeightSm}
-                                        setValueLineHeightSm={value => setAttributes({excerptTypographyLineHeightSm: value})}
+                                        setValueLineHeightSm={value => setAttributes({ excerptTypographyLineHeightSm: value })}
                                         valueLineHeightMd={excerptTypographyLineHeightMd}
-                                        setValueLineHeightMd={value => setAttributes({excerptTypographyLineHeightMd: value})}
+                                        setValueLineHeightMd={value => setAttributes({ excerptTypographyLineHeightMd: value })}
                                         valueLineHeight={excerptTypographyLineHeight}
-                                        setValueLineHeight={value => setAttributes({excerptTypographyLineHeight: value})}
+                                        setValueLineHeight={value => setAttributes({ excerptTypographyLineHeight: value })}
                                         valueLineHeightUnit={excerptTypographyLineHeightUnit}
-                                        setValueLineHeightUnit={value => setAttributes({excerptTypographyLineHeightUnit: value})}
+                                        setValueLineHeightUnit={value => setAttributes({ excerptTypographyLineHeightUnit: value })}
                                     />
                                 </PanelBody>
                             </>
@@ -963,35 +963,35 @@ export default function Edit({ attributes, setAttributes }) {
                                         min="0"
                                         max="100"
                                         dimensionTop={blockMarginTop}
-                                        setDimensionTop={value => setAttributes({blockMarginTop: value})}
+                                        setDimensionTop={value => setAttributes({ blockMarginTop: value })}
                                         dimensionMdTop={blockMarginMdTop}
-                                        setDimensionMdTop={value => setAttributes({blockMarginMdTop: value})}
+                                        setDimensionMdTop={value => setAttributes({ blockMarginMdTop: value })}
                                         dimensionSmTop={blockMarginSmTop}
-                                        setDimensionSmTop={value => setAttributes({blockMarginSmTop: value})}
+                                        setDimensionSmTop={value => setAttributes({ blockMarginSmTop: value })}
 
                                         dimensionLeft={blockMarginLeft}
-                                        setDimensionLeft={value => setAttributes({blockMarginLeft: value})}
+                                        setDimensionLeft={value => setAttributes({ blockMarginLeft: value })}
                                         dimensionMdLeft={blockMarginMdLeft}
-                                        setDimensionMdLeft={value => setAttributes({blockMarginMdLeft: value})}
+                                        setDimensionMdLeft={value => setAttributes({ blockMarginMdLeft: value })}
                                         dimensionSmLeft={blockMarginSmLeft}
-                                        setDimensionSmLeft={value => setAttributes({blockMarginSmLeft: value})}
+                                        setDimensionSmLeft={value => setAttributes({ blockMarginSmLeft: value })}
 
                                         dimensionRight={blockMarginRight}
-                                        setDimensionRight={value => setAttributes({blockMarginRight: value})}
+                                        setDimensionRight={value => setAttributes({ blockMarginRight: value })}
                                         dimensionMdRight={blockMarginMdRight}
-                                        setDimensionMdRight={value => setAttributes({blockMarginMdRight: value})}
+                                        setDimensionMdRight={value => setAttributes({ blockMarginMdRight: value })}
                                         dimensionSmRight={blockMarginSmRight}
-                                        setDimensionSmRight={value => setAttributes({blockMarginSmRight: value})}
+                                        setDimensionSmRight={value => setAttributes({ blockMarginSmRight: value })}
 
                                         dimensionBottom={blockMarginBottom}
-                                        setDimensionBottom={value => setAttributes({blockMarginBottom: value})}
+                                        setDimensionBottom={value => setAttributes({ blockMarginBottom: value })}
                                         dimensionMdBottom={blockMarginMdBottom}
-                                        setDimensionMdBottom={value => setAttributes({blockMarginMdBottom: value})}
+                                        setDimensionMdBottom={value => setAttributes({ blockMarginMdBottom: value })}
                                         dimensionSmBottom={blockMarginSmBottom}
-                                        setDimensionSmBottom={value => setAttributes({blockMarginSmBottom: value})}
+                                        setDimensionSmBottom={value => setAttributes({ blockMarginSmBottom: value })}
 
                                         unit={blockMarginUnit}
-                                        setUnit={value => setAttributes({blockMarginUnit: value})}
+                                        setUnit={value => setAttributes({ blockMarginUnit: value })}
                                         responsive={!0}
                                     />
                                     <DimensionControl
@@ -999,35 +999,35 @@ export default function Edit({ attributes, setAttributes }) {
                                         min="0"
                                         max="100"
                                         dimensionTop={blockPaddingTop}
-                                        setDimensionTop={value => setAttributes({blockPaddingTop: value})}
+                                        setDimensionTop={value => setAttributes({ blockPaddingTop: value })}
                                         dimensionMdTop={blockPaddingMdTop}
-                                        setDimensionMdTop={value => setAttributes({blockPaddingMdTop: value})}
+                                        setDimensionMdTop={value => setAttributes({ blockPaddingMdTop: value })}
                                         dimensionSmTop={blockPaddingSmTop}
-                                        setDimensionSmTop={value => setAttributes({blockPaddingSmTop: value})}
+                                        setDimensionSmTop={value => setAttributes({ blockPaddingSmTop: value })}
 
                                         dimensionLeft={blockPaddingLeft}
-                                        setDimensionLeft={value => setAttributes({blockPaddingLeft: value})}
+                                        setDimensionLeft={value => setAttributes({ blockPaddingLeft: value })}
                                         dimensionMdLeft={blockPaddingMdLeft}
-                                        setDimensionMdLeft={value => setAttributes({blockPaddingMdLeft: value})}
+                                        setDimensionMdLeft={value => setAttributes({ blockPaddingMdLeft: value })}
                                         dimensionSmLeft={blockPaddingSmLeft}
-                                        setDimensionSmLeft={value => setAttributes({blockPaddingSmLeft: value})}
+                                        setDimensionSmLeft={value => setAttributes({ blockPaddingSmLeft: value })}
 
                                         dimensionRight={blockPaddingRight}
-                                        setDimensionRight={value => setAttributes({blockPaddingRight: value})}
+                                        setDimensionRight={value => setAttributes({ blockPaddingRight: value })}
                                         dimensionMdRight={blockPaddingMdRight}
-                                        setDimensionMdRight={value => setAttributes({blockPaddingMdRight: value})}
+                                        setDimensionMdRight={value => setAttributes({ blockPaddingMdRight: value })}
                                         dimensionSmRight={blockPaddingSmRight}
-                                        setDimensionSmRight={value => setAttributes({blockPaddingSmRight: value})}
+                                        setDimensionSmRight={value => setAttributes({ blockPaddingSmRight: value })}
 
                                         dimensionBottom={blockPaddingBottom}
-                                        setDimensionBottom={value => setAttributes({blockPaddingBottom: value})}
+                                        setDimensionBottom={value => setAttributes({ blockPaddingBottom: value })}
                                         dimensionMdBottom={blockPaddingMdBottom}
-                                        setDimensionMdBottom={value => setAttributes({blockPaddingMdBottom: value})}
+                                        setDimensionMdBottom={value => setAttributes({ blockPaddingMdBottom: value })}
                                         dimensionSmBottom={blockPaddingSmBottom}
-                                        setDimensionSmBottom={value => setAttributes({blockPaddingSmBottom: value})}
+                                        setDimensionSmBottom={value => setAttributes({ blockPaddingSmBottom: value })}
 
                                         unit={blockPaddingUnit}
-                                        setUnit={value => setAttributes({blockPaddingUnit: value})}
+                                        setUnit={value => setAttributes({ blockPaddingUnit: value })}
                                         responsive={!0}
                                     />
                                 </PanelBody>
@@ -1053,39 +1053,39 @@ export default function Edit({ attributes, setAttributes }) {
                                             <DimensionControl
                                                 label={__('Border Width', 'smart-blocks')}
                                                 dimensionTop={borderNormalWidthTop}
-                                                setDimensionTop={value => setAttributes({borderNormalWidthTop: value})}
+                                                setDimensionTop={value => setAttributes({ borderNormalWidthTop: value })}
 
                                                 dimensionLeft={borderNormalWidthLeft}
-                                                setDimensionLeft={value => setAttributes({borderNormalWidthLeft: value})}
+                                                setDimensionLeft={value => setAttributes({ borderNormalWidthLeft: value })}
 
                                                 dimensionRight={borderNormalWidthRight}
-                                                setDimensionRight={value => setAttributes({borderNormalWidthRight: value})}
+                                                setDimensionRight={value => setAttributes({ borderNormalWidthRight: value })}
 
                                                 dimensionBottom={borderNormalWidthBottom}
-                                                setDimensionBottom={value => setAttributes({borderNormalWidthBottom: value})}
+                                                setDimensionBottom={value => setAttributes({ borderNormalWidthBottom: value })}
 
                                                 unit={borderNormalWidthUnit}
-                                                setUnit={value => setAttributes({borderNormalWidthUnit: value})}
+                                                setUnit={value => setAttributes({ borderNormalWidthUnit: value })}
                                                 units={['px', 'em']}
                                             />
                                             <DimensionControl
                                                 label={__('Border Radius', 'smart-blocks')}
                                                 dimensionTop={borderNormalRadiusTop}
-                                                setDimensionTop={value => setAttributes({borderNormalRadiusTop: value})}
+                                                setDimensionTop={value => setAttributes({ borderNormalRadiusTop: value })}
 
                                                 dimensionLeft={borderNormalRadiusLeft}
-                                                setDimensionLeft={value => setAttributes({borderNormalRadiusLeft: value})}
+                                                setDimensionLeft={value => setAttributes({ borderNormalRadiusLeft: value })}
 
                                                 dimensionRight={borderNormalRadiusRight}
-                                                setDimensionRight={value => setAttributes({borderNormalRadiusRight: value})}
+                                                setDimensionRight={value => setAttributes({ borderNormalRadiusRight: value })}
 
                                                 dimensionBottom={borderNormalRadiusBottom}
-                                                setDimensionBottom={value => setAttributes({borderNormalRadiusBottom: value})}
+                                                setDimensionBottom={value => setAttributes({ borderNormalRadiusBottom: value })}
 
                                                 unit={borderNormalRadiusUnit}
-                                                setUnit={value => setAttributes({borderNormalRadiusUnit: value})}
+                                                setUnit={value => setAttributes({ borderNormalRadiusUnit: value })}
                                             />
-                                             <BoxShadowControl
+                                            <BoxShadowControl
                                                 valueHorizontal={borderNormalBoxShadowHorizontal}
                                                 setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({ borderNormalBoxShadowHorizontal })}
                                                 valueVertical={borderNormalBoxShadowVertical}
@@ -1116,37 +1116,37 @@ export default function Edit({ attributes, setAttributes }) {
                                             <DimensionControl
                                                 label={__('Border Width', 'smart-blocks')}
                                                 dimensionTop={borderHoverWidthTop}
-                                                setDimensionTop={value => setAttributes({borderHoverWidthTop: value})}
+                                                setDimensionTop={value => setAttributes({ borderHoverWidthTop: value })}
 
                                                 dimensionLeft={borderHoverWidthLeft}
-                                                setDimensionLeft={value => setAttributes({borderHoverWidthLeft: value})}
+                                                setDimensionLeft={value => setAttributes({ borderHoverWidthLeft: value })}
 
                                                 dimensionRight={borderHoverWidthRight}
-                                                setDimensionRight={value => setAttributes({borderHoverWidthRight: value})}
+                                                setDimensionRight={value => setAttributes({ borderHoverWidthRight: value })}
 
                                                 dimensionBottom={borderHoverWidthBottom}
-                                                setDimensionBottom={value => setAttributes({borderHoverWidthBottom: value})}
+                                                setDimensionBottom={value => setAttributes({ borderHoverWidthBottom: value })}
 
                                                 unit={borderHoverWidthUnit}
-                                                setUnit={value => setAttributes({borderHoverWidthUnit: value})}
+                                                setUnit={value => setAttributes({ borderHoverWidthUnit: value })}
                                                 units={['px', 'em']}
                                             />
                                             <DimensionControl
                                                 label={__('Border Radius', 'smart-blocks')}
                                                 dimensionTop={borderHoverRadiusTop}
-                                                setDimensionTop={value => setAttributes({borderHoverRadiusTop: value})}
+                                                setDimensionTop={value => setAttributes({ borderHoverRadiusTop: value })}
 
                                                 dimensionLeft={borderHoverRadiusLeft}
-                                                setDimensionLeft={value => setAttributes({borderHoverRadiusLeft: value})}
+                                                setDimensionLeft={value => setAttributes({ borderHoverRadiusLeft: value })}
 
                                                 dimensionRight={borderHoverRadiusRight}
-                                                setDimensionRight={value => setAttributes({borderHoverRadiusRight: value})}
+                                                setDimensionRight={value => setAttributes({ borderHoverRadiusRight: value })}
 
                                                 dimensionBottom={borderHoverRadiusBottom}
-                                                setDimensionBottom={value => setAttributes({borderHoverRadiusBottom: value})}
+                                                setDimensionBottom={value => setAttributes({ borderHoverRadiusBottom: value })}
 
                                                 unit={borderHoverRadiusUnit}
-                                                setUnit={value => setAttributes({borderHoverRadiusUnit: value})}
+                                                setUnit={value => setAttributes({ borderHoverRadiusUnit: value })}
                                             />
                                             <BoxShadowControl
                                                 valueHorizontal={borderHoverBoxShadowHorizontal}

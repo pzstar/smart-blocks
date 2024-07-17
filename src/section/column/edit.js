@@ -14,8 +14,8 @@ import Inspector from './inspector.js';
 import { blockInit } from '../../helpers/block-utility.js';
 import { responsiveDimensionVars } from '../../utils/helper';
 
-export default function Edit({attributes, setAttributes, className, isSelected, clientId, toggleSelection}) {
-	const {updateBlockAttributes} = useDispatch('core/block-editor');
+export default function Edit({ attributes, setAttributes, className, isSelected, clientId, toggleSelection }) {
+	const { updateBlockAttributes } = useDispatch('core/block-editor');
 
 	const {
 		id,
@@ -50,20 +50,20 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 		columnPaddingUnit,
 
 		style,
-        columnBgColor
-    } = attributes;
+		columnBgColor
+	} = attributes;
 
-    const stylesCSS = `#${id} {
+	const stylesCSS = `#${id} {
         ${'--sb-column-width: ' + columnWidth + '%;'}
     	${responsiveDimensionVars('column-margin', columnMarginTop, columnMarginRight, columnMarginBottom, columnMarginLeft,
-    		columnMarginSmTop, columnMarginSmRight, columnMarginSmBottom, columnMarginSmLeft,
-    		columnMarginMdTop, columnMarginMdRight, columnMarginMdBottom, columnMarginMdLeft, columnMarginUnit)}
+		columnMarginSmTop, columnMarginSmRight, columnMarginSmBottom, columnMarginSmLeft,
+		columnMarginMdTop, columnMarginMdRight, columnMarginMdBottom, columnMarginMdLeft, columnMarginUnit)}
     	${responsiveDimensionVars('column-padding', columnPaddingTop, columnPaddingRight, columnPaddingBottom, columnPaddingLeft,
-    		columnPaddingSmTop, columnPaddingSmRight, columnPaddingSmBottom, columnPaddingSmLeft,
-    		columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
+			columnPaddingSmTop, columnPaddingSmRight, columnPaddingSmBottom, columnPaddingSmLeft,
+			columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
         ${columnBgColor ? '--sb-column-bg-color: ' + columnBgColor + ';' : ''}
     }`
-    setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
+	setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
 	const {
 		adjacentBlockClientId,
@@ -81,8 +81,8 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 			getBlock,
 			getBlockRootClientId
 		} = select('core/block-editor');
-		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
-		const block = getBlock( clientId );
+		const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+		const block = getBlock(clientId);
 		const adjacentBlockClientId = getAdjacentBlockClientId(clientId);
 		const adjacentBlock = getBlock(adjacentBlockClientId);
 		const parentClientId = getBlockRootClientId(clientId);
@@ -142,7 +142,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 	}
 
 	const updateWidth = () => {
-		const columnContainer = document.getElementById(`block-${ clientId }`);
+		const columnContainer = document.getElementById(`block-${clientId}`);
 		if (null !== columnContainer) {
 			if (isDesktop) {
 				columnContainer.style.flexBasis = `${columnWidth}%`;
@@ -153,7 +153,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 	};
 
 	const onResizeStart = () => {
-		const handle = document.querySelector(`#block-${ clientId } .sb-column-resize-container-handle .components-resizable-box__handle`);
+		const handle = document.querySelector(`#block-${clientId} .sb-column-resize-container-handle .components-resizable-box__handle`);
 		const handleTooltipLeft = document.createElement('div');
 		const handleTooltipRight = document.createElement('div');
 
@@ -161,7 +161,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 		handleTooltipLeft.innerHTML = `${parseFloat(columnWidth).toFixed(0)}%`;
 		handle.appendChild(handleTooltipLeft);
 		handleTooltipRight.setAttribute('class', 'resizable-tooltip resizable-tooltip-right');
-		handleTooltipRight.innerHTML = `${ parseFloat(adjacentBlock.attributes.columnWidth).toFixed(0)}%`;
+		handleTooltipRight.innerHTML = `${parseFloat(adjacentBlock.attributes.columnWidth).toFixed(0)}%`;
 		handle.appendChild(handleTooltipRight);
 
 		setCurrentWidth(columnWidth);
@@ -173,7 +173,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 		const parent = document.getElementById(`block-${parentClientId}`);
 		const parentWidth = parent.getBoundingClientRect().width;
 		const changedWidth = (delta.width / parentWidth) * 100;
-		const width = parseFloat( currentWidth ) + changedWidth;
+		const width = parseFloat(currentWidth) + changedWidth;
 		const nextColumnWidth = nextWidth - changedWidth;
 		const handleTooltipLeft = document.querySelector('.resizable-tooltip-left');
 		const handleTooltipRight = document.querySelector('.resizable-tooltip-right');
@@ -181,7 +181,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 		if (10 <= width && 10 <= nextColumnWidth) {
 			handleTooltipLeft.innerHTML = `${width.toFixed(0)}%`;
 			handleTooltipRight.innerHTML = `${nextColumnWidth.toFixed(0)}%`;
-			setAttributes({columnWidth: width.toFixed(2)});
+			setAttributes({ columnWidth: width.toFixed(2) });
 			updateBlockAttributes(adjacentBlockClientId, {
 				columnWidth: nextColumnWidth.toFixed(2)
 			});
@@ -200,9 +200,9 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 
 	return (
 		<div {...useBlockProps()}>
-            <style jsx>
-                {style}
-            </style>
+			<style jsx>
+				{style}
+			</style>
 			<Inspector
 				attributes={attributes}
 				setAttributes={setAttributes}
@@ -223,7 +223,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 				onResizeStart={onResizeStart}
 				onResize={onResize}
 				onResizeStop={onResizeStop}
-				
+
 			>
 				<Tag className={className} id={id}>
 					<InnerBlocks

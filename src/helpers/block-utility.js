@@ -21,12 +21,12 @@ const localIDs = {};
  * @param {Set.<string>} idsList The ids list for the current type of block
  * @returns An uniq id instance
  */
-const generateUniqIdInstance = ( idPrefix, clientId, idsList ) => {
-	const instanceId = `${ idPrefix }${ clientId.substr( 0, 8 ) }`;
-	if ( idsList.has( instanceId ) ) {
-		let newInstanceId = `${ idPrefix }${ uuidv4().substr( 0, 8 ) }`;
-		while ( idsList.has( newInstanceId ) ) {
-			newInstanceId = `${ idPrefix }${ uuidv4().substr( 0, 8 ) }`;
+const generateUniqIdInstance = (idPrefix, clientId, idsList) => {
+	const instanceId = `${idPrefix}${clientId.substr(0, 8)}`;
+	if (idsList.has(instanceId)) {
+		let newInstanceId = `${idPrefix}${uuidv4().substr(0, 8)}`;
+		while (idsList.has(newInstanceId)) {
+			newInstanceId = `${idPrefix}${uuidv4().substr(0, 8)}`;
 		}
 		return newInstanceId;
 	}
@@ -38,8 +38,8 @@ const generateUniqIdInstance = ( idPrefix, clientId, idsList ) => {
  * @param {string} name Name of the block
  * @returns {string}
  */
-const generatePrefix = ( name ) => {
-	return `wp-block-${ name.replace( '/', '-' ) }-`;
+const generatePrefix = (name) => {
+	return `wp-block-${name.replace('/', '-')}-`;
 };
 
 /**
@@ -61,13 +61,13 @@ const generatePrefix = ( name ) => {
  * @return {Function} A function that clean up the id from the internal list tracking
  * @external addBlockId
  */
-export const addBlockId = ( args ) => {
+export const addBlockId = (args) => {
 
 	const { attributes, setAttributes, clientId, idPrefix, name, defaultAttributes } = args;
 
-	if ( attributes === undefined || setAttributes === undefined ) {
-		return ( savedId ) => {
-			localIDs[name]?.delete( savedId );
+	if (attributes === undefined || setAttributes === undefined) {
+		return (savedId) => {
+			localIDs[name]?.delete(savedId);
 		};
 	}
 
@@ -75,33 +75,33 @@ export const addBlockId = ( args ) => {
 	localIDs[name] ??= new Set();
 
 	// Auto-generate idPrefix if not provided
-	const prefix = idPrefix || generatePrefix( name );
+	const prefix = idPrefix || generatePrefix(name);
 
-	const instanceId = generateUniqIdInstance( prefix, clientId, localIDs[name]);
-	const idIsAlreadyUsed = attributes.id && localIDs[name].has( attributes.id );
+	const instanceId = generateUniqIdInstance(prefix, clientId, localIDs[name]);
+	const idIsAlreadyUsed = attributes.id && localIDs[name].has(attributes.id);
 
-	if ( attributes.id === undefined ) {
+	if (attributes.id === undefined) {
 
 		// Save the id in all methods
 		setAttributes({ id: instanceId });
-		localIDs[name].add( instanceId );
-	} else if ( idIsAlreadyUsed ) {
+		localIDs[name].add(instanceId);
+	} else if (idIsAlreadyUsed) {
 
 		// The block must be a copy and its is already used
 		// Generate a new one and save it to `localIDs` to keep track of it in local mode.
 		setAttributes({ id: instanceId });
-		localIDs[name].add( instanceId );
+		localIDs[name].add(instanceId);
 	} else {
 
 		// No conflicts, save the current id only to keep track of it both in local and global mode.
-		localIDs[name].add( attributes.id );
+		localIDs[name].add(attributes.id);
 	}
 
-	const deleteBlockIdFromRegister = ( savedId ) => {
-		if ( attributes.id !== undefined && ! idIsAlreadyUsed ) {
-			localIDs[name].delete( attributes?.id || savedId );
+	const deleteBlockIdFromRegister = (savedId) => {
+		if (attributes.id !== undefined && !idIsAlreadyUsed) {
+			localIDs[name].delete(attributes?.id || savedId);
 		} else {
-			localIDs[name].delete( instanceId || savedId );
+			localIDs[name].delete(instanceId || savedId);
 		}
 	};
 
@@ -109,16 +109,16 @@ export const addBlockId = ( args ) => {
 };
 
 
-const getBlock = select( 'core/block-editor' ).getBlock;
-const updateBlockAttributes = dispatch( 'core/block-editor' ).updateBlockAttributes;
+const getBlock = select('core/block-editor').getBlock;
+const updateBlockAttributes = dispatch('core/block-editor').updateBlockAttributes;
 
 /**
  * Create the function that behaves like `setAttributes` using the client id
  * @param {*} clientId The block's client id provided by WordPress
  * @returns {Function} Function that mimics `setAttributes`
  */
-const updateAttrs = ( clientId ) => ( attr ) => {
-	updateBlockAttributes( clientId, attr );
+const updateAttrs = (clientId) => (attr) => {
+	updateBlockAttributes(clientId, attr);
 };
 
 /**
@@ -135,8 +135,8 @@ const updateAttrs = ( clientId ) => ( attr ) => {
  * @param {string} clientId The block's client id provided by WordPress
  * @returns {BlockData}
  */
-const extractBlockData = ( clientId ) => {
-	const block = getBlock( clientId );
+const extractBlockData = (clientId) => {
+	const block = getBlock(clientId);
 	return { attributes: block?.attributes, name: block?.name };
 };
 
@@ -155,11 +155,11 @@ const extractBlockData = ( clientId ) => {
  * 		}, [ attributes.id ])
  * }
  */
-export const blockInit = ( clientId, defaultAttributes ) => {
+export const blockInit = (clientId, defaultAttributes) => {
 	return addBlockId({
 		clientId,
 		defaultAttributes,
-		setAttributes: updateAttrs( clientId ),
-		...extractBlockData( clientId )
+		setAttributes: updateAttrs(clientId),
+		...extractBlockData(clientId)
 	});
 };

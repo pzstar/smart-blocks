@@ -12,13 +12,13 @@ import Header from './components/header.js';
 import Notices from './components/notices.js';
 import TemplatesList from './components/templates-list.js';
 
-const Library = ({clientId, close}) => {
-	const block = useSelect( select => select('core/block-editor').getBlock(clientId));
-	const {replaceBlocks} = useDispatch('core/block-editor');
-	const {createNotice} = useDispatch('core/notices');
+const Library = ({ clientId, close }) => {
+	const block = useSelect(select => select('core/block-editor').getBlock(clientId));
+	const { replaceBlocks } = useDispatch('core/block-editor');
+	const { createNotice } = useDispatch('core/notices');
 
 	useEffect(() => {
-		const fetchData = async() => {
+		const fetchData = async () => {
 			try {
 				let data = await apiFetch({ path: 'smart-blocks/v1/fetch_templates' });
 				let blocksCategories = [];
@@ -54,22 +54,22 @@ const Library = ({clientId, close}) => {
 				);
 			}
 
-			setLoading( false );
+			setLoading(false);
 		};
 
 		fetchData();
 	}, []);
 
-	const [ tab, setTab ] = useState( 'block' );
-	const [ isLoading, setLoading ] = useState( true );
-	const [ selectedCategory, setSelectedCategory ] = useState( 'all' );
-	const [ search, setSearch ] = useState( '' );
-	const [ blocksCategories, setBlocksCategories ] = useState([]);
-	const [ templateCategories, setTemplateCategories ] = useState([]);
-	const [ data, setData ] = useState([]);
-	const [ preview, setPreview ] = useState( false );
-	const [ selectedTemplate, setSelectedTemplate ] = useState( null );
-	const [ selectedTemplateContent, setSelectedTemplateContent ] = useState( null );
+	const [tab, setTab] = useState('block');
+	const [isLoading, setLoading] = useState(true);
+	const [selectedCategory, setSelectedCategory] = useState('all');
+	const [search, setSearch] = useState('');
+	const [blocksCategories, setBlocksCategories] = useState([]);
+	const [templateCategories, setTemplateCategories] = useState([]);
+	const [data, setData] = useState([]);
+	const [preview, setPreview] = useState(false);
+	const [selectedTemplate, setSelectedTemplate] = useState(null);
+	const [selectedTemplateContent, setSelectedTemplateContent] = useState(null);
 
 	const importBlocks = content => replaceBlocks(
 		block.clientId,
@@ -77,25 +77,25 @@ const Library = ({clientId, close}) => {
 	);
 
 	const changeTab = value => {
-		setTab( value );
-		setSelectedCategory( 'all' );
-		setSearch( '' );
+		setTab(value);
+		setSelectedCategory('all');
+		setSearch('');
 	};
 
-	const importPreview = async( template = null ) => {
-		setLoading( true );
+	const importPreview = async (template = null) => {
+		setLoading(true);
 
 		try {
-			let data = await apiFetch({ path: `smart-blocks/v1/import_template?url=${ template.template_url }&preview=true` });
-			if ( data.__file && data.content && 'wp_export' === data.__file ) {
-				data = parse( data.content );
+			let data = await apiFetch({ path: `smart-blocks/v1/import_template?url=${template.template_url}&preview=true` });
+			if (data.__file && data.content && 'wp_export' === data.__file) {
+				data = parse(data.content);
 			}
 
-			setSelectedTemplate( template );
-			setSelectedTemplateContent( data );
-			setPreview( true );
-		} catch ( error ) {
-			if ( error.message ) {
+			setSelectedTemplate(template);
+			setSelectedTemplateContent(data);
+			setPreview(true);
+		} catch (error) {
+			if (error.message) {
 				createNotice(
 					'error',
 					error.message,
@@ -107,23 +107,23 @@ const Library = ({clientId, close}) => {
 			}
 		}
 
-		setLoading( false );
+		setLoading(false);
 	};
 
 	const importTemplate = async url => {
-		setPreview( false );
-		setLoading( true );
+		setPreview(false);
+		setLoading(true);
 
 		try {
-			let data = await apiFetch({ path: `smart-blocks/v1/import_template?url=${ url }` });
+			let data = await apiFetch({ path: `smart-blocks/v1/import_template?url=${url}` });
 
-			if ( data.__file && data.content && 'wp_export' === data.__file ) {
-				data = parse( data.content );
+			if (data.__file && data.content && 'wp_export' === data.__file) {
+				data = parse(data.content);
 			}
 
-			importBlocks( data );
-		} catch ( error ) {
-			if ( error.message ) {
+			importBlocks(data);
+		} catch (error) {
+			if (error.message) {
 				createNotice(
 					'error',
 					error.message,
@@ -133,43 +133,43 @@ const Library = ({clientId, close}) => {
 					}
 				);
 			}
-			setLoading( false );
+			setLoading(false);
 		}
 	};
 
 	return (
 		<Modal
-			className={classnames('sb-library-modal', {'is-preview': preview})}
-			onRequestClose={ close }
-			isDismissable={ false }
-			shouldCloseOnClickOutside={ false }
+			className={classnames('sb-library-modal', { 'is-preview': preview })}
+			onRequestClose={close}
+			isDismissable={false}
+			shouldCloseOnClickOutside={false}
 		>
 			<Header
-				preview={ preview }
-				tab={ tab }
-				changeTab={ changeTab }
-				blocksCategories={ blocksCategories }
-				templateCategories={ templateCategories }
-				selectedTemplate={ selectedTemplate }
-				selectedCategory={ selectedCategory }
-				search={ search }
-				setPreview={ setPreview }
-				close={ close }
-				importTemplate={ importTemplate }
-				selectCategory={ e => setSelectedCategory( e ) }
-				changeSearch={ e => setSearch( e ) }
+				preview={preview}
+				tab={tab}
+				changeTab={changeTab}
+				blocksCategories={blocksCategories}
+				templateCategories={templateCategories}
+				selectedTemplate={selectedTemplate}
+				selectedCategory={selectedCategory}
+				search={search}
+				setPreview={setPreview}
+				close={close}
+				importTemplate={importTemplate}
+				selectCategory={e => setSelectedCategory(e)}
+				changeSearch={e => setSearch(e)}
 			/>
-			<Notices/>
+			<Notices />
 			<TemplatesList
-				preview={ preview }
-				isLoading={ isLoading }
-				data={ data }
-				tab={ tab }
-				selectedTemplateContent={ selectedTemplateContent }
-				selectedCategory={ selectedCategory }
-				search={ search }
-				importPreview={ importPreview }
-				importTemplate={ importTemplate }
+				preview={preview}
+				isLoading={isLoading}
+				data={data}
+				tab={tab}
+				selectedTemplateContent={selectedTemplateContent}
+				selectedCategory={selectedCategory}
+				search={search}
+				importPreview={importPreview}
+				importTemplate={importTemplate}
 			/>
 		</Modal>
 	);

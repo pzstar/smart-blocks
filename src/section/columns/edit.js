@@ -14,72 +14,72 @@ import { useEffect, useState } from '@wordpress/element';
 import defaultAttributes from './attributes.js';
 import layouts from '../layouts.js';
 import Inspector from './inspector.js';
-import {blockInit} from '../../helpers/block-utility.js';
+import { blockInit } from '../../helpers/block-utility.js';
 import LayoutSelector from './layoutselector.js';
 import { responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars } from '../../utils/helper';
 
-const Edit = ({attributes, setAttributes, className, clientId}) => {
+const Edit = ({ attributes, setAttributes, className, clientId }) => {
 	const {
 		id,
-        columns,
+		columns,
 
-        columnsWidth,
+		columnsWidth,
 		columnsWidthMd,
 		columnsWidthSm,
 		columnsWidthUnit,
 
-        columnsHTMLTag,
-        layout,
-        layoutTablet,
-        layoutMobile,
+		columnsHTMLTag,
+		layout,
+		layoutTablet,
+		layoutMobile,
 
-        columnsGap,
-        columnsGapSm,
-        columnsGapMd,
+		columnsGap,
+		columnsGapSm,
+		columnsGapMd,
 
-        reverseColumnsTablet,
-        reverseColumnsMobile,
-        hideTablet,
-        hideMobile,
-        borderNormal,
-        borderHover,
-        borderNormalColor,
-        borderHoverColor,
+		reverseColumnsTablet,
+		reverseColumnsMobile,
+		hideTablet,
+		hideMobile,
+		borderNormal,
+		borderHover,
+		borderNormalColor,
+		borderHoverColor,
 
-        borderNormalWidthTop,
-        borderNormalWidthLeft,
-        borderNormalWidthRight,
-        borderNormalWidthBottom,
-        borderNormalWidthUnit,
-        borderHoverWidthTop,
-        borderHoverWidthLeft,
-        borderHoverWidthRight,
-        borderHoverWidthBottom,
-        borderHoverWidthUnit,
-        borderNormalRadiusTop,
-        borderNormalRadiusLeft,
-        borderNormalRadiusRight,
-        borderNormalRadiusBottom,
-        borderNormalRadiusUnit,
-        borderHoverRadiusTop,
-        borderHoverRadiusLeft,
-        borderHoverRadiusRight,
-        borderHoverRadiusBottom,
-        borderHoverRadiusUnit,
+		borderNormalWidthTop,
+		borderNormalWidthLeft,
+		borderNormalWidthRight,
+		borderNormalWidthBottom,
+		borderNormalWidthUnit,
+		borderHoverWidthTop,
+		borderHoverWidthLeft,
+		borderHoverWidthRight,
+		borderHoverWidthBottom,
+		borderHoverWidthUnit,
+		borderNormalRadiusTop,
+		borderNormalRadiusLeft,
+		borderNormalRadiusRight,
+		borderNormalRadiusBottom,
+		borderNormalRadiusUnit,
+		borderHoverRadiusTop,
+		borderHoverRadiusLeft,
+		borderHoverRadiusRight,
+		borderHoverRadiusBottom,
+		borderHoverRadiusUnit,
 
-        borderNormalBoxShadow,
-        borderHoverBoxShadow,
-        sectionBgColor,
-        columnsHeight,
+		borderNormalBoxShadow,
+		borderHoverBoxShadow,
+		sectionBgColor,
+		columnsHeight,
 
-        columnsHeightCustom,
-        columnsHeightCustomSm,
-        columnsHeightCustomMd,
-        columnsHeightCustomUnit,
+		columnsHeightCustom,
+		columnsHeightCustomSm,
+		columnsHeightCustomMd,
+		columnsHeightCustomUnit,
 
-        style,
+		style,
 
-        horizontalAlign,
+		horizontalAlign,
 		horizontalAlignSm,
 		horizontalAlignMd,
 		columnAlignment,
@@ -118,33 +118,33 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		columnsPaddingUnit,
 
 		sectionBgImgURL,
-        sectionBgImgID,
-        sectionBgAttachment,
-        sectionBgSize,
-        sectionBgPosition,
-        sectionBgRepeat,
+		sectionBgImgID,
+		sectionBgAttachment,
+		sectionBgSize,
+		sectionBgPosition,
+		sectionBgRepeat,
 
-        borderNormalBoxShadowHorizontal,
-        borderNormalBoxShadowVertical,
-        borderNormalBoxShadowBlur,
-        borderNormalBoxShadowSpread,
-        borderNormalBoxShadowColor,
-        borderNormalBoxShadowInset,
+		borderNormalBoxShadowHorizontal,
+		borderNormalBoxShadowVertical,
+		borderNormalBoxShadowBlur,
+		borderNormalBoxShadowSpread,
+		borderNormalBoxShadowColor,
+		borderNormalBoxShadowInset,
 
-        borderHoverBoxShadowHorizontal,
-        borderHoverBoxShadowVertical,
-        borderHoverBoxShadowBlur,
-        borderHoverBoxShadowSpread,
-        borderHoverBoxShadowColor,
-        borderHoverBoxShadowInset,
+		borderHoverBoxShadowHorizontal,
+		borderHoverBoxShadowVertical,
+		borderHoverBoxShadowBlur,
+		borderHoverBoxShadowSpread,
+		borderHoverBoxShadowColor,
+		borderHoverBoxShadowInset,
 
-        sectionContentWidth,
+		sectionContentWidth,
 
-        sectionFlexDirection,
-        sectionFlexDirectionMd,
-        sectionFlexDirectionSm
-    } = attributes;
-	const {updateBlockAttributes} = useDispatch('core/block-editor');
+		sectionFlexDirection,
+		sectionFlexDirectionMd,
+		sectionFlexDirectionSm
+	} = attributes;
+	const { updateBlockAttributes } = useDispatch('core/block-editor');
 
 	const stylesCSS = `#${id} {
 		${responsiveSliderVars('columns-width', columnsWidth, columnsWidthSm, columnsWidthMd, columnsWidthUnit)}
@@ -155,11 +155,11 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 
 
         ${responsiveDimensionVars('columns-margin', columnsMarginTop, columnsMarginRight, columnsMarginBottom, columnsMarginLeft,
-    		columnsMarginSmTop, columnsMarginSmRight, columnsMarginSmBottom, columnsMarginSmLeft,
-    		columnsMarginMdTop, columnsMarginMdRight, columnsMarginMdBottom, columnsMarginMdLeft, columnsMarginUnit)}
+		columnsMarginSmTop, columnsMarginSmRight, columnsMarginSmBottom, columnsMarginSmLeft,
+		columnsMarginMdTop, columnsMarginMdRight, columnsMarginMdBottom, columnsMarginMdLeft, columnsMarginUnit)}
     	${responsiveDimensionVars('columns-padding', columnsPaddingTop, columnsPaddingRight, columnsPaddingBottom, columnsPaddingLeft,
-    		columnsPaddingSmTop, columnsPaddingSmRight, columnsPaddingSmBottom, columnsPaddingSmLeft,
-    		columnsPaddingMdTop, columnsPaddingMdRight, columnsPaddingMdBottom, columnsPaddingMdLeft, columnsPaddingUnit)}
+			columnsPaddingSmTop, columnsPaddingSmRight, columnsPaddingSmBottom, columnsPaddingSmLeft,
+			columnsPaddingMdTop, columnsPaddingMdRight, columnsPaddingMdBottom, columnsPaddingMdLeft, columnsPaddingUnit)}
 
         ${borderNormal ? '--sb-columns-border-normal: ' + borderNormal + ';' : ''}
         ${borderHover ? '--sb-columns-border-hover: ' + borderNormal + ';' : ''}
@@ -184,12 +184,12 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		${sectionBgPosition ? '--sb-columns-bg-img-position: ' + sectionBgPosition + ';' : ''}
 		${sectionBgRepeat ? '--sb-columns-bg-img-repeat: ' + sectionBgRepeat + ';' : ''}
     }`
-    setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
+	setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
-	const { sectionBlock, isViewportAvailable, isPreviewDesktop, isPreviewTablet, isPreviewMobile } = useSelect( select => {
-		const { getBlock } = select( 'core/block-editor' );
-		const { __experimentalGetPreviewDeviceType } = select( 'core/edit-post' ) ? select( 'core/edit-post' ) : false;
-		const sectionBlock = getBlock( clientId );
+	const { sectionBlock, isViewportAvailable, isPreviewDesktop, isPreviewTablet, isPreviewMobile } = useSelect(select => {
+		const { getBlock } = select('core/block-editor');
+		const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+		const sectionBlock = getBlock(clientId);
 		return {
 			sectionBlock,
 			isViewportAvailable: __experimentalGetPreviewDeviceType ? true : false,
@@ -227,11 +227,11 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		`has-desktop-${layout}-layout`,
 		`has-tablet-${layoutTablet}-layout`,
 		`has-mobile-${layoutMobile}-layout`,
-		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
-		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
-		{'has-viewport-desktop': isDesktop},
-		{'has-viewport-tablet': isTablet},
-		{'has-viewport-mobile': isMobile},
+		{ 'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet) },
+		{ 'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile) },
+		{ 'has-viewport-desktop': isDesktop },
+		{ 'has-viewport-tablet': isTablet },
+		{ 'has-viewport-mobile': isMobile },
 		`has-${sectionContentWidth}-width`,
 		`has-flex-direction-${sectionFlexDirection}`,
 		`has-flex-direction-sm-${sectionFlexDirectionSm}`,
@@ -265,7 +265,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 	};
 
 	const getColumnsTemplate = cols => {
-		return times(cols, i => ['smart-blocks/column', {columnWidth: layouts[cols][layout][i]}]);
+		return times(cols, i => ['smart-blocks/column', { columnWidth: layouts[cols][layout][i] }]);
 	};
 
 	if (!columns) {
@@ -274,9 +274,9 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 
 	return (
 		<>
-            <style jsx>
-                {style}
-            </style>
+			<style jsx>
+				{style}
+			</style>
 
 			<Inspector
 				attributes={attributes}

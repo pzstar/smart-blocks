@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 import ResponsiveDropdown from '../utils/responsivedropdown';
 import { useState } from '@wordpress/element';
 import { DesktopIcon, TabletIcon, PhoneIcon } from '../utils/svgicons';
-import {useSelect} from '@wordpress/data';
+import { useSelect } from '@wordpress/data';
 
 const DimensionControl = ({
 	min,
@@ -44,13 +44,13 @@ const DimensionControl = ({
 	const allUnits = units ? units : ["px", "em", "%"];
 
 	const getView = useSelect(select => {
-        const { getView } = select( 'smart-blocks/data' );
-        const { __experimentalGetPreviewDeviceType } = select( 'core/edit-post' ) ? select( 'core/edit-post' ) : false;
-        return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
-    }, []);
+		const { getView } = select('smart-blocks/data');
+		const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+	}, []);
 
-    const callFunctionByName = (name, value) => {
-		if(responsive) {
+	const callFunctionByName = (name, value) => {
+		if (responsive) {
 			switch (name) {
 				case 'setDimensionTop':
 					return setDimensionTop(value);
@@ -97,7 +97,7 @@ const DimensionControl = ({
 	}
 
 	const getDimensionValue = (name, value) => {
-		if(responsive) {
+		if (responsive) {
 			switch (name) {
 				case 'dimensionTop':
 					return dimensionTop;
@@ -128,17 +128,17 @@ const DimensionControl = ({
 			}
 		} else {
 			switch (name) {
-			case 'dimensionTop':
-				return dimensionTop;
-			case 'dimensionLeft':
-				return dimensionLeft;
-			case 'dimensionRight':
-				return dimensionRight;
-			case 'dimensionBottom':
-				return dimensionBottom;
-			default:
-				console.error(`Value of ${name} not found.`);
-		}
+				case 'dimensionTop':
+					return dimensionTop;
+				case 'dimensionLeft':
+					return dimensionLeft;
+				case 'dimensionRight':
+					return dimensionRight;
+				case 'dimensionBottom':
+					return dimensionBottom;
+				default:
+					console.error(`Value of ${name} not found.`);
+			}
 		}
 	}
 
@@ -153,7 +153,7 @@ const DimensionControl = ({
 				{
 					responsive ? (
 						<>
-							<ResponsiveDropdown/>
+							<ResponsiveDropdown />
 							<div className="sb-unit-btn-group sb-ml-auto">
 								{allUnits.map((unt, index) => {
 									return <button
@@ -180,7 +180,7 @@ const DimensionControl = ({
 												max={max}
 												key={index}
 												onChange={(e) => {
-													lock ? (sides.map((sde, index) => {callFunctionByName(`setDimension${sde}`, e.target.value)})) : callFunctionByName(`setDimension${side}`, e.target.value);
+													lock ? (sides.map((sde, index) => { callFunctionByName(`setDimension${sde}`, e.target.value) })) : callFunctionByName(`setDimension${side}`, e.target.value);
 												}}
 												value={getDimensionValue(`dimension${side}`)} />
 											<span>
@@ -195,7 +195,7 @@ const DimensionControl = ({
 												max={max}
 												key={index}
 												onChange={(e) => {
-													lock ? (sides.map((sde, index) => {callFunctionByName(`setDimensionMd${sde}`, e.target.value)})) : callFunctionByName(`setDimensionMd${side}`, e.target.value);
+													lock ? (sides.map((sde, index) => { callFunctionByName(`setDimensionMd${sde}`, e.target.value) })) : callFunctionByName(`setDimensionMd${side}`, e.target.value);
 												}}
 												value={getDimensionValue(`dimensionMd${side}`)} />
 											<span>
@@ -210,7 +210,7 @@ const DimensionControl = ({
 												max={max}
 												key={index}
 												onChange={(e) => {
-													lock ? (sides.map((sde, index) => {callFunctionByName(`setDimensionSm${sde}`, e.target.value)})) : callFunctionByName(`setDimensionSm${side}`, e.target.value);
+													lock ? (sides.map((sde, index) => { callFunctionByName(`setDimensionSm${sde}`, e.target.value) })) : callFunctionByName(`setDimensionSm${side}`, e.target.value);
 												}}
 												value={getDimensionValue(`dimensionSm${side}`)} />
 											<span>
@@ -253,7 +253,7 @@ const DimensionControl = ({
 												max={max}
 												key={index}
 												onChange={(e) => {
-													lock ? (sides.map((sde, index) => {callFunctionByName(`setDimension${sde}`, e.target.value)})) : callFunctionByName(`setDimension${side}`, e.target.value);
+													lock ? (sides.map((sde, index) => { callFunctionByName(`setDimension${sde}`, e.target.value) })) : callFunctionByName(`setDimension${side}`, e.target.value);
 												}}
 												value={getDimensionValue(`dimension${side}`)} />
 											<span>

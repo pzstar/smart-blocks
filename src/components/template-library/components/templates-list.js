@@ -7,7 +7,7 @@ import { useViewportMatch } from '@wordpress/compose';
 
 import Template from './template.js';
 
-const TemplatesList = ({preview, isLoading, data, tab, selectedTemplateContent, selectedCategory, search, importPreview, importTemplate}) => {
+const TemplatesList = ({ preview, isLoading, data, tab, selectedTemplateContent, selectedCategory, search, importPreview, importTemplate }) => {
 	const isLarger = useViewportMatch('large', '>=');
 	const isLarge = useViewportMatch('large', '<=');
 	const isSmall = useViewportMatch('small', '>=');
@@ -19,7 +19,7 @@ const TemplatesList = ({preview, isLoading, data, tab, selectedTemplateContent, 
 
 	if (isTablet) {
 		viewportWidth = 960;
-	} else if ( isMobile ) {
+	} else if (isMobile) {
 		viewportWidth = 600;
 	}
 
@@ -27,8 +27,8 @@ const TemplatesList = ({preview, isLoading, data, tab, selectedTemplateContent, 
 		return (
 			<div className="library-modal-preview">
 				<BlockPreview
-					blocks={ selectedTemplateContent }
-					viewportWidth={ viewportWidth }
+					blocks={selectedTemplateContent}
+					viewportWidth={viewportWidth}
 				/>
 			</div>
 		);
@@ -37,7 +37,7 @@ const TemplatesList = ({preview, isLoading, data, tab, selectedTemplateContent, 
 	if (isLoading) {
 		return (
 			<div className="library-modal-loader">
-				<Spinner/>
+				<Spinner />
 			</div>
 		);
 	}

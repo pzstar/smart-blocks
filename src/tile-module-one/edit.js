@@ -12,7 +12,7 @@ import {
 	PanelBody,
 	ToggleControl,
 	TextControl,
-    Button
+	Button
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import classnames from 'classnames';
@@ -31,7 +31,7 @@ import { checkDefault, getFontClass } from '../utils/helper';
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../utils/svgicons';
 
 export default function Edit({ attributes, setAttributes }) {
-    const [activeTab, setActiveTab] = useState('layout');
+	const [activeTab, setActiveTab] = useState('layout');
 	const {
 		id,
 		style,
@@ -46,38 +46,38 @@ export default function Edit({ attributes, setAttributes }) {
 		headerLongBorderColor,
 
 		headerTitleTypographyFamily,
-        headerTitleTypographyWeight,
-        headerTitleTypographyTextTransform,
-        headerTitleTypographyTextDecoration,
-        headerTitleTypographyFontSizeSm,
-        headerTitleTypographyFontSizeMd,
-        headerTitleTypographyFontSize,
-        headerTitleTypographyFontSizeUnit,
-        headerTitleTypographyLetterSpacingSm,
-        headerTitleTypographyLetterSpacingMd,
-        headerTitleTypographyLetterSpacing,
-        headerTitleTypographyLetterSpacingUnit,
-        headerTitleTypographyLineHeightSm,
-        headerTitleTypographyLineHeightMd,
-        headerTitleTypographyLineHeight,
-        headerTitleTypographyLineHeightUnit,
+		headerTitleTypographyWeight,
+		headerTitleTypographyTextTransform,
+		headerTitleTypographyTextDecoration,
+		headerTitleTypographyFontSizeSm,
+		headerTitleTypographyFontSizeMd,
+		headerTitleTypographyFontSize,
+		headerTitleTypographyFontSizeUnit,
+		headerTitleTypographyLetterSpacingSm,
+		headerTitleTypographyLetterSpacingMd,
+		headerTitleTypographyLetterSpacing,
+		headerTitleTypographyLetterSpacingUnit,
+		headerTitleTypographyLineHeightSm,
+		headerTitleTypographyLineHeightMd,
+		headerTitleTypographyLineHeight,
+		headerTitleTypographyLineHeightUnit,
 
 		categoryTypographyFamily,
-        categoryTypographyWeight,
-        categoryTypographyTextTransform,
-        categoryTypographyTextDecoration,
-        categoryTypographyFontSizeSm,
-        categoryTypographyFontSizeMd,
-        categoryTypographyFontSize,
-        categoryTypographyFontSizeUnit,
-        categoryTypographyLetterSpacingSm,
-        categoryTypographyLetterSpacingMd,
-        categoryTypographyLetterSpacing,
-        categoryTypographyLetterSpacingUnit,
-        categoryTypographyLineHeightSm,
-        categoryTypographyLineHeightMd,
-        categoryTypographyLineHeight,
-        categoryTypographyLineHeightUnit,
+		categoryTypographyWeight,
+		categoryTypographyTextTransform,
+		categoryTypographyTextDecoration,
+		categoryTypographyFontSizeSm,
+		categoryTypographyFontSizeMd,
+		categoryTypographyFontSize,
+		categoryTypographyFontSizeUnit,
+		categoryTypographyLetterSpacingSm,
+		categoryTypographyLetterSpacingMd,
+		categoryTypographyLetterSpacing,
+		categoryTypographyLetterSpacingUnit,
+		categoryTypographyLineHeightSm,
+		categoryTypographyLineHeightMd,
+		categoryTypographyLineHeight,
+		categoryTypographyLineHeightUnit,
 
 		postsPostType,
 		offset,
@@ -89,21 +89,21 @@ export default function Edit({ attributes, setAttributes }) {
 		sidePostCategory,
 
 		sideTypographyFamily,
-        sideTypographyWeight,
-        sideTypographyTextTransform,
-        sideTypographyTextDecoration,
-        sideTypographyFontSizeSm,
-        sideTypographyFontSizeMd,
-        sideTypographyFontSize,
-        sideTypographyFontSizeUnit,
-        sideTypographyLetterSpacingSm,
-        sideTypographyLetterSpacingMd,
-        sideTypographyLetterSpacing,
-        sideTypographyLetterSpacingUnit,
-        sideTypographyLineHeightSm,
-        sideTypographyLineHeightMd,
-        sideTypographyLineHeight,
-        sideTypographyLineHeightUnit,
+		sideTypographyWeight,
+		sideTypographyTextTransform,
+		sideTypographyTextDecoration,
+		sideTypographyFontSizeSm,
+		sideTypographyFontSizeMd,
+		sideTypographyFontSize,
+		sideTypographyFontSizeUnit,
+		sideTypographyLetterSpacingSm,
+		sideTypographyLetterSpacingMd,
+		sideTypographyLetterSpacing,
+		sideTypographyLetterSpacingUnit,
+		sideTypographyLineHeightSm,
+		sideTypographyLineHeightMd,
+		sideTypographyLineHeight,
+		sideTypographyLineHeightUnit,
 
 		featuredImageSize,
 		featuredPostAuthor,
@@ -111,69 +111,69 @@ export default function Edit({ attributes, setAttributes }) {
 		featuredPostComments,
 		featuredPostCategory,
 		featuredTitleMarginSmTop,
-        featuredTitleMarginSmLeft,
-        featuredTitleMarginSmRight,
-        featuredTitleMarginSmBottom,
-        featuredTitleMarginMdTop,
-        featuredTitleMarginMdLeft,
-        featuredTitleMarginMdRight,
-        featuredTitleMarginMdBottom,
-        featuredTitleMarginTop,
-        featuredTitleMarginLeft,
-        featuredTitleMarginRight,
-        featuredTitleMarginBottom,
-        featuredTitleMarginUnit,
+		featuredTitleMarginSmLeft,
+		featuredTitleMarginSmRight,
+		featuredTitleMarginSmBottom,
+		featuredTitleMarginMdTop,
+		featuredTitleMarginMdLeft,
+		featuredTitleMarginMdRight,
+		featuredTitleMarginMdBottom,
+		featuredTitleMarginTop,
+		featuredTitleMarginLeft,
+		featuredTitleMarginRight,
+		featuredTitleMarginBottom,
+		featuredTitleMarginUnit,
 
 		featuredTypographyFamily,
-        featuredTypographyWeight,
-        featuredTypographyTextTransform,
-        featuredTypographyTextDecoration,
-        featuredTypographyFontSizeSm,
-        featuredTypographyFontSizeMd,
-        featuredTypographyFontSize,
-        featuredTypographyFontSizeUnit,
-        featuredTypographyLetterSpacingSm,
-        featuredTypographyLetterSpacingMd,
-        featuredTypographyLetterSpacing,
-        featuredTypographyLetterSpacingUnit,
-        featuredTypographyLineHeightSm,
-        featuredTypographyLineHeightMd,
-        featuredTypographyLineHeight,
-        featuredTypographyLineHeightUnit,
+		featuredTypographyWeight,
+		featuredTypographyTextTransform,
+		featuredTypographyTextDecoration,
+		featuredTypographyFontSizeSm,
+		featuredTypographyFontSizeMd,
+		featuredTypographyFontSize,
+		featuredTypographyFontSizeUnit,
+		featuredTypographyLetterSpacingSm,
+		featuredTypographyLetterSpacingMd,
+		featuredTypographyLetterSpacing,
+		featuredTypographyLetterSpacingUnit,
+		featuredTypographyLineHeightSm,
+		featuredTypographyLineHeightMd,
+		featuredTypographyLineHeight,
+		featuredTypographyLineHeightUnit,
 
 		metasTypographyFamily,
-        metasTypographyWeight,
-        metasTypographyTextTransform,
-        metasTypographyTextDecoration,
-        metasTypographyFontSizeSm,
-        metasTypographyFontSizeMd,
-        metasTypographyFontSize,
-        metasTypographyFontSizeUnit,
-        metasTypographyLetterSpacingSm,
-        metasTypographyLetterSpacingMd,
-        metasTypographyLetterSpacing,
-        metasTypographyLetterSpacingUnit,
-        metasTypographyLineHeightSm,
-        metasTypographyLineHeightMd,
-        metasTypographyLineHeight,
-        metasTypographyLineHeightUnit,
+		metasTypographyWeight,
+		metasTypographyTextTransform,
+		metasTypographyTextDecoration,
+		metasTypographyFontSizeSm,
+		metasTypographyFontSizeMd,
+		metasTypographyFontSize,
+		metasTypographyFontSizeUnit,
+		metasTypographyLetterSpacingSm,
+		metasTypographyLetterSpacingMd,
+		metasTypographyLetterSpacing,
+		metasTypographyLetterSpacingUnit,
+		metasTypographyLineHeightSm,
+		metasTypographyLineHeightMd,
+		metasTypographyLineHeight,
+		metasTypographyLineHeightUnit,
 
 		dateFormat,
 		customDateFormat,
 		imageBorderRadius,
 		sideTitleMarginSmTop,
-        sideTitleMarginSmLeft,
-        sideTitleMarginSmRight,
-        sideTitleMarginSmBottom,
-        sideTitleMarginMdTop,
-        sideTitleMarginMdLeft,
-        sideTitleMarginMdRight,
-        sideTitleMarginMdBottom,
-        sideTitleMarginTop,
-        sideTitleMarginLeft,
-        sideTitleMarginRight,
-        sideTitleMarginBottom,
-        sideTitleMarginUnit,
+		sideTitleMarginSmLeft,
+		sideTitleMarginSmRight,
+		sideTitleMarginSmBottom,
+		sideTitleMarginMdTop,
+		sideTitleMarginMdLeft,
+		sideTitleMarginMdRight,
+		sideTitleMarginMdBottom,
+		sideTitleMarginTop,
+		sideTitleMarginLeft,
+		sideTitleMarginRight,
+		sideTitleMarginBottom,
+		sideTitleMarginUnit,
 		categoryBackgroundColor,
 		categoryTextColor,
 		categoryBackgroundHoverColor,
@@ -563,39 +563,39 @@ export default function Edit({ attributes, setAttributes }) {
 			{metasTypography['family'] && (metasTypography['family'] != 'Default') && (<GoogleFontLoad family={metasTypography['family']} weight={metasTypography['weight'].replace("italic", "i")} />)}
 			<InspectorControls>
 				<div className="sb-field sb-head-panel-tabs">
-                    <div className="sb-panel-tabs-wrap">
-                        <Button
-                            className={classnames('sb-panel-tab', {'active-tab': 'layout' === activeTab})}
-                            onClick={() => setActiveTab('layout')}
-                        >
-                            <span className="dashicons">
-                                <LayoutIcon />
-                            </span>
-                            {__('Layout', 'smart-blocks')}
-                        </Button>
+					<div className="sb-panel-tabs-wrap">
+						<Button
+							className={classnames('sb-panel-tab', { 'active-tab': 'layout' === activeTab })}
+							onClick={() => setActiveTab('layout')}
+						>
+							<span className="dashicons">
+								<LayoutIcon />
+							</span>
+							{__('Layout', 'smart-blocks')}
+						</Button>
 
-                        <Button
-                            className={classnames('sb-panel-tab', {'active-tab': 'style' === activeTab})}
-                            onClick={() => setActiveTab('style')}
-                        >
-                            <span className="dashicons">
-                                <StyleIcon />
-                            </span>
-                            {__('Style', 'smart-blocks')}
-                        </Button>
+						<Button
+							className={classnames('sb-panel-tab', { 'active-tab': 'style' === activeTab })}
+							onClick={() => setActiveTab('style')}
+						>
+							<span className="dashicons">
+								<StyleIcon />
+							</span>
+							{__('Style', 'smart-blocks')}
+						</Button>
 
-                        <Button
-                            className={classnames('sb-panel-tab', {'active-tab': 'advanced' === activeTab})}
-                            onClick={() => setActiveTab('advanced')}
-                        >
-                            <span className="dashicons">
-                                <AdvancedIcon />
-                            </span>
-                            {__('Advanced', 'smart-blocks')}
-                        </Button>
-                    </div>
-                    <div className="sb-panel-tab-fields">
-                        {'layout' === activeTab && (
+						<Button
+							className={classnames('sb-panel-tab', { 'active-tab': 'advanced' === activeTab })}
+							onClick={() => setActiveTab('advanced')}
+						>
+							<span className="dashicons">
+								<AdvancedIcon />
+							</span>
+							{__('Advanced', 'smart-blocks')}
+						</Button>
+					</div>
+					<div className="sb-panel-tab-fields">
+						{'layout' === activeTab && (
 							<>
 								{headerTitle && (
 									<PanelBody
@@ -776,7 +776,7 @@ export default function Edit({ attributes, setAttributes }) {
 									/>
 								</PanelBody>
 							</>
-                        ) || 'style' === activeTab && (
+						) || 'style' === activeTab && (
 							<>
 								{headerTitle && (
 									<PanelBody
@@ -803,39 +803,39 @@ export default function Edit({ attributes, setAttributes }) {
 										/>
 										<TypographyControl
 											label={__('Typography', 'smart-blocks')}
-                                            valueFamily={headerTitleTypographyFamily}
-                                            setValueFamily={value => setAttributes({headerTitleTypographyFamily: value})}
-                                            valueWeight={headerTitleTypographyWeight}
-                                            setValueWeight={value => setAttributes({headerTitleTypographyWeight: value})}
-                                            valueTextTransform={headerTitleTypographyTextTransform}
-                                            setValueTextTransform={value => setAttributes({headerTitleTypographyTextTransform: value})}
-                                            valueTextDecoration={headerTitleTypographyTextDecoration}
-                                            setValueTextDecoration={value => setAttributes({headerTitleTypographyTextDecoration: value})}
-                                            valueFontSizeSm={headerTitleTypographyFontSizeSm}
-                                            setValueFontSizeSm={value => setAttributes({headerTitleTypographyFontSizeSm: value})}
-                                            valueFontSizeMd={headerTitleTypographyFontSizeMd}
-                                            setValueFontSizeMd={value => setAttributes({headerTitleTypographyFontSizeMd: value})}
-                                            valueFontSize={headerTitleTypographyFontSize}
-                                            setValueFontSize={value => setAttributes({headerTitleTypographyFontSize: value})}
-                                            valueFontSizeUnit={headerTitleTypographyFontSizeUnit}
-                                            setValueFontSizeUnit={value => setAttributes({headerTitleTypographyFontSizeUnit: value})}
-                                            valueLetterSpacingSm={headerTitleTypographyLetterSpacingSm}
-                                            setValueLetterSpacingSm={value => setAttributes({headerTitleTypographyLetterSpacingSm: value})}
-                                            valueLetterSpacingMd={headerTitleTypographyLetterSpacingMd}
-                                            setValueLetterSpacingMd={value => setAttributes({headerTitleTypographyLetterSpacingMd: value})}
-                                            valueLetterSpacing={headerTitleTypographyLetterSpacing}
-                                            setValueLetterSpacing={value => setAttributes({headerTitleTypographyLetterSpacing: value})}
-                                            valueLetterSpacingUnit={headerTitleTypographyLetterSpacingUnit}
-                                            setValueLetterSpacingUnit={value => setAttributes({headerTitleTypographyLetterSpacingUnit: value})}
-                                            valueLineHeightSm={headerTitleTypographyLineHeightSm}
-                                            setValueLineHeightSm={value => setAttributes({headerTitleTypographyLineHeightSm: value})}
-                                            valueLineHeightMd={headerTitleTypographyLineHeightMd}
-                                            setValueLineHeightMd={value => setAttributes({headerTitleTypographyLineHeightMd: value})}
-                                            valueLineHeight={headerTitleTypographyLineHeight}
-                                            setValueLineHeight={value => setAttributes({headerTitleTypographyLineHeight: value})}
-                                            valueLineHeightUnit={headerTitleTypographyLineHeightUnit}
-                                            setValueLineHeightUnit={value => setAttributes({headerTitleTypographyLineHeightUnit: value})}
-                                        />
+											valueFamily={headerTitleTypographyFamily}
+											setValueFamily={value => setAttributes({ headerTitleTypographyFamily: value })}
+											valueWeight={headerTitleTypographyWeight}
+											setValueWeight={value => setAttributes({ headerTitleTypographyWeight: value })}
+											valueTextTransform={headerTitleTypographyTextTransform}
+											setValueTextTransform={value => setAttributes({ headerTitleTypographyTextTransform: value })}
+											valueTextDecoration={headerTitleTypographyTextDecoration}
+											setValueTextDecoration={value => setAttributes({ headerTitleTypographyTextDecoration: value })}
+											valueFontSizeSm={headerTitleTypographyFontSizeSm}
+											setValueFontSizeSm={value => setAttributes({ headerTitleTypographyFontSizeSm: value })}
+											valueFontSizeMd={headerTitleTypographyFontSizeMd}
+											setValueFontSizeMd={value => setAttributes({ headerTitleTypographyFontSizeMd: value })}
+											valueFontSize={headerTitleTypographyFontSize}
+											setValueFontSize={value => setAttributes({ headerTitleTypographyFontSize: value })}
+											valueFontSizeUnit={headerTitleTypographyFontSizeUnit}
+											setValueFontSizeUnit={value => setAttributes({ headerTitleTypographyFontSizeUnit: value })}
+											valueLetterSpacingSm={headerTitleTypographyLetterSpacingSm}
+											setValueLetterSpacingSm={value => setAttributes({ headerTitleTypographyLetterSpacingSm: value })}
+											valueLetterSpacingMd={headerTitleTypographyLetterSpacingMd}
+											setValueLetterSpacingMd={value => setAttributes({ headerTitleTypographyLetterSpacingMd: value })}
+											valueLetterSpacing={headerTitleTypographyLetterSpacing}
+											setValueLetterSpacing={value => setAttributes({ headerTitleTypographyLetterSpacing: value })}
+											valueLetterSpacingUnit={headerTitleTypographyLetterSpacingUnit}
+											setValueLetterSpacingUnit={value => setAttributes({ headerTitleTypographyLetterSpacingUnit: value })}
+											valueLineHeightSm={headerTitleTypographyLineHeightSm}
+											setValueLineHeightSm={value => setAttributes({ headerTitleTypographyLineHeightSm: value })}
+											valueLineHeightMd={headerTitleTypographyLineHeightMd}
+											setValueLineHeightMd={value => setAttributes({ headerTitleTypographyLineHeightMd: value })}
+											valueLineHeight={headerTitleTypographyLineHeight}
+											setValueLineHeight={value => setAttributes({ headerTitleTypographyLineHeight: value })}
+											valueLineHeightUnit={headerTitleTypographyLineHeightUnit}
+											setValueLineHeightUnit={value => setAttributes({ headerTitleTypographyLineHeightUnit: value })}
+										/>
 									</PanelBody>
 								)}
 								<PanelBody
@@ -844,39 +844,39 @@ export default function Edit({ attributes, setAttributes }) {
 								>
 									<TypographyControl
 										label={__('Typography', 'smart-blocks')}
-                                        valueFamily={categoryTypographyFamily}
-                                        setValueFamily={value => setAttributes({categoryTypographyFamily: value})}
-                                        valueWeight={categoryTypographyWeight}
-                                        setValueWeight={value => setAttributes({categoryTypographyWeight: value})}
-                                        valueTextTransform={categoryTypographyTextTransform}
-                                        setValueTextTransform={value => setAttributes({categoryTypographyTextTransform: value})}
-                                        valueTextDecoration={categoryTypographyTextDecoration}
-                                        setValueTextDecoration={value => setAttributes({categoryTypographyTextDecoration: value})}
-                                        valueFontSizeSm={categoryTypographyFontSizeSm}
-                                        setValueFontSizeSm={value => setAttributes({categoryTypographyFontSizeSm: value})}
-                                        valueFontSizeMd={categoryTypographyFontSizeMd}
-                                        setValueFontSizeMd={value => setAttributes({categoryTypographyFontSizeMd: value})}
-                                        valueFontSize={categoryTypographyFontSize}
-                                        setValueFontSize={value => setAttributes({categoryTypographyFontSize: value})}
-                                        valueFontSizeUnit={categoryTypographyFontSizeUnit}
-                                        setValueFontSizeUnit={value => setAttributes({categoryTypographyFontSizeUnit: value})}
-                                        valueLetterSpacingSm={categoryTypographyLetterSpacingSm}
-                                        setValueLetterSpacingSm={value => setAttributes({categoryTypographyLetterSpacingSm: value})}
-                                        valueLetterSpacingMd={categoryTypographyLetterSpacingMd}
-                                        setValueLetterSpacingMd={value => setAttributes({categoryTypographyLetterSpacingMd: value})}
-                                        valueLetterSpacing={categoryTypographyLetterSpacing}
-                                        setValueLetterSpacing={value => setAttributes({categoryTypographyLetterSpacing: value})}
-                                        valueLetterSpacingUnit={categoryTypographyLetterSpacingUnit}
-                                        setValueLetterSpacingUnit={value => setAttributes({categoryTypographyLetterSpacingUnit: value})}
-                                        valueLineHeightSm={categoryTypographyLineHeightSm}
-                                        setValueLineHeightSm={value => setAttributes({categoryTypographyLineHeightSm: value})}
-                                        valueLineHeightMd={categoryTypographyLineHeightMd}
-                                        setValueLineHeightMd={value => setAttributes({categoryTypographyLineHeightMd: value})}
-                                        valueLineHeight={categoryTypographyLineHeight}
-                                        setValueLineHeight={value => setAttributes({categoryTypographyLineHeight: value})}
-                                        valueLineHeightUnit={categoryTypographyLineHeightUnit}
-                                        setValueLineHeightUnit={value => setAttributes({categoryTypographyLineHeightUnit: value})}
-                                    />
+										valueFamily={categoryTypographyFamily}
+										setValueFamily={value => setAttributes({ categoryTypographyFamily: value })}
+										valueWeight={categoryTypographyWeight}
+										setValueWeight={value => setAttributes({ categoryTypographyWeight: value })}
+										valueTextTransform={categoryTypographyTextTransform}
+										setValueTextTransform={value => setAttributes({ categoryTypographyTextTransform: value })}
+										valueTextDecoration={categoryTypographyTextDecoration}
+										setValueTextDecoration={value => setAttributes({ categoryTypographyTextDecoration: value })}
+										valueFontSizeSm={categoryTypographyFontSizeSm}
+										setValueFontSizeSm={value => setAttributes({ categoryTypographyFontSizeSm: value })}
+										valueFontSizeMd={categoryTypographyFontSizeMd}
+										setValueFontSizeMd={value => setAttributes({ categoryTypographyFontSizeMd: value })}
+										valueFontSize={categoryTypographyFontSize}
+										setValueFontSize={value => setAttributes({ categoryTypographyFontSize: value })}
+										valueFontSizeUnit={categoryTypographyFontSizeUnit}
+										setValueFontSizeUnit={value => setAttributes({ categoryTypographyFontSizeUnit: value })}
+										valueLetterSpacingSm={categoryTypographyLetterSpacingSm}
+										setValueLetterSpacingSm={value => setAttributes({ categoryTypographyLetterSpacingSm: value })}
+										valueLetterSpacingMd={categoryTypographyLetterSpacingMd}
+										setValueLetterSpacingMd={value => setAttributes({ categoryTypographyLetterSpacingMd: value })}
+										valueLetterSpacing={categoryTypographyLetterSpacing}
+										setValueLetterSpacing={value => setAttributes({ categoryTypographyLetterSpacing: value })}
+										valueLetterSpacingUnit={categoryTypographyLetterSpacingUnit}
+										setValueLetterSpacingUnit={value => setAttributes({ categoryTypographyLetterSpacingUnit: value })}
+										valueLineHeightSm={categoryTypographyLineHeightSm}
+										setValueLineHeightSm={value => setAttributes({ categoryTypographyLineHeightSm: value })}
+										valueLineHeightMd={categoryTypographyLineHeightMd}
+										setValueLineHeightMd={value => setAttributes({ categoryTypographyLineHeightMd: value })}
+										valueLineHeight={categoryTypographyLineHeight}
+										setValueLineHeight={value => setAttributes({ categoryTypographyLineHeight: value })}
+										valueLineHeightUnit={categoryTypographyLineHeightUnit}
+										setValueLineHeightUnit={value => setAttributes({ categoryTypographyLineHeightUnit: value })}
+									/>
 									<Tabs>
 										<div tabTitle={__("Normal", 'smart-blocks')}>
 											<ColorControl
@@ -922,144 +922,144 @@ export default function Edit({ attributes, setAttributes }) {
 										<div tabTitle={__("Featured Post", 'smart-blocks')}>
 											<TypographyControl
 												label={__('Typography', 'smart-blocks')}
-                                                valueFamily={featuredTypographyFamily}
-                                                setValueFamily={value => setAttributes({featuredTypographyFamily: value})}
-                                                valueWeight={featuredTypographyWeight}
-                                                setValueWeight={value => setAttributes({featuredTypographyWeight: value})}
-                                                valueTextTransform={featuredTypographyTextTransform}
-                                                setValueTextTransform={value => setAttributes({featuredTypographyTextTransform: value})}
-                                                valueTextDecoration={featuredTypographyTextDecoration}
-                                                setValueTextDecoration={value => setAttributes({featuredTypographyTextDecoration: value})}
-                                                valueFontSizeSm={featuredTypographyFontSizeSm}
-                                                setValueFontSizeSm={value => setAttributes({featuredTypographyFontSizeSm: value})}
-                                                valueFontSizeMd={featuredTypographyFontSizeMd}
-                                                setValueFontSizeMd={value => setAttributes({featuredTypographyFontSizeMd: value})}
-                                                valueFontSize={featuredTypographyFontSize}
-                                                setValueFontSize={value => setAttributes({featuredTypographyFontSize: value})}
-                                                valueFontSizeUnit={featuredTypographyFontSizeUnit}
-                                                setValueFontSizeUnit={value => setAttributes({featuredTypographyFontSizeUnit: value})}
-                                                valueLetterSpacingSm={featuredTypographyLetterSpacingSm}
-                                                setValueLetterSpacingSm={value => setAttributes({featuredTypographyLetterSpacingSm: value})}
-                                                valueLetterSpacingMd={featuredTypographyLetterSpacingMd}
-                                                setValueLetterSpacingMd={value => setAttributes({featuredTypographyLetterSpacingMd: value})}
-                                                valueLetterSpacing={featuredTypographyLetterSpacing}
-                                                setValueLetterSpacing={value => setAttributes({featuredTypographyLetterSpacing: value})}
-                                                valueLetterSpacingUnit={featuredTypographyLetterSpacingUnit}
-                                                setValueLetterSpacingUnit={value => setAttributes({featuredTypographyLetterSpacingUnit: value})}
-                                                valueLineHeightSm={featuredTypographyLineHeightSm}
-                                                setValueLineHeightSm={value => setAttributes({featuredTypographyLineHeightSm: value})}
-                                                valueLineHeightMd={featuredTypographyLineHeightMd}
-                                                setValueLineHeightMd={value => setAttributes({featuredTypographyLineHeightMd: value})}
-                                                valueLineHeight={featuredTypographyLineHeight}
-                                                setValueLineHeight={value => setAttributes({featuredTypographyLineHeight: value})}
-                                                valueLineHeightUnit={featuredTypographyLineHeightUnit}
-                                                setValueLineHeightUnit={value => setAttributes({featuredTypographyLineHeightUnit: value})}
+												valueFamily={featuredTypographyFamily}
+												setValueFamily={value => setAttributes({ featuredTypographyFamily: value })}
+												valueWeight={featuredTypographyWeight}
+												setValueWeight={value => setAttributes({ featuredTypographyWeight: value })}
+												valueTextTransform={featuredTypographyTextTransform}
+												setValueTextTransform={value => setAttributes({ featuredTypographyTextTransform: value })}
+												valueTextDecoration={featuredTypographyTextDecoration}
+												setValueTextDecoration={value => setAttributes({ featuredTypographyTextDecoration: value })}
+												valueFontSizeSm={featuredTypographyFontSizeSm}
+												setValueFontSizeSm={value => setAttributes({ featuredTypographyFontSizeSm: value })}
+												valueFontSizeMd={featuredTypographyFontSizeMd}
+												setValueFontSizeMd={value => setAttributes({ featuredTypographyFontSizeMd: value })}
+												valueFontSize={featuredTypographyFontSize}
+												setValueFontSize={value => setAttributes({ featuredTypographyFontSize: value })}
+												valueFontSizeUnit={featuredTypographyFontSizeUnit}
+												setValueFontSizeUnit={value => setAttributes({ featuredTypographyFontSizeUnit: value })}
+												valueLetterSpacingSm={featuredTypographyLetterSpacingSm}
+												setValueLetterSpacingSm={value => setAttributes({ featuredTypographyLetterSpacingSm: value })}
+												valueLetterSpacingMd={featuredTypographyLetterSpacingMd}
+												setValueLetterSpacingMd={value => setAttributes({ featuredTypographyLetterSpacingMd: value })}
+												valueLetterSpacing={featuredTypographyLetterSpacing}
+												setValueLetterSpacing={value => setAttributes({ featuredTypographyLetterSpacing: value })}
+												valueLetterSpacingUnit={featuredTypographyLetterSpacingUnit}
+												setValueLetterSpacingUnit={value => setAttributes({ featuredTypographyLetterSpacingUnit: value })}
+												valueLineHeightSm={featuredTypographyLineHeightSm}
+												setValueLineHeightSm={value => setAttributes({ featuredTypographyLineHeightSm: value })}
+												valueLineHeightMd={featuredTypographyLineHeightMd}
+												setValueLineHeightMd={value => setAttributes({ featuredTypographyLineHeightMd: value })}
+												valueLineHeight={featuredTypographyLineHeight}
+												setValueLineHeight={value => setAttributes({ featuredTypographyLineHeight: value })}
+												valueLineHeightUnit={featuredTypographyLineHeightUnit}
+												setValueLineHeightUnit={value => setAttributes({ featuredTypographyLineHeightUnit: value })}
 											/>
 											<DimensionControl
-                                                label={__('Margin', 'smart-blocks')}
-                                                min="0"
-                                                max="100"
-                                                dimensionTop={featuredTitleMarginTop}
-                                                setDimensionTop={value => setAttributes({featuredTitleMarginTop: value})}
-                                                dimensionMdTop={featuredTitleMarginMdTop}
-                                                setDimensionMdTop={value => setAttributes({featuredTitleMarginMdTop: value})}
-                                                dimensionSmTop={featuredTitleMarginSmTop}
-                                                setDimensionSmTop={value => setAttributes({featuredTitleMarginSmTop: value})}
+												label={__('Margin', 'smart-blocks')}
+												min="0"
+												max="100"
+												dimensionTop={featuredTitleMarginTop}
+												setDimensionTop={value => setAttributes({ featuredTitleMarginTop: value })}
+												dimensionMdTop={featuredTitleMarginMdTop}
+												setDimensionMdTop={value => setAttributes({ featuredTitleMarginMdTop: value })}
+												dimensionSmTop={featuredTitleMarginSmTop}
+												setDimensionSmTop={value => setAttributes({ featuredTitleMarginSmTop: value })}
 
-                                                dimensionLeft={featuredTitleMarginLeft}
-                                                setDimensionLeft={value => setAttributes({featuredTitleMarginLeft: value})}
-                                                dimensionMdLeft={featuredTitleMarginMdLeft}
-                                                setDimensionMdLeft={value => setAttributes({featuredTitleMarginMdLeft: value})}
-                                                dimensionSmLeft={featuredTitleMarginSmLeft}
-                                                setDimensionSmLeft={value => setAttributes({featuredTitleMarginSmLeft: value})}
+												dimensionLeft={featuredTitleMarginLeft}
+												setDimensionLeft={value => setAttributes({ featuredTitleMarginLeft: value })}
+												dimensionMdLeft={featuredTitleMarginMdLeft}
+												setDimensionMdLeft={value => setAttributes({ featuredTitleMarginMdLeft: value })}
+												dimensionSmLeft={featuredTitleMarginSmLeft}
+												setDimensionSmLeft={value => setAttributes({ featuredTitleMarginSmLeft: value })}
 
-                                                dimensionRight={featuredTitleMarginRight}
-                                                setDimensionRight={value => setAttributes({featuredTitleMarginRight: value})}
-                                                dimensionMdRight={featuredTitleMarginMdRight}
-                                                setDimensionMdRight={value => setAttributes({featuredTitleMarginMdRight: value})}
-                                                dimensionSmRight={featuredTitleMarginSmRight}
-                                                setDimensionSmRight={value => setAttributes({featuredTitleMarginSmRight: value})}
+												dimensionRight={featuredTitleMarginRight}
+												setDimensionRight={value => setAttributes({ featuredTitleMarginRight: value })}
+												dimensionMdRight={featuredTitleMarginMdRight}
+												setDimensionMdRight={value => setAttributes({ featuredTitleMarginMdRight: value })}
+												dimensionSmRight={featuredTitleMarginSmRight}
+												setDimensionSmRight={value => setAttributes({ featuredTitleMarginSmRight: value })}
 
-                                                dimensionBottom={featuredTitleMarginBottom}
-                                                setDimensionBottom={value => setAttributes({featuredTitleMarginBottom: value})}
-                                                dimensionMdBottom={featuredTitleMarginMdBottom}
-                                                setDimensionMdBottom={value => setAttributes({featuredTitleMarginMdBottom: value})}
-                                                dimensionSmBottom={featuredTitleMarginSmBottom}
-                                                setDimensionSmBottom={value => setAttributes({featuredTitleMarginSmBottom: value})}
+												dimensionBottom={featuredTitleMarginBottom}
+												setDimensionBottom={value => setAttributes({ featuredTitleMarginBottom: value })}
+												dimensionMdBottom={featuredTitleMarginMdBottom}
+												setDimensionMdBottom={value => setAttributes({ featuredTitleMarginMdBottom: value })}
+												dimensionSmBottom={featuredTitleMarginSmBottom}
+												setDimensionSmBottom={value => setAttributes({ featuredTitleMarginSmBottom: value })}
 
-                                                unit={featuredTitleMarginUnit}
-                                                setUnit={value => setAttributes({featuredTitleMarginUnit: value})}
+												unit={featuredTitleMarginUnit}
+												setUnit={value => setAttributes({ featuredTitleMarginUnit: value })}
 												responsive={!0}
 											/>
 										</div>
 										<div tabTitle={__("Side Post", 'smart-blocks')}>
 											<TypographyControl
 												label={__('Typography', 'smart-blocks')}
-                                                valueFamily={sideTypographyFamily}
-                                                setValueFamily={value => setAttributes({sideTypographyFamily: value})}
-                                                valueWeight={sideTypographyWeight}
-                                                setValueWeight={value => setAttributes({sideTypographyWeight: value})}
-                                                valueTextTransform={sideTypographyTextTransform}
-                                                setValueTextTransform={value => setAttributes({sideTypographyTextTransform: value})}
-                                                valueTextDecoration={sideTypographyTextDecoration}
-                                                setValueTextDecoration={value => setAttributes({sideTypographyTextDecoration: value})}
-                                                valueFontSizeSm={sideTypographyFontSizeSm}
-                                                setValueFontSizeSm={value => setAttributes({sideTypographyFontSizeSm: value})}
-                                                valueFontSizeMd={sideTypographyFontSizeMd}
-                                                setValueFontSizeMd={value => setAttributes({sideTypographyFontSizeMd: value})}
-                                                valueFontSize={sideTypographyFontSize}
-                                                setValueFontSize={value => setAttributes({sideTypographyFontSize: value})}
-                                                valueFontSizeUnit={sideTypographyFontSizeUnit}
-                                                setValueFontSizeUnit={value => setAttributes({sideTypographyFontSizeUnit: value})}
-                                                valueLetterSpacingSm={sideTypographyLetterSpacingSm}
-                                                setValueLetterSpacingSm={value => setAttributes({sideTypographyLetterSpacingSm: value})}
-                                                valueLetterSpacingMd={sideTypographyLetterSpacingMd}
-                                                setValueLetterSpacingMd={value => setAttributes({sideTypographyLetterSpacingMd: value})}
-                                                valueLetterSpacing={sideTypographyLetterSpacing}
-                                                setValueLetterSpacing={value => setAttributes({sideTypographyLetterSpacing: value})}
-                                                valueLetterSpacingUnit={sideTypographyLetterSpacingUnit}
-                                                setValueLetterSpacingUnit={value => setAttributes({sideTypographyLetterSpacingUnit: value})}
-                                                valueLineHeightSm={sideTypographyLineHeightSm}
-                                                setValueLineHeightSm={value => setAttributes({sideTypographyLineHeightSm: value})}
-                                                valueLineHeightMd={sideTypographyLineHeightMd}
-                                                setValueLineHeightMd={value => setAttributes({sideTypographyLineHeightMd: value})}
-                                                valueLineHeight={sideTypographyLineHeight}
-                                                setValueLineHeight={value => setAttributes({sideTypographyLineHeight: value})}
-                                                valueLineHeightUnit={sideTypographyLineHeightUnit}
-                                                setValueLineHeightUnit={value => setAttributes({sideTypographyLineHeightUnit: value})}
-                                            />
+												valueFamily={sideTypographyFamily}
+												setValueFamily={value => setAttributes({ sideTypographyFamily: value })}
+												valueWeight={sideTypographyWeight}
+												setValueWeight={value => setAttributes({ sideTypographyWeight: value })}
+												valueTextTransform={sideTypographyTextTransform}
+												setValueTextTransform={value => setAttributes({ sideTypographyTextTransform: value })}
+												valueTextDecoration={sideTypographyTextDecoration}
+												setValueTextDecoration={value => setAttributes({ sideTypographyTextDecoration: value })}
+												valueFontSizeSm={sideTypographyFontSizeSm}
+												setValueFontSizeSm={value => setAttributes({ sideTypographyFontSizeSm: value })}
+												valueFontSizeMd={sideTypographyFontSizeMd}
+												setValueFontSizeMd={value => setAttributes({ sideTypographyFontSizeMd: value })}
+												valueFontSize={sideTypographyFontSize}
+												setValueFontSize={value => setAttributes({ sideTypographyFontSize: value })}
+												valueFontSizeUnit={sideTypographyFontSizeUnit}
+												setValueFontSizeUnit={value => setAttributes({ sideTypographyFontSizeUnit: value })}
+												valueLetterSpacingSm={sideTypographyLetterSpacingSm}
+												setValueLetterSpacingSm={value => setAttributes({ sideTypographyLetterSpacingSm: value })}
+												valueLetterSpacingMd={sideTypographyLetterSpacingMd}
+												setValueLetterSpacingMd={value => setAttributes({ sideTypographyLetterSpacingMd: value })}
+												valueLetterSpacing={sideTypographyLetterSpacing}
+												setValueLetterSpacing={value => setAttributes({ sideTypographyLetterSpacing: value })}
+												valueLetterSpacingUnit={sideTypographyLetterSpacingUnit}
+												setValueLetterSpacingUnit={value => setAttributes({ sideTypographyLetterSpacingUnit: value })}
+												valueLineHeightSm={sideTypographyLineHeightSm}
+												setValueLineHeightSm={value => setAttributes({ sideTypographyLineHeightSm: value })}
+												valueLineHeightMd={sideTypographyLineHeightMd}
+												setValueLineHeightMd={value => setAttributes({ sideTypographyLineHeightMd: value })}
+												valueLineHeight={sideTypographyLineHeight}
+												setValueLineHeight={value => setAttributes({ sideTypographyLineHeight: value })}
+												valueLineHeightUnit={sideTypographyLineHeightUnit}
+												setValueLineHeightUnit={value => setAttributes({ sideTypographyLineHeightUnit: value })}
+											/>
 											<DimensionControl
-                                                label={__('Margin', 'smart-blocks')}
-                                                dimensionTop={sideTitleMarginTop}
-                                                setDimensionTop={value => setAttributes({sideTitleMarginTop: value})}
-                                                dimensionMdTop={sideTitleMarginMdTop}
-                                                setDimensionMdTop={value => setAttributes({sideTitleMarginMdTop: value})}
-                                                dimensionSmTop={sideTitleMarginSmTop}
-                                                setDimensionSmTop={value => setAttributes({sideTitleMarginSmTop: value})}
+												label={__('Margin', 'smart-blocks')}
+												dimensionTop={sideTitleMarginTop}
+												setDimensionTop={value => setAttributes({ sideTitleMarginTop: value })}
+												dimensionMdTop={sideTitleMarginMdTop}
+												setDimensionMdTop={value => setAttributes({ sideTitleMarginMdTop: value })}
+												dimensionSmTop={sideTitleMarginSmTop}
+												setDimensionSmTop={value => setAttributes({ sideTitleMarginSmTop: value })}
 
-                                                dimensionLeft={sideTitleMarginLeft}
-                                                setDimensionLeft={value => setAttributes({sideTitleMarginLeft: value})}
-                                                dimensionMdLeft={sideTitleMarginMdLeft}
-                                                setDimensionMdLeft={value => setAttributes({sideTitleMarginMdLeft: value})}
-                                                dimensionSmLeft={sideTitleMarginSmLeft}
-                                                setDimensionSmLeft={value => setAttributes({sideTitleMarginSmLeft: value})}
+												dimensionLeft={sideTitleMarginLeft}
+												setDimensionLeft={value => setAttributes({ sideTitleMarginLeft: value })}
+												dimensionMdLeft={sideTitleMarginMdLeft}
+												setDimensionMdLeft={value => setAttributes({ sideTitleMarginMdLeft: value })}
+												dimensionSmLeft={sideTitleMarginSmLeft}
+												setDimensionSmLeft={value => setAttributes({ sideTitleMarginSmLeft: value })}
 
-                                                dimensionRight={sideTitleMarginRight}
-                                                setDimensionRight={value => setAttributes({sideTitleMarginRight: value})}
-                                                dimensionMdRight={sideTitleMarginMdRight}
-                                                setDimensionMdRight={value => setAttributes({sideTitleMarginMdRight: value})}
-                                                dimensionSmRight={sideTitleMarginSmRight}
-                                                setDimensionSmRight={value => setAttributes({sideTitleMarginSmRight: value})}
+												dimensionRight={sideTitleMarginRight}
+												setDimensionRight={value => setAttributes({ sideTitleMarginRight: value })}
+												dimensionMdRight={sideTitleMarginMdRight}
+												setDimensionMdRight={value => setAttributes({ sideTitleMarginMdRight: value })}
+												dimensionSmRight={sideTitleMarginSmRight}
+												setDimensionSmRight={value => setAttributes({ sideTitleMarginSmRight: value })}
 
-                                                dimensionBottom={sideTitleMarginBottom}
-                                                setDimensionBottom={value => setAttributes({sideTitleMarginBottom: value})}
-                                                dimensionMdBottom={sideTitleMarginMdBottom}
-                                                setDimensionMdBottom={value => setAttributes({sideTitleMarginMdBottom: value})}
-                                                dimensionSmBottom={sideTitleMarginSmBottom}
-                                                setDimensionSmBottom={value => setAttributes({sideTitleMarginSmBottom: value})}
+												dimensionBottom={sideTitleMarginBottom}
+												setDimensionBottom={value => setAttributes({ sideTitleMarginBottom: value })}
+												dimensionMdBottom={sideTitleMarginMdBottom}
+												setDimensionMdBottom={value => setAttributes({ sideTitleMarginMdBottom: value })}
+												dimensionSmBottom={sideTitleMarginSmBottom}
+												setDimensionSmBottom={value => setAttributes({ sideTitleMarginSmBottom: value })}
 
-                                                unit={sideTitleMarginUnit}
-                                                setUnit={value => setAttributes({sideTitleMarginUnit: value})}
+												unit={sideTitleMarginUnit}
+												setUnit={value => setAttributes({ sideTitleMarginUnit: value })}
 												responsive={!0}
 											/>
 										</div>
@@ -1071,117 +1071,117 @@ export default function Edit({ attributes, setAttributes }) {
 								>
 									<TypographyControl
 										label={__('Typography', 'smart-blocks')}
-                                        valueFamily={metasTypographyFamily}
-                                        setValueFamily={value => setAttributes({metasTypographyFamily: value})}
-                                        valueWeight={metasTypographyWeight}
-                                        setValueWeight={value => setAttributes({metasTypographyWeight: value})}
-                                        valueTextTransform={metasTypographyTextTransform}
-                                        setValueTextTransform={value => setAttributes({metasTypographyTextTransform: value})}
-                                        valueTextDecoration={metasTypographyTextDecoration}
-                                        setValueTextDecoration={value => setAttributes({metasTypographyTextDecoration: value})}
-                                        valueFontSizeSm={metasTypographyFontSizeSm}
-                                        setValueFontSizeSm={value => setAttributes({metasTypographyFontSizeSm: value})}
-                                        valueFontSizeMd={metasTypographyFontSizeMd}
-                                        setValueFontSizeMd={value => setAttributes({metasTypographyFontSizeMd: value})}
-                                        valueFontSize={metasTypographyFontSize}
-                                        setValueFontSize={value => setAttributes({metasTypographyFontSize: value})}
-                                        valueFontSizeUnit={metasTypographyFontSizeUnit}
-                                        setValueFontSizeUnit={value => setAttributes({metasTypographyFontSizeUnit: value})}
-                                        valueLetterSpacingSm={metasTypographyLetterSpacingSm}
-                                        setValueLetterSpacingSm={value => setAttributes({metasTypographyLetterSpacingSm: value})}
-                                        valueLetterSpacingMd={metasTypographyLetterSpacingMd}
-                                        setValueLetterSpacingMd={value => setAttributes({metasTypographyLetterSpacingMd: value})}
-                                        valueLetterSpacing={metasTypographyLetterSpacing}
-                                        setValueLetterSpacing={value => setAttributes({metasTypographyLetterSpacing: value})}
-                                        valueLetterSpacingUnit={metasTypographyLetterSpacingUnit}
-                                        setValueLetterSpacingUnit={value => setAttributes({metasTypographyLetterSpacingUnit: value})}
-                                        valueLineHeightSm={metasTypographyLineHeightSm}
-                                        setValueLineHeightSm={value => setAttributes({metasTypographyLineHeightSm: value})}
-                                        valueLineHeightMd={metasTypographyLineHeightMd}
-                                        setValueLineHeightMd={value => setAttributes({metasTypographyLineHeightMd: value})}
-                                        valueLineHeight={metasTypographyLineHeight}
-                                        setValueLineHeight={value => setAttributes({metasTypographyLineHeight: value})}
-                                        valueLineHeightUnit={metasTypographyLineHeightUnit}
-                                        setValueLineHeightUnit={value => setAttributes({metasTypographyLineHeightUnit: value})}
-                                    />
+										valueFamily={metasTypographyFamily}
+										setValueFamily={value => setAttributes({ metasTypographyFamily: value })}
+										valueWeight={metasTypographyWeight}
+										setValueWeight={value => setAttributes({ metasTypographyWeight: value })}
+										valueTextTransform={metasTypographyTextTransform}
+										setValueTextTransform={value => setAttributes({ metasTypographyTextTransform: value })}
+										valueTextDecoration={metasTypographyTextDecoration}
+										setValueTextDecoration={value => setAttributes({ metasTypographyTextDecoration: value })}
+										valueFontSizeSm={metasTypographyFontSizeSm}
+										setValueFontSizeSm={value => setAttributes({ metasTypographyFontSizeSm: value })}
+										valueFontSizeMd={metasTypographyFontSizeMd}
+										setValueFontSizeMd={value => setAttributes({ metasTypographyFontSizeMd: value })}
+										valueFontSize={metasTypographyFontSize}
+										setValueFontSize={value => setAttributes({ metasTypographyFontSize: value })}
+										valueFontSizeUnit={metasTypographyFontSizeUnit}
+										setValueFontSizeUnit={value => setAttributes({ metasTypographyFontSizeUnit: value })}
+										valueLetterSpacingSm={metasTypographyLetterSpacingSm}
+										setValueLetterSpacingSm={value => setAttributes({ metasTypographyLetterSpacingSm: value })}
+										valueLetterSpacingMd={metasTypographyLetterSpacingMd}
+										setValueLetterSpacingMd={value => setAttributes({ metasTypographyLetterSpacingMd: value })}
+										valueLetterSpacing={metasTypographyLetterSpacing}
+										setValueLetterSpacing={value => setAttributes({ metasTypographyLetterSpacing: value })}
+										valueLetterSpacingUnit={metasTypographyLetterSpacingUnit}
+										setValueLetterSpacingUnit={value => setAttributes({ metasTypographyLetterSpacingUnit: value })}
+										valueLineHeightSm={metasTypographyLineHeightSm}
+										setValueLineHeightSm={value => setAttributes({ metasTypographyLineHeightSm: value })}
+										valueLineHeightMd={metasTypographyLineHeightMd}
+										setValueLineHeightMd={value => setAttributes({ metasTypographyLineHeightMd: value })}
+										valueLineHeight={metasTypographyLineHeight}
+										setValueLineHeight={value => setAttributes({ metasTypographyLineHeight: value })}
+										valueLineHeightUnit={metasTypographyLineHeightUnit}
+										setValueLineHeightUnit={value => setAttributes({ metasTypographyLineHeightUnit: value })}
+									/>
 								</PanelBody>
 							</>
-                        ) || 'advanced' === activeTab && (
+						) || 'advanced' === activeTab && (
 							<>
 								<PanelBody
 									title={__('Layout', 'smart-blocks')}
 									initialOpen={false}
 								>
 									<DimensionControl
-                                        label={__('Margin', 'smart-blocks')}
-                                        min="0"
-                                        max="100"
-                                        dimensionTop={blockMarginTop}
-                                        setDimensionTop={value => setAttributes({blockMarginTop: value})}
-                                        dimensionMdTop={blockMarginMdTop}
-                                        setDimensionMdTop={value => setAttributes({blockMarginMdTop: value})}
-                                        dimensionSmTop={blockMarginSmTop}
-                                        setDimensionSmTop={value => setAttributes({blockMarginSmTop: value})}
+										label={__('Margin', 'smart-blocks')}
+										min="0"
+										max="100"
+										dimensionTop={blockMarginTop}
+										setDimensionTop={value => setAttributes({ blockMarginTop: value })}
+										dimensionMdTop={blockMarginMdTop}
+										setDimensionMdTop={value => setAttributes({ blockMarginMdTop: value })}
+										dimensionSmTop={blockMarginSmTop}
+										setDimensionSmTop={value => setAttributes({ blockMarginSmTop: value })}
 
-                                        dimensionLeft={blockMarginLeft}
-                                        setDimensionLeft={value => setAttributes({blockMarginLeft: value})}
-                                        dimensionMdLeft={blockMarginMdLeft}
-                                        setDimensionMdLeft={value => setAttributes({blockMarginMdLeft: value})}
-                                        dimensionSmLeft={blockMarginSmLeft}
-                                        setDimensionSmLeft={value => setAttributes({blockMarginSmLeft: value})}
+										dimensionLeft={blockMarginLeft}
+										setDimensionLeft={value => setAttributes({ blockMarginLeft: value })}
+										dimensionMdLeft={blockMarginMdLeft}
+										setDimensionMdLeft={value => setAttributes({ blockMarginMdLeft: value })}
+										dimensionSmLeft={blockMarginSmLeft}
+										setDimensionSmLeft={value => setAttributes({ blockMarginSmLeft: value })}
 
-                                        dimensionRight={blockMarginRight}
-                                        setDimensionRight={value => setAttributes({blockMarginRight: value})}
-                                        dimensionMdRight={blockMarginMdRight}
-                                        setDimensionMdRight={value => setAttributes({blockMarginMdRight: value})}
-                                        dimensionSmRight={blockMarginSmRight}
-                                        setDimensionSmRight={value => setAttributes({blockMarginSmRight: value})}
+										dimensionRight={blockMarginRight}
+										setDimensionRight={value => setAttributes({ blockMarginRight: value })}
+										dimensionMdRight={blockMarginMdRight}
+										setDimensionMdRight={value => setAttributes({ blockMarginMdRight: value })}
+										dimensionSmRight={blockMarginSmRight}
+										setDimensionSmRight={value => setAttributes({ blockMarginSmRight: value })}
 
-                                        dimensionBottom={blockMarginBottom}
-                                        setDimensionBottom={value => setAttributes({blockMarginBottom: value})}
-                                        dimensionMdBottom={blockMarginMdBottom}
-                                        setDimensionMdBottom={value => setAttributes({blockMarginMdBottom: value})}
-                                        dimensionSmBottom={blockMarginSmBottom}
-                                        setDimensionSmBottom={value => setAttributes({blockMarginSmBottom: value})}
+										dimensionBottom={blockMarginBottom}
+										setDimensionBottom={value => setAttributes({ blockMarginBottom: value })}
+										dimensionMdBottom={blockMarginMdBottom}
+										setDimensionMdBottom={value => setAttributes({ blockMarginMdBottom: value })}
+										dimensionSmBottom={blockMarginSmBottom}
+										setDimensionSmBottom={value => setAttributes({ blockMarginSmBottom: value })}
 
-                                        unit={blockMarginUnit}
-                                        setUnit={value => setAttributes({blockMarginUnit: value})}
+										unit={blockMarginUnit}
+										setUnit={value => setAttributes({ blockMarginUnit: value })}
 										responsive={!0}
 									/>
 									<DimensionControl
-                                        label={__('Padding', 'smart-blocks')}
-                                        min="0"
-                                        max="100"
-                                        dimensionTop={blockPaddingTop}
-                                        setDimensionTop={value => setAttributes({blockPaddingTop: value})}
-                                        dimensionMdTop={blockPaddingMdTop}
-                                        setDimensionMdTop={value => setAttributes({blockPaddingMdTop: value})}
-                                        dimensionSmTop={blockPaddingSmTop}
-                                        setDimensionSmTop={value => setAttributes({blockPaddingSmTop: value})}
+										label={__('Padding', 'smart-blocks')}
+										min="0"
+										max="100"
+										dimensionTop={blockPaddingTop}
+										setDimensionTop={value => setAttributes({ blockPaddingTop: value })}
+										dimensionMdTop={blockPaddingMdTop}
+										setDimensionMdTop={value => setAttributes({ blockPaddingMdTop: value })}
+										dimensionSmTop={blockPaddingSmTop}
+										setDimensionSmTop={value => setAttributes({ blockPaddingSmTop: value })}
 
-                                        dimensionLeft={blockPaddingLeft}
-                                        setDimensionLeft={value => setAttributes({blockPaddingLeft: value})}
-                                        dimensionMdLeft={blockPaddingMdLeft}
-                                        setDimensionMdLeft={value => setAttributes({blockPaddingMdLeft: value})}
-                                        dimensionSmLeft={blockPaddingSmLeft}
-                                        setDimensionSmLeft={value => setAttributes({blockPaddingSmLeft: value})}
+										dimensionLeft={blockPaddingLeft}
+										setDimensionLeft={value => setAttributes({ blockPaddingLeft: value })}
+										dimensionMdLeft={blockPaddingMdLeft}
+										setDimensionMdLeft={value => setAttributes({ blockPaddingMdLeft: value })}
+										dimensionSmLeft={blockPaddingSmLeft}
+										setDimensionSmLeft={value => setAttributes({ blockPaddingSmLeft: value })}
 
-                                        dimensionRight={blockPaddingRight}
-                                        setDimensionRight={value => setAttributes({blockPaddingRight: value})}
-                                        dimensionMdRight={blockPaddingMdRight}
-                                        setDimensionMdRight={value => setAttributes({blockPaddingMdRight: value})}
-                                        dimensionSmRight={blockPaddingSmRight}
-                                        setDimensionSmRight={value => setAttributes({blockPaddingSmRight: value})}
+										dimensionRight={blockPaddingRight}
+										setDimensionRight={value => setAttributes({ blockPaddingRight: value })}
+										dimensionMdRight={blockPaddingMdRight}
+										setDimensionMdRight={value => setAttributes({ blockPaddingMdRight: value })}
+										dimensionSmRight={blockPaddingSmRight}
+										setDimensionSmRight={value => setAttributes({ blockPaddingSmRight: value })}
 
-                                        dimensionBottom={blockPaddingBottom}
-                                        setDimensionBottom={value => setAttributes({blockPaddingBottom: value})}
-                                        dimensionMdBottom={blockPaddingMdBottom}
-                                        setDimensionMdBottom={value => setAttributes({blockPaddingMdBottom: value})}
-                                        dimensionSmBottom={blockPaddingSmBottom}
-                                        setDimensionSmBottom={value => setAttributes({blockPaddingSmBottom: value})}
+										dimensionBottom={blockPaddingBottom}
+										setDimensionBottom={value => setAttributes({ blockPaddingBottom: value })}
+										dimensionMdBottom={blockPaddingMdBottom}
+										setDimensionMdBottom={value => setAttributes({ blockPaddingMdBottom: value })}
+										dimensionSmBottom={blockPaddingSmBottom}
+										setDimensionSmBottom={value => setAttributes({ blockPaddingSmBottom: value })}
 
-                                        unit={blockPaddingUnit}
-                                        setUnit={value => setAttributes({blockPaddingUnit: value})}
+										unit={blockPaddingUnit}
+										setUnit={value => setAttributes({ blockPaddingUnit: value })}
 										responsive={!0}
 									/>
 								</PanelBody>
@@ -1205,39 +1205,39 @@ export default function Edit({ attributes, setAttributes }) {
 												/>
 											)}
 											<DimensionControl
-                                                label={__('Border Width', 'smart-blocks')}
-                                                dimensionTop={borderNormalWidthTop}
-                                                setDimensionTop={value => setAttributes({borderNormalWidthTop: value})}
+												label={__('Border Width', 'smart-blocks')}
+												dimensionTop={borderNormalWidthTop}
+												setDimensionTop={value => setAttributes({ borderNormalWidthTop: value })}
 
-                                                dimensionLeft={borderNormalWidthLeft}
-                                                setDimensionLeft={value => setAttributes({borderNormalWidthLeft: value})}
+												dimensionLeft={borderNormalWidthLeft}
+												setDimensionLeft={value => setAttributes({ borderNormalWidthLeft: value })}
 
-                                                dimensionRight={borderNormalWidthRight}
-                                                setDimensionRight={value => setAttributes({borderNormalWidthRight: value})}
+												dimensionRight={borderNormalWidthRight}
+												setDimensionRight={value => setAttributes({ borderNormalWidthRight: value })}
 
-                                                dimensionBottom={borderNormalWidthBottom}
-                                                setDimensionBottom={value => setAttributes({borderNormalWidthBottom: value})}
+												dimensionBottom={borderNormalWidthBottom}
+												setDimensionBottom={value => setAttributes({ borderNormalWidthBottom: value })}
 
-                                                unit={borderNormalWidthUnit}
-                                                setUnit={value => setAttributes({borderNormalWidthUnit: value})}
+												unit={borderNormalWidthUnit}
+												setUnit={value => setAttributes({ borderNormalWidthUnit: value })}
 												units={['px', 'em']}
 											/>
 											<DimensionControl
-                                                label={__('Border Radius', 'smart-blocks')}
-                                                dimensionTop={borderNormalRadiusTop}
-                                                setDimensionTop={value => setAttributes({borderNormalRadiusTop: value})}
+												label={__('Border Radius', 'smart-blocks')}
+												dimensionTop={borderNormalRadiusTop}
+												setDimensionTop={value => setAttributes({ borderNormalRadiusTop: value })}
 
-                                                dimensionLeft={borderNormalRadiusLeft}
-                                                setDimensionLeft={value => setAttributes({borderNormalRadiusLeft: value})}
+												dimensionLeft={borderNormalRadiusLeft}
+												setDimensionLeft={value => setAttributes({ borderNormalRadiusLeft: value })}
 
-                                                dimensionRight={borderNormalRadiusRight}
-                                                setDimensionRight={value => setAttributes({borderNormalRadiusRight: value})}
+												dimensionRight={borderNormalRadiusRight}
+												setDimensionRight={value => setAttributes({ borderNormalRadiusRight: value })}
 
-                                                dimensionBottom={borderNormalRadiusBottom}
-                                                setDimensionBottom={value => setAttributes({borderNormalRadiusBottom: value})}
+												dimensionBottom={borderNormalRadiusBottom}
+												setDimensionBottom={value => setAttributes({ borderNormalRadiusBottom: value })}
 
-                                                unit={borderNormalRadiusUnit}
-                                                setUnit={value => setAttributes({borderNormalRadiusUnit: value})}
+												unit={borderNormalRadiusUnit}
+												setUnit={value => setAttributes({ borderNormalRadiusUnit: value })}
 											/>
 											<BoxShadowControl
 												values={borderNormalBoxShadow}
@@ -1258,39 +1258,39 @@ export default function Edit({ attributes, setAttributes }) {
 												/>
 											)}
 											<DimensionControl
-                                                label={__('Border Width', 'smart-blocks')}
-                                                dimensionTop={borderHoverWidthTop}
-                                                setDimensionTop={value => setAttributes({borderHoverWidthTop: value})}
+												label={__('Border Width', 'smart-blocks')}
+												dimensionTop={borderHoverWidthTop}
+												setDimensionTop={value => setAttributes({ borderHoverWidthTop: value })}
 
-                                                dimensionLeft={borderHoverWidthLeft}
-                                                setDimensionLeft={value => setAttributes({borderHoverWidthLeft: value})}
+												dimensionLeft={borderHoverWidthLeft}
+												setDimensionLeft={value => setAttributes({ borderHoverWidthLeft: value })}
 
-                                                dimensionRight={borderHoverWidthRight}
-                                                setDimensionRight={value => setAttributes({borderHoverWidthRight: value})}
+												dimensionRight={borderHoverWidthRight}
+												setDimensionRight={value => setAttributes({ borderHoverWidthRight: value })}
 
-                                                dimensionBottom={borderHoverWidthBottom}
-                                                setDimensionBottom={value => setAttributes({borderHoverWidthBottom: value})}
+												dimensionBottom={borderHoverWidthBottom}
+												setDimensionBottom={value => setAttributes({ borderHoverWidthBottom: value })}
 
-                                                unit={borderHoverWidthUnit}
-                                                setUnit={value => setAttributes({borderHoverWidthUnit: value})}
+												unit={borderHoverWidthUnit}
+												setUnit={value => setAttributes({ borderHoverWidthUnit: value })}
 												units={['px', 'em']}
 											/>
 											<DimensionControl
-                                                label={__('Border Radius', 'smart-blocks')}
-                                                dimensionTop={borderHoverRadiusTop}
-                                                setDimensionTop={value => setAttributes({borderHoverRadiusTop: value})}
+												label={__('Border Radius', 'smart-blocks')}
+												dimensionTop={borderHoverRadiusTop}
+												setDimensionTop={value => setAttributes({ borderHoverRadiusTop: value })}
 
-                                                dimensionLeft={borderHoverRadiusLeft}
-                                                setDimensionLeft={value => setAttributes({borderHoverRadiusLeft: value})}
+												dimensionLeft={borderHoverRadiusLeft}
+												setDimensionLeft={value => setAttributes({ borderHoverRadiusLeft: value })}
 
-                                                dimensionRight={borderHoverRadiusRight}
-                                                setDimensionRight={value => setAttributes({borderHoverRadiusRight: value})}
+												dimensionRight={borderHoverRadiusRight}
+												setDimensionRight={value => setAttributes({ borderHoverRadiusRight: value })}
 
-                                                dimensionBottom={borderHoverRadiusBottom}
-                                                setDimensionBottom={value => setAttributes({borderHoverRadiusBottom: value})}
+												dimensionBottom={borderHoverRadiusBottom}
+												setDimensionBottom={value => setAttributes({ borderHoverRadiusBottom: value })}
 
-                                                unit={borderHoverRadiusUnit}
-                                                setUnit={value => setAttributes({borderHoverRadiusUnit: value})}
+												unit={borderHoverRadiusUnit}
+												setUnit={value => setAttributes({ borderHoverRadiusUnit: value })}
 											/>
 											<BoxShadowControl
 												values={borderHoverBoxShadow}
@@ -1311,9 +1311,9 @@ export default function Edit({ attributes, setAttributes }) {
 									/>
 								</PanelBody>
 							</>
-                        )}
-                    </div>
-                </div>
+						)}
+					</div>
+				</div>
 			</InspectorControls>
 			<div id={id}>
 				<div {...useBlockProps({

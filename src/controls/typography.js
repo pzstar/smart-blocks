@@ -4,7 +4,7 @@ import GoogleFontsList from '../utils/googlefonts.json';
 import { useState, useEffect } from '@wordpress/element';
 import { DesktopIcon, TabletIcon, PhoneIcon, ClearIcon } from '../utils/svgicons';
 import ResponsiveDropdown from '../utils/responsivedropdown';
-import {useSelect} from '@wordpress/data';
+import { useSelect } from '@wordpress/data';
 
 const TypographyControl = ({
 	label,
@@ -63,10 +63,10 @@ const TypographyControl = ({
 	}
 
 	const getView = useSelect(select => {
-        const { getView } = select( 'smart-blocks/data' );
-        const { __experimentalGetPreviewDeviceType } = select( 'core/edit-post' ) ? select( 'core/edit-post' ) : false;
-        return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
-    }, []);
+		const { getView } = select('smart-blocks/data');
+		const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+	}, []);
 
 	return <>
 		<div className="sb-typography-options">
@@ -125,7 +125,7 @@ const TypographyControl = ({
 												<select
 													value={valueWeight}
 													onChange={(e) => setValueWeight(e.target.value)}>
-													{!( valueFamily && valueFamily != 'inherit') && (<option value="inherit">Default</option>)}
+													{!(valueFamily && valueFamily != 'inherit') && (<option value="inherit">Default</option>)}
 													{Object.keys(allWeights).sort().map((key) => {
 														return <option value={key}>{allWeights[key]}</option>;
 													})
@@ -173,7 +173,7 @@ const TypographyControl = ({
 										<div>
 											<label for="input">{__('Font Size', 'smart-blocks')}</label>
 										</div>
-										<ResponsiveDropdown/>
+										<ResponsiveDropdown />
 										<div className="sb-unit-btn-group sb-ml-auto sb-mb-5">
 											<button
 												className={`${valueFontSizeUnit === 'px' ? "active" : ""}`}
@@ -245,7 +245,7 @@ const TypographyControl = ({
 										<div>
 											<label for="input">{__('Letter Spacing', 'smart-blocks')}</label>
 										</div>
-										<ResponsiveDropdown/>
+										<ResponsiveDropdown />
 										<div className="sb-unit-btn-group sb-ml-auto sb-mb-5">
 											<button
 												className={`${valueLetterSpacingUnit === 'px' ? "active" : ""}`}
@@ -317,7 +317,7 @@ const TypographyControl = ({
 										<div>
 											<label for="input">{__('Line Height', 'smart-blocks')}</label>
 										</div>
-										<ResponsiveDropdown/>
+										<ResponsiveDropdown />
 										<div className="sb-unit-btn-group sb-ml-auto sb-mb-5">
 											<button
 												className={`${valueLineHeightUnit === 'px' ? "active" : ""}`}

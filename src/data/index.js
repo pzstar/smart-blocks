@@ -7,9 +7,9 @@ const DEFAULT_STATE = {
 	viewType: 'Desktop'
 };
 
-registerStore( 'smart-blocks/data', {
-	reducer( state = DEFAULT_STATE, action ) {
-		if ( 'UPDATE_VIEW' === action.type ) {
+registerStore('smart-blocks/data', {
+	reducer(state = DEFAULT_STATE, action) {
+		if ('UPDATE_VIEW' === action.type) {
 			return {
 				viewType: action.viewType
 			};
@@ -19,13 +19,13 @@ registerStore( 'smart-blocks/data', {
 	},
 
 	selectors: {
-		getView( state ) {
+		getView(state) {
 			return state.viewType;
 		}
 	},
 
 	actions: {
-		updateView( viewType ) {
+		updateView(viewType) {
 			return {
 				type: 'UPDATE_VIEW',
 				viewType

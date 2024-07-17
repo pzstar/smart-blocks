@@ -1,7 +1,7 @@
 const attributes = {
-	id: {
-		type: 'string'
-	},
+    id: {
+        type: 'string'
+    },
     style: {
         type: 'string'
     },
@@ -91,13 +91,13 @@ const attributes = {
         default: 'px'
     },
 
-	columnsHTMLTag: {
-		type: 'string',
-		default: 'div'
-	},
-	columnWidth: {
-		type: 'string'
-	},
+    columnsHTMLTag: {
+        type: 'string',
+        default: 'div'
+    },
+    columnWidth: {
+        type: 'string'
+    },
     columnBgColor: {
         type: 'string'
     }

@@ -2,21 +2,21 @@ import classnames from 'classnames';
 
 import { InnerBlocks } from '@wordpress/block-editor';
 
-const Save = ({attributes, className}) => {
+const Save = ({ attributes, className }) => {
 	const {
 		id,
-        columns,
-        columnsHTMLTag,
-        layout,
-        layoutTablet,
-        layoutMobile,
-        reverseColumnsTablet,
-        reverseColumnsMobile,
-        hide,
-        hideTablet,
-        hideMobile,
-        sectionContentWidth
-    } = attributes;
+		columns,
+		columnsHTMLTag,
+		layout,
+		layoutTablet,
+		layoutMobile,
+		reverseColumnsTablet,
+		reverseColumnsMobile,
+		hide,
+		hideTablet,
+		hideMobile,
+		sectionContentWidth
+	} = attributes;
 
 	const Tag = columnsHTMLTag;
 	const desktopLayout = hide ? '' : `has-desktop-${layout}-layout`;
@@ -29,11 +29,11 @@ const Save = ({attributes, className}) => {
 		desktopLayout,
 		tabletLayout,
 		mobileLayout,
-		{'hide-in-desktop': hide},
-		{'hide-in-tablet': hideTablet},
-		{'hide-in-mobile': hideMobile},
-		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
-		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
+		{ 'hide-in-desktop': hide },
+		{ 'hide-in-tablet': hideTablet },
+		{ 'hide-in-mobile': hideMobile },
+		{ 'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet) },
+		{ 'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile) },
 		`has-${sectionContentWidth}-width`
 	);
 

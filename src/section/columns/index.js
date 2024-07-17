@@ -23,7 +23,7 @@ import { __ } from '@wordpress/i18n';
 registerBlockType('smart-blocks/columns', {
     icon: <Tile1 />,
     supports: {
-        "align": [ 'wide', 'full' ],
+        "align": ['wide', 'full'],
         "html": false
     },
     category: "smart-blocks-block-modules",

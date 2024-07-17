@@ -1,4 +1,4 @@
-( function( window, wp ){
+(function (window, wp) {
 
     // check if gutenberg's editor root element is present.
     const editorEl = document.getElementById('editor');
@@ -16,15 +16,15 @@
         setTimeout(() => {
             if (!document.getElementById("sb-template-import-button")) {
                 const toolbalEl = editorEl.querySelector('.editor-document-tools__left');
-                if(toolbalEl instanceof HTMLElement) {
+                if (toolbalEl instanceof HTMLElement) {
                     toolbalEl.insertAdjacentHTML('beforeend', importBtn);
-				    document.getElementById("sb-template-import-button").addEventListener("click", () => {
-				    	const templateImportBlock = wp.blocks.createBlock("smart-blocks/template-import", {isLibraryOpen: !0});
-					    wp.data.dispatch("core/block-editor").insertBlocks(templateImportBlock);
-				    });
+                    document.getElementById("sb-template-import-button").addEventListener("click", () => {
+                        const templateImportBlock = wp.blocks.createBlock("smart-blocks/template-import", { isLibraryOpen: !0 });
+                        wp.data.dispatch("core/block-editor").insertBlocks(templateImportBlock);
+                    });
                 }
             }
         }, 1)
-    } );
+    });
 
-} )( window, wp )
+})(window, wp)
