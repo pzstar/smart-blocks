@@ -17,14 +17,14 @@ const getFontClass = (family = '', weight = '', textTransform = '', textDecorati
     return retrun_classes.join(" ");
 }
 
-const dimensionVars = (varname, top, right, bottom, left, unit) => {
+const dimensionVars = (varname, top, right, bottom, left, unit = '') => {
     return `--sb-${varname}-top: ${top ? (top + unit) : 'initial'};
         --sb-${varname}-right: ${right ? (right + unit) : 'initial'};
         --sb-${varname}-bottom: ${bottom ? (bottom + unit) : 'initial'};
         --sb-${varname}-left: ${left ? (left + unit) : 'initial'};`;
 }
 
-const responsiveDimensionVars = (varname, top, right, bottom, left, topSm, rightSm, bottomSm, leftSm, topMd, rightMd, bottomMd, leftMd, unit) => {
+const responsiveDimensionVars = (varname, top, right, bottom, left, topSm, rightSm, bottomSm, leftSm, topMd, rightMd, bottomMd, leftMd, unit = '') => {
     return `--sb-${varname}-top-sm: ${topSm ? (topSm + unit) : 'var(--sb-' + varname + '-top-md)'};
         --sb-${varname}-right-sm: ${rightSm ? (rightSm + unit) : 'var(--sb-' + varname + '-right-md)'};
         --sb-${varname}-bottom-sm: ${bottomSm ? (bottomSm + unit) : 'var(--sb-' + varname + '-bottom-md)'};
@@ -39,13 +39,13 @@ const responsiveDimensionVars = (varname, top, right, bottom, left, topSm, right
         --sb-${varname}-left-lg: ${left ? (left + unit) : 'initial'};`;
 }
 
-const responsiveSliderVars = (varname, valueLg, valueSm, valueMd, unit) => {
+const responsiveSliderVars = (varname, valueLg, valueSm, valueMd, unit = '') => {
     return `--sb-${varname}-sm: ${valueSm ? (valueSm + unit) : 'var(--sb-' + varname + '-md)'};
         --sb-${varname}-md: ${valueMd ? (valueMd + unit) : 'var(--sb-' + varname + '-lg)'};
         --sb-${varname}-lg: ${valueLg ? (valueLg + unit) : 'initial'};`;
 }
 
-const boxShadowVars = (varname, horizontal, vertical, blur, spread, color, inset, unit) => {
+const boxShadowVars = (varname, horizontal, vertical, blur, spread, color, inset, unit = '') => {
     return `--sb-${varname}-horizontal: ${horizontal ? (horizontal + unit) : '0'};
         --sb-${varname}-vertical: ${vertical ? (vertical + unit) : '0'};
         --sb-${varname}-blur: ${blur ? (blur + unit) : '0'};
@@ -82,7 +82,7 @@ const responsiveTypographyVars = (varname, family, weight, textTransform, textDe
         `;
 }
 
-const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueColumnLg, valueColumnSm, valueColumnMd, unit) => {
+const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueColumnLg, valueColumnSm, valueColumnMd, unit = '') => {
     return `--sb-${varname}-row-sm: ${valueRowSm ? (valueRowSm + unit) : ''};
         --sb-${varname}-row-md: ${valueRowMd ? (valueRowMd + unit) : ''};
         --sb-${varname}-row-lg: ${valueRowLg ? (valueRowLg + unit) : ''};

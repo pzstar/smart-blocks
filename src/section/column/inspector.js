@@ -18,13 +18,24 @@ import {
 /**
  * Internal dependencies
  */
-import { LayoutIcon, StyleIcon, AdvancedIcon } from '../../utils/svgicons';
 import DimensionControl from '../../controls/dimension';
 import ColorControl from '../../controls/color';
 import ImageBackgroundControl from '../../controls/imagebackground';
 import BoxShadowControl from '../../controls/boxshadow';
 import BorderControl from '../../controls/border';
 import Tabs from '../../utils/tabs';
+import ButtonGroupControl from '../../controls/buttongroup';
+import RangeSliderControl from '../../controls/rangeslider';
+
+import {
+	LayoutIcon,
+	StyleIcon,
+	AdvancedIcon,
+	AlignFlexStart,
+	AlignCenter,
+	AlignFlexEnd,
+	AlignStretch
+} from '../../utils/svgicons';
 
 const Inspector = ({
 	attributes,
@@ -111,6 +122,14 @@ const Inspector = ({
 		borderHoverBoxShadowSpread,
 		borderHoverBoxShadowColor,
 		borderHoverBoxShadowInset,
+
+		columnAlignSelf,
+	    columnAlignSelfSm,
+	    columnAlignSelfMd,
+
+	    columnCustomOrder,
+	    columnCustomOrderSm,
+	    columnCustomOrderMd
 	} = attributes;
 
 	const getView = useSelect((select) => {
@@ -218,6 +237,59 @@ const Inspector = ({
 										max={(Number(attributes.columnWidth) + Number(nextBlockWidth.current)) - 10}
 									/>
 								)}
+							</PanelBody>
+
+							<PanelBody
+									title={__('Layout', 'smart-blocks')}
+									initialOpen={false}
+								>
+
+								<ButtonGroupControl
+									label={__('Align Self', 'smart-blocks')}
+									responsive={!0}
+									options={[
+										{
+											value: 'flex-start',
+											icon: <AlignFlexStart />,
+											label: __('Flex Start', 'smart-blocks')
+										},
+										{
+											value: 'center',
+											icon: <AlignCenter />,
+											label: __('Center', 'smart-blocks')
+										},
+										{
+											value: 'flex-end',
+											icon: <AlignFlexEnd />,
+											label: __('Flex End', 'smart-blocks')
+										},
+										{
+											value: 'stretch',
+											icon: <AlignStretch />,
+											label: __('Stretch', 'smart-blocks')
+										},
+									]}
+									value={columnAlignSelf}
+									setValue={(value) => setAttributes({ columnAlignSelf: value })}
+									valueSm={columnAlignSelfSm}
+									setValueSm={(value) => setAttributes({ columnAlignSelfSm: value })}
+									valueMd={columnAlignSelfMd}
+									setValueMd={(value) => setAttributes({ columnAlignSelfMd: value })}
+								/>
+
+
+								<RangeSliderControl
+									label={__('Custom Order', 'smart-blocks')}
+									min={0}
+									max={20}
+									responsive={!0}
+									value={columnCustomOrder}
+									setValue={(value) => setAttributes({ columnCustomOrder: value })}
+									valueSm={columnCustomOrderSm}
+									setValueSm={(value) => setAttributes({ columnCustomOrderSm: value })}
+									valueMd={columnCustomOrderMd}
+									setValueMd={(value) => setAttributes({ columnCustomOrderMd: value })}
+								/>
 							</PanelBody>
 						</>
 					) || 'style' === activeTab && (

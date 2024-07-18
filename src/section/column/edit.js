@@ -12,7 +12,7 @@ import defaultAttributes from './attributes.js';
 import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import { blockInit } from '../../helpers/block-utility.js';
-import { responsiveDimensionVars, dimensionVars, boxShadowVars, bgImgVars } from '../../utils/helper';
+import { responsiveDimensionVars, dimensionVars, boxShadowVars, bgImgVars, responsiveSliderVars } from '../../utils/helper';
 
 export default function Edit({ attributes, setAttributes, className, isSelected, clientId, toggleSelection }) {
 	const { updateBlockAttributes } = useDispatch('core/block-editor');
@@ -125,7 +125,10 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
         ${boxShadowVars('column-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
         ${boxShadowVars('column-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
-        ${bgImgVars('columns-bg-img', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPosition, columnBgRepeat)}
+        ${bgImgVars('column-bg-img', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPosition, columnBgRepeat)}
+
+        ${responsiveSliderVars('column-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
+        ${responsiveSliderVars('column-custom-order', columnCustomOrder, columnCustomOrderSm, columnCustomOrderMd)}
     }`
 	setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
