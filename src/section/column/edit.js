@@ -116,6 +116,11 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 			columnPaddingSmTop, columnPaddingSmRight, columnPaddingSmBottom, columnPaddingSmLeft,
 			columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
         ${columnBgColor ? '--sb-column-bg-color: ' + columnBgColor + ';' : ''}
+		
+		--sb-column-border-normal:${borderNormal ? borderNormal : '0'};
+        --sb-column-border-hover: ${borderHover ? borderNormal : 'var(--sb-column-border-normal);'};
+        --sb-column-border-normal-color: ${borderNormalColor ? borderNormalColor : 'initial'};
+        --sb-column-border-hover-color: ${borderHoverColor ? borderHoverColor : 'var(--sb-column-border-normal-color)'};
 
         ${dimensionVars('column-border-normal-width', borderNormalWidthTop, borderNormalWidthRight, borderNormalWidthBottom, borderNormalWidthLeft, borderNormalWidthUnit)}
         ${dimensionVars('column-border-hover-width', borderHoverWidthTop, borderHoverWidthRight, borderHoverWidthBottom, borderHoverWidthLeft, borderHoverWidthUnit)}

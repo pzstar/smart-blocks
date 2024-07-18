@@ -634,8 +634,10 @@
 .wp-block-smart-blocks-columns > .wp-block-smart-blocks-innerblocks-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout {
     display: flex;
     flex-wrap: nowrap;
-    gap: var(--sb-columns-gap-lg, 20px);
+    gap: var(--sb-columns-gap-row-lg, 20px) var(--sb-columns-gap-column-lg, 20px);
     align-items: var(--sb-columns-align-lg);
+    flex-direction: var(--sb-columns-flex-direction-lg);
+    text-align: var(--sb-columns-horizontal-align-lg);
 }
 .wp-block-smart-blocks-columns > .wp-block-smart-blocks-innerblocks-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout [data-type="smart-blocks/column"] {
     display: flex;

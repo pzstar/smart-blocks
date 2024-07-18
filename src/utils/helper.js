@@ -65,38 +65,38 @@ const responsiveTypographyVars = (varname, family, weight, textTransform, textDe
     fonsSizeSm, fontSizeMd, fontSize, fontSizeUnit,
     letterSpacingSm, letterSpacingMd, letterSpacing, letterSpacingUnit,
     lineHeightSm, lineHeightMd, lineHeight, lineHeightUnit) => {
-    return `--sb-${varname}-family: ${family ? checkDefault(family) : ''};
-        --sb-${varname}-weight: ${weight ? checkDefault(weight.replace(/\D/g, ''), weight) : ''};
-        --sb-${varname}-style: ${weight ? checkDefault(weight.replace(/\d+/g, ''), weight) : ''};
-        --sb-${varname}-tt: ${textTransform ? textTransform : ''};
-        --sb-${varname}-td: ${textDecoration ? textDecoration : ''};
-        --sb-${varname}-fs-sm: ${fonsSizeSm ? (fonsSizeSm + fontSizeUnit) : ''};
-        --sb-${varname}-fs-md: ${fontSizeMd ? (fontSizeMd + fontSizeUnit) : ''};
-        --sb-${varname}-fs-lg: ${fontSize ? (fontSize + fontSizeUnit) : ''}
-        --sb-${varname}-ls-sm: ${letterSpacingSm ? (letterSpacingSm + letterSpacingUnit) : ''};
-        --sb-${varname}-ls-md: ${letterSpacingMd ? (letterSpacingMd + letterSpacingUnit) : ''};
-        --sb-${varname}-ls-lg: ${letterSpacing ? (letterSpacing + letterSpacingUnit) : ''};
-        --sb-${varname}-lh-sm: ${lineHeightSm ? (lineHeightSm + lineHeightUnit) : ''};
-        --sb-${varname}-lh-md: ${lineHeightMd ? (lineHeightMd + lineHeightUnit) : ''};
-        --sb-${varname}-lh-lg: ${lineHeight ? (lineHeight + lineHeightUnit) : ''};
+    return `--sb-${varname}-family: ${family ? checkDefault(family) : 'inherit'};
+        --sb-${varname}-weight: ${weight ? checkDefault(weight.replace(/\D/g, ''), weight) : 'inherit'};
+        --sb-${varname}-style: ${weight ? checkDefault(weight.replace(/\d+/g, ''), weight) : 'inherit'};
+        --sb-${varname}-tt: ${textTransform ? textTransform : 'inherit'};
+        --sb-${varname}-td: ${textDecoration ? textDecoration : 'inherit'};
+        --sb-${varname}-fs-sm: ${fonsSizeSm ? (fonsSizeSm + fontSizeUnit) : 'var(--sb-' + varname + '-fs-md)'};
+        --sb-${varname}-fs-md: ${fontSizeMd ? (fontSizeMd + fontSizeUnit) : 'var(--sb-' + varname + '-fs-lg)'};
+        --sb-${varname}-fs-lg: ${fontSize ? (fontSize + fontSizeUnit) : 'inherit'}
+        --sb-${varname}-ls-sm: ${letterSpacingSm ? (letterSpacingSm + letterSpacingUnit) : 'var(--sb-' + varname + '-ls-md)'};
+        --sb-${varname}-ls-md: ${letterSpacingMd ? (letterSpacingMd + letterSpacingUnit) : 'var(--sb-' + varname + '-ls-lg)'};
+        --sb-${varname}-ls-lg: ${letterSpacing ? (letterSpacing + letterSpacingUnit) : 'inherit'};
+        --sb-${varname}-lh-sm: ${lineHeightSm ? (lineHeightSm + lineHeightUnit) : 'var(--sb-' + varname + '-lh-md)'};
+        --sb-${varname}-lh-md: ${lineHeightMd ? (lineHeightMd + lineHeightUnit) : 'var(--sb-' + varname + '-lh-lg)'};
+        --sb-${varname}-lh-lg: ${lineHeight ? (lineHeight + lineHeightUnit) : 'inherit'};
         `;
 }
 
-const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueColumnLg, valueColumnSm, valueColumnMd, unit = '') => {
-    return `--sb-${varname}-row-sm: ${valueRowSm ? (valueRowSm + unit) : ''};
-        --sb-${varname}-row-md: ${valueRowMd ? (valueRowMd + unit) : ''};
-        --sb-${varname}-row-lg: ${valueRowLg ? (valueRowLg + unit) : ''};
-        --sb-${varname}-column-sm: ${valueColumnSm ? (valueColumnSm + unit) : ''};
-        --sb-${varname}-column-md: ${valueColumnMd ? (valueColumnMd + unit) : ''};
-        --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : ''};`;
+const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueColumnLg, valueColumnSm, valueColumnMd, , unit = '') => {
+    return `--sb-${varname}-row-sm: ${valueRowSm ? (valueRowSm + unit) : 'var(--sb-' + varname + '-row-md)'};
+        --sb-${varname}-row-md: ${valueRowMd ? (valueRowMd + unit) : 'var(--sb-' + varname + '-row-lg)'};
+        --sb-${varname}-row-lg: ${valueRowLg ? (valueRowLg + unit) : 'initial'};
+        --sb-${varname}-column-sm: ${valueColumnSm ? (valueColumnSm + unit) : 'var(--sb-' + varname + '-column-md)'};
+        --sb-${varname}-column-md: ${valueColumnMd ? (valueColumnMd + unit) : 'var(--sb-' + varname + '-column-lg)'};
+        --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : 'initial'};`;
 }
 
-const bgImgVars = (varname, valueURL, valueAttachment, valueSize, valuePosition, valueRepeat, valueColumnMd) => {
-    return `--sb-${varname}-url: ${valueURL ? ('url(' + valueURL + ')') : ''};
-        --sb-${varname}-attachment: ${valueAttachment ? valueAttachment : ''};
-        --sb-${varname}-size: ${valueSize ? valueSize : ''};
-        --sb-${varname}-position: ${valuePosition ? valuePosition : ''};
-        --sb-${varname}-repeat: ${valueRepeat ? valueRepeat : ''};`;
+const bgImgVars = (varname, valueURL, valueAttachment, valueSize, valuePosition, valueRepeat) => {
+    return `--sb-${varname}-url: ${valueURL ? ('url(' + valueURL + ')') : 'initial'};
+        --sb-${varname}-attachment: ${valueAttachment ? valueAttachment : 'scroll'};
+        --sb-${varname}-size: ${valueSize ? valueSize : 'auto'};
+        --sb-${varname}-position: ${valuePosition ? valuePosition : 'center center'};
+        --sb-${varname}-repeat: ${valueRepeat ? valueRepeat : 'repeat'};`;
 }
 
 export { checkDefault, getFontClass, responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveTypographyVars, responsiveGapVars, bgImgVars };

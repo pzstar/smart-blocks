@@ -383,19 +383,9 @@ const Inspector = ({
 												label: __('Row', 'smart-blocks')
 											},
 											{
-												value: 'column',
-												icon: <Dashicon icon="arrow-down-alt" />,
-												label: __('Column', 'smart-blocks')
-											},
-											{
 												value: 'row-reverse',
 												icon: <Dashicon icon="arrow-left-alt" />,
 												label: __('Row Reverse', 'smart-blocks')
-											},
-											{
-												value: 'column-reverse',
-												icon: <Dashicon icon="arrow-up-alt" />,
-												label: __('Column Reverse', 'smart-blocks')
 											},
 										]}
 										value={sectionFlexDirection}
