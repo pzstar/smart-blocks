@@ -225,6 +225,12 @@ const attributes = {
         type: 'string'
     },
 
+
+    columnBgType: {
+        type: 'string',
+        default: 'imageOrColor',
+        enum: ['imageOrColor', 'gradient']
+    },
     columnBgImgURL: {
         type: 'string'
     },
@@ -239,16 +245,20 @@ const attributes = {
         type: 'string',
         default: 'auto'
     },
-    columnBgPosition: {
+    columnBgPositionX: {
         type: 'string',
-        default: 'top left'
+        default: '0.5'
     },
-    columnBgPosition: {
-        type: 'string'
+    columnBgPositionY: {
+        type: 'string',
+        default: '0.5'
     },
     columnBgRepeat: {
         type: 'string',
         default: 'repeat'
+    },
+    columnBgGradient: {
+        type: 'string'
     },
 
 

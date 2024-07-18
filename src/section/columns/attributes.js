@@ -321,6 +321,11 @@ const attributes = {
         type: 'string'
     },
 
+    sectionBgType: {
+        type: 'string',
+        default: 'imageOrColor',
+        enum: ['imageOrColor', 'gradient']
+    },
     sectionBgImgURL: {
         type: 'string'
     },
@@ -335,16 +340,20 @@ const attributes = {
         type: 'string',
         default: 'auto'
     },
-    sectionBgPosition: {
-        type: 'string',
-        default: 'top left'
+    sectionBgPositionX: {
+        type: 'number',
+        default: '0.5'
     },
-    sectionBgPosition: {
-        type: 'string'
+    sectionBgPositionY: {
+        type: 'number',
+        default: '0.5'
     },
     sectionBgRepeat: {
         type: 'string',
         default: 'repeat'
+    },
+    sectionBgGradient: {
+        type: 'string'
     },
 
     sectionContentWidth: {

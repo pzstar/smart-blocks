@@ -91,11 +91,11 @@ const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueCol
         --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : 'initial'};`;
 }
 
-const bgImgVars = (varname, valueURL, valueAttachment, valueSize, valuePosition, valueRepeat) => {
+const bgImgVars = (varname, valueURL, valueAttachment, valueSize, valuePositionX, valuePositionY, valueRepeat) => {
     return `--sb-${varname}-url: ${valueURL ? ('url(' + valueURL + ')') : 'initial'};
         --sb-${varname}-attachment: ${valueAttachment ? valueAttachment : 'scroll'};
         --sb-${varname}-size: ${valueSize ? valueSize : 'auto'};
-        --sb-${varname}-position: ${valuePosition ? valuePosition : 'center center'};
+        --sb-${varname}-position: ${(valuePositionX && valuePositionY) ? ((valuePositionX * 100) + '%' + (valuePositionY * 100) + '%') : '50% 50%'};
         --sb-${varname}-repeat: ${valueRepeat ? valueRepeat : 'repeat'};`;
 }
 

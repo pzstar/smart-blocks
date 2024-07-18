@@ -52,12 +52,15 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 		style,
 		columnBgColor,
 
+		columnBgType,
 		columnBgImgURL,
 		columnBgImgID,
 		columnBgAttachment,
 		columnBgSize,
-		columnBgPosition,
+		columnBgPositionX,
+		columnBgPositionY,
 		columnBgRepeat,
+		columnBgGradient,
 
 		borderNormal,
 		borderHover,
@@ -130,7 +133,7 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
         ${boxShadowVars('column-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
         ${boxShadowVars('column-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
-        ${bgImgVars('column-bg-img', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPosition, columnBgRepeat)}
+        ${bgImgVars('column-bg-img', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat)}
 
         ${responsiveSliderVars('column-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
         ${responsiveSliderVars('column-custom-order', columnCustomOrder, columnCustomOrderSm, columnCustomOrderMd)}

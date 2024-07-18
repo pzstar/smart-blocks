@@ -112,12 +112,15 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 		columnsPaddingLeft,
 		columnsPaddingUnit,
 
+		sectionBgType,
 		sectionBgImgURL,
 		sectionBgImgID,
 		sectionBgAttachment,
 		sectionBgSize,
-		sectionBgPosition,
+		sectionBgPositionX,
+		sectionBgPositionY,
 		sectionBgRepeat,
+		sectionBgGradient,
 
 		borderNormalBoxShadowHorizontal,
 		borderNormalBoxShadowVertical,
@@ -182,7 +185,7 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 
         --sb-columns-bg-color: ${sectionBgColor ? sectionBgColor : 'transparent'};
 
-        ${bgImgVars('columns-bg-img', sectionBgImgURL, sectionBgAttachment, sectionBgSize, sectionBgPosition, sectionBgRepeat)}
+        ${bgImgVars('columns-bg-img', sectionBgImgURL, sectionBgAttachment, sectionBgSize, sectionBgPositionX, sectionBgPositionY, sectionBgRepeat)}
 
 		${responsiveSliderVars('columns-height', columnsHeight, columnsHeightSm, columnsHeightMd, columnsHeightUnit)}
     }`

@@ -4,7 +4,8 @@ import {
     Dashicon,
     Button,
     Tooltip,
-    SelectControl
+    SelectControl,
+    FocalPointPicker
 } from '@wordpress/components';
 import {
     MediaPlaceholder
@@ -20,8 +21,10 @@ const ImageBackgroundControl = ({
     setImageAttachment,
     imageSize,
     setImageSize,
-    imagePosition,
-    setImagePosition,
+    imagePositionX,
+    setImagePositionX,
+    imagePositionY,
+    setImagePositionY,
     imageRepeat,
     setImageRepeat
 }) => {
@@ -81,29 +84,13 @@ const ImageBackgroundControl = ({
                     />
 
                     <SelectControl
-                        label={__('Background Position', 'smart-blocks')}
-                        value={imagePosition}
-                        options={[
-                            { label: __('Default', 'smart-blocks'), value: 'top left' },
-                            { label: __('Top Left', 'smart-blocks'), value: 'top left' },
-                            { label: __('Top Center', 'smart-blocks'), value: 'top center' },
-                            { label: __('Top Right', 'smart-blocks'), value: 'top right' },
-                            { label: __('Center Left', 'smart-blocks'), value: 'center left' },
-                            { label: __('Center Center', 'smart-blocks'), value: 'center center' },
-                            { label: __('Center Right', 'smart-blocks'), value: 'center right' },
-                            { label: __('Bottom Left', 'smart-blocks'), value: 'bottom left' },
-                            { label: __('Bottom Center', 'smart-blocks'), value: 'bottom center' },
-                            { label: __('Bottom Right', 'smart-blocks'), value: 'bottom right' }
-                        ]}
-                        onChange={value => setImagePosition(value)}
-                    />
-
-                    <SelectControl
                         label={__('Background Repeat', 'smart-blocks')}
                         value={imageRepeat}
                         options={[
                             { label: __('Repeat', 'smart-blocks'), value: 'repeat' },
-                            { label: __('No-repeat', 'smart-blocks'), value: 'no-repeat' }
+                            { label: __('No Repeat', 'smart-blocks'), value: 'no-repeat' },
+                            { label: __('Repeat X', 'smart-blocks'), value: 'repeat-x' },
+                            { label: __('Repeat Y', 'smart-blocks'), value: 'repeat-y' }
                         ]}
                         onChange={value => setImageRepeat(value)}
                     />
@@ -118,6 +105,32 @@ const ImageBackgroundControl = ({
                         ]}
                         onChange={value => setImageSize(value)}
                     />
+
+                    <div className="sb-field-select sb-field sb-d-flex sb-inline-block">
+                        <label>{__('Background Position', 'smart-blocks')}</label>
+                        <div class="sb-field-focal-point">
+                            <FocalPointPicker
+                                __nextHasNoMarginBottom
+                                url={imageURL}
+                                value={{
+                                    x: imagePositionX,
+                                    y: imagePositionY,
+                                }}
+                                onDragStart={value => {
+                                    setImagePositionX(value.x);
+                                    setImagePositionY(value.y);
+                                }}
+                                onDrag={value => {
+                                    setImagePositionX(value.x);
+                                    setImagePositionY(value.y);
+                                }}
+                                onChange={value => {
+                                    setImagePositionX(value.x);
+                                    setImagePositionY(value.y);
+                                }}
+                            />
+                        </div>
+                    </div>
                 </>
             ) : (
                 <MediaPlaceholder

@@ -6,7 +6,9 @@ import {
 	Button,
 	PanelBody,
 	RangeControl,
-	SelectControl
+	SelectControl,
+	GradientPicker,
+	Tooltip
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import {
@@ -76,13 +78,16 @@ const Inspector = ({
 		columnPaddingUnit,
 		columnWidth,
 
+		columnBgType,
 		columnBgColor,
 		columnBgImgURL,
 		columnBgImgID,
 		columnBgAttachment,
 		columnBgSize,
-		columnBgPosition,
+		columnBgPositionX,
+		columnBgPositionY,
 		columnBgRepeat,
+		columnBgGradient,
 
 		borderNormal,
 		borderHover,
@@ -500,28 +505,63 @@ const Inspector = ({
 								title={__('Background', 'smart-blocks')}
 								initialOpen={false}
 							>
-								<ColorControl
-									label={__('Background Color', 'smart-blocks')}
-									enableAlpha={!0}
-									value={columnBgColor}
-									setValue={(columnBgColor) => setAttributes({ columnBgColor })}
-								/>
+								<div className="sb-field sb-inspect-tabs ">
+						            <div className="components-tab-panel__tabs">
+			                            <Tooltip text={__("Image/Color", 'smart-blocks')}>
+			                                <button className={('imageOrColor' === columnBgType ? "active-tab" : "") + " components-button sb-tab-menu"}
+			                                    onClick={() => setAttributes({ columnBgType: 'imageOrColor' })}
+			                                >
+			                                {__("Image/Color", 'smart-blocks')}
+			                                </button>
+			                            </Tooltip>
 
-								<ImageBackgroundControl
-									label={__("Background Image", 'smart-blocks')}
-									imageURL={columnBgImgURL}
-									setImageURL={value => setAttributes({ columnBgImgURL: value })}
-									imageID={columnBgImgID}
-									setImageID={value => setAttributes({ columnBgImgID: value })}
-									imageAttachment={columnBgAttachment}
-									setImageAttachment={value => setAttributes({ columnBgAttachment: value })}
-									imageSize={columnBgSize}
-									setImageSize={value => setAttributes({ columnBgSize: value })}
-									imagePosition={columnBgPosition}
-									setImagePosition={value => setAttributes({ columnBgPosition: value })}
-									imageRepeat={columnBgRepeat}
-									setImageRepeat={value => setAttributes({ columnBgRepeat: value })}
-								/>
+			                            <Tooltip text={__("Gradient", 'smart-blocks')}>
+			                                <button className={('gradient' === columnBgType ? "active-tab" : "") + " components-button sb-tab-menu"}
+			                                    onClick={() => setAttributes({ columnBgType: 'gradient' })}
+			                                >
+			                                {__("Gradient", 'smart-blocks')}
+			                                </button>
+			                            </Tooltip>
+						            </div>
+						            <div className="sb-field-tab-items">
+						            	{'imageOrColor' === columnBgType && (
+						            		<>
+												<ColorControl
+													label={__('Background Color', 'smart-blocks')}
+													enableAlpha={!0}
+													value={columnBgColor}
+													setValue={(columnBgColor) => setAttributes({ columnBgColor })}
+												/>
+
+												<ImageBackgroundControl
+													label={__("Background Image", 'smart-blocks')}
+													imageURL={columnBgImgURL}
+													setImageURL={value => setAttributes({ columnBgImgURL: value })}
+													imageID={columnBgImgID}
+													setImageID={value => setAttributes({ columnBgImgID: value })}
+													imageAttachment={columnBgAttachment}
+													setImageAttachment={value => setAttributes({ columnBgAttachment: value })}
+													imageSize={columnBgSize}
+													setImageSize={value => setAttributes({ columnBgSize: value })}
+													imagePositionX={columnBgPositionX}
+													setImagePositionX={value => setAttributes({ columnBgPositionX: value })}
+													imagePositionY={columnBgPositionY}
+													setImagePositionY={value => setAttributes({ columnBgPositionY: value })}
+													imageRepeat={columnBgRepeat}
+													setImageRepeat={value => setAttributes({ columnBgRepeat: value })}
+												/>
+											</>
+										) || 'gradient' === columnBgType && (
+							                <>
+							                	<GradientPicker
+													label={ __('Background Gradient', 'smart-blocks')}
+													value={columnBgGradient}
+													onChange={value => setAttributes({ columnBgGradient: value })}
+												/>
+							                </>
+										)}
+									</div>
+					            </div>
 							</PanelBody>
 						</>
 					) || 'advanced' === activeTab && (

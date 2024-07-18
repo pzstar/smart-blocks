@@ -9,7 +9,9 @@ import {
 	PanelBody,
 	ToggleControl,
 	RangeControl,
-	SelectControl
+	SelectControl,
+	GradientPicker,
+	Tooltip
 } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import {
@@ -153,12 +155,15 @@ const Inspector = ({
 		columnsPaddingLeft,
 		columnsPaddingUnit,
 
+		sectionBgType,
 		sectionBgImgURL,
 		sectionBgImgID,
 		sectionBgAttachment,
 		sectionBgSize,
-		sectionBgPosition,
+		sectionBgPositionX,
+		sectionBgPositionY,
 		sectionBgRepeat,
+		sectionBgGradient,
 
 		sectionContentWidth,
 
@@ -740,28 +745,64 @@ const Inspector = ({
 									title={__('Background', 'smart-blocks')}
 									initialOpen={false}
 								>
-									<ColorControl
-										label={__('Background Color', 'smart-blocks')}
-										enableAlpha={!0}
-										value={sectionBgColor}
-										setValue={(sectionBgColor) => setAttributes({ sectionBgColor })}
-									/>
 
-									<ImageBackgroundControl
-										label={__("Background Image", 'smart-blocks')}
-										imageURL={sectionBgImgURL}
-										setImageURL={value => setAttributes({ sectionBgImgURL: value })}
-										imageID={sectionBgImgID}
-										setImageID={value => setAttributes({ sectionBgImgID: value })}
-										imageAttachment={sectionBgAttachment}
-										setImageAttachment={value => setAttributes({ sectionBgAttachment: value })}
-										imageSize={sectionBgSize}
-										setImageSize={value => setAttributes({ sectionBgSize: value })}
-										imagePosition={sectionBgPosition}
-										setImagePosition={value => setAttributes({ sectionBgPosition: value })}
-										imageRepeat={sectionBgRepeat}
-										setImageRepeat={value => setAttributes({ sectionBgRepeat: value })}
-									/>
+									<div className="sb-field sb-inspect-tabs ">
+							            <div className="components-tab-panel__tabs">
+				                            <Tooltip text={__("Image/Color", 'smart-blocks')}>
+				                                <button className={('imageOrColor' === sectionBgType ? "active-tab" : "") + " components-button sb-tab-menu"}
+				                                    onClick={() => setAttributes({ sectionBgType: 'imageOrColor' })}
+				                                >
+				                                {__("Image/Color", 'smart-blocks')}
+				                                </button>
+				                            </Tooltip>
+
+				                            <Tooltip text={__("Gradient", 'smart-blocks')}>
+				                                <button className={('gradient' === sectionBgType ? "active-tab" : "") + " components-button sb-tab-menu"}
+				                                    onClick={() => setAttributes({ sectionBgType: 'gradient' })}
+				                                >
+				                                {__("Gradient", 'smart-blocks')}
+				                                </button>
+				                            </Tooltip>
+							            </div>
+							            <div className="sb-field-tab-items">
+							            	{'imageOrColor' === sectionBgType && (
+								                <>
+													<ColorControl
+														label={__('Background Color', 'smart-blocks')}
+														enableAlpha={!0}
+														value={sectionBgColor}
+														setValue={(sectionBgColor) => setAttributes({ sectionBgColor })}
+													/>
+
+													<ImageBackgroundControl
+														label={__("Background Image", 'smart-blocks')}
+														imageURL={sectionBgImgURL}
+														setImageURL={value => setAttributes({ sectionBgImgURL: value })}
+														imageID={sectionBgImgID}
+														setImageID={value => setAttributes({ sectionBgImgID: value })}
+														imageAttachment={sectionBgAttachment}
+														setImageAttachment={value => setAttributes({ sectionBgAttachment: value })}
+														imageSize={sectionBgSize}
+														setImageSize={value => setAttributes({ sectionBgSize: value })}
+														imagePositionX={sectionBgPositionX}
+														setImagePositionX={value => setAttributes({ sectionBgPositionX: value })}
+														imagePositionY={sectionBgPositionY}
+														setImagePositionY={value => setAttributes({ sectionBgPositionY: value })}
+														imageRepeat={sectionBgRepeat}
+														setImageRepeat={value => setAttributes({ sectionBgRepeat: value })}
+													/>
+												</>
+											) || 'gradient' === sectionBgType && (
+								                <>
+								                	<GradientPicker
+														label={ __('Background Gradient', 'smart-blocks')}
+														value={sectionBgGradient}
+														onChange={value => setAttributes({ sectionBgGradient: value })}
+													/>
+								                </>
+											)}
+						                </div>
+					                </div>
 								</PanelBody>
 							</>
 						) || 'advanced' === activeTab && (
