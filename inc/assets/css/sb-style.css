@@ -121,7 +121,8 @@ a {
     background-repeat: var(--sb-column-bg-img-repeat);
     background-size: var(--sb-column-bg-img-size);
     background-color: var(--sb-column-bg-color, transparent);
-    align-items: var(--sb-column-align-lg);
+    align-self: var(--sb-column-align-self-lg);
+    order: var(--sb-column-custom-order-lg);
 }
 
 /* Block Title */

@@ -99,12 +99,12 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 		borderHoverBoxShadowInset,
 
 		columnAlignSelf,
-	    columnAlignSelfSm,
-	    columnAlignSelfMd,
+		columnAlignSelfSm,
+		columnAlignSelfMd,
 
-	    columnCustomOrder,
-	    columnCustomOrderSm,
-	    columnCustomOrderMd
+		columnCustomOrder,
+		columnCustomOrderSm,
+		columnCustomOrderMd
 	} = attributes;
 
 	const stylesCSS = `#${id} {
@@ -115,7 +115,7 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
     	${responsiveDimensionVars('column-padding', columnPaddingTop, columnPaddingRight, columnPaddingBottom, columnPaddingLeft,
 			columnPaddingSmTop, columnPaddingSmRight, columnPaddingSmBottom, columnPaddingSmLeft,
 			columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
-        ${columnBgColor ? '--sb-column-bg-color: ' + columnBgColor + ';' : ''}
+       --sb-column-bg-color:${columnBgColor ? columnBgColor : 'transparent'};
 		
 		--sb-column-border-normal:${borderNormal ? borderNormal : '0'};
         --sb-column-border-hover: ${borderHover ? borderNormal : 'var(--sb-column-border-normal);'};

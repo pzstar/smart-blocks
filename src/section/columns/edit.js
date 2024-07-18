@@ -180,7 +180,7 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
         ${boxShadowVars('columns-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
         ${boxShadowVars('columns-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
-        ${sectionBgColor ? '--sb-columns-bg-color: ' + sectionBgColor + ';' : ''}
+        --sb-columns-bg-color: ${sectionBgColor ? sectionBgColor : 'transparent'};
 
         ${bgImgVars('columns-bg-img', sectionBgImgURL, sectionBgAttachment, sectionBgSize, sectionBgPosition, sectionBgRepeat)}
 
