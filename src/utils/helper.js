@@ -18,10 +18,10 @@ const getFontClass = (family = '', weight = '', textTransform = '', textDecorati
 }
 
 const dimensionVars = (varname, top, right, bottom, left, unit) => {
-    return `--sb-${varname}-top: ${top ? (top + unit) : ''};
-        --sb-${varname}-right: ${right ? (right + unit) : ''};
-        --sb-${varname}-bottom: ${bottom ? (bottom + unit) : ''};
-        --sb-${varname}-left: ${left ? (left + unit) : ''};`;
+    return `--sb-${varname}-top: ${top ? (top + unit) : 'initial'};
+        --sb-${varname}-right: ${right ? (right + unit) : 'initial'};
+        --sb-${varname}-bottom: ${bottom ? (bottom + unit) : 'initial'};
+        --sb-${varname}-left: ${left ? (left + unit) : 'initial'};`;
 }
 
 const responsiveDimensionVars = (varname, top, right, bottom, left, topSm, rightSm, bottomSm, leftSm, topMd, rightMd, bottomMd, leftMd, unit) => {
@@ -40,17 +40,17 @@ const responsiveDimensionVars = (varname, top, right, bottom, left, topSm, right
 }
 
 const responsiveSliderVars = (varname, valueLg, valueSm, valueMd, unit) => {
-    return `--sb-${varname}-sm: ${valueSm ? (valueSm + unit) : ''};
-        --sb-${varname}-md: ${valueMd ? (valueMd + unit) : ''};
-        --sb-${varname}-lg: ${valueLg ? (valueLg + unit) : ''};`;
+    return `--sb-${varname}-sm: ${valueSm ? (valueSm + unit) : 'var(--sb-' + varname + '-md)'};
+        --sb-${varname}-md: ${valueMd ? (valueMd + unit) : 'var(--sb-' + varname + '-lg)'};
+        --sb-${varname}-lg: ${valueLg ? (valueLg + unit) : 'initial'};`;
 }
 
 const boxShadowVars = (varname, horizontal, vertical, blur, spread, color, inset, unit) => {
-    return `--sb-${varname}-horizontal: ${horizontal ? (horizontal + unit) : ''};
-        --sb-${varname}-vertical: ${vertical ? (vertical + unit) : ''};
-        --sb-${varname}-blur: ${blur ? (blur + unit) : ''};
-        --sb-${varname}-spread: ${spread ? (spread + unit) : ''};
-        --sb-${varname}-color: ${color ? color : ''};
+    return `--sb-${varname}-horizontal: ${horizontal ? (horizontal + unit) : '0'};
+        --sb-${varname}-vertical: ${vertical ? (vertical + unit) : '0'};
+        --sb-${varname}-blur: ${blur ? (blur + unit) : '0'};
+        --sb-${varname}-spread: ${spread ? (spread + unit) : '0'};
+        --sb-${varname}-color: ${color ? color : 'transparent'};
         --sb-${varname}-inset: ${inset ? inset : ''};`;
 }
 
