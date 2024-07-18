@@ -194,6 +194,7 @@ const attributes = {
         type: 'string',
         default: 'div'
     },
+
     borderNormal: {
         type: 'string'
     },
@@ -345,6 +346,7 @@ const attributes = {
         type: 'string',
         default: 'repeat'
     },
+
     sectionContentWidth: {
         type: 'string',
         default: 'boxed',

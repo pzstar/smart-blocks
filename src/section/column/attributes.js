@@ -261,6 +261,7 @@ const attributes = {
     columnAlignSelfMd: {
         type: 'string'
     },
+
     columnCustomOrder: {
         type: 'string'
     },

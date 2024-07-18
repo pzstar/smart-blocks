@@ -91,13 +91,12 @@ const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueCol
         --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : ''};`;
 }
 
-const bgImgVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueColumnLg, valueColumnSm, valueColumnMd, unit) => {
-    return `--sb-${varname}-row-sm: ${valueRowSm ? (valueRowSm + unit) : ''};
-        --sb-${varname}-row-md: ${valueRowMd ? (valueRowMd + unit) : ''};
-        --sb-${varname}-row-lg: ${valueRowLg ? (valueRowLg + unit) : ''};
-        --sb-${varname}-column-sm: ${valueColumnSm ? (valueColumnSm + unit) : ''};
-        --sb-${varname}-column-md: ${valueColumnMd ? (valueColumnMd + unit) : ''};
-        --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : ''};`;
+const bgImgVars = (varname, valueURL, valueAttachment, valueSize, valueColumnLg, valueColumnSm, valueColumnMd) => {
+    return `--sb-${varname}-url: ${valueURL ? ('url(' + valueURL + ')') : ''};
+        --sb-${varname}-attachment: ${valueAttachment ? valueAttachment : ''};
+        --sb-${varname}-size: ${valueSize ? valueSize : ''};
+        --sb-${varname}-position: ${valuePosition ? valuePosition : ''};
+        --sb-${varname}-repeat: ${valueRepeat ? valueRepeat : ''};`;
 }
 
 export { checkDefault, getFontClass, responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveTypographyVars, responsiveGapVars, bgImgVars };
