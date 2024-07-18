@@ -29,6 +29,7 @@ import BorderControl from '../controls/border';
 import BoxShadowControl from '../controls/boxshadow';
 import { checkDefault, getFontClass } from '../utils/helper';
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../utils/svgicons';
+import { responsiveTypographyVars } from '../utils/helper';
 
 export default function Edit({ attributes, setAttributes }) {
     const [activeTab, setActiveTab] = useState('layout');
@@ -339,20 +340,13 @@ export default function Edit({ attributes, setAttributes }) {
         ${headerColor ? '--sb-header-color: ' + headerColor + ';' : ''}
         ${headerShortBorderColor ? '--sb-header-short-border-color: ' + headerShortBorderColor + ';' : ''}
         ${headerLongBorderColor ? '--sb-header-long-border-color: ' + headerLongBorderColor + ';' : ''}
-        ${headerTitleTypographyFamily ? '--sb-header-typo-family: ' + checkDefault(headerTitleTypographyFamily) + ';' : ''}
-        ${headerTitleTypographyWeight ? '--sb-header-typo-weight: ' + checkDefault(headerTitleTypographyWeight.replace(/\D/g, ''), headerTitleTypographyWeight) + ';' : ''}
-        ${headerTitleTypographyWeight ? '--sb-header-typo-style: ' + checkDefault(headerTitleTypographyWeight.replace(/\d+/g, ''), headerTitleTypographyWeight) + ';' : ''}
-        ${headerTitleTypographyTextTransform ? '--sb-header-typo-tt: ' + headerTitleTypographyTextTransform + ';' : ''}
-        ${headerTitleTypographyTextDecoration ? '--sb-header-typo-td: ' + headerTitleTypographyTextDecoration + ';' : ''}
-        ${headerTitleTypographyFontSizeSm ? '--sb-header-typo-fs-sm: ' + headerTitleTypographyFontSizeSm + headerTitleTypographyFontSizeUnit + ';' : ''}
-        ${headerTitleTypographyFontSizeMd ? '--sb-header-typo-fs-md: ' + headerTitleTypographyFontSizeMd + headerTitleTypographyFontSizeUnit + ';' : ''}
-        ${headerTitleTypographyFontSize ? '--sb-header-typo-fs-lg: ' + headerTitleTypographyFontSize + headerTitleTypographyFontSizeUnit + ';' : ''}
-        ${headerTitleTypographyLetterSpacingSm ? '--sb-header-typo-ls-sm: ' + headerTitleTypographyLetterSpacingSm + headerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${headerTitleTypographyLetterSpacingMd ? '--sb-header-typo-ls-md: ' + headerTitleTypographyLetterSpacingMd + headerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${headerTitleTypographyLetterSpacing ? '--sb-header-typo-ls-lg: ' + headerTitleTypographyLetterSpacing + headerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${headerTitleTypographyLineHeightSm ? '--sb-header-typo-lh-sm: ' + headerTitleTypographyLineHeightSm + headerTitleTypographyLineHeightUnit + ';' : ''}
-        ${headerTitleTypographyLineHeightMd ? '--sb-header-typo-lh-md: ' + headerTitleTypographyLineHeightMd + headerTitleTypographyLineHeightUnit + ';' : ''}
-        ${headerTitleTypographyLineHeight ? '--sb-header-typo-lh-lg: ' + headerTitleTypographyLineHeight + headerTitleTypographyLineHeightUnit + ';' : ''}
+
+        ${responsiveTypographyVars('header-typo', headerTitleTypographyFamily, headerTitleTypographyWeight, headerTitleTypographyTextTransform, headerTitleTypographyTextDecoration,
+                headerTitleTypographyFontSizeSm, headerTitleTypographyFontSizeMd, headerTitleTypographyFontSize, headerTitleTypographyFontSizeUnit,
+                headerTitleTypographyLetterSpacingSm, headerTitleTypographyLetterSpacingMd, headerTitleTypographyLetterSpacing, headerTitleTypographyLetterSpacingUnit,
+                headerTitleTypographyLineHeightSm, headerTitleTypographyLineHeightMd, headerTitleTypographyLineHeight, headerTitleTypographyLineHeightUnit
+        )}
+
         ${categoryTypographyFamily ? '--sb-category-typo-family: ' + checkDefault(categoryTypographyFamily) + ';' : ''}
         ${categoryTypographyWeight ? '--sb-category-typo-weight: ' + checkDefault(categoryTypographyWeight.replace(/\D/g, ''), categoryTypographyWeight) + ';' : ''}
         ${categoryTypographyWeight ? '--sb-category-typo-style: ' + checkDefault(categoryTypographyWeight.replace(/\d+/g, ''), categoryTypographyWeight) + ';' : ''}

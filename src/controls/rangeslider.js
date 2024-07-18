@@ -61,7 +61,7 @@ const RangeSliderControl = ({
                         <div className="sb-input-range">
                             <input type="range"
                                 min={min}
-                                max={max}
+                                max={unit == '%' ? 100 : max}
                                 value={valueSm}
                                 step={steps ? steps : 1}
                                 onChange={(e) => { setValueSm(e.target.value) }}
@@ -77,7 +77,7 @@ const RangeSliderControl = ({
                         <div className="sb-input-range">
                             <input type="range"
                                 min={min}
-                                max={max}
+                                max={unit == '%' ? 100 : max}
                                 value={valueMd}
                                 step={steps ? steps : 1}
                                 onChange={(e) => { setValueMd(e.target.value) }}
@@ -93,7 +93,7 @@ const RangeSliderControl = ({
                         <div className="sb-input-range">
                             <input type="range"
                                 min={min}
-                                max={max}
+                                max={unit == '%' ? 100 : max}
                                 value={value}
                                 step={steps ? steps : 1}
                                 onChange={(e) => { setValue(e.target.value) }}
@@ -110,7 +110,7 @@ const RangeSliderControl = ({
                     <div className="sb-input-range">
                         <input type="range"
                             min={min}
-                            max={max}
+                            max={unit == '%' ? 100 : max}
                             value={value}
                             step={steps ? steps : 1}
                             onChange={(e) => { setValue(e.target.value) }}

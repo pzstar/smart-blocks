@@ -28,6 +28,7 @@ import ColorControl from '../../controls/color';
 import ImageBackgroundControl from '../../controls/imagebackground';
 import BoxShadowControl from '../../controls/boxshadow';
 import BorderControl from '../../controls/border';
+import GapControl from '../../controls/gap';
 import {
 	LayoutIcon,
 	StyleIcon,
@@ -107,21 +108,15 @@ const Inspector = ({
 		layoutTablet,
 		layoutMobile,
 
-		columnsGap,
-		columnsGapMd,
-		columnsGapSm,
-
 		columnsWidth,
 		columnsWidthMd,
 		columnsWidthSm,
 		columnsWidthUnit,
 
 		columnsHeight,
-
-		columnsHeightCustom,
-		columnsHeightCustomSm,
-		columnsHeightCustomMd,
-		columnsHeightCustomUnit,
+		columnsHeightSm,
+		columnsHeightMd,
+		columnsHeightUnit,
 
 		hide,
 		hideTablet,
@@ -169,7 +164,16 @@ const Inspector = ({
 
 		sectionFlexDirection,
 		sectionFlexDirectionSm,
-		sectionFlexDirectionMd
+		sectionFlexDirectionMd,
+
+		columnsGapRow,
+		columnsGapSmRow,
+		columnsGapMdRow,
+
+		columnsGapColumn,
+		columnsGapSmColumn,
+		columnsGapMdColumn,
+		columnsGapUnit,
 	} = attributes;
 
 	const getView = useSelect((select) => {
@@ -263,14 +267,6 @@ const Inspector = ({
 	};
 
 
-	const changeID = value => {
-		setAttributes({ id: value });
-	};
-
-	const changeColumnsHeight = value => {
-		setAttributes({ columnsHeight: value });
-	};
-
 	return (
 		<>
 			<InspectorControls>
@@ -330,19 +326,6 @@ const Inspector = ({
 										onClick={changeLayout}
 									/>
 
-									<RangeSliderControl
-										label={__('Column Gap', 'smart-blocks')}
-										min={0}
-										max={100}
-										responsive={!0}
-										value={columnsGap}
-										setValue={(value) => setAttributes({ columnsGap: value })}
-										valueSm={columnsGapSm}
-										setValueSm={(value) => setAttributes({ columnsGapSm: value })}
-										valueMd={columnsGapMd}
-										setValueMd={(value) => setAttributes({ columnsGapMd: value })}
-									/>
-
 									<SelectControl
 										label={__('Content Width', 'smart-blocks')}
 										value={sectionContentWidth}
@@ -350,11 +333,14 @@ const Inspector = ({
 											{ label: __('Full Width', 'smart-blocks'), value: 'full' },
 											{ label: __('Boxed', 'smart-blocks'), value: 'boxed' },
 										]}
-										onChange={value => setAttributes({ sectionContentWidth: value })}
+										onChange={value => {
+											setAttributes({ sectionContentWidth: value, columnsWidth: '', columnsWidthSm: '', columnsWidthMd: ''});
+											value === 'full' && setAttributes({ columnsWidthUnit: '%' })
+										}}
 									/>
 
 									<RangeSliderControl
-										label={__('Content Max Width', 'smart-blocks')}
+										label={__('Width', 'smart-blocks')}
 										min={0}
 										max={1800}
 										responsive={!0}
@@ -365,9 +351,26 @@ const Inspector = ({
 										valueMd={columnsWidthMd}
 										setValueMd={(value) => setAttributes({ columnsWidthMd: value })}
 										useUnit={!0}
-										units={['px', 'em', '%', 'vw']}
+										units={sectionContentWidth === 'full' ? ['%'] : ['px', 'em', '%', 'vw']}
 										unit={columnsWidthUnit}
 										setUnit={(value) => setAttributes({ columnsWidthUnit: value })}
+									/>
+
+									<RangeSliderControl
+										label={__('Min Height', 'smart-blocks')}
+										min={0}
+										max={1200}
+										responsive={!0}
+										value={columnsHeight}
+										setValue={(value) => setAttributes({ columnsHeight: value })}
+										valueSm={columnsHeightSm}
+										setValueSm={(value) => setAttributes({ columnsHeightSm: value })}
+										valueMd={columnsHeightMd}
+										setValueMd={(value) => setAttributes({ columnsHeightMd: value })}
+										useUnit={!0}
+										units={['px', 'em', '%', 'vh']}
+										unit={columnsHeightUnit}
+										setUnit={(value) => setAttributes({ columnsHeightUnit: value })}
 									/>
 
 									<ButtonGroupControl
@@ -375,24 +378,24 @@ const Inspector = ({
 										responsive={!0}
 										options={[
 											{
-												value: 'right',
+												value: 'row',
 												icon: <Dashicon icon="arrow-right-alt" />,
-												label: __('Flex Start', 'smart-blocks')
+												label: __('Row', 'smart-blocks')
 											},
 											{
-												value: 'bottom',
+												value: 'column',
 												icon: <Dashicon icon="arrow-down-alt" />,
-												label: __('Center', 'smart-blocks')
+												label: __('Column', 'smart-blocks')
 											},
 											{
-												value: 'left',
+												value: 'row-reverse',
 												icon: <Dashicon icon="arrow-left-alt" />,
-												label: __('Flex End', 'smart-blocks')
+												label: __('Row Reverse', 'smart-blocks')
 											},
 											{
-												value: 'top',
+												value: 'column-reverse',
 												icon: <Dashicon icon="arrow-up-alt" />,
-												label: __('Stretch', 'smart-blocks')
+												label: __('Column Reverse', 'smart-blocks')
 											},
 										]}
 										value={sectionFlexDirection}
@@ -512,42 +515,30 @@ const Inspector = ({
 										setValueMd={(value) => setAttributes({ horizontalAlignMd: value })}
 									/>
 
-								</PanelBody>
+									<GapControl
+										label={__('Gaps', 'smart-blocks')}
+										min="0"
+										max="100"
+										responsive={!0}
 
-								<PanelBody
-									title={__('Block Size & Spacing', 'smart-blocks')}
-									initialOpen={false}
-								>
+										gapColumn={columnsGapColumn}
+										setGapColumn={value => setAttributes({ columnsGapColumn: value })}
+										gapMdColumn={columnsGapMdColumn}
+										setGapMdColumn={value => setAttributes({ columnsGapMdColumn: value })}
+										gapSmColumn={columnsGapSmColumn}
+										setGapSmColumn={value => setAttributes({ columnsGapSmColumn: value })}
 
-									<SelectControl
-										label={__('Minimum Height', 'smart-blocks')}
-										value={columnsHeight}
-										options={[
-											{ label: __('Default', 'smart-blocks'), value: 'auto' },
-											{ label: __('Fit to Screen', 'smart-blocks'), value: '100vh' },
-											{ label: __('Custom', 'smart-blocks'), value: 'custom' }
-										]}
-										onChange={changeColumnsHeight}
+										gapRow={columnsGapRow}
+										setGapRow={value => setAttributes({ columnsGapRow: value })}
+										gapMdRow={columnsGapMdRow}
+										setGapMdRow={value => setAttributes({ columnsGapMdRow: value })}
+										gapSmRow={columnsGapSmRow}
+										setGapSmRow={value => setAttributes({ columnsGapSmRow: value })}
+
+										unit={columnsGapUnit}
+										setUnit={value => setAttributes({ columnsGapUnit: value })}
 									/>
 
-									{'custom' === columnsHeight && (
-										<RangeSliderControl
-											label={__('Custom Height', 'smart-blocks')}
-											min={1}
-											max={100}
-											responsive={!0}
-											value={columnsHeightCustom}
-											setValue={(value) => setAttributes({ columnsHeightCustom: value })}
-											valueSm={columnsHeightCustomSm}
-											setValueSm={(value) => setAttributes({ columnsHeightCustomSm: value })}
-											valueMd={columnsHeightCustomMd}
-											setValueMd={(value) => setAttributes({ columnsHeightCustomMd: value })}
-											useUnit={!0}
-											units={['px', 'em', '%', 'vh']}
-											unit={columnsHeightCustomUnit}
-											setUnit={(value) => setAttributes({ columnsHeightCustomUnit: value })}
-										/>
-									)}
 								</PanelBody>
 							</>
 						) || 'style' === activeTab && (

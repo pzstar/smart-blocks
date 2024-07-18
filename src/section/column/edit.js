@@ -12,7 +12,7 @@ import defaultAttributes from './attributes.js';
 import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import { blockInit } from '../../helpers/block-utility.js';
-import { responsiveDimensionVars } from '../../utils/helper';
+import { responsiveDimensionVars, dimensionVars, boxShadowVars, bgImgVars } from '../../utils/helper';
 
 export default function Edit({ attributes, setAttributes, className, isSelected, clientId, toggleSelection }) {
 	const { updateBlockAttributes } = useDispatch('core/block-editor');
@@ -50,7 +50,61 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 		columnPaddingUnit,
 
 		style,
-		columnBgColor
+		columnBgColor,
+
+		columnBgImgURL,
+		columnBgImgID,
+		columnBgAttachment,
+		columnBgSize,
+		columnBgPosition,
+		columnBgRepeat,
+
+		borderNormal,
+		borderHover,
+		borderNormalColor,
+		borderHoverColor,
+
+		borderNormalWidthTop,
+		borderNormalWidthLeft,
+		borderNormalWidthRight,
+		borderNormalWidthBottom,
+		borderNormalWidthUnit,
+		borderHoverWidthTop,
+		borderHoverWidthLeft,
+		borderHoverWidthRight,
+		borderHoverWidthBottom,
+		borderHoverWidthUnit,
+		borderNormalRadiusTop,
+		borderNormalRadiusLeft,
+		borderNormalRadiusRight,
+		borderNormalRadiusBottom,
+		borderNormalRadiusUnit,
+		borderHoverRadiusTop,
+		borderHoverRadiusLeft,
+		borderHoverRadiusRight,
+		borderHoverRadiusBottom,
+		borderHoverRadiusUnit,
+
+		borderNormalBoxShadowHorizontal,
+		borderNormalBoxShadowVertical,
+		borderNormalBoxShadowBlur,
+		borderNormalBoxShadowSpread,
+		borderNormalBoxShadowColor,
+		borderNormalBoxShadowInset,
+		borderHoverBoxShadowHorizontal,
+		borderHoverBoxShadowVertical,
+		borderHoverBoxShadowBlur,
+		borderHoverBoxShadowSpread,
+		borderHoverBoxShadowColor,
+		borderHoverBoxShadowInset,
+
+		columnAlignSelf,
+	    columnAlignSelfSm,
+	    columnAlignSelfMd,
+
+	    columnCustomOrder,
+	    columnCustomOrderSm,
+	    columnCustomOrderMd
 	} = attributes;
 
 	const stylesCSS = `#${id} {
@@ -62,6 +116,16 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 			columnPaddingSmTop, columnPaddingSmRight, columnPaddingSmBottom, columnPaddingSmLeft,
 			columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
         ${columnBgColor ? '--sb-column-bg-color: ' + columnBgColor + ';' : ''}
+
+        ${dimensionVars('column-border-normal-width', borderNormalWidthTop, borderNormalWidthRight, borderNormalWidthBottom, borderNormalWidthLeft, borderNormalWidthUnit)}
+        ${dimensionVars('column-border-hover-width', borderHoverWidthTop, borderHoverWidthRight, borderHoverWidthBottom, borderHoverWidthLeft, borderHoverWidthUnit)}
+        ${dimensionVars('column-border-normal-radius', borderNormalRadiusTop, borderNormalRadiusRight, borderNormalRadiusBottom, borderNormalRadiusLeft, borderNormalRadiusUnit)}
+        ${dimensionVars('column-border-hover-radius', borderHoverRadiusTop, borderHoverRadiusRight, borderHoverRadiusBottom, borderHoverRadiusLeft, borderHoverRadiusUnit)}
+
+        ${boxShadowVars('column-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
+        ${boxShadowVars('column-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
+
+        ${bgImgVars('columns-bg-img', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPosition, columnBgRepeat)}
     }`
 	setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 

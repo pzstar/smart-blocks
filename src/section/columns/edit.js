@@ -16,7 +16,7 @@ import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import { blockInit } from '../../helpers/block-utility.js';
 import LayoutSelector from './layoutselector.js';
-import { responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars } from '../../utils/helper';
+import { responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveGapVars, bgImgVars } from '../../utils/helper';
 
 const Edit = ({ attributes, setAttributes, className, clientId }) => {
 	const {
@@ -32,10 +32,6 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 		layout,
 		layoutTablet,
 		layoutMobile,
-
-		columnsGap,
-		columnsGapSm,
-		columnsGapMd,
 
 		reverseColumnsTablet,
 		reverseColumnsMobile,
@@ -70,12 +66,11 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 		borderNormalBoxShadow,
 		borderHoverBoxShadow,
 		sectionBgColor,
-		columnsHeight,
 
-		columnsHeightCustom,
-		columnsHeightCustomSm,
-		columnsHeightCustomMd,
-		columnsHeightCustomUnit,
+		columnsHeight,
+		columnsHeightSm,
+		columnsHeightMd,
+		columnsHeightUnit,
 
 		style,
 
@@ -142,16 +137,25 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 
 		sectionFlexDirection,
 		sectionFlexDirectionMd,
-		sectionFlexDirectionSm
+		sectionFlexDirectionSm,
+
+		columnsGapRow,
+		columnsGapSmRow,
+		columnsGapMdRow,
+		columnsGapColumn,
+		columnsGapSmColumn,
+		columnsGapMdColumn,
+		columnsGapUnit,
 	} = attributes;
 	const { updateBlockAttributes } = useDispatch('core/block-editor');
 
 	const stylesCSS = `#${id} {
 		${responsiveSliderVars('columns-width', columnsWidth, columnsWidthSm, columnsWidthMd, columnsWidthUnit)}
 		${responsiveSliderVars('columns-horizontal-align', horizontalAlign, horizontalAlignSm, horizontalAlignMd, '')}
-		${responsiveSliderVars('columns-gap', columnsGap, columnsGapSm, columnsGapMd, 'px')}
+		${responsiveGapVars('columns-gap', columnsGapRow, columnsGapSmRow, columnsGapMdRow, columnsGapColumn, columnsGapSmColumn, columnsGapMdColumn, columnsGapUnit)}
 		${responsiveSliderVars('columns-align', columnAlignment, columnAlignmentSm, columnAlignmentMd, '')}
 		${responsiveSliderVars('columns-justify', columnJustify, columnJustifySm, columnJustifyMd, '')}
+		${responsiveSliderVars('columns-flex-direction', sectionFlexDirection, sectionFlexDirectionSm, sectionFlexDirectionMd, '')}
 
 
         ${responsiveDimensionVars('columns-margin', columnsMarginTop, columnsMarginRight, columnsMarginBottom, columnsMarginLeft,
@@ -178,11 +182,9 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 
         ${sectionBgColor ? '--sb-columns-bg-color: ' + sectionBgColor + ';' : ''}
 
-		${sectionBgImgURL ? '--sb-columns-bg-img-url: url(' + sectionBgImgURL + ');' : ''}
-		${sectionBgAttachment ? '--sb-columns-bg-img-attachment: ' + sectionBgAttachment + ';' : ''}
-		${sectionBgSize ? '--sb-columns-bg-img-size: ' + sectionBgSize + ';' : ''}
-		${sectionBgPosition ? '--sb-columns-bg-img-position: ' + sectionBgPosition + ';' : ''}
-		${sectionBgRepeat ? '--sb-columns-bg-img-repeat: ' + sectionBgRepeat + ';' : ''}
+        ${bgImgVars('columns-bg-img', sectionBgImgURL, sectionBgAttachment, sectionBgSize, sectionBgPosition, sectionBgRepeat)}
+
+		${responsiveSliderVars('columns-height', columnsHeight, columnsHeightSm, columnsHeightMd, columnsHeightUnit)}
     }`
 	setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
@@ -232,10 +234,7 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 		{ 'has-viewport-desktop': isDesktop },
 		{ 'has-viewport-tablet': isTablet },
 		{ 'has-viewport-mobile': isMobile },
-		`has-${sectionContentWidth}-width`,
-		`has-flex-direction-${sectionFlexDirection}`,
-		`has-flex-direction-sm-${sectionFlexDirectionSm}`,
-		`has-flex-direction-md-${sectionFlexDirectionMd}`
+		`has-${sectionContentWidth}-width`
 	);
 
 	const updateColumnsWidth = (columns, layout) => {

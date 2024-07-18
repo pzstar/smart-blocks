@@ -347,13 +347,15 @@ input[type="range"]:focus {
     border-color: #8d96a0;
 }
 
-.sb-field-dimension .sb-dimension-input-group>span {
+.sb-field-dimension .sb-dimension-input-group>span,
+.sb-field-gap .sb-gap-input-group>span {
     float: left;
     width: 20%;
     text-align: center;
 }
 
-.sb-field-dimension .sb-dimension-input-group input {
+.sb-field-dimension .sb-dimension-input-group input,
+.sb-field-gap .sb-gap-input-group input {
     width: 100%;
     padding: 0 !important;
     height: 26px;
@@ -363,7 +365,8 @@ input[type="range"]:focus {
     text-indent: 6px;
 }
 
-.sb-field-dimension .sb-dimension-input-group>button {
+.sb-field-dimension .sb-dimension-input-group>button,
+.sb-field-gap .sb-gap-input-group>button {
     height: 26px;
     border: 1px solid #e6e6e6;
     padding: 2px 20px;
@@ -374,10 +377,15 @@ input[type="range"]:focus {
     width: 20%;
 }
 
-.sb-field-dimension .sb-dimension-input-group>button.active {
+.sb-field-dimension .sb-dimension-input-group>button.active,
+.sb-field-gap .sb-gap-input-group>button.active {
     background: #a4afb7;
     border-color: #a4afb7;
     color: #fff;
+}
+
+.sb-field-gap .sb-gap-input-group>span {
+    width: 40%;
 }
 
 .sb-unit-btn-group {

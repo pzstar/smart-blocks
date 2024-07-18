@@ -98,7 +98,176 @@ const attributes = {
     columnWidth: {
         type: 'string'
     },
+    borderNormal: {
+        type: 'string'
+    },
+    borderHover: {
+        type: 'string'
+    },
+    borderNormalColor: {
+        type: 'string'
+    },
+    borderHoverColor: {
+        type: 'string'
+    },
+
     columnBgColor: {
+        type: 'string'
+    },
+
+    borderNormalWidthTop: {
+        type: 'string',
+    },
+    borderNormalWidthLeft: {
+        type: 'string',
+    },
+    borderNormalWidthRight: {
+        type: 'string',
+    },
+    borderNormalWidthBottom: {
+        type: 'string',
+    },
+    borderNormalWidthUnit: {
+        type: 'string',
+        enum: ['px', 'em', '%'],
+        default: 'px'
+    },
+
+    borderHoverWidthTop: {
+        type: 'string',
+    },
+    borderHoverWidthLeft: {
+        type: 'string',
+    },
+    borderHoverWidthRight: {
+        type: 'string',
+    },
+    borderHoverWidthBottom: {
+        type: 'string',
+    },
+    borderHoverWidthUnit: {
+        type: 'string',
+        enum: ['px', 'em', '%'],
+        default: 'px'
+    },
+
+    borderNormalRadiusTop: {
+        type: 'string',
+    },
+    borderNormalRadiusLeft: {
+        type: 'string',
+    },
+    borderNormalRadiusRight: {
+        type: 'string',
+    },
+    borderNormalRadiusBottom: {
+        type: 'string',
+    },
+    borderNormalRadiusUnit: {
+        type: 'string',
+        enum: ['px', 'em', '%'],
+        default: 'px'
+    },
+
+    borderHoverRadiusTop: {
+        type: 'string',
+    },
+    borderHoverRadiusLeft: {
+        type: 'string',
+    },
+    borderHoverRadiusRight: {
+        type: 'string',
+    },
+    borderHoverRadiusBottom: {
+        type: 'string',
+    },
+    borderHoverRadiusUnit: {
+        type: 'string',
+        enum: ['px', 'em', '%'],
+        default: 'px'
+    },
+
+    borderNormalBoxShadowHorizontal: {
+        type: 'string'
+    },
+    borderNormalBoxShadowVertical: {
+        type: 'string'
+    },
+    borderNormalBoxShadowBlur: {
+        type: 'string'
+    },
+    borderNormalBoxShadowSpread: {
+        type: 'string'
+    },
+    borderNormalBoxShadowColor: {
+        type: 'string'
+    },
+    borderNormalBoxShadowInset: {
+        type: 'string'
+    },
+
+    borderHoverBoxShadowHorizontal: {
+        type: 'string'
+    },
+    borderHoverBoxShadowVertical: {
+        type: 'string'
+    },
+    borderHoverBoxShadowBlur: {
+        type: 'string'
+    },
+    borderHoverBoxShadowSpread: {
+        type: 'string'
+    },
+    borderHoverBoxShadowColor: {
+        type: 'string'
+    },
+    borderHoverBoxShadowInset: {
+        type: 'string'
+    },
+
+    columnBgImgURL: {
+        type: 'string'
+    },
+    columnBgImageID: {
+        type: 'string'
+    },
+    columnBgAttachment: {
+        type: 'string',
+        default: 'scroll'
+    },
+    columnBgSize: {
+        type: 'string',
+        default: 'auto'
+    },
+    columnBgPosition: {
+        type: 'string',
+        default: 'top left'
+    },
+    columnBgPosition: {
+        type: 'string'
+    },
+    columnBgRepeat: {
+        type: 'string',
+        default: 'repeat'
+    },
+
+
+    columnAlignSelf: {
+        type: 'string'
+    },
+    columnAlignSelfSm: {
+        type: 'string'
+    },
+    columnAlignSelfMd: {
+        type: 'string'
+    },
+    columnCustomOrder: {
+        type: 'string'
+    },
+    columnCustomOrderSm: {
+        type: 'string'
+    },
+    columnCustomOrderMd: {
         type: 'string'
     }
 };

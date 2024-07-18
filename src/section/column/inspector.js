@@ -21,6 +21,10 @@ import {
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../../utils/svgicons';
 import DimensionControl from '../../controls/dimension';
 import ColorControl from '../../controls/color';
+import ImageBackgroundControl from '../../controls/imagebackground';
+import BoxShadowControl from '../../controls/boxshadow';
+import BorderControl from '../../controls/border';
+import Tabs from '../../utils/tabs';
 
 const Inspector = ({
 	attributes,
@@ -60,7 +64,53 @@ const Inspector = ({
 		columnPaddingLeft,
 		columnPaddingUnit,
 		columnWidth,
-		columnBgColor
+
+		columnBgColor,
+		columnBgImgURL,
+		columnBgImgID,
+		columnBgAttachment,
+		columnBgSize,
+		columnBgPosition,
+		columnBgRepeat,
+
+		borderNormal,
+		borderHover,
+		borderNormalColor,
+		borderHoverColor,
+
+		borderNormalWidthTop,
+		borderNormalWidthLeft,
+		borderNormalWidthRight,
+		borderNormalWidthBottom,
+		borderNormalWidthUnit,
+		borderHoverWidthTop,
+		borderHoverWidthLeft,
+		borderHoverWidthRight,
+		borderHoverWidthBottom,
+		borderHoverWidthUnit,
+		borderNormalRadiusTop,
+		borderNormalRadiusLeft,
+		borderNormalRadiusRight,
+		borderNormalRadiusBottom,
+		borderNormalRadiusUnit,
+		borderHoverRadiusTop,
+		borderHoverRadiusLeft,
+		borderHoverRadiusRight,
+		borderHoverRadiusBottom,
+		borderHoverRadiusUnit,
+
+		borderNormalBoxShadowHorizontal,
+		borderNormalBoxShadowVertical,
+		borderNormalBoxShadowBlur,
+		borderNormalBoxShadowSpread,
+		borderNormalBoxShadowColor,
+		borderNormalBoxShadowInset,
+		borderHoverBoxShadowHorizontal,
+		borderHoverBoxShadowVertical,
+		borderHoverBoxShadowBlur,
+		borderHoverBoxShadowSpread,
+		borderHoverBoxShadowColor,
+		borderHoverBoxShadowInset,
 	} = attributes;
 
 	const getView = useSelect((select) => {
@@ -253,6 +303,128 @@ const Inspector = ({
 							</PanelBody>
 
 							<PanelBody
+								title={__('Border', 'smart-blocks')}
+								initialOpen={false}
+							>
+								<Tabs>
+									<div tabTitle={__("Normal", 'smart-blocks')}>
+										<BorderControl
+											value={borderNormal}
+											setValue={(borderNormal) => setAttributes({ borderNormal })}
+										/>
+										{borderNormal && (
+											<ColorControl
+												label={__('Border Color', 'smart-blocks')}
+												enableAlpha
+												value={borderNormalColor}
+												setValue={(borderNormalColor) => setAttributes({ borderNormalColor })}
+											/>
+										)}
+										<DimensionControl
+											label={__('Border Width', 'smart-blocks')}
+											units={['px', 'em']}
+											dimensionTop={borderNormalWidthTop}
+											setDimensionTop={value => setAttributes({ borderNormalWidthTop: value })}
+											dimensionLeft={borderNormalWidthLeft}
+											setDimensionLeft={value => setAttributes({ borderNormalWidthLeft: value })}
+											dimensionRight={borderNormalWidthRight}
+											setDimensionRight={value => setAttributes({ borderNormalWidthRight: value })}
+											dimensionBottom={borderNormalWidthBottom}
+											setDimensionBottom={value => setAttributes({ borderNormalWidthBottom: value })}
+
+											unit={borderNormalWidthUnit}
+											setUnit={value => setAttributes({ borderNormalWidthUnit: value })}
+										/>
+										<DimensionControl
+											label={__('Border Radius', 'smart-blocks')}
+											dimensionTop={borderNormalRadiusTop}
+											setDimensionTop={value => setAttributes({ borderNormalRadiusTop: value })}
+											dimensionLeft={borderNormalRadiusLeft}
+											setDimensionLeft={value => setAttributes({ borderNormalRadiusLeft: value })}
+											dimensionRight={borderNormalRadiusRight}
+											setDimensionRight={value => setAttributes({ borderNormalRadiusRight: value })}
+											dimensionBottom={borderNormalRadiusBottom}
+											setDimensionBottom={value => setAttributes({ borderNormalRadiusBottom: value })}
+
+											unit={borderNormalRadiusUnit}
+											setUnit={value => setAttributes({ borderNormalRadiusUnit: value })}
+										/>
+										<BoxShadowControl
+											valueHorizontal={borderNormalBoxShadowHorizontal}
+											setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({ borderNormalBoxShadowHorizontal })}
+											valueVertical={borderNormalBoxShadowVertical}
+											setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({ borderNormalBoxShadowVertical })}
+											valueBlur={borderNormalBoxShadowBlur}
+											setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({ borderNormalBoxShadowBlur })}
+											valueSpread={borderNormalBoxShadowSpread}
+											setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({ borderNormalBoxShadowSpread })}
+											valueColor={borderNormalBoxShadowColor}
+											setValueColor={(borderNormalBoxShadowColor) => setAttributes({ borderNormalBoxShadowColor })}
+											valueInset={borderNormalBoxShadowInset}
+											setValueInset={(borderNormalBoxShadowInset) => setAttributes({ borderNormalBoxShadowInset })}
+										/>
+									</div>
+									<div tabTitle={__("Hover", 'smart-blocks')}>
+										<BorderControl
+											value={borderHover}
+											setValue={(borderHover) => setAttributes({ borderHover })}
+										/>
+										{borderHover && (
+											<ColorControl
+												label={__('Border Color', 'smart-blocks')}
+												enableAlpha
+												value={borderHoverColor}
+												setValue={(borderHoverColor) => setAttributes({ borderHoverColor })}
+											/>
+										)}
+										<DimensionControl
+											label={__('Border Width', 'smart-blocks')}
+											units={['px', 'em']}
+											dimensionTop={borderHoverWidthTop}
+											setDimensionTop={value => setAttributes({ borderHoverWidthTop: value })}
+											dimensionLeft={borderHoverWidthLeft}
+											setDimensionLeft={value => setAttributes({ borderHoverWidthLeft: value })}
+											dimensionRight={borderHoverWidthRight}
+											setDimensionRight={value => setAttributes({ borderHoverWidthRight: value })}
+											dimensionBottom={borderHoverWidthBottom}
+											setDimensionBottom={value => setAttributes({ borderHoverWidthBottom: value })}
+
+											unit={borderHoverWidthUnit}
+											setUnit={value => setAttributes({ borderHoverWidthUnit: value })}
+										/>
+										<DimensionControl
+											label={__('Border Radius', 'smart-blocks')}
+											dimensionTop={borderHoverRadiusTop}
+											setDimensionTop={value => setAttributes({ borderHoverRadiusTop: value })}
+											dimensionLeft={borderHoverRadiusLeft}
+											setDimensionLeft={value => setAttributes({ borderHoverRadiusLeft: value })}
+											dimensionRight={borderHoverRadiusRight}
+											setDimensionRight={value => setAttributes({ borderHoverRadiusRight: value })}
+											dimensionBottom={borderHoverRadiusBottom}
+											setDimensionBottom={value => setAttributes({ borderHoverRadiusBottom: value })}
+
+											unit={borderHoverRadiusUnit}
+											setUnit={value => setAttributes({ borderHoverRadiusUnit: value })}
+										/>
+										<BoxShadowControl
+											valueHorizontal={borderHoverBoxShadowHorizontal}
+											setValueHorizontal={(borderHoverBoxShadowHorizontal) => setAttributes({ borderHoverBoxShadowHorizontal })}
+											valueVertical={borderHoverBoxShadowVertical}
+											setValueVertical={(borderHoverBoxShadowVertical) => setAttributes({ borderHoverBoxShadowVertical })}
+											valueBlur={borderHoverBoxShadowBlur}
+											setValueBlur={(borderHoverBoxShadowBlur) => setAttributes({ borderHoverBoxShadowBlur })}
+											valueSpread={borderHoverBoxShadowSpread}
+											setValueSpread={(borderHoverBoxShadowSpread) => setAttributes({ borderHoverBoxShadowSpread })}
+											valueColor={borderHoverBoxShadowColor}
+											setValueColor={(borderHoverBoxShadowColor) => setAttributes({ borderHoverBoxShadowColor })}
+											valueInset={borderHoverBoxShadowInset}
+											setValueInset={(borderHoverBoxShadowInset) => setAttributes({ borderHoverBoxShadowInset })}
+										/>
+									</div>
+								</Tabs>
+							</PanelBody>
+
+							<PanelBody
 								title={__('Background', 'smart-blocks')}
 								initialOpen={false}
 							>
@@ -261,6 +433,22 @@ const Inspector = ({
 									enableAlpha={!0}
 									value={columnBgColor}
 									setValue={(columnBgColor) => setAttributes({ columnBgColor })}
+								/>
+
+								<ImageBackgroundControl
+									label={__("Background Image", 'smart-blocks')}
+									imageURL={columnBgImgURL}
+									setImageURL={value => setAttributes({ columnBgImgURL: value })}
+									imageID={columnBgImgID}
+									setImageID={value => setAttributes({ columnBgImgID: value })}
+									imageAttachment={columnBgAttachment}
+									setImageAttachment={value => setAttributes({ columnBgAttachment: value })}
+									imageSize={columnBgSize}
+									setImageSize={value => setAttributes({ columnBgSize: value })}
+									imagePosition={columnBgPosition}
+									setImagePosition={value => setAttributes({ columnBgPosition: value })}
+									imageRepeat={columnBgRepeat}
+									setImageRepeat={value => setAttributes({ columnBgRepeat: value })}
 								/>
 							</PanelBody>
 						</>

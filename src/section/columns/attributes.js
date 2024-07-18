@@ -20,16 +20,6 @@ const attributes = {
         default: 'equal'
     },
 
-    columnsGapSm: {
-        type: 'string',
-    },
-    columnsGapMd: {
-        type: 'string',
-    },
-    columnsGap: {
-        type: 'string',
-        default: 20
-    },
 
     columnsMarginSmTop: {
         type: 'string'
@@ -164,21 +154,17 @@ const attributes = {
         default: 0
     },
 
-    columnsHeight: {
-        type: 'string',
-        default: 'auto'
-    },
 
-    columnsHeightCustom: {
+    columnsHeight: {
         type: 'string'
     },
-    columnsHeightCustomSm: {
+    columnsHeightSm: {
         type: 'string'
     },
-    columnsHeightCustomMd: {
+    columnsHeightMd: {
         type: 'string'
     },
-    columnsHeightCustomUnit: {
+    columnsHeightUnit: {
         type: 'string',
         enum: ['px', 'em', '%', 'vh'],
         default: 'px'
@@ -373,6 +359,32 @@ const attributes = {
     },
     sectionFlexDirectionMd: {
         type: 'string'
+    },
+
+
+    columnsGapRow: {
+        type: 'string'
+    },
+    columnsGapSmRow: {
+        type: 'string'
+    },
+    columnsGapMdRow: {
+        type: 'string'
+    },
+    columnsGapColumn: {
+        type: 'string'
+    },
+    columnsGapSmColumn: {
+        type: 'string',
+        default: 20
+    },
+    columnsGapMdColumn: {
+        type: 'string'
+    },
+    columnsGapUnit: {
+        type: 'string',
+        enum: ['px', 'em', '%'],
+        default: 'px'
     }
 };
 
