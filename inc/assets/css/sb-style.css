@@ -28,6 +28,10 @@ a {
     text-align: right;
 }
 
+.editor-styles-wrapper .is-root-container.is-layout-flow > *{
+    margin-block-start: 0;
+}
+
 /* Columns */
 .wp-block-smart-blocks-columns {
     display: flex;
@@ -65,8 +69,6 @@ a {
     align-items: var(--sb-columns-align-lg);
     flex-direction: var(--sb-columns-flex-direction-lg);
     text-align: var(--sb-columns-horizontal-align-lg);
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .wp-block-smart-blocks-columns.has-full-width {
@@ -79,23 +81,23 @@ a {
 
 /* Column */
 .wp-block-smart-blocks-columns.has-2-columns>.wp-block-smart-blocks-innerblocks-wrap>.wp-block-smart-blocks-column {
-    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-lg) * 1/2);
+    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 1/2);
 }
 
 .wp-block-smart-blocks-columns.has-3-columns>.wp-block-smart-blocks-innerblocks-wrap>.wp-block-smart-blocks-column {
-    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-lg) * 1/3);
+    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 1/3);
 }
 
 .wp-block-smart-blocks-columns.has-4-columns>.wp-block-smart-blocks-innerblocks-wrap>.wp-block-smart-blocks-column {
-    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-lg) * 1/4);
+    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 1/4);
 }
 
 .wp-block-smart-blocks-columns.has-5-columns>.wp-block-smart-blocks-innerblocks-wrap>.wp-block-smart-blocks-column {
-    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-lg) * 1/5);
+    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 1/5);
 }
 
 .wp-block-smart-blocks-columns.has-6-columns>.wp-block-smart-blocks-innerblocks-wrap>.wp-block-smart-blocks-column {
-    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-lg) * 1/6);
+    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 1/6);
 }
 
 .wp-block-smart-blocks-column {
@@ -121,8 +123,6 @@ a {
     background-repeat: var(--sb-column-bg-img-repeat);
     background-size: var(--sb-column-bg-img-size);
     background-color: var(--sb-column-bg-color, transparent);
-    align-self: var(--sb-column-align-self-lg);
-    order: var(--sb-column-custom-order-lg);
 }
 
 /* Block Title */

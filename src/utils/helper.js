@@ -85,10 +85,10 @@ const responsiveTypographyVars = (varname, family, weight, textTransform, textDe
 const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueColumnLg, valueColumnSm, valueColumnMd, unit = '') => {
     return `--sb-${varname}-row-sm: ${valueRowSm ? (valueRowSm + unit) : 'var(--sb-' + varname + '-row-md)'};
         --sb-${varname}-row-md: ${valueRowMd ? (valueRowMd + unit) : 'var(--sb-' + varname + '-row-lg)'};
-        --sb-${varname}-row-lg: ${valueRowLg ? (valueRowLg + unit) : 'initial'};
+        --sb-${varname}-row-lg: ${valueRowLg ? (valueRowLg + unit) : '20px'};
         --sb-${varname}-column-sm: ${valueColumnSm ? (valueColumnSm + unit) : 'var(--sb-' + varname + '-column-md)'};
         --sb-${varname}-column-md: ${valueColumnMd ? (valueColumnMd + unit) : 'var(--sb-' + varname + '-column-lg)'};
-        --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : 'initial'};`;
+        --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : '20px'};`;
 }
 
 const bgImgVars = (varname, valueURL, valueAttachment, valueSize, valuePositionX, valuePositionY, valueRepeat) => {
