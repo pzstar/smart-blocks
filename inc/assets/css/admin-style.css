@@ -445,17 +445,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* Section Layout Style */
 .wp-block-smart-blocks-columns.has-viewport-desktop.has-1-columns.has-desktop-equal-layout > .wp-block-smart-blocks-innerblocks-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="smart-blocks/column"] {
     flex-basis: 100%;
@@ -743,7 +732,7 @@
     width: 2px;
     height: 100%;
     top: 0;
-    right: -0.5px;
+    right: calc(var(--sb-columns-gap-column-lg, 20px) * -1/2);
     padding: 0;
     z-index: 999;
 }
@@ -756,15 +745,15 @@
 [data-type="smart-blocks/column"] .sb-column-resize-container .sb-column-resize-container-handle .components-resizable-box__handle-right:after {
     display: block;
     content: "";
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     border: 2px solid #fff;
     border-radius: 50%;
     background: #0085ba;
     cursor: inherit;
     position: absolute;
-    top: calc(50% - 8px);
-    right: calc(50% - 8px);
+    top: calc(50% - 9px);
+    right: -9px;
 }
 [data-type="smart-blocks/column"] .sb-column-resize-container .sb-column-resize-container-handle .components-resizable-box__handle-right .resizable-tooltip {
     position: absolute;
