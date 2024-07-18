@@ -91,7 +91,7 @@ const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueCol
         --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : ''};`;
 }
 
-const bgImgVars = (varname, valueURL, valueAttachment, valueSize, valueColumnLg, valueColumnSm, valueColumnMd) => {
+const bgImgVars = (varname, valueURL, valueAttachment, valueSize, valuePosition, valueRepeat, valueColumnMd) => {
     return `--sb-${varname}-url: ${valueURL ? ('url(' + valueURL + ')') : ''};
         --sb-${varname}-attachment: ${valueAttachment ? valueAttachment : ''};
         --sb-${varname}-size: ${valueSize ? valueSize : ''};
