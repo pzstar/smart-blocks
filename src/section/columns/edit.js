@@ -165,10 +165,10 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 			columnsPaddingSmTop, columnsPaddingSmRight, columnsPaddingSmBottom, columnsPaddingSmLeft,
 			columnsPaddingMdTop, columnsPaddingMdRight, columnsPaddingMdBottom, columnsPaddingMdLeft, columnsPaddingUnit)}
 
-        ${borderNormal ? '--sb-columns-border-normal: ' + borderNormal + ';' : ''}
-        ${borderHover ? '--sb-columns-border-hover: ' + borderNormal + ';' : ''}
-        ${borderNormalColor ? '--sb-columns-border-normal-color: ' + borderNormalColor + ';' : ''}
-        ${borderHoverColor ? '--sb-columns-border-hover-color: ' + borderHoverColor + ';' : ''}
+        --sb-columns-border-normal:${borderNormal ? borderNormal : '0'};
+        --sb-columns-border-hover: ${borderHover ? borderNormal : 'var(--sb-columns-border-normal);'};
+        --sb-columns-border-normal-color: ${borderNormalColor ? borderNormalColor : 'initial'};
+        --sb-columns-border-hover-color: ${borderHoverColor ? borderHoverColor : 'var(--sb-columns-border-normal-color)'};
 
 
         ${dimensionVars('columns-border-normal-width', borderNormalWidthTop, borderNormalWidthRight, borderNormalWidthBottom, borderNormalWidthLeft, borderNormalWidthUnit)}
