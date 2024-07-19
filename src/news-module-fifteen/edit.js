@@ -27,7 +27,7 @@ import RangeSliderControl from '../controls/rangeslider';
 import MultiSelectControl from '../controls/multiselect';
 import BorderControl from '../controls/border';
 import BoxShadowControl from '../controls/boxshadow';
-import { checkDefault, getFontClass } from '../utils/helper';
+import { responsiveTypographyVars, getFontClass } from '../utils/helper';
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../utils/svgicons';
 
 export default function Edit({ attributes, setAttributes }) {
@@ -126,7 +126,21 @@ export default function Edit({ attributes, setAttributes }) {
         dateFormat,
         customDateFormat,
         imageBorderRadius,
-        postTitleMargin,
+
+        postTitleMarginSmTop,
+        postTitleMarginSmLeft,
+        postTitleMarginSmRight,
+        postTitleMarginSmBottom,
+        postTitleMarginMdTop,
+        postTitleMarginMdLeft,
+        postTitleMarginMdRight,
+        postTitleMarginMdBottom,
+        postTitleMarginTop,
+        postTitleMarginLeft,
+        postTitleMarginRight,
+        postTitleMarginBottom,
+        postTitleMarginUnit,
+
         categoryBackgroundColor,
         categoryTextColor,
         categoryBackgroundHoverColor,
@@ -270,54 +284,38 @@ export default function Edit({ attributes, setAttributes }) {
         ${headerColor ? '--sb-header-color: ' + headerColor + ';' : ''}
         ${headerShortBorderColor ? '--sb-header-short-border-color: ' + headerShortBorderColor + ';' : ''}
         ${headerLongBorderColor ? '--sb-header-long-border-color: ' + headerLongBorderColor + ';' : ''}
-        ${headerTitleTypographyFamily ? '--sb-header-typo-family: ' + checkDefault(headerTitleTypographyFamily) + ';' : ''}
-        ${headerTitleTypographyWeight ? '--sb-header-typo-weight: ' + checkDefault(headerTitleTypographyWeight.replace(/\D/g, ''), headerTitleTypographyWeight) + ';' : ''}
-        ${headerTitleTypographyWeight ? '--sb-header-typo-style: ' + checkDefault(headerTitleTypographyWeight.replace(/\d+/g, ''), headerTitleTypographyWeight) + ';' : ''}
-        ${headerTitleTypographyTextTransform ? '--sb-header-typo-tt: ' + headerTitleTypographyTextTransform + ';' : ''}
-        ${headerTitleTypographyTextDecoration ? '--sb-header-typo-td: ' + headerTitleTypographyTextDecoration + ';' : ''}
-        ${headerTitleTypographyFontSizeSm ? '--sb-header-typo-fs-sm: ' + headerTitleTypographyFontSizeSm + headerTitleTypographyFontSizeUnit + ';' : ''}
-        ${headerTitleTypographyFontSizeMd ? '--sb-header-typo-fs-md: ' + headerTitleTypographyFontSizeMd + headerTitleTypographyFontSizeUnit + ';' : ''}
-        ${headerTitleTypographyFontSize ? '--sb-header-typo-fs-lg: ' + headerTitleTypographyFontSize + headerTitleTypographyFontSizeUnit + ';' : ''}
-        ${headerTitleTypographyLetterSpacingSm ? '--sb-header-typo-ls-sm: ' + headerTitleTypographyLetterSpacingSm + headerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${headerTitleTypographyLetterSpacingMd ? '--sb-header-typo-ls-md: ' + headerTitleTypographyLetterSpacingMd + headerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${headerTitleTypographyLetterSpacing ? '--sb-header-typo-ls-lg: ' + headerTitleTypographyLetterSpacing + headerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${headerTitleTypographyLineHeightSm ? '--sb-header-typo-lh-sm: ' + headerTitleTypographyLineHeightSm + headerTitleTypographyLineHeightUnit + ';' : ''}
-        ${headerTitleTypographyLineHeightMd ? '--sb-header-typo-lh-md: ' + headerTitleTypographyLineHeightMd + headerTitleTypographyLineHeightUnit + ';' : ''}
-        ${headerTitleTypographyLineHeight ? '--sb-header-typo-lh-lg: ' + headerTitleTypographyLineHeight + headerTitleTypographyLineHeightUnit + ';' : ''}
-        ${categoryTypographyFamily ? '--sb-category-typo-family: ' + checkDefault(categoryTypographyFamily) + ';' : ''}
-        ${categoryTypographyWeight ? '--sb-category-typo-weight: ' + checkDefault(categoryTypographyWeight.replace(/\D/g, ''), categoryTypographyWeight) + ';' : ''}
-        ${categoryTypographyWeight ? '--sb-category-typo-style: ' + checkDefault(categoryTypographyWeight.replace(/\d+/g, ''), categoryTypographyWeight) + ';' : ''}
-        ${categoryTypographyTextTransform ? '--sb-category-typo-tt: ' + categoryTypographyTextTransform + ';' : ''}
-        ${categoryTypographyTextDecoration ? '--sb-category-typo-td: ' + categoryTypographyTextDecoration + ';' : ''}
-        ${categoryTypographyFontSizeSm ? '--sb-category-typo-fs-sm: ' + categoryTypographyFontSizeSm + categoryTypographyFontSizeUnit + ';' : ''}
-        ${categoryTypographyFontSizeMd ? '--sb-category-typo-fs-md: ' + categoryTypographyFontSizeMd + categoryTypographyFontSizeUnit + ';' : ''}
-        ${categoryTypographyFontSize ? '--sb-category-typo-fs-lg: ' + categoryTypographyFontSize + categoryTypographyFontSizeUnit + ';' : ''}
-        ${categoryTypographyLetterSpacingSm ? '--sb-category-typo-ls-sm: ' + categoryTypographyLetterSpacingSm + categoryTypographyLetterSpacingUnit + ';' : ''}
-        ${categoryTypographyLetterSpacingMd ? '--sb-category-typo-ls-md: ' + categoryTypographyLetterSpacingMd + categoryTypographyLetterSpacingUnit + ';' : ''}
-        ${categoryTypographyLetterSpacing ? '--sb-category-typo-ls-lg: ' + categoryTypographyLetterSpacing + categoryTypographyLetterSpacingUnit + ';' : ''}
-        ${categoryTypographyLineHeightSm ? '--sb-category-typo-lh-sm: ' + categoryTypographyLineHeightSm + categoryTypographyLineHeightUnit + ';' : ''}
-        ${categoryTypographyLineHeightMd ? '--sb-category-typo-lh-md: ' + categoryTypographyLineHeightMd + categoryTypographyLineHeightUnit + ';' : ''}
-        ${categoryTypographyLineHeight ? '--sb-category-typo-lh-lg: ' + categoryTypographyLineHeight + categoryTypographyLineHeightUnit + ';' : ''}
+
+        ${responsiveTypographyVars('header-typo', headerTitleTypographyFamily, headerTitleTypographyWeight, headerTitleTypographyTextTransform, headerTitleTypographyTextDecoration,
+            headerTitleTypographyFontSizeSm, headerTitleTypographyFontSizeMd, headerTitleTypographyFontSize, headerTitleTypographyFontSizeUnit,
+            headerTitleTypographyLetterSpacingSm, headerTitleTypographyLetterSpacingMd, headerTitleTypographyLetterSpacing, headerTitleTypographyLetterSpacingUnit,
+            headerTitleTypographyLineHeightSm, headerTitleTypographyLineHeightMd, headerTitleTypographyLineHeight, headerTitleTypographyLineHeightUnit
+        )}
+
+        ${responsiveTypographyVars('category-typo', categoryTypographyFamily, categoryTypographyWeight, categoryTypographyTextTransform, categoryTypographyTextDecoration,
+            categoryTypographyFontSizeSm, categoryTypographyFontSizeMd, categoryTypographyFontSize, categoryTypographyFontSizeUnit,
+            categoryTypographyLetterSpacingSm, categoryTypographyLetterSpacingMd, categoryTypographyLetterSpacing, categoryTypographyLetterSpacingUnit,
+            categoryTypographyLineHeightSm, categoryTypographyLineHeightMd, categoryTypographyLineHeight, categoryTypographyLineHeightUnit
+        )}
+
+        ${responsiveTypographyVars('listing-post-title-typo', postTypographyFamily, postTypographyWeight, postTypographyTextTransform, postTypographyTextDecoration,
+            postTypographyFontSizeSm, postTypographyFontSizeMd, postTypographyFontSize, postTypographyFontSizeUnit,
+            postTypographyLetterSpacingSm, postTypographyLetterSpacingMd, postTypographyLetterSpacing, postTypographyLetterSpacingUnit,
+            postTypographyLineHeightSm, postTypographyLineHeightMd, postTypographyLineHeight, postTypographyLineHeightUnit
+        )}
+
+        ${responsiveTypographyVars('post-metas-typo', metasTypographyFamily, metasTypographyWeight, metasTypographyTextTransform, metasTypographyTextDecoration,
+            metasTypographyFontSizeSm, metasTypographyFontSizeMd, metasTypographyFontSize, metasTypographyFontSizeUnit,
+            metasTypographyLetterSpacingSm, metasTypographyLetterSpacingMd, metasTypographyLetterSpacing, metasTypographyLetterSpacingUnit,
+            metasTypographyLineHeightSm, metasTypographyLineHeightMd, metasTypographyLineHeight, metasTypographyLineHeightUnit
+        )}
+
         ${categoryBackgroundColor ? '--sb-category-background-color: ' + categoryBackgroundColor + ';' : ''}
         ${categoryTextColor ? '--sb-category-text-color: ' + categoryTextColor + ';' : ''}
         ${categoryBackgroundHoverColor ? '--sb-category-background-hover-color: ' + categoryBackgroundHoverColor + ';' : ''}
         ${categoryTextHoverColor ? '--sb-category-text-hover-color: ' + categoryTextHoverColor + ';' : ''}
         ${titleColor ? '--sb-title-color: ' + titleColor + ';' : ''}
         ${titleHoverColor ? '--sb-title-hover-color: ' + titleHoverColor + ';' : ''}
-        ${postTypographyFamily ? '--sb-listing-post-title-typo-family: ' + checkDefault(postTypographyFamily) + ';' : ''}
-        ${postTypographyWeight ? '--sb-listing-post-title-typo-weight: ' + checkDefault(postTypographyWeight.replace(/\D/g, ''), postTypographyWeight) + ';' : ''}
-        ${postTypographyWeight ? '--sb-listing-post-title-typo-style: ' + checkDefault(postTypographyWeight.replace(/\d+/g, ''), postTypographyWeight) + ';' : ''}
-        ${postTypographyTextTransform ? '--sb-listing-post-title-typo-tt: ' + postTypographyTextTransform + ';' : ''}
-        ${postTypographyTextDecoration ? '--sb-listing-post-title-typo-td: ' + postTypographyTextDecoration + ';' : ''}
-        ${postTypographyFontSizeSm ? '--sb-listing-post-title-typo-fs-sm: ' + postTypographyFontSizeSm + postTypographyFontSizeUnit + ';' : ''}
-        ${postTypographyFontSizeMd ? '--sb-listing-post-title-typo-fs-md: ' + postTypographyFontSizeMd + postTypographyFontSizeUnit + ';' : ''}
-        ${postTypographyFontSize ? '--sb-listing-post-title-typo-fs-lg: ' + postTypographyFontSize + postTypographyFontSizeUnit + ';' : ''}
-        ${postTypographyLetterSpacingSm ? '--sb-listing-post-title-typo-ls-sm: ' + postTypographyLetterSpacingSm + postTypographyLetterSpacingUnit + ';' : ''}
-        ${postTypographyLetterSpacingMd ? '--sb-listing-post-title-typo-ls-md: ' + postTypographyLetterSpacingMd + postTypographyLetterSpacingUnit + ';' : ''}
-        ${postTypographyLetterSpacing ? '--sb-listing-post-title-typo-ls-lg: ' + postTypographyLetterSpacing + postTypographyLetterSpacingUnit + ';' : ''}
-        ${postTypographyLineHeightSm ? '--sb-listing-post-title-typo-lh-sm: ' + postTypographyLineHeightSm + postTypographyLineHeightUnit + ';' : ''}
-        ${postTypographyLineHeightMd ? '--sb-listing-post-title-typo-lh-md: ' + postTypographyLineHeightMd + postTypographyLineHeightUnit + ';' : ''}
-        ${postTypographyLineHeight ? '--sb-listing-post-title-typo-lh-lg: ' + postTypographyLineHeight + postTypographyLineHeightUnit + ';' : ''}
+
         ${postTitleMarginSmTop ? '--sb-listing-post-title-margin-top-sm: ' + postTitleMarginSmTop + postTitleMarginUnit + ';' : ''}
         ${postTitleMarginSmRight ? '--sb-listing-post-title-margin-right-sm: ' + postTitleMarginSmRight + postTitleMarginUnit + ';' : ''}
         ${postTitleMarginSmBottom ? '--sb-listing-post-title-margin-bottom-sm: ' + postTitleMarginSmBottom + postTitleMarginUnit + ';' : ''}
@@ -331,20 +329,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${postTitleMarginBottom ? '--sb-listing-post-title-margin-bottom-lg: ' + postTitleMarginBottom + postTitleMarginUnit + ';' : ''}
         ${postTitleMarginLeft ? '--sb-listing-post-title-margin-left-lg: ' + postTitleMarginLeft + postTitleMarginUnit + ';' : ''}
         ${postMetasColor ? '--sb-post-metas-color: ' + postMetasColor + ';' : ''}
-        ${metasTypographyFamily ? '--sb-post-metas-typo-family: ' + checkDefault(metasTypographyFamily) + ';' : ''}
-        ${metasTypographyWeight ? '--sb-post-metas-typo-weight: ' + checkDefault(metasTypographyWeight.replace(/\D/g, ''), metasTypographyWeight) + ';' : ''}
-        ${metasTypographyWeight ? '--sb-post-metas-typo-style: ' + checkDefault(metasTypographyWeight.replace(/\d+/g, ''), metasTypographyWeight) + ';' : ''}
-        ${metasTypographyTextTransform ? '--sb-post-metas-typo-tt: ' + metasTypographyTextTransform + ';' : ''}
-        ${metasTypographyTextDecoration ? '--sb-post-metas-typo-td: ' + metasTypographyTextDecoration + ';' : ''}
-        ${metasTypographyFontSizeSm ? '--sb-post-metas-typo-fs-sm: ' + metasTypographyFontSizeSm + metasTypographyFontSizeUnit + ';' : ''}
-        ${metasTypographyFontSizeMd ? '--sb-post-metas-typo-fs-md: ' + metasTypographyFontSizeMd + metasTypographyFontSizeUnit + ';' : ''}
-        ${metasTypographyFontSize ? '--sb-post-metas-typo-fs-lg: ' + metasTypographyFontSize + metasTypographyFontSizeUnit + ';' : ''}
-        ${metasTypographyLetterSpacingSm ? '--sb-post-metas-typo-ls-sm: ' + metasTypographyLetterSpacingSm + metasTypographyLetterSpacingUnit + ';' : ''}
-        ${metasTypographyLetterSpacingMd ? '--sb-post-metas-typo-ls-md: ' + metasTypographyLetterSpacingMd + metasTypographyLetterSpacingUnit + ';' : ''}
-        ${metasTypographyLetterSpacing ? '--sb-post-metas-typo-ls-lg: ' + metasTypographyLetterSpacing + metasTypographyLetterSpacingUnit + ';' : ''}
-        ${metasTypographyLineHeightSm ? '--sb-post-metas-typo-lh-sm: ' + metasTypographyLineHeightSm + metasTypographyLineHeightUnit + ';' : ''}
-        ${metasTypographyLineHeightMd ? '--sb-post-metas-typo-lh-md: ' + metasTypographyLineHeightMd + metasTypographyLineHeightUnit + ';' : ''}
-        ${metasTypographyLineHeight ? '--sb-post-metas-typo-lh-lg: ' + metasTypographyLineHeight + metasTypographyLineHeightUnit + ';' : ''}
+
         ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius + 'px;' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
@@ -426,7 +411,7 @@ export default function Edit({ attributes, setAttributes }) {
     const headerClasses = classnames(
         'sb-block-title',
         `${headerStyle}`,
-        getFontClass(headerTitleTypography)
+        getFontClass(headerTitleTypographyFamily, headerTitleTypographyWeight, headerTitleTypographyTextTransform, headerTitleTypographyTextDecoration)
     );
 
     const allCats = useSelect((select) => {
@@ -490,7 +475,7 @@ export default function Edit({ attributes, setAttributes }) {
                             {post.categories && post.categories.map((catId, index) => (catInner(catId, index, true)))}
                         </ul>
                     )}
-                    <h3 className={`sb-post-title ${postTypography}`}>
+                    <h3 className={`sb-post-title`}>
                         <a href={post.link}>
                             {post.title.rendered ? (
                                 <RawHTML>
@@ -550,10 +535,10 @@ export default function Edit({ attributes, setAttributes }) {
             <style jsx>
                 {style}
             </style>
-            {headerTitleTypography['family'] && (headerTitleTypography['family'] != 'Default') && (<GoogleFontLoad family={headerTitleTypography['family']} weight={headerTitleTypography['weight'].replace("italic", "i")} />)}
-            {categoryTypography['family'] && (categoryTypography['family'] != 'Default') && (<GoogleFontLoad family={categoryTypography['family']} weight={categoryTypography['weight'].replace("italic", "i")} />)}
-            {postTypography['family'] && (postTypography['family'] != 'Default') && (<GoogleFontLoad family={postTypography['family']} weight={postTypography['weight'].replace("italic", "i")} />)}
-            {metasTypography['family'] && (metasTypography['family'] != 'Default') && (<GoogleFontLoad family={metasTypography['family']} weight={metasTypography['weight'].replace("italic", "i")} />)}
+            {headerTitleTypographyFamily && (headerTitleTypographyFamily != 'Default') && (<GoogleFontLoad family={headerTitleTypographyFamily} weight={headerTitleTypographyWeight.replace("italic", "i")} />)}
+            {categoryTypographyFamily && (categoryTypographyFamily != 'Default') && (<GoogleFontLoad family={categoryTypographyFamily} weight={categoryTypographyWeight.replace("italic", "i")} />)}
+            {postTypographyFamily && (postTypographyFamily != 'Default') && (<GoogleFontLoad family={postTypographyFamily} weight={postTypographyWeight.replace("italic", "i")} />)}
+            {metasTypographyFamily && (metasTypographyFamily != 'Default') && (<GoogleFontLoad family={metasTypographyFamily} weight={metasTypographyWeight.replace("italic", "i")} />)}
             <InspectorControls>
                 <div className="sb-field sb-head-panel-tabs">
                     <div className="sb-panel-tabs-wrap">

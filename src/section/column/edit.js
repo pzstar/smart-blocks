@@ -228,16 +228,17 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 	};
 
 	const onResizeStart = () => {
-		const handle = document.querySelector(`#block-${clientId} .sb-column-resize-container-handle .components-resizable-box__handle`);
-		const handleTooltipLeft = document.createElement('div');
-		const handleTooltipRight = document.createElement('div');
+		// const handle = document.querySelector(`#block-${clientId} .sb-column-resize-container-handle .components-resizable-box__handle`);
+		// const handleTooltipLeft = document.createElement('div');
+		// const handleTooltipRight = document.createElement('div');
 
-		handleTooltipLeft.setAttribute('class', 'resizable-tooltip resizable-tooltip-left');
-		handleTooltipLeft.innerHTML = `${parseFloat(columnWidth).toFixed(0)}%`;
-		handle.appendChild(handleTooltipLeft);
-		handleTooltipRight.setAttribute('class', 'resizable-tooltip resizable-tooltip-right');
-		handleTooltipRight.innerHTML = `${parseFloat(adjacentBlock.attributes.columnWidth).toFixed(0)}%`;
-		handle.appendChild(handleTooltipRight);
+		// handleTooltipLeft.setAttribute('class', 'resizable-tooltip resizable-tooltip-left');
+		// handleTooltipLeft.innerHTML = `${parseFloat(columnWidth).toFixed(0)}%`;
+		// handle.appendChild(handleTooltipLeft);
+
+		// handleTooltipRight.setAttribute('class', 'resizable-tooltip resizable-tooltip-right');
+		// handleTooltipRight.innerHTML = `${parseFloat(adjacentBlock.attributes.columnWidth).toFixed(0)}%`;
+		// handle.appendChild(handleTooltipRight);
 
 		setCurrentWidth(columnWidth);
 		setNextWidth(adjacentBlock.attributes.columnWidth);
@@ -250,12 +251,12 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 		const changedWidth = (delta.width / parentWidth) * 100;
 		const width = parseFloat(currentWidth) + changedWidth;
 		const nextColumnWidth = nextWidth - changedWidth;
-		const handleTooltipLeft = document.querySelector('.resizable-tooltip-left');
-		const handleTooltipRight = document.querySelector('.resizable-tooltip-right');
+		// const handleTooltipLeft = document.querySelector('.resizable-tooltip-left');
+		// const handleTooltipRight = document.querySelector('.resizable-tooltip-right');
 
 		if (10 <= width && 10 <= nextColumnWidth) {
-			handleTooltipLeft.innerHTML = `${width.toFixed(0)}%`;
-			handleTooltipRight.innerHTML = `${nextColumnWidth.toFixed(0)}%`;
+			// handleTooltipLeft.innerHTML = `${width.toFixed(0)}%`;
+			// handleTooltipRight.innerHTML = `${nextColumnWidth.toFixed(0)}%`;
 			setAttributes({ columnWidth: width.toFixed(2) });
 			updateBlockAttributes(adjacentBlockClientId, {
 				columnWidth: nextColumnWidth.toFixed(2)
@@ -264,10 +265,10 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 	};
 
 	const onResizeStop = () => {
-		const handleTooltipLeft = document.querySelector('.resizable-tooltip-left');
-		const handleTooltipRight = document.querySelector('.resizable-tooltip-right');
-		handleTooltipLeft.parentNode.removeChild(handleTooltipLeft);
-		handleTooltipRight.parentNode.removeChild(handleTooltipRight);
+		// const handleTooltipLeft = document.querySelector('.resizable-tooltip-left');
+		// const handleTooltipRight = document.querySelector('.resizable-tooltip-right');
+		// handleTooltipLeft.parentNode.removeChild(handleTooltipLeft);
+		// handleTooltipRight.parentNode.removeChild(handleTooltipRight);
 		toggleSelection(true);
 	};
 

@@ -27,7 +27,7 @@ import RangeSliderControl from '../controls/rangeslider';
 import MultiSelectControl from '../controls/multiselect';
 import BorderControl from '../controls/border';
 import BoxShadowControl from '../controls/boxshadow';
-import { checkDefault, getFontClass } from '../utils/helper';
+import { responsiveTypographyVars, getFontClass } from '../utils/helper';
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../utils/svgicons';
 import classnames from 'classnames';
 
@@ -102,14 +102,55 @@ export default function Edit({ attributes, setAttributes }) {
         dateFormat,
         customDateFormat,
         imageBorderRadius,
-        postTitleMargin,
+
+        postTitleMarginSmTop,
+        postTitleMarginSmLeft,
+        postTitleMarginSmRight,
+        postTitleMarginSmBottom,
+        postTitleMarginMdTop,
+        postTitleMarginMdLeft,
+        postTitleMarginMdRight,
+        postTitleMarginMdBottom,
+        postTitleMarginTop,
+        postTitleMarginLeft,
+        postTitleMarginRight,
+        postTitleMarginBottom,
+        postTitleMarginUnit,
+
         titleColor,
         titleHoverColor,
         postMetasColor,
         postExcerptLength,
         contentAlignment,
-        contentPadding,
-        contentMargin,
+
+        contentPaddingSmTop,
+        contentPaddingSmLeft,
+        contentPaddingSmRight,
+        contentPaddingSmBottom,
+        contentPaddingMdTop,
+        contentPaddingMdLeft,
+        contentPaddingMdRight,
+        contentPaddingMdBottom,
+        contentPaddingTop,
+        contentPaddingLeft,
+        contentPaddingRight,
+        contentPaddingBottom,
+        contentPaddingUnit,
+
+        contentMarginSmTop,
+        contentMarginSmLeft,
+        contentMarginSmRight,
+        contentMarginSmBottom,
+        contentMarginMdTop,
+        contentMarginMdLeft,
+        contentMarginMdRight,
+        contentMarginMdBottom,
+        contentMarginTop,
+        contentMarginLeft,
+        contentMarginRight,
+        contentMarginBottom,
+        contentMarginUnit,
+
         excerptColor,
         contentOverlayBackground,
         filterOption,
@@ -192,35 +233,43 @@ export default function Edit({ attributes, setAttributes }) {
         ${borderHover ? '--sb-border-hover: ' + borderNormal + ';' : ''}
         ${borderNormalColor ? '--sb-border-normal-color: ' + borderNormalColor + ';' : ''}
         ${borderHoverColor ? '--sb-border-hover-color: ' + borderHoverColor + ';' : ''}
+
         ${borderNormalWidthTop ? '--sb-border-normal-width-top: ' + borderNormalWidthTop + borderNormalWidthUnit + ';' : ''}
         ${borderNormalWidthRight ? '--sb-border-normal-width-right: ' + borderNormalWidthRight + borderNormalWidthUnit + ';' : ''}
         ${borderNormalWidthBottom ? '--sb-border-normal-width-bottom: ' + borderNormalWidthBottom + borderNormalWidthUnit + ';' : ''}
         ${borderNormalWidthLeft ? '--sb-border-normal-width-left: ' + borderNormalWidthLeft + borderNormalWidthUnit + ';' : ''}
+
         ${borderHoverWidthTop ? '--sb-border-hover-width-top: ' + borderHoverWidthTop + borderHoverWidthUnit + ';' : ''}
         ${borderHoverWidthRight ? '--sb-border-hover-width-right: ' + borderHoverWidthRight + borderHoverWidthUnit + ';' : ''}
         ${borderHoverWidthBottom ? '--sb-border-hover-width-bottom: ' + borderHoverWidthBottom + borderHoverWidthUnit + ';' : ''}
         ${borderHoverWidthLeft ? '--sb-border-hover-width-left: ' + borderHoverWidthLeft + borderHoverWidthUnit + ';' : ''}
+
         ${borderNormalRadiusTop ? '--sb-border-normal-radius-top: ' + borderNormalRadiusTop + borderNormalRadiusUnit + ';' : ''}
         ${borderNormalRadiusRight ? '--sb-border-normal-radius-right: ' + borderNormalRadiusRight + borderNormalRadiusUnit + ';' : ''}
         ${borderNormalRadiusBottom ? '--sb-border-normal-radius-bottom: ' + borderNormalRadiusBottom + borderNormalRadiusUnit + ';' : ''}
         ${borderNormalRadiusLeft ? '--sb-border-normal-radius-left: ' + borderNormalRadiusLeft + borderNormalRadiusUnit + ';' : ''}
+
         ${borderHoverRadiusTop ? '--sb-border-hover-radius-top: ' + borderHoverRadiusTop + borderHoverRadiusUnit + ';' : ''}
         ${borderHoverRadiusRight ? '--sb-border-hover-radius-right: ' + borderHoverRadiusRight + borderHoverRadiusUnit + ';' : ''}
         ${borderHoverRadiusBottom ? '--sb-border-hover-radius-bottom: ' + borderHoverRadiusBottom + borderHoverRadiusUnit + ';' : ''}
         ${borderHoverRadiusLeft ? '--sb-border-hover-radius-left: ' + borderHoverRadiusLeft + borderHoverRadiusUnit + ';' : ''}
+
         ${borderNormalBoxShadowHorizontal ? '--sb-border-normal-box-shadow-horizontal: ' + borderNormalBoxShadowHorizontal + 'px;' : ''}
         ${borderNormalBoxShadowVertical ? '--sb-border-normal-box-shadow-vertical: ' + borderNormalBoxShadowVertical + 'px;' : ''}
         ${borderNormalBoxShadowBlur ? '--sb-border-normal-box-shadow-blur: ' + borderNormalBoxShadowBlur + 'px;' : ''}
         ${borderNormalBoxShadowSpread ? '--sb-border-normal-box-shadow-spread: ' + borderNormalBoxShadowSpread + 'px;' : ''}
         ${borderNormalBoxShadowColor ? '--sb-border-normal-box-shadow-color: ' + borderNormalBoxShadowColor + ';' : ''}
         ${borderNormalBoxShadowInset ? '--sb-border-normal-box-shadow-inset: ' + borderNormalBoxShadowInset + ';' : ''}
+
         ${borderHoverBoxShadowHorizontal ? '--sb-border-hover-box-shadow-horizontal: ' + borderHoverBoxShadowHorizontal + 'px;' : ''}
         ${borderHoverBoxShadowVertical ? '--sb-border-hover-box-shadow-vertical: ' + borderHoverBoxShadowVertical + 'px;' : ''}
         ${borderHoverBoxShadowBlur ? '--sb-border-hover-box-shadow-blur: ' + borderHoverBoxShadowBlur + 'px;' : ''}
         ${borderHoverBoxShadowSpread ? '--sb-border-hover-box-shadow-spread: ' + borderHoverBoxShadowSpread + 'px;' : ''}
         ${borderHoverBoxShadowColor ? '--sb-border-hover-box-shadow-color: ' + borderHoverBoxShadowColor + ';' : ''}
         ${borderHoverBoxShadowInset ? '--sb-border-hover-box-shadow-inset: ' + borderHoverBoxShadowInset + ';' : ''}
+
         ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
+
         ${blockMarginSmTop ? '--sb-block-margin-top-sm: ' + blockMarginSmTop + blockMarginUnit + ';' : ''}
         ${blockMarginSmRight ? '--sb-block-margin-right-sm: ' + blockMarginSmRight + blockMarginUnit + ';' : ''}
         ${blockMarginSmBottom ? '--sb-block-margin-bottom-sm: ' + blockMarginSmBottom + blockMarginUnit + ';' : ''}
@@ -233,6 +282,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${blockMarginRight ? '--sb-block-margin-right-lg: ' + blockMarginRight + blockMarginUnit + ';' : ''}
         ${blockMarginBottom ? '--sb-block-margin-bottom-lg: ' + blockMarginBottom + blockMarginUnit + ';' : ''}
         ${blockMarginLeft ? '--sb-block-margin-left-lg: ' + blockMarginLeft + blockMarginUnit + ';' : ''}
+
         ${blockPaddingSmTop ? '--sb-block-padding-top-sm: ' + blockPaddingSmTop + blockPaddingUnit + ';' : ''}
         ${blockPaddingSmRight ? '--sb-block-padding-right-sm: ' + blockPaddingSmRight + blockPaddingUnit + ';' : ''}
         ${blockPaddingSmBottom ? '--sb-block-padding-bottom-sm: ' + blockPaddingSmBottom + blockPaddingUnit + ';' : ''}
@@ -245,8 +295,10 @@ export default function Edit({ attributes, setAttributes }) {
         ${blockPaddingRight ? '--sb-block-padding-right-lg: ' + blockPaddingRight + blockPaddingUnit + ';' : ''}
         ${blockPaddingBottom ? '--sb-block-padding-bottom-lg: ' + blockPaddingBottom + blockPaddingUnit + ';' : ''}
         ${blockPaddingLeft ? '--sb-block-padding-left-lg: ' + blockPaddingLeft + blockPaddingUnit + ';' : ''}
+
         ${postImageHeight ? '--sb-listing-post-thumb-height: ' + postImageHeight + '%;' : ''}
         ${excerptColor ? '--sb-excerpt-color: ' + excerptColor + ';' : ''}
+
         ${excerptTypographyFamily ? '--sb-excerpt-typo-family: ' + checkDefault(excerptTypographyFamily) + ';' : ''}
         ${excerptTypographyWeight ? '--sb-excerpt-typo-weight: ' + checkDefault(excerptTypographyWeight.replace(/\D/g, ''), excerptTypographyWeight) + ';' : ''}
         ${excerptTypographyWeight ? '--sb-excerpt-typo-style: ' + checkDefault(excerptTypographyWeight.replace(/\d+/g, ''), excerptTypographyWeight) + ';' : ''}
@@ -261,22 +313,23 @@ export default function Edit({ attributes, setAttributes }) {
         ${excerptTypographyLineHeightSm ? '--sb-excerpt-typo-lh-sm: ' + excerptTypographyLineHeightSm + excerptTypographyLineHeightUnit + ';' : ''}
         ${excerptTypographyLineHeightMd ? '--sb-excerpt-typo-lh-md: ' + excerptTypographyLineHeightMd + excerptTypographyLineHeightUnit + ';' : ''}
         ${excerptTypographyLineHeight ? '--sb-excerpt-typo-lh-lg: ' + excerptTypographyLineHeight + excerptTypographyLineHeightUnit + ';' : ''}
+
         ${titleColor ? '--sb-title-color: ' + titleColor + ';' : ''}
         ${titleHoverColor ? '--sb-title-hover-color: ' + titleHoverColor + ';' : ''}
-        ${postTypographyFamily ? '--sb-listing-post-title-typo-family: ' + checkDefault(postTypographyFamily) + ';' : ''}
-        ${postTypographyWeight ? '--sb-listing-post-title-typo-weight: ' + checkDefault(postTypographyWeight.replace(/\D/g, ''), postTypographyWeight) + ';' : ''}
-        ${postTypographyWeight ? '--sb-listing-post-title-typo-style: ' + checkDefault(postTypographyWeight.replace(/\d+/g, ''), postTypographyWeight) + ';' : ''}
-        ${postTypographyTextTransform ? '--sb-listing-post-title-typo-tt: ' + postTypographyTextTransform + ';' : ''}
-        ${postTypographyTextDecoration ? '--sb-listing-post-title-typo-td: ' + postTypographyTextDecoration + ';' : ''}
-        ${postTypographyFontSizeSm ? '--sb-listing-post-title-typo-fs-sm: ' + postTypographyFontSizeSm + postTypographyFontSizeUnit + ';' : ''}
-        ${postTypographyFontSizeMd ? '--sb-listing-post-title-typo-fs-md: ' + postTypographyFontSizeMd + postTypographyFontSizeUnit + ';' : ''}
-        ${postTypographyFontSize ? '--sb-listing-post-title-typo-fs-lg: ' + postTypographyFontSize + postTypographyFontSizeUnit + ';' : ''}
-        ${postTypographyLetterSpacingSm ? '--sb-listing-post-title-typo-ls-sm: ' + postTypographyLetterSpacingSm + postTypographyLetterSpacingUnit + ';' : ''}
-        ${postTypographyLetterSpacingMd ? '--sb-listing-post-title-typo-ls-md: ' + postTypographyLetterSpacingMd + postTypographyLetterSpacingUnit + ';' : ''}
-        ${postTypographyLetterSpacing ? '--sb-listing-post-title-typo-ls-lg: ' + postTypographyLetterSpacing + postTypographyLetterSpacingUnit + ';' : ''}
-        ${postTypographyLineHeightSm ? '--sb-listing-post-title-typo-lh-sm: ' + postTypographyLineHeightSm + postTypographyLineHeightUnit + ';' : ''}
-        ${postTypographyLineHeightMd ? '--sb-listing-post-title-typo-lh-md: ' + postTypographyLineHeightMd + postTypographyLineHeightUnit + ';' : ''}
-        ${postTypographyLineHeight ? '--sb-listing-post-title-typo-lh-lg: ' + postTypographyLineHeight + postTypographyLineHeightUnit + ';' : ''}
+
+        ${responsiveTypographyVars('listing-post-title-typo', postTypographyFamily, postTypographyWeight, postTypographyTextTransform, postTypographyTextDecoration,
+            postTypographyFontSizeSm, postTypographyFontSizeMd, postTypographyFontSize, postTypographyFontSizeUnit,
+            postTypographyLetterSpacingSm, postTypographyLetterSpacingMd, postTypographyLetterSpacing, postTypographyLetterSpacingUnit,
+            postTypographyLineHeightSm, postTypographyLineHeightMd, postTypographyLineHeight, postTypographyLineHeightUnit
+        )}
+
+        ${responsiveTypographyVars('post-metas-typo', metasTypographyFamily, metasTypographyWeight, metasTypographyTextTransform, metasTypographyTextDecoration,
+            metasTypographyFontSizeSm, metasTypographyFontSizeMd, metasTypographyFontSize, metasTypographyFontSizeUnit,
+            metasTypographyLetterSpacingSm, metasTypographyLetterSpacingMd, metasTypographyLetterSpacing, metasTypographyLetterSpacingUnit,
+            metasTypographyLineHeightSm, metasTypographyLineHeightMd, metasTypographyLineHeight, metasTypographyLineHeightUnit
+        )}
+
+
         ${postTitleMarginSmTop ? '--sb-listing-post-title-margin-top-sm: ' + postTitleMarginSmTop + postTitleMarginUnit + ';' : ''}
         ${postTitleMarginSmRight ? '--sb-listing-post-title-margin-right-sm: ' + postTitleMarginSm.righ + postTitleMarginUnitt + ';' : ''}
         ${postTitleMarginSmBottom ? '--sb-listing-post-title-margin-bottom-sm: ' + postTitleMarginSmBottom + postTitleMarginUnit + ';' : ''}
@@ -289,21 +342,9 @@ export default function Edit({ attributes, setAttributes }) {
         ${postTitleMarginRight ? '--sb-listing-post-title-margin-right-lg: ' + postTitleMarginRight + postTitleMarginUnit + ';' : ''}
         ${postTitleMarginBottom ? '--sb-listing-post-title-margin-bottom-lg: ' + postTitleMarginBottom + postTitleMarginUnit + ';' : ''}
         ${postTitleMarginLeft ? '--sb-listing-post-title-margin-left-lg: ' + postTitleMarginLeft + postTitleMarginUnit + ';' : ''}
+
         ${postMetasColor ? '--sb-post-metas-color: ' + postMetasColor + ';' : ''}
-        ${metasTypographyFamily ? '--sb-post-metas-typo-family: ' + checkDefault(metasTypographyFamily) + ';' : ''}
-        ${metasTypographyWeight ? '--sb-post-metas-typo-weight: ' + checkDefault(metasTypographyWeight.replace(/\D/g, ''), metasTypographyWeight) + ';' : ''}
-        ${metasTypographyWeight ? '--sb-post-metas-typo-style: ' + checkDefault(metasTypographyWeight.replace(/\d+/g, ''), metasTypographyWeight) + ';' : ''}
-        ${metasTypographyTextTransform ? '--sb-post-metas-typo-tt: ' + metasTypographyTextTransform + ';' : ''}
-        ${metasTypographyTextDecoration ? '--sb-post-metas-typo-td: ' + metasTypographyTextDecoration + ';' : ''}
-        ${metasTypographyFontSizeSm ? '--sb-post-metas-typo-fs-sm: ' + metasTypographyFontSizeSm + metasTypographyFontSizeUnit + ';' : ''}
-        ${metasTypographyFontSizeMd ? '--sb-post-metas-typo-fs-md: ' + metasTypographyFontSizeMd + metasTypographyFontSizeUnit + ';' : ''}
-        ${metasTypographyFontSize ? '--sb-post-metas-typo-fs-lg: ' + metasTypographyFontSize + metasTypographyFontSizeUnit + ';' : ''}
-        ${metasTypographyLetterSpacingSm ? '--sb-post-metas-typo-ls-sm: ' + metasTypographyLetterSpacingSm + metasTypographyLetterSpacingUnit + ';' : ''}
-        ${metasTypographyLetterSpacingMd ? '--sb-post-metas-typo-ls-md: ' + metasTypographyLetterSpacingMd + metasTypographyLetterSpacingUnit + ';' : ''}
-        ${metasTypographyLetterSpacing ? '--sb-post-metas-typo-ls-lg: ' + metasTypographyLetterSpacing + metasTypographyLetterSpacingUnit + ';' : ''}
-        ${metasTypographyLineHeightSm ? '--sb-post-metas-typo-lh-sm: ' + metasTypographyLineHeightSm + metasTypographyLineHeightUnit + ';' : ''}
-        ${metasTypographyLineHeightMd ? '--sb-post-metas-typo-lh-md: ' + metasTypographyLineHeightMd + metasTypographyLineHeightUnit + ';' : ''}
-        ${metasTypographyLineHeight ? '--sb-post-metas-typo-lh-lg: ' + metasTypographyLineHeight + metasTypographyLineHeightUnit + ';' : ''}
+
         ${contentPaddingSmTop ? '--sb-content-padding-top-sm: ' + contentPaddingSmTop + contentPaddingUnit + ';' : ''}
         ${contentPaddingSmRight ? '--sb-content-padding-right-sm: ' + contentPaddingSmRight + contentPaddingUnit + ';' : ''}
         ${contentPaddingSmBottom ? '--sb-content-padding-bottom-sm: ' + contentPaddingSmBottom + contentPaddingUnit + ';' : ''}
@@ -316,6 +357,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${contentPaddingRight ? '--sb-content-padding-right-lg: ' + contentPaddingRight + contentPaddingUnit + ';' : ''}
         ${contentPaddingBottom ? '--sb-content-padding-bottom-lg: ' + contentPaddingBottom + contentPaddingUnit + ';' : ''}
         ${contentPaddingLeft ? '--sb-content-padding-left-lg: ' + contentPaddingLeft + contentPaddingUnit + ';' : ''}
+
         ${contentMarginSmTop ? '--sb-content-margin-top-sm: ' + contentMarginSmTop + contentMarginUnit + ';' : ''}
         ${contentMarginSmRight ? '--sb-content-margin-right-sm: ' + contentMarginSmRight + contentMarginUnit + ';' : ''}
         ${contentMarginSmBottom ? '--sb-content-margin-bottom-sm: ' + contentMarginSmBottom + contentMarginUnit + ';' : ''}
@@ -328,6 +370,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${contentMarginRight ? '--sb-content-margin-right-lg: ' + contentMarginRight + contentMarginUnit + ';' : ''}
         ${contentMarginBottom ? '--sb-content-margin-bottom-lg: ' + contentMarginBottom + contentMarginUnit + ';' : ''}
         ${contentMarginLeft ? '--sb-content-margin-left-lg: ' + contentMarginLeft + contentMarginUnit + ';' : ''}
+
         ${contentOverlayBackground ? '--sb-content-overlay-gradient: ' + contentOverlayBackground + ';' : ''}
         ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius + 'px;' : ''}
     }`
@@ -440,7 +483,7 @@ export default function Edit({ attributes, setAttributes }) {
                     </a>
                 </div>
                 <div class={`sb-post-content sb-align-${contentAlignment}`}>
-                    <h3 className={`sb-post-title ${getFontClass(postTypography)}`}>
+                    <h3 className={`sb-post-title ${getFontClass(postTypographyFamily, postTypographyWeight, postTypographyTextTransform, postTypographyTextDecoration)}`}>
                         <a href={post.link}>
                             {post.title.rendered ? (
                                 <RawHTML>
@@ -507,9 +550,9 @@ export default function Edit({ attributes, setAttributes }) {
             <style jsx>
                 {style}
             </style>
-            {postTypography['family'] && (postTypography['family'] != 'Default') && (<GoogleFontLoad family={postTypography['family']} weight={postTypography['weight'].replace("italic", "i")} />)}
-            {excerptTypography['family'] && (excerptTypography['family'] != 'Default') && (<GoogleFontLoad family={excerptTypography['family']} weight={excerptTypography['weight'].replace("italic", "i")} />)}
-            {metasTypography['family'] && (metasTypography['family'] != 'Default') && (<GoogleFontLoad family={metasTypography['family']} weight={metasTypography['weight'].replace("italic", "i")} />)}
+            {postTypographyFamily && (postTypographyFamily != 'Default') && (<GoogleFontLoad family={postTypographyFamily} weight={postTypographyWeight.replace("italic", "i")} />)}
+            {excerptTypographyFamily && (excerptTypographyFamily != 'Default') && (<GoogleFontLoad family={excerptTypographyFamily} weight={excerptTypographyWeight.replace("italic", "i")} />)}
+            {metasTypographyFamily && (metasTypographyFamily != 'Default') && (<GoogleFontLoad family={metasTypographyFamily} weight={metasTypographyWeight.replace("italic", "i")} />)}
             <InspectorControls>
                 <div className="sb-field sb-head-panel-tabs">
                     <div className="sb-panel-tabs-wrap">

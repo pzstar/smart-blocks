@@ -28,7 +28,7 @@ import MultiSelectControl from '../controls/multiselect';
 import OwlCarousel from 'react-owl-carousel';
 import BorderControl from '../controls/border';
 import BoxShadowControl from '../controls/boxshadow';
-import { checkDefault } from '../utils/helper';
+import { responsiveTypographyVars } from '../utils/helper';
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../utils/svgicons';
 
 export default function Edit({ attributes, setAttributes }) {
@@ -171,35 +171,43 @@ export default function Edit({ attributes, setAttributes }) {
         ${borderHover ? '--sb-border-hover: ' + borderNormal + ';' : ''}
         ${borderNormalColor ? '--sb-border-normal-color: ' + borderNormalColor + ';' : ''}
         ${borderHoverColor ? '--sb-border-hover-color: ' + borderHoverColor + ';' : ''}
+
         ${borderNormalWidthTop ? '--sb-border-normal-width-top: ' + borderNormalWidthTop + borderNormalWidthUnit + ';' : ''}
         ${borderNormalWidthRight ? '--sb-border-normal-width-right: ' + borderNormalWidthRight + borderNormalWidthUnit + ';' : ''}
         ${borderNormalWidthBottom ? '--sb-border-normal-width-bottom: ' + borderNormalWidthBottom + borderNormalWidthUnit + ';' : ''}
         ${borderNormalWidthLeft ? '--sb-border-normal-width-left: ' + borderNormalWidthLeft + borderNormalWidthUnit + ';' : ''}
+
         ${borderHoverWidthTop ? '--sb-border-hover-width-top: ' + borderHoverWidthTop + borderHoverWidthUnit + ';' : ''}
         ${borderHoverWidthRight ? '--sb-border-hover-width-right: ' + borderHoverWidthRight + borderHoverWidthUnit + ';' : ''}
         ${borderHoverWidthBottom ? '--sb-border-hover-width-bottom: ' + borderHoverWidthBottom + borderHoverWidthUnit + ';' : ''}
         ${borderHoverWidthLeft ? '--sb-border-hover-width-left: ' + borderHoverWidthLeft + borderHoverWidthUnit + ';' : ''}
+
         ${borderNormalRadiusTop ? '--sb-border-normal-radius-top: ' + borderNormalRadiusTop + borderNormalRadiusUnit + ';' : ''}
         ${borderNormalRadiusRight ? '--sb-border-normal-radius-right: ' + borderNormalRadiusRight + borderNormalRadiusUnit + ';' : ''}
         ${borderNormalRadiusBottom ? '--sb-border-normal-radius-bottom: ' + borderNormalRadiusBottom + borderNormalRadiusUnit + ';' : ''}
         ${borderNormalRadiusLeft ? '--sb-border-normal-radius-left: ' + borderNormalRadiusLeft + borderNormalRadiusUnit + ';' : ''}
+
         ${borderHoverRadiusTop ? '--sb-border-hover-radius-top: ' + borderHoverRadiusTop + borderHoverRadiusUnit + ';' : ''}
         ${borderHoverRadiusRight ? '--sb-border-hover-radius-right: ' + borderHoverRadiusRight + borderHoverRadiusUnit + ';' : ''}
         ${borderHoverRadiusBottom ? '--sb-border-hover-radius-bottom: ' + borderHoverRadiusBottom + borderHoverRadiusUnit + ';' : ''}
         ${borderHoverRadiusLeft ? '--sb-border-hover-radius-left: ' + borderHoverRadiusLeft + borderHoverRadiusUnit + ';' : ''}
+
         ${borderNormalBoxShadowHorizontal ? '--sb-border-normal-box-shadow-horizontal: ' + borderNormalBoxShadowHorizontal + 'px;' : ''}
         ${borderNormalBoxShadowVertical ? '--sb-border-normal-box-shadow-vertical: ' + borderNormalBoxShadowVertical + 'px;' : ''}
         ${borderNormalBoxShadowBlur ? '--sb-border-normal-box-shadow-blur: ' + borderNormalBoxShadowBlur + 'px;' : ''}
         ${borderNormalBoxShadowSpread ? '--sb-border-normal-box-shadow-spread: ' + borderNormalBoxShadowSpread + 'px;' : ''}
         ${borderNormalBoxShadowColor ? '--sb-border-normal-box-shadow-color: ' + borderNormalBoxShadowColor + ';' : ''}
         ${borderNormalBoxShadowInset ? '--sb-border-normal-box-shadow-inset: ' + borderNormalBoxShadowInset + ';' : ''}
+
         ${borderHoverBoxShadowHorizontal ? '--sb-border-hover-box-shadow-horizontal: ' + borderHoverBoxShadowHorizontal + 'px;' : ''}
         ${borderHoverBoxShadowVertical ? '--sb-border-hover-box-shadow-vertical: ' + borderHoverBoxShadowVertical + 'px;' : ''}
         ${borderHoverBoxShadowBlur ? '--sb-border-hover-box-shadow-blur: ' + borderHoverBoxShadowBlur + 'px;' : ''}
         ${borderHoverBoxShadowSpread ? '--sb-border-hover-box-shadow-spread: ' + borderHoverBoxShadowSpread + 'px;' : ''}
         ${borderHoverBoxShadowColor ? '--sb-border-hover-box-shadow-color: ' + borderHoverBoxShadowColor + ';' : ''}
         ${borderHoverBoxShadowInset ? '--sb-border-hover-box-shadow-inset: ' + borderHoverBoxShadowInset + ';' : ''}
+
         ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
+
         ${blockMarginSmTop ? '--sb-block-margin-top-sm: ' + blockMarginSmTop + blockMarginUnit + ';' : ''}
         ${blockMarginSmRight ? '--sb-block-margin-right-sm: ' + blockMarginSmRight + blockMarginUnit + ';' : ''}
         ${blockMarginSmBottom ? '--sb-block-margin-bottom-sm: ' + blockMarginSmBottom + blockMarginUnit + ';' : ''}
@@ -212,6 +220,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${blockMarginRight ? '--sb-block-margin-right-lg: ' + blockMarginRight + blockMarginUnit + ';' : ''}
         ${blockMarginBottom ? '--sb-block-margin-bottom-lg: ' + blockMarginBottom + blockMarginUnit + ';' : ''}
         ${blockMarginLeft ? '--sb-block-margin-left-lg: ' + blockMarginLeft + blockMarginUnit + ';' : ''}
+
         ${blockPaddingSmTop ? '--sb-block-padding-top-sm: ' + blockPaddingSmTop + blockPaddingUnit + ';' : ''}
         ${blockPaddingSmRight ? '--sb-block-padding-right-sm: ' + blockPaddingSmRight + blockPaddingUnit + ';' : ''}
         ${blockPaddingSmBottom ? '--sb-block-padding-bottom-sm: ' + blockPaddingSmBottom + blockPaddingUnit + ';' : ''}
@@ -224,20 +233,19 @@ export default function Edit({ attributes, setAttributes }) {
         ${blockPaddingRight ? '--sb-block-padding-right-lg: ' + blockPaddingRight + blockPaddingUnit + ';' : ''}
         ${blockPaddingBottom ? '--sb-block-padding-bottom-lg: ' + blockPaddingBottom + blockPaddingUnit + ';' : ''}
         ${blockPaddingLeft ? '--sb-block-padding-left-lg: ' + blockPaddingLeft + blockPaddingUnit + ';' : ''}
-        ${tickerTitleTypographyFamily ? '--sb-ticker-title-typo-family: ' + checkDefault(tickerTitleTypographyFamily) + ';' : ''}
-        ${tickerTitleTypographyWeight ? '--sb-ticker-title-typo-weight: ' + checkDefault(tickerTitleTypographyWeight.replace(/\D/g, ''), tickerTitleTypographyWeight) + ';' : ''}
-        ${tickerTitleTypographyWeight ? '--sb-ticker-title-typo-style: ' + checkDefault(tickerTitleTypographyWeight.replace(/\d+/g, ''), tickerTitleTypographyWeight) + ';' : ''}
-        ${tickerTitleTypographyTextTransform ? '--sb-ticker-title-typo-tt: ' + tickerTitleTypographyTextTransform + ';' : ''}
-        ${tickerTitleTypographyTextDecoration ? '--sb-ticker-title-typo-td: ' + tickerTitleTypographyTextDecoration + ';' : ''}
-        ${tickerTitleTypographyFontSizeSm ? '--sb-ticker-title-typo-fs-sm: ' + tickerTitleTypographyFontSizeSm + tickerTitleTypographyFontSizeUnit + ';' : ''}
-        ${tickerTitleTypographyFontSizeMd ? '--sb-ticker-title-typo-fs-md: ' + tickerTitleTypographyFontSizeMd + tickerTitleTypographyFontSizeUnit + ';' : ''}
-        ${tickerTitleTypographyFontSize ? '--sb-ticker-title-typo-fs-lg: ' + tickerTitleTypographyFontSize + tickerTitleTypographyFontSizeUnit + ';' : ''}
-        ${tickerTitleTypographyLetterSpacingSm ? '--sb-ticker-title-typo-ls-sm: ' + tickerTitleTypographyLetterSpacingSm + tickerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${tickerTitleTypographyLetterSpacingMd ? '--sb-ticker-title-typo-ls-md: ' + tickerTitleTypographyLetterSpacingMd + tickerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${tickerTitleTypographyLetterSpacing ? '--sb-ticker-title-typo-ls-lg: ' + tickerTitleTypographyLetterSpacing + tickerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${tickerTitleTypographyLineHeightSm ? '--sb-ticker-title-typo-lh-sm: ' + tickerTitleTypographyLineHeightSm + tickerTitleTypographyLineHeightUnit + ';' : ''}
-        ${tickerTitleTypographyLineHeightMd ? '--sb-ticker-title-typo-lh-md: ' + tickerTitleTypographyLineHeightMd + tickerTitleTypographyLineHeightUnit + ';' : ''}
-        ${tickerTitleTypographyLineHeight ? '--sb-ticker-title-typo-lh-lg: ' + tickerTitleTypographyLineHeight + tickerTitleTypographyLineHeightUnit + ';' : ''}
+
+        ${responsiveTypographyVars('ticker-title-typo', tickerTitleTypographyFamily, tickerTitleTypographyWeight, tickerTitleTypographyTextTransform, tickerTitleTypographyTextDecoration,
+            tickerTitleTypographyFontSizeSm, tickerTitleTypographyFontSizeMd, tickerTitleTypographyFontSize, tickerTitleTypographyFontSizeUnit,
+            tickerTitleTypographyLetterSpacingSm, tickerTitleTypographyLetterSpacingMd, tickerTitleTypographyLetterSpacing, tickerTitleTypographyLetterSpacingUnit,
+            tickerTitleTypographyLineHeightSm, tickerTitleTypographyLineHeightMd, tickerTitleTypographyLineHeight, tickerTitleTypographyLineHeightUnit
+        )}
+
+        ${responsiveTypographyVars('ticker-content-typo', tickerContentTypographyFamily, tickerContentTypographyWeight, tickerContentTypographyTextTransform, tickerContentTypographyTextDecoration,
+            tickerContentTypographyFontSizeSm, tickerContentTypographyFontSizeMd, tickerContentTypographyFontSize, tickerContentTypographyFontSizeUnit,
+            tickerContentTypographyLetterSpacingSm, tickerContentTypographyLetterSpacingMd, tickerContentTypographyLetterSpacing, tickerContentTypographyLetterSpacingUnit,
+            tickerContentTypographyLineHeightSm, tickerContentTypographyLineHeightMd, tickerContentTypographyLineHeight, tickerContentTypographyLineHeightUnit
+        )}
+
         ${tickerTitleBgColor ? '--sb-ticker-title-bg-color: ' + tickerTitleBgColor + ';' : ''}
         ${tickerTitleColor ? '--sb-ticker-title-color: ' + tickerTitleColor + ';' : ''}
         ${tickerContentBgColor ? '--sb-ticker-content-bg-color: ' + tickerContentBgColor + ';' : ''}
@@ -247,20 +255,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${navIconNormalColor ? '--sb-nav-icon-normal-color: ' + navIconNormalColor + ';' : ''}
         ${navHoverBgColor ? '--sb-nav-hover-bg-color: ' + navHoverBgColor + ';' : ''}
         ${navIconHoverColor ? '--sb-nav-icon-hover-color: ' + navIconHoverColor + ';' : ''}
-        ${tickerContentTypographyFamily ? '--sb-ticker-content-typo-family: ' + checkDefault(tickerContentTypographyFamily) + ';' : ''}
-        ${tickerContentTypographyWeight ? '--sb-ticker-content-typo-weight: ' + checkDefault(tickerContentTypographyWeight.replace(/\D/g, ''), tickerContentTypographyWeight) + ';' : ''}
-        ${tickerContentTypographyWeight ? '--sb-ticker-content-typo-style: ' + checkDefault(tickerContentTypographyWeight.replace(/\d+/g, ''), tickerContentTypographyWeight) + ';' : ''}
-        ${tickerContentTypographyTextTransform ? '--sb-ticker-content-typo-tt: ' + tickerContentTypographyTextTransform + ';' : ''}
-        ${tickerContentTypographyTextDecoration ? '--sb-ticker-content-typo-td: ' + tickerContentTypographyTextDecoration + ';' : ''}
-        ${tickerContentTypographyFontSizeSm ? '--sb-ticker-content-typo-fs-sm: ' + tickerContentTypographyFontSizeSm + tickerContentTypographyFontSizeUnit + ';' : ''}
-        ${tickerContentTypographyFontSizeMd ? '--sb-ticker-content-typo-fs-md: ' + tickerContentTypographyFontSizeMd + tickerContentTypographyFontSizeUnit + ';' : ''}
-        ${tickerContentTypographyFontSize ? '--sb-ticker-content-typo-fs-lg: ' + tickerContentTypographyFontSize + tickerContentTypographyFontSizeUnit + ';' : ''}
-        ${tickerContentTypographyLetterSpacingSm ? '--sb-ticker-content-typo-ls-sm: ' + tickerContentTypographyLetterSpacingSm + tickerContentTypographyLetterSpacingUnit + ';' : ''}
-        ${tickerContentTypographyLetterSpacingMd ? '--sb-ticker-content-typo-ls-md: ' + tickerContentTypographyLetterSpacingMd + tickerContentTypographyLetterSpacingUnit + ';' : ''}
-        ${tickerContentTypographyLetterSpacing ? '--sb-ticker-content-typo-ls-lg: ' + tickerContentTypographyLetterSpacing + tickerContentTypographyLetterSpacingUnit + ';' : ''}
-        ${tickerContentTypographyLineHeightSm ? '--sb-ticker-content-typo-lh-sm: ' + tickerContentTypographyLineHeightSm + tickerContentTypographyLineHeightUnit + ';' : ''}
-        ${tickerContentTypographyLineHeightMd ? '--sb-ticker-content-typo-lh-md: ' + tickerContentTypographyLineHeightMd + tickerContentTypographyLineHeightUnit + ';' : ''}
-        ${tickerContentTypographyLineHeight ? '--sb-ticker-content-typo-lh-lg: ' + tickerContentTypographyLineHeight + tickerContentTypographyLineHeightUnit + ';' : ''}
+
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
 
@@ -378,8 +373,8 @@ export default function Edit({ attributes, setAttributes }) {
             <style jsx>
                 {style}
             </style>
-            {tickerTitleTypography['family'] && (tickerTitleTypography['family'] != 'Default') && (<GoogleFontLoad family={tickerTitleTypography['family']} weight={tickerTitleTypography['weight'].replace("italic", "i")} />)}
-            {tickerContentTypography['family'] && (tickerContentTypography['family'] != 'Default') && (<GoogleFontLoad family={tickerContentTypography['family']} weight={tickerContentTypography['weight'].replace("italic", "i")} />)}
+            {tickerTitleTypographyFamily && (tickerTitleTypographyFamily != 'Default') && (<GoogleFontLoad family={tickerTitleTypographyFamily} weight={tickerTitleTypographyWeight.replace("italic", "i")} />)}
+            {tickerContentTypographyFamily && (tickerContentTypographyFamily != 'Default') && (<GoogleFontLoad family={tickerContentTypographyFamily} weight={tickerContentTypographyWeight.replace("italic", "i")} />)}
             <InspectorControls>
                 <div className="sb-field sb-head-panel-tabs">
                     <div className="sb-panel-tabs-wrap">

@@ -27,7 +27,7 @@ import RangeSliderControl from '../controls/rangeslider';
 import MultiSelectControl from '../controls/multiselect';
 import BorderControl from '../controls/border';
 import BoxShadowControl from '../controls/boxshadow';
-import { checkDefault, getFontClass } from '../utils/helper';
+import { responsiveTypographyVars, getFontClass } from '../utils/helper';
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../utils/svgicons';
 
 export default function Edit({ attributes, setAttributes }) {
@@ -113,7 +113,20 @@ export default function Edit({ attributes, setAttributes }) {
         topPostDate,
         topPostComments,
         topPostCategory,
-        topTitleMargin,
+
+        topTitleMarginTop,
+        topTitleMarginLeft,
+        topTitleMarginRight,
+        topTitleMarginBottom,
+        topTitleMarginSmTop,
+        topTitleMarginSmLeft,
+        topTitleMarginSmRight,
+        topTitleMarginSmBottom,
+        topTitleMarginMdTop,
+        topTitleMarginMdLeft,
+        topTitleMarginMdRight,
+        topTitleMarginMdBottom,
+        topTitleMarginUnit,
 
         topTypographyFamily,
         topTypographyWeight,
@@ -169,7 +182,21 @@ export default function Edit({ attributes, setAttributes }) {
         dateFormat,
         customDateFormat,
         imageBorderRadius,
-        bottomTitleMargin,
+
+        bottomTitleMarginTop,
+        bottomTitleMarginLeft,
+        bottomTitleMarginRight,
+        bottomTitleMarginBottom,
+        bottomTitleMarginSmTop,
+        bottomTitleMarginSmLeft,
+        bottomTitleMarginSmRight,
+        bottomTitleMarginSmBottom,
+        bottomTitleMarginMdTop,
+        bottomTitleMarginMdLeft,
+        bottomTitleMarginMdRight,
+        bottomTitleMarginMdBottom,
+        bottomTitleMarginUnit,
+
         categoryBackgroundColor,
         categoryTextColor,
         categoryBackgroundHoverColor,
@@ -258,35 +285,43 @@ export default function Edit({ attributes, setAttributes }) {
         ${borderHover ? '--sb-border-hover: ' + borderNormal + ';' : ''}
         ${borderNormalColor ? '--sb-border-normal-color: ' + borderNormalColor + ';' : ''}
         ${borderHoverColor ? '--sb-border-hover-color: ' + borderHoverColor + ';' : ''}
+
         ${borderNormalWidthTop ? '--sb-border-normal-width-top: ' + borderNormalWidthTop + borderNormalWidthUnit + ';' : ''}
         ${borderNormalWidthRight ? '--sb-border-normal-width-right: ' + borderNormalWidthRight + borderNormalWidthUnit + ';' : ''}
         ${borderNormalWidthBottom ? '--sb-border-normal-width-bottom: ' + borderNormalWidthBottom + borderNormalWidthUnit + ';' : ''}
         ${borderNormalWidthLeft ? '--sb-border-normal-width-left: ' + borderNormalWidthLeft + borderNormalWidthUnit + ';' : ''}
+
         ${borderHoverWidthTop ? '--sb-border-hover-width-top: ' + borderHoverWidthTop + borderHoverWidthUnit + ';' : ''}
         ${borderHoverWidthRight ? '--sb-border-hover-width-right: ' + borderHoverWidthRight + borderHoverWidthUnit + ';' : ''}
         ${borderHoverWidthBottom ? '--sb-border-hover-width-bottom: ' + borderHoverWidthBottom + borderHoverWidthUnit + ';' : ''}
         ${borderHoverWidthLeft ? '--sb-border-hover-width-left: ' + borderHoverWidthLeft + borderHoverWidthUnit + ';' : ''}
+
         ${borderNormalRadiusTop ? '--sb-border-normal-radius-top: ' + borderNormalRadiusTop + borderNormalRadiusUnit + ';' : ''}
         ${borderNormalRadiusRight ? '--sb-border-normal-radius-right: ' + borderNormalRadiusRight + borderNormalRadiusUnit + ';' : ''}
         ${borderNormalRadiusBottom ? '--sb-border-normal-radius-bottom: ' + borderNormalRadiusBottom + borderNormalRadiusUnit + ';' : ''}
         ${borderNormalRadiusLeft ? '--sb-border-normal-radius-left: ' + borderNormalRadiusLeft + borderNormalRadiusUnit + ';' : ''}
+
         ${borderHoverRadiusTop ? '--sb-border-hover-radius-top: ' + borderHoverRadiusTop + borderHoverRadiusUnit + ';' : ''}
         ${borderHoverRadiusRight ? '--sb-border-hover-radius-right: ' + borderHoverRadiusRight + borderHoverRadiusUnit + ';' : ''}
         ${borderHoverRadiusBottom ? '--sb-border-hover-radius-bottom: ' + borderHoverRadiusBottom + borderHoverRadiusUnit + ';' : ''}
         ${borderHoverRadiusLeft ? '--sb-border-hover-radius-left: ' + borderHoverRadiusLeft + borderHoverRadiusUnit + ';' : ''}
+
         ${borderNormalBoxShadowHorizontal ? '--sb-border-normal-box-shadow-horizontal: ' + borderNormalBoxShadowHorizontal + 'px;' : ''}
         ${borderNormalBoxShadowVertical ? '--sb-border-normal-box-shadow-vertical: ' + borderNormalBoxShadowVertical + 'px;' : ''}
         ${borderNormalBoxShadowBlur ? '--sb-border-normal-box-shadow-blur: ' + borderNormalBoxShadowBlur + 'px;' : ''}
         ${borderNormalBoxShadowSpread ? '--sb-border-normal-box-shadow-spread: ' + borderNormalBoxShadowSpread + 'px;' : ''}
         ${borderNormalBoxShadowColor ? '--sb-border-normal-box-shadow-color: ' + borderNormalBoxShadowColor + ';' : ''}
         ${borderNormalBoxShadowInset ? '--sb-border-normal-box-shadow-inset: ' + borderNormalBoxShadowInset + ';' : ''}
+
         ${borderHoverBoxShadowHorizontal ? '--sb-border-hover-box-shadow-horizontal: ' + borderHoverBoxShadowHorizontal + 'px;' : ''}
         ${borderHoverBoxShadowVertical ? '--sb-border-hover-box-shadow-vertical: ' + borderHoverBoxShadowVertical + 'px;' : ''}
         ${borderHoverBoxShadowBlur ? '--sb-border-hover-box-shadow-blur: ' + borderHoverBoxShadowBlur + 'px;' : ''}
         ${borderHoverBoxShadowSpread ? '--sb-border-hover-box-shadow-spread: ' + borderHoverBoxShadowSpread + 'px;' : ''}
         ${borderHoverBoxShadowColor ? '--sb-border-hover-box-shadow-color: ' + borderHoverBoxShadowColor + ';' : ''}
         ${borderHoverBoxShadowInset ? '--sb-border-hover-box-shadow-inset: ' + borderHoverBoxShadowInset + ';' : ''}
+
         ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
+
         ${blockMarginSmTop ? '--sb-block-margin-top-sm: ' + blockMarginSmTop + blockMarginUnit + ';' : ''}
         ${blockMarginSmRight ? '--sb-block-margin-right-sm: ' + blockMarginSmRight + blockMarginUnit + ';' : ''}
         ${blockMarginSmBottom ? '--sb-block-margin-bottom-sm: ' + blockMarginSmBottom + blockMarginUnit + ';' : ''}
@@ -299,6 +334,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${blockMarginRight ? '--sb-block-margin-right-lg: ' + blockMarginRight + blockMarginUnit + ';' : ''}
         ${blockMarginBottom ? '--sb-block-margin-bottom-lg: ' + blockMarginBottom + blockMarginUnit + ';' : ''}
         ${blockMarginLeft ? '--sb-block-margin-left-lg: ' + blockMarginLeft + blockMarginUnit + ';' : ''}
+
         ${blockPaddingSmTop ? '--sb-block-padding-top-sm: ' + blockPaddingSmTop + blockPaddingUnit + ';' : ''}
         ${blockPaddingSmRight ? '--sb-block-padding-right-sm: ' + blockPaddingSmRight + blockPaddingUnit + ';' : ''}
         ${blockPaddingSmBottom ? '--sb-block-padding-bottom-sm: ' + blockPaddingSmBottom + blockPaddingUnit + ';' : ''}
@@ -311,59 +347,57 @@ export default function Edit({ attributes, setAttributes }) {
         ${blockPaddingRight ? '--sb-block-padding-right-lg: ' + blockPaddingRight + blockPaddingUnit + ';' : ''}
         ${blockPaddingBottom ? '--sb-block-padding-bottom-lg: ' + blockPaddingBottom + blockPaddingUnit + ';' : ''}
         ${blockPaddingLeft ? '--sb-block-padding-left-lg: ' + blockPaddingLeft + blockPaddingUnit + ';' : ''}
+
         ${topImageHeight ? '--sb-top-thumb-height: ' + topImageHeight + '%;' : ''}
         ${bottomImageHeight ? '--sb-bottom-post-thumb-height: ' + bottomImageHeight + '%;' : ''}
         ${headerColor ? '--sb-header-color: ' + headerColor + ';' : ''}
         ${headerShortBorderColor ? '--sb-header-short-border-color: ' + headerShortBorderColor + ';' : ''}
         ${headerLongBorderColor ? '--sb-header-long-border-color: ' + headerLongBorderColor + ';' : ''}
-        ${headerTitleTypographyFamily ? '--sb-header-typo-family: ' + checkDefault(headerTitleTypographyFamily) + ';' : ''}
-        ${headerTitleTypographyWeight ? '--sb-header-typo-weight: ' + checkDefault(headerTitleTypographyWeight.replace(/\D/g, ''), headerTitleTypographyWeight) + ';' : ''}
-        ${headerTitleTypographyWeight ? '--sb-header-typo-style: ' + checkDefault(headerTitleTypographyWeight.replace(/\d+/g, ''), headerTitleTypographyWeight) + ';' : ''}
-        ${headerTitleTypographyTextTransform ? '--sb-header-typo-tt: ' + headerTitleTypographyTextTransform + ';' : ''}
-        ${headerTitleTypographyTextDecoration ? '--sb-header-typo-td: ' + headerTitleTypographyTextDecoration + ';' : ''}
-        ${headerTitleTypographyFontSizeSm ? '--sb-header-typo-fs-sm: ' + headerTitleTypographyFontSizeSm + headerTitleTypographyFontSizeUnit + ';' : ''}
-        ${headerTitleTypographyFontSizeMd ? '--sb-header-typo-fs-md: ' + headerTitleTypographyFontSizeMd + headerTitleTypographyFontSizeUnit + ';' : ''}
-        ${headerTitleTypographyFontSize ? '--sb-header-typo-fs-lg: ' + headerTitleTypographyFontSize + headerTitleTypographyFontSizeUnit + ';' : ''}
-        ${headerTitleTypographyLetterSpacingSm ? '--sb-header-typo-ls-sm: ' + headerTitleTypographyLetterSpacingSm + headerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${headerTitleTypographyLetterSpacingMd ? '--sb-header-typo-ls-md: ' + headerTitleTypographyLetterSpacingMd + headerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${headerTitleTypographyLetterSpacing ? '--sb-header-typo-ls-lg: ' + headerTitleTypographyLetterSpacing + headerTitleTypographyLetterSpacingUnit + ';' : ''}
-        ${headerTitleTypographyLineHeightSm ? '--sb-header-typo-lh-sm: ' + headerTitleTypographyLineHeightSm + headerTitleTypographyLineHeightUnit + ';' : ''}
-        ${headerTitleTypographyLineHeightMd ? '--sb-header-typo-lh-md: ' + headerTitleTypographyLineHeightMd + headerTitleTypographyLineHeightUnit + ';' : ''}
-        ${headerTitleTypographyLineHeight ? '--sb-header-typo-lh-lg: ' + headerTitleTypographyLineHeight + headerTitleTypographyLineHeightUnit + ';' : ''}
-        ${categoryTypographyFamily ? '--sb-category-typo-family: ' + checkDefault(categoryTypographyFamily) + ';' : ''}
-        ${categoryTypographyWeight ? '--sb-category-typo-weight: ' + checkDefault(categoryTypographyWeight.replace(/\D/g, ''), categoryTypographyWeight) + ';' : ''}
-        ${categoryTypographyWeight ? '--sb-category-typo-style: ' + checkDefault(categoryTypographyWeight.replace(/\d+/g, ''), categoryTypographyWeight) + ';' : ''}
-        ${categoryTypographyTextTransform ? '--sb-category-typo-tt: ' + categoryTypographyTextTransform + ';' : ''}
-        ${categoryTypographyTextDecoration ? '--sb-category-typo-td: ' + categoryTypographyTextDecoration + ';' : ''}
-        ${categoryTypographyFontSizeSm ? '--sb-category-typo-fs-sm: ' + categoryTypographyFontSizeSm + categoryTypographyFontSizeUnit + ';' : ''}
-        ${categoryTypographyFontSizeMd ? '--sb-category-typo-fs-md: ' + categoryTypographyFontSizeMd + categoryTypographyFontSizeUnit + ';' : ''}
-        ${categoryTypographyFontSize ? '--sb-category-typo-fs-lg: ' + categoryTypographyFontSize + categoryTypographyFontSizeUnit + ';' : ''}
-        ${categoryTypographyLetterSpacingSm ? '--sb-category-typo-ls-sm: ' + categoryTypographyLetterSpacingSm + categoryTypographyLetterSpacingUnit + ';' : ''}
-        ${categoryTypographyLetterSpacingMd ? '--sb-category-typo-ls-md: ' + categoryTypographyLetterSpacingMd + categoryTypographyLetterSpacingUnit + ';' : ''}
-        ${categoryTypographyLetterSpacing ? '--sb-category-typo-ls-lg: ' + categoryTypographyLetterSpacing + categoryTypographyLetterSpacingUnit + ';' : ''}
-        ${categoryTypographyLineHeightSm ? '--sb-category-typo-lh-sm: ' + categoryTypographyLineHeightSm + categoryTypographyLineHeightUnit + ';' : ''}
-        ${categoryTypographyLineHeightMd ? '--sb-category-typo-lh-md: ' + categoryTypographyLineHeightMd + categoryTypographyLineHeightUnit + ';' : ''}
-        ${categoryTypographyLineHeight ? '--sb-category-typo-lh-lg: ' + categoryTypographyLineHeight + categoryTypographyLineHeightUnit + ';' : ''}
+
+        ${responsiveTypographyVars('header-typo', headerTitleTypographyFamily, headerTitleTypographyWeight, headerTitleTypographyTextTransform, headerTitleTypographyTextDecoration,
+            headerTitleTypographyFontSizeSm, headerTitleTypographyFontSizeMd, headerTitleTypographyFontSize, headerTitleTypographyFontSizeUnit,
+            headerTitleTypographyLetterSpacingSm, headerTitleTypographyLetterSpacingMd, headerTitleTypographyLetterSpacing, headerTitleTypographyLetterSpacingUnit,
+            headerTitleTypographyLineHeightSm, headerTitleTypographyLineHeightMd, headerTitleTypographyLineHeight, headerTitleTypographyLineHeightUnit
+        )}
+
+        ${responsiveTypographyVars('category-typo', categoryTypographyFamily, categoryTypographyWeight, categoryTypographyTextTransform, categoryTypographyTextDecoration,
+            categoryTypographyFontSizeSm, categoryTypographyFontSizeMd, categoryTypographyFontSize, categoryTypographyFontSizeUnit,
+            categoryTypographyLetterSpacingSm, categoryTypographyLetterSpacingMd, categoryTypographyLetterSpacing, categoryTypographyLetterSpacingUnit,
+            categoryTypographyLineHeightSm, categoryTypographyLineHeightMd, categoryTypographyLineHeight, categoryTypographyLineHeightUnit
+        )}
+
+        ${responsiveTypographyVars('top-post-title-typo', topTypographyFamily, topTypographyWeight, topTypographyTextTransform, topTypographyTextDecoration,
+            topTypographyFontSizeSm, topTypographyFontSizeMd, topTypographyFontSize, topTypographyFontSizeUnit,
+            topTypographyLetterSpacingSm, topTypographyLetterSpacingMd, topTypographyLetterSpacing, topTypographyLetterSpacingUnit,
+            topTypographyLineHeightSm, topTypographyLineHeightMd, topTypographyLineHeight, topTypographyLineHeightUnit
+        )}
+
+        ${responsiveTypographyVars('bottom-post-title-typo', bottomTypographyFamily, bottomTypographyWeight, bottomTypographyTextTransform, bottomTypographyTextDecoration,
+            bottomTypographyFontSizeSm, bottomTypographyFontSizeMd, bottomTypographyFontSize, bottomTypographyFontSizeUnit,
+            bottomTypographyLetterSpacingSm, bottomTypographyLetterSpacingMd, bottomTypographyLetterSpacing, bottomTypographyLetterSpacingUnit,
+            bottomTypographyLineHeightSm, bottomTypographyLineHeightMd, bottomTypographyLineHeight, bottomTypographyLineHeightUnit
+        )}
+
+        ${responsiveTypographyVars('excerpt-typo', excerptTypographyFamily, excerptTypographyWeight, excerptTypographyTextTransform, excerptTypographyTextDecoration,
+            excerptTypographyFontSizeSm, excerptTypographyFontSizeMd, excerptTypographyFontSize, excerptTypographyFontSizeUnit,
+            excerptTypographyLetterSpacingSm, excerptTypographyLetterSpacingMd, excerptTypographyLetterSpacing, excerptTypographyLetterSpacingUnit,
+            excerptTypographyLineHeightSm, excerptTypographyLineHeightMd, excerptTypographyLineHeight, excerptTypographyLineHeightUnit
+        )}
+
+        ${responsiveTypographyVars('post-metas-typo', metasTypographyFamily, metasTypographyWeight, metasTypographyTextTransform, metasTypographyTextDecoration,
+            metasTypographyFontSizeSm, metasTypographyFontSizeMd, metasTypographyFontSize, metasTypographyFontSizeUnit,
+            metasTypographyLetterSpacingSm, metasTypographyLetterSpacingMd, metasTypographyLetterSpacing, metasTypographyLetterSpacingUnit,
+            metasTypographyLineHeightSm, metasTypographyLineHeightMd, metasTypographyLineHeight, metasTypographyLineHeightUnit
+        )}
+
+
         ${categoryBackgroundColor ? '--sb-category-background-color: ' + categoryBackgroundColor + ';' : ''}
         ${categoryTextColor ? '--sb-category-text-color: ' + categoryTextColor + ';' : ''}
         ${categoryBackgroundHoverColor ? '--sb-category-background-hover-color: ' + categoryBackgroundHoverColor + ';' : ''}
         ${categoryTextHoverColor ? '--sb-category-text-hover-color: ' + categoryTextHoverColor + ';' : ''}
         ${titleColor ? '--sb-title-color: ' + titleColor + ';' : ''}
         ${titleHoverColor ? '--sb-title-hover-color: ' + titleHoverColor + ';' : ''}
-        ${topTypographyFamily ? '--sb-top-post-title-typo-family: ' + checkDefault(topTypographyFamily) + ';' : ''}
-        ${topTypographyWeight ? '--sb-top-post-title-typo-weight: ' + checkDefault(topTypographyWeight.replace(/\D/g, ''), topTypographyWeight) + ';' : ''}
-        ${topTypographyWeight ? '--sb-top-post-title-typo-style: ' + checkDefault(topTypographyWeight.replace(/\d+/g, ''), topTypographyWeight) + ';' : ''}
-        ${topTypographyTextTransform ? '--sb-top-post-title-typo-tt: ' + topTypographyTextTransform + ';' : ''}
-        ${topTypographyTextDecoration ? '--sb-top-post-title-typo-td: ' + topTypographyTextDecoration + ';' : ''}
-        ${topTypographyFontSizeSm ? '--sb-top-post-title-typo-fs-sm: ' + topTypographyFontSizeSm + topTypographyFontSizeUnit + ';' : ''}
-        ${topTypographyFontSizeMd ? '--sb-top-post-title-typo-fs-md: ' + topTypographyFontSizeMd + topTypographyFontSizeUnit + ';' : ''}
-        ${topTypographyFontSize ? '--sb-top-post-title-typo-fs-lg: ' + topTypographyFontSize + topTypographyFontSizeUnit + ';' : ''}
-        ${topTypographyLetterSpacingSm ? '--sb-top-post-title-typo-ls-sm: ' + topTypographyLetterSpacingSm + topTypographyLetterSpacingUnit + ';' : ''}
-        ${topTypographyLetterSpacingMd ? '--sb-top-post-title-typo-ls-md: ' + topTypographyLetterSpacingMd + topTypographyLetterSpacingUnit + ';' : ''}
-        ${topTypographyLetterSpacing ? '--sb-top-post-title-typo-ls-lg: ' + topTypographyLetterSpacing + topTypographyLetterSpacingUnit + ';' : ''}
-        ${topTypographyLineHeightSm ? '--sb-top-post-title-typo-lh-sm: ' + topTypographyLineHeightSm + topTypographyLineHeightUnit + ';' : ''}
-        ${topTypographyLineHeightMd ? '--sb-top-post-title-typo-lh-md: ' + topTypographyLineHeightMd + topTypographyLineHeightUnit + ';' : ''}
-        ${topTypographyLineHeight ? '--sb-top-post-title-typo-lh-lg: ' + topTypographyLineHeight + topTypographyLineHeightUnit + ';' : ''}
+
         ${topTitleMarginSmTop ? '--sb-top-post-title-margin-top-sm: ' + topTitleMarginSmTop + topTitleMarginUnit + ';' : ''}
         ${topTitleMarginSmRight ? '--sb-top-post-title-margin-right-sm: ' + topTitleMarginSmRight + topTitleMarginUnit + ';' : ''}
         ${topTitleMarginSmBottom ? '--sb-top-post-title-margin-bottom-sm: ' + topTitleMarginSmBottom + topTitleMarginUnit + ';' : ''}
@@ -376,20 +410,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${topTitleMarginRight ? '--sb-top-post-title-margin-right-lg: ' + topTitleMarginRight + topTitleMarginUnit + ';' : ''}
         ${topTitleMarginBottom ? '--sb-top-post-title-margin-bottom-lg: ' + topTitleMarginBottom + topTitleMarginUnit + ';' : ''}
         ${topTitleMarginLeft ? '--sb-top-post-title-margin-left-lg: ' + topTitleMarginLeft + topTitleMarginUnit + ';' : ''}
-        ${bottomTypographyFamily ? '--sb-bottom-post-title-typo-family: ' + checkDefault(bottomTypographyFamily) + ';' : ''}
-        ${bottomTypographyWeight ? '--sb-bottom-post-title-typo-weight: ' + checkDefault(bottomTypographyWeight.replace(/\D/g, ''), bottomTypographyWeight) + ';' : ''}
-        ${bottomTypographyWeight ? '--sb-bottom-post-title-typo-style: ' + checkDefault(bottomTypographyWeight.replace(/\d+/g, ''), bottomTypographyWeight) + ';' : ''}
-        ${bottomTypographyTextTransform ? '--sb-bottom-post-title-typo-tt: ' + bottomTypographyTextTransform + ';' : ''}
-        ${bottomTypographyTextDecoration ? '--sb-bottom-post-title-typo-td: ' + bottomTypographyTextDecoration + ';' : ''}
-        ${bottomTypographyFontSizeSm ? '--sb-bottom-post-title-typo-fs-sm: ' + bottomTypographyFontSizeSm + bottomTypographyFontSizeUnit + ';' : ''}
-        ${bottomTypographyFontSizeMd ? '--sb-bottom-post-title-typo-fs-md: ' + bottomTypographyFontSizeMd + bottomTypographyFontSizeUnit + ';' : ''}
-        ${bottomTypographyFontSize ? '--sb-bottom-post-title-typo-fs-lg: ' + bottomTypographyFontSize + bottomTypographyFontSizeUnit + ';' : ''}
-        ${bottomTypographyLetterSpacingSm ? '--sb-bottom-post-title-typo-ls-sm: ' + bottomTypographyLetterSpacingSm + bottomTypographyLetterSpacingUnit + ';' : ''}
-        ${bottomTypographyLetterSpacingMd ? '--sb-bottom-post-title-typo-ls-md: ' + bottomTypographyLetterSpacingMd + bottomTypographyLetterSpacingUnit + ';' : ''}
-        ${bottomTypographyLetterSpacing ? '--sb-bottom-post-title-typo-ls-lg: ' + bottomTypographyLetterSpacing + bottomTypographyLetterSpacingUnit + ';' : ''}
-        ${bottomTypographyLineHeightSm ? '--sb-bottom-post-title-typo-lh-sm: ' + bottomTypographyLineHeightSm + bottomTypographyLineHeightUnit + ';' : ''}
-        ${bottomTypographyLineHeightMd ? '--sb-bottom-post-title-typo-lh-md: ' + bottomTypographyLineHeightMd + bottomTypographyLineHeightUnit + ';' : ''}
-        ${bottomTypographyLineHeight ? '--sb-bottom-post-title-typo-lh-lg: ' + bottomTypographyLineHeight + bottomTypographyLineHeightUnit + ';' : ''}
+
         ${bottomTitleMarginSmTop ? '--sb-bottom-post-title-margin-top-sm: ' + bottomTitleMarginSmTop + bottomTitleMarginUnit + ';' : ''}
         ${bottomTitleMarginSmRight ? '--sb-bottom-post-title-margin-right-sm: ' + bottomTitleMarginSmRight + bottomTitleMarginUnit + ';' : ''}
         ${bottomTitleMarginSmBottom ? '--sb-bottom-post-title-margin-bottom-sm: ' + bottomTitleMarginSmBottom + bottomTitleMarginUnit + ';' : ''}
@@ -402,36 +423,10 @@ export default function Edit({ attributes, setAttributes }) {
         ${bottomTitleMarginRight ? '--sb-bottom-post-title-margin-right-lg: ' + bottomTitleMarginRight + bottomTitleMarginUnit + ';' : ''}
         ${bottomTitleMarginBottom ? '--sb-bottom-post-title-margin-bottom-lg: ' + bottomTitleMarginBottom + bottomTitleMarginUnit + ';' : ''}
         ${bottomTitleMarginLeft ? '--sb-bottom-post-title-margin-left-lg: ' + bottomTitleMarginLeft + bottomTitleMarginUnit + ';' : ''}
+
         ${excerptColor ? '--sb-excerpt-color: ' + excerptColor + ';' : ''}
-        ${excerptTypographyFamily ? '--sb-excerpt-typo-family: ' + checkDefault(excerptTypographyFamily) + ';' : ''}
-        ${excerptTypographyWeight ? '--sb-excerpt-typo-weight: ' + checkDefault(excerptTypographyWeight.replace(/\D/g, ''), excerptTypographyWeight) + ';' : ''}
-        ${excerptTypographyWeight ? '--sb-excerpt-typo-style: ' + checkDefault(excerptTypographyWeight.replace(/\d+/g, ''), excerptTypographyWeight) + ';' : ''}
-        ${excerptTypographyTextTransform ? '--sb-excerpt-typo-tt: ' + excerptTypographyTextTransform + ';' : ''}
-        ${excerptTypographyTextDecoration ? '--sb-excerpt-typo-td: ' + excerptTypographyTextDecoration + ';' : ''}
-        ${excerptTypographyFontSizeSm ? '--sb-excerpt-typo-fs-sm: ' + excerptTypographyFontSizeSm + excerptTypographyFontSizeUnit + ';' : ''}
-        ${excerptTypographyFontSizeMd ? '--sb-excerpt-typo-fs-md: ' + excerptTypographyFontSizeMd + excerptTypographyFontSizeUnit + ';' : ''}
-        ${excerptTypographyFontSize ? '--sb-excerpt-typo-fs-lg: ' + excerptTypographyFontSize + excerptTypographyFontSizeUnit + ';' : ''}
-        ${excerptTypographyLetterSpacingSm ? '--sb-excerpt-typo-ls-sm: ' + excerptTypographyLetterSpacingSm + excerptTypographyLetterSpacingUnit + ';' : ''}
-        ${excerptTypographyLetterSpacingMd ? '--sb-excerpt-typo-ls-md: ' + excerptTypographyLetterSpacingMd + excerptTypographyLetterSpacingUnit + ';' : ''}
-        ${excerptTypographyLetterSpacing ? '--sb-excerpt-typo-ls-lg: ' + excerptTypographyLetterSpacing + excerptTypographyLetterSpacingUnit + ';' : ''}
-        ${excerptTypographyLineHeightSm ? '--sb-excerpt-typo-lh-sm: ' + excerptTypographyLineHeightSm + excerptTypographyLineHeightUnit + ';' : ''}
-        ${excerptTypographyLineHeightMd ? '--sb-excerpt-typo-lh-md: ' + excerptTypographyLineHeightMd + excerptTypographyLineHeightUnit + ';' : ''}
-        ${excerptTypographyLineHeight ? '--sb-excerpt-typo-lh-lg: ' + excerptTypographyLineHeight + excerptTypographyLineHeightUnit + ';' : ''}
         ${postMetasColor ? '--sb-post-metas-color: ' + postMetasColor + ';' : ''}
-        ${metasTypographyFamily ? '--sb-post-metas-typo-family: ' + checkDefault(metasTypographyFamily) + ';' : ''}
-        ${metasTypographyWeight ? '--sb-post-metas-typo-weight: ' + checkDefault(metasTypographyWeight.replace(/\D/g, ''), metasTypographyWeight) + ';' : ''}
-        ${metasTypographyWeight ? '--sb-post-metas-typo-style: ' + checkDefault(metasTypographyWeight.replace(/\d+/g, ''), metasTypographyWeight) + ';' : ''}
-        ${metasTypographyTextTransform ? '--sb-post-metas-typo-tt: ' + metasTypographyTextTransform + ';' : ''}
-        ${metasTypographyTextDecoration ? '--sb-post-metas-typo-td: ' + metasTypographyTextDecoration + ';' : ''}
-        ${metasTypographyFontSizeSm ? '--sb-post-metas-typo-fs-sm: ' + metasTypographyFontSizeSm + metasTypographyFontSizeUnit + ';' : ''}
-        ${metasTypographyFontSizeMd ? '--sb-post-metas-typo-fs-md: ' + metasTypographyFontSizeMd + metasTypographyFontSizeUnit + ';' : ''}
-        ${metasTypographyFontSize ? '--sb-post-metas-typo-fs-lg: ' + metasTypographyFontSize + metasTypographyFontSizeUnit + ';' : ''}
-        ${metasTypographyLetterSpacingSm ? '--sb-post-metas-typo-ls-sm: ' + metasTypographyLetterSpacingSm + metasTypographyLetterSpacingUnit + ';' : ''}
-        ${metasTypographyLetterSpacingMd ? '--sb-post-metas-typo-ls-md: ' + metasTypographyLetterSpacingMd + metasTypographyLetterSpacingUnit + ';' : ''}
-        ${metasTypographyLetterSpacing ? '--sb-post-metas-typo-ls-lg: ' + metasTypographyLetterSpacing + metasTypographyLetterSpacingUnit + ';' : ''}
-        ${metasTypographyLineHeightSm ? '--sb-post-metas-typo-lh-sm: ' + metasTypographyLineHeightSm + metasTypographyLineHeightUnit + ';' : ''}
-        ${metasTypographyLineHeightMd ? '--sb-post-metas-typo-lh-md: ' + metasTypographyLineHeightMd + metasTypographyLineHeightUnit + ';' : ''}
-        ${metasTypographyLineHeight ? '--sb-post-metas-typo-lh-lg: ' + metasTypographyLineHeight + metasTypographyLineHeightUnit + ';' : ''}
+
         ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius + 'px;' : ''}
     }`
     setAttributes({ style: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
@@ -520,7 +515,7 @@ export default function Edit({ attributes, setAttributes }) {
     const headerClasses = classnames(
         'sb-block-title',
         `${headerStyle}`,
-        getFontClass(headerTitleTypography)
+        getFontClass(headerTitleTypographyFamily, headerTitleTypographyWeight, headerTitleTypographyTextTransform, headerTitleTypographyTextDecoration)
     );
 
     const catInner = (catId, index, primary) => {
@@ -553,7 +548,7 @@ export default function Edit({ attributes, setAttributes }) {
             post._embedded['replies'] &&
             post._embedded['replies'].length > 0 &&
             post._embedded['replies'][0];
-        const titleClass = block == 'top' ? 'sb-big-title ' + getFontClass(topTypography) : getFontClass(bottomTypography);
+        const titleClass = block == 'top' ? 'sb-big-title ' + getFontClass(topTypographyFamily, topTypographyWeight, topTypographyTextTransform, topTypographyTextDecoration) : getFontClass(bottomTypographyFamily, bottomTypographyWeight, bottomTypographyTextTransform, bottomTypographyTextDecoration);
         const post_author = block == 'top' ? topPostAuthor : bottomPostAuthor;
         const post_date = block == 'top' ? topPostDate : bottomPostDate;
         const post_comment = block == 'top' ? topPostComments : bottomPostComments;
@@ -705,12 +700,12 @@ export default function Edit({ attributes, setAttributes }) {
             <style jsx>
                 {style}
             </style>
-            {headerTitleTypography['family'] && (headerTitleTypography['family'] != 'Default') && (<GoogleFontLoad family={headerTitleTypography['family']} weight={headerTitleTypography['weight'].replace("italic", "i")} />)}
-            {categoryTypography['family'] && (categoryTypography['family'] != 'Default') && (<GoogleFontLoad family={categoryTypography['family']} weight={categoryTypography['weight'].replace("italic", "i")} />)}
-            {topTypography['family'] && (topTypography['family'] != 'Default') && (<GoogleFontLoad family={topTypography['family']} weight={topTypography['weight'].replace("italic", "i")} />)}
-            {bottomTypography['family'] && (bottomTypography['family'] != 'Default') && (<GoogleFontLoad family={bottomTypography['family']} weight={bottomTypography['weight'].replace("italic", "i")} />)}
-            {excerptTypography['family'] && (excerptTypography['family'] != 'Default') && (<GoogleFontLoad family={excerptTypography['family']} weight={excerptTypography['weight'].replace("italic", "i")} />)}
-            {metasTypography['family'] && (metasTypography['family'] != 'Default') && (<GoogleFontLoad family={metasTypography['family']} weight={metasTypography['weight'].replace("italic", "i")} />)}
+            {headerTitleTypographyFamily && (headerTitleTypographyFamily != 'Default') && (<GoogleFontLoad family={headerTitleTypographyFamily} weight={headerTitleTypographyWeight.replace("italic", "i")} />)}
+            {categoryTypographyFamily && (categoryTypographyFamily != 'Default') && (<GoogleFontLoad family={categoryTypographyFamily} weight={categoryTypographyWeight.replace("italic", "i")} />)}
+            {topTypographyFamily && (topTypographyFamily != 'Default') && (<GoogleFontLoad family={topTypographyFamily} weight={topTypographyWeight.replace("italic", "i")} />)}
+            {bottomTypographyFamily && (bottomTypographyFamily != 'Default') && (<GoogleFontLoad family={bottomTypographyFamily} weight={bottomTypographyWeight.replace("italic", "i")} />)}
+            {excerptTypographyFamily && (excerptTypographyFamily != 'Default') && (<GoogleFontLoad family={excerptTypographyFamily} weight={excerptTypographyWeight.replace("italic", "i")} />)}
+            {metasTypographyFamily && (metasTypographyFamily != 'Default') && (<GoogleFontLoad family={metasTypographyFamily} weight={metasTypographyWeight.replace("italic", "i")} />)}
             <InspectorControls>
                 <div className="sb-field sb-head-panel-tabs">
                     <div className="sb-panel-tabs-wrap">
