@@ -40,13 +40,20 @@ if (!class_exists('Smart_Blocks_CSS')) {
             $block_css = '';
             //$block_css .= $blockAttrs;
             foreach ($blockAttrs as $attrs) {
-                if (isset($attrs['family'])) {
-                    self::blocks_google_font($attrs['family'], $attrs['weight'] ? str_replace('italic', 'i', $attrs['weight']) : 400);
+
+                if (str_contains($attrs, 'Family')) {
+                    $family = $value;
+                }
+                if (str_contains($attrs, 'Weight')) {
+                    $weight = $value;
+                }
+                if($family && $family != 'inherit') {
+                    self::blocks_google_font($family, $weight ? str_replace('italic', 'i', $weight) : 400);
                 }
             }
             // Get CSS for the Block.
-            if (isset($blockAttrs['style']) && !is_array($blockAttrs['style'])) {
-                $block_css .= is_array($blockAttrs['style']) ? implode(" ", $blockAttrs['style']) : $blockAttrs['style'];
+            if (isset($blockAttrs['sbStyle']) && !is_array($blockAttrs['sbStyle'])) {
+                $block_css .= is_array($blockAttrs['sbStyle']) ? implode(" ", $blockAttrs['sbStyle']) : $blockAttrs['sbStyle'];
             }
             self::$stylesheet .= $block_css;
             return $block_content;
@@ -206,8 +213,8 @@ if (!class_exists('Smart_Blocks_CSS')) {
                         }
                     }
                     // Get CSS for the Block.
-                    if (isset($blockAttrs['style'])) {
-                        $block_css .= is_array($blockAttrs['style']) ? '' : $blockAttrs['style'];
+                    if (isset($blockAttrs['sbStyle'])) {
+                        $block_css .= is_array($blockAttrs['sbStyle']) ? '' : $blockAttrs['sbStyle'];
                     }
                 }
             }
@@ -224,8 +231,8 @@ if (!class_exists('Smart_Blocks_CSS')) {
                     }
                 }
                 // Get CSS for the Block.
-                if (isset($blockAttrs['style'])) {
-                    $block_css .= is_array($blockAttrs['style']) ? '' : $blockAttrs['style'];
+                if (isset($blockAttrs['sbStyle'])) {
+                    $block_css .= is_array($blockAttrs['sbStyle']) ? '' : $blockAttrs['sbStyle'];
                 }
             } else {
                 foreach ($block['innerBlocks'] as $innerblock) {

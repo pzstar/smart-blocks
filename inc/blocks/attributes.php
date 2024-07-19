@@ -5,7 +5,7 @@ function smart_blocks_attributes_news_module_one() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -651,7 +651,7 @@ function smart_blocks_attributes_news_module_two() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -1296,7 +1296,7 @@ function smart_blocks_attributes_news_module_three() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -1939,7 +1939,7 @@ function smart_blocks_attributes_news_module_four() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -2580,7 +2580,7 @@ function smart_blocks_attributes_news_module_five() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -3226,7 +3226,7 @@ function smart_blocks_attributes_news_module_six() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -3869,7 +3869,7 @@ function smart_blocks_attributes_news_module_seven() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -4510,7 +4510,7 @@ function smart_blocks_attributes_news_module_eight() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -5150,7 +5150,7 @@ function smart_blocks_attributes_news_module_nine() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -5794,7 +5794,7 @@ function smart_blocks_attributes_news_module_ten() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -6233,7 +6233,7 @@ function smart_blocks_attributes_news_module_eleven() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -6660,7 +6660,7 @@ function smart_blocks_attributes_news_module_twelve() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -7089,7 +7089,7 @@ function smart_blocks_attributes_news_module_thirteen() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -7596,7 +7596,7 @@ function smart_blocks_attributes_news_module_fourteen() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -8106,7 +8106,7 @@ function smart_blocks_attributes_news_module_fifteen() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -8533,7 +8533,7 @@ function smart_blocks_attributes_tile_module_one() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -9101,7 +9101,7 @@ function smart_blocks_attributes_tile_module_two() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -9665,7 +9665,7 @@ function smart_blocks_attributes_tile_module_three() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -10097,7 +10097,7 @@ function smart_blocks_attributes_carousel_module_one() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
         "headerTitle" => [
@@ -10678,7 +10678,7 @@ function smart_blocks_attributes_single_news_one() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
 
@@ -11184,7 +11184,7 @@ function smart_blocks_attributes_single_news_two() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
 
@@ -11710,7 +11710,7 @@ function smart_blocks_attributes_ticker_module() {
         "id" => [
             "type" => "string"
         ],
-        "style" => [
+        "sbStyle" => [
             "type" => "string"
         ],
 
