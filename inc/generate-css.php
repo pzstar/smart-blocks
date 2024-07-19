@@ -40,6 +40,8 @@ if (!class_exists('Smart_Blocks_CSS')) {
             $block_css = '';
             //$block_css .= $blockAttrs;
             foreach ($blockAttrs as $attrs) {
+                $family = '';
+                $weight = '';
 
                 if (str_contains($attrs, 'Family')) {
                     $family = $value;
