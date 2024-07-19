@@ -92,13 +92,13 @@ const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueCol
 }
 
 const bgVars = (varname, valueURL, valueAttachment, valueSize, valuePositionX, valuePositionY, valueRepeat, valueType, valueGradient, valueColor) => {
-    const colorValue = valueType == 'imageOrColor' ? valueColor : valueGradient;
-    return `--sb-${varname}-img-url: ${valueURL ? ('url(' + valueURL + ')') : 'initial'};
+    const colorValue = valueType == 'imageOrColor' ? 'url(' + valueURL + ')' : valueGradient;
+    return `--sb-${varname}-img-url: ${colorValue ? colorValue : 'initial'};
         --sb-${varname}-img-attachment: ${valueAttachment ? valueAttachment : 'scroll'};
         --sb-${varname}-img-size: ${valueSize ? valueSize : 'auto'};
         --sb-${varname}-img-position: ${(valuePositionX && valuePositionY) ? ((valuePositionX * 100) + '%' + (valuePositionY * 100) + '%') : '50% 50%'};
         --sb-${varname}-img-repeat: ${valueRepeat ? valueRepeat : 'repeat'};
-        --sb-${varname}-color: ${colorValue ? colorValue : 'transparent'};`;
+        --sb-${varname}-color: ${valueColor ? valueColor : 'transparent'};`;
 }
 
 export { checkDefault, getFontClass, responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveTypographyVars, responsiveGapVars, bgVars };
