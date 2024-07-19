@@ -121,6 +121,7 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 		sectionBgPositionY,
 		sectionBgRepeat,
 		sectionBgGradient,
+		sectionBgOverlayColor,
 
 		borderNormalBoxShadowHorizontal,
 		borderNormalBoxShadowVertical,

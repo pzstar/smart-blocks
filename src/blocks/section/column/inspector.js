@@ -88,6 +88,7 @@ const Inspector = ({
 		columnBgPositionY,
 		columnBgRepeat,
 		columnBgGradient,
+		columnBgOverlayColor,
 
 		borderNormal,
 		borderHover,
@@ -549,6 +550,8 @@ const Inspector = ({
 													setImagePositionY={value => setAttributes({ columnBgPositionY: value })}
 													imageRepeat={columnBgRepeat}
 													setImageRepeat={value => setAttributes({ columnBgRepeat: value })}
+													imageOverlayColor={columnBgOverlayColor}
+													setImageOverlayColor={value => setAttributes({ columnBgOverlayColor: value })}
 												/>
 											</>
 										) || 'gradient' === columnBgType && (

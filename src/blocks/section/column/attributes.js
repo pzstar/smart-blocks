@@ -260,6 +260,9 @@ const attributes = {
     columnBgGradient: {
         type: 'string'
     },
+    columnBgOverlayColor: {
+        type: 'string'
+    },
 
 
     columnAlignSelf: {

@@ -355,6 +355,9 @@ const attributes = {
     sectionBgGradient: {
         type: 'string'
     },
+    sectionBgOverlayColor: {
+        type: 'string'
+    },
 
     sectionContentWidth: {
         type: 'string',

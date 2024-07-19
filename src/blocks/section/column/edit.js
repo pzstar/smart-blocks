@@ -61,6 +61,7 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 		columnBgPositionY,
 		columnBgRepeat,
 		columnBgGradient,
+		columnBgOverlayColor,
 
 		borderNormal,
 		borderHover,

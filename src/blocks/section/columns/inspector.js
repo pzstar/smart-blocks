@@ -164,6 +164,7 @@ const Inspector = ({
 		sectionBgPositionY,
 		sectionBgRepeat,
 		sectionBgGradient,
+		sectionBgOverlayColor,
 
 		sectionContentWidth,
 
@@ -790,6 +791,8 @@ const Inspector = ({
 														setImagePositionY={value => setAttributes({ sectionBgPositionY: value })}
 														imageRepeat={sectionBgRepeat}
 														setImageRepeat={value => setAttributes({ sectionBgRepeat: value })}
+														imageOverlayColor={sectionBgOverlayColor}
+														setImageOverlayColor={value => setAttributes({ sectionBgOverlayColor: value })}
 													/>
 												</>
 											) || 'gradient' === sectionBgType && (
