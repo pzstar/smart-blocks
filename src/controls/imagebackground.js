@@ -40,27 +40,26 @@ const ImageBackgroundControl = ({
         <div className="nxp-field-child sb-image-container">
             {(imageURL) ? (
                 <>
-                    <div className="sb-image-container-body">
-                        <div className="sb-image-container-area">
-                            <div
-                                className="sb-image-container-holder"
-                                style={{
-                                    backgroundImage: `url('${imageURL}')`
-                                }}
-                            ></div>
-
-                            <div
-                                className="sb-image-container-delete"
-                                onClick={() => {
-                                    setImageID('');
-                                    setImageURL('');
-                                }}
-                            >
-                                <Dashicon icon="trash" />
-                                <span>{__('Remove Image', 'smart-blocks')}</span>
-                            </div>
-                        </div>
-                    </div>
+                    <FocalPointPicker
+                        __nextHasNoMarginBottom
+                        url={imageURL}
+                        value={{
+                            x: imagePositionX,
+                            y: imagePositionY,
+                        }}
+                        onDragStart={value => {
+                            setImagePositionX(value.x);
+                            setImagePositionY(value.y);
+                        }}
+                        onDrag={value => {
+                            setImagePositionX(value.x);
+                            setImagePositionY(value.y);
+                        }}
+                        onChange={value => {
+                            setImagePositionX(value.x);
+                            setImagePositionY(value.y);
+                        }}
+                    />
 
                     <Button
                         isSecondary
@@ -105,32 +104,6 @@ const ImageBackgroundControl = ({
                         ]}
                         onChange={value => setImageSize(value)}
                     />
-
-                    <div className="sb-field-select sb-field sb-d-flex sb-inline-block">
-                        <label>{__('Background Position', 'smart-blocks')}</label>
-                        <div class="sb-field-focal-point">
-                            <FocalPointPicker
-                                __nextHasNoMarginBottom
-                                url={imageURL}
-                                value={{
-                                    x: imagePositionX,
-                                    y: imagePositionY,
-                                }}
-                                onDragStart={value => {
-                                    setImagePositionX(value.x);
-                                    setImagePositionY(value.y);
-                                }}
-                                onDrag={value => {
-                                    setImagePositionX(value.x);
-                                    setImagePositionY(value.y);
-                                }}
-                                onChange={value => {
-                                    setImagePositionX(value.x);
-                                    setImagePositionY(value.y);
-                                }}
-                            />
-                        </div>
-                    </div>
                 </>
             ) : (
                 <MediaPlaceholder

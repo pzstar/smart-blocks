@@ -26,7 +26,7 @@ import RangeSliderControl from '../../controls/rangeslider';
 import MultiSelectControl from '../../controls/multiselect';
 import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';
-import { responsiveTypographyVars, getFontClass } from '../../utils/helper';
+import { responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars } from '../../utils/helper';
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../../utils/svgicons';
 import classnames from 'classnames';
 
@@ -232,84 +232,41 @@ export default function Edit({ attributes, setAttributes }) {
         ${borderNormalColor ? '--sb-border-normal-color: ' + borderNormalColor + ';' : ''}
         ${borderHoverColor ? '--sb-border-hover-color: ' + borderHoverColor + ';' : ''}
 
-        ${borderNormalWidthTop ? '--sb-border-normal-width-top: ' + borderNormalWidthTop + borderNormalWidthUnit + ';' : ''}
-        ${borderNormalWidthRight ? '--sb-border-normal-width-right: ' + borderNormalWidthRight + borderNormalWidthUnit + ';' : ''}
-        ${borderNormalWidthBottom ? '--sb-border-normal-width-bottom: ' + borderNormalWidthBottom + borderNormalWidthUnit + ';' : ''}
-        ${borderNormalWidthLeft ? '--sb-border-normal-width-left: ' + borderNormalWidthLeft + borderNormalWidthUnit + ';' : ''}
+        ${dimensionVars('border-normal-width', borderNormalWidthTop, borderNormalWidthRight, borderNormalWidthBottom, borderNormalWidthLeft, borderNormalWidthUnit)}
+        ${dimensionVars('border-hover-width', borderHoverWidthTop, borderHoverWidthRight, borderHoverWidthBottom, borderHoverWidthLeft, borderHoverWidthUnit)}
+        ${dimensionVars('border-normal-radius', borderNormalRadiusTop, borderNormalRadiusRight, borderNormalRadiusBottom, borderNormalRadiusLeft, borderNormalRadiusUnit)}
+        ${dimensionVars('border-hover-radius', borderHoverRadiusTop, borderHoverRadiusRight, borderHoverRadiusBottom, borderHoverRadiusLeft, borderHoverRadiusUnit)}
 
-        ${borderHoverWidthTop ? '--sb-border-hover-width-top: ' + borderHoverWidthTop + borderHoverWidthUnit + ';' : ''}
-        ${borderHoverWidthRight ? '--sb-border-hover-width-right: ' + borderHoverWidthRight + borderHoverWidthUnit + ';' : ''}
-        ${borderHoverWidthBottom ? '--sb-border-hover-width-bottom: ' + borderHoverWidthBottom + borderHoverWidthUnit + ';' : ''}
-        ${borderHoverWidthLeft ? '--sb-border-hover-width-left: ' + borderHoverWidthLeft + borderHoverWidthUnit + ';' : ''}
-
-        ${borderNormalRadiusTop ? '--sb-border-normal-radius-top: ' + borderNormalRadiusTop + borderNormalRadiusUnit + ';' : ''}
-        ${borderNormalRadiusRight ? '--sb-border-normal-radius-right: ' + borderNormalRadiusRight + borderNormalRadiusUnit + ';' : ''}
-        ${borderNormalRadiusBottom ? '--sb-border-normal-radius-bottom: ' + borderNormalRadiusBottom + borderNormalRadiusUnit + ';' : ''}
-        ${borderNormalRadiusLeft ? '--sb-border-normal-radius-left: ' + borderNormalRadiusLeft + borderNormalRadiusUnit + ';' : ''}
-
-        ${borderHoverRadiusTop ? '--sb-border-hover-radius-top: ' + borderHoverRadiusTop + borderHoverRadiusUnit + ';' : ''}
-        ${borderHoverRadiusRight ? '--sb-border-hover-radius-right: ' + borderHoverRadiusRight + borderHoverRadiusUnit + ';' : ''}
-        ${borderHoverRadiusBottom ? '--sb-border-hover-radius-bottom: ' + borderHoverRadiusBottom + borderHoverRadiusUnit + ';' : ''}
-        ${borderHoverRadiusLeft ? '--sb-border-hover-radius-left: ' + borderHoverRadiusLeft + borderHoverRadiusUnit + ';' : ''}
-
-        ${borderNormalBoxShadowHorizontal ? '--sb-border-normal-box-shadow-horizontal: ' + borderNormalBoxShadowHorizontal + 'px;' : ''}
-        ${borderNormalBoxShadowVertical ? '--sb-border-normal-box-shadow-vertical: ' + borderNormalBoxShadowVertical + 'px;' : ''}
-        ${borderNormalBoxShadowBlur ? '--sb-border-normal-box-shadow-blur: ' + borderNormalBoxShadowBlur + 'px;' : ''}
-        ${borderNormalBoxShadowSpread ? '--sb-border-normal-box-shadow-spread: ' + borderNormalBoxShadowSpread + 'px;' : ''}
-        ${borderNormalBoxShadowColor ? '--sb-border-normal-box-shadow-color: ' + borderNormalBoxShadowColor + ';' : ''}
-        ${borderNormalBoxShadowInset ? '--sb-border-normal-box-shadow-inset: ' + borderNormalBoxShadowInset + ';' : ''}
-
-        ${borderHoverBoxShadowHorizontal ? '--sb-border-hover-box-shadow-horizontal: ' + borderHoverBoxShadowHorizontal + 'px;' : ''}
-        ${borderHoverBoxShadowVertical ? '--sb-border-hover-box-shadow-vertical: ' + borderHoverBoxShadowVertical + 'px;' : ''}
-        ${borderHoverBoxShadowBlur ? '--sb-border-hover-box-shadow-blur: ' + borderHoverBoxShadowBlur + 'px;' : ''}
-        ${borderHoverBoxShadowSpread ? '--sb-border-hover-box-shadow-spread: ' + borderHoverBoxShadowSpread + 'px;' : ''}
-        ${borderHoverBoxShadowColor ? '--sb-border-hover-box-shadow-color: ' + borderHoverBoxShadowColor + ';' : ''}
-        ${borderHoverBoxShadowInset ? '--sb-border-hover-box-shadow-inset: ' + borderHoverBoxShadowInset + ';' : ''}
+        ${boxShadowVars('border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
+        ${boxShadowVars('border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
         ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
 
-        ${blockMarginSmTop ? '--sb-block-margin-top-sm: ' + blockMarginSmTop + blockMarginUnit + ';' : ''}
-        ${blockMarginSmRight ? '--sb-block-margin-right-sm: ' + blockMarginSmRight + blockMarginUnit + ';' : ''}
-        ${blockMarginSmBottom ? '--sb-block-margin-bottom-sm: ' + blockMarginSmBottom + blockMarginUnit + ';' : ''}
-        ${blockMarginSmLeft ? '--sb-block-margin-left-sm: ' + blockMarginSmLeft + blockMarginUnit + ';' : ''}
-        ${blockMarginMdTop ? '--sb-block-margin-top-md: ' + blockMarginMdTop + blockMarginUnit + ';' : ''}
-        ${blockMarginMdRight ? '--sb-block-margin-right-md: ' + blockMarginMdRight + blockMarginUnit + ';' : ''}
-        ${blockMarginMdBottom ? '--sb-block-margin-bottom-md: ' + blockMarginMdBottom + blockMarginUnit + ';' : ''}
-        ${blockMarginMdLeft ? '--sb-block-margin-left-md: ' + blockMarginMdLeft + blockMarginUnit + ';' : ''}
-        ${blockMarginTop ? '--sb-block-margin-top-lg: ' + blockMarginTop + blockMarginUnit + ';' : ''}
-        ${blockMarginRight ? '--sb-block-margin-right-lg: ' + blockMarginRight + blockMarginUnit + ';' : ''}
-        ${blockMarginBottom ? '--sb-block-margin-bottom-lg: ' + blockMarginBottom + blockMarginUnit + ';' : ''}
-        ${blockMarginLeft ? '--sb-block-margin-left-lg: ' + blockMarginLeft + blockMarginUnit + ';' : ''}
+        ${responsiveDimensionVars('block-margin', blockMarginTop, blockMarginRight, blockMarginBottom, blockMarginLeft,
+        blockMarginSmTop, blockMarginSmRight, blockMarginSmBottom, blockMarginSmLeft,
+        blockMarginMdTop, blockMarginMdRight, blockMarginMdBottom, blockMarginMdLeft, blockMarginUnit)}
 
-        ${blockPaddingSmTop ? '--sb-block-padding-top-sm: ' + blockPaddingSmTop + blockPaddingUnit + ';' : ''}
-        ${blockPaddingSmRight ? '--sb-block-padding-right-sm: ' + blockPaddingSmRight + blockPaddingUnit + ';' : ''}
-        ${blockPaddingSmBottom ? '--sb-block-padding-bottom-sm: ' + blockPaddingSmBottom + blockPaddingUnit + ';' : ''}
-        ${blockPaddingSmLeft ? '--sb-block-padding-left-sm: ' + blockPaddingSmLeft + blockPaddingUnit + ';' : ''}
-        ${blockPaddingMdTop ? '--sb-block-padding-top-md: ' + blockPaddingMdTop + blockPaddingUnit + ';' : ''}
-        ${blockPaddingMdRight ? '--sb-block-padding-right-md: ' + blockPaddingMdRight + blockPaddingUnit + ';' : ''}
-        ${blockPaddingMdBottom ? '--sb-block-padding-bottom-md: ' + blockPaddingMdBottom + blockPaddingUnit + ';' : ''}
-        ${blockPaddingMdLeft ? '--sb-block-padding-left-md: ' + blockPaddingMdLeft + blockPaddingUnit + ';' : ''}
-        ${blockPaddingTop ? '--sb-block-padding-top-lg: ' + blockPaddingTop + blockPaddingUnit + ';' : ''}
-        ${blockPaddingRight ? '--sb-block-padding-right-lg: ' + blockPaddingRight + blockPaddingUnit + ';' : ''}
-        ${blockPaddingBottom ? '--sb-block-padding-bottom-lg: ' + blockPaddingBottom + blockPaddingUnit + ';' : ''}
-        ${blockPaddingLeft ? '--sb-block-padding-left-lg: ' + blockPaddingLeft + blockPaddingUnit + ';' : ''}
+        ${responsiveDimensionVars('block-padding', blockPaddingTop, blockPaddingRight, blockPaddingBottom, blockPaddingLeft,
+            blockPaddingSmTop, blockPaddingSmRight, blockPaddingSmBottom, blockPaddingSmLeft,
+            blockPaddingMdTop, blockPaddingMdRight, blockPaddingMdBottom, blockPaddingMdLeft, blockPaddingUnit)}
+
+        ${responsiveDimensionVars('listing-post-title-margin', postTitleMarginTop, postTitleMarginRight, postTitleMarginBottom, postTitleMarginLeft,
+            postTitleMarginSmTop, postTitleMarginSmRight, postTitleMarginSmBottom, postTitleMarginSmLeft,
+            postTitleMarginMdTop, postTitleMarginMdRight, postTitleMarginMdBottom, postTitleMarginMdLeft, postTitleMarginUnit)}
+
+        ${responsiveDimensionVars('content-padding', contentPaddingTop, contentPaddingRight, contentPaddingBottom, contentPaddingLeft,
+            contentPaddingSmTop, contentPaddingSmRight, contentPaddingSmBottom, contentPaddingSmLeft,
+            contentPaddingMdTop, contentPaddingMdRight, contentPaddingMdBottom, contentPaddingMdLeft, contentPaddingUnit)}
+
+        ${responsiveDimensionVars('content-margin', contentMarginTop, contentMarginRight, contentMarginBottom, contentMarginLeft,
+            contentMarginSmTop, contentMarginSmRight, contentMarginSmBottom, contentMarginSmLeft,
+            contentMarginMdTop, contentMarginMdRight, contentMarginMdBottom, contentMarginMdLeft, contentMarginUnit)}
+
+        ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
 
         ${postImageHeight ? '--sb-listing-post-thumb-height: ' + postImageHeight + '%;' : ''}
         ${titleColor ? '--sb-title-color: ' + titleColor + ';' : ''}
         ${titleHoverColor ? '--sb-title-hover-color: ' + titleHoverColor + ';' : ''}
-
-        ${postTitleMarginSmTop ? '--sb-listing-post-title-margin-top-sm: ' + postTitleMarginSmTop + postTitleMarginUnit + ';' : ''}
-        ${postTitleMarginSmRight ? '--sb-listing-post-title-margin-right-sm: ' + postTitleMarginSm.righ + postTitleMarginUnitt + ';' : ''}
-        ${postTitleMarginSmBottom ? '--sb-listing-post-title-margin-bottom-sm: ' + postTitleMarginSmBottom + postTitleMarginUnit + ';' : ''}
-        ${postTitleMarginSmLeft ? '--sb-listing-post-title-margin-left-sm: ' + postTitleMarginSmLeft + postTitleMarginUnit + ';' : ''}
-        ${postTitleMarginMdTop ? '--sb-listing-post-title-margin-top-md: ' + postTitleMarginMdTop + postTitleMarginUnit + ';' : ''}
-        ${postTitleMarginMdRight ? '--sb-listing-post-title-margin-right-md: ' + postTitleMarginMdRight + postTitleMarginUnit + ';' : ''}
-        ${postTitleMarginMdBottom ? '--sb-listing-post-title-margin-bottom-md: ' + postTitleMarginMdBottom + postTitleMarginUnit + ';' : ''}
-        ${postTitleMarginMdLeft ? '--sb-listing-post-title-margin-left-md: ' + postTitleMarginMdLeft + postTitleMarginUnit + ';' : ''}
-        ${postTitleMarginTop ? '--sb-listing-post-title-margin-top-lg: ' + postTitleMarginTop + postTitleMarginUnit + ';' : ''}
-        ${postTitleMarginRight ? '--sb-listing-post-title-margin-right-lg: ' + postTitleMarginRight + postTitleMarginUnit + ';' : ''}
-        ${postTitleMarginBottom ? '--sb-listing-post-title-margin-bottom-lg: ' + postTitleMarginBottom + postTitleMarginUnit + ';' : ''}
-        ${postTitleMarginLeft ? '--sb-listing-post-title-margin-left-lg: ' + postTitleMarginLeft + postTitleMarginUnit + ';' : ''}
 
         ${responsiveTypographyVars('listing-post-title-typo', postTypographyFamily, postTypographyWeight, postTypographyTextTransform, postTypographyTextDecoration,
             postTypographyFontSizeSm, postTypographyFontSizeMd, postTypographyFontSize, postTypographyFontSizeUnit,
@@ -329,38 +286,9 @@ export default function Edit({ attributes, setAttributes }) {
             excerptTypographyLineHeightSm, excerptTypographyLineHeightMd, excerptTypographyLineHeight, excerptTypographyLineHeightUnit
         )}
 
-
         ${postMetasColor ? '--sb-post-metas-color: ' + postMetasColor + ';' : ''}
-
         ${excerptColor ? '--sb-excerpt-color: ' + excerptColor + ';' : ''}
-
         ${contentBgColor ? '--sb-content-bg-color: ' + contentBgColor + ';' : ''}
-
-        ${contentPaddingSmTop ? '--sb-content-padding-top-sm: ' + contentPaddingSmTop + contentPaddingUnit + ';' : ''}
-        ${contentPaddingSmRight ? '--sb-content-padding-right-sm: ' + contentPaddingSmRight + contentPaddingUnit + ';' : ''}
-        ${contentPaddingSmBottom ? '--sb-content-padding-bottom-sm: ' + contentPaddingSmBottom + contentPaddingUnit + ';' : ''}
-        ${contentPaddingSmLeft ? '--sb-content-padding-left-sm: ' + contentPaddingSmLeft + contentPaddingUnit + ';' : ''}
-        ${contentPaddingMdTop ? '--sb-content-padding-top-md: ' + contentPaddingMdTop + contentPaddingUnit + ';' : ''}
-        ${contentPaddingMdRight ? '--sb-content-padding-right-md: ' + contentPaddingMdRight + contentPaddingUnit + ';' : ''}
-        ${contentPaddingMdBottom ? '--sb-content-padding-bottom-md: ' + contentPaddingMdBottom + contentPaddingUnit + ';' : ''}
-        ${contentPaddingMdLeft ? '--sb-content-padding-left-md: ' + contentPaddingMdLeft + contentPaddingUnit + ';' : ''}
-        ${contentPaddingTop ? '--sb-content-padding-top-lg: ' + contentPaddingTop + contentPaddingUnit + ';' : ''}
-        ${contentPaddingRight ? '--sb-content-padding-right-lg: ' + contentPaddingRight + contentPaddingUnit + ';' : ''}
-        ${contentPaddingBottom ? '--sb-content-padding-bottom-lg: ' + contentPaddingBottom + contentPaddingUnit + ';' : ''}
-        ${contentPaddingLeft ? '--sb-content-padding-left-lg: ' + contentPaddingLeft + contentPaddingUnit + ';' : ''}
-
-        ${contentMarginSmTop ? '--sb-content-margin-top-sm: ' + contentMarginSmTop + contentMarginUnit + ';' : ''}
-        ${contentMarginSmRight ? '--sb-content-margin-right-sm: ' + contentMarginSmRight + contentMarginUnit + ';' : ''}
-        ${contentMarginSmBottom ? '--sb-content-margin-bottom-sm: ' + contentMarginSmBottom + contentMarginUnit + ';' : ''}
-        ${contentMarginSmLeft ? '--sb-content-margin-left-sm: ' + contentMarginSmLeft + contentMarginUnit + ';' : ''}
-        ${contentMarginMdTop ? '--sb-content-margin-top-md: ' + contentMarginMdTop + contentMarginUnit + ';' : ''}
-        ${contentMarginMdRight ? '--sb-content-margin-right-md: ' + contentMarginMdRight + contentMarginUnit + ';' : ''}
-        ${contentMarginMdBottom ? '--sb-content-margin-bottom-md: ' + contentMarginMdBottom + contentMarginUnit + ';' : ''}
-        ${contentMarginMdLeft ? '--sb-content-margin-left-md: ' + contentMarginMdLeft + contentMarginUnit + ';' : ''}
-        ${contentMarginTop ? '--sb-content-margin-top-lg: ' + contentMarginTop + contentMarginUnit + ';' : ''}
-        ${contentMarginRight ? '--sb-content-margin-right-lg: ' + contentMarginRight + contentMarginUnit + ';' : ''}
-        ${contentMarginBottom ? '--sb-content-margin-bottom-lg: ' + contentMarginBottom + contentMarginUnit + ';' : ''}
-        ${contentMarginLeft ? '--sb-content-margin-left-lg: ' + contentMarginLeft + contentMarginUnit + ';' : ''}
 
         ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius + 'px;' : ''}
     }`

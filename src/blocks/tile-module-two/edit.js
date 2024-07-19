@@ -27,7 +27,7 @@ import RangeSliderControl from '../../controls/rangeslider';
 import MultiSelectControl from '../../controls/multiselect';
 import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';
-import { responsiveTypographyVars, getFontClass } from '../../utils/helper';
+import { responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars } from '../../utils/helper';
 import { LayoutIcon, StyleIcon, AdvancedIcon } from '../../utils/svgicons';
 
 export default function Edit({ attributes, setAttributes }) {
@@ -259,67 +259,33 @@ export default function Edit({ attributes, setAttributes }) {
         ${borderNormalColor ? '--sb-border-normal-color: ' + borderNormalColor + ';' : ''}
         ${borderHoverColor ? '--sb-border-hover-color: ' + borderHoverColor + ';' : ''}
 
-        ${borderNormalWidthTop ? '--sb-border-normal-width-top: ' + borderNormalWidthTop + borderNormalWidthUnit + ';' : ''}
-        ${borderNormalWidthRight ? '--sb-border-normal-width-right: ' + borderNormalWidthRight + borderNormalWidthUnit + ';' : ''}
-        ${borderNormalWidthBottom ? '--sb-border-normal-width-bottom: ' + borderNormalWidthBottom + borderNormalWidthUnit + ';' : ''}
-        ${borderNormalWidthLeft ? '--sb-border-normal-width-left: ' + borderNormalWidthLeft + borderNormalWidthUnit + ';' : ''}
+        ${dimensionVars('border-normal-width', borderNormalWidthTop, borderNormalWidthRight, borderNormalWidthBottom, borderNormalWidthLeft, borderNormalWidthUnit)}
+        ${dimensionVars('border-hover-width', borderHoverWidthTop, borderHoverWidthRight, borderHoverWidthBottom, borderHoverWidthLeft, borderHoverWidthUnit)}
+        ${dimensionVars('border-normal-radius', borderNormalRadiusTop, borderNormalRadiusRight, borderNormalRadiusBottom, borderNormalRadiusLeft, borderNormalRadiusUnit)}
+        ${dimensionVars('border-hover-radius', borderHoverRadiusTop, borderHoverRadiusRight, borderHoverRadiusBottom, borderHoverRadiusLeft, borderHoverRadiusUnit)}
 
-        ${borderHoverWidthTop ? '--sb-border-hover-width-top: ' + borderHoverWidthTop + borderHoverWidthUnit + ';' : ''}
-        ${borderHoverWidthRight ? '--sb-border-hover-width-right: ' + borderHoverWidthRight + borderHoverWidthUnit + ';' : ''}
-        ${borderHoverWidthBottom ? '--sb-border-hover-width-bottom: ' + borderHoverWidthBottom + borderHoverWidthUnit + ';' : ''}
-        ${borderHoverWidthLeft ? '--sb-border-hover-width-left: ' + borderHoverWidthLeft + borderHoverWidthUnit + ';' : ''}
-
-        ${borderNormalRadiusTop ? '--sb-border-normal-radius-top: ' + borderNormalRadiusTop + borderNormalRadiusUnit + ';' : ''}
-        ${borderNormalRadiusRight ? '--sb-border-normal-radius-right: ' + borderNormalRadiusRight + borderNormalRadiusUnit + ';' : ''}
-        ${borderNormalRadiusBottom ? '--sb-border-normal-radius-bottom: ' + borderNormalRadiusBottom + borderNormalRadiusUnit + ';' : ''}
-        ${borderNormalRadiusLeft ? '--sb-border-normal-radius-left: ' + borderNormalRadiusLeft + borderNormalRadiusUnit + ';' : ''}
-
-        ${borderHoverRadiusTop ? '--sb-border-hover-radius-top: ' + borderHoverRadiusTop + borderHoverRadiusUnit + ';' : ''}
-        ${borderHoverRadiusRight ? '--sb-border-hover-radius-right: ' + borderHoverRadiusRight + borderHoverRadiusUnit + ';' : ''}
-        ${borderHoverRadiusBottom ? '--sb-border-hover-radius-bottom: ' + borderHoverRadiusBottom + borderHoverRadiusUnit + ';' : ''}
-        ${borderHoverRadiusLeft ? '--sb-border-hover-radius-left: ' + borderHoverRadiusLeft + borderHoverRadiusUnit + ';' : ''}
-
-        ${borderNormalBoxShadowHorizontal ? '--sb-border-normal-box-shadow-horizontal: ' + borderNormalBoxShadowHorizontal + 'px;' : ''}
-        ${borderNormalBoxShadowVertical ? '--sb-border-normal-box-shadow-vertical: ' + borderNormalBoxShadowVertical + 'px;' : ''}
-        ${borderNormalBoxShadowBlur ? '--sb-border-normal-box-shadow-blur: ' + borderNormalBoxShadowBlur + 'px;' : ''}
-        ${borderNormalBoxShadowSpread ? '--sb-border-normal-box-shadow-spread: ' + borderNormalBoxShadowSpread + 'px;' : ''}
-        ${borderNormalBoxShadowColor ? '--sb-border-normal-box-shadow-color: ' + borderNormalBoxShadowColor + ';' : ''}
-        ${borderNormalBoxShadowInset ? '--sb-border-normal-box-shadow-inset: ' + borderNormalBoxShadowInset + ';' : ''}
-
-        ${borderHoverBoxShadowHorizontal ? '--sb-border-hover-box-shadow-horizontal: ' + borderHoverBoxShadowHorizontal + 'px;' : ''}
-        ${borderHoverBoxShadowVertical ? '--sb-border-hover-box-shadow-vertical: ' + borderHoverBoxShadowVertical + 'px;' : ''}
-        ${borderHoverBoxShadowBlur ? '--sb-border-hover-box-shadow-blur: ' + borderHoverBoxShadowBlur + 'px;' : ''}
-        ${borderHoverBoxShadowSpread ? '--sb-border-hover-box-shadow-spread: ' + borderHoverBoxShadowSpread + 'px;' : ''}
-        ${borderHoverBoxShadowColor ? '--sb-border-hover-box-shadow-color: ' + borderHoverBoxShadowColor + ';' : ''}
-        ${borderHoverBoxShadowInset ? '--sb-border-hover-box-shadow-inset: ' + borderHoverBoxShadowInset + ';' : ''}
+        ${boxShadowVars('border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
+        ${boxShadowVars('border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
         ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
 
-        ${blockMarginSmTop ? '--sb-block-margin-top-sm: ' + blockMarginSmTop + blockMarginUnit + ';' : ''}
-        ${blockMarginSmRight ? '--sb-block-margin-right-sm: ' + blockMarginSmRight + blockMarginUnit + ';' : ''}
-        ${blockMarginSmBottom ? '--sb-block-margin-bottom-sm: ' + blockMarginSmBottom + blockMarginUnit + ';' : ''}
-        ${blockMarginSmLeft ? '--sb-block-margin-left-sm: ' + blockMarginSmLeft + blockMarginUnit + ';' : ''}
-        ${blockMarginMdTop ? '--sb-block-margin-top-md: ' + blockMarginMdTop + blockMarginUnit + ';' : ''}
-        ${blockMarginMdRight ? '--sb-block-margin-right-md: ' + blockMarginMdRight + blockMarginUnit + ';' : ''}
-        ${blockMarginMdBottom ? '--sb-block-margin-bottom-md: ' + blockMarginMdBottom + blockMarginUnit + ';' : ''}
-        ${blockMarginMdLeft ? '--sb-block-margin-left-md: ' + blockMarginMdLeft + blockMarginUnit + ';' : ''}
-        ${blockMarginTop ? '--sb-block-margin-top-lg: ' + blockMarginTop + blockMarginUnit + ';' : ''}
-        ${blockMarginRight ? '--sb-block-margin-right-lg: ' + blockMarginRight + blockMarginUnit + ';' : ''}
-        ${blockMarginBottom ? '--sb-block-margin-bottom-lg: ' + blockMarginBottom + blockMarginUnit + ';' : ''}
-        ${blockMarginLeft ? '--sb-block-margin-left-lg: ' + blockMarginLeft + blockMarginUnit + ';' : ''}
+        ${responsiveDimensionVars('block-margin', blockMarginTop, blockMarginRight, blockMarginBottom, blockMarginLeft,
+        blockMarginSmTop, blockMarginSmRight, blockMarginSmBottom, blockMarginSmLeft,
+        blockMarginMdTop, blockMarginMdRight, blockMarginMdBottom, blockMarginMdLeft, blockMarginUnit)}
 
-        ${blockPaddingSmTop ? '--sb-block-padding-top-sm: ' + blockPaddingSmTop + blockPaddingUnit + ';' : ''}
-        ${blockPaddingSmRight ? '--sb-block-padding-right-sm: ' + blockPaddingSmRight + blockPaddingUnit + ';' : ''}
-        ${blockPaddingSmBottom ? '--sb-block-padding-bottom-sm: ' + blockPaddingSmBottom + blockPaddingUnit + ';' : ''}
-        ${blockPaddingSmLeft ? '--sb-block-padding-left-sm: ' + blockPaddingSmLeft + blockPaddingUnit + ';' : ''}
-        ${blockPaddingMdTop ? '--sb-block-padding-top-md: ' + blockPaddingMdTop + blockPaddingUnit + ';' : ''}
-        ${blockPaddingMdRight ? '--sb-block-padding-right-md: ' + blockPaddingMdRight + blockPaddingUnit + ';' : ''}
-        ${blockPaddingMdBottom ? '--sb-block-padding-bottom-md: ' + blockPaddingMdBottom + blockPaddingUnit + ';' : ''}
-        ${blockPaddingMdLeft ? '--sb-block-padding-left-md: ' + blockPaddingMdLeft + blockPaddingUnit + ';' : ''}
-        ${blockPaddingTop ? '--sb-block-padding-top-lg: ' + blockPaddingTop + blockPaddingUnit + ';' : ''}
-        ${blockPaddingRight ? '--sb-block-padding-right-lg: ' + blockPaddingRight + blockPaddingUnit + ';' : ''}
-        ${blockPaddingBottom ? '--sb-block-padding-bottom-lg: ' + blockPaddingBottom + blockPaddingUnit + ';' : ''}
-        ${blockPaddingLeft ? '--sb-block-padding-left-lg: ' + blockPaddingLeft + blockPaddingUnit + ';' : ''}
+        ${responsiveDimensionVars('block-padding', blockPaddingTop, blockPaddingRight, blockPaddingBottom, blockPaddingLeft,
+            blockPaddingSmTop, blockPaddingSmRight, blockPaddingSmBottom, blockPaddingSmLeft,
+            blockPaddingMdTop, blockPaddingMdRight, blockPaddingMdBottom, blockPaddingMdLeft, blockPaddingUnit)}
+
+        ${responsiveDimensionVars('featured-title-margin', featuredTitleMarginTop, featuredTitleMarginRight, featuredTitleMarginBottom, featuredTitleMarginLeft,
+            featuredTitleMarginSmTop, featuredTitleMarginSmRight, featuredTitleMarginSmBottom, featuredTitleMarginSmLeft,
+            featuredTitleMarginMdTop, featuredTitleMarginMdRight, featuredTitleMarginMdBottom, featuredTitleMarginMdLeft, featuredTitleMarginUnit)}
+
+        ${responsiveDimensionVars('side-post-title-margin', sideTitleMarginTop, sideTitleMarginRight, sideTitleMarginBottom, sideTitleMarginLeft,
+            sideTitleMarginSmTop, sideTitleMarginSmRight, sideTitleMarginSmBottom, sideTitleMarginSmLeft,
+            sideTitleMarginMdTop, sideTitleMarginMdRight, sideTitleMarginMdBottom, sideTitleMarginMdLeft, sideTitleMarginUnit)}
+
+        ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
 
         ${headerColor ? '--sb-header-color: ' + headerColor + ';' : ''}
         ${headerShortBorderColor ? '--sb-header-short-border-color: ' + headerShortBorderColor + ';' : ''}
@@ -355,38 +321,11 @@ export default function Edit({ attributes, setAttributes }) {
             metasTypographyLineHeightSm, metasTypographyLineHeightMd, metasTypographyLineHeight, metasTypographyLineHeightUnit
         )}
 
-
         ${categoryBackgroundColor ? '--sb-category-background-color: ' + categoryBackgroundColor + ';' : ''}
         ${categoryTextColor ? '--sb-category-text-color: ' + categoryTextColor + ';' : ''}
         ${categoryBackgroundHoverColor ? '--sb-category-background-hover-color: ' + categoryBackgroundHoverColor + ';' : ''}
         ${categoryTextHoverColor ? '--sb-category-text-hover-color: ' + categoryTextHoverColor + ';' : ''}
         ${titleColor ? '--sb-title-color: ' + titleColor + ';' : ''}
-
-        ${featuredTitleMarginSmTop ? '--sb-featured-title-margin-top-sm: ' + featuredTitleMarginSmTop + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginSmRight ? '--sb-featured-title-margin-right-sm: ' + featuredTitleMarginSmRight + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginSmBottom ? '--sb-featured-title-margin-bottom-sm: ' + featuredTitleMarginSmBottom + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginSmLeft ? '--sb-featured-title-margin-left-sm: ' + featuredTitleMarginSmLeft + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginMdTop ? '--sb-featured-title-margin-top-md: ' + featuredTitleMarginMdTop + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginMdRight ? '--sb-featured-title-margin-right-md: ' + featuredTitleMarginMdRight + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginMdBottom ? '--sb-featured-title-margin-bottom-md: ' + featuredTitleMarginMdBottom + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginMdLeft ? '--sb-featured-title-margin-left-md: ' + featuredTitleMarginMdLeft + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginTop ? '--sb-featured-title-margin-top-lg: ' + featuredTitleMarginTop + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginRight ? '--sb-featured-title-margin-right-lg: ' + featuredTitleMarginRight + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginBottom ? '--sb-featured-title-margin-bottom-lg: ' + featuredTitleMarginBottom + featuredTitleMarginUnit + ';' : ''}
-        ${featuredTitleMarginLeft ? '--sb-featured-title-margin-left-lg: ' + featuredTitleMarginLeft + featuredTitleMarginUnit + ';' : ''}
-
-        ${sideTitleMarginSmTop ? '--sb-side-post-title-margin-top-sm: ' + sideTitleMarginSmTop + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginSmRight ? '--sb-side-post-title-margin-right-sm: ' + sideTitleMarginSmRight + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginSmBottom ? '--sb-side-post-title-margin-bottom-sm: ' + sideTitleMarginSmBottom + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginSmLeft ? '--sb-side-post-title-margin-left-sm: ' + sideTitleMarginSmLeft + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginMdTop ? '--sb-side-post-title-margin-top-md: ' + sideTitleMarginMdTop + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginMdRight ? '--sb-side-post-title-margin-right-md: ' + sideTitleMarginMdRight + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginMdBottom ? '--sb-side-post-title-margin-bottom-md: ' + sideTitleMarginMdBottom + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginMdLeft ? '--sb-side-post-title-margin-left-md: ' + sideTitleMarginMdLeft + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginTop ? '--sb-side-post-title-margin-top-lg: ' + sideTitleMarginTop + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginRight ? '--sb-side-post-title-margin-right-lg: ' + sideTitleMarginRight + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginBottom ? '--sb-side-post-title-margin-bottom-lg: ' + sideTitleMarginBottom + sideTitleMarginUnit + ';' : ''}
-        ${sideTitleMarginLeft ? '--sb-side-post-title-margin-left-lg: ' + sideTitleMarginLeft + sideTitleMarginUnit + ';' : ''}
 
         ${moduleHeight ? '--sb-module-height: ' + moduleHeight + 'px;' : ''}
         ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius + 'px;' : ''}
