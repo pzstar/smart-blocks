@@ -91,12 +91,14 @@ const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueCol
         --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : '20px'};`;
 }
 
-const bgImgVars = (varname, valueURL, valueAttachment, valueSize, valuePositionX, valuePositionY, valueRepeat) => {
-    return `--sb-${varname}-url: ${valueURL ? ('url(' + valueURL + ')') : 'initial'};
-        --sb-${varname}-attachment: ${valueAttachment ? valueAttachment : 'scroll'};
-        --sb-${varname}-size: ${valueSize ? valueSize : 'auto'};
-        --sb-${varname}-position: ${(valuePositionX && valuePositionY) ? ((valuePositionX * 100) + '%' + (valuePositionY * 100) + '%') : '50% 50%'};
-        --sb-${varname}-repeat: ${valueRepeat ? valueRepeat : 'repeat'};`;
+const bgVars = (varname, valueURL, valueAttachment, valueSize, valuePositionX, valuePositionY, valueRepeat, valueType, valueGradient, valueColor) => {
+    const colorValue = valueType == 'imageOrColor' ? valueColor : valueGradient;
+    return `--sb-${varname}-img-url: ${valueURL ? ('url(' + valueURL + ')') : 'initial'};
+        --sb-${varname}-img-attachment: ${valueAttachment ? valueAttachment : 'scroll'};
+        --sb-${varname}-img-size: ${valueSize ? valueSize : 'auto'};
+        --sb-${varname}-img-position: ${(valuePositionX && valuePositionY) ? ((valuePositionX * 100) + '%' + (valuePositionY * 100) + '%') : '50% 50%'};
+        --sb-${varname}-img-repeat: ${valueRepeat ? valueRepeat : 'repeat'};
+        --sb-${varname}-color: ${colorValue ? colorValue : 'transparent'};`;
 }
 
-export { checkDefault, getFontClass, responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveTypographyVars, responsiveGapVars, bgImgVars };
+export { checkDefault, getFontClass, responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveTypographyVars, responsiveGapVars, bgVars };

@@ -16,7 +16,7 @@ import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import { blockInit } from '../../../utils/block-utility';
 import LayoutSelector from './layoutselector.js';
-import { responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveGapVars, bgImgVars } from '../../../utils/helper';
+import { responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveGapVars, bgVars } from '../../../utils/helper';
 
 const Edit = ({ attributes, setAttributes, className, clientId }) => {
 	const {
@@ -183,9 +183,7 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
         ${boxShadowVars('columns-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
         ${boxShadowVars('columns-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
-        --sb-columns-bg-color: ${sectionBgColor ? sectionBgColor : 'transparent'};
-
-        ${bgImgVars('columns-bg-img', sectionBgImgURL, sectionBgAttachment, sectionBgSize, sectionBgPositionX, sectionBgPositionY, sectionBgRepeat)}
+        ${bgVars('columns-bg', sectionBgImgURL, sectionBgAttachment, sectionBgSize, sectionBgPositionX, sectionBgPositionY, sectionBgRepeat, sectionBgType, sectionBgGradient, sectionBgColor)}
 
 		${responsiveSliderVars('columns-height', columnsHeight, columnsHeightSm, columnsHeightMd, columnsHeightUnit)}
     }`

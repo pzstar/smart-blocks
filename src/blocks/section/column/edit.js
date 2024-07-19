@@ -12,7 +12,7 @@ import defaultAttributes from './attributes.js';
 import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import { blockInit } from '../../../utils/block-utility';
-import { responsiveDimensionVars, dimensionVars, boxShadowVars, bgImgVars, responsiveSliderVars } from '../../../utils/helper';
+import { responsiveDimensionVars, dimensionVars, boxShadowVars, bgVars, responsiveSliderVars } from '../../../utils/helper';
 
 export default function Edit({ attributes, setAttributes, className, isSelected, clientId, toggleSelection }) {
 	const { updateBlockAttributes } = useDispatch('core/block-editor');
@@ -118,7 +118,6 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
     	${responsiveDimensionVars('column-padding', columnPaddingTop, columnPaddingRight, columnPaddingBottom, columnPaddingLeft,
 			columnPaddingSmTop, columnPaddingSmRight, columnPaddingSmBottom, columnPaddingSmLeft,
 			columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
-       --sb-column-bg-color:${columnBgColor ? columnBgColor : 'transparent'};
 		
 		--sb-column-border-normal:${borderNormal ? borderNormal : '0'};
         --sb-column-border-hover: ${borderHover ? borderNormal : 'var(--sb-column-border-normal);'};
@@ -133,7 +132,7 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
         ${boxShadowVars('column-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
         ${boxShadowVars('column-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
-        ${bgImgVars('column-bg-img', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat)}
+        ${bgVars('column-bg', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat, columnBgType, columnBgGradient, columnBgColor)}
 
         ${responsiveSliderVars('column-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
         ${responsiveSliderVars('column-custom-order', columnCustomOrder, columnCustomOrderSm, columnCustomOrderMd)}
