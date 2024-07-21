@@ -15,7 +15,7 @@
     const unsubscribe = wp.data.subscribe(() => {
         setTimeout(() => {
             if (!document.getElementById("sb-template-import-button")) {
-                const toolbalEl = editorEl.querySelector('.editor-document-tools__left');
+                const toolbalEl = editorEl.querySelector('.edit-post-header-toolbar__left') ?? editorEl.querySelector('.editor-document-tools__left');
                 if (toolbalEl instanceof HTMLElement) {
                     toolbalEl.insertAdjacentHTML('beforeend', importBtn);
                     document.getElementById("sb-template-import-button").addEventListener("click", () => {

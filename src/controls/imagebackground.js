@@ -10,6 +10,7 @@ import {
 import {
     MediaPlaceholder
 } from '@wordpress/block-editor';
+import ColorControl from './color';
 
 const ImageBackgroundControl = ({
     label,
@@ -26,7 +27,9 @@ const ImageBackgroundControl = ({
     imagePositionY,
     setImagePositionY,
     imageRepeat,
-    setImageRepeat
+    setImageRepeat,
+    imageOverlayColor,
+    setImageOverlayColor
 }) => {
 
     return <>
@@ -103,6 +106,13 @@ const ImageBackgroundControl = ({
                             { label: __('Contain', 'smart-blocks'), value: 'contain' }
                         ]}
                         onChange={value => setImageSize(value)}
+                    />
+
+                    <ColorControl
+                        label={__('Overlay Color', 'smart-blocks')}
+                        enableAlpha={!0}
+                        value={imageOverlayColor}
+                        setValue={value => setImageOverlayColor(value)}
                     />
                 </>
             ) : (

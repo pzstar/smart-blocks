@@ -32,6 +32,8 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function __construct() {
+            add_action('init', array($this, 'registerPostMeta'));
+            add_action('init', array($this, 'add_page_templates_in_post_types'), 999);
 
             // Load translation files
             add_action('plugins_loaded', array($this, 'load_textdomain'), 99);
@@ -58,6 +60,10 @@ if (!class_exists('Smart_Blocks')) {
             add_action('admin_enqueue_scripts', array($this, 'add_admin_styles'));
 
             add_action('enqueue_block_editor_assets', array($this, 'block_editor_assets'));
+
+            if (is_admin()) {
+                add_filter('admin_body_class', array($this, 'setEditorBodyClass'));
+            }
         }
 
         public function load_textdomain() {
@@ -301,7 +307,71 @@ if (!class_exists('Smart_Blocks')) {
 
         public function block_editor_assets() {
             wp_enqueue_script('sb-block-editor-assets', SMART_BLOCKS_URL . 'inc/assets/js/editor-assets.js', array(), '1.0', true);
+            wp_enqueue_script('sb-editor-sidebar', SMART_BLOCKS_URL . 'inc/assets/js/editor-sidebar.js', array('wp-components', 'wp-data', 'wp-editor', 'wp-element', 'wp-i18n', 'wp-plugins'), SMART_BLOCKS_VERSION, true);
         }
+
+        public function registerPostMeta() {
+            register_post_meta('', 'sb_editor_width', array(
+                'show_in_rest' => true,
+                'single' => true,
+                'type' => 'string',
+            ));
+        }
+
+        public function setEditorBodyClass($classes) {
+            if ('post' === get_current_screen()->base) {
+                global $post;
+                $editorWidth = get_post_meta($post->ID, 'sb_editor_width', true);
+
+                // Editor width
+                if (isset( $editorWidth ) && ! empty($editorWidth)) {
+                    $classes .= ' sb-editor-width-' . $editorWidth . ' ';
+                }
+
+                return $classes;
+            }
+            return $classes;
+        }
+
+        public function add_page_templates_in_post_types() {
+            $post_types = get_post_types();
+
+            foreach ($post_types as $post_type) {
+                add_filter("theme_{$post_type}_templates", [$this, 'add_page_templates'], 10, 4);
+            }
+            add_filter('page_template', array($this, 'redirect_page_template'), 999);
+        }
+
+        public function add_page_templates($templates) {
+            $templates['template-sb-full-width.php'] = esc_html__('Smart Blocks Full Width', 'smart-blocks');
+            return $templates;
+        }
+
+        public function redirect_page_template($template) {
+            $post = get_post();
+            $page_template = '';
+            if ($post->ID) {
+                $page_template = get_post_meta( $post->ID, '_wp_page_template', true );
+            }
+            $sb_template = false;
+            if ('template-sb-full-width.php' == basename($page_template)) {
+                $sb_template = true;
+                $template = SMART_BLOCKS_PATH . 'inc/page-templates/template-sb-full-width.php';
+            }
+            if ($sb_template) {
+                remove_action('template_include', array('WC_Template_Loader', 'template_loader'));
+            }
+            return $template;
+        }
+
+        public static function is_fse_template() {
+            global $_wp_current_template_content;
+            if (current_theme_supports('block-templates') && $_wp_current_template_content) {
+                return true;
+            }
+            return false;
+        }
+
 
     }
 

@@ -184,7 +184,7 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
         ${boxShadowVars('columns-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
         ${boxShadowVars('columns-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
-        ${bgVars('columns-bg', sectionBgImgURL, sectionBgAttachment, sectionBgSize, sectionBgPositionX, sectionBgPositionY, sectionBgRepeat, sectionBgType, sectionBgGradient, sectionBgColor)}
+        ${bgVars('columns-bg', sectionBgImgURL, sectionBgAttachment, sectionBgSize, sectionBgPositionX, sectionBgPositionY, sectionBgRepeat, sectionBgType, sectionBgGradient, sectionBgColor, sectionBgOverlayColor)}
 
 		${responsiveSliderVars('columns-height', columnsHeight, columnsHeightSm, columnsHeightMd, columnsHeightUnit)}
     }`

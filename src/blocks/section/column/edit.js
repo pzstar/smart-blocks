@@ -1,9 +1,8 @@
 import { ResizableBox } from '@wordpress/components';
 import { useViewportMatch } from '@wordpress/compose';
 import { useDispatch, useSelect } from '@wordpress/data';
-import { InnerBlocks } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { Fragment, useEffect, useState } from '@wordpress/element';
-import { useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Internal dependencies
@@ -133,7 +132,7 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
         ${boxShadowVars('column-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
         ${boxShadowVars('column-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
-        ${bgVars('column-bg', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat, columnBgType, columnBgGradient, columnBgColor)}
+        ${bgVars('column-bg', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat, columnBgType, columnBgGradient, columnBgColor, columnBgOverlayColor)}
 
         ${responsiveSliderVars('column-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
         ${responsiveSliderVars('column-custom-order', columnCustomOrder, columnCustomOrderSm, columnCustomOrderMd)}
