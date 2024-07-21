@@ -1,12 +1,12 @@
 import classnames from 'classnames';
 
-import { times } from 'lodash';
-import { useViewportMatch } from '@wordpress/compose';
+import {times} from 'lodash';
+import {useViewportMatch} from '@wordpress/compose';
 
-import { useDispatch, useSelect } from '@wordpress/data';
-import { InnerBlocks } from '@wordpress/block-editor';
+import {useDispatch, useSelect} from '@wordpress/data';
+import {InnerBlocks} from '@wordpress/block-editor';
 
-import { useEffect, useState } from '@wordpress/element';
+import {useEffect, useState} from '@wordpress/element';
 
 /**
  * Internal dependencies
@@ -14,11 +14,11 @@ import { useEffect, useState } from '@wordpress/element';
 import defaultAttributes from './attributes.js';
 import layouts from '../layouts.js';
 import Inspector from './inspector.js';
-import { blockInit } from '../../../utils/block-utility';
+import {blockInit} from '../../../utils/block-utility';
 import LayoutSelector from './layoutselector.js';
-import { responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveGapVars, bgVars } from '../../../utils/helper';
+import {responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveGapVars, bgVars} from '../../../utils/helper';
 
-const Edit = ({ attributes, setAttributes, className, clientId }) => {
+const Edit = ({attributes, setAttributes, className, clientId}) => {
 	const {
 		id,
 		columns,
@@ -151,7 +151,7 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 		columnsGapMdColumn,
 		columnsGapUnit,
 	} = attributes;
-	const { updateBlockAttributes } = useDispatch('core/block-editor');
+	const {updateBlockAttributes} = useDispatch('core/block-editor');
 
 	const stylesCSS = `#${id} {
 		${responsiveSliderVars('columns-width', columnsWidth, columnsWidthSm, columnsWidthMd, columnsWidthUnit)}
@@ -188,11 +188,11 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 
 		${responsiveSliderVars('columns-height', columnsHeight, columnsHeightSm, columnsHeightMd, columnsHeightUnit)}
     }`
-	setAttributes({ sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
+	setAttributes({sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "")});
 
-	const { sectionBlock, isViewportAvailable, isPreviewDesktop, isPreviewTablet, isPreviewMobile } = useSelect(select => {
-		const { getBlock } = select('core/block-editor');
-		const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+	const {sectionBlock, isViewportAvailable, isPreviewDesktop, isPreviewTablet, isPreviewMobile} = useSelect(select => {
+		const {getBlock} = select('core/block-editor');
+		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
 		const sectionBlock = getBlock(clientId);
 		return {
 			sectionBlock,
@@ -231,11 +231,11 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 		`has-desktop-${layout}-layout`,
 		`has-tablet-${layoutTablet}-layout`,
 		`has-mobile-${layoutMobile}-layout`,
-		{ 'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet) },
-		{ 'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile) },
-		{ 'has-viewport-desktop': isDesktop },
-		{ 'has-viewport-tablet': isTablet },
-		{ 'has-viewport-mobile': isMobile },
+		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
+		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
+		{'has-viewport-desktop': isDesktop},
+		{'has-viewport-tablet': isTablet},
+		{'has-viewport-mobile': isMobile},
 		`has-${sectionContentWidth}-width`
 	);
 
@@ -266,7 +266,7 @@ const Edit = ({ attributes, setAttributes, className, clientId }) => {
 	};
 
 	const getColumnsTemplate = cols => {
-		return times(cols, i => ['smart-blocks/column', { columnWidth: layouts[cols][layout][i] }]);
+		return times(cols, i => ['smart-blocks/column', {columnWidth: layouts[cols][layout][i]}]);
 	};
 
 	if (!columns) {

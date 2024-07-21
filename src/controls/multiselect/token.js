@@ -2,19 +2,19 @@
  * External dependencies
  */
 import classnames from 'classnames';
-import { noop } from 'lodash';
+import {noop} from 'lodash';
 
 /**
  * WordPress dependencies
  */
-import { useInstanceId } from '@wordpress/compose';
-import { __, sprintf } from '@wordpress/i18n';
-import { closeSmall } from '@wordpress/icons';
+import {useInstanceId} from '@wordpress/compose';
+import {__, sprintf} from '@wordpress/i18n';
+import {closeSmall} from '@wordpress/icons';
 
 /**
  * Internal dependencies
  */
-import { Button, VisuallyHidden } from '@wordpress/components';
+import {Button, VisuallyHidden} from '@wordpress/components';
 
 export default function Token({
 	value,
@@ -40,7 +40,7 @@ export default function Token({
 		'is-disabled': disabled,
 	});
 
-	const onClick = () => onClickRemove({ value });
+	const onClick = () => onClickRemove({value});
 
 	const transformedValue = displayTransform(label);
 	const termPositionAndCount = sprintf(

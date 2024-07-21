@@ -1,8 +1,8 @@
 import classnames from 'classnames';
 
-import { InnerBlocks } from '@wordpress/block-editor';
+import {InnerBlocks} from '@wordpress/block-editor';
 
-const Save = ({ attributes, className }) => {
+const Save = ({attributes, className}) => {
 	const {
 		id,
 		columns,
@@ -29,11 +29,11 @@ const Save = ({ attributes, className }) => {
 		desktopLayout,
 		tabletLayout,
 		mobileLayout,
-		{ 'hide-in-desktop': hide },
-		{ 'hide-in-tablet': hideTablet },
-		{ 'hide-in-mobile': hideMobile },
-		{ 'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet) },
-		{ 'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile) },
+		{'hide-in-desktop': hide},
+		{'hide-in-tablet': hideTablet},
+		{'hide-in-mobile': hideMobile},
+		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
+		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
 		`has-${sectionContentWidth}-width`
 	);
 

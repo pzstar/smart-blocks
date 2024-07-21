@@ -1,10 +1,10 @@
-import { __ } from '@wordpress/i18n';
-import { Tooltip, Dropdown, Dashicon } from '@wordpress/components';
+import {__} from '@wordpress/i18n';
+import {Tooltip, Dropdown, Dashicon} from '@wordpress/components';
 import GoogleFontsList from '../utils/googlefonts.json';
-import { useState, useEffect } from '@wordpress/element';
-import { DesktopIcon, TabletIcon, PhoneIcon, ClearIcon } from '../utils/svgicons';
+import {useState, useEffect} from '@wordpress/element';
+import {DesktopIcon, TabletIcon, PhoneIcon, ClearIcon} from '../utils/svgicons';
 import ResponsiveDropdown from '../utils/responsivedropdown';
-import { useSelect } from '@wordpress/data';
+import {useSelect} from '@wordpress/data';
 
 const TypographyControl = ({
 	label,
@@ -63,8 +63,8 @@ const TypographyControl = ({
 	}
 
 	const getView = useSelect(select => {
-		const { getView } = select('smart-blocks/data');
-		const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+		const {getView} = select('smart-blocks/data');
+		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
 		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
 	}, []);
 
@@ -85,7 +85,7 @@ const TypographyControl = ({
 						position="top right"
 						className="sb-ml-auto"
 						contentClassName="sb-popover-style"
-						renderToggle={({ isOpen, onToggle }) => (
+						renderToggle={({isOpen, onToggle}) => (
 							<button
 								className="sb-typo-setttings"
 								isPrimary={!0}

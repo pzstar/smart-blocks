@@ -144,7 +144,7 @@ if (!function_exists('smart_blocks_css_strip_whitespace')) {
 
 if (!function_exists('smart_blocks_is_taxonomy_assigned_to_post_type')) {
 
-    function smart_blocks_is_taxonomy_assigned_to_post_type($post_type, $taxonomy = null) {
+    function smart_blocks_is_taxonomy_assigned_to_post_type($post_type, $taxonomy = NULL) {
         if (is_object($post_type))
             $post_type = $post_type->post_type;
 

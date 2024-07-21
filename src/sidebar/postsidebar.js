@@ -1,4 +1,4 @@
-import { registerPlugin } from '@wordpress/plugins';
+import {registerPlugin} from '@wordpress/plugins';
 
 import SidebarContent from './content';
 

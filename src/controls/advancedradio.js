@@ -1,6 +1,6 @@
-import { Tooltip } from '@wordpress/components';
+import {Tooltip} from '@wordpress/components';
 
-const AdvancedRadio = ({ options, value, setValue, label }) => {
+const AdvancedRadio = ({options, value, setValue, label}) => {
     return <div className="sb-field sb-field-radio-advanced sb-d-flex sb-align-center">
         {label && (<span>{label}</span>)}
         <div className="sb-field-button-list sb-ml-auto">

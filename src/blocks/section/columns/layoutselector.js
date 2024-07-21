@@ -1,9 +1,9 @@
-import { __ } from '@wordpress/i18n';
+import {__} from '@wordpress/i18n';
 
-import { Button, Dashicon, Icon, Path, Placeholder, Rect, SVG, Tooltip } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+import {Button, Dashicon, Icon, Path, Placeholder, Rect, SVG, Tooltip} from '@wordpress/components';
+import {useState} from '@wordpress/element';
 
-const LayoutSelector = ({ clientId, setupColumns }) => {
+const LayoutSelector = ({clientId, setupColumns}) => {
 	return (
 		<Placeholder
 			label={__('Section', 'smart-blocks')}

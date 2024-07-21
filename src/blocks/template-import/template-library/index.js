@@ -1,26 +1,26 @@
 import classnames from 'classnames';
 
-import { __ } from '@wordpress/i18n';
+import {__} from '@wordpress/i18n';
 import apiFetch from '@wordpress/api-fetch';
-import { parse } from '@wordpress/blocks';
-import { Modal } from '@wordpress/components';
+import {parse} from '@wordpress/blocks';
+import {Modal} from '@wordpress/components';
 
-import { useSelect, useDispatch } from '@wordpress/data';
-import { useEffect, useState } from '@wordpress/element';
+import {useSelect, useDispatch} from '@wordpress/data';
+import {useEffect, useState} from '@wordpress/element';
 
 import Header from './components/header.js';
 import Notices from './components/notices.js';
 import TemplatesList from './components/templates-list.js';
 
-const Library = ({ clientId, close }) => {
+const Library = ({clientId, close}) => {
 	const block = useSelect(select => select('core/block-editor').getBlock(clientId));
-	const { replaceBlocks } = useDispatch('core/block-editor');
-	const { createNotice } = useDispatch('core/notices');
+	const {replaceBlocks} = useDispatch('core/block-editor');
+	const {createNotice} = useDispatch('core/notices');
 
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				let data = await apiFetch({ path: 'smart-blocks/v1/fetch_templates' });
+				let data = await apiFetch({path: 'smart-blocks/v1/fetch_templates'});
 				let blocksCategories = [];
 				let templateCategories = [];
 				data.map(i => {
@@ -86,7 +86,7 @@ const Library = ({ clientId, close }) => {
 		setLoading(true);
 
 		try {
-			let data = await apiFetch({ path: `smart-blocks/v1/import_template?url=${template.template_url}&preview=true` });
+			let data = await apiFetch({path: `smart-blocks/v1/import_template?url=${template.template_url}&preview=true`});
 			if (data.__file && data.content && 'wp_export' === data.__file) {
 				data = parse(data.content);
 			}
@@ -115,7 +115,7 @@ const Library = ({ clientId, close }) => {
 		setLoading(true);
 
 		try {
-			let data = await apiFetch({ path: `smart-blocks/v1/import_template?url=${url}` });
+			let data = await apiFetch({path: `smart-blocks/v1/import_template?url=${url}`});
 
 			if (data.__file && data.content && 'wp_export' === data.__file) {
 				data = parse(data.content);
@@ -139,7 +139,7 @@ const Library = ({ clientId, close }) => {
 
 	return (
 		<Modal
-			className={classnames('sb-library-modal', { 'is-preview': preview })}
+			className={classnames('sb-library-modal', {'is-preview': preview})}
 			onRequestClose={close}
 			isDismissable={false}
 			shouldCloseOnClickOutside={false}

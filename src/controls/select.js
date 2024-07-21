@@ -1,5 +1,5 @@
-import { __ } from '@wordpress/i18n';
-const SelectControl = ({ label, options, value, onChange }) => {
+import {__} from '@wordpress/i18n';
+const SelectControl = ({label, options, value, onChange}) => {
     const onChangeHandler = (e) => {
         onChange(e.target.value);
     }

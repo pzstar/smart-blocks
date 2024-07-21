@@ -3,16 +3,16 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-import { registerBlockType } from '@wordpress/blocks';
+import {registerBlockType} from '@wordpress/blocks';
 
 /**
  * Internal dependencies
  */
 import Edit from './edit';
 import save from './save';
-import { News7 } from '../../utils/svgicons';
+import {News7} from '../../utils/svgicons';
 
-import { __ } from '@wordpress/i18n';
+import {__} from '@wordpress/i18n';
 
 /**
  * Every block starts by registering a new block type definition.

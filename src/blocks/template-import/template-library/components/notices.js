@@ -1,9 +1,9 @@
-import { Notice } from '@wordpress/components';
-import { useDispatch, useSelect } from '@wordpress/data';
+import {Notice} from '@wordpress/components';
+import {useDispatch, useSelect} from '@wordpress/data';
 
 const Notices = () => {
 	const notices = useSelect(select => select('core/notices').getNotices('smart-blocks/notices/template-library'));
-	const { removeNotice } = useDispatch('core/notices');
+	const {removeNotice} = useDispatch('core/notices');
 	return (
 		<div className="library-modal-error">
 			{notices.map(notice => (

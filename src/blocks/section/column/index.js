@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-import { registerBlockType } from '@wordpress/blocks';
+import {registerBlockType} from '@wordpress/blocks';
 import attributes from './attributes.js';
 
 /**
@@ -11,9 +11,9 @@ import attributes from './attributes.js';
  */
 import Edit from './edit';
 import Save from './save';
-import { Tile1 } from '../../../utils/svgicons';
+import {Tile1} from '../../../utils/svgicons';
 
-import { __ } from '@wordpress/i18n';
+import {__} from '@wordpress/i18n';
 
 /**
  * Every block starts by registering a new block type definition.

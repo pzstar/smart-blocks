@@ -16,9 +16,9 @@ import classnames from 'classnames';
 /**
  * WordPress dependencies
  */
-import { __, _n, sprintf } from '@wordpress/i18n';
-import { Component } from '@wordpress/element';
-import { withInstanceId } from '@wordpress/compose';
+import {__, _n, sprintf} from '@wordpress/i18n';
+import {Component} from '@wordpress/element';
+import {withInstanceId} from '@wordpress/compose';
 import {
 	BACKSPACE,
 	ENTER,
@@ -31,7 +31,7 @@ import {
 	ESCAPE,
 } from '@wordpress/keycodes';
 import isShallowEqual from '@wordpress/is-shallow-equal';
-import { withSpokenMessages } from '@wordpress/components';
+import {withSpokenMessages} from '@wordpress/components';
 
 /**
  * Internal dependencies
@@ -81,7 +81,7 @@ class MultiSelectControl extends Component {
 			this.input.focus();
 		}
 
-		const { options, value } = this.props;
+		const {options, value} = this.props;
 		const suggestionsDidUpdate = !isShallowEqual(
 			options,
 			prevProps.options
@@ -113,14 +113,14 @@ class MultiSelectControl extends Component {
 	onFocus(event) {
 		// If focus is on the input or on the container, set the isActive state to true.
 		if (this.input.hasFocus() || event.target === this.tokensAndInput) {
-			this.setState({ isActive: true /* , isExpanded: true */ });
+			this.setState({isActive: true /* , isExpanded: true */});
 		} else {
 			/*
 			 * Otherwise, focus is on one of the token "remove" buttons and we
 			 * set the isActive state to false to prevent the input to be
 			 * re-focused, see componentDidUpdate().
 			 */
-			this.setState({ isActive: false });
+			this.setState({isActive: false});
 		}
 
 		if ('function' === typeof this.props.onFocus) {
@@ -135,13 +135,13 @@ class MultiSelectControl extends Component {
 				'components-form-token-field__suggestion'
 			)
 		) {
-			this.setState({ isExpanded: true, isActive: true });
+			this.setState({isExpanded: true, isActive: true});
 		}
 	}
 
 	onBlur() {
 		if (this.inputHasValidToken()) {
-			this.setState({ isActive: false, isExpanded: false });
+			this.setState({isActive: false, isExpanded: false});
 		} else {
 			this.setState(initialState);
 		}
@@ -196,7 +196,7 @@ class MultiSelectControl extends Component {
 
 	onKeyPress(event) {
 		if (!this.state.isExpanded) {
-			this.setState({ isExpanded: true });
+			this.setState({isExpanded: true});
 		}
 	}
 
@@ -232,7 +232,7 @@ class MultiSelectControl extends Component {
 	onInputChange(event) {
 		const tokenValue = event.value;
 		this.setState(
-			{ incompleteTokenValue: tokenValue },
+			{incompleteTokenValue: tokenValue},
 			this.updateSuggestions
 		);
 
@@ -527,7 +527,7 @@ class MultiSelectControl extends Component {
 	}
 
 	updateSuggestions(resetSelectedSuggestion = true) {
-		const { incompleteTokenValue } = this.state;
+		const {incompleteTokenValue} = this.state;
 
 		const inputHasMinimumChars = true; //incompleteTokenValue.trim().length > 1;
 		const matchingSuggestions = this.getMatchingSuggestions(
@@ -545,7 +545,7 @@ class MultiSelectControl extends Component {
 		this.setState(newState);
 
 		if (inputHasMinimumChars) {
-			const { debouncedSpeak } = this.props;
+			const {debouncedSpeak} = this.props;
 
 			const message = hasMatchingSuggestions
 				? sprintf(
@@ -621,7 +621,7 @@ class MultiSelectControl extends Component {
 		};
 
 		if (!(maxLength && value.length >= maxLength)) {
-			props = { ...props, onChange: this.onInputChange };
+			props = {...props, onChange: this.onInputChange};
 		}
 
 		return <TokenInput {...props} />;
@@ -634,7 +634,7 @@ class MultiSelectControl extends Component {
 			instanceId,
 			className,
 		} = this.props;
-		const { isExpanded } = this.state;
+		const {isExpanded} = this.state;
 		const classes = classnames(
 			className,
 			'components-form-token-field__input-container',

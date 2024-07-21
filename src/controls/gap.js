@@ -1,8 +1,8 @@
-import { __ } from '@wordpress/i18n';
+import {__} from '@wordpress/i18n';
 import ResponsiveDropdown from '../utils/responsivedropdown';
-import { useState } from '@wordpress/element';
-import { DesktopIcon, TabletIcon, PhoneIcon } from '../utils/svgicons';
-import { useSelect } from '@wordpress/data';
+import {useState} from '@wordpress/element';
+import {DesktopIcon, TabletIcon, PhoneIcon} from '../utils/svgicons';
+import {useSelect} from '@wordpress/data';
 
 const GapControl = ({
 	min,
@@ -34,8 +34,8 @@ const GapControl = ({
 	const allUnits = units ? units : ["px", "em", "%"];
 
 	const getView = useSelect(select => {
-		const { getView } = select('smart-blocks/data');
-		const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+		const {getView} = select('smart-blocks/data');
+		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
 		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
 	}, []);
 
@@ -139,7 +139,7 @@ const GapControl = ({
 												max={max}
 												key={index}
 												onChange={(e) => {
-													lock ? (sides.map((sde, index) => { callFunctionByName(`setGap${sde}`, e.target.value) })) : callFunctionByName(`setGap${side}`, e.target.value);
+													lock ? (sides.map((sde, index) => {callFunctionByName(`setGap${sde}`, e.target.value)})) : callFunctionByName(`setGap${side}`, e.target.value);
 												}}
 												value={getGapValue(`gap${side}`)} />
 											<span>
@@ -154,7 +154,7 @@ const GapControl = ({
 												max={max}
 												key={index}
 												onChange={(e) => {
-													lock ? (sides.map((sde, index) => { callFunctionByName(`setGapMd${sde}`, e.target.value) })) : callFunctionByName(`setGapMd${side}`, e.target.value);
+													lock ? (sides.map((sde, index) => {callFunctionByName(`setGapMd${sde}`, e.target.value)})) : callFunctionByName(`setGapMd${side}`, e.target.value);
 												}}
 												value={getGapValue(`gapMd${side}`)} />
 											<span>
@@ -169,7 +169,7 @@ const GapControl = ({
 												max={max}
 												key={index}
 												onChange={(e) => {
-													lock ? (sides.map((sde, index) => { callFunctionByName(`setGapSm${sde}`, e.target.value) })) : callFunctionByName(`setGapSm${side}`, e.target.value);
+													lock ? (sides.map((sde, index) => {callFunctionByName(`setGapSm${sde}`, e.target.value)})) : callFunctionByName(`setGapSm${side}`, e.target.value);
 												}}
 												value={getGapValue(`gapSm${side}`)} />
 											<span>
@@ -212,7 +212,7 @@ const GapControl = ({
 												max={max}
 												key={index}
 												onChange={(e) => {
-													lock ? (sides.map((sde, index) => { callFunctionByName(`setGap${sde}`, e.target.value) })) : callFunctionByName(`setGap${side}`, e.target.value);
+													lock ? (sides.map((sde, index) => {callFunctionByName(`setGap${sde}`, e.target.value)})) : callFunctionByName(`setGap${side}`, e.target.value);
 												}}
 												value={getGapValue(`gap${side}`)} />
 											<span>

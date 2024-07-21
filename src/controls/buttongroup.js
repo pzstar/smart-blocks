@@ -1,6 +1,6 @@
-import { __ } from '@wordpress/i18n';
+import {__} from '@wordpress/i18n';
 import ResponsiveDropdown from '../utils/responsivedropdown';
-import { useSelect } from '@wordpress/data';
+import {useSelect} from '@wordpress/data';
 import {
     ButtonGroup,
     Button
@@ -20,8 +20,8 @@ const ButtonGroupControl = ({
 }) => {
 
     const getView = useSelect(select => {
-        const { getView } = select('smart-blocks/data');
-        const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+        const {getView} = select('smart-blocks/data');
+        const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
         return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
     }, []);
 
@@ -47,7 +47,7 @@ const ButtonGroupControl = ({
                                         showTooltip={true}
                                         isLarge
                                         isPrimary={alignment.value === valueSm}
-                                        onClick={(e) => { setValueSm(alignment.value === valueSm ? null : alignment.value) }}
+                                        onClick={(e) => {setValueSm(alignment.value === valueSm ? null : alignment.value)}}
                                     />)
                             })}
                         </ButtonGroup>
@@ -62,7 +62,7 @@ const ButtonGroupControl = ({
                                         showTooltip={true}
                                         isLarge
                                         isPrimary={alignment.value === valueMd}
-                                        onClick={(e) => { setValueMd(alignment.value === valueMd ? null : alignment.value) }}
+                                        onClick={(e) => {setValueMd(alignment.value === valueMd ? null : alignment.value)}}
                                     />)
                             })}
                         </ButtonGroup>
@@ -77,7 +77,7 @@ const ButtonGroupControl = ({
                                         showTooltip={true}
                                         isLarge
                                         isPrimary={alignment.value === value}
-                                        onClick={(e) => { setValue(alignment.value === value ? null : alignment.value) }}
+                                        onClick={(e) => {setValue(alignment.value === value ? null : alignment.value)}}
                                     />)
                             })}
                         </ButtonGroup>
@@ -93,7 +93,7 @@ const ButtonGroupControl = ({
                                     showTooltip={true}
                                     isLarge
                                     isPrimary={alignment.value === value}
-                                    onClick={() => { setValue(alignment.value === value ? null : alignment.value) }}
+                                    onClick={() => {setValue(alignment.value === value ? null : alignment.value)}}
                                 />)
                         })}
                     </ButtonGroup>

@@ -1,6 +1,6 @@
-import { useSelect } from '@wordpress/data';
+import {useSelect} from '@wordpress/data';
 import MultiSelectControl from '../controls/multiselect';
-const QueryTaxonomyControls = ({ postType, value, onChange }) => {
+const QueryTaxonomyControls = ({postType, value, onChange}) => {
 	const allTaxonomies = useSelect((select) => {
 		var allTax = [];
 		var selectTaxonomiesTypes = select('core').getTaxonomies();
@@ -47,7 +47,7 @@ const QueryTaxonomyControls = ({ postType, value, onChange }) => {
 					label={tax.label}
 					options={termOptions(tax.value)}
 					value={selectedValue}
-					onChange={(e) => { onChange({ ...value, [tax.value]: e }) }}
+					onChange={(e) => {onChange({...value, [tax.value]: e})}}
 				/>
 			</div>
 		}

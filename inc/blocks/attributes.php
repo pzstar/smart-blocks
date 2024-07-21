@@ -43,15 +43,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -60,15 +60,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -77,15 +77,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -112,15 +112,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -129,15 +129,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -146,15 +146,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -181,15 +181,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "featuredTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeUnit" => [
             "type" => "string",
@@ -198,15 +198,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "featuredTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -215,15 +215,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "featuredTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightUnit" => [
             "type" => "string",
@@ -250,15 +250,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "sideTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeUnit" => [
             "type" => "string",
@@ -267,15 +267,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "sideTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -284,15 +284,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "sideTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightUnit" => [
             "type" => "string",
@@ -319,15 +319,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -336,15 +336,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -353,15 +353,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -389,15 +389,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -406,15 +406,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -423,15 +423,15 @@ function smart_blocks_attributes_news_module_one() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -690,15 +690,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -707,15 +707,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -724,15 +724,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -759,15 +759,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -776,15 +776,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -793,15 +793,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -828,15 +828,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "featuredTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeUnit" => [
             "type" => "string",
@@ -845,15 +845,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "featuredTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -862,15 +862,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "featuredTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightUnit" => [
             "type" => "string",
@@ -897,15 +897,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "sideTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeUnit" => [
             "type" => "string",
@@ -914,15 +914,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "sideTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -931,15 +931,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "sideTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightUnit" => [
             "type" => "string",
@@ -967,15 +967,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -984,15 +984,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -1001,15 +1001,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -1036,15 +1036,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -1053,15 +1053,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -1070,15 +1070,15 @@ function smart_blocks_attributes_news_module_two() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -1334,15 +1334,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -1351,15 +1351,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -1368,15 +1368,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -1403,15 +1403,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -1420,15 +1420,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -1437,15 +1437,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -1473,15 +1473,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "featuredTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeUnit" => [
             "type" => "string",
@@ -1490,15 +1490,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "featuredTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -1507,15 +1507,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "featuredTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightUnit" => [
             "type" => "string",
@@ -1543,15 +1543,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "sideTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeUnit" => [
             "type" => "string",
@@ -1560,15 +1560,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "sideTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -1577,15 +1577,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "sideTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightUnit" => [
             "type" => "string",
@@ -1613,15 +1613,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -1630,15 +1630,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -1647,15 +1647,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -1683,15 +1683,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -1700,15 +1700,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -1717,15 +1717,15 @@ function smart_blocks_attributes_news_module_three() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -1978,15 +1978,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -1995,15 +1995,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2012,15 +2012,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2048,15 +2048,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2065,15 +2065,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2082,15 +2082,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2118,15 +2118,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "topTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2135,15 +2135,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "topTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2152,15 +2152,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "topTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2188,15 +2188,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "bottomTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2205,15 +2205,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "bottomTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2222,15 +2222,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "bottomTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2258,15 +2258,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2275,15 +2275,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2292,15 +2292,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2328,15 +2328,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2345,15 +2345,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2362,15 +2362,15 @@ function smart_blocks_attributes_news_module_four() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2619,15 +2619,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2636,15 +2636,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2653,15 +2653,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2689,15 +2689,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2706,15 +2706,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2723,15 +2723,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2759,15 +2759,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "featuredTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2776,15 +2776,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "featuredTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2793,15 +2793,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "featuredTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2829,15 +2829,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "listingTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2846,15 +2846,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "listingTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2863,15 +2863,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "listingTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2900,15 +2900,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2917,15 +2917,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -2934,15 +2934,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -2970,15 +2970,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -2987,15 +2987,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -3004,15 +3004,15 @@ function smart_blocks_attributes_news_module_five() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -3266,15 +3266,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -3283,15 +3283,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -3300,15 +3300,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -3335,15 +3335,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -3352,15 +3352,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -3369,15 +3369,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -3405,15 +3405,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "topTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyFontSizeUnit" => [
             "type" => "string",
@@ -3422,15 +3422,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "topTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -3439,15 +3439,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "topTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "topTypographyLineHeightUnit" => [
             "type" => "string",
@@ -3475,15 +3475,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "bottomTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyFontSizeUnit" => [
             "type" => "string",
@@ -3492,15 +3492,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "bottomTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -3509,15 +3509,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "bottomTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "bottomTypographyLineHeightUnit" => [
             "type" => "string",
@@ -3544,15 +3544,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -3561,15 +3561,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -3578,15 +3578,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -3613,15 +3613,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -3630,15 +3630,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -3647,15 +3647,15 @@ function smart_blocks_attributes_news_module_six() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -3908,15 +3908,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -3925,15 +3925,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -3942,15 +3942,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -3978,15 +3978,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -3995,15 +3995,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4012,15 +4012,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -4047,15 +4047,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "featuredTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeUnit" => [
             "type" => "string",
@@ -4064,15 +4064,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "featuredTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4081,15 +4081,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "featuredTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightUnit" => [
             "type" => "string",
@@ -4116,15 +4116,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "listingTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSizeUnit" => [
             "type" => "string",
@@ -4133,15 +4133,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "listingTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4150,15 +4150,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "listingTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeightUnit" => [
             "type" => "string",
@@ -4186,15 +4186,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -4203,15 +4203,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4220,15 +4220,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -4255,15 +4255,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -4272,15 +4272,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4289,15 +4289,15 @@ function smart_blocks_attributes_news_module_seven() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -4549,15 +4549,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -4566,15 +4566,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4583,15 +4583,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -4618,15 +4618,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -4635,15 +4635,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4652,15 +4652,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -4687,15 +4687,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "featuredTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeUnit" => [
             "type" => "string",
@@ -4704,15 +4704,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "featuredTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4721,15 +4721,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "featuredTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightUnit" => [
             "type" => "string",
@@ -4756,15 +4756,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "sideTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeUnit" => [
             "type" => "string",
@@ -4773,15 +4773,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "sideTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4790,15 +4790,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "sideTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightUnit" => [
             "type" => "string",
@@ -4825,15 +4825,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -4842,15 +4842,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4859,15 +4859,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -4894,15 +4894,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -4911,15 +4911,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -4928,15 +4928,15 @@ function smart_blocks_attributes_news_module_eight() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -5189,15 +5189,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -5206,15 +5206,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -5223,15 +5223,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -5258,15 +5258,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -5275,15 +5275,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -5292,15 +5292,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -5327,15 +5327,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "featuredTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeUnit" => [
             "type" => "string",
@@ -5344,15 +5344,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "featuredTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -5361,15 +5361,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "featuredTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightUnit" => [
             "type" => "string",
@@ -5396,15 +5396,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "listingTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSizeUnit" => [
             "type" => "string",
@@ -5413,15 +5413,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "listingTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -5430,15 +5430,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "listingTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeightUnit" => [
             "type" => "string",
@@ -5465,15 +5465,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -5482,15 +5482,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -5499,15 +5499,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -5534,15 +5534,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -5551,15 +5551,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -5568,15 +5568,15 @@ function smart_blocks_attributes_news_module_nine() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -5836,15 +5836,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -5853,15 +5853,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -5870,15 +5870,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -5906,15 +5906,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -5923,15 +5923,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -5940,15 +5940,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -5975,15 +5975,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "listingTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyFontSizeUnit" => [
             "type" => "string",
@@ -5992,15 +5992,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "listingTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -6009,15 +6009,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "listingTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "listingTypographyLineHeightUnit" => [
             "type" => "string",
@@ -6044,15 +6044,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -6061,15 +6061,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -6078,15 +6078,15 @@ function smart_blocks_attributes_news_module_ten() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -6272,15 +6272,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -6289,15 +6289,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -6306,15 +6306,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -6341,15 +6341,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -6358,15 +6358,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -6375,15 +6375,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -6410,15 +6410,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "postTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeUnit" => [
             "type" => "string",
@@ -6427,15 +6427,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "postTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -6444,15 +6444,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "postTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightUnit" => [
             "type" => "string",
@@ -6479,15 +6479,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -6496,15 +6496,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -6513,15 +6513,15 @@ function smart_blocks_attributes_news_module_eleven() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -6699,15 +6699,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -6716,15 +6716,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -6733,15 +6733,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -6769,15 +6769,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -6786,15 +6786,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -6803,15 +6803,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -6839,15 +6839,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "postTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeUnit" => [
             "type" => "string",
@@ -6856,15 +6856,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "postTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -6873,15 +6873,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "postTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightUnit" => [
             "type" => "string",
@@ -6908,15 +6908,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -6925,15 +6925,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -6942,15 +6942,15 @@ function smart_blocks_attributes_news_module_twelve() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -7128,15 +7128,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -7145,15 +7145,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -7162,15 +7162,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -7197,15 +7197,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -7214,15 +7214,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -7231,15 +7231,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -7266,15 +7266,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "postTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeUnit" => [
             "type" => "string",
@@ -7283,15 +7283,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "postTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -7300,15 +7300,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "postTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightUnit" => [
             "type" => "string",
@@ -7336,15 +7336,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -7353,15 +7353,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -7370,15 +7370,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -7405,15 +7405,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -7422,15 +7422,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -7439,15 +7439,15 @@ function smart_blocks_attributes_news_module_thirteen() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -7642,15 +7642,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -7659,15 +7659,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -7676,15 +7676,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -7711,15 +7711,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -7728,15 +7728,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -7745,15 +7745,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -7780,15 +7780,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "postTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeUnit" => [
             "type" => "string",
@@ -7797,15 +7797,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "postTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -7814,15 +7814,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "postTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightUnit" => [
             "type" => "string",
@@ -7849,15 +7849,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -7866,15 +7866,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -7883,15 +7883,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -7918,15 +7918,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -7935,15 +7935,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -7952,15 +7952,15 @@ function smart_blocks_attributes_news_module_fourteen() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -8145,15 +8145,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -8162,15 +8162,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -8179,15 +8179,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -8214,15 +8214,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -8231,15 +8231,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -8248,15 +8248,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -8283,15 +8283,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "postTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeUnit" => [
             "type" => "string",
@@ -8300,15 +8300,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "postTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -8317,15 +8317,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "postTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightUnit" => [
             "type" => "string",
@@ -8352,15 +8352,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -8369,15 +8369,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -8386,15 +8386,15 @@ function smart_blocks_attributes_news_module_fifteen() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -8572,15 +8572,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -8589,15 +8589,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -8606,15 +8606,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -8641,15 +8641,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -8658,15 +8658,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -8675,15 +8675,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -8711,15 +8711,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "featuredTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeUnit" => [
             "type" => "string",
@@ -8728,15 +8728,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "featuredTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -8745,15 +8745,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "featuredTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightUnit" => [
             "type" => "string",
@@ -8780,15 +8780,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "sideTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeUnit" => [
             "type" => "string",
@@ -8797,15 +8797,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "sideTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -8814,15 +8814,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "sideTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightUnit" => [
             "type" => "string",
@@ -8849,15 +8849,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -8866,15 +8866,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -8883,15 +8883,15 @@ function smart_blocks_attributes_tile_module_one() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -9139,15 +9139,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -9156,15 +9156,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -9173,15 +9173,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -9208,15 +9208,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -9225,15 +9225,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -9242,15 +9242,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -9277,15 +9277,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "featuredTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyFontSizeUnit" => [
             "type" => "string",
@@ -9294,15 +9294,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "featuredTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -9311,15 +9311,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "featuredTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "featuredTypographyLineHeightUnit" => [
             "type" => "string",
@@ -9346,15 +9346,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "sideTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyFontSizeUnit" => [
             "type" => "string",
@@ -9363,15 +9363,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "sideTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -9380,15 +9380,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "sideTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "sideTypographyLineHeightUnit" => [
             "type" => "string",
@@ -9415,15 +9415,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -9432,15 +9432,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -9449,15 +9449,15 @@ function smart_blocks_attributes_tile_module_two() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -9704,15 +9704,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -9721,15 +9721,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -9738,15 +9738,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -9773,15 +9773,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -9790,15 +9790,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -9807,15 +9807,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -9842,15 +9842,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "postTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeUnit" => [
             "type" => "string",
@@ -9859,15 +9859,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "postTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -9876,15 +9876,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "postTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightUnit" => [
             "type" => "string",
@@ -9912,15 +9912,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -9929,15 +9929,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -9946,15 +9946,15 @@ function smart_blocks_attributes_tile_module_three() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -10136,15 +10136,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "headerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -10153,15 +10153,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "headerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -10170,15 +10170,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "headerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "headerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -10205,15 +10205,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "categoryTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyFontSizeUnit" => [
             "type" => "string",
@@ -10222,15 +10222,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "categoryTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -10239,15 +10239,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "categoryTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "categoryTypographyLineHeightUnit" => [
             "type" => "string",
@@ -10274,15 +10274,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "postTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeUnit" => [
             "type" => "string",
@@ -10291,15 +10291,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "postTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -10308,15 +10308,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "postTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightUnit" => [
             "type" => "string",
@@ -10342,15 +10342,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -10359,15 +10359,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -10376,15 +10376,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -10411,15 +10411,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -10428,15 +10428,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -10445,15 +10445,15 @@ function smart_blocks_attributes_carousel_module_one() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -10701,15 +10701,15 @@ function smart_blocks_attributes_single_news_one() {
         ],
         "postTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeUnit" => [
             "type" => "string",
@@ -10718,15 +10718,15 @@ function smart_blocks_attributes_single_news_one() {
         ],
         "postTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -10735,15 +10735,15 @@ function smart_blocks_attributes_single_news_one() {
         ],
         "postTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightUnit" => [
             "type" => "string",
@@ -10769,15 +10769,15 @@ function smart_blocks_attributes_single_news_one() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -10786,15 +10786,15 @@ function smart_blocks_attributes_single_news_one() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -10803,15 +10803,15 @@ function smart_blocks_attributes_single_news_one() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -10838,15 +10838,15 @@ function smart_blocks_attributes_single_news_one() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -10855,15 +10855,15 @@ function smart_blocks_attributes_single_news_one() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -10872,15 +10872,15 @@ function smart_blocks_attributes_single_news_one() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -11207,15 +11207,15 @@ function smart_blocks_attributes_single_news_two() {
         ],
         "excerptTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyFontSizeUnit" => [
             "type" => "string",
@@ -11224,15 +11224,15 @@ function smart_blocks_attributes_single_news_two() {
         ],
         "excerptTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -11241,15 +11241,15 @@ function smart_blocks_attributes_single_news_two() {
         ],
         "excerptTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "excerptTypographyLineHeightUnit" => [
             "type" => "string",
@@ -11276,15 +11276,15 @@ function smart_blocks_attributes_single_news_two() {
         ],
         "postTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyFontSizeUnit" => [
             "type" => "string",
@@ -11293,15 +11293,15 @@ function smart_blocks_attributes_single_news_two() {
         ],
         "postTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -11310,15 +11310,15 @@ function smart_blocks_attributes_single_news_two() {
         ],
         "postTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "postTypographyLineHeightUnit" => [
             "type" => "string",
@@ -11345,15 +11345,15 @@ function smart_blocks_attributes_single_news_two() {
         ],
         "metasTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyFontSizeUnit" => [
             "type" => "string",
@@ -11362,15 +11362,15 @@ function smart_blocks_attributes_single_news_two() {
         ],
         "metasTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -11379,15 +11379,15 @@ function smart_blocks_attributes_single_news_two() {
         ],
         "metasTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "metasTypographyLineHeightUnit" => [
             "type" => "string",
@@ -11733,15 +11733,15 @@ function smart_blocks_attributes_ticker_module() {
         ],
         "tickerTitleTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerTitleTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerTitleTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerTitleTypographyFontSizeUnit" => [
             "type" => "string",
@@ -11750,15 +11750,15 @@ function smart_blocks_attributes_ticker_module() {
         ],
         "tickerTitleTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerTitleTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerTitleTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerTitleTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -11767,15 +11767,15 @@ function smart_blocks_attributes_ticker_module() {
         ],
         "tickerTitleTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerTitleTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerTitleTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerTitleTypographyLineHeightUnit" => [
             "type" => "string",
@@ -11802,15 +11802,15 @@ function smart_blocks_attributes_ticker_module() {
         ],
         "tickerContentTypographyFontSizeSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerContentTypographyFontSizeMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerContentTypographyFontSize" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerContentTypographyFontSizeUnit" => [
             "type" => "string",
@@ -11819,15 +11819,15 @@ function smart_blocks_attributes_ticker_module() {
         ],
         "tickerContentTypographyLetterSpacingSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerContentTypographyLetterSpacingMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerContentTypographyLetterSpacing" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerContentTypographyLetterSpacingUnit" => [
             "type" => "string",
@@ -11836,15 +11836,15 @@ function smart_blocks_attributes_ticker_module() {
         ],
         "tickerContentTypographyLineHeightSm" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerContentTypographyLineHeightMd" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerContentTypographyLineHeight" => [
             "type" => "string",
-            "default" => null
+            "default" => NULL
         ],
         "tickerContentTypographyLineHeightUnit" => [
             "type" => "string",

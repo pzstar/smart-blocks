@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 
-import { __ } from '@wordpress/i18n';
-import { InspectorControls } from '@wordpress/block-editor';
+import {__} from '@wordpress/i18n';
+import {InspectorControls} from '@wordpress/block-editor';
 import {
 	BaseControl,
 	Button,
@@ -13,7 +13,7 @@ import {
 	GradientPicker,
 	Tooltip
 } from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
+import {useSelect} from '@wordpress/data';
 import {
 	useState,
 	useEffect
@@ -183,8 +183,8 @@ const Inspector = ({
 	} = attributes;
 
 	const getView = useSelect((select) => {
-		const { getView } = select('smart-blocks/data');
-		const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+		const {getView} = select('smart-blocks/data');
+		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
 		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
 	}, []);
 
@@ -239,36 +239,36 @@ const Inspector = ({
 
 	const changeLayout = value => {
 		if ('Desktop' === getView) {
-			setAttributes({ layout: value });
+			setAttributes({layout: value});
 			updateColumnsWidth(columns, value);
 		}
 		if ('Tablet' === getView) {
-			setAttributes({ layoutTablet: value });
+			setAttributes({layoutTablet: value});
 		}
 		if ('Mobile' === getView) {
-			setAttributes({ layoutMobile: value });
+			setAttributes({layoutMobile: value});
 		}
 	};
 
 
 	const changeHideStatus = (value, type) => {
 		if ('Desktop' === type) {
-			setAttributes({ hide: value });
+			setAttributes({hide: value});
 		}
 		if ('Tablet' === type) {
-			setAttributes({ hideTablet: value });
+			setAttributes({hideTablet: value});
 		}
 		if ('Mobile' === type) {
-			setAttributes({ hideMobile: value });
+			setAttributes({hideMobile: value});
 		}
 	};
 
 	const changeReverseColumns = (value, type) => {
 		if ('Tablet' === type) {
-			setAttributes({ reverseColumnsTablet: value });
+			setAttributes({reverseColumnsTablet: value});
 		}
 		if ('Mobile' === type) {
-			setAttributes({ reverseColumnsMobile: value });
+			setAttributes({reverseColumnsMobile: value});
 		}
 	};
 
@@ -279,7 +279,7 @@ const Inspector = ({
 				<div className="sb-field sb-head-panel-tabs">
 					<div className="sb-panel-tabs-wrap">
 						<Button
-							className={classnames('sb-panel-tab', { 'active-tab': 'layout' === activeTab })}
+							className={classnames('sb-panel-tab', {'active-tab': 'layout' === activeTab})}
 							onClick={() => setActiveTab('layout')}
 						>
 							<span className="dashicons">
@@ -289,7 +289,7 @@ const Inspector = ({
 						</Button>
 
 						<Button
-							className={classnames('sb-panel-tab', { 'active-tab': 'style' === activeTab })}
+							className={classnames('sb-panel-tab', {'active-tab': 'style' === activeTab})}
 							onClick={() => setActiveTab('style')}
 						>
 							<span className="dashicons">
@@ -299,7 +299,7 @@ const Inspector = ({
 						</Button>
 
 						<Button
-							className={classnames('sb-panel-tab', { 'active-tab': 'advanced' === activeTab })}
+							className={classnames('sb-panel-tab', {'active-tab': 'advanced' === activeTab})}
 							onClick={() => setActiveTab('advanced')}
 						>
 							<span className="dashicons">
@@ -336,12 +336,12 @@ const Inspector = ({
 										label={__('Content Width', 'smart-blocks')}
 										value={sectionContentWidth}
 										options={[
-											{ label: __('Full Width', 'smart-blocks'), value: 'full' },
-											{ label: __('Boxed', 'smart-blocks'), value: 'boxed' },
+											{label: __('Full Width', 'smart-blocks'), value: 'full'},
+											{label: __('Boxed', 'smart-blocks'), value: 'boxed'},
 										]}
 										onChange={value => {
-											setAttributes({ sectionContentWidth: value, columnsWidth: '', columnsWidthSm: '', columnsWidthMd: ''});
-											value === 'full' && setAttributes({ columnsWidthUnit: '%' })
+											setAttributes({sectionContentWidth: value, columnsWidth: '', columnsWidthSm: '', columnsWidthMd: ''});
+											value === 'full' && setAttributes({columnsWidthUnit: '%'})
 										}}
 									/>
 
@@ -351,15 +351,15 @@ const Inspector = ({
 										max={1800}
 										responsive={!0}
 										value={columnsWidth}
-										setValue={(value) => setAttributes({ columnsWidth: value })}
+										setValue={(value) => setAttributes({columnsWidth: value})}
 										valueSm={columnsWidthSm}
-										setValueSm={(value) => setAttributes({ columnsWidthSm: value })}
+										setValueSm={(value) => setAttributes({columnsWidthSm: value})}
 										valueMd={columnsWidthMd}
-										setValueMd={(value) => setAttributes({ columnsWidthMd: value })}
+										setValueMd={(value) => setAttributes({columnsWidthMd: value})}
 										useUnit={!0}
 										units={sectionContentWidth === 'full' ? ['%'] : ['px', 'em', '%', 'vw']}
 										unit={columnsWidthUnit}
-										setUnit={(value) => setAttributes({ columnsWidthUnit: value })}
+										setUnit={(value) => setAttributes({columnsWidthUnit: value})}
 									/>
 
 									<RangeSliderControl
@@ -368,15 +368,15 @@ const Inspector = ({
 										max={1200}
 										responsive={!0}
 										value={columnsHeight}
-										setValue={(value) => setAttributes({ columnsHeight: value })}
+										setValue={(value) => setAttributes({columnsHeight: value})}
 										valueSm={columnsHeightSm}
-										setValueSm={(value) => setAttributes({ columnsHeightSm: value })}
+										setValueSm={(value) => setAttributes({columnsHeightSm: value})}
 										valueMd={columnsHeightMd}
-										setValueMd={(value) => setAttributes({ columnsHeightMd: value })}
+										setValueMd={(value) => setAttributes({columnsHeightMd: value})}
 										useUnit={!0}
 										units={['px', 'em', '%', 'vh']}
 										unit={columnsHeightUnit}
-										setUnit={(value) => setAttributes({ columnsHeightUnit: value })}
+										setUnit={(value) => setAttributes({columnsHeightUnit: value})}
 									/>
 
 									<ButtonGroupControl
@@ -395,11 +395,11 @@ const Inspector = ({
 											},
 										]}
 										value={sectionFlexDirection}
-										setValue={(value) => setAttributes({ sectionFlexDirection: value })}
+										setValue={(value) => setAttributes({sectionFlexDirection: value})}
 										valueSm={sectionFlexDirectionSm}
-										setValueSm={(value) => setAttributes({ sectionFlexDirectionSm: value })}
+										setValueSm={(value) => setAttributes({sectionFlexDirectionSm: value})}
 										valueMd={sectionFlexDirectionMd}
-										setValueMd={(value) => setAttributes({ sectionFlexDirectionMd: value })}
+										setValueMd={(value) => setAttributes({sectionFlexDirectionMd: value})}
 									/>
 
 									<ButtonGroupControl
@@ -433,11 +433,11 @@ const Inspector = ({
 											}
 										]}
 										value={columnAlignment}
-										setValue={(value) => setAttributes({ columnAlignment: value })}
+										setValue={(value) => setAttributes({columnAlignment: value})}
 										valueSm={columnAlignmentSm}
-										setValueSm={(value) => setAttributes({ columnAlignmentSm: value })}
+										setValueSm={(value) => setAttributes({columnAlignmentSm: value})}
 										valueMd={columnAlignmentMd}
-										setValueMd={(value) => setAttributes({ columnAlignmentMd: value })}
+										setValueMd={(value) => setAttributes({columnAlignmentMd: value})}
 									/>
 
 									<ButtonGroupControl
@@ -476,11 +476,11 @@ const Inspector = ({
 											}
 										]}
 										value={columnJustify}
-										setValue={(value) => setAttributes({ columnJustify: value })}
+										setValue={(value) => setAttributes({columnJustify: value})}
 										valueSm={columnJustifySm}
-										setValueSm={(value) => setAttributes({ columnJustifySm: value })}
+										setValueSm={(value) => setAttributes({columnJustifySm: value})}
 										valueMd={columnJustifyMd}
-										setValueMd={(value) => setAttributes({ columnJustifyMd: value })}
+										setValueMd={(value) => setAttributes({columnJustifyMd: value})}
 									/>
 
 									<ButtonGroupControl
@@ -504,11 +504,11 @@ const Inspector = ({
 											}
 										]}
 										value={horizontalAlign}
-										setValue={(value) => setAttributes({ horizontalAlign: value })}
+										setValue={(value) => setAttributes({horizontalAlign: value})}
 										valueSm={horizontalAlignSm}
-										setValueSm={(value) => setAttributes({ horizontalAlignSm: value })}
+										setValueSm={(value) => setAttributes({horizontalAlignSm: value})}
 										valueMd={horizontalAlignMd}
-										setValueMd={(value) => setAttributes({ horizontalAlignMd: value })}
+										setValueMd={(value) => setAttributes({horizontalAlignMd: value})}
 									/>
 
 									<GapControl
@@ -518,21 +518,21 @@ const Inspector = ({
 										responsive={!0}
 
 										gapColumn={columnsGapColumn}
-										setGapColumn={value => setAttributes({ columnsGapColumn: value })}
+										setGapColumn={value => setAttributes({columnsGapColumn: value})}
 										gapMdColumn={columnsGapMdColumn}
-										setGapMdColumn={value => setAttributes({ columnsGapMdColumn: value })}
+										setGapMdColumn={value => setAttributes({columnsGapMdColumn: value})}
 										gapSmColumn={columnsGapSmColumn}
-										setGapSmColumn={value => setAttributes({ columnsGapSmColumn: value })}
+										setGapSmColumn={value => setAttributes({columnsGapSmColumn: value})}
 
 										gapRow={columnsGapRow}
-										setGapRow={value => setAttributes({ columnsGapRow: value })}
+										setGapRow={value => setAttributes({columnsGapRow: value})}
 										gapMdRow={columnsGapMdRow}
-										setGapMdRow={value => setAttributes({ columnsGapMdRow: value })}
+										setGapMdRow={value => setAttributes({columnsGapMdRow: value})}
 										gapSmRow={columnsGapSmRow}
-										setGapSmRow={value => setAttributes({ columnsGapSmRow: value })}
+										setGapSmRow={value => setAttributes({columnsGapSmRow: value})}
 
 										unit={columnsGapUnit}
-										setUnit={value => setAttributes({ columnsGapUnit: value })}
+										setUnit={value => setAttributes({columnsGapUnit: value})}
 									/>
 
 								</PanelBody>
@@ -550,35 +550,35 @@ const Inspector = ({
 										responsive={!0}
 
 										dimensionTop={columnsMarginTop}
-										setDimensionTop={value => setAttributes({ columnsMarginTop: value })}
+										setDimensionTop={value => setAttributes({columnsMarginTop: value})}
 										dimensionMdTop={columnsMarginMdTop}
-										setDimensionMdTop={value => setAttributes({ columnsMarginMdTop: value })}
+										setDimensionMdTop={value => setAttributes({columnsMarginMdTop: value})}
 										dimensionSmTop={columnsMarginSmTop}
-										setDimensionSmTop={value => setAttributes({ columnsMarginSmTop: value })}
+										setDimensionSmTop={value => setAttributes({columnsMarginSmTop: value})}
 
 										dimensionLeft={columnsMarginLeft}
-										setDimensionLeft={value => setAttributes({ columnsMarginLeft: value })}
+										setDimensionLeft={value => setAttributes({columnsMarginLeft: value})}
 										dimensionMdLeft={columnsMarginMdLeft}
-										setDimensionMdLeft={value => setAttributes({ columnsMarginMdLeft: value })}
+										setDimensionMdLeft={value => setAttributes({columnsMarginMdLeft: value})}
 										dimensionSmLeft={columnsMarginSmLeft}
-										setDimensionSmLeft={value => setAttributes({ columnsMarginSmLeft: value })}
+										setDimensionSmLeft={value => setAttributes({columnsMarginSmLeft: value})}
 
 										dimensionRight={columnsMarginRight}
-										setDimensionRight={value => setAttributes({ columnsMarginRight: value })}
+										setDimensionRight={value => setAttributes({columnsMarginRight: value})}
 										dimensionMdRight={columnsMarginMdRight}
-										setDimensionMdRight={value => setAttributes({ columnsMarginMdRight: value })}
+										setDimensionMdRight={value => setAttributes({columnsMarginMdRight: value})}
 										dimensionSmRight={columnsMarginSmRight}
-										setDimensionSmRight={value => setAttributes({ columnsMarginSmRight: value })}
+										setDimensionSmRight={value => setAttributes({columnsMarginSmRight: value})}
 
 										dimensionBottom={columnsMarginBottom}
-										setDimensionBottom={value => setAttributes({ columnsMarginBottom: value })}
+										setDimensionBottom={value => setAttributes({columnsMarginBottom: value})}
 										dimensionMdBottom={columnsMarginMdBottom}
-										setDimensionMdBottom={value => setAttributes({ columnsMarginMdBottom: value })}
+										setDimensionMdBottom={value => setAttributes({columnsMarginMdBottom: value})}
 										dimensionSmBottom={columnsMarginSmBottom}
-										setDimensionSmBottom={value => setAttributes({ columnsMarginSmBottom: value })}
+										setDimensionSmBottom={value => setAttributes({columnsMarginSmBottom: value})}
 
 										unit={columnsMarginUnit}
-										setUnit={value => setAttributes({ columnsMarginUnit: value })}
+										setUnit={value => setAttributes({columnsMarginUnit: value})}
 									/>
 
 									<DimensionControl
@@ -588,35 +588,35 @@ const Inspector = ({
 										responsive={!0}
 
 										dimensionTop={columnsPaddingTop}
-										setDimensionTop={value => setAttributes({ columnsPaddingTop: value })}
+										setDimensionTop={value => setAttributes({columnsPaddingTop: value})}
 										dimensionMdTop={columnsPaddingMdTop}
-										setDimensionMdTop={value => setAttributes({ columnsPaddingMdTop: value })}
+										setDimensionMdTop={value => setAttributes({columnsPaddingMdTop: value})}
 										dimensionSmTop={columnsPaddingSmTop}
-										setDimensionSmTop={value => setAttributes({ columnsPaddingSmTop: value })}
+										setDimensionSmTop={value => setAttributes({columnsPaddingSmTop: value})}
 
 										dimensionLeft={columnsPaddingLeft}
-										setDimensionLeft={value => setAttributes({ columnsPaddingLeft: value })}
+										setDimensionLeft={value => setAttributes({columnsPaddingLeft: value})}
 										dimensionMdLeft={columnsPaddingMdLeft}
-										setDimensionMdLeft={value => setAttributes({ columnsPaddingMdLeft: value })}
+										setDimensionMdLeft={value => setAttributes({columnsPaddingMdLeft: value})}
 										dimensionSmLeft={columnsPaddingSmLeft}
-										setDimensionSmLeft={value => setAttributes({ columnsPaddingSmLeft: value })}
+										setDimensionSmLeft={value => setAttributes({columnsPaddingSmLeft: value})}
 
 										dimensionRight={columnsPaddingRight}
-										setDimensionRight={value => setAttributes({ columnsPaddingRight: value })}
+										setDimensionRight={value => setAttributes({columnsPaddingRight: value})}
 										dimensionMdRight={columnsPaddingMdRight}
-										setDimensionMdRight={value => setAttributes({ columnsPaddingMdRight: value })}
+										setDimensionMdRight={value => setAttributes({columnsPaddingMdRight: value})}
 										dimensionSmRight={columnsPaddingSmRight}
-										setDimensionSmRight={value => setAttributes({ columnsPaddingSmRight: value })}
+										setDimensionSmRight={value => setAttributes({columnsPaddingSmRight: value})}
 
 										dimensionBottom={columnsPaddingBottom}
-										setDimensionBottom={value => setAttributes({ columnsPaddingBottom: value })}
+										setDimensionBottom={value => setAttributes({columnsPaddingBottom: value})}
 										dimensionMdBottom={columnsPaddingMdBottom}
-										setDimensionMdBottom={value => setAttributes({ columnsPaddingMdBottom: value })}
+										setDimensionMdBottom={value => setAttributes({columnsPaddingMdBottom: value})}
 										dimensionSmBottom={columnsPaddingSmBottom}
-										setDimensionSmBottom={value => setAttributes({ columnsPaddingSmBottom: value })}
+										setDimensionSmBottom={value => setAttributes({columnsPaddingSmBottom: value})}
 
 										unit={columnsPaddingUnit}
-										setUnit={value => setAttributes({ columnsPaddingUnit: value })}
+										setUnit={value => setAttributes({columnsPaddingUnit: value})}
 									/>
 								</PanelBody>
 
@@ -628,115 +628,115 @@ const Inspector = ({
 										<div tabTitle={__("Normal", 'smart-blocks')}>
 											<BorderControl
 												value={borderNormal}
-												setValue={(borderNormal) => setAttributes({ borderNormal })}
+												setValue={(borderNormal) => setAttributes({borderNormal})}
 											/>
 											{borderNormal && (
 												<ColorControl
 													label={__('Border Color', 'smart-blocks')}
 													enableAlpha
 													value={borderNormalColor}
-													setValue={(borderNormalColor) => setAttributes({ borderNormalColor })}
+													setValue={(borderNormalColor) => setAttributes({borderNormalColor})}
 												/>
 											)}
 											<DimensionControl
 												label={__('Border Width', 'smart-blocks')}
 												units={['px', 'em']}
 												dimensionTop={borderNormalWidthTop}
-												setDimensionTop={value => setAttributes({ borderNormalWidthTop: value })}
+												setDimensionTop={value => setAttributes({borderNormalWidthTop: value})}
 												dimensionLeft={borderNormalWidthLeft}
-												setDimensionLeft={value => setAttributes({ borderNormalWidthLeft: value })}
+												setDimensionLeft={value => setAttributes({borderNormalWidthLeft: value})}
 												dimensionRight={borderNormalWidthRight}
-												setDimensionRight={value => setAttributes({ borderNormalWidthRight: value })}
+												setDimensionRight={value => setAttributes({borderNormalWidthRight: value})}
 												dimensionBottom={borderNormalWidthBottom}
-												setDimensionBottom={value => setAttributes({ borderNormalWidthBottom: value })}
+												setDimensionBottom={value => setAttributes({borderNormalWidthBottom: value})}
 
 												unit={borderNormalWidthUnit}
-												setUnit={value => setAttributes({ borderNormalWidthUnit: value })}
+												setUnit={value => setAttributes({borderNormalWidthUnit: value})}
 											/>
 											<DimensionControl
 												label={__('Border Radius', 'smart-blocks')}
 												dimensionTop={borderNormalRadiusTop}
-												setDimensionTop={value => setAttributes({ borderNormalRadiusTop: value })}
+												setDimensionTop={value => setAttributes({borderNormalRadiusTop: value})}
 												dimensionLeft={borderNormalRadiusLeft}
-												setDimensionLeft={value => setAttributes({ borderNormalRadiusLeft: value })}
+												setDimensionLeft={value => setAttributes({borderNormalRadiusLeft: value})}
 												dimensionRight={borderNormalRadiusRight}
-												setDimensionRight={value => setAttributes({ borderNormalRadiusRight: value })}
+												setDimensionRight={value => setAttributes({borderNormalRadiusRight: value})}
 												dimensionBottom={borderNormalRadiusBottom}
-												setDimensionBottom={value => setAttributes({ borderNormalRadiusBottom: value })}
+												setDimensionBottom={value => setAttributes({borderNormalRadiusBottom: value})}
 
 												unit={borderNormalRadiusUnit}
-												setUnit={value => setAttributes({ borderNormalRadiusUnit: value })}
+												setUnit={value => setAttributes({borderNormalRadiusUnit: value})}
 											/>
 											<BoxShadowControl
 												valueHorizontal={borderNormalBoxShadowHorizontal}
-												setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({ borderNormalBoxShadowHorizontal })}
+												setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({borderNormalBoxShadowHorizontal})}
 												valueVertical={borderNormalBoxShadowVertical}
-												setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({ borderNormalBoxShadowVertical })}
+												setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({borderNormalBoxShadowVertical})}
 												valueBlur={borderNormalBoxShadowBlur}
-												setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({ borderNormalBoxShadowBlur })}
+												setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({borderNormalBoxShadowBlur})}
 												valueSpread={borderNormalBoxShadowSpread}
-												setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({ borderNormalBoxShadowSpread })}
+												setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({borderNormalBoxShadowSpread})}
 												valueColor={borderNormalBoxShadowColor}
-												setValueColor={(borderNormalBoxShadowColor) => setAttributes({ borderNormalBoxShadowColor })}
+												setValueColor={(borderNormalBoxShadowColor) => setAttributes({borderNormalBoxShadowColor})}
 												valueInset={borderNormalBoxShadowInset}
-												setValueInset={(borderNormalBoxShadowInset) => setAttributes({ borderNormalBoxShadowInset })}
+												setValueInset={(borderNormalBoxShadowInset) => setAttributes({borderNormalBoxShadowInset})}
 											/>
 										</div>
 										<div tabTitle={__("Hover", 'smart-blocks')}>
 											<BorderControl
 												value={borderHover}
-												setValue={(borderHover) => setAttributes({ borderHover })}
+												setValue={(borderHover) => setAttributes({borderHover})}
 											/>
 											{borderHover && (
 												<ColorControl
 													label={__('Border Color', 'smart-blocks')}
 													enableAlpha
 													value={borderHoverColor}
-													setValue={(borderHoverColor) => setAttributes({ borderHoverColor })}
+													setValue={(borderHoverColor) => setAttributes({borderHoverColor})}
 												/>
 											)}
 											<DimensionControl
 												label={__('Border Width', 'smart-blocks')}
 												units={['px', 'em']}
 												dimensionTop={borderHoverWidthTop}
-												setDimensionTop={value => setAttributes({ borderHoverWidthTop: value })}
+												setDimensionTop={value => setAttributes({borderHoverWidthTop: value})}
 												dimensionLeft={borderHoverWidthLeft}
-												setDimensionLeft={value => setAttributes({ borderHoverWidthLeft: value })}
+												setDimensionLeft={value => setAttributes({borderHoverWidthLeft: value})}
 												dimensionRight={borderHoverWidthRight}
-												setDimensionRight={value => setAttributes({ borderHoverWidthRight: value })}
+												setDimensionRight={value => setAttributes({borderHoverWidthRight: value})}
 												dimensionBottom={borderHoverWidthBottom}
-												setDimensionBottom={value => setAttributes({ borderHoverWidthBottom: value })}
+												setDimensionBottom={value => setAttributes({borderHoverWidthBottom: value})}
 
 												unit={borderHoverWidthUnit}
-												setUnit={value => setAttributes({ borderHoverWidthUnit: value })}
+												setUnit={value => setAttributes({borderHoverWidthUnit: value})}
 											/>
 											<DimensionControl
 												label={__('Border Radius', 'smart-blocks')}
 												dimensionTop={borderHoverRadiusTop}
-												setDimensionTop={value => setAttributes({ borderHoverRadiusTop: value })}
+												setDimensionTop={value => setAttributes({borderHoverRadiusTop: value})}
 												dimensionLeft={borderHoverRadiusLeft}
-												setDimensionLeft={value => setAttributes({ borderHoverRadiusLeft: value })}
+												setDimensionLeft={value => setAttributes({borderHoverRadiusLeft: value})}
 												dimensionRight={borderHoverRadiusRight}
-												setDimensionRight={value => setAttributes({ borderHoverRadiusRight: value })}
+												setDimensionRight={value => setAttributes({borderHoverRadiusRight: value})}
 												dimensionBottom={borderHoverRadiusBottom}
-												setDimensionBottom={value => setAttributes({ borderHoverRadiusBottom: value })}
+												setDimensionBottom={value => setAttributes({borderHoverRadiusBottom: value})}
 
 												unit={borderHoverRadiusUnit}
-												setUnit={value => setAttributes({ borderHoverRadiusUnit: value })}
+												setUnit={value => setAttributes({borderHoverRadiusUnit: value})}
 											/>
 											<BoxShadowControl
 												valueHorizontal={borderHoverBoxShadowHorizontal}
-												setValueHorizontal={(borderHoverBoxShadowHorizontal) => setAttributes({ borderHoverBoxShadowHorizontal })}
+												setValueHorizontal={(borderHoverBoxShadowHorizontal) => setAttributes({borderHoverBoxShadowHorizontal})}
 												valueVertical={borderHoverBoxShadowVertical}
-												setValueVertical={(borderHoverBoxShadowVertical) => setAttributes({ borderHoverBoxShadowVertical })}
+												setValueVertical={(borderHoverBoxShadowVertical) => setAttributes({borderHoverBoxShadowVertical})}
 												valueBlur={borderHoverBoxShadowBlur}
-												setValueBlur={(borderHoverBoxShadowBlur) => setAttributes({ borderHoverBoxShadowBlur })}
+												setValueBlur={(borderHoverBoxShadowBlur) => setAttributes({borderHoverBoxShadowBlur})}
 												valueSpread={borderHoverBoxShadowSpread}
-												setValueSpread={(borderHoverBoxShadowSpread) => setAttributes({ borderHoverBoxShadowSpread })}
+												setValueSpread={(borderHoverBoxShadowSpread) => setAttributes({borderHoverBoxShadowSpread})}
 												valueColor={borderHoverBoxShadowColor}
-												setValueColor={(borderHoverBoxShadowColor) => setAttributes({ borderHoverBoxShadowColor })}
+												setValueColor={(borderHoverBoxShadowColor) => setAttributes({borderHoverBoxShadowColor})}
 												valueInset={borderHoverBoxShadowInset}
-												setValueInset={(borderHoverBoxShadowInset) => setAttributes({ borderHoverBoxShadowInset })}
+												setValueInset={(borderHoverBoxShadowInset) => setAttributes({borderHoverBoxShadowInset})}
 											/>
 										</div>
 									</Tabs>
@@ -748,64 +748,64 @@ const Inspector = ({
 								>
 
 									<div className="sb-field sb-inspect-tabs ">
-							            <div className="components-tab-panel__tabs">
-				                            <Tooltip text={__("Image/Color", 'smart-blocks')}>
-				                                <button className={('imageOrColor' === sectionBgType ? "active-tab" : "") + " components-button sb-tab-menu"}
-				                                    onClick={() => setAttributes({ sectionBgType: 'imageOrColor' })}
-				                                >
-				                                {__("Image/Color", 'smart-blocks')}
-				                                </button>
-				                            </Tooltip>
+										<div className="components-tab-panel__tabs">
+											<Tooltip text={__("Image/Color", 'smart-blocks')}>
+												<button className={('imageOrColor' === sectionBgType ? "active-tab" : "") + " components-button sb-tab-menu"}
+													onClick={() => setAttributes({sectionBgType: 'imageOrColor'})}
+												>
+													{__("Image/Color", 'smart-blocks')}
+												</button>
+											</Tooltip>
 
-				                            <Tooltip text={__("Gradient", 'smart-blocks')}>
-				                                <button className={('gradient' === sectionBgType ? "active-tab" : "") + " components-button sb-tab-menu"}
-				                                    onClick={() => setAttributes({ sectionBgType: 'gradient' })}
-				                                >
-				                                {__("Gradient", 'smart-blocks')}
-				                                </button>
-				                            </Tooltip>
-							            </div>
-							            <div className="sb-field-tab-items">
-							            	{'imageOrColor' === sectionBgType && (
-								                <>
+											<Tooltip text={__("Gradient", 'smart-blocks')}>
+												<button className={('gradient' === sectionBgType ? "active-tab" : "") + " components-button sb-tab-menu"}
+													onClick={() => setAttributes({sectionBgType: 'gradient'})}
+												>
+													{__("Gradient", 'smart-blocks')}
+												</button>
+											</Tooltip>
+										</div>
+										<div className="sb-field-tab-items">
+											{'imageOrColor' === sectionBgType && (
+												<>
 													<ColorControl
 														label={__('Background Color', 'smart-blocks')}
 														enableAlpha={!0}
 														value={sectionBgColor}
-														setValue={(sectionBgColor) => setAttributes({ sectionBgColor })}
+														setValue={(sectionBgColor) => setAttributes({sectionBgColor})}
 													/>
 
 													<ImageBackgroundControl
 														label={__("Background Image", 'smart-blocks')}
 														imageURL={sectionBgImgURL}
-														setImageURL={value => setAttributes({ sectionBgImgURL: value })}
+														setImageURL={value => setAttributes({sectionBgImgURL: value})}
 														imageID={sectionBgImgID}
-														setImageID={value => setAttributes({ sectionBgImgID: value })}
+														setImageID={value => setAttributes({sectionBgImgID: value})}
 														imageAttachment={sectionBgAttachment}
-														setImageAttachment={value => setAttributes({ sectionBgAttachment: value })}
+														setImageAttachment={value => setAttributes({sectionBgAttachment: value})}
 														imageSize={sectionBgSize}
-														setImageSize={value => setAttributes({ sectionBgSize: value })}
+														setImageSize={value => setAttributes({sectionBgSize: value})}
 														imagePositionX={sectionBgPositionX}
-														setImagePositionX={value => setAttributes({ sectionBgPositionX: value })}
+														setImagePositionX={value => setAttributes({sectionBgPositionX: value})}
 														imagePositionY={sectionBgPositionY}
-														setImagePositionY={value => setAttributes({ sectionBgPositionY: value })}
+														setImagePositionY={value => setAttributes({sectionBgPositionY: value})}
 														imageRepeat={sectionBgRepeat}
-														setImageRepeat={value => setAttributes({ sectionBgRepeat: value })}
+														setImageRepeat={value => setAttributes({sectionBgRepeat: value})}
 														imageOverlayColor={sectionBgOverlayColor}
-														setImageOverlayColor={value => setAttributes({ sectionBgOverlayColor: value })}
+														setImageOverlayColor={value => setAttributes({sectionBgOverlayColor: value})}
 													/>
 												</>
 											) || 'gradient' === sectionBgType && (
-								                <>
-								                	<GradientPicker
-														label={ __('Background Gradient', 'smart-blocks')}
+												<>
+													<GradientPicker
+														label={__('Background Gradient', 'smart-blocks')}
 														value={sectionBgGradient}
-														onChange={value => setAttributes({ sectionBgGradient: value })}
+														onChange={value => setAttributes({sectionBgGradient: value})}
 													/>
-								                </>
+												</>
 											)}
-						                </div>
-					                </div>
+										</div>
+									</div>
 								</PanelBody>
 							</>
 						) || 'advanced' === activeTab && (
@@ -859,14 +859,14 @@ const Inspector = ({
 										label={__('HTML Tag', 'smart-blocks')}
 										value={columnsHTMLTag}
 										options={[
-											{ label: __('Default (div)', 'smart-blocks'), value: 'div' },
-											{ label: 'section', value: 'section' },
-											{ label: 'header', value: 'header' },
-											{ label: 'footer', value: 'footer' },
-											{ label: 'article', value: 'article' },
-											{ label: 'main', value: 'main' }
+											{label: __('Default (div)', 'smart-blocks'), value: 'div'},
+											{label: 'section', value: 'section'},
+											{label: 'header', value: 'header'},
+											{label: 'footer', value: 'footer'},
+											{label: 'article', value: 'article'},
+											{label: 'main', value: 'main'}
 										]}
-										onChange={value => setAttributes({ columnsHTMLTag: value })}
+										onChange={value => setAttributes({columnsHTMLTag: value})}
 									/>
 								</PanelBody>
 							</>

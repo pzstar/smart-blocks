@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { registerStore } from '@wordpress/data';
+import {registerStore} from '@wordpress/data';
 
 const DEFAULT_STATE = {
 	viewType: 'Desktop'

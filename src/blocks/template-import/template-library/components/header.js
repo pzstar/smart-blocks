@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 
-import { startCase, toLower } from 'lodash';
-import { __ } from '@wordpress/i18n';
+import {startCase, toLower} from 'lodash';
+import {__} from '@wordpress/i18n';
 import {
 	Button,
 	Dashicon,
@@ -11,7 +11,7 @@ import {
 	SelectControl
 } from '@wordpress/components';
 
-import { Tile1 } from '../../../../utils/svgicons';
+import {Tile1} from '../../../../utils/svgicons';
 
 const Header = ({
 	preview,
@@ -38,7 +38,7 @@ const Header = ({
 		});
 
 		const options = [
-			{ label: __('All Categories', 'smart-blocks'), value: 'all' },
+			{label: __('All Categories', 'smart-blocks'), value: 'all'},
 			...categories
 		];
 		return options;
@@ -68,7 +68,7 @@ const Header = ({
 				{!preview && (
 					<div className="library-modal-header-tabs">
 						<Button
-							className={classnames('library-modal-header-tabs-button', { 'is-selected': 'block' === tab })}
+							className={classnames('library-modal-header-tabs-button', {'is-selected': 'block' === tab})}
 							onClick={() => changeTab('block')}
 						>
 							<Dashicon icon="screenoptions" />
@@ -78,7 +78,7 @@ const Header = ({
 						<Button
 							className={classnames(
 								'library-modal-header-tabs-button',
-								{ 'is-selected': 'template' === tab }
+								{'is-selected': 'template' === tab}
 							)}
 							onClick={() => changeTab('template')}
 						>

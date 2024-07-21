@@ -1,8 +1,8 @@
-import { __ } from '@wordpress/i18n';
-import { Tooltip, TextControl, Dropdown, Dashicon } from '@wordpress/components';
+import {__} from '@wordpress/i18n';
+import {Tooltip, TextControl, Dropdown, Dashicon} from '@wordpress/components';
 import ColorControl from './color';
 import AdvancedRadio from './advancedradio';
-import { ClearIcon } from '../utils/svgicons';
+import {ClearIcon} from '../utils/svgicons';
 
 const BoxShadowControl = ({
     label,
@@ -42,7 +42,7 @@ const BoxShadowControl = ({
                     position="top right"
                     className="sb-ml-auto"
                     contentClassName="sb-popover-style"
-                    renderToggle={({ isOpen, onToggle }) => (
+                    renderToggle={({isOpen, onToggle}) => (
                         <button
                             className="sb-shadow-setttings"
                             isPrimary={!0}
@@ -93,8 +93,8 @@ const BoxShadowControl = ({
                                 value={valueInset}
                                 setValue={((e) => setValueInset(e))}
                                 options={[
-                                    { label: __("Inset"), value: "inset", title: __("Inset") },
-                                    { label: __("Outset"), value: "", title: __("Outset") }
+                                    {label: __("Inset"), value: "inset", title: __("Inset")},
+                                    {label: __("Outset"), value: "", title: __("Outset")}
                                 ]}
                             />
                         </>

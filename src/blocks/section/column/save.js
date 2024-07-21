@@ -1,6 +1,6 @@
-import { InnerBlocks } from '@wordpress/block-editor';
+import {InnerBlocks} from '@wordpress/block-editor';
 
-const Save = ({ attributes, className }) => {
+const Save = ({attributes, className}) => {
 	const Tag = attributes.columnsHTMLTag;
 	return (
 		<Tag

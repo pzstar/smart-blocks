@@ -1,7 +1,7 @@
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
-import { isEqual } from 'lodash';
-import { dispatch, select } from '@wordpress/data';
+import {isEqual} from 'lodash';
+import {dispatch, select} from '@wordpress/data';
 
 
 /**
@@ -63,7 +63,7 @@ const generatePrefix = (name) => {
  */
 export const addBlockId = (args) => {
 
-	const { attributes, setAttributes, clientId, idPrefix, name, defaultAttributes } = args;
+	const {attributes, setAttributes, clientId, idPrefix, name, defaultAttributes} = args;
 
 	if (attributes === undefined || setAttributes === undefined) {
 		return (savedId) => {
@@ -83,13 +83,13 @@ export const addBlockId = (args) => {
 	if (attributes.id === undefined) {
 
 		// Save the id in all methods
-		setAttributes({ id: instanceId });
+		setAttributes({id: instanceId});
 		localIDs[name].add(instanceId);
 	} else if (idIsAlreadyUsed) {
 
 		// The block must be a copy and its is already used
 		// Generate a new one and save it to `localIDs` to keep track of it in local mode.
-		setAttributes({ id: instanceId });
+		setAttributes({id: instanceId});
 		localIDs[name].add(instanceId);
 	} else {
 
@@ -137,7 +137,7 @@ const updateAttrs = (clientId) => (attr) => {
  */
 const extractBlockData = (clientId) => {
 	const block = getBlock(clientId);
-	return { attributes: block?.attributes, name: block?.name };
+	return {attributes: block?.attributes, name: block?.name};
 };
 
 /**

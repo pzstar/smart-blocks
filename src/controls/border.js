@@ -1,8 +1,8 @@
-import { __ } from '@wordpress/i18n';
-import { Tooltip } from '@wordpress/components';
-import { ClearIcon } from '../utils/svgicons';
+import {__} from '@wordpress/i18n';
+import {Tooltip} from '@wordpress/components';
+import {ClearIcon} from '../utils/svgicons';
 
-const BorderControl = ({ label, value, setValue }) => {
+const BorderControl = ({label, value, setValue}) => {
     const borderStyles = [
         ["solid", __("Solid", 'smart-blocks')],
         ["dotted", __("Dotted", 'smart-blocks')],
@@ -30,7 +30,7 @@ const BorderControl = ({ label, value, setValue }) => {
                         key={index}>
                         <button
                             className={`${value && value == style[0] ? "active" : ""} sb-button`}
-                            onClick={() => { setValue(style[0]) }}
+                            onClick={() => {setValue(style[0])}}
                         >
                             <span className={`sb-field-border-type sb-field-border-type-${style[0]}`} />
                         </button>

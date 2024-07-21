@@ -1,7 +1,7 @@
-import { __ } from '@wordpress/i18n';
-import { Tooltip, Dropdown, ColorPicker } from '@wordpress/components';
-import { ClearIcon } from '../utils/svgicons';
-const ColorControl = ({ label, value, setValue, enableAlpha }) => {
+import {__} from '@wordpress/i18n';
+import {Tooltip, Dropdown, ColorPicker} from '@wordpress/components';
+import {ClearIcon} from '../utils/svgicons';
+const ColorControl = ({label, value, setValue, enableAlpha}) => {
     const onChangeHandler = (e) => {
         setValue(e.hex);
     }
@@ -27,7 +27,7 @@ const ColorControl = ({ label, value, setValue, enableAlpha }) => {
                     position="top right"
                     className="sb-ml-auto"
                     contentClassName="sb-popover-style"
-                    renderToggle={(function ({ isOpen, onToggle }) {
+                    renderToggle={(function ({isOpen, onToggle}) {
                         return <>
                             <span className="sb-color-picker-container">
                                 <button

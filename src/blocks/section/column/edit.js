@@ -1,8 +1,8 @@
-import { ResizableBox } from '@wordpress/components';
-import { useViewportMatch } from '@wordpress/compose';
-import { useDispatch, useSelect } from '@wordpress/data';
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { Fragment, useEffect, useState } from '@wordpress/element';
+import {ResizableBox} from '@wordpress/components';
+import {useViewportMatch} from '@wordpress/compose';
+import {useDispatch, useSelect} from '@wordpress/data';
+import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
+import {Fragment, useEffect, useState} from '@wordpress/element';
 
 /**
  * Internal dependencies
@@ -10,11 +10,11 @@ import { Fragment, useEffect, useState } from '@wordpress/element';
 import defaultAttributes from './attributes.js';
 import layouts from '../layouts.js';
 import Inspector from './inspector.js';
-import { blockInit } from '../../../utils/block-utility';
-import { responsiveDimensionVars, dimensionVars, boxShadowVars, bgVars, responsiveSliderVars } from '../../../utils/helper';
+import {blockInit} from '../../../utils/block-utility';
+import {responsiveDimensionVars, dimensionVars, boxShadowVars, bgVars, responsiveSliderVars} from '../../../utils/helper';
 
-export default function Edit({ attributes, setAttributes, className, isSelected, clientId, toggleSelection }) {
-	const { updateBlockAttributes } = useDispatch('core/block-editor');
+export default function Edit({attributes, setAttributes, className, isSelected, clientId, toggleSelection}) {
+	const {updateBlockAttributes} = useDispatch('core/block-editor');
 
 	const {
 		id,
@@ -137,7 +137,7 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
         ${responsiveSliderVars('column-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
         ${responsiveSliderVars('column-custom-order', columnCustomOrder, columnCustomOrderSm, columnCustomOrderMd)}
     }`
-	setAttributes({ sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
+	setAttributes({sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "")});
 
 	const {
 		adjacentBlockClientId,
@@ -155,7 +155,7 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 			getBlock,
 			getBlockRootClientId
 		} = select('core/block-editor');
-		const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
 		const block = getBlock(clientId);
 		const adjacentBlockClientId = getAdjacentBlockClientId(clientId);
 		const adjacentBlock = getBlock(adjacentBlockClientId);
@@ -256,7 +256,7 @@ export default function Edit({ attributes, setAttributes, className, isSelected,
 		if (10 <= width && 10 <= nextColumnWidth) {
 			// handleTooltipLeft.innerHTML = `${width.toFixed(0)}%`;
 			// handleTooltipRight.innerHTML = `${nextColumnWidth.toFixed(0)}%`;
-			setAttributes({ columnWidth: width.toFixed(2) });
+			setAttributes({columnWidth: width.toFixed(2)});
 			updateBlockAttributes(adjacentBlockClientId, {
 				columnWidth: nextColumnWidth.toFixed(2)
 			});

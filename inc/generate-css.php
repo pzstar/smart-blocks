@@ -24,11 +24,11 @@ if (!class_exists('Smart_Blocks_CSS')) {
             add_action('wp', function () {
                 if (current_theme_supports('block-templates')) {
                     // Parse all blocks.
-                    add_action('render_block', array ($this, 'render_block_asset'), 11, 2);
+                    add_action('render_block', array($this, 'render_block_asset'), 11, 2);
 
                     // Parse blocks manually from content and custom locations in Classic themes.
                 } else {
-                    add_filter('widget_block_content', array ($this, 'addFrontendWidgetAssets'), 8);
+                    add_filter('widget_block_content', array($this, 'addFrontendWidgetAssets'), 8);
                     $this->generate_stylesheet();
                 }
             });
@@ -49,7 +49,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                 if (str_contains($attrs, 'Weight')) {
                     $weight = $value;
                 }
-                if($family && $family != 'inherit') {
+                if ($family && $family != 'inherit') {
                     self::blocks_google_font($family, $weight ? str_replace('italic', 'i', $weight) : 400);
                 }
             }
@@ -117,7 +117,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
             return '//fonts.googleapis.com/css?family=' . esc_attr(str_replace('|', '%7C', $link));
         }
 
-        public static function blocks_google_font($font_family, $font_weight, $font_subset = null) {
+        public static function blocks_google_font($font_family, $font_weight, $font_subset = NULL) {
             if (strtolower($font_family) != 'inherit') {
                 if (!array_key_exists($font_family, self::$gfonts)) {
                     $add_font = array(
@@ -210,7 +210,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                         if (str_contains($attrs, 'Weight')) {
                             $weight = $value;
                         }
-                        if($family && $family != 'inherit') {
+                        if ($family && $family != 'inherit') {
                             self::blocks_google_font($family, $weight ? str_replace('italic', 'i', $weight) : 400);
                         }
                     }

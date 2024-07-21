@@ -28,7 +28,7 @@ class Smart_Blocks_Ticker_Module {
             $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'wp-block-sb']) . '>';
             $content_rendered .= '<div class="sb-ticker">';
             $content_rendered .= '<span class="sb-ticker-title">';
-            $ticker_title = isset($this->attributes['tickerTitle']) ? $this->attributes['tickerTitle'] : null;
+            $ticker_title = isset($this->attributes['tickerTitle']) ? $this->attributes['tickerTitle'] : NULL;
             if ($ticker_title) {
                 $content_rendered .= esc_html($ticker_title);
             }

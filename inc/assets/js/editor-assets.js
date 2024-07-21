@@ -19,7 +19,7 @@
                 if (toolbalEl instanceof HTMLElement) {
                     toolbalEl.insertAdjacentHTML('beforeend', importBtn);
                     document.getElementById("sb-template-import-button").addEventListener("click", () => {
-                        const templateImportBlock = wp.blocks.createBlock("smart-blocks/template-import", { isLibraryOpen: !0 });
+                        const templateImportBlock = wp.blocks.createBlock("smart-blocks/template-import", {isLibraryOpen: !0});
                         wp.data.dispatch("core/block-editor").insertBlocks(templateImportBlock);
                     });
                 }

@@ -1,13 +1,13 @@
 import LazyLoad from 'react-lazy-load';
 
-import { __ } from '@wordpress/i18n';
-import { BlockPreview } from '@wordpress/block-editor';
-import { Spinner } from '@wordpress/components';
-import { useViewportMatch } from '@wordpress/compose';
+import {__} from '@wordpress/i18n';
+import {BlockPreview} from '@wordpress/block-editor';
+import {Spinner} from '@wordpress/components';
+import {useViewportMatch} from '@wordpress/compose';
 
 import Template from './template.js';
 
-const TemplatesList = ({ preview, isLoading, data, tab, selectedTemplateContent, selectedCategory, search, importPreview, importTemplate }) => {
+const TemplatesList = ({preview, isLoading, data, tab, selectedTemplateContent, selectedCategory, search, importPreview, importTemplate}) => {
 	const isLarger = useViewportMatch('large', '>=');
 	const isLarge = useViewportMatch('large', '<=');
 	const isSmall = useViewportMatch('small', '>=');

@@ -1,7 +1,7 @@
-import { __ } from '@wordpress/i18n';
-import { RawHTML, useState } from '@wordpress/element';
+import {__} from '@wordpress/i18n';
+import {RawHTML, useState} from '@wordpress/element';
 // eslint-disable-next-line @wordpress/no-unsafe-wp-apis
-import { format, dateI18n, getSettings } from '@wordpress/date';
+import {format, dateI18n, getSettings} from '@wordpress/date';
 import {
     useBlockProps,
     InspectorControls,
@@ -14,7 +14,7 @@ import {
     TextControl,
     Button
 } from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
+import {useSelect} from '@wordpress/data';
 import classnames from 'classnames';
 import TypographyControl from '../../controls/typography';
 import GoogleFontLoad from '../../utils/googlefontload';
@@ -28,10 +28,10 @@ import MultiSelectControl from '../../controls/multiselect';
 import OwlCarousel from 'react-owl-carousel';
 import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';
-import { responsiveTypographyVars, dimensionVars, boxShadowVars, responsiveDimensionVars } from '../../utils/helper';
-import { LayoutIcon, StyleIcon, AdvancedIcon } from '../../utils/svgicons';
+import {responsiveTypographyVars, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
+import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit({attributes, setAttributes}) {
     const [activeTab, setActiveTab] = useState('layout');
     const {
         id,
@@ -165,7 +165,7 @@ export default function Edit({ attributes, setAttributes }) {
         blockBgColor
     } = attributes;
 
-    setAttributes({ id: useBlockProps()['id'] });
+    setAttributes({id: useBlockProps()['id']});
     const stylesCSS = `#${id} {
         ${borderNormal ? '--sb-border-normal: ' + borderNormal + ';' : ''}
         ${borderHover ? '--sb-border-hover: ' + borderNormal + ';' : ''}
@@ -193,16 +193,16 @@ export default function Edit({ attributes, setAttributes }) {
         ${blockBgColor ? '--sb-block-bg-color: ' + blockBgColor + ';' : ''}
 
         ${responsiveTypographyVars('ticker-title-typo', tickerTitleTypographyFamily, tickerTitleTypographyWeight, tickerTitleTypographyTextTransform, tickerTitleTypographyTextDecoration,
-            tickerTitleTypographyFontSizeSm, tickerTitleTypographyFontSizeMd, tickerTitleTypographyFontSize, tickerTitleTypographyFontSizeUnit,
-            tickerTitleTypographyLetterSpacingSm, tickerTitleTypographyLetterSpacingMd, tickerTitleTypographyLetterSpacing, tickerTitleTypographyLetterSpacingUnit,
-            tickerTitleTypographyLineHeightSm, tickerTitleTypographyLineHeightMd, tickerTitleTypographyLineHeight, tickerTitleTypographyLineHeightUnit
-        )}
+                tickerTitleTypographyFontSizeSm, tickerTitleTypographyFontSizeMd, tickerTitleTypographyFontSize, tickerTitleTypographyFontSizeUnit,
+                tickerTitleTypographyLetterSpacingSm, tickerTitleTypographyLetterSpacingMd, tickerTitleTypographyLetterSpacing, tickerTitleTypographyLetterSpacingUnit,
+                tickerTitleTypographyLineHeightSm, tickerTitleTypographyLineHeightMd, tickerTitleTypographyLineHeight, tickerTitleTypographyLineHeightUnit
+            )}
 
         ${responsiveTypographyVars('ticker-content-typo', tickerContentTypographyFamily, tickerContentTypographyWeight, tickerContentTypographyTextTransform, tickerContentTypographyTextDecoration,
-            tickerContentTypographyFontSizeSm, tickerContentTypographyFontSizeMd, tickerContentTypographyFontSize, tickerContentTypographyFontSizeUnit,
-            tickerContentTypographyLetterSpacingSm, tickerContentTypographyLetterSpacingMd, tickerContentTypographyLetterSpacing, tickerContentTypographyLetterSpacingUnit,
-            tickerContentTypographyLineHeightSm, tickerContentTypographyLineHeightMd, tickerContentTypographyLineHeight, tickerContentTypographyLineHeightUnit
-        )}
+                tickerContentTypographyFontSizeSm, tickerContentTypographyFontSizeMd, tickerContentTypographyFontSize, tickerContentTypographyFontSizeUnit,
+                tickerContentTypographyLetterSpacingSm, tickerContentTypographyLetterSpacingMd, tickerContentTypographyLetterSpacing, tickerContentTypographyLetterSpacingUnit,
+                tickerContentTypographyLineHeightSm, tickerContentTypographyLineHeightMd, tickerContentTypographyLineHeight, tickerContentTypographyLineHeightUnit
+            )}
 
         ${tickerTitleBgColor ? '--sb-ticker-title-bg-color: ' + tickerTitleBgColor + ';' : ''}
         ${tickerTitleColor ? '--sb-ticker-title-color: ' + tickerTitleColor + ';' : ''}
@@ -214,7 +214,7 @@ export default function Edit({ attributes, setAttributes }) {
         ${navHoverBgColor ? '--sb-nav-hover-bg-color: ' + navHoverBgColor + ';' : ''}
         ${navIconHoverColor ? '--sb-nav-icon-hover-color: ' + navIconHoverColor + ';' : ''}
     }`
-    setAttributes({ sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "") });
+    setAttributes({sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "")});
 
     const allTaxonomies = useSelect((select) => {
         var allTax = [];
@@ -336,7 +336,7 @@ export default function Edit({ attributes, setAttributes }) {
                 <div className="sb-field sb-head-panel-tabs">
                     <div className="sb-panel-tabs-wrap">
                         <Button
-                            className={classnames('sb-panel-tab', { 'active-tab': 'layout' === activeTab })}
+                            className={classnames('sb-panel-tab', {'active-tab': 'layout' === activeTab})}
                             onClick={() => setActiveTab('layout')}
                         >
                             <span className="dashicons">
@@ -346,7 +346,7 @@ export default function Edit({ attributes, setAttributes }) {
                         </Button>
 
                         <Button
-                            className={classnames('sb-panel-tab', { 'active-tab': 'style' === activeTab })}
+                            className={classnames('sb-panel-tab', {'active-tab': 'style' === activeTab})}
                             onClick={() => setActiveTab('style')}
                         >
                             <span className="dashicons">
@@ -356,7 +356,7 @@ export default function Edit({ attributes, setAttributes }) {
                         </Button>
 
                         <Button
-                            className={classnames('sb-panel-tab', { 'active-tab': 'advanced' === activeTab })}
+                            className={classnames('sb-panel-tab', {'active-tab': 'advanced' === activeTab})}
                             onClick={() => setActiveTab('advanced')}
                         >
                             <span className="dashicons">
@@ -375,18 +375,18 @@ export default function Edit({ attributes, setAttributes }) {
                                     <TextControl
                                         label={__('Title', 'smart-blocks')}
                                         value={tickerTitle}
-                                        onChange={(tickerTitle) => setAttributes({ tickerTitle })}
+                                        onChange={(tickerTitle) => setAttributes({tickerTitle})}
                                     />
                                     <ToggleControl
                                         label={__('Autoplay', 'smart-blocks')}
                                         checked={autoplay}
-                                        onChange={(autoplay) => setAttributes({ autoplay })}
+                                        onChange={(autoplay) => setAttributes({autoplay})}
                                     />
                                     {autoplay && (
                                         <RangeSliderControl
                                             label={__('Ticker Pause Duration', 'smart-blocks')}
                                             value={pause}
-                                            setValue={(pause) => setAttributes({ pause })}
+                                            setValue={(pause) => setAttributes({pause})}
                                             min={1}
                                             max={20}
                                         />)
@@ -400,51 +400,51 @@ export default function Edit({ attributes, setAttributes }) {
                                     <SelectControl
                                         label={__('Source', 'smart-blocks')}
                                         value={postsPostType}
-                                        onChange={(postsPostType) => setAttributes({ postsPostType })}
+                                        onChange={(postsPostType) => setAttributes({postsPostType})}
                                         options={allPostTypes}
                                     />
 
                                     <QueryTaxonomyControls
                                         value={categories}
                                         postType={postsPostType}
-                                        onChange={(categories) => setAttributes({ categories })}
+                                        onChange={(categories) => setAttributes({categories})}
                                     />
 
                                     <MultiSelectControl
                                         label={__('Exclude Posts', 'smart-blocks')}
                                         options={allPostsSelect}
                                         value={excludePosts}
-                                        onChange={(excludePosts) => setAttributes({ excludePosts })}
+                                        onChange={(excludePosts) => setAttributes({excludePosts})}
                                     />
 
                                     <SelectControl
                                         label={__('Order By', 'smart-blocks')}
                                         value={orderBy}
-                                        onChange={(orderBy) => setAttributes({ orderBy })}
+                                        onChange={(orderBy) => setAttributes({orderBy})}
                                         options={[
-                                            { value: 'date', label: __('Date', 'smart-blocks') },
-                                            { value: 'modified', label: __('Last Modified Date', 'smart-blocks') },
-                                            { value: 'rand', label: __('Rand', 'smart-blocks') },
-                                            { value: 'comment_count', label: __('Comment Count', 'smart-blocks') },
-                                            { value: 'title', label: __('Title', 'smart-blocks') },
-                                            { value: 'author', label: __('Show Post Author', 'smart-blocks') }
+                                            {value: 'date', label: __('Date', 'smart-blocks')},
+                                            {value: 'modified', label: __('Last Modified Date', 'smart-blocks')},
+                                            {value: 'rand', label: __('Rand', 'smart-blocks')},
+                                            {value: 'comment_count', label: __('Comment Count', 'smart-blocks')},
+                                            {value: 'title', label: __('Title', 'smart-blocks')},
+                                            {value: 'author', label: __('Show Post Author', 'smart-blocks')}
                                         ]}
                                     />
 
                                     <SelectControl
                                         label={__('Order', 'smart-blocks')}
                                         value={order}
-                                        onChange={(order) => setAttributes({ order })}
+                                        onChange={(order) => setAttributes({order})}
                                         options={[
-                                            { value: 'desc', label: __('Descending', 'smart-blocks') },
-                                            { value: 'asc', label: __('Ascending', 'smart-blocks') }
+                                            {value: 'desc', label: __('Descending', 'smart-blocks')},
+                                            {value: 'asc', label: __('Ascending', 'smart-blocks')}
                                         ]}
                                     />
 
                                     <RangeSliderControl
                                         label={__('Offset', 'smart-blocks')}
                                         value={offset}
-                                        setValue={(offset) => setAttributes({ offset })}
+                                        setValue={(offset) => setAttributes({offset})}
                                         min={0}
                                         max={10}
                                     />
@@ -452,7 +452,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     <RangeSliderControl
                                         label={__('No of Posts', 'smart-blocks')}
                                         value={noOfPosts}
-                                        setValue={(noOfPosts) => setAttributes({ noOfPosts })}
+                                        setValue={(noOfPosts) => setAttributes({noOfPosts})}
                                         min={0}
                                         max={20}
                                     />
@@ -467,49 +467,49 @@ export default function Edit({ attributes, setAttributes }) {
                                     <TypographyControl
                                         label={__('Typography', 'smart-blocks')}
                                         valueFamily={tickerTitleTypographyFamily}
-                                        setValueFamily={value => setAttributes({ tickerTitleTypographyFamily: value })}
+                                        setValueFamily={value => setAttributes({tickerTitleTypographyFamily: value})}
                                         valueWeight={tickerTitleTypographyWeight}
-                                        setValueWeight={value => setAttributes({ tickerTitleTypographyWeight: value })}
+                                        setValueWeight={value => setAttributes({tickerTitleTypographyWeight: value})}
                                         valueTextTransform={tickerTitleTypographyTextTransform}
-                                        setValueTextTransform={value => setAttributes({ tickerTitleTypographyTextTransform: value })}
+                                        setValueTextTransform={value => setAttributes({tickerTitleTypographyTextTransform: value})}
                                         valueTextDecoration={tickerTitleTypographyTextDecoration}
-                                        setValueTextDecoration={value => setAttributes({ tickerTitleTypographyTextDecoration: value })}
+                                        setValueTextDecoration={value => setAttributes({tickerTitleTypographyTextDecoration: value})}
                                         valueFontSizeSm={tickerTitleTypographyFontSizeSm}
-                                        setValueFontSizeSm={value => setAttributes({ tickerTitleTypographyFontSizeSm: value })}
+                                        setValueFontSizeSm={value => setAttributes({tickerTitleTypographyFontSizeSm: value})}
                                         valueFontSizeMd={tickerTitleTypographyFontSizeMd}
-                                        setValueFontSizeMd={value => setAttributes({ tickerTitleTypographyFontSizeMd: value })}
+                                        setValueFontSizeMd={value => setAttributes({tickerTitleTypographyFontSizeMd: value})}
                                         valueFontSize={tickerTitleTypographyFontSize}
-                                        setValueFontSize={value => setAttributes({ tickerTitleTypographyFontSize: value })}
+                                        setValueFontSize={value => setAttributes({tickerTitleTypographyFontSize: value})}
                                         valueFontSizeUnit={tickerTitleTypographyFontSizeUnit}
-                                        setValueFontSizeUnit={value => setAttributes({ tickerTitleTypographyFontSizeUnit: value })}
+                                        setValueFontSizeUnit={value => setAttributes({tickerTitleTypographyFontSizeUnit: value})}
                                         valueLetterSpacingSm={tickerTitleTypographyLetterSpacingSm}
-                                        setValueLetterSpacingSm={value => setAttributes({ tickerTitleTypographyLetterSpacingSm: value })}
+                                        setValueLetterSpacingSm={value => setAttributes({tickerTitleTypographyLetterSpacingSm: value})}
                                         valueLetterSpacingMd={tickerTitleTypographyLetterSpacingMd}
-                                        setValueLetterSpacingMd={value => setAttributes({ tickerTitleTypographyLetterSpacingMd: value })}
+                                        setValueLetterSpacingMd={value => setAttributes({tickerTitleTypographyLetterSpacingMd: value})}
                                         valueLetterSpacing={tickerTitleTypographyLetterSpacing}
-                                        setValueLetterSpacing={value => setAttributes({ tickerTitleTypographyLetterSpacing: value })}
+                                        setValueLetterSpacing={value => setAttributes({tickerTitleTypographyLetterSpacing: value})}
                                         valueLetterSpacingUnit={tickerTitleTypographyLetterSpacingUnit}
-                                        setValueLetterSpacingUnit={value => setAttributes({ tickerTitleTypographyLetterSpacingUnit: value })}
+                                        setValueLetterSpacingUnit={value => setAttributes({tickerTitleTypographyLetterSpacingUnit: value})}
                                         valueLineHeightSm={tickerTitleTypographyLineHeightSm}
-                                        setValueLineHeightSm={value => setAttributes({ tickerTitleTypographyLineHeightSm: value })}
+                                        setValueLineHeightSm={value => setAttributes({tickerTitleTypographyLineHeightSm: value})}
                                         valueLineHeightMd={tickerTitleTypographyLineHeightMd}
-                                        setValueLineHeightMd={value => setAttributes({ tickerTitleTypographyLineHeightMd: value })}
+                                        setValueLineHeightMd={value => setAttributes({tickerTitleTypographyLineHeightMd: value})}
                                         valueLineHeight={tickerTitleTypographyLineHeight}
-                                        setValueLineHeight={value => setAttributes({ tickerTitleTypographyLineHeight: value })}
+                                        setValueLineHeight={value => setAttributes({tickerTitleTypographyLineHeight: value})}
                                         valueLineHeightUnit={tickerTitleTypographyLineHeightUnit}
-                                        setValueLineHeightUnit={value => setAttributes({ tickerTitleTypographyLineHeightUnit: value })}
+                                        setValueLineHeightUnit={value => setAttributes({tickerTitleTypographyLineHeightUnit: value})}
                                     />
                                     <ColorControl
                                         label={__('Background Color', 'smart-blocks')}
                                         enableAlpha
                                         value={tickerTitleBgColor}
-                                        setValue={(tickerTitleBgColor) => setAttributes({ tickerTitleBgColor })}
+                                        setValue={(tickerTitleBgColor) => setAttributes({tickerTitleBgColor})}
                                     />
                                     <ColorControl
                                         label={__('Text Color', 'smart-blocks')}
                                         enableAlpha
                                         value={tickerTitleColor}
-                                        setValue={(tickerTitleColor) => setAttributes({ tickerTitleColor })}
+                                        setValue={(tickerTitleColor) => setAttributes({tickerTitleColor})}
                                     />
                                 </PanelBody>
                                 <PanelBody
@@ -519,55 +519,55 @@ export default function Edit({ attributes, setAttributes }) {
                                     <TypographyControl
                                         label={__('Typography', 'smart-blocks')}
                                         valueFamily={tickerContentTypographyFamily}
-                                        setValueFamily={value => setAttributes({ tickerContentTypographyFamily: value })}
+                                        setValueFamily={value => setAttributes({tickerContentTypographyFamily: value})}
                                         valueWeight={tickerContentTypographyWeight}
-                                        setValueWeight={value => setAttributes({ tickerContentTypographyWeight: value })}
+                                        setValueWeight={value => setAttributes({tickerContentTypographyWeight: value})}
                                         valueTextTransform={tickerContentTypographyTextTransform}
-                                        setValueTextTransform={value => setAttributes({ tickerContentTypographyTextTransform: value })}
+                                        setValueTextTransform={value => setAttributes({tickerContentTypographyTextTransform: value})}
                                         valueTextDecoration={tickerContentTypographyTextDecoration}
-                                        setValueTextDecoration={value => setAttributes({ tickerContentTypographyTextDecoration: value })}
+                                        setValueTextDecoration={value => setAttributes({tickerContentTypographyTextDecoration: value})}
                                         valueFontSizeSm={tickerContentTypographyFontSizeSm}
-                                        setValueFontSizeSm={value => setAttributes({ tickerContentTypographyFontSizeSm: value })}
+                                        setValueFontSizeSm={value => setAttributes({tickerContentTypographyFontSizeSm: value})}
                                         valueFontSizeMd={tickerContentTypographyFontSizeMd}
-                                        setValueFontSizeMd={value => setAttributes({ tickerContentTypographyFontSizeMd: value })}
+                                        setValueFontSizeMd={value => setAttributes({tickerContentTypographyFontSizeMd: value})}
                                         valueFontSize={tickerContentTypographyFontSize}
-                                        setValueFontSize={value => setAttributes({ tickerContentTypographyFontSize: value })}
+                                        setValueFontSize={value => setAttributes({tickerContentTypographyFontSize: value})}
                                         valueFontSizeUnit={tickerContentTypographyFontSizeUnit}
-                                        setValueFontSizeUnit={value => setAttributes({ tickerContentTypographyFontSizeUnit: value })}
+                                        setValueFontSizeUnit={value => setAttributes({tickerContentTypographyFontSizeUnit: value})}
                                         valueLetterSpacingSm={tickerContentTypographyLetterSpacingSm}
-                                        setValueLetterSpacingSm={value => setAttributes({ tickerContentTypographyLetterSpacingSm: value })}
+                                        setValueLetterSpacingSm={value => setAttributes({tickerContentTypographyLetterSpacingSm: value})}
                                         valueLetterSpacingMd={tickerContentTypographyLetterSpacingMd}
-                                        setValueLetterSpacingMd={value => setAttributes({ tickerContentTypographyLetterSpacingMd: value })}
+                                        setValueLetterSpacingMd={value => setAttributes({tickerContentTypographyLetterSpacingMd: value})}
                                         valueLetterSpacing={tickerContentTypographyLetterSpacing}
-                                        setValueLetterSpacing={value => setAttributes({ tickerContentTypographyLetterSpacing: value })}
+                                        setValueLetterSpacing={value => setAttributes({tickerContentTypographyLetterSpacing: value})}
                                         valueLetterSpacingUnit={tickerContentTypographyLetterSpacingUnit}
-                                        setValueLetterSpacingUnit={value => setAttributes({ tickerContentTypographyLetterSpacingUnit: value })}
+                                        setValueLetterSpacingUnit={value => setAttributes({tickerContentTypographyLetterSpacingUnit: value})}
                                         valueLineHeightSm={tickerContentTypographyLineHeightSm}
-                                        setValueLineHeightSm={value => setAttributes({ tickerContentTypographyLineHeightSm: value })}
+                                        setValueLineHeightSm={value => setAttributes({tickerContentTypographyLineHeightSm: value})}
                                         valueLineHeightMd={tickerContentTypographyLineHeightMd}
-                                        setValueLineHeightMd={value => setAttributes({ tickerContentTypographyLineHeightMd: value })}
+                                        setValueLineHeightMd={value => setAttributes({tickerContentTypographyLineHeightMd: value})}
                                         valueLineHeight={tickerContentTypographyLineHeight}
-                                        setValueLineHeight={value => setAttributes({ tickerContentTypographyLineHeight: value })}
+                                        setValueLineHeight={value => setAttributes({tickerContentTypographyLineHeight: value})}
                                         valueLineHeightUnit={tickerContentTypographyLineHeightUnit}
-                                        setValueLineHeightUnit={value => setAttributes({ tickerContentTypographyLineHeightUnit: value })}
+                                        setValueLineHeightUnit={value => setAttributes({tickerContentTypographyLineHeightUnit: value})}
                                     />
                                     <ColorControl
                                         label={__('Background Color', 'smart-blocks')}
                                         enableAlpha
                                         value={tickerContentBgColor}
-                                        setValue={(tickerContentBgColor) => setAttributes({ tickerContentBgColor })}
+                                        setValue={(tickerContentBgColor) => setAttributes({tickerContentBgColor})}
                                     />
                                     <ColorControl
                                         label={__('Text Color', 'smart-blocks')}
                                         enableAlpha
                                         value={tickerContentColor}
-                                        setValue={(tickerContentColor) => setAttributes({ tickerContentColor })}
+                                        setValue={(tickerContentColor) => setAttributes({tickerContentColor})}
                                     />
                                     <ColorControl
                                         label={__('Text Color (Hover)', 'smart-blocks')}
                                         enableAlpha
                                         value={tickerContentHoverColor}
-                                        setValue={(tickerContentHoverColor) => setAttributes({ tickerContentHoverColor })}
+                                        setValue={(tickerContentHoverColor) => setAttributes({tickerContentHoverColor})}
                                     />
                                 </PanelBody>
                                 <PanelBody
@@ -580,13 +580,13 @@ export default function Edit({ attributes, setAttributes }) {
                                                 label={__('Background Color', 'smart-blocks')}
                                                 enableAlpha
                                                 value={navNormalBgColor}
-                                                setValue={(navNormalBgColor) => setAttributes({ navNormalBgColor })}
+                                                setValue={(navNormalBgColor) => setAttributes({navNormalBgColor})}
                                             />
                                             <ColorControl
                                                 label={__('Icon Color', 'smart-blocks')}
                                                 enableAlpha
                                                 value={navIconNormalColor}
-                                                setValue={(navIconNormalColor) => setAttributes({ navIconNormalColor })}
+                                                setValue={(navIconNormalColor) => setAttributes({navIconNormalColor})}
                                             />
                                         </div>
                                         <div tabTitle={__("Hover", 'smart-blocks')}>
@@ -594,13 +594,13 @@ export default function Edit({ attributes, setAttributes }) {
                                                 label={__('Background Color(Hover)', 'smart-blocks')}
                                                 enableAlpha
                                                 value={navHoverBgColor}
-                                                setValue={(navHoverBgColor) => setAttributes({ navHoverBgColor })}
+                                                setValue={(navHoverBgColor) => setAttributes({navHoverBgColor})}
                                             />
                                             <ColorControl
                                                 label={__('Text Color(Hover)', 'smart-blocks')}
                                                 enableAlpha
                                                 value={navIconHoverColor}
-                                                setValue={(navIconHoverColor) => setAttributes({ navIconHoverColor })}
+                                                setValue={(navIconHoverColor) => setAttributes({navIconHoverColor})}
                                             />
                                         </div>
                                     </Tabs>
@@ -617,35 +617,35 @@ export default function Edit({ attributes, setAttributes }) {
                                         min="0"
                                         max="100"
                                         dimensionTop={blockMarginTop}
-                                        setDimensionTop={value => setAttributes({ blockMarginTop: value })}
+                                        setDimensionTop={value => setAttributes({blockMarginTop: value})}
                                         dimensionMdTop={blockMarginMdTop}
-                                        setDimensionMdTop={value => setAttributes({ blockMarginMdTop: value })}
+                                        setDimensionMdTop={value => setAttributes({blockMarginMdTop: value})}
                                         dimensionSmTop={blockMarginSmTop}
-                                        setDimensionSmTop={value => setAttributes({ blockMarginSmTop: value })}
+                                        setDimensionSmTop={value => setAttributes({blockMarginSmTop: value})}
 
                                         dimensionLeft={blockMarginLeft}
-                                        setDimensionLeft={value => setAttributes({ blockMarginLeft: value })}
+                                        setDimensionLeft={value => setAttributes({blockMarginLeft: value})}
                                         dimensionMdLeft={blockMarginMdLeft}
-                                        setDimensionMdLeft={value => setAttributes({ blockMarginMdLeft: value })}
+                                        setDimensionMdLeft={value => setAttributes({blockMarginMdLeft: value})}
                                         dimensionSmLeft={blockMarginSmLeft}
-                                        setDimensionSmLeft={value => setAttributes({ blockMarginSmLeft: value })}
+                                        setDimensionSmLeft={value => setAttributes({blockMarginSmLeft: value})}
 
                                         dimensionRight={blockMarginRight}
-                                        setDimensionRight={value => setAttributes({ blockMarginRight: value })}
+                                        setDimensionRight={value => setAttributes({blockMarginRight: value})}
                                         dimensionMdRight={blockMarginMdRight}
-                                        setDimensionMdRight={value => setAttributes({ blockMarginMdRight: value })}
+                                        setDimensionMdRight={value => setAttributes({blockMarginMdRight: value})}
                                         dimensionSmRight={blockMarginSmRight}
-                                        setDimensionSmRight={value => setAttributes({ blockMarginSmRight: value })}
+                                        setDimensionSmRight={value => setAttributes({blockMarginSmRight: value})}
 
                                         dimensionBottom={blockMarginBottom}
-                                        setDimensionBottom={value => setAttributes({ blockMarginBottom: value })}
+                                        setDimensionBottom={value => setAttributes({blockMarginBottom: value})}
                                         dimensionMdBottom={blockMarginMdBottom}
-                                        setDimensionMdBottom={value => setAttributes({ blockMarginMdBottom: value })}
+                                        setDimensionMdBottom={value => setAttributes({blockMarginMdBottom: value})}
                                         dimensionSmBottom={blockMarginSmBottom}
-                                        setDimensionSmBottom={value => setAttributes({ blockMarginSmBottom: value })}
+                                        setDimensionSmBottom={value => setAttributes({blockMarginSmBottom: value})}
 
                                         unit={blockMarginUnit}
-                                        setUnit={value => setAttributes({ blockMarginUnit: value })}
+                                        setUnit={value => setAttributes({blockMarginUnit: value})}
                                         responsive={!0}
                                     />
                                     <DimensionControl
@@ -653,35 +653,35 @@ export default function Edit({ attributes, setAttributes }) {
                                         min="0"
                                         max="100"
                                         dimensionTop={blockPaddingTop}
-                                        setDimensionTop={value => setAttributes({ blockPaddingTop: value })}
+                                        setDimensionTop={value => setAttributes({blockPaddingTop: value})}
                                         dimensionMdTop={blockPaddingMdTop}
-                                        setDimensionMdTop={value => setAttributes({ blockPaddingMdTop: value })}
+                                        setDimensionMdTop={value => setAttributes({blockPaddingMdTop: value})}
                                         dimensionSmTop={blockPaddingSmTop}
-                                        setDimensionSmTop={value => setAttributes({ blockPaddingSmTop: value })}
+                                        setDimensionSmTop={value => setAttributes({blockPaddingSmTop: value})}
 
                                         dimensionLeft={blockPaddingLeft}
-                                        setDimensionLeft={value => setAttributes({ blockPaddingLeft: value })}
+                                        setDimensionLeft={value => setAttributes({blockPaddingLeft: value})}
                                         dimensionMdLeft={blockPaddingMdLeft}
-                                        setDimensionMdLeft={value => setAttributes({ blockPaddingMdLeft: value })}
+                                        setDimensionMdLeft={value => setAttributes({blockPaddingMdLeft: value})}
                                         dimensionSmLeft={blockPaddingSmLeft}
-                                        setDimensionSmLeft={value => setAttributes({ blockPaddingSmLeft: value })}
+                                        setDimensionSmLeft={value => setAttributes({blockPaddingSmLeft: value})}
 
                                         dimensionRight={blockPaddingRight}
-                                        setDimensionRight={value => setAttributes({ blockPaddingRight: value })}
+                                        setDimensionRight={value => setAttributes({blockPaddingRight: value})}
                                         dimensionMdRight={blockPaddingMdRight}
-                                        setDimensionMdRight={value => setAttributes({ blockPaddingMdRight: value })}
+                                        setDimensionMdRight={value => setAttributes({blockPaddingMdRight: value})}
                                         dimensionSmRight={blockPaddingSmRight}
-                                        setDimensionSmRight={value => setAttributes({ blockPaddingSmRight: value })}
+                                        setDimensionSmRight={value => setAttributes({blockPaddingSmRight: value})}
 
                                         dimensionBottom={blockPaddingBottom}
-                                        setDimensionBottom={value => setAttributes({ blockPaddingBottom: value })}
+                                        setDimensionBottom={value => setAttributes({blockPaddingBottom: value})}
                                         dimensionMdBottom={blockPaddingMdBottom}
-                                        setDimensionMdBottom={value => setAttributes({ blockPaddingMdBottom: value })}
+                                        setDimensionMdBottom={value => setAttributes({blockPaddingMdBottom: value})}
                                         dimensionSmBottom={blockPaddingSmBottom}
-                                        setDimensionSmBottom={value => setAttributes({ blockPaddingSmBottom: value })}
+                                        setDimensionSmBottom={value => setAttributes({blockPaddingSmBottom: value})}
 
                                         unit={blockPaddingUnit}
-                                        setUnit={value => setAttributes({ blockPaddingUnit: value })}
+                                        setUnit={value => setAttributes({blockPaddingUnit: value})}
                                         responsive={!0}
                                     />
                                 </PanelBody>
@@ -694,127 +694,127 @@ export default function Edit({ attributes, setAttributes }) {
                                         <div tabTitle={__("Normal", 'smart-blocks')}>
                                             <BorderControl
                                                 value={borderNormal}
-                                                setValue={(borderNormal) => setAttributes({ borderNormal })}
+                                                setValue={(borderNormal) => setAttributes({borderNormal})}
                                             />
                                             {borderNormal && (
                                                 <ColorControl
                                                     label={__('Border Color', 'smart-blocks')}
                                                     enableAlpha
                                                     value={borderNormalColor}
-                                                    setValue={(borderNormalColor) => setAttributes({ borderNormalColor })}
+                                                    setValue={(borderNormalColor) => setAttributes({borderNormalColor})}
                                                 />
                                             )}
                                             <DimensionControl
                                                 label={__('Border Width', 'smart-blocks')}
                                                 dimensionTop={borderNormalWidthTop}
-                                                setDimensionTop={value => setAttributes({ borderNormalWidthTop: value })}
+                                                setDimensionTop={value => setAttributes({borderNormalWidthTop: value})}
 
                                                 dimensionLeft={borderNormalWidthLeft}
-                                                setDimensionLeft={value => setAttributes({ borderNormalWidthLeft: value })}
+                                                setDimensionLeft={value => setAttributes({borderNormalWidthLeft: value})}
 
                                                 dimensionRight={borderNormalWidthRight}
-                                                setDimensionRight={value => setAttributes({ borderNormalWidthRight: value })}
+                                                setDimensionRight={value => setAttributes({borderNormalWidthRight: value})}
 
                                                 dimensionBottom={borderNormalWidthBottom}
-                                                setDimensionBottom={value => setAttributes({ borderNormalWidthBottom: value })}
+                                                setDimensionBottom={value => setAttributes({borderNormalWidthBottom: value})}
 
                                                 unit={borderNormalWidthUnit}
-                                                setUnit={value => setAttributes({ borderNormalWidthUnit: value })}
+                                                setUnit={value => setAttributes({borderNormalWidthUnit: value})}
                                                 units={['px', 'em']}
                                             />
                                             <DimensionControl
                                                 label={__('Border Radius', 'smart-blocks')}
                                                 dimensionTop={borderNormalRadiusTop}
-                                                setDimensionTop={value => setAttributes({ borderNormalRadiusTop: value })}
+                                                setDimensionTop={value => setAttributes({borderNormalRadiusTop: value})}
 
                                                 dimensionLeft={borderNormalRadiusLeft}
-                                                setDimensionLeft={value => setAttributes({ borderNormalRadiusLeft: value })}
+                                                setDimensionLeft={value => setAttributes({borderNormalRadiusLeft: value})}
 
                                                 dimensionRight={borderNormalRadiusRight}
-                                                setDimensionRight={value => setAttributes({ borderNormalRadiusRight: value })}
+                                                setDimensionRight={value => setAttributes({borderNormalRadiusRight: value})}
 
                                                 dimensionBottom={borderNormalRadiusBottom}
-                                                setDimensionBottom={value => setAttributes({ borderNormalRadiusBottom: value })}
+                                                setDimensionBottom={value => setAttributes({borderNormalRadiusBottom: value})}
 
                                                 unit={borderNormalRadiusUnit}
-                                                setUnit={value => setAttributes({ borderNormalRadiusUnit: value })}
+                                                setUnit={value => setAttributes({borderNormalRadiusUnit: value})}
                                             />
                                             <BoxShadowControl
                                                 valueHorizontal={borderNormalBoxShadowHorizontal}
-                                                setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({ borderNormalBoxShadowHorizontal })}
+                                                setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({borderNormalBoxShadowHorizontal})}
                                                 valueVertical={borderNormalBoxShadowVertical}
-                                                setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({ borderNormalBoxShadowVertical })}
+                                                setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({borderNormalBoxShadowVertical})}
                                                 valueBlur={borderNormalBoxShadowBlur}
-                                                setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({ borderNormalBoxShadowBlur })}
+                                                setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({borderNormalBoxShadowBlur})}
                                                 valueSpread={borderNormalBoxShadowSpread}
-                                                setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({ borderNormalBoxShadowSpread })}
+                                                setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({borderNormalBoxShadowSpread})}
                                                 valueColor={borderNormalBoxShadowColor}
-                                                setValueColor={(borderNormalBoxShadowColor) => setAttributes({ borderNormalBoxShadowColor })}
+                                                setValueColor={(borderNormalBoxShadowColor) => setAttributes({borderNormalBoxShadowColor})}
                                                 valueInset={borderNormalBoxShadowInset}
-                                                setValueInset={(borderNormalBoxShadowInset) => setAttributes({ borderNormalBoxShadowInset })}
+                                                setValueInset={(borderNormalBoxShadowInset) => setAttributes({borderNormalBoxShadowInset})}
                                             />
                                         </div>
                                         <div tabTitle={__("Hover", 'smart-blocks')}>
                                             <BorderControl
                                                 value={borderHover}
-                                                setValue={(borderHover) => setAttributes({ borderHover })}
+                                                setValue={(borderHover) => setAttributes({borderHover})}
                                             />
                                             {borderHover && (
                                                 <ColorControl
                                                     label={__('Border Color', 'smart-blocks')}
                                                     enableAlpha
                                                     value={borderHoverColor}
-                                                    setValue={(borderHoverColor) => setAttributes({ borderHoverColor })}
+                                                    setValue={(borderHoverColor) => setAttributes({borderHoverColor})}
                                                 />
                                             )}
                                             <DimensionControl
                                                 label={__('Border Width', 'smart-blocks')}
                                                 dimensionTop={borderHoverWidthTop}
-                                                setDimensionTop={value => setAttributes({ borderHoverWidthTop: value })}
+                                                setDimensionTop={value => setAttributes({borderHoverWidthTop: value})}
 
                                                 dimensionLeft={borderHoverWidthLeft}
-                                                setDimensionLeft={value => setAttributes({ borderHoverWidthLeft: value })}
+                                                setDimensionLeft={value => setAttributes({borderHoverWidthLeft: value})}
 
                                                 dimensionRight={borderHoverWidthRight}
-                                                setDimensionRight={value => setAttributes({ borderHoverWidthRight: value })}
+                                                setDimensionRight={value => setAttributes({borderHoverWidthRight: value})}
 
                                                 dimensionBottom={borderHoverWidthBottom}
-                                                setDimensionBottom={value => setAttributes({ borderHoverWidthBottom: value })}
+                                                setDimensionBottom={value => setAttributes({borderHoverWidthBottom: value})}
 
                                                 unit={borderHoverWidthUnit}
-                                                setUnit={value => setAttributes({ borderHoverWidthUnit: value })}
+                                                setUnit={value => setAttributes({borderHoverWidthUnit: value})}
                                                 units={['px', 'em']}
                                             />
                                             <DimensionControl
                                                 label={__('Border Radius', 'smart-blocks')}
                                                 dimensionTop={borderHoverRadiusTop}
-                                                setDimensionTop={value => setAttributes({ borderHoverRadiusTop: value })}
+                                                setDimensionTop={value => setAttributes({borderHoverRadiusTop: value})}
 
                                                 dimensionLeft={borderHoverRadiusLeft}
-                                                setDimensionLeft={value => setAttributes({ borderHoverRadiusLeft: value })}
+                                                setDimensionLeft={value => setAttributes({borderHoverRadiusLeft: value})}
 
                                                 dimensionRight={borderHoverRadiusRight}
-                                                setDimensionRight={value => setAttributes({ borderHoverRadiusRight: value })}
+                                                setDimensionRight={value => setAttributes({borderHoverRadiusRight: value})}
 
                                                 dimensionBottom={borderHoverRadiusBottom}
-                                                setDimensionBottom={value => setAttributes({ borderHoverRadiusBottom: value })}
+                                                setDimensionBottom={value => setAttributes({borderHoverRadiusBottom: value})}
 
                                                 unit={borderHoverRadiusUnit}
-                                                setUnit={value => setAttributes({ borderHoverRadiusUnit: value })}
+                                                setUnit={value => setAttributes({borderHoverRadiusUnit: value})}
                                             />
                                             <BoxShadowControl
                                                 valueHorizontal={borderHoverBoxShadowHorizontal}
-                                                setValueHorizontal={(borderHoverBoxShadowHorizontal) => setAttributes({ borderHoverBoxShadowHorizontal })}
+                                                setValueHorizontal={(borderHoverBoxShadowHorizontal) => setAttributes({borderHoverBoxShadowHorizontal})}
                                                 valueVertical={borderHoverBoxShadowVertical}
-                                                setValueVertical={(borderHoverBoxShadowVertical) => setAttributes({ borderHoverBoxShadowVertical })}
+                                                setValueVertical={(borderHoverBoxShadowVertical) => setAttributes({borderHoverBoxShadowVertical})}
                                                 valueBlur={borderHoverBoxShadowBlur}
-                                                setValueBlur={(borderHoverBoxShadowBlur) => setAttributes({ borderHoverBoxShadowBlur })}
+                                                setValueBlur={(borderHoverBoxShadowBlur) => setAttributes({borderHoverBoxShadowBlur})}
                                                 valueSpread={borderHoverBoxShadowSpread}
-                                                setValueSpread={(borderHoverBoxShadowSpread) => setAttributes({ borderHoverBoxShadowSpread })}
+                                                setValueSpread={(borderHoverBoxShadowSpread) => setAttributes({borderHoverBoxShadowSpread})}
                                                 valueColor={borderHoverBoxShadowColor}
-                                                setValueColor={(borderHoverBoxShadowColor) => setAttributes({ borderHoverBoxShadowColor })}
+                                                setValueColor={(borderHoverBoxShadowColor) => setAttributes({borderHoverBoxShadowColor})}
                                                 valueInset={borderHoverBoxShadowInset}
-                                                setValueInset={(borderHoverBoxShadowInset) => setAttributes({ borderHoverBoxShadowInset })}
+                                                setValueInset={(borderHoverBoxShadowInset) => setAttributes({borderHoverBoxShadowInset})}
                                             />
                                         </div>
                                     </Tabs>
@@ -827,7 +827,7 @@ export default function Edit({ attributes, setAttributes }) {
                                         label={__('Background Color', 'smart-blocks')}
                                         enableAlpha
                                         value={blockBgColor}
-                                        setValue={(blockBgColor) => setAttributes({ blockBgColor })}
+                                        setValue={(blockBgColor) => setAttributes({blockBgColor})}
                                     />
                                 </PanelBody>
                             </>

@@ -1,6 +1,6 @@
-import { __ } from '@wordpress/i18n';
+import {__} from '@wordpress/i18n';
 import ResponsiveDropdown from '../utils/responsivedropdown';
-import { useSelect } from '@wordpress/data';
+import {useSelect} from '@wordpress/data';
 
 const RangeSliderControl = ({
     label,
@@ -23,8 +23,8 @@ const RangeSliderControl = ({
     const allUnits = units ? units : ["px", "em", "%"];
 
     const getView = useSelect(select => {
-        const { getView } = select('smart-blocks/data');
-        const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+        const {getView} = select('smart-blocks/data');
+        const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
         return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
     }, []);
 
@@ -64,11 +64,11 @@ const RangeSliderControl = ({
                                 max={unit == '%' ? 100 : max}
                                 value={valueSm}
                                 step={steps ? steps : 1}
-                                onChange={(e) => { setValueSm(e.target.value) }}
+                                onChange={(e) => {setValueSm(e.target.value)}}
                             />
                             <input type="number"
                                 step={steps ? steps : 1}
-                                onChange={(e) => { setValueSm(e.target.value) }}
+                                onChange={(e) => {setValueSm(e.target.value)}}
                                 value={valueSm}
                             />
                         </div>
@@ -80,11 +80,11 @@ const RangeSliderControl = ({
                                 max={unit == '%' ? 100 : max}
                                 value={valueMd}
                                 step={steps ? steps : 1}
-                                onChange={(e) => { setValueMd(e.target.value) }}
+                                onChange={(e) => {setValueMd(e.target.value)}}
                             />
                             <input type="number"
                                 step={steps ? steps : 1}
-                                onChange={(e) => { setValueMd(e.target.value) }}
+                                onChange={(e) => {setValueMd(e.target.value)}}
                                 value={valueMd}
                             />
                         </div>
@@ -96,11 +96,11 @@ const RangeSliderControl = ({
                                 max={unit == '%' ? 100 : max}
                                 value={value}
                                 step={steps ? steps : 1}
-                                onChange={(e) => { setValue(e.target.value) }}
+                                onChange={(e) => {setValue(e.target.value)}}
                             />
                             <input type="number"
                                 step={steps ? steps : 1}
-                                onChange={(e) => { setValue(e.target.value) }}
+                                onChange={(e) => {setValue(e.target.value)}}
                                 value={value}
                             />
                         </div>
@@ -113,11 +113,11 @@ const RangeSliderControl = ({
                             max={unit == '%' ? 100 : max}
                             value={value}
                             step={steps ? steps : 1}
-                            onChange={(e) => { setValue(e.target.value) }}
+                            onChange={(e) => {setValue(e.target.value)}}
                         />
                         <input type="number"
                             step={steps ? steps : 1}
-                            onChange={(e) => { setValue(e.target.value) }}
+                            onChange={(e) => {setValue(e.target.value)}}
                             value={value}
                         />
                     </div>

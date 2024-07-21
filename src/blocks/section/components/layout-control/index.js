@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 
-import { __ } from '@wordpress/i18n';
+import {__} from '@wordpress/i18n';
 import {
 	Button,
 	Path,
@@ -8,8 +8,8 @@ import {
 	SVG,
 	Tooltip
 } from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
-import { Fragment } from '@wordpress/element';
+import {useSelect} from '@wordpress/data';
+import {Fragment} from '@wordpress/element';
 
 import ResponsiveDropdown from '../../../../utils/responsivedropdown';
 
@@ -22,8 +22,8 @@ const LayoutControl = ({
 	columns
 }) => {
 	const getView = useSelect((select) => {
-		const { getView } = select('smart-blocks/data');
-		const { __experimentalGetPreviewDeviceType } = select('core/edit-post') ? select('core/edit-post') : false;
+		const {getView} = select('smart-blocks/data');
+		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
 
 		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
 	}, []);
@@ -54,7 +54,7 @@ const LayoutControl = ({
 						<Button
 							className={classnames(
 								'sb-blocks-column-layout',
-								{ 'selected': 'equal' === value }
+								{'selected': 'equal' === value}
 							)}
 							onClick={() => onClick('equal')}
 						>
@@ -69,7 +69,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'equal' === value }
+									{'selected': 'equal' === value}
 								)}
 								onClick={() => onClick('equal')}
 							>
@@ -84,7 +84,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'oneTwo' === value }
+									{'selected': 'oneTwo' === value}
 								)}
 								onClick={() => onClick('oneTwo')}
 							>
@@ -99,7 +99,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'twoOne' === value }
+									{'selected': 'twoOne' === value}
 								)}
 								onClick={() => onClick('twoOne')}
 							>
@@ -115,7 +115,7 @@ const LayoutControl = ({
 								<Button
 									className={classnames(
 										'sb-blocks-column-layout',
-										{ 'selected': 'collapsedRows' === value }
+										{'selected': 'collapsedRows' === value}
 									)}
 									onClick={() => onClick('collapsedRows')}
 								>
@@ -133,7 +133,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'equal' === value }
+									{'selected': 'equal' === value}
 								)}
 								onClick={() => onClick('equal')}
 							>
@@ -149,7 +149,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'oneOneTwo' === value }
+									{'selected': 'oneOneTwo' === value}
 								)}
 								onClick={() => onClick('oneOneTwo')}
 							>
@@ -165,7 +165,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'twoOneOne' === value }
+									{'selected': 'twoOneOne' === value}
 								)}
 								onClick={() => onClick('twoOneOne')}
 							>
@@ -181,7 +181,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'oneTwoOne' === value }
+									{'selected': 'oneTwoOne' === value}
 								)}
 								onClick={() => onClick('oneTwoOne')}
 							>
@@ -197,7 +197,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'oneThreeOne' === value }
+									{'selected': 'oneThreeOne' === value}
 								)}
 								onClick={() => onClick('oneThreeOne')}
 							>
@@ -214,7 +214,7 @@ const LayoutControl = ({
 								<Button
 									className={classnames(
 										'sb-blocks-column-layout',
-										{ 'selected': 'collapsedRows' === value }
+										{'selected': 'collapsedRows' === value}
 									)}
 									onClick={() => onClick('collapsedRows')}
 								>
@@ -232,7 +232,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'equal' === value }
+									{'selected': 'equal' === value}
 								)}
 								onClick={() => onClick('equal')}
 							>
@@ -251,7 +251,7 @@ const LayoutControl = ({
 									<Button
 										className={classnames(
 											'sb-blocks-column-layout',
-											{ 'selected': 'twoColumnGrid' === value }
+											{'selected': 'twoColumnGrid' === value}
 										)}
 										onClick={() => onClick('twoColumnGrid')}
 									>
@@ -267,7 +267,7 @@ const LayoutControl = ({
 									<Button
 										className={classnames(
 											'sb-blocks-column-layout',
-											{ 'selected': 'collapsedRows' === value }
+											{'selected': 'collapsedRows' === value}
 										)}
 										onClick={() => onClick('collapsedRows')}
 									>
@@ -286,7 +286,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'equal' === value }
+									{'selected': 'equal' === value}
 								)}
 								onClick={() => onClick('equal')}
 							>
@@ -305,7 +305,7 @@ const LayoutControl = ({
 								<Button
 									className={classnames(
 										'sb-blocks-column-layout',
-										{ 'selected': 'collapsedRows' === value }
+										{'selected': 'collapsedRows' === value}
 									)}
 									onClick={() => onClick('collapsedRows')}
 								>
@@ -323,7 +323,7 @@ const LayoutControl = ({
 							<Button
 								className={classnames(
 									'sb-blocks-column-layout',
-									{ 'selected': 'equal' === value }
+									{'selected': 'equal' === value}
 								)}
 								onClick={() => onClick('equal')}
 							>
@@ -344,7 +344,7 @@ const LayoutControl = ({
 									<Button
 										className={classnames(
 											'sb-blocks-column-layout',
-											{ 'selected': 'twoColumnGrid' === value }
+											{'selected': 'twoColumnGrid' === value}
 										)}
 										onClick={() => onClick('twoColumnGrid')}
 									>
@@ -361,7 +361,7 @@ const LayoutControl = ({
 									<Button
 										className={classnames(
 											'sb-blocks-column-layout',
-											{ 'selected': 'threeColumnGrid' === value }
+											{'selected': 'threeColumnGrid' === value}
 										)}
 										onClick={() => onClick('threeColumnGrid')}
 									>
@@ -378,7 +378,7 @@ const LayoutControl = ({
 									<Button
 										className={classnames(
 											'sb-blocks-column-layout',
-											{ 'selected': 'collapsedRows' === value }
+											{'selected': 'collapsedRows' === value}
 										)}
 										onClick={() => onClick('collapsedRows')}
 									>
