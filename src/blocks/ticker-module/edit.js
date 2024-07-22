@@ -1,33 +1,35 @@
-import {RawHTML, useState} from '@wordpress/element';
 import {__} from '@wordpress/i18n';
+import {RawHTML, useState} from '@wordpress/element';
 // eslint-disable-next-line @wordpress/no-unsafe-wp-apis
+import {format, dateI18n, getSettings} from '@wordpress/date';
 import {
+    useBlockProps,
     InspectorControls,
-    store as blockEditorStore,
-    useBlockProps
+    RichText,
+    store as blockEditorStore
 } from '@wordpress/block-editor';
 import {
-    Button,
     PanelBody,
+    ToggleControl,
     TextControl,
-    ToggleControl
+    Button
 } from '@wordpress/components';
 import {useSelect} from '@wordpress/data';
 import classnames from 'classnames';
+import TypographyControl from '../../controls/typography';
+import GoogleFontLoad from '../../utils/googlefontload';
+import ColorControl from '../../controls/color';
+import Tabs from '../../utils/tabs';
+import SelectControl from '../../controls/select';
+import DimensionControl from '../../controls/dimension';
+import QueryTaxonomyControls from '../../utils/querytaxonomycontrols';
+import RangeSliderControl from '../../controls/rangeslider';
+import MultiSelectControl from '../../controls/multiselect';
 import OwlCarousel from 'react-owl-carousel';
 import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';
-import ColorControl from '../../controls/color';
-import DimensionControl from '../../controls/dimension';
-import MultiSelectControl from '../../controls/multiselect';
-import RangeSliderControl from '../../controls/rangeslider';
-import SelectControl from '../../controls/select';
-import TypographyControl from '../../controls/typography';
-import GoogleFontLoad from '../../utils/googlefontload';
-import {boxShadowVars, dimensionVars, responsiveDimensionVars, responsiveTypographyVars} from '../../utils/helper';
-import QueryTaxonomyControls from '../../utils/querytaxonomycontrols';
-import {AdvancedIcon, LayoutIcon, StyleIcon} from '../../utils/svgicons';
-import Tabs from '../../utils/tabs';
+import {responsiveTypographyVars, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
+import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 
 export default function Edit({attributes, setAttributes}) {
     const [activeTab, setActiveTab] = useState('layout');

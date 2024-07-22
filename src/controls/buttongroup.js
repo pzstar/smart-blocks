@@ -1,9 +1,10 @@
-import {
-    Button,
-    ButtonGroup
-} from '@wordpress/components';
-import {useSelect} from '@wordpress/data';
+import {__} from '@wordpress/i18n';
 import ResponsiveDropdown from '../utils/responsivedropdown';
+import {useSelect} from '@wordpress/data';
+import {
+    ButtonGroup,
+    Button
+} from '@wordpress/components';
 
 const ButtonGroupControl = ({
     label,

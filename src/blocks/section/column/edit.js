@@ -1,18 +1,18 @@
-import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
+import classnames from 'classnames';
 import {ResizableBox} from '@wordpress/components';
 import {useViewportMatch} from '@wordpress/compose';
 import {useDispatch, useSelect} from '@wordpress/data';
-import {useEffect, useState} from '@wordpress/element';
-import classnames from 'classnames';
+import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
+import {Fragment, useEffect, useState} from '@wordpress/element';
 
 /**
  * Internal dependencies
  */
-import {blockInit} from '../../../utils/block-utility';
-import {bgVars, boxShadowVars, dimensionVars, responsiveDimensionVars, responsiveSliderVars} from '../../../utils/helper';
-import layouts from '../layouts.js';
 import defaultAttributes from './attributes.js';
+import layouts from '../layouts.js';
 import Inspector from './inspector.js';
+import {blockInit} from '../../../utils/block-utility';
+import {responsiveDimensionVars, dimensionVars, boxShadowVars, bgVars, responsiveSliderVars} from '../../../utils/helper';
 
 export default function Edit({attributes, setAttributes, className, isSelected, clientId, toggleSelection}) {
 	const {updateBlockAttributes} = useDispatch('core/block-editor');

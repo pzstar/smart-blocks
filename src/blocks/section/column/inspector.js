@@ -1,12 +1,13 @@
 import classnames from 'classnames';
 
+import {__} from '@wordpress/i18n';
 import {InspectorControls} from '@wordpress/block-editor';
 import {
 	Button,
-	GradientPicker,
 	PanelBody,
 	RangeControl,
 	SelectControl,
+	GradientPicker,
 	Tooltip
 } from '@wordpress/components';
 import {useSelect} from '@wordpress/data';
@@ -15,28 +16,27 @@ import {
 	useRef,
 	useState
 } from '@wordpress/element';
-import {__} from '@wordpress/i18n';
 
 /**
  * Internal dependencies
  */
-import BorderControl from '../../../controls/border';
-import BoxShadowControl from '../../../controls/boxshadow';
-import ButtonGroupControl from '../../../controls/buttongroup';
-import ColorControl from '../../../controls/color';
 import DimensionControl from '../../../controls/dimension';
+import ColorControl from '../../../controls/color';
 import ImageBackgroundControl from '../../../controls/imagebackground';
-import RangeSliderControl from '../../../controls/rangeslider';
+import BoxShadowControl from '../../../controls/boxshadow';
+import BorderControl from '../../../controls/border';
 import Tabs from '../../../utils/tabs';
+import ButtonGroupControl from '../../../controls/buttongroup';
+import RangeSliderControl from '../../../controls/rangeslider';
 
 import {
+	LayoutIcon,
+	StyleIcon,
 	AdvancedIcon,
+	AlignFlexStart,
 	AlignCenter,
 	AlignFlexEnd,
-	AlignFlexStart,
-	AlignStretch,
-	LayoutIcon,
-	StyleIcon
+	AlignStretch
 } from '../../../utils/svgicons';
 
 const Inspector = ({
@@ -256,13 +256,13 @@ const Inspector = ({
 
 								<div className="sb-field">
 									<ToggleControl
-										label={__('Sticky Container', 'smart-blocks')}
-										checked={stickyContainer}
-										onChange={(stickyContainer) => setAttributes({stickyContainer})}
-									/>
-								</div>
+	                                    label={__('Sticky Container', 'smart-blocks')}
+	                                    checked={stickyContainer}
+	                                    onChange={(stickyContainer) => setAttributes({stickyContainer})}
+	                                />
+                                </div>
 
-								{!!stickyContainer && (
+                                {!!stickyContainer && (
 									<RangeSliderControl
 										label={__('Sticky Top Spacing', 'smart-blocks')}
 										value={stickyTopSpacing}

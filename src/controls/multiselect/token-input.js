@@ -9,7 +9,7 @@ import classnames from 'classnames';
 import {Component} from '@wordpress/element';
 
 class TokenInput extends Component {
-	constructor () {
+	constructor() {
 		super(...arguments);
 		this.onChange = this.onChange.bind(this);
 		this.bindInput = this.bindInput.bind(this);

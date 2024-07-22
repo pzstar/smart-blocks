@@ -1,7 +1,7 @@
 import LazyLoad from 'react-lazy-load';
 
-import {Button} from '@wordpress/components';
 import {__} from '@wordpress/i18n';
+import {Button} from '@wordpress/components';
 
 const Template = ({template, importPreview, importTemplate}) => {
 	return (
