@@ -1,22 +1,22 @@
 import classnames from 'classnames';
 
-import {useViewportMatch} from '@wordpress/compose';
 import {times} from 'lodash';
+import {useViewportMatch} from '@wordpress/compose';
 
-import {InnerBlocks} from '@wordpress/block-editor';
 import {useDispatch, useSelect} from '@wordpress/data';
+import {InnerBlocks} from '@wordpress/block-editor';
 
-import {useEffect} from '@wordpress/element';
+import {useEffect, useState} from '@wordpress/element';
 
 /**
  * Internal dependencies
  */
-import {blockInit} from '../../../utils/block-utility';
-import {bgVars, boxShadowVars, dimensionVars, responsiveDimensionVars, responsiveGapVars, responsiveSliderVars} from '../../../utils/helper';
-import layouts from '../layouts.js';
 import defaultAttributes from './attributes.js';
+import layouts from '../layouts.js';
 import Inspector from './inspector.js';
+import {blockInit} from '../../../utils/block-utility';
 import LayoutSelector from './layoutselector.js';
+import {responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveGapVars, bgVars} from '../../../utils/helper';
 
 const Edit = ({attributes, setAttributes, className, clientId}) => {
 	const {

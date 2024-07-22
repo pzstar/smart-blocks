@@ -8,9 +8,9 @@ import {registerBlockType} from '@wordpress/blocks';
 /**
  * Internal dependencies
  */
-import {Carousel1} from '../../utils/svgicons';
 import Edit from './edit';
 import save from './save';
+import {Carousel1} from '../../utils/svgicons';
 
 import {__} from '@wordpress/i18n';
 

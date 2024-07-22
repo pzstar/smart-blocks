@@ -8,9 +8,9 @@ import {registerBlockType} from '@wordpress/blocks';
 /**
  * Internal dependencies
  */
-import {Tile3} from '../../utils/svgicons';
 import Edit from './edit';
 import save from './save';
+import {Tile3} from '../../utils/svgicons';
 
 import {__} from '@wordpress/i18n';
 

@@ -9,9 +9,9 @@ import attributes from './attributes.js';
 /**
  * Internal dependencies
  */
-import {Tile1} from '../../../utils/svgicons';
 import Edit from './edit';
 import Save from './save';
+import {Tile1} from '../../../utils/svgicons';
 
 import {__} from '@wordpress/i18n';
 

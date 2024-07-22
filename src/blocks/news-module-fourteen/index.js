@@ -8,9 +8,9 @@ import {registerBlockType} from '@wordpress/blocks';
 /**
  * Internal dependencies
  */
-import {News14} from '../../utils/svgicons';
 import Edit from './edit';
 import save from './save';
+import {News14} from '../../utils/svgicons';
 
 import {__} from '@wordpress/i18n';
 

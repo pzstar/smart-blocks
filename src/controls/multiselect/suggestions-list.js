@@ -1,15 +1,15 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames';
-import scrollIntoView from 'dom-scroll-into-view';
 import {map} from 'lodash';
+import scrollIntoView from 'dom-scroll-into-view';
+import classnames from 'classnames';
 
 /**
  * WordPress dependencies
  */
-import {withSafeTimeout} from '@wordpress/compose';
 import {Component} from '@wordpress/element';
+import {withSafeTimeout} from '@wordpress/compose';
 
 class SuggestionsList extends Component {
 	constructor () {

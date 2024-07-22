@@ -1,5 +1,5 @@
-import {ColorPicker, Dropdown, Tooltip} from '@wordpress/components';
 import {__} from '@wordpress/i18n';
+import {Tooltip, Dropdown, ColorPicker} from '@wordpress/components';
 import {ClearIcon} from '../utils/svgicons';
 const ColorControl = ({label, value, setValue, enableAlpha}) => {
     const onChangeHandler = (e) => {

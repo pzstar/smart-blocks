@@ -1,6 +1,8 @@
-import {useSelect} from '@wordpress/data';
-import {useState} from '@wordpress/element';
+import {__} from '@wordpress/i18n';
 import ResponsiveDropdown from '../utils/responsivedropdown';
+import {useState} from '@wordpress/element';
+import {DesktopIcon, TabletIcon, PhoneIcon} from '../utils/svgicons';
+import {useSelect} from '@wordpress/data';
 
 const GapControl = ({
 	min,

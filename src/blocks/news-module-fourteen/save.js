@@ -3,6 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
+import {__} from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -10,6 +11,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
+import {useBlockProps} from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should

@@ -1,6 +1,7 @@
 import {__} from '@wordpress/i18n';
 
-import {Button, Path, Placeholder, Rect, SVG, Tooltip} from '@wordpress/components';
+import {Button, Dashicon, Icon, Path, Placeholder, Rect, SVG, Tooltip} from '@wordpress/components';
+import {useState} from '@wordpress/element';
 
 const LayoutSelector = ({clientId, setupColumns}) => {
 	return (

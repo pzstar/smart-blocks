@@ -1,5 +1,6 @@
-import {useSelect} from '@wordpress/data';
+import {__} from '@wordpress/i18n';
 import ResponsiveDropdown from '../utils/responsivedropdown';
+import {useSelect} from '@wordpress/data';
 
 const RangeSliderControl = ({
     label,

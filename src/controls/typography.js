@@ -1,10 +1,10 @@
-import {Dashicon, Dropdown, Tooltip} from '@wordpress/components';
-import {useSelect} from '@wordpress/data';
-import {useState} from '@wordpress/element';
 import {__} from '@wordpress/i18n';
+import {Tooltip, Dropdown, Dashicon} from '@wordpress/components';
 import GoogleFontsList from '../utils/googlefonts.json';
+import {useState, useEffect} from '@wordpress/element';
+import {DesktopIcon, TabletIcon, PhoneIcon, ClearIcon} from '../utils/svgicons';
 import ResponsiveDropdown from '../utils/responsivedropdown';
-import {ClearIcon} from '../utils/svgicons';
+import {useSelect} from '@wordpress/data';
 
 const TypographyControl = ({
 	label,

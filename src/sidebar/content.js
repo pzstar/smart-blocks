@@ -1,8 +1,9 @@
-import {PanelBody, Tooltip} from '@wordpress/components';
-import {compose} from '@wordpress/compose';
+import {__} from '@wordpress/i18n';
+import {compose} from '@wordpress/compose'
 import {withDispatch, withSelect} from '@wordpress/data';
 import {PluginSidebar, PluginSidebarMoreMenuItem} from '@wordpress/editor';
-import {__} from '@wordpress/i18n';
+import {Tooltip, PanelBody} from '@wordpress/components';
+import {image} from '@wordpress/icons';
 
 const SidebarContent = ({postMeta, setPostMeta}) => {
 	return (

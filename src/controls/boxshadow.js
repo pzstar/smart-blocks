@@ -1,8 +1,8 @@
-import {Dashicon, Dropdown, TextControl, Tooltip} from '@wordpress/components';
 import {__} from '@wordpress/i18n';
-import {ClearIcon} from '../utils/svgicons';
-import AdvancedRadio from './advancedradio';
+import {Tooltip, TextControl, Dropdown, Dashicon} from '@wordpress/components';
 import ColorControl from './color';
+import AdvancedRadio from './advancedradio';
+import {ClearIcon} from '../utils/svgicons';
 
 const BoxShadowControl = ({
     label,

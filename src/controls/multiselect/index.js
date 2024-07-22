@@ -1,44 +1,44 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames';
 import {
+	take,
 	clone,
+	uniq,
+	map,
 	difference,
 	each,
 	identity,
-	map,
 	some,
-	take,
-	uniq,
 } from 'lodash';
+import classnames from 'classnames';
 
 /**
  * WordPress dependencies
  */
-import {withSpokenMessages} from '@wordpress/components';
-import {withInstanceId} from '@wordpress/compose';
-import {Component} from '@wordpress/element';
 import {__, _n, sprintf} from '@wordpress/i18n';
-import isShallowEqual from '@wordpress/is-shallow-equal';
+import {Component} from '@wordpress/element';
+import {withInstanceId} from '@wordpress/compose';
 import {
 	BACKSPACE,
-	DELETE,
-	DOWN,
 	ENTER,
-	ESCAPE,
+	UP,
+	DOWN,
 	LEFT,
 	RIGHT,
 	SPACE,
-	UP,
+	DELETE,
+	ESCAPE,
 } from '@wordpress/keycodes';
+import isShallowEqual from '@wordpress/is-shallow-equal';
+import {withSpokenMessages} from '@wordpress/components';
 
 /**
  * Internal dependencies
  */
-import SuggestionsList from './suggestions-list';
 import Token from './token';
 import TokenInput from './token-input';
+import SuggestionsList from './suggestions-list';
 
 const initialState = {
 	incompleteTokenValue: '',
