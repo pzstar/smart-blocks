@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import {ResizableBox} from '@wordpress/components';
 import {useViewportMatch} from '@wordpress/compose';
 import {useDispatch, useSelect} from '@wordpress/data';
@@ -61,6 +62,10 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 		columnBgRepeat,
 		columnBgGradient,
 		columnBgOverlayColor,
+
+		stickyContainer,
+		stickyTopSpacing,
+		stickyTopSpacingUnit,
 
 		borderNormal,
 		borderHover,
@@ -136,6 +141,8 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 
         ${responsiveSliderVars('column-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
         ${responsiveSliderVars('column-custom-order', columnCustomOrder, columnCustomOrderSm, columnCustomOrderMd)}
+
+        --sb-sticky-top-spacing:${stickyTopSpacing ? stickyTopSpacing + stickyTopSpacingUnit : ''};
     }`
 	setAttributes({sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "")});
 
@@ -273,6 +280,12 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 
 	const Tag = columnsHTMLTag;
 
+
+	const classes = classnames(
+		className,
+		`${stickyContainer ? 'sb-sticky-container' : ''}`
+	);
+
 	return (
 		<div {...useBlockProps()}>
 			<style jsx>
@@ -300,7 +313,10 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 				onResizeStop={onResizeStop}
 
 			>
-				<Tag className={className} id={id}>
+				<Tag
+					className={classes}
+					id={id}
+				>
 					<InnerBlocks
 						templateLock={false}
 						renderAppender={!hasInnerBlocks && InnerBlocks.ButtonBlockAppender}

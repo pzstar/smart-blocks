@@ -264,6 +264,19 @@ const attributes = {
         type: 'string'
     },
 
+    stickyContainer: {
+        type: 'boolean',
+        default: false
+    },
+    stickyTopSpacing: {
+        type: 'string'
+    },
+    stickyTopSpacingUnit: {
+        type: 'string',
+        enum: ['vh', 'px', 'em', '%'],
+        default: 'px'
+    },
+
 
     columnAlignSelf: {
         type: 'string'

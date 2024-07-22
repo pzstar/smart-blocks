@@ -90,6 +90,10 @@ const Inspector = ({
 		columnBgGradient,
 		columnBgOverlayColor,
 
+		stickyContainer,
+		stickyTopSpacing,
+		stickyTopSpacingUnit,
+
 		borderNormal,
 		borderHover,
 		borderNormalColor,
@@ -249,6 +253,29 @@ const Inspector = ({
 								title={__('Layout', 'smart-blocks')}
 								initialOpen={false}
 							>
+
+								<div className="sb-field">
+									<ToggleControl
+	                                    label={__('Sticky Container', 'smart-blocks')}
+	                                    checked={stickyContainer}
+	                                    onChange={(stickyContainer) => setAttributes({stickyContainer})}
+	                                />
+                                </div>
+
+                                {!!stickyContainer && (
+									<RangeSliderControl
+										label={__('Sticky Top Spacing', 'smart-blocks')}
+										value={stickyTopSpacing}
+										setValue={value => setAttributes({stickyTopSpacing: value})}
+										useUnit={!0}
+										responsive={!1}
+										units={['px', 'em', '%', 'vh']}
+										unit={stickyTopSpacingUnit}
+										setUnit={(value) => setAttributes({stickyTopSpacingUnit: value})}
+										min={0}
+										max={1200}
+									/>
+								)}
 
 								<ButtonGroupControl
 									label={__('Align Self', 'smart-blocks')}

@@ -2374,3 +2374,15 @@ h3.sb-big-title {
         display: none;
     }
 }
+
+
+
+.wp-block-smart-blocks-column.sb-sticky-container {
+    position: sticky;
+    top: var(--sb-sticky-top-spacing, 0);
+}
+
+body.admin-bar .wp-block-smart-blocks-column.sb-sticky-container {
+    position: sticky;
+    top: calc( 32px + var(--sb-sticky-top-spacing, 0));
+}

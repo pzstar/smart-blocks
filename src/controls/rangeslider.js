@@ -45,8 +45,8 @@ const RangeSliderControl = ({
                             onClick={(e) => {
                                 setUnit(e.target.value);
                                 setValue('');
-                                setValueSm('');
-                                setValueMd('');
+                                responsive && setValueSm('');
+                                responsive && setValueMd('');
                             }}
                         >{unt}
                         </button>

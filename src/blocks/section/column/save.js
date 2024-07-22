@@ -1,11 +1,21 @@
+import classnames from 'classnames';
 import {InnerBlocks} from '@wordpress/block-editor';
 
 const Save = ({attributes, className}) => {
-	const Tag = attributes.columnsHTMLTag;
+	const {
+		id,
+		columnsHTMLTag,
+		stickyContainer
+	} = attributes;
+	const classes = classnames(
+		className,
+		`${stickyContainer ? 'sb-sticky-container' : ''}`
+	);
+	const Tag = columnsHTMLTag;
 	return (
 		<Tag
-			className={className}
-			id={attributes.id}
+			className={classes}
+			id={id}
 		>
 			<InnerBlocks.Content />
 		</Tag>
