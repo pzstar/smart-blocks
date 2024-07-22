@@ -1,4 +1,3 @@
-import {__} from '@wordpress/i18n';
 import {Tooltip} from '@wordpress/components';
 import {useState} from '@wordpress/element';
 const Tabs = ({children}) => {

@@ -1,6 +1,4 @@
-import LazyLoad from 'react-lazy-load';
 
-import {__} from '@wordpress/i18n';
 import {BlockPreview} from '@wordpress/block-editor';
 import {Spinner} from '@wordpress/components';
 import {useViewportMatch} from '@wordpress/compose';

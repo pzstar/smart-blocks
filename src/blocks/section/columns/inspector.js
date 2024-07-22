@@ -1,53 +1,52 @@
 import classnames from 'classnames';
 
-import {__} from '@wordpress/i18n';
 import {InspectorControls} from '@wordpress/block-editor';
 import {
-	BaseControl,
 	Button,
 	Dashicon,
+	GradientPicker,
 	PanelBody,
-	ToggleControl,
 	RangeControl,
 	SelectControl,
-	GradientPicker,
+	ToggleControl,
 	Tooltip
 } from '@wordpress/components';
 import {useSelect} from '@wordpress/data';
 import {
-	useState,
-	useEffect
+	useEffect,
+	useState
 } from '@wordpress/element';
+import {__} from '@wordpress/i18n';
 
 /**
  * Internal dependencies
  */
-import LayoutControl from '../components/layout-control';
-import DimensionControl from '../../../controls/dimension';
-import RangeSliderControl from '../../../controls/rangeslider';
+import BorderControl from '../../../controls/border';
+import BoxShadowControl from '../../../controls/boxshadow';
 import ButtonGroupControl from '../../../controls/buttongroup';
 import ColorControl from '../../../controls/color';
-import ImageBackgroundControl from '../../../controls/imagebackground';
-import BoxShadowControl from '../../../controls/boxshadow';
-import BorderControl from '../../../controls/border';
+import DimensionControl from '../../../controls/dimension';
 import GapControl from '../../../controls/gap';
+import ImageBackgroundControl from '../../../controls/imagebackground';
+import RangeSliderControl from '../../../controls/rangeslider';
 import {
-	LayoutIcon,
-	StyleIcon,
 	AdvancedIcon,
-	AlignFlexStart,
+	AlignBaseline,
 	AlignCenter,
 	AlignFlexEnd,
+	AlignFlexStart,
 	AlignStretch,
-	AlignBaseline,
-	JustifyFlexStart,
 	JustifyCenter,
 	JustifyFlexEnd,
-	JustifySpaceBetween,
+	JustifyFlexStart,
 	JustifySpaceAround,
-	JustifySpaceEvenly
+	JustifySpaceBetween,
+	JustifySpaceEvenly,
+	LayoutIcon,
+	StyleIcon
 } from '../../../utils/svgicons';
 import Tabs from '../../../utils/tabs';
+import LayoutControl from '../components/layout-control';
 
 const Inspector = ({
 	attributes,

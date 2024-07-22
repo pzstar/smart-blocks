@@ -102,4 +102,4 @@ const bgVars = (varname, valueURL, valueAttachment, valueSize, valuePositionX, v
         --sb-${varname}-overlay-color: ${valueOverlayColor ? valueOverlayColor : 'transparent'};`;
 }
 
-export {checkDefault, getFontClass, responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveTypographyVars, responsiveGapVars, bgVars};
+export {bgVars, boxShadowVars, checkDefault, dimensionVars, getFontClass, responsiveDimensionVars, responsiveGapVars, responsiveSliderVars, responsiveTypographyVars};

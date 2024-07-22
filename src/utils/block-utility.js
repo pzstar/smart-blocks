@@ -1,6 +1,5 @@
 import {v4 as uuidv4} from 'uuid';
 
-import {isEqual} from 'lodash';
 import {dispatch, select} from '@wordpress/data';
 
 

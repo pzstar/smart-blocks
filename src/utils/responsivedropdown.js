@@ -1,14 +1,13 @@
 /**
  * External dependencies
  */
-import classnames from 'classnames';
-import {DesktopIcon, TabletIcon, PhoneIcon} from './svgicons';
+import {DesktopIcon, PhoneIcon, TabletIcon} from './svgicons';
 
 /**
  * WordPress dependencies
  */
+import {useDispatch, useSelect} from '@wordpress/data';
 import {__} from '@wordpress/i18n';
-import {useSelect, useDispatch} from '@wordpress/data';
 
 const ResponsiveDropdown = ({label, className, children}) => {
     const getView = useSelect(select => {

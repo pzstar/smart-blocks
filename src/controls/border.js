@@ -1,5 +1,5 @@
-import {__} from '@wordpress/i18n';
 import {Tooltip} from '@wordpress/components';
+import {__} from '@wordpress/i18n';
 import {ClearIcon} from '../utils/svgicons';
 
 const BorderControl = ({label, value, setValue}) => {

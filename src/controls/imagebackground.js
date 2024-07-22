@@ -1,15 +1,12 @@
-import {__} from '@wordpress/i18n';
-import {ClearIcon} from '../utils/svgicons';
-import {
-    Dashicon,
-    Button,
-    Tooltip,
-    SelectControl,
-    FocalPointPicker
-} from '@wordpress/components';
 import {
     MediaPlaceholder
 } from '@wordpress/block-editor';
+import {
+    Button,
+    FocalPointPicker,
+    SelectControl
+} from '@wordpress/components';
+import {__} from '@wordpress/i18n';
 import ColorControl from './color';
 
 const ImageBackgroundControl = ({
