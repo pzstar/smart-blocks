@@ -1,10 +1,8 @@
 import {__} from '@wordpress/i18n';
-import {useState} from '@wordpress/element';
 
-import {Tooltip, Button, Dashicon} from '@wordpress/components';
-import Library from './template-library';
-import {useSelect, useDispatch} from "@wordpress/data";
 import {useBlockProps} from '@wordpress/block-editor';
+import {Button, Dashicon, Tooltip} from '@wordpress/components';
+import Library from './template-library';
 
 export default function Edit({attributes, setAttributes, clientId}) {
 	const {isLibraryOpen} = attributes;

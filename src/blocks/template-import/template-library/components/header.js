@@ -1,15 +1,15 @@
 import classnames from 'classnames';
 
-import {startCase, toLower} from 'lodash';
-import {__} from '@wordpress/i18n';
 import {
 	Button,
 	Dashicon,
 	Icon,
+	SelectControl,
 	TextControl,
-	Tooltip,
-	SelectControl
+	Tooltip
 } from '@wordpress/components';
+import {__} from '@wordpress/i18n';
+import {startCase, toLower} from 'lodash';
 
 import {Tile1} from '../../../../utils/svgicons';
 

@@ -12,7 +12,7 @@ import {Component} from '@wordpress/element';
 import {withSafeTimeout} from '@wordpress/compose';
 
 class SuggestionsList extends Component {
-	constructor() {
+	constructor () {
 		super(...arguments);
 		this.handleMouseDown = this.handleMouseDown.bind(this);
 		this.bindList = this.bindList.bind(this);

@@ -1,5 +1,5 @@
-import classnames from 'classnames';
 import {InnerBlocks} from '@wordpress/block-editor';
+import classnames from 'classnames';
 
 const Save = ({attributes, className}) => {
 	const {

@@ -1,11 +1,11 @@
 import classnames from 'classnames';
 
-import {__} from '@wordpress/i18n';
 import apiFetch from '@wordpress/api-fetch';
 import {parse} from '@wordpress/blocks';
 import {Modal} from '@wordpress/components';
+import {__} from '@wordpress/i18n';
 
-import {useSelect, useDispatch} from '@wordpress/data';
+import {useDispatch, useSelect} from '@wordpress/data';
 import {useEffect, useState} from '@wordpress/element';
 
 import Header from './components/header.js';

@@ -50,7 +50,7 @@ const initialState = {
 };
 
 class MultiSelectControl extends Component {
-	constructor() {
+	constructor () {
 		super(...arguments);
 		this.state = initialState;
 		this.onKeyDown = this.onKeyDown.bind(this);
