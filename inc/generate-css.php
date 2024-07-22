@@ -39,23 +39,26 @@ if (!class_exists('Smart_Blocks_CSS')) {
             $blockAttrs = $block['attrs'];
             $block_css = '';
             //$block_css .= $blockAttrs;
-            foreach ($blockAttrs as $attrs) {
-                $family = '';
-                $weight = '';
-
-                if (str_contains($attrs, 'Family')) {
-                    $family = $value;
+            if (is_array($block)) {
+                $block_css .= self::get_inner_block_css($block);
+                $blockAttrs = $block['attrs'];
+                foreach ($blockAttrs as $attrs => $value) {
+                    $family = '';
+                    $weight = '';
+                    if (str_contains($attrs, 'Family')) {
+                        $family = $value;
+                    }
+                    if (str_contains($attrs, 'Weight')) {
+                        $weight = $value;
+                    }
+                    if ($family && $family != 'inherit') {
+                        self::blocks_google_font($family, $weight ? str_replace('italic', 'i', $weight) : 400);
+                    }
                 }
-                if (str_contains($attrs, 'Weight')) {
-                    $weight = $value;
+                // Get CSS for the Block.
+                if (isset($blockAttrs['sbStyle'])) {
+                    $block_css .= is_array($blockAttrs['sbStyle']) ? '' : $blockAttrs['sbStyle'];
                 }
-                if ($family && $family != 'inherit') {
-                    self::blocks_google_font($family, $weight ? str_replace('italic', 'i', $weight) : 400);
-                }
-            }
-            // Get CSS for the Block.
-            if (isset($blockAttrs['sbStyle']) && !is_array($blockAttrs['sbStyle'])) {
-                $block_css .= is_array($blockAttrs['sbStyle']) ? implode(" ", $blockAttrs['sbStyle']) : $blockAttrs['sbStyle'];
             }
             self::$stylesheet .= $block_css;
             return $block_content;
@@ -225,18 +228,17 @@ if (!class_exists('Smart_Blocks_CSS')) {
 
         public function get_inner_block_css($block) {
             $block_css = '';
-            if (empty($block['innerBlocks'])) {
-                $blockAttrs = $block['attrs'];
-                foreach ($blockAttrs as $attrs) {
-                    if (isset($attrs['family'])) {
-                        self::blocks_google_font($attrs['family'], $attrs['weight'] ? str_replace('italic', 'i', $attrs['weight']) : 400);
-                    }
+            $blockAttrs = $block['attrs'];
+            foreach ($blockAttrs as $attrs) {
+                if (isset($attrs['family'])) {
+                    self::blocks_google_font($attrs['family'], $attrs['weight'] ? str_replace('italic', 'i', $attrs['weight']) : 400);
                 }
-                // Get CSS for the Block.
-                if (isset($blockAttrs['sbStyle'])) {
-                    $block_css .= is_array($blockAttrs['sbStyle']) ? '' : $blockAttrs['sbStyle'];
-                }
-            } else {
+            }
+            // Get CSS for the Block.
+            if (isset($blockAttrs['sbStyle'])) {
+                $block_css .= is_array($blockAttrs['sbStyle']) ? '' : $blockAttrs['sbStyle'];
+            }
+            if (!empty($block['innerBlocks'])) {
                 foreach ($block['innerBlocks'] as $innerblock) {
                     $block_css .= self::get_inner_block_css($innerblock);
                 }

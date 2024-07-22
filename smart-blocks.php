@@ -62,7 +62,7 @@ if (!class_exists('Smart_Blocks')) {
             add_action('enqueue_block_editor_assets', array($this, 'block_editor_assets'));
 
             if (is_admin()) {
-                add_filter('admin_body_class', array($this, 'setEditorBodyClass'));
+                add_filter('admin_body_class', array($this, 'add_editor_body_class'));
             }
         }
 
@@ -313,7 +313,7 @@ if (!class_exists('Smart_Blocks')) {
             ));
         }
 
-        public function setEditorBodyClass($classes) {
+        public function add_editor_body_class($classes) {
             if ('post' === get_current_screen()->base) {
                 global $post;
                 $editorWidth = get_post_meta($post->ID, 'sb_editor_width', true);
