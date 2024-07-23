@@ -29,6 +29,7 @@ import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';
 import {responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
+import GroupControlQuery from '../../controlgroup/query';
 
 export default function Edit({attributes, setAttributes}) {
     const [activeTab, setActiveTab] = useState('layout');
@@ -414,37 +415,7 @@ export default function Edit({attributes, setAttributes}) {
         return select('core').getEntityRecords('postType', postsPostType, query);
     }, [order, orderBy, categories, postsPostType, offset, query, excludePosts]);
 
-    const selectPosts = useSelect((select) => {
-        return select('core').getEntityRecords('postType', postsPostType, {
-            per_page: 10,
-            _embed: true,
-            order,
-            orderby: orderBy,
-            offset: parseInt(offset ? offset : 0),
-        });
-    }, [order, orderBy, categories, postsPostType, offset, excludePosts]);
-
-    var allPostsSelect = [];
-    selectPosts && selectPosts.map((post, index) => {
-        allPostsSelect.push({
-            value: post.id,
-            label: post.title.rendered
-        })
-    })
-
-    const allPostTypes = useSelect((select) => {
-        let allPtypes = [];
-        let selectPostTypes = select('core').getPostTypes();
-        selectPostTypes?.forEach((el) => {
-            if (el.visibility.show_in_nav_menus === true) {
-                allPtypes.push({
-                    value: el.slug,
-                    label: el.name
-                })
-            }
-        });
-        return allPtypes;
-    }, []);
+    
 
     const allCats = useSelect((select) => {
         return select('core').getEntityRecords('taxonomy', 'category', {
@@ -668,62 +639,9 @@ export default function Edit({attributes, setAttributes}) {
                                         />
                                     </PanelBody>
                                 )}
-                                <PanelBody
-                                    title={__('Content Filter', 'smart-blocks')}
-                                    initialOpen={false}
-                                >
-                                    <SelectControl
-                                        label={__('Source', 'smart-blocks')}
-                                        value={postsPostType}
-                                        onChange={(postsPostType) => setAttributes({postsPostType})}
-                                        options={allPostTypes}
-                                    />
 
-                                    <QueryTaxonomyControls
-                                        value={categories}
-                                        postType={postsPostType}
-                                        onChange={(categories) => setAttributes({categories})}
-                                    />
+                                <GroupControlQuery attributes={attributes} setAttributes={setAttributes}/>
 
-                                    <MultiSelectControl
-                                        label={__('Exclude Posts', 'smart-blocks')}
-                                        options={allPostsSelect}
-                                        value={excludePosts}
-                                        onChange={(excludePosts) => setAttributes({excludePosts})}
-                                    />
-
-                                    <SelectControl
-                                        label={__('Order By', 'smart-blocks')}
-                                        value={orderBy}
-                                        onChange={(orderBy) => setAttributes({orderBy})}
-                                        options={[
-                                            {value: 'date', label: __('Date', 'smart-blocks')},
-                                            {value: 'modified', label: __('Last Modified Date', 'smart-blocks')},
-                                            {value: 'rand', label: __('Rand', 'smart-blocks')},
-                                            {value: 'comment_count', label: __('Comment Count', 'smart-blocks')},
-                                            {value: 'title', label: __('Title', 'smart-blocks')},
-                                            {value: 'author', label: __('Show Post Author', 'smart-blocks')}
-                                        ]}
-                                    />
-
-                                    <SelectControl
-                                        label={__('Order', 'smart-blocks')}
-                                        value={order}
-                                        onChange={(order) => setAttributes({order})}
-                                        options={[
-                                            {value: 'desc', label: __('Descending', 'smart-blocks')},
-                                            {value: 'asc', label: __('Ascending', 'smart-blocks')}
-                                        ]}
-                                    />
-
-                                    <RangeSliderControl
-                                        label={__('Offset', 'smart-blocks')}
-                                        value={offset}
-                                        setValue={(offset) => setAttributes({offset})}
-                                        min={0}
-                                        max={10}
-                                    />
-                                </PanelBody>
                                 <PanelBody
                                     title={__('Featured Block', 'smart-blocks')}
                                     initialOpen={false}

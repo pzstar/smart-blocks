@@ -30,6 +30,7 @@ import RangeSliderControl from '../../controls/rangeslider';
 import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';
 import OwlCarousel from 'react-owl-carousel';
+import GroupControlQuery from '../../controlgroup/query';
 
 export default function Edit({attributes, setAttributes}) {
     const [loop, setLoop] = useState(true);
@@ -632,63 +633,7 @@ export default function Edit({attributes, setAttributes}) {
                                     />
                                 </PanelBody>
                             )}
-                            <PanelBody
-                                title={__('Content Filter', 'smart-blocks')}
-                                initialOpen={false}
-                            >
-
-                                <SelectControl
-                                    label={__('Source', 'smart-blocks')}
-                                    value={postsPostType}
-                                    onChange={(postsPostType) => setAttributes({postsPostType})}
-                                    options={allPostTypes}
-                                />
-
-                                <QueryTaxonomyControls
-                                    value={categories}
-                                    postType={postsPostType}
-                                    onChange={(categories) => setAttributes({categories})}
-                                />
-
-                                <MultiSelectControl
-                                    label={__('Exclude Posts', 'smart-blocks')}
-                                    options={allPostsSelect}
-                                    value={excludePosts}
-                                    onChange={(excludePosts) => setAttributes({excludePosts})}
-                                />
-
-                                <SelectControl
-                                    label={__('Order By', 'smart-blocks')}
-                                    value={orderBy}
-                                    onChange={(orderBy) => setAttributes({orderBy})}
-                                    options={[
-                                        {value: 'date', label: __('Date', 'smart-blocks')},
-                                        {value: 'modified', label: __('Last Modified Date', 'smart-blocks')},
-                                        {value: 'rand', label: __('Rand', 'smart-blocks')},
-                                        {value: 'comment_count', label: __('Comment Count', 'smart-blocks')},
-                                        {value: 'title', label: __('Title', 'smart-blocks')},
-                                        {value: 'author', label: __('Show Post Author', 'smart-blocks')}
-                                    ]}
-                                />
-
-                                <SelectControl
-                                    label={__('Order')}
-                                    value={order}
-                                    onChange={(order) => setAttributes({order})}
-                                    options={[
-                                        {value: 'desc', label: __('Descending', 'smart-blocks')},
-                                        {value: 'asc', label: __('Ascending', 'smart-blocks')}
-                                    ]}
-                                />
-
-                                <RangeSliderControl
-                                    label={__('Offset', 'smart-blocks')}
-                                    value={offset}
-                                    setValue={(offset) => setAttributes({offset})}
-                                    min={0}
-                                    max={10}
-                                />
-                            </PanelBody>
+                            <GroupControlQuery attributes={attributes} setAttributes={setAttributes}/>
                             <PanelBody
                                 title={__('Post Block', 'smart-blocks')}
                                 initialOpen={false}
