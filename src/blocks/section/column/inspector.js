@@ -8,7 +8,8 @@ import {
 	RangeControl,
 	SelectControl,
 	GradientPicker,
-	Tooltip
+	Tooltip,
+	ToggleControl
 } from '@wordpress/components';
 import {useSelect} from '@wordpress/data';
 import {
