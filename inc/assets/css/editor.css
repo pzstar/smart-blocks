@@ -1785,24 +1785,28 @@ input[type="range"]:focus {
 }
 .sb-blocks-columns-layout-control .sb-blocks-column-layout svg {
     fill: #d5dadf;
+    stroke: #d5dadf;
 }
 .sb-blocks-columns-layout-control .sb-blocks-column-layout:hover:not(:disabled):not([aria-disabled="true"]):not(.is-secondary):not(.is-primary):not(.is-tertiary):not(.is-link) {
     background: #f1f1f1;
     border-color: #005d8c;
     color: #005d8c;
     text-decoration: none;
+    stroke: #005d8c;
 }
 .sb-blocks-columns-layout-control .sb-blocks-column-layout:hover:not(:disabled):not([aria-disabled="true"]):not(.is-secondary):not(.is-primary):not(.is-tertiary):not(.is-link):not(.selected) {
     box-shadow: none;
 }
 .sb-blocks-columns-layout-control .sb-blocks-column-layout:hover:not(:disabled):not([aria-disabled="true"]):not(.is-secondary):not(.is-primary):not(.is-tertiary):not(.is-link) svg {
     fill: #0075af;
+    stroke: #0075af;
 }
 .sb-blocks-columns-layout-control .sb-blocks-column-layout.selected {
     box-shadow: inset 0 0 0 1px #555d66, inset 0 0 0 2px #fff;
 }
 .sb-blocks-columns-layout-control .sb-blocks-column-layout.selected svg {
     fill: #6d7882;
+    stroke: #6d7882;
 }
 
 
@@ -2136,23 +2140,24 @@ input[type="range"]:focus {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin: 4px 0;
+    gap: 15px;
     width: 100%;
 }
 .sb-onboarding-component .sb-layout-picker .sb-blocks-column-layout {
     background: #fff;
     border: 1px solid #0075af;
     cursor: pointer;
-    flex-shrink: 1;
     height: 68px;
-    line-height: 28px;
-    margin: 5px 10px 5px 0;
-    max-width: 68px;
-    padding: 0 12px 2px;
     width: 68px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+    margin: 0;
 }
 .sb-onboarding-component .sb-layout-picker .sb-blocks-column-layout svg {
     fill: #0075af;
+    stroke: #0075af;
     min-width: 42px;
 }
 .sb-onboarding-component .sb-layout-picker .sb-blocks-column-layout:hover:not(:disabled):not([aria-disabled="true"]):not(.is-secondary):not(.is-primary):not(.is-tertiary):not(.is-link) {

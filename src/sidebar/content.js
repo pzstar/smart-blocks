@@ -20,7 +20,7 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 				title={__('Smart Blocks Settings', 'smart-blocks')}
 			>
 				<PanelBody
-					title={__('Editor width', 'smart-blocks')}
+					title={__('Editor Width', 'smart-blocks')}
 					initialOpen={false}
 				>
 					<div className={'sb-inspect-tabs'}>
@@ -31,6 +31,15 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 									onClick={() => setPostMeta({sb_editor_width: 'default'})}
 								>
 									{__("Default", 'smart-blocks')}
+								</button>
+							</Tooltip>
+
+							<Tooltip text={__("Narrow", 'smart-blocks')}>
+								<button
+									className={((!postMeta.sb_editor_width || 'narrow' === postMeta.sb_editor_width) ? "active-tab" : "") + " components-button sb-tab-menu"}
+									onClick={() => setPostMeta({sb_editor_width: 'narrow'})}
+								>
+									{__("Narrow", 'smart-blocks')}
 								</button>
 							</Tooltip>
 
@@ -69,7 +78,7 @@ export default compose([
 		return {
 			setPostMeta(newMeta) {
 				dispatch('core/editor').editPost({meta: newMeta});
-				window.document.body.classList.remove("sb-editor-width-default", "sb-editor-width-large", "sb-editor-width-full")
+				window.document.body.classList.remove("sb-editor-width-default", "sb-editor-width-narrow", "sb-editor-width-large", "sb-editor-width-full")
 				window.document.body.classList.add("sb-editor-width-" + newMeta.sb_editor_width);
 			}
 		};

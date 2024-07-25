@@ -11,7 +11,7 @@ import attributes from './attributes.js';
  */
 import Edit from './edit';
 import Save from './save';
-import {Tile1} from '../../../utils/svgicons';
+import {Columns} from '../../../utils/svgicons';
 
 import {__} from '@wordpress/i18n';
 
@@ -21,16 +21,16 @@ import {__} from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType('smart-blocks/columns', {
-    icon: <Tile1 />,
+    icon: <Columns />,
     supports: {
         "align": ['wide', 'full'],
         "html": false
     },
     category: "smart-blocks-block-modules",
     attributes,
-    title: __("Section", 'smart-blocks'),
-    description: __("Add a Section block that displays content in multiple columns, then add whatever content blocks you’d like", 'smart-blocks'),
-    keywords: ["section", "column"],
+    title: __("Columns", 'smart-blocks'),
+    description: __("Display content in multiple columns, with blocks added to each column.", 'smart-blocks'),
+    keywords: ["section", "column", "row", "container"],
     /**
      * @see ./edit.js
      */
