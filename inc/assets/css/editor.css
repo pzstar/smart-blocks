@@ -2158,7 +2158,7 @@ input[type="range"]:focus {
 .sb-onboarding-component .sb-layout-picker .sb-blocks-column-layout svg {
     fill: #0075af;
     stroke: #0075af;
-    min-width: 42px;
+    width: 42px;
 }
 .sb-onboarding-component .sb-layout-picker .sb-blocks-column-layout:hover:not(:disabled):not([aria-disabled="true"]):not(.is-secondary):not(.is-primary):not(.is-tertiary):not(.is-link) {
     background: #f1f1f1;
