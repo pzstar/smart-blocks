@@ -52,12 +52,12 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 								</button>
 							</Tooltip>
 
-							<Tooltip text={__("Full Width", 'smart-blocks')}>
+							<Tooltip text={__("Full", 'smart-blocks')}>
 								<button
 									className={('full' === postMeta.sb_editor_width ? "active-tab" : "") + " components-button sb-tab-menu"}
 									onClick={() => setPostMeta({sb_editor_width: 'full'})}
 								>
-									{__("Full Width", 'smart-blocks')}
+									{__("Full", 'smart-blocks')}
 								</button>
 							</Tooltip>
 						</div>
