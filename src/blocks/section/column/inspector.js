@@ -77,7 +77,6 @@ const Inspector = ({
 		columnPaddingBottom,
 		columnPaddingLeft,
 		columnPaddingUnit,
-		columnWidth,
 
 		columnBgType,
 		columnBgColor,
@@ -90,10 +89,6 @@ const Inspector = ({
 		columnBgRepeat,
 		columnBgGradient,
 		columnBgOverlayColor,
-
-		stickyContainer,
-		stickyTopSpacing,
-		stickyTopSpacingUnit,
 
 		borderNormal,
 		borderHover,
@@ -138,9 +133,6 @@ const Inspector = ({
 		columnAlignSelfSm,
 		columnAlignSelfMd,
 
-		columnCustomOrder,
-		columnCustomOrderSm,
-		columnCustomOrderMd
 	} = attributes;
 
 	const getView = useSelect((select) => {
@@ -255,29 +247,6 @@ const Inspector = ({
 								initialOpen={false}
 							>
 
-								<div className="sb-field">
-									<ToggleControl
-	                                    label={__('Sticky Container', 'smart-blocks')}
-	                                    checked={stickyContainer}
-	                                    onChange={(stickyContainer) => setAttributes({stickyContainer})}
-	                                />
-                                </div>
-
-                                {!!stickyContainer && (
-									<RangeSliderControl
-										label={__('Sticky Top Spacing', 'smart-blocks')}
-										value={stickyTopSpacing}
-										setValue={value => setAttributes({stickyTopSpacing: value})}
-										useUnit={!0}
-										responsive={!1}
-										units={['px', 'em', '%', 'vh']}
-										unit={stickyTopSpacingUnit}
-										setUnit={(value) => setAttributes({stickyTopSpacingUnit: value})}
-										min={0}
-										max={1200}
-									/>
-								)}
-
 								<ButtonGroupControl
 									label={__('Align Self', 'smart-blocks')}
 									responsive={!0}
@@ -312,18 +281,6 @@ const Inspector = ({
 								/>
 
 
-								<RangeSliderControl
-									label={__('Custom Order', 'smart-blocks')}
-									min={0}
-									max={20}
-									responsive={!0}
-									value={columnCustomOrder}
-									setValue={(value) => setAttributes({columnCustomOrder: value})}
-									valueSm={columnCustomOrderSm}
-									setValueSm={(value) => setAttributes({columnCustomOrderSm: value})}
-									valueMd={columnCustomOrderMd}
-									setValueMd={(value) => setAttributes({columnCustomOrderMd: value})}
-								/>
 							</PanelBody>
 						</>
 					) || 'style' === activeTab && (

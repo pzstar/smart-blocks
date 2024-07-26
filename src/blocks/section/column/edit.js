@@ -54,7 +54,6 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 
 		columnBgType,
 		columnBgImgURL,
-		columnBgImgID,
 		columnBgAttachment,
 		columnBgSize,
 		columnBgPositionX,
@@ -62,10 +61,6 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 		columnBgRepeat,
 		columnBgGradient,
 		columnBgOverlayColor,
-
-		stickyContainer,
-		stickyTopSpacing,
-		stickyTopSpacingUnit,
 
 		borderNormal,
 		borderHover,
@@ -110,9 +105,6 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 		columnAlignSelfSm,
 		columnAlignSelfMd,
 
-		columnCustomOrder,
-		columnCustomOrderSm,
-		columnCustomOrderMd
 	} = attributes;
 
 	const stylesCSS = `#${id} {
@@ -140,9 +132,6 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
         ${bgVars('column-bg', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat, columnBgType, columnBgGradient, columnBgColor, columnBgOverlayColor)}
 
         ${responsiveSliderVars('column-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
-        ${responsiveSliderVars('column-custom-order', columnCustomOrder, columnCustomOrderSm, columnCustomOrderMd)}
-
-        --sb-sticky-top-spacing:${stickyTopSpacing ? stickyTopSpacing + stickyTopSpacingUnit : ''};
     }`
 	setAttributes({sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "")});
 
@@ -280,12 +269,6 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 
 	const Tag = columnsHTMLTag;
 
-
-	const classes = classnames(
-		className,
-		`${stickyContainer ? 'sb-sticky-container' : ''}`
-	);
-
 	return (
 		<div {...useBlockProps()}>
 			<style jsx>
@@ -314,7 +297,6 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 
 			>
 				<Tag
-					className={classes}
 					id={id}
 				>
 					<InnerBlocks

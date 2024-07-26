@@ -264,19 +264,6 @@ const attributes = {
         type: 'string'
     },
 
-    stickyContainer: {
-        type: 'boolean',
-        default: false
-    },
-    stickyTopSpacing: {
-        type: 'string'
-    },
-    stickyTopSpacingUnit: {
-        type: 'string',
-        enum: ['vh', 'px', 'em', '%'],
-        default: 'px'
-    },
-
 
     columnAlignSelf: {
         type: 'string'
@@ -287,16 +274,6 @@ const attributes = {
     columnAlignSelfMd: {
         type: 'string'
     },
-
-    columnCustomOrder: {
-        type: 'string'
-    },
-    columnCustomOrderSm: {
-        type: 'string'
-    },
-    columnCustomOrderMd: {
-        type: 'string'
-    }
 };
 
 export default attributes;

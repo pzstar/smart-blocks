@@ -114,7 +114,6 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 
 		sectionBgType,
 		sectionBgImgURL,
-		sectionBgImgID,
 		sectionBgAttachment,
 		sectionBgSize,
 		sectionBgPositionX,
@@ -139,10 +138,6 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 
 		sectionContentWidth,
 
-		sectionFlexDirection,
-		sectionFlexDirectionMd,
-		sectionFlexDirectionSm,
-
 		columnsGapRow,
 		columnsGapSmRow,
 		columnsGapMdRow,
@@ -159,8 +154,6 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		${responsiveGapVars('columns-gap', columnsGapRow, columnsGapSmRow, columnsGapMdRow, columnsGapColumn, columnsGapSmColumn, columnsGapMdColumn, columnsGapUnit)}
 		${responsiveSliderVars('columns-align', columnAlignment, columnAlignmentSm, columnAlignmentMd, '')}
 		${responsiveSliderVars('columns-justify', columnJustify, columnJustifySm, columnJustifyMd, '')}
-		${responsiveSliderVars('columns-flex-direction', sectionFlexDirection, sectionFlexDirectionSm, sectionFlexDirectionMd, '')}
-
 
         ${responsiveDimensionVars('columns-margin', columnsMarginTop, columnsMarginRight, columnsMarginBottom, columnsMarginLeft,
 		columnsMarginSmTop, columnsMarginSmRight, columnsMarginSmBottom, columnsMarginSmLeft,

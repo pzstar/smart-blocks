@@ -365,17 +365,6 @@ const attributes = {
         enum: ['full', 'boxed']
     },
 
-    sectionFlexDirection: {
-        type: 'string'
-    },
-    sectionFlexDirectionSm: {
-        type: 'string'
-    },
-    sectionFlexDirectionMd: {
-        type: 'string'
-    },
-
-
     columnsGapRow: {
         type: 'string'
     },

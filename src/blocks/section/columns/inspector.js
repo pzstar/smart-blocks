@@ -168,10 +168,6 @@ const Inspector = ({
 
 		sectionContentWidth,
 
-		sectionFlexDirection,
-		sectionFlexDirectionSm,
-		sectionFlexDirectionMd,
-
 		columnsGapRow,
 		columnsGapSmRow,
 		columnsGapMdRow,
@@ -377,29 +373,6 @@ const Inspector = ({
 										units={['px', 'em', '%', 'vh']}
 										unit={columnsHeightUnit}
 										setUnit={(value) => setAttributes({columnsHeightUnit: value})}
-									/>
-
-									<ButtonGroupControl
-										label={__('Direction', 'smart-blocks')}
-										responsive={!0}
-										options={[
-											{
-												value: 'row',
-												icon: <Dashicon icon="arrow-right-alt" />,
-												label: __('Row', 'smart-blocks')
-											},
-											{
-												value: 'row-reverse',
-												icon: <Dashicon icon="arrow-left-alt" />,
-												label: __('Row Reverse', 'smart-blocks')
-											},
-										]}
-										value={sectionFlexDirection}
-										setValue={(value) => setAttributes({sectionFlexDirection: value})}
-										valueSm={sectionFlexDirectionSm}
-										setValueSm={(value) => setAttributes({sectionFlexDirectionSm: value})}
-										valueMd={sectionFlexDirectionMd}
-										setValueMd={(value) => setAttributes({sectionFlexDirectionMd: value})}
 									/>
 
 									<ButtonGroupControl
