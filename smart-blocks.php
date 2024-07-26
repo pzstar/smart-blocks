@@ -104,6 +104,7 @@ if (!class_exists('Smart_Blocks')) {
                 'template-import',
                 'columns',
                 'column',
+                'container'
             );
 
             foreach ($blocks as $block) {

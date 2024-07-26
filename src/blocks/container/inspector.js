@@ -21,13 +21,14 @@ import {
 /**
  * Internal dependencies
  */
-import DimensionControl from '../../../controls/dimension';
-import ColorControl from '../../../controls/color';
-import ImageBackgroundControl from '../../../controls/imagebackground';
-import BoxShadowControl from '../../../controls/boxshadow';
-import BorderControl from '../../../controls/border';
-import Tabs from '../../../utils/tabs';
-import ButtonGroupControl from '../../../controls/buttongroup';
+import DimensionControl from '../../controls/dimension';
+import ColorControl from '../../controls/color';
+import ImageBackgroundControl from '../../controls/imagebackground';
+import BoxShadowControl from '../../controls/boxshadow';
+import BorderControl from '../../controls/border';
+import Tabs from '../../utils/tabs';
+import ButtonGroupControl from '../../controls/buttongroup';
+import RangeSliderControl from '../../controls/rangeslider';
 
 import {
 	LayoutIcon,
@@ -37,19 +38,18 @@ import {
 	AlignCenter,
 	AlignFlexEnd,
 	AlignStretch
-} from '../../../utils/svgicons';
+} from '../../utils/svgicons';
 
 const Inspector = ({
 	attributes,
-	setAttributes,
-	isSelected,
-	clientId,
-	adjacentBlock,
-	parentBlock,
-	updateBlockAttributes,
-	adjacentBlockClientId,
+	setAttributes
 }) => {
 	const {
+		enableSticky,
+		stickyOffsetTop,
+		stickyOffsetTopSm,
+		stickyOffsetTopMd,
+		stickyOffsetTopUnit,
 		columnMarginSmTop,
 		columnMarginSmRight,
 		columnMarginSmBottom,
@@ -133,6 +133,7 @@ const Inspector = ({
 		columnAlignSelfMd,
 
 	} = attributes;
+	const [activeTab, setActiveTab] = useState('layout');
 
 	const getView = useSelect((select) => {
 		const {getView} = select('smart-blocks/data');
@@ -140,49 +141,6 @@ const Inspector = ({
 		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
 	}, []);
 
-	useEffect(() => {
-		if (1 < parentBlock.innerBlocks.length) {
-			if (!adjacentBlockClientId) {
-				const blockId = parentBlock.innerBlocks.findIndex(e => e.clientId === clientId);
-				const previousBlock = parentBlock.innerBlocks[blockId - 1];
-				nextBlock.current = previousBlock.clientId;
-				nextBlockWidth.current = previousBlock.attributes.columnWidth;
-			}
-		}
-	}, []);
-
-	useEffect(() => {
-		if (1 < parentBlock.innerBlocks.length) {
-			if (!adjacentBlockClientId) {
-				const blockId = parentBlock.innerBlocks.findIndex(e => e.clientId === clientId);
-				const previousBlock = parentBlock.innerBlocks[blockId - 1];
-				nextBlockWidth.current = previousBlock.attributes.columnWidth;
-				nextBlock.current = previousBlock.clientId;
-				currentBlockWidth.current = attributes.columnWidth;
-			} else {
-				nextBlockWidth.current = adjacentBlock.attributes.columnWidth;
-				nextBlock.current = adjacentBlockClientId;
-				currentBlockWidth.current = attributes.columnWidth;
-			}
-		}
-	}, [isSelected, attributes.columnWidth, parentBlock.innerBlocks.length]);
-
-	const [activeTab, setActiveTab] = useState('layout');
-
-	const currentBlockWidth = useRef(attributes.columnWidth);
-	const nextBlock = useRef(adjacentBlockClientId && adjacentBlockClientId);
-	const nextBlockWidth = useRef(adjacentBlock && adjacentBlock.attributes.columnWidth);
-
-	const changeColumnWidth = value => {
-		const width = value || 10;
-		const nextWidth = (Number(currentBlockWidth.current) - width) + Number(nextBlockWidth.current);
-		currentBlockWidth.current = width;
-		nextBlockWidth.current = nextWidth;
-		setAttributes({columnWidth: width.toFixed(2)});
-		updateBlockAttributes(nextBlock.current, {
-			columnWidth: nextWidth.toFixed(2)
-		});
-	};
 
 
 	const changeColumnsHTMLTag = value => {
@@ -227,59 +185,31 @@ const Inspector = ({
 					{'layout' === activeTab && (
 						<>
 							<PanelBody
-								title={__('Spacing', 'smart-blocks')}
+								title={__('Settings', 'smart-blocks')}
 								initialOpen={false}
 							>
-								{(1 < parentBlock.innerBlocks.length) && (
-									<RangeControl
-										label={__('Column Width', 'smart-blocks')}
-										value={Number(attributes.columnWidth)}
-										onChange={changeColumnWidth}
-										min={10}
-										max={(Number(attributes.columnWidth) + Number(nextBlockWidth.current)) - 10}
-									/>
-								)}
-							</PanelBody>
-
-							<PanelBody
-								title={__('Layout', 'smart-blocks')}
-								initialOpen={false}
-							>
-
-								<ButtonGroupControl
-									label={__('Align Self', 'smart-blocks')}
-									responsive={!0}
-									options={[
-										{
-											value: 'flex-start',
-											icon: <AlignFlexStart />,
-											label: __('Flex Start', 'smart-blocks')
-										},
-										{
-											value: 'center',
-											icon: <AlignCenter />,
-											label: __('Center', 'smart-blocks')
-										},
-										{
-											value: 'flex-end',
-											icon: <AlignFlexEnd />,
-											label: __('Flex End', 'smart-blocks')
-										},
-										{
-											value: 'stretch',
-											icon: <AlignStretch />,
-											label: __('Stretch', 'smart-blocks')
-										},
-									]}
-									value={columnAlignSelf}
-									setValue={(value) => setAttributes({columnAlignSelf: value})}
-									valueSm={columnAlignSelfSm}
-									setValueSm={(value) => setAttributes({columnAlignSelfSm: value})}
-									valueMd={columnAlignSelfMd}
-									setValueMd={(value) => setAttributes({columnAlignSelfMd: value})}
+								<ToggleControl
+									label={__('Enable Sticky', 'smart-blocks')}
+									checked={enableSticky}
+									onChange={() => setAttributes({'enableSticky': !enableSticky})}
 								/>
 
-
+								{enableSticky && (<RangeSliderControl
+									label={__('Sticky Offset', 'smart-blocks')}
+									min={0}
+									max={1800}
+									responsive={!0}
+									value={stickyOffsetTop}
+									setValue={(value) => setAttributes({stickyOffsetTop: value})}
+									valueSm={stickyOffsetTopSm}
+									setValueSm={(value) => setAttributes({stickyOffsetTopSm: value})}
+									valueMd={stickyOffsetTopMd}
+									setValueMd={(value) => setAttributes({stickyOffsetTopMd: value})}
+									useUnit={!0}
+									units={['px', 'em', '%', 'vh']}
+									unit={stickyOffsetTopUnit}
+									setUnit={(value) => setAttributes({stickyOffsetTopUnit: value})}
+								/>)}
 							</PanelBody>
 						</>
 					) || 'style' === activeTab && (
