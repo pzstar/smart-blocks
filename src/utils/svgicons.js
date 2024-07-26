@@ -448,6 +448,12 @@ export const Column = () => {
     </svg>
 }
 
+export const Container = () => {
+    return <svg viewBox="0 0 60 40">
+        <rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"/>
+    </svg>
+}
+
 
 export const AlignFlexStart = () => {
     return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 1H1v1h18V1zM14 3h-3v6h3V3zM9 3H6v8h3V3z"></path></svg>
