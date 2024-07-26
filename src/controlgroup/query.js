@@ -45,33 +45,44 @@ const GroupControlQuery = ({attributes, setAttributes, usePostNumber}) => {
         var options = [];
         var i;
         var loopTerms = [];
-        for (i= 0; i<terms.length; i++) {
-            if (terms[i].parent == parentId) {
-                loopTerms = [...loopTerms, terms[i]];
-            }
-        }
-
-        if (loopTerms.length) {
-            childCount++;
-
-            if (loopTerms) {
-                loopTerms.map((term) => {
-                    let termName = '';
-                    i = 0;
-                    while (i < childCount) {
-                        termName += '- ';
-                        i++;
+        if (terms && terms.length) {
+            if (typeof terms[0].parent !== "undefined") {
+                for (i= 0; i<terms.length; i++) {
+                    if (terms[i].parent == parentId) {
+                        loopTerms = [...loopTerms, terms[i]];
                     }
-                    termName += term.name.replace("-", " ");
+                }
+
+                if (loopTerms.length) {
+                    childCount++;
+
+                    if (loopTerms) {
+                        loopTerms.map((term) => {
+                            let termName = '';
+                            i = 0;
+                            while (i < childCount) {
+                                termName += '- ';
+                                i++;
+                            }
+                            termName += term.name.replace("-", " ");
+                            options.push({
+                                value: term.id,
+                                label: termName + ' (' + term.count + ')'
+                            });
+                            let childOptions = indentArray(term.id, terms, childCount);
+
+                            if (childOptions.length) {
+                                options = [...options, ...childOptions];
+                            }
+                        });
+                    }
+                }
+            } else {
+                terms.map((term) => {
                     options.push({
                         value: term.id,
-                        label: termName + ' (' + term.count + ')'
+                        label: term.name + ' (' + term.count + ')'
                     });
-                    let childOptions = indentArray(term.id, terms, childCount);
-
-                    if (childOptions.length) {
-                        options = [...options, ...childOptions];
-                    }
                 });
             }
         }

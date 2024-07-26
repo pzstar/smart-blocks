@@ -329,13 +329,61 @@ export default function Edit({attributes, setAttributes}) {
         });
     }, []);
 
-    var allCatsSelect = [];
-    allCats && allCats.map((cats, index) => {
-        allCatsSelect.push({
-            value: cats.id,
-            label: cats.name
-        })
-    })
+    const indentArray = (parentId, terms, childCount = -1) => {
+        var options = [];
+        var i;
+        var loopTerms = [];
+        if (terms && terms.length) {
+            if (typeof terms[0].parent !== "undefined") {
+                for (i= 0; i<terms.length; i++) {
+                    if (terms[i].parent == parentId) {
+                        loopTerms = [...loopTerms, terms[i]];
+                    }
+                }
+
+                if (loopTerms.length) {
+                    childCount++;
+
+                    if (loopTerms) {
+                        loopTerms.map((term) => {
+                            let termName = '';
+                            i = 0;
+                            while (i < childCount) {
+                                termName += '- ';
+                                i++;
+                            }
+                            termName += term.name.replace("-", " ");
+                            options.push({
+                                value: term.id,
+                                label: termName + ' (' + term.count + ')'
+                            });
+                            let childOptions = indentArray(term.id, terms, childCount);
+
+                            if (childOptions.length) {
+                                options = [...options, ...childOptions];
+                            }
+                        });
+                    }
+                }
+            } else {
+                terms.map((term) => {
+                    options.push({
+                        value: term.id,
+                        label: term.name + ' (' + term.count + ')'
+                    });
+                });
+            }
+        }
+        return options;
+    }
+
+    const allCatsSelect = () => {
+        let options = [];
+        if(allCats) {
+            options = indentArray(0, allCats);
+        }
+        return options;
+    }
 
     const allTags = useSelect((select) => {
         return select('core').getEntityRecords('taxonomy', 'post_tag', {
@@ -343,13 +391,13 @@ export default function Edit({attributes, setAttributes}) {
         });
     }, []);
 
-    var allTagsSelect = [];
-    allTags && allTags.map((tags, index) => {
-        allTagsSelect.push({
-            value: tags.id,
-            label: tags.name
-        })
-    })
+    const allTagsSelect = () => {
+        let options = [];
+        if(allTags) {
+            options = indentArray(0, allTags);
+        }
+        return options;
+    }
 
     const catInner = (catId, index, primary) => {
         if (primary && index != 0) {
@@ -537,7 +585,7 @@ export default function Edit({attributes, setAttributes}) {
                                     {filterOption == 'categories' && (
                                         <MultiSelectControl
                                             label={__('Categories', 'smart-blocks')}
-                                            options={allCatsSelect}
+                                            options={allCatsSelect()}
                                             value={categories}
                                             onChange={(categories) => setAttributes({categories})}
                                         />
@@ -546,7 +594,7 @@ export default function Edit({attributes, setAttributes}) {
                                     {filterOption == 'tags' && (
                                         <MultiSelectControl
                                             label={__('Tags', 'smart-blocks')}
-                                            options={allTagsSelect}
+                                            options={allTagsSelect()}
                                             value={tags}
                                             onChange={(tags) => setAttributes({tags})}
                                         />
