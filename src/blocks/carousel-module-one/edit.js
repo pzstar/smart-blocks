@@ -10,7 +10,6 @@ import {
 } from '@wordpress/block-editor';
 import {
     PanelBody,
-    ToggleControl,
     TextControl,
     Button
 } from '@wordpress/components';
@@ -29,6 +28,7 @@ import DimensionControl from '../../controls/dimension';
 import RangeSliderControl from '../../controls/rangeslider';
 import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';
+import ToggleControl from '../../controls/toggle';
 import OwlCarousel from 'react-owl-carousel';
 import GroupControlQuery from '../../controlgroup/query';
 

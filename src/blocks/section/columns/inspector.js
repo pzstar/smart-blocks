@@ -7,7 +7,6 @@ import {
 	Button,
 	Dashicon,
 	PanelBody,
-	ToggleControl,
 	RangeControl,
 	SelectControl,
 	GradientPicker,
@@ -31,6 +30,7 @@ import ImageBackgroundControl from '../../../controls/imagebackground';
 import BoxShadowControl from '../../../controls/boxshadow';
 import BorderControl from '../../../controls/border';
 import GapControl from '../../../controls/gap';
+import ToggleControl from '../../../controls/toggle';
 import {
 	LayoutIcon,
 	StyleIcon,
@@ -344,7 +344,7 @@ const Inspector = ({
 									<RangeSliderControl
 										label={__('Width', 'smart-blocks')}
 										min={0}
-										max={1800}
+										max={2200}
 										responsive={!0}
 										value={columnsWidth}
 										setValue={(value) => setAttributes({columnsWidth: value})}

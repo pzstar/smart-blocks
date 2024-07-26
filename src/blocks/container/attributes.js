@@ -17,7 +17,7 @@ const attributes = {
     },
     stickyOffsetTopUnit: {
         type: 'string',
-        enum: ['px', 'em', '%', 'vh'],
+        enum: ['px'],
         default: 'px'
     },
     sbStyle: {
@@ -112,9 +112,6 @@ const attributes = {
     columnsHTMLTag: {
         type: 'string',
         default: 'div'
-    },
-    columnWidth: {
-        type: 'string'
     },
     borderNormal: {
         type: 'string'
@@ -290,6 +287,78 @@ const attributes = {
         type: 'string'
     },
     columnAlignSelfMd: {
+        type: 'string'
+    },
+
+
+    flexibleContentDisplay: {
+        type: 'string',
+        default: 'flex',
+        enum: ['flex', 'grid']
+    },
+
+    flexDirection: {
+        type: 'string'
+    },
+    flexDirectionSm: {
+        type: 'string'
+    },
+    flexDirectionMd: {
+        type: 'string'
+    },
+
+    justifyContent: {
+        type: 'string'
+    },
+    justifyContentSm: {
+        type: 'string'
+    },
+    justifyContentMd: {
+        type: 'string'
+    },
+
+    alignItems: {
+        type: 'string'
+    },
+    alignItemsSm: {
+        type: 'string'
+    },
+    alignItemsMd: {
+        type: 'string'
+    },
+
+    containerGapRow: {
+        type: 'string'
+    },
+    containerGapSmRow: {
+        type: 'string'
+    },
+    containerGapMdRow: {
+        type: 'string'
+    },
+    containerGapColumn: {
+        type: 'string'
+    },
+    containerGapSmColumn: {
+        type: 'string',
+        default: 20
+    },
+    containerGapMdColumn: {
+        type: 'string'
+    },
+    containerGapUnit: {
+        type: 'string',
+        enum: ['px', 'em', '%'],
+        default: 'px'
+    },
+
+    containerWrap: {
+        type: 'string'
+    },
+    containerWrapSm: {
+        type: 'string'
+    },
+    containerWrapMd: {
         type: 'string'
     },
 };

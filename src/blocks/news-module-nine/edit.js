@@ -10,7 +10,6 @@ import {
 } from '@wordpress/block-editor';
 import {
     PanelBody,
-    ToggleControl,
     TextControl,
     Button
 } from '@wordpress/components';
@@ -29,6 +28,7 @@ import BoxShadowControl from '../../controls/boxshadow';
 import {responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import GroupControlQuery from '../../controlgroup/query';
+import ToggleControl from '../../controls/toggle';
 
 export default function Edit({attributes, setAttributes}) {
     const [activeTab, setActiveTab] = useState('layout');

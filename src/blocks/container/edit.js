@@ -18,7 +18,6 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 		stickyOffsetTopSm,
 		stickyOffsetTopMd,
 		stickyOffsetTopUnit,
-		columnWidth,
 		columnsHTMLTag,
 		columnMarginSmTop,
 		columnMarginSmRight,
@@ -104,6 +103,8 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 		columnAlignSelfSm,
 		columnAlignSelfMd,
 
+		flexibleContentDisplay
+
 	} = attributes;
 
 	const {
@@ -118,30 +119,30 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 	}, []);
 
 	const stylesCSS = `#${id} {
-    	${responsiveDimensionVars('column-margin', columnMarginTop, columnMarginRight, columnMarginBottom, columnMarginLeft,
+    	${responsiveDimensionVars('container-margin', columnMarginTop, columnMarginRight, columnMarginBottom, columnMarginLeft,
 		columnMarginSmTop, columnMarginSmRight, columnMarginSmBottom, columnMarginSmLeft,
 		columnMarginMdTop, columnMarginMdRight, columnMarginMdBottom, columnMarginMdLeft, columnMarginUnit)}
-    	${responsiveDimensionVars('column-padding', columnPaddingTop, columnPaddingRight, columnPaddingBottom, columnPaddingLeft,
+    	${responsiveDimensionVars('container-padding', columnPaddingTop, columnPaddingRight, columnPaddingBottom, columnPaddingLeft,
 			columnPaddingSmTop, columnPaddingSmRight, columnPaddingSmBottom, columnPaddingSmLeft,
 			columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
 		
-		--sb-column-border-normal:${borderNormal ? borderNormal : '0'};
-        --sb-column-border-hover: ${borderHover ? borderNormal : 'var(--sb-column-border-normal);'};
-        --sb-column-border-normal-color: ${borderNormalColor ? borderNormalColor : 'initial'};
-        --sb-column-border-hover-color: ${borderHoverColor ? borderHoverColor : 'var(--sb-column-border-normal-color)'};
+		--sb-container-border-normal:${borderNormal ? borderNormal : '0'};
+        --sb-container-border-hover: ${borderHover ? borderNormal : 'var(--sb-container-border-normal);'};
+        --sb-container-border-normal-color: ${borderNormalColor ? borderNormalColor : 'initial'};
+        --sb-container-border-hover-color: ${borderHoverColor ? borderHoverColor : 'var(--sb-container-border-normal-color)'};
 
-        ${dimensionVars('column-border-normal-width', borderNormalWidthTop, borderNormalWidthRight, borderNormalWidthBottom, borderNormalWidthLeft, borderNormalWidthUnit)}
-        ${dimensionVars('column-border-hover-width', borderHoverWidthTop, borderHoverWidthRight, borderHoverWidthBottom, borderHoverWidthLeft, borderHoverWidthUnit)}
-        ${dimensionVars('column-border-normal-radius', borderNormalRadiusTop, borderNormalRadiusRight, borderNormalRadiusBottom, borderNormalRadiusLeft, borderNormalRadiusUnit)}
-        ${dimensionVars('column-border-hover-radius', borderHoverRadiusTop, borderHoverRadiusRight, borderHoverRadiusBottom, borderHoverRadiusLeft, borderHoverRadiusUnit)}
+        ${dimensionVars('container-border-normal-width', borderNormalWidthTop, borderNormalWidthRight, borderNormalWidthBottom, borderNormalWidthLeft, borderNormalWidthUnit)}
+        ${dimensionVars('container-border-hover-width', borderHoverWidthTop, borderHoverWidthRight, borderHoverWidthBottom, borderHoverWidthLeft, borderHoverWidthUnit)}
+        ${dimensionVars('container-border-normal-radius', borderNormalRadiusTop, borderNormalRadiusRight, borderNormalRadiusBottom, borderNormalRadiusLeft, borderNormalRadiusUnit)}
+        ${dimensionVars('container-border-hover-radius', borderHoverRadiusTop, borderHoverRadiusRight, borderHoverRadiusBottom, borderHoverRadiusLeft, borderHoverRadiusUnit)}
 
-        ${boxShadowVars('column-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
-        ${boxShadowVars('column-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
+        ${boxShadowVars('container-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
+        ${boxShadowVars('container-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}
 
-        ${bgVars('column-bg', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat, columnBgType, columnBgGradient, columnBgColor, columnBgOverlayColor)}
+        ${bgVars('container-bg', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat, columnBgType, columnBgGradient, columnBgColor, columnBgOverlayColor)}
 
-        ${responsiveSliderVars('column-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
-        ${responsiveSliderVars('sticky-offset', stickyOffsetTop, stickyOffsetTopSm, stickyOffsetTopMd, stickyOffsetTopUnit)}
+        ${responsiveSliderVars('container-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
+        ${responsiveSliderVars('container-sticky-offset', stickyOffsetTop, stickyOffsetTopSm, stickyOffsetTopMd, stickyOffsetTopUnit)}
     }`
 	setAttributes({sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "")});
 

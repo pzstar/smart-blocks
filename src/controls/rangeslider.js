@@ -28,6 +28,50 @@ const RangeSliderControl = ({
         return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
     }, []);
 
+    const calcMinVal = () => {
+        let ret;
+        switch(unit) {
+            case 'em':
+                ret = 0;
+                break;
+            case 'vh':
+                ret = 0;
+                break;
+            case 'vw':
+                ret = 0;
+                break;
+            case '%':
+                ret = 0;
+                break;
+            default:
+                ret = min;
+                break;
+        }
+        return ret;
+    }
+
+    const calcMaxVal = () => {
+        let ret;
+        switch(unit) {
+            case 'em':
+                ret = 10;
+                break;
+            case 'vh':
+                ret = 100;
+                break;
+            case 'vw':
+                ret = 100;
+                break;
+            case '%':
+                ret = 100;
+                break;
+            default:
+                ret = max;
+                break;
+        }
+        return ret;
+    }
+
     return <div className={`sb-field-range sb-field ${responsive ? 'sb-responsive' : ''}`}>
         <div className="sb-d-flex sb-align-center">
             {label && (
@@ -60,8 +104,8 @@ const RangeSliderControl = ({
                     {getView == 'Mobile' && (
                         <div className="sb-input-range">
                             <input type="range"
-                                min={min}
-                                max={unit == '%' ? 100 : max}
+                                min={calcMinVal()}
+                                max={calcMaxVal()}
                                 value={valueSm}
                                 step={steps ? steps : 1}
                                 onChange={(e) => {setValueSm(e.target.value)}}
@@ -76,8 +120,8 @@ const RangeSliderControl = ({
                     {getView == 'Tablet' && (
                         <div className="sb-input-range">
                             <input type="range"
-                                min={min}
-                                max={unit == '%' ? 100 : max}
+                                min={calcMinVal()}
+                                max={calcMaxVal()}
                                 value={valueMd}
                                 step={steps ? steps : 1}
                                 onChange={(e) => {setValueMd(e.target.value)}}
@@ -92,8 +136,8 @@ const RangeSliderControl = ({
                     {getView == 'Desktop' && (
                         <div className="sb-input-range">
                             <input type="range"
-                                min={min}
-                                max={unit == '%' ? 100 : max}
+                                min={calcMinVal()}
+                                max={calcMaxVal()}
                                 value={value}
                                 step={steps ? steps : 1}
                                 onChange={(e) => {setValue(e.target.value)}}
@@ -109,8 +153,8 @@ const RangeSliderControl = ({
                 (
                     <div className="sb-input-range">
                         <input type="range"
-                            min={min}
-                            max={unit == '%' ? 100 : max}
+                            min={calcMinVal()}
+                            max={calcMaxVal()}
                             value={value}
                             step={steps ? steps : 1}
                             onChange={(e) => {setValue(e.target.value)}}

@@ -645,7 +645,7 @@ class MultiSelectControl extends Component {
 		);
 
 		let tokenFieldProps = {
-			className: 'components-form-token-field',
+			className: 'components-form-token-field sb-field',
 			tabIndex: '-1',
 		};
 		const matchingSuggestions = this.getMatchingSuggestions();

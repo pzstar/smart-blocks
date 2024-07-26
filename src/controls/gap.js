@@ -101,6 +101,50 @@ const GapControl = ({
 		}
 	}
 
+	const calcMinVal = () => {
+        let ret;
+        switch(unit) {
+            case 'em':
+                ret = 0;
+                break;
+            case 'vh':
+                ret = 0;
+                break;
+            case 'vw':
+                ret = 0;
+                break;
+            case '%':
+                ret = 0;
+                break;
+            default:
+                ret = min;
+                break;
+        }
+        return ret;
+    }
+
+    const calcMaxVal = () => {
+        let ret;
+        switch(unit) {
+            case 'em':
+                ret = 10;
+                break;
+            case 'vh':
+                ret = 100;
+                break;
+            case 'vw':
+                ret = 100;
+                break;
+            case '%':
+                ret = 100;
+                break;
+            default:
+                ret = max;
+                break;
+        }
+        return ret;
+    }
+
 	return <>
 		<div className={`sb-field-gap sb-field sb-d-flex ${responsive ? 'sb-responsive' : ''}`}>
 			<div className="sb-d-flex sb-mb-10">
@@ -135,8 +179,8 @@ const GapControl = ({
 									{getView == 'Desktop' && sides.map((side, index) => {
 										return <span>
 											<input type="number"
-												min={min}
-												max={max}
+												min={calcMinVal()}
+												max={calcMaxVal()}
 												key={index}
 												onChange={(e) => {
 													lock ? (sides.map((sde, index) => {callFunctionByName(`setGap${sde}`, e.target.value)})) : callFunctionByName(`setGap${side}`, e.target.value);
@@ -150,8 +194,8 @@ const GapControl = ({
 									{getView == 'Tablet' && sides.map((side, index) => {
 										return <span>
 											<input type="number"
-												min={min}
-												max={max}
+												min={calcMinVal()}
+												max={calcMaxVal()}
 												key={index}
 												onChange={(e) => {
 													lock ? (sides.map((sde, index) => {callFunctionByName(`setGapMd${sde}`, e.target.value)})) : callFunctionByName(`setGapMd${side}`, e.target.value);
@@ -165,8 +209,8 @@ const GapControl = ({
 									{getView == 'Mobile' && sides.map((side, index) => {
 										return <span>
 											<input type="number"
-												min={min}
-												max={max}
+												min={calcMinVal()}
+												max={calcMaxVal()}
 												key={index}
 												onChange={(e) => {
 													lock ? (sides.map((sde, index) => {callFunctionByName(`setGapSm${sde}`, e.target.value)})) : callFunctionByName(`setGapSm${side}`, e.target.value);
@@ -208,8 +252,8 @@ const GapControl = ({
 									{sides.map((side, index) => {
 										return <span>
 											<input type="number"
-												min={min}
-												max={max}
+												min={calcMinVal()}
+												max={calcMaxVal()}
 												key={index}
 												onChange={(e) => {
 													lock ? (sides.map((sde, index) => {callFunctionByName(`setGap${sde}`, e.target.value)})) : callFunctionByName(`setGap${side}`, e.target.value);

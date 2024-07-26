@@ -466,7 +466,7 @@ export const AlignStretch = () => {
 }
 
 export const AlignBaseline = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" size="24"><path d="M1 14.1h18v1H1zM11.4 11.1h-3l-.6 2H6.5l2.6-8.3h1.7l2.6 8.3H12l-.6-2zm-2.6-1h2.4L10 5.9l-1.2 4.2z"></path></svg>
+    return <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M1 14.1h18v1H1zM11.4 11.1h-3l-.6 2H6.5l2.6-8.3h1.7l2.6 8.3H12l-.6-2zm-2.6-1h2.4L10 5.9l-1.2 4.2z"></path></svg>
 }
 
 
@@ -492,4 +492,20 @@ export const JustifySpaceAround = () => {
 
 export const JustifySpaceEvenly = () => {
     return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M20 1h-1v18h1V1zM1 1H0v18h1V1zM8 5H5v10h3V5zM15 5h-3v10h3V5z"></path></svg>
+}
+
+export const ArrowBottom = () => {
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m16.5 13.5-3.7 3.7V4h-1.5v13.2l-3.8-3.7-1 1 5.5 5.6 5.5-5.6z"></path></svg>
+}
+
+export const ArrowRight= () => {
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z"></path></svg>
+}
+
+export const ArrowUp = () => {
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><g xmlns="http://www.w3.org/2000/svg" transform="matrix(0 -1 1 0 -0 24)"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z"/></g></svg>
+}
+
+export const ArrowLeft = () => {
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><g xmlns="http://www.w3.org/2000/svg" transform="matrix(-1 0 0 -1 24 24)"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z"/></g></svg>
 }

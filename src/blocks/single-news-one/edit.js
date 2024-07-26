@@ -10,7 +10,6 @@ import {
 } from '@wordpress/block-editor';
 import {
     PanelBody,
-    ToggleControl,
     TextControl,
     Button
 } from '@wordpress/components';
@@ -25,6 +24,7 @@ import RangeSliderControl from '../../controls/rangeslider';
 import MultiSelectControl from '../../controls/multiselect';
 import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';
+import ToggleControl from '../../controls/toggle';
 import {responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import classnames from 'classnames';
