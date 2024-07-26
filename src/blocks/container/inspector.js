@@ -30,6 +30,7 @@ import Tabs from '../../utils/tabs';
 import ButtonGroupControl from '../../controls/buttongroup';
 import RangeSliderControl from '../../controls/rangeslider';
 import GapControl from '../../controls/gap';
+import TextControl from '../../controls/text';
 
 import {
 	LayoutIcon,
@@ -174,6 +175,9 @@ const Inspector = ({
 		gridColumnNumber,
 		gridColumnNumberSm,
 		gridColumnNumberMd,
+
+		hrefLinkURL,
+		columnsHTMLTag
 
 	} = attributes;
 	const [activeTab, setActiveTab] = useState('layout');
@@ -750,7 +754,7 @@ const Inspector = ({
 							>
 								<SelectControl
 									label={__('HTML Tag', 'smart-blocks')}
-									value={attributes.columnsHTMLTag}
+									value={columnsHTMLTag}
 									options={[
 										{label: __('Default (div)', 'smart-blocks'), value: 'div'},
 										{label: 'section', value: 'section'},
@@ -758,11 +762,19 @@ const Inspector = ({
 										{label: 'footer', value: 'footer'},
 										{label: 'article', value: 'article'},
 										{label: 'main', value: 'main'},
-										{label: 'anchor link', value: 'anchor link'}
+										{label: 'anchor link', value: 'a'}
 									]}
 									onChange={changeColumnsHTMLTag}
 								/>
 							</PanelBody>
+							{columnsHTMLTag == 'a' && (
+								<TextControl
+									label={__('Link URL', 'smart-blocks')}
+									type="text"
+									value={hrefLinkURL}
+									onChange={value => setAttributes({hrefLinkURL: value})}
+								/>
+							)}
 						</>
 					)}
 				</div>
