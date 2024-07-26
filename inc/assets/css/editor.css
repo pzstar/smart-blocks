@@ -2370,13 +2370,12 @@ input[type="range"]:focus {
     text-align: var(--sb-columns-horizontal-align-lg);
 }
 .wp-block-smart-blocks-columns > .wp-block-smart-blocks-innerblocks-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout [data-type="smart-blocks/column"] {
-    align-self: var(--sb-column-align-self-lg);
     display: flex;
     flex: 1;
     flex-basis: 100%;
     margin: inherit;
     max-width: unset;
-    order: var(--sb-column-custom-order-lg);
+    align-self: var(--sb-column-align-self-lg);
 }
 .wp-block-smart-blocks-columns > .wp-block-smart-blocks-innerblocks-wrap > .block-editor-inner-blocks > .block-editor-block-list__layout [data-type="smart-blocks/column"] [data-type="smart-blocks/columns"] {
     max-width: unset;

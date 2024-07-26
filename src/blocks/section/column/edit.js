@@ -269,6 +269,10 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 
 	const Tag = columnsHTMLTag;
 
+	const classes = classnames(
+		className
+	);
+
 	return (
 		<div {...useBlockProps()}>
 			<style jsx>
@@ -297,6 +301,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 
 			>
 				<Tag
+					className={classes}
 					id={id}
 				>
 					<InnerBlocks
