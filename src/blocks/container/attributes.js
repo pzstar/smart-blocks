@@ -361,6 +361,16 @@ const attributes = {
     containerWrapMd: {
         type: 'string'
     },
+
+    gridColumnNumber: {
+        type: 'string'
+    },
+    gridColumnNumberSm: {
+        type: 'string'
+    },
+    gridColumnNumberMd: {
+        type: 'string'
+    },
 };
 
 export default attributes;

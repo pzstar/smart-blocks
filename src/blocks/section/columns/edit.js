@@ -148,6 +148,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 	} = attributes;
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
 
+	setAttributes({id: useBlockProps()['id']});
 	const stylesCSS = `#${id} {
 		${responsiveSliderVars('columns-width', columnsWidth, columnsWidthSm, columnsWidthMd, columnsWidthUnit)}
 		${responsiveSliderVars('columns-horizontal-align', horizontalAlign, horizontalAlignSm, horizontalAlignMd, '')}

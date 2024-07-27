@@ -9,6 +9,7 @@ import {Fragment, useEffect, useState} from '@wordpress/element';
 import defaultAttributes from './attributes.js';
 import Inspector from './inspector.js';
 import {responsiveDimensionVars, dimensionVars, boxShadowVars, bgVars, responsiveSliderVars} from '../../utils/helper';
+import {responsiveGapVars} from '../../utils/helper';
 
 export default function Edit({attributes, setAttributes, clientId, className}) {
 	const {
@@ -103,7 +104,35 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 		columnAlignSelfSm,
 		columnAlignSelfMd,
 
-		flexibleContentDisplay
+		flexibleContentDisplay,
+		flexDirection,
+		flexDirectionSm,
+		flexDirectionMd,
+
+		justifyContent,
+		justifyContentSm,
+		justifyContentMd,
+
+		alignItems,
+		alignItemsSm,
+		alignItemsMd,
+
+		containerWrap,
+		containerWrapSm,
+		containerWrapMd,
+
+		containerGapRow,
+		containerGapSmRow,
+		containerGapMdRow,
+
+		containerGapColumn,
+		containerGapSmColumn,
+		containerGapMdColumn,
+		containerGapUnit,
+
+		gridColumnNumber,
+		gridColumnNumberSm,
+		gridColumnNumberMd,
 
 	} = attributes;
 
@@ -118,6 +147,7 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 		};
 	}, []);
 
+	setAttributes({id: useBlockProps()['id']});
 	const stylesCSS = `#${id} {
     	${responsiveDimensionVars('container-margin', columnMarginTop, columnMarginRight, columnMarginBottom, columnMarginLeft,
 		columnMarginSmTop, columnMarginSmRight, columnMarginSmBottom, columnMarginSmLeft,
@@ -143,6 +173,15 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 
         ${responsiveSliderVars('container-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
         ${responsiveSliderVars('container-sticky-offset', stickyOffsetTop, stickyOffsetTopSm, stickyOffsetTopMd, stickyOffsetTopUnit)}
+
+        --sb-container-flexible-display:${flexibleContentDisplay ? flexibleContentDisplay : 'flex'};
+        ${responsiveSliderVars('container-flex-direction', flexDirection, flexDirectionSm, flexDirectionMd)}
+        ${responsiveSliderVars('container-flex-justify-content', justifyContent, justifyContentSm, justifyContentMd)}
+        ${responsiveSliderVars('container-flex-align-items', alignItems, alignItemsSm, alignItemsMd)}
+		${responsiveGapVars('container-gap', containerGapRow, containerGapSmRow, containerGapMdRow, containerGapColumn, containerGapSmColumn, containerGapMdColumn, containerGapUnit)}
+        ${responsiveSliderVars('container-flex-wrap', containerWrap, containerWrapSm, containerWrapMd)}
+        ${responsiveSliderVars('container-grid-columns', gridColumnNumber, gridColumnNumberSm, gridColumnNumberMd)}
+
     }`
 	setAttributes({sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "")});
 
@@ -153,7 +192,7 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 	);
 
 	return (
-		<div {...useBlockProps()}>
+		<>
 			<style jsx>
 				{sbStyle}
 			</style>
@@ -171,6 +210,6 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 					renderAppender={!hasInnerBlocks && InnerBlocks.ButtonBlockAppender}
 				/>
 			</Tag>
-		</div>
+		</>
 	);
 }

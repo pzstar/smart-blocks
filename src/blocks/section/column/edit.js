@@ -107,6 +107,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 
 	} = attributes;
 
+	setAttributes({id: useBlockProps()['id']});
 	const stylesCSS = `#${id} {
         ${'--sb-column-width: ' + columnWidth + '%;'}
     	${responsiveDimensionVars('column-margin', columnMarginTop, columnMarginRight, columnMarginBottom, columnMarginLeft,
