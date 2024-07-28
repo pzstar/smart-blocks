@@ -11,7 +11,7 @@ import attributes from './attributes.js';
  */
 import Edit from './edit';
 import Save from './save';
-import {Column} from '../../utils/svgicons';
+import {Container} from '../../utils/svgicons';
 
 import {__} from '@wordpress/i18n';
 
@@ -21,7 +21,7 @@ import {__} from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType('smart-blocks/container', {
-    icon: <Column />,
+    icon: <Container />,
     supports: {
         "align": ['wide', 'full'],
         "html": false

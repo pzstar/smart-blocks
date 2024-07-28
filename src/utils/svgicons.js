@@ -450,7 +450,7 @@ export const Column = () => {
 
 export const Container = () => {
     return <svg viewBox="0 0 60 40">
-        <rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"/>
+        <rect width="60" height="40"></rect>
     </svg>
 }
 
