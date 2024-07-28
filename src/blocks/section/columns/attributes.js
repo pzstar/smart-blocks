@@ -141,19 +141,6 @@ const attributes = {
         type: 'string'
     },
 
-    columnJustify: {
-        type: 'string',
-        default: 0
-    },
-    columnJustifySm: {
-        type: 'string',
-        default: 0
-    },
-    columnJustifyMd: {
-        type: 'string',
-        default: 0
-    },
-
 
     columnsHeight: {
         type: 'string'

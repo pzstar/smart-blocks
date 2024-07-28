@@ -73,6 +73,17 @@ a {
     opacity: 0.95;
 }
 
+.wp-block-smart-blocks-columns:hover {
+    border-bottom-width: var(var(--sb-columns-border-hover-width-bottom), var(--sb-columns-border-normal-width-bottom, 0));
+    border-color: var(--sb-columns-border-hover-color, var(--sb-columns-border-normal-color, transparent));
+    border-left-width: var(--sb-columns-border-hover-width-left, var(--sb-columns-border-normal-width-left, 0));
+    border-radius: var(--sb-columns-border-hover-radius-top, var(--sb-columns-border-normal-radius-top, 0)) var(--sb-columns-border-hover-radius-right, var(--sb-columns-border-normal-radius-right, 0)) var(--sb-columns-border-hover-radius-bottom, var(--sb-columns-border-normal-radius-bottom, 0)) var(--sb-columns-border-hover-radius-left, var(--sb-columns-border-normal-radius-left, 0));
+    border-right-width: var(--sb-columns-border-hover-width-right, var(--sb-columns-border-normal-width-right, 0));
+    border-style: var(--sb-columns-border-hover, var(--sb-columns-border-normal, solid));
+    border-top-width: var(--sb-columns-border-hover-width-top, var(--sb-columns-border-normal-width-top, 0));
+    box-shadow: var(--sb-columns-border-hover-box-shadow-inset, var(--sb-columns-border-normal-box-shadow-inset, )) var(--sb-columns-border-hover-box-shadow-horizontal, var(--sb-columns-border-normal-box-shadow-horizontal, 0)) var(--sb-columns-border-hover-box-shadow-vertical, var(--sb-columns-border-normal-box-shadow-vertical, 0)) var(--sb-columns-border-hover-box-shadow-blur, var(--sb-columns-border-normal-box-shadow-blur, 0)) var(--sb-columns-border-hover-box-shadow-spread, var(--sb-columns-border-normal-box-shadow-spread, 0)) var(--sb-columns-border-hover-box-shadow-color, var(--sb-columns-border-normal-box-shadow-color, transparent));
+}
+
 .wp-block-smart-blocks-columns > .wp-block-smart-blocks-innerblocks-wrap {
     position: relative;
     align-items: var(--sb-columns-align-lg);
@@ -95,26 +106,6 @@ a {
 }
 
 /* Column */
-.wp-block-smart-blocks-columns.has-2-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
-    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 1/2);
-}
-
-.wp-block-smart-blocks-columns.has-3-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
-    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 2/3);
-}
-
-.wp-block-smart-blocks-columns.has-4-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
-    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 3/4);
-}
-
-.wp-block-smart-blocks-columns.has-5-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
-    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 4/5);
-}
-
-.wp-block-smart-blocks-columns.has-6-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
-    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 5/6);
-}
-
 .wp-block-smart-blocks-column {
     background-attachment: var(--sb-column-bg-img-attachment);
     background-color: var(--sb-column-bg-color, transparent);
@@ -141,13 +132,44 @@ a {
     align-self: var(--sb-column-align-self-lg);
 }
 
+.wp-block-smart-blocks-column:hover {
+    border-bottom-width: var(var(--sb-column-border-hover-width-bottom), var(--sb-column-border-normal-width-bottom, 0));
+    border-color: var(--sb-column-border-hover-color, var(--sb-column-border-normal-color, transparent));
+    border-left-width: var(--sb-column-border-hover-width-left, var(--sb-column-border-normal-width-left, 0));
+    border-radius: var(--sb-column-border-hover-radius-top, var(--sb-column-border-normal-radius-top, 0)) var(--sb-column-border-hover-radius-right, var(--sb-column-border-normal-radius-right, 0)) var(--sb-column-border-hover-radius-bottom, var(--sb-column-border-normal-radius-bottom, 0)) var(--sb-column-border-hover-radius-left, var(--sb-column-border-normal-radius-left, 0));
+    border-right-width: var(--sb-column-border-hover-width-right, var(--sb-column-border-normal-width-right, 0));
+    border-style: var(--sb-column-border-hover, var(--sb-column-border-normal, solid));
+    border-top-width: var(--sb-column-border-hover-width-top, var(--sb-column-border-normal-width-top, 0));
+    box-shadow: var(--sb-column-border-hover-box-shadow-inset, var(--sb-column-border-normal-box-shadow-inset, )) var(--sb-column-border-hover-box-shadow-horizontal, var(--sb-column-border-normal-box-shadow-horizontal, 0)) var(--sb-column-border-hover-box-shadow-vertical, var(--sb-column-border-normal-box-shadow-vertical, 0)) var(--sb-column-border-hover-box-shadow-blur, var(--sb-column-border-normal-box-shadow-blur, 0)) var(--sb-column-border-hover-box-shadow-spread, var(--sb-column-border-normal-box-shadow-spread, 0)) var(--sb-column-border-hover-box-shadow-color, var(--sb-column-border-normal-box-shadow-color, transparent));
+}
+
+.wp-block-smart-blocks-columns.has-2-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
+    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 1/2);
+}
+
+.wp-block-smart-blocks-columns.has-3-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
+    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 2/3);
+}
+
+.wp-block-smart-blocks-columns.has-4-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
+    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 3/4);
+}
+
+.wp-block-smart-blocks-columns.has-5-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
+    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 4/5);
+}
+
+.wp-block-smart-blocks-columns.has-6-columns > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
+    flex: 0 0 calc(var(--sb-column-width) - var(--sb-columns-gap-column-lg) * 5/6);
+}
+
 /* Container */
 .sb-sticky-container {
     position: sticky;
     top: var(--sb-container-sticky-offset-lg);
 }
 
-.wp-block-smart-blocks-container{
+.wp-block-smart-blocks-container {
     display: var(--sb-container-flexible-display);
     flex-direction: var(--sb-container-flex-direction-lg);
     justify-content: var(--sb-container-flex-justify-content-lg);
@@ -183,8 +205,15 @@ a {
     padding-top: var(--sb-container-padding-top-lg, 0);
 }
 
-.wp-block-smart-blocks-container > *{
-    flex: 1;
+.wp-block-smart-blocks-container:hover {
+    border-bottom-width: var(var(--sb-container-border-hover-width-bottom), var(--sb-container-border-normal-width-bottom, 0));
+    border-color: var(--sb-container-border-hover-color, var(--sb-container-border-normal-color, transparent));
+    border-left-width: var(--sb-container-border-hover-width-left, var(--sb-container-border-normal-width-left, 0));
+    border-radius: var(--sb-container-border-hover-radius-top, var(--sb-container-border-normal-radius-top, 0)) var(--sb-container-border-hover-radius-right, var(--sb-container-border-normal-radius-right, 0)) var(--sb-container-border-hover-radius-bottom, var(--sb-container-border-normal-radius-bottom, 0)) var(--sb-container-border-hover-radius-left, var(--sb-container-border-normal-radius-left, 0));
+    border-right-width: var(--sb-container-border-hover-width-right, var(--sb-container-border-normal-width-right, 0));
+    border-style: var(--sb-container-border-hover, var(--sb-container-border-normal, solid));
+    border-top-width: var(--sb-container-border-hover-width-top, var(--sb-container-border-normal-width-top, 0));
+    box-shadow: var(--sb-container-border-hover-box-shadow-inset, var(--sb-container-border-normal-box-shadow-inset, )) var(--sb-container-border-hover-box-shadow-horizontal, var(--sb-container-border-normal-box-shadow-horizontal, 0)) var(--sb-container-border-hover-box-shadow-vertical, var(--sb-container-border-normal-box-shadow-vertical, 0)) var(--sb-container-border-hover-box-shadow-blur, var(--sb-container-border-normal-box-shadow-blur, 0)) var(--sb-container-border-hover-box-shadow-spread, var(--sb-container-border-normal-box-shadow-spread, 0)) var(--sb-container-border-hover-box-shadow-color, var(--sb-container-border-normal-box-shadow-color, transparent));
 }
 
 /* Block Title */

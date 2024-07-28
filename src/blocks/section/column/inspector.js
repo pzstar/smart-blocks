@@ -252,22 +252,22 @@ const Inspector = ({
 									options={[
 										{
 											value: 'start',
-											icon: <i class="sbi-align-start-h"></i>,
+											icon: <i class="sbi-align-start-v"></i>,
 											label: __('Start', 'smart-blocks')
 										},
 										{
 											value: 'center',
-											icon: <i class="sbi-align-center-h"></i>,
+											icon: <i class="sbi-align-center-v"></i>,
 											label: __('Center', 'smart-blocks')
 										},
 										{
 											value: 'end',
-											icon: <i class="sbi-align-end-h"></i>,
+											icon: <i class="sbi-align-end-v"></i>,
 											label: __('Stretch', 'smart-blocks')
 										},
 										{
 											value: 'srtetch',
-											icon: <i class="sbi-align-stretch-h"></i>,
+											icon: <i class="sbi-align-stretch-v"></i>,
 											label: __('Stretch', 'smart-blocks')
 										}
 									]}
@@ -285,7 +285,7 @@ const Inspector = ({
 					) || 'style' === activeTab && (
 						<>
 							<PanelBody
-								title={__('Layout', 'smart-blocks')}
+								title={__('Spacing', 'smart-blocks')}
 								initialOpen={false}
 							>
 								<DimensionControl

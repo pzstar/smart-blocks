@@ -2871,10 +2871,6 @@ input[type="range"]:focus {
     grid-template-columns: repeat(var(--sb-container-grid-columns-lg), 1fr);
 }
 
-[data-type="smart-blocks/container"] > .wp-block-smart-blocks-container > .block-editor-inner-blocks > .block-editor-block-list__layout > *{
-    flex: 1;
-}
-
 
 
 

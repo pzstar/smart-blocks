@@ -102,9 +102,6 @@ const Inspector = ({
 		columnAlignment,
 		columnAlignmentSm,
 		columnAlignmentMd,
-		columnJustify,
-		columnJustifySm,
-		columnJustifyMd,
 
 		layout,
 		layoutTablet,
@@ -409,49 +406,6 @@ const Inspector = ({
 									/>
 
 									<ButtonGroupControl
-										label={__('Column Justify', 'smart-blocks')}
-										responsive={!0}
-										options={[
-											{
-												value: 'flex-start',
-												icon: <i class="sbi-justify-start-h"></i>,
-												label: __('Flex Start', 'smart-blocks')
-											},
-											{
-												value: 'center',
-												icon: <i class="sbi-justify-center-h"></i>,
-												label: __('Center', 'smart-blocks')
-											},
-											{
-												value: 'flex-end',
-												icon: <i class="sbi-justify-end-h"></i>,
-												label: __('Flex End', 'smart-blocks')
-											},
-											{
-												value: 'space-between',
-												icon: <i class="sbi-justify-space-between-h"></i>,
-												label: __('Space Between', 'smart-blocks')
-											},
-											{
-												value: 'space-around',
-												icon: <i class="sbi-justify-space-around-h"></i>,
-												label: __('Space Around', 'smart-blocks')
-											},
-											{
-												value: 'space-evenly',
-												icon: <i class="sbi-justify-space-evenly-h"></i>,
-												label: __('Space Evenly', 'smart-blocks')
-											}
-										]}
-										value={columnJustify}
-										setValue={(value) => setAttributes({columnJustify: value})}
-										valueSm={columnJustifySm}
-										setValueSm={(value) => setAttributes({columnJustifySm: value})}
-										valueMd={columnJustifyMd}
-										setValueMd={(value) => setAttributes({columnJustifyMd: value})}
-									/>
-
-									<ButtonGroupControl
 										label={__('Text Align', 'smart-blocks')}
 										responsive={!0}
 										options={[
@@ -508,7 +462,7 @@ const Inspector = ({
 						) || 'style' === activeTab && (
 							<>
 								<PanelBody
-									title={__('Layout', 'smart-blocks')}
+									title={__('Spacing', 'smart-blocks')}
 									initialOpen={false}
 								>
 									<DimensionControl

@@ -504,7 +504,7 @@ const Inspector = ({
 					) || 'style' === activeTab && (
 						<>
 							<PanelBody
-								title={__('Layout', 'smart-blocks')}
+								title={__('Spacing', 'smart-blocks')}
 								initialOpen={false}
 							>
 								<DimensionControl

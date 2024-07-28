@@ -78,9 +78,6 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		columnAlignment,
 		columnAlignmentSm,
 		columnAlignmentMd,
-		columnJustify,
-		columnJustifySm,
-		columnJustifyMd,
 
 		columnsMarginSmTop,
 		columnsMarginSmRight,
@@ -152,7 +149,6 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		${responsiveSliderVars('columns-horizontal-align', horizontalAlign, horizontalAlignSm, horizontalAlignMd, '')}
 		${responsiveGapVars('columns-gap', columnsGapRow, columnsGapSmRow, columnsGapMdRow, columnsGapColumn, columnsGapSmColumn, columnsGapMdColumn, columnsGapUnit)}
 		${responsiveSliderVars('columns-align', columnAlignment, columnAlignmentSm, columnAlignmentMd, '')}
-		${responsiveSliderVars('columns-justify', columnJustify, columnJustifySm, columnJustifyMd, '')}
 
         ${responsiveDimensionVars('columns-margin', columnsMarginTop, columnsMarginRight, columnsMarginBottom, columnsMarginLeft,
 		columnsMarginSmTop, columnsMarginSmRight, columnsMarginSmBottom, columnsMarginSmLeft,

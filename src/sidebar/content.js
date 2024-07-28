@@ -36,7 +36,7 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 
 							<Tooltip text={__("Narrow", 'smart-blocks')}>
 								<button
-									className={((!postMeta.sb_editor_width || 'narrow' === postMeta.sb_editor_width) ? "active-tab" : "") + " components-button sb-tab-menu"}
+									className={('narrow' === postMeta.sb_editor_width ? "active-tab" : "") + " components-button sb-tab-menu"}
 									onClick={() => setPostMeta({sb_editor_width: 'narrow'})}
 								>
 									{__("Narrow", 'smart-blocks')}
