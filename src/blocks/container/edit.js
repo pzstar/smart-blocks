@@ -100,10 +100,6 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 		borderHoverBoxShadowColor,
 		borderHoverBoxShadowInset,
 
-		columnAlignSelf,
-		columnAlignSelfSm,
-		columnAlignSelfMd,
-
 		flexibleContentDisplay,
 		flexDirection,
 		flexDirectionSm,
@@ -112,6 +108,10 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 		justifyContent,
 		justifyContentSm,
 		justifyContentMd,
+
+		justifyItems,
+		justifyItemsSm,
+		justifyItemsMd,
 
 		alignItems,
 		alignItemsSm,
@@ -139,7 +139,7 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 	const {
 		hasInnerBlocks
 	} = useSelect(select => {
-		const { getBlock } = select('core/block-editor');
+		const {getBlock} = select('core/block-editor');
 		const block = getBlock(clientId);
 		const hasInnerBlocks = !!(block && block.innerBlocks.length);
 		return {
@@ -171,12 +171,12 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 
         ${bgVars('container-bg', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat, columnBgType, columnBgGradient, columnBgColor, columnBgOverlayColor)}
 
-        ${responsiveSliderVars('container-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
         ${responsiveSliderVars('container-sticky-offset', stickyOffsetTop, stickyOffsetTopSm, stickyOffsetTopMd, stickyOffsetTopUnit)}
 
         --sb-container-flexible-display:${flexibleContentDisplay ? flexibleContentDisplay : 'flex'};
         ${responsiveSliderVars('container-flex-direction', flexDirection, flexDirectionSm, flexDirectionMd)}
         ${responsiveSliderVars('container-flex-justify-content', justifyContent, justifyContentSm, justifyContentMd)}
+		 ${responsiveSliderVars('container-flex-justify-items', justifyItems, justifyItemsSm, justifyItemsMd)}
         ${responsiveSliderVars('container-flex-align-items', alignItems, alignItemsSm, alignItemsMd)}
 		${responsiveGapVars('container-gap', containerGapRow, containerGapSmRow, containerGapMdRow, containerGapColumn, containerGapSmColumn, containerGapMdColumn, containerGapUnit)}
         ${responsiveSliderVars('container-flex-wrap', containerWrap, containerWrapSm, containerWrapMd)}
@@ -209,7 +209,7 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 					templateLock={false}
 					renderAppender={!hasInnerBlocks && InnerBlocks.ButtonBlockAppender}
 				/>
-			</Tag>
+			</Tag >
 		</>
 	);
 }

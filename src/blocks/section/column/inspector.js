@@ -251,25 +251,25 @@ const Inspector = ({
 									responsive={!0}
 									options={[
 										{
-											value: 'flex-start',
-											icon: <AlignFlexStart />,
-											label: __('Flex Start', 'smart-blocks')
+											value: 'start',
+											icon: <i class="sbi-align-start-h"></i>,
+											label: __('Start', 'smart-blocks')
 										},
 										{
 											value: 'center',
-											icon: <AlignCenter />,
+											icon: <i class="sbi-align-center-h"></i>,
 											label: __('Center', 'smart-blocks')
 										},
 										{
-											value: 'flex-end',
-											icon: <AlignFlexEnd />,
-											label: __('Flex End', 'smart-blocks')
-										},
-										{
-											value: 'stretch',
-											icon: <AlignStretch />,
+											value: 'end',
+											icon: <i class="sbi-align-end-h"></i>,
 											label: __('Stretch', 'smart-blocks')
 										},
+										{
+											value: 'srtetch',
+											icon: <i class="sbi-align-stretch-h"></i>,
+											label: __('Stretch', 'smart-blocks')
+										}
 									]}
 									value={columnAlignSelf}
 									setValue={(value) => setAttributes({columnAlignSelf: value})}

@@ -4,7 +4,7 @@ import {times} from 'lodash';
 import {useViewportMatch} from '@wordpress/compose';
 
 import {useDispatch, useSelect} from '@wordpress/data';
-import {InnerBlocks} from '@wordpress/block-editor';
+import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
 
 import {useEffect, useState} from '@wordpress/element';
 
@@ -63,8 +63,6 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 		borderHoverRadiusBottom,
 		borderHoverRadiusUnit,
 
-		borderNormalBoxShadow,
-		borderHoverBoxShadow,
 		sectionBgColor,
 
 		columnsHeight,
@@ -279,7 +277,10 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 				updateColumnsWidth={updateColumnsWidth}
 			/>
 
-			<Tag className={classes} id={id}>
+			<Tag 
+			className={classes} 
+			id={id}
+			>
 				<div className="wp-block-smart-blocks-innerblocks-wrap">
 					<InnerBlocks
 						allowedBlocks={['smart-blocks/column']}

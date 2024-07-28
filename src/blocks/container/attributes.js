@@ -317,6 +317,16 @@ const attributes = {
         type: 'string'
     },
 
+    justifyItems: {
+        type: 'string'
+    },
+    justifyItemsSm: {
+        type: 'string'
+    },
+    justifyItemsMd: {
+        type: 'string'
+    },
+
     alignItems: {
         type: 'string'
     },

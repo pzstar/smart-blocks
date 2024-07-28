@@ -376,33 +376,28 @@ const Inspector = ({
 									/>
 
 									<ButtonGroupControl
-										label={__('Column Alignment', 'smart-blocks')}
+										label={__('Column Align', 'smart-blocks')}
 										responsive={!0}
 										options={[
 											{
 												value: 'flex-start',
-												icon: <AlignFlexStart />,
+												icon: <i class="sbi-align-start-v"></i>,
 												label: __('Flex Start', 'smart-blocks')
 											},
 											{
 												value: 'center',
-												icon: <AlignCenter />,
+												icon: <i class="sbi-align-center-v"></i>,
 												label: __('Center', 'smart-blocks')
 											},
 											{
 												value: 'flex-end',
-												icon: <AlignFlexEnd />,
+												icon: <i class="sbi-align-end-v"></i>,
 												label: __('Flex End', 'smart-blocks')
 											},
 											{
 												value: 'stretch',
-												icon: <AlignStretch />,
+												icon: <i class="sbi-align-stretch-v"></i>,
 												label: __('Stretch', 'smart-blocks')
-											},
-											{
-												value: 'baseline',
-												icon: <AlignBaseline />,
-												label: __('Baseline', 'smart-blocks')
 											}
 										]}
 										value={columnAlignment}
@@ -419,32 +414,32 @@ const Inspector = ({
 										options={[
 											{
 												value: 'flex-start',
-												icon: <JustifyFlexStart />,
+												icon: <i class="sbi-justify-start-h"></i>,
 												label: __('Flex Start', 'smart-blocks')
 											},
 											{
 												value: 'center',
-												icon: <JustifyCenter />,
+												icon: <i class="sbi-justify-center-h"></i>,
 												label: __('Center', 'smart-blocks')
 											},
 											{
 												value: 'flex-end',
-												icon: <JustifyFlexEnd />,
+												icon: <i class="sbi-justify-end-h"></i>,
 												label: __('Flex End', 'smart-blocks')
 											},
 											{
 												value: 'space-between',
-												icon: <JustifySpaceBetween />,
+												icon: <i class="sbi-justify-space-between-h"></i>,
 												label: __('Space Between', 'smart-blocks')
 											},
 											{
 												value: 'space-around',
-												icon: <JustifySpaceAround />,
+												icon: <i class="sbi-justify-space-around-h"></i>,
 												label: __('Space Around', 'smart-blocks')
 											},
 											{
 												value: 'space-evenly',
-												icon: <JustifySpaceEvenly />,
+												icon: <i class="sbi-justify-space-evenly-h"></i>,
 												label: __('Space Evenly', 'smart-blocks')
 											}
 										]}
@@ -457,22 +452,22 @@ const Inspector = ({
 									/>
 
 									<ButtonGroupControl
-										label={__('Content Horizontal Align', 'smart-blocks')}
+										label={__('Text Align', 'smart-blocks')}
 										responsive={!0}
 										options={[
 											{
-												value: 'flex-start',
-												icon: 'editor-alignleft',
+												value: 'left',
+												icon: <i class="sbi-text-align-left"></i>,
 												label: __('Left', 'smart-blocks')
 											},
 											{
 												value: 'center',
-												icon: 'editor-aligncenter',
+												icon: <i class="sbi-text-align-center"></i>,
 												label: __('Center', 'smart-blocks')
 											},
 											{
 												value: 'right',
-												icon: 'editor-alignright',
+												icon: <i class="sbi-text-align-right"></i>,
 												label: __('Right', 'smart-blocks')
 											}
 										]}

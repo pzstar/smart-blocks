@@ -142,10 +142,6 @@ const Inspector = ({
 		borderHoverBoxShadowColor,
 		borderHoverBoxShadowInset,
 
-		columnAlignSelf,
-		columnAlignSelfSm,
-		columnAlignSelfMd,
-
 		flexibleContentDisplay,
 		flexDirection,
 		flexDirectionSm,
@@ -154,6 +150,10 @@ const Inspector = ({
 		justifyContent,
 		justifyContentSm,
 		justifyContentMd,
+		
+		justifyItems,
+		justifyItemsSm,
+		justifyItemsMd,
 
 		alignItems,
 		alignItemsSm,
@@ -232,6 +232,34 @@ const Inspector = ({
 					{'layout' === activeTab && (
 						<>
 							<PanelBody
+								title={__('Sticky Options', 'smart-blocks')}
+								initialOpen={false}
+							>
+								<ToggleControl
+									label={__('Enable Sticky', 'smart-blocks')}
+									checked={enableSticky}
+									onChange={() => setAttributes({'enableSticky': !enableSticky})}
+								/>
+
+								{enableSticky && (<RangeSliderControl
+									label={__('Sticky Offset', 'smart-blocks')}
+									min={0}
+									max={300}
+									responsive={!0}
+									value={stickyOffsetTop}
+									setValue={(value) => setAttributes({stickyOffsetTop: value})}
+									valueSm={stickyOffsetTopSm}
+									setValueSm={(value) => setAttributes({stickyOffsetTopSm: value})}
+									valueMd={stickyOffsetTopMd}
+									setValueMd={(value) => setAttributes({stickyOffsetTopMd: value})}
+									useUnit={!0}
+									units={['px']}
+									unit={stickyOffsetTopUnit}
+									setUnit={(value) => setAttributes({stickyOffsetTopUnit: value})}
+								/>)}
+							</PanelBody>
+
+							<PanelBody
 								title={__('Flexible Content Options', 'smart-blocks')}
 								initialOpen={false}
 							>
@@ -258,157 +286,64 @@ const Inspector = ({
 								</div>
 
 								{(!flexibleContentDisplay || 'flex' === flexibleContentDisplay) && (
-								<>
-									<ButtonGroupControl
-										label={__('Direction', 'smart-blocks')}
-										responsive={!0}
-										options={[
-											{
-												value: 'right',
-												icon: <ArrowRight />,
-												label: __('Right', 'smart-blocks')
-											},
-											{
-												value: 'bottom',
-												icon: <ArrowBottom />,
-												label: __('Bottom', 'smart-blocks')
-											},
-											{
-												value: 'left',
-												icon: <ArrowLeft />,
-												label: __('Left', 'smart-blocks')
-											},
-											{
-												value: 'top',
-												icon: <ArrowUp />,
-												label: __('Top', 'smart-blocks')
-											}
-										]}
-										value={flexDirection}
-										setValue={(value) => setAttributes({flexDirection: value})}
-										valueSm={flexDirectionSm}
-										setValueSm={(value) => setAttributes({flexDirectionSm: value})}
-										valueMd={flexDirectionMd}
-										setValueMd={(value) => setAttributes({flexDirectionMd: value})}
-									/>
+									<>
+										<ButtonGroupControl
+											label={__('Direction', 'smart-blocks')}
+											responsive={!0}
+											options={[
+												{
+													value: 'row',
+													icon: <i class="sbi-arrow-right"></i>,
+													label: __('Right', 'smart-blocks')
+												},
+												{
+													value: 'column',
+													icon: <i class="sbi-arrow-down"></i>,
+													label: __('Bottom', 'smart-blocks')
+												},
+												{
+													value: 'row-reverse',
+													icon: <i class="sbi-arrow-left"></i>,
+													label: __('Left', 'smart-blocks')
+												},
+												{
+													value: 'column-reverse',
+													icon: <i class="sbi-arrow-up"></i>,
+													label: __('Top', 'smart-blocks')
+												}
+											]}
+											value={flexDirection}
+											setValue={(value) => setAttributes({flexDirection: value})}
+											valueSm={flexDirectionSm}
+											setValueSm={(value) => setAttributes({flexDirectionSm: value})}
+											valueMd={flexDirectionMd}
+											setValueMd={(value) => setAttributes({flexDirectionMd: value})}
+										/>
 
-									<ButtonGroupControl
-										label={__('Justify Content', 'smart-blocks')}
-										responsive={!0}
-										options={[
-											{
-												value: 'flex-start',
-												icon: <JustifyFlexStart />,
-												label: __('Flex Start', 'smart-blocks')
-											},
-											{
-												value: 'center',
-												icon: <JustifyCenter />,
-												label: __('Center', 'smart-blocks')
-											},
-											{
-												value: 'flex-end',
-												icon: <JustifyFlexEnd />,
-												label: __('Flex End', 'smart-blocks')
-											},
-											{
-												value: 'space-between',
-												icon: <JustifySpaceBetween />,
-												label: __('Space Between', 'smart-blocks')
-											},
-											{
-												value: 'space-around',
-												icon: <JustifySpaceAround />,
-												label: __('Space Around', 'smart-blocks')
-											},
-											{
-												value: 'space-evenly',
-												icon: <JustifySpaceEvenly />,
-												label: __('Space Evenly', 'smart-blocks')
-											}
-										]}
-										value={justifyContent}
-										setValue={(value) => setAttributes({justifyContent: value})}
-										valueSm={justifyContentSm}
-										setValueSm={(value) => setAttributes({justifyContentSm: value})}
-										valueMd={justifyContentMd}
-										setValueMd={(value) => setAttributes({justifyContentMd: value})}
-									/>
 
-									<ButtonGroupControl
-										label={__('Align Items', 'smart-blocks')}
-										responsive={!0}
-										options={[
-											{
-												value: 'flex-start',
-												icon: 'editor-alignleft',
-												label: __('Left', 'smart-blocks')
-											},
-											{
-												value: 'center',
-												icon: 'editor-aligncenter',
-												label: __('Center', 'smart-blocks')
-											},
-											{
-												value: 'right',
-												icon: 'editor-alignright',
-												label: __('Right', 'smart-blocks')
-											}
-										]}
-										value={alignItems}
-										setValue={(value) => setAttributes({alignItems: value})}
-										valueSm={alignItemsSm}
-										setValueSm={(value) => setAttributes({alignItemsSm: value})}
-										valueMd={alignItemsMd}
-										setValueMd={(value) => setAttributes({alignItemsMd: value})}
-									/>
-
-									<GapControl
-										label={__('Gaps', 'smart-blocks')}
-										min="0"
-										max="100"
-										responsive={!0}
-
-										gapColumn={containerGapColumn}
-										setGapColumn={value => setAttributes({containerGapColumn: value})}
-										gapMdColumn={containerGapMdColumn}
-										setGapMdColumn={value => setAttributes({containerGapMdColumn: value})}
-										gapSmColumn={containerGapSmColumn}
-										setGapSmColumn={value => setAttributes({containerGapSmColumn: value})}
-
-										gapRow={containerGapRow}
-										setGapRow={value => setAttributes({containerGapRow: value})}
-										gapMdRow={containerGapMdRow}
-										setGapMdRow={value => setAttributes({containerGapMdRow: value})}
-										gapSmRow={containerGapSmRow}
-										setGapSmRow={value => setAttributes({containerGapSmRow: value})}
-
-										unit={containerGapUnit}
-										setUnit={value => setAttributes({containerGapUnit: value})}
-									/>
-									<ButtonGroupControl
-										label={__('Container Wrap', 'smart-blocks')}
-										responsive={!0}
-										options={[
-											{
-												value: 'wrap',
-												icon: <ArrowBottom />,
-												label: __('Wrap', 'smart-blocks')
-											},
-											{
-												value: 'no-wrap',
-												icon: <ArrowRight />,
-												label: __('No Wrap', 'smart-blocks')
-											},
-										]}
-										value={containerWrap}
-										setValue={(value) => setAttributes({containerWrap: value})}
-										valueSm={containerWrapSm}
-										setValueSm={(value) => setAttributes({containerWrapSm: value})}
-										valueMd={containerWrapMd}
-										setValueMd={(value) => setAttributes({containerWrapMd: value})}
-									/>
-								</>
+										<ButtonGroupControl
+											label={__('Container Wrap', 'smart-blocks')}
+											responsive={!0}
+											options={[
+												{
+													value: 'nowrap',
+													icon: <i class="sbi-arrow-right"></i>,
+													label: __('No Wrap', 'smart-blocks')
+												},
+												{
+													value: 'wrap',
+													icon: <i class="sbi-wrap"></i>,
+													label: __('Wrap', 'smart-blocks')
+												},
+											]}
+											value={containerWrap}
+											setValue={(value) => setAttributes({containerWrap: value})}
+											valueSm={containerWrapSm}
+											setValueSm={(value) => setAttributes({containerWrapSm: value})}
+											valueMd={containerWrapMd}
+											setValueMd={(value) => setAttributes({containerWrapMd: value})}
+										/>
+									</>
 								)}
 								{('grid' === flexibleContentDisplay) && (<>
 									<RangeSliderControl
@@ -423,59 +358,148 @@ const Inspector = ({
 										valueMd={gridColumnNumberMd}
 										setValueMd={(value) => setAttributes({gridColumnNumberMd: value})}
 									/>
-
-									<GapControl
-										label={__('Gaps', 'smart-blocks')}
-										min="0"
-										max="100"
-										responsive={!0}
-
-										gapColumn={containerGapColumn}
-										setGapColumn={value => setAttributes({containerGapColumn: value})}
-										gapMdColumn={containerGapMdColumn}
-										setGapMdColumn={value => setAttributes({containerGapMdColumn: value})}
-										gapSmColumn={containerGapSmColumn}
-										setGapSmColumn={value => setAttributes({containerGapSmColumn: value})}
-
-										gapRow={containerGapRow}
-										setGapRow={value => setAttributes({containerGapRow: value})}
-										gapMdRow={containerGapMdRow}
-										setGapMdRow={value => setAttributes({containerGapMdRow: value})}
-										gapSmRow={containerGapSmRow}
-										setGapSmRow={value => setAttributes({containerGapSmRow: value})}
-
-										unit={containerGapUnit}
-										setUnit={value => setAttributes({containerGapUnit: value})}
-									/>
 								</>)}
-							</PanelBody>
-							<PanelBody
-								title={__('Sticky Options', 'smart-blocks')}
-								initialOpen={false}
-							>
-								<ToggleControl
-									label={__('Enable Sticky', 'smart-blocks')}
-									checked={enableSticky}
-									onChange={() => setAttributes({'enableSticky': !enableSticky})}
+
+								<ButtonGroupControl
+									label={__('Align Items', 'smart-blocks')}
+									responsive={!0}
+									options={[
+										{
+											value: 'flex-start',
+											icon: <i class="sbi-align-start-v"></i>,
+											label: __('Flex Start', 'smart-blocks')
+										},
+										{
+											value: 'center',
+											icon: <i class="sbi-align-center-v"></i>,
+											label: __('Center', 'smart-blocks')
+										},
+										{
+											value: 'flex-end',
+											icon: <i class="sbi-align-end-v"></i>,
+											label: __('Flex End', 'smart-blocks')
+										},
+										{
+											value: 'stretch',
+											icon: <i class="sbi-align-stretch-v"></i>,
+											label: __('Stretch', 'smart-blocks')
+										}
+									]}
+									value={alignItems}
+									setValue={(value) => setAttributes({alignItems: value})}
+									valueSm={alignItemsSm}
+									setValueSm={(value) => setAttributes({alignItemsSm: value})}
+									valueMd={alignItemsMd}
+									setValueMd={(value) => setAttributes({alignItemsMd: value})}
 								/>
 
-								{enableSticky && (<RangeSliderControl
-									label={__('Sticky Offset', 'smart-blocks')}
-									min={0}
-									max={1800}
+								{('flex' === flexibleContentDisplay) && (<>
+									<ButtonGroupControl
+										label={__('Justify Content', 'smart-blocks')}
+										responsive={!0}
+										options={[
+											{
+												value: 'flex-start',
+												icon: <i class="sbi-justify-start-h"></i>,
+												label: __('Flex Start', 'smart-blocks')
+											},
+											{
+												value: 'center',
+												icon: <i class="sbi-justify-center-h"></i>,
+												label: __('Center', 'smart-blocks')
+											},
+											{
+												value: 'flex-end',
+												icon: <i class="sbi-justify-end-h"></i>,
+												label: __('Flex End', 'smart-blocks')
+											},
+											{
+												value: 'space-between',
+												icon: <i class="sbi-justify-space-between-h"></i>,
+												label: __('Space Between', 'smart-blocks')
+											},
+											{
+												value: 'space-around',
+												icon: <i class="sbi-justify-space-around-h"></i>,
+												label: __('Space Around', 'smart-blocks')
+											},
+											{
+												value: 'space-evenly',
+												icon: <i class="sbi-justify-space-evenly-h"></i>,
+												label: __('Space Evenly', 'smart-blocks')
+											}
+										]}
+										value={justifyContent}
+										setValue={(value) => setAttributes({justifyContent: value})}
+										valueSm={justifyContentSm}
+										setValueSm={(value) => setAttributes({justifyContentSm: value})}
+										valueMd={justifyContentMd}
+										setValueMd={(value) => setAttributes({justifyContentMd: value})}
+									/>
+								</>)}
+
+								{('grid' === flexibleContentDisplay) && (<>
+									<ButtonGroupControl
+										label={__('Justify Items', 'smart-blocks')}
+										responsive={!0}
+										options={[
+											{
+												value: 'start',
+												icon: <i class="sbi-align-start-h"></i>,
+												label: __('Start', 'smart-blocks')
+											},
+											{
+												value: 'center',
+												icon: <i class="sbi-align-center-h"></i>,
+												label: __('Center', 'smart-blocks')
+											},
+											{
+												value: 'end',
+												icon: <i class="sbi-align-end-h"></i>,
+												label: __('Stretch', 'smart-blocks')
+											},
+											{
+												value: 'srtetch',
+												icon: <i class="sbi-align-stretch-h"></i>,
+												label: __('Stretch', 'smart-blocks')
+											}
+										]}
+										value={justifyItems}
+										setValue={(value) => setAttributes({justifyItems: value})}
+										valueSm={justifyItemsSm}
+										setValueSm={(value) => setAttributes({justifyItemsSm: value})}
+										valueMd={justifyItemsMd}
+										setValueMd={(value) => setAttributes({justifyItemsMd: value})}
+									/>
+								</>)}
+
+								<GapControl
+									label={__('Gaps', 'smart-blocks')}
+									min="0"
+									max="100"
 									responsive={!0}
-									value={stickyOffsetTop}
-									setValue={(value) => setAttributes({stickyOffsetTop: value})}
-									valueSm={stickyOffsetTopSm}
-									setValueSm={(value) => setAttributes({stickyOffsetTopSm: value})}
-									valueMd={stickyOffsetTopMd}
-									setValueMd={(value) => setAttributes({stickyOffsetTopMd: value})}
-									useUnit={!0}
-									units={['px']}
-									unit={stickyOffsetTopUnit}
-									setUnit={(value) => setAttributes({stickyOffsetTopUnit: value})}
-								/>)}
+
+									gapColumn={containerGapColumn}
+									setGapColumn={value => setAttributes({containerGapColumn: value})}
+									gapMdColumn={containerGapMdColumn}
+									setGapMdColumn={value => setAttributes({containerGapMdColumn: value})}
+									gapSmColumn={containerGapSmColumn}
+									setGapSmColumn={value => setAttributes({containerGapSmColumn: value})}
+
+									gapRow={containerGapRow}
+									setGapRow={value => setAttributes({containerGapRow: value})}
+									gapMdRow={containerGapMdRow}
+									setGapMdRow={value => setAttributes({containerGapMdRow: value})}
+									gapSmRow={containerGapSmRow}
+									setGapSmRow={value => setAttributes({containerGapSmRow: value})}
+
+									unit={containerGapUnit}
+									setUnit={value => setAttributes({containerGapUnit: value})}
+								/>
+
+
 							</PanelBody>
+							
 						</>
 					) || 'style' === activeTab && (
 						<>
