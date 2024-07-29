@@ -24,7 +24,7 @@ const BoxShadowControl = ({
             <label>{__("Box Shadow", 'smart-blocks')}</label>
             <div className="sb-components-dropdown">
                 <Tooltip text={__('Clear', 'smart-blocks')}>
-                    <div className="sb-reset-color"
+                    <div className="sb-reset-field"
                         onClick={(e) => {
                             setValueHorizontal('');
                             setValueVertical('');
@@ -33,7 +33,7 @@ const BoxShadowControl = ({
                             setValueColor('');
                             setValueInset('');
                         }}>
-                        <span className="sb-border-clear" role="button">
+                        <span className="sb-clear-field" role="button">
                             <ClearIcon />
                         </span>
                     </div>

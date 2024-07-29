@@ -15,10 +15,10 @@ const ColorControl = ({label, value, setValue, enableAlpha}) => {
             <div className="sb-components-dropdown">
                 <Tooltip text={__('Clear', 'smart-blocks')}>
                     <div
-                        className="sb-reset-color"
+                        className="sb-reset-field"
                         onClick={onClearHandler}
                     >
-                        <span className="sb-border-clear" role="button">
+                        <span className="sb-clear-field" role="button">
                             <ClearIcon />
                         </span>
                     </div>

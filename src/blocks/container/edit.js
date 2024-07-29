@@ -155,7 +155,7 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 			columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
 		
 		--sb-container-border-normal:${borderNormal ? borderNormal : '0'};
-        --sb-container-border-hover: ${borderHover ? borderNormal : 'var(--sb-container-border-normal);'};
+        --sb-container-border-hover: ${borderHover ? borderNormal : 'var(--sb-container-border-normal)'};
         --sb-container-border-normal-color: ${borderNormalColor ? borderNormalColor : 'initial'};
         --sb-container-border-hover-color: ${borderHoverColor ? borderHoverColor : 'var(--sb-container-border-normal-color)'};
 

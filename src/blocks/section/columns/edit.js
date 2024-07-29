@@ -158,7 +158,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 			columnsPaddingMdTop, columnsPaddingMdRight, columnsPaddingMdBottom, columnsPaddingMdLeft, columnsPaddingUnit)}
 
         --sb-columns-border-normal:${borderNormal ? borderNormal : '0'};
-        --sb-columns-border-hover: ${borderHover ? borderNormal : 'var(--sb-columns-border-normal);'};
+        --sb-columns-border-hover: ${borderHover ? borderNormal : 'var(--sb-columns-border-normal)'};
         --sb-columns-border-normal-color: ${borderNormalColor ? borderNormalColor : 'initial'};
         --sb-columns-border-hover-color: ${borderHoverColor ? borderHoverColor : 'var(--sb-columns-border-normal-color)'};
 

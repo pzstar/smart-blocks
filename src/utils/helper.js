@@ -92,7 +92,9 @@ const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueCol
 }
 
 const bgVars = (varname, valueURL, valueAttachment, valueSize, valuePositionX, valuePositionY, valueRepeat, valueType, valueGradient, valueColor, valueOverlayColor) => {
-    const urlValue = valueType == 'imageOrColor' ? 'url(' + valueURL + ')' : valueGradient;
+    const imageURL = valueURL ? valueURL : '';
+    const imageGradient = valueGradient ? valueGradient : '';
+    const urlValue = valueType == 'imageOrColor' ? 'url(' + imageURL + ')' : imageGradient;
     return `--sb-${varname}-img-url: ${urlValue ? urlValue : 'initial'};
         --sb-${varname}-img-attachment: ${valueAttachment ? valueAttachment : 'scroll'};
         --sb-${varname}-img-size: ${valueSize ? valueSize : 'auto'};

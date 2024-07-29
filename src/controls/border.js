@@ -17,9 +17,9 @@ const BorderControl = ({label, value, setValue}) => {
             <label>{__('Border', 'smart-blocks')}</label>
             <div className="sb-field-button-list">
                 <Tooltip text={__('Clear', 'smart-blocks')}>
-                    <div className="sb-reset-color"
+                    <div className="sb-reset-field"
                         onClick={onClearHandler}>
-                        <span className="sb-border-clear" role="button">
+                        <span className="sb-clear-field" role="button">
                             <ClearIcon />
                         </span>
                     </div>
