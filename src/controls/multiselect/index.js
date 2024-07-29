@@ -637,6 +637,7 @@ class MultiSelectControl extends Component {
 		const {isExpanded} = this.state;
 		const classes = classnames(
 			className,
+			'sb-input-fields',
 			'components-form-token-field__input-container',
 			{
 				'is-active': this.state.isActive,
@@ -645,7 +646,7 @@ class MultiSelectControl extends Component {
 		);
 
 		let tokenFieldProps = {
-			className: 'components-form-token-field sb-field',
+			className: 'sb-field components-form-token-field',
 			tabIndex: '-1',
 		};
 		const matchingSuggestions = this.getMatchingSuggestions();
@@ -667,7 +668,7 @@ class MultiSelectControl extends Component {
 			<div {...tokenFieldProps}>
 				<label
 					htmlFor={`components-form-token-input-${instanceId}`}
-					className="components-form-token-field__label"
+					className="sb-label components-form-token-field__label"
 				>
 					{label}
 				</label>

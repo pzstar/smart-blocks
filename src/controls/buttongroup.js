@@ -25,20 +25,16 @@ const ButtonGroupControl = ({
         return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
     }, []);
 
-    return <div className={`sb-field-range sb-field ${responsive ? 'sb-responsive' : ''}`}>
-        <div className="sb-d-flex sb-align-center">
-            {label && (
-                <div>
-                    <label htmlFor="input">{label}</label>
-                </div>
-            )}
+    return <div className={`sb-field sb-field-buttons ${responsive ? 'sb-responsive' : ''}`}>
+        <div className="sb-label">
+            {label && (<label htmlFor="input">{label}</label>)}
             {responsive && (<ResponsiveDropdown />)}
         </div>
-        <div className="nxp-field-child">
+        <div className="sb-input-fields">
             {responsive ?
                 (<>
                     {getView == 'Mobile' && (
-                        <ButtonGroup className="sb-icon-buttom-group">
+                        <ButtonGroup className="sb-icon-button-group">
                             {options.map((alignment) => {
                                 return (
                                     <Button
@@ -53,7 +49,7 @@ const ButtonGroupControl = ({
                         </ButtonGroup>
                     )}
                     {getView == 'Tablet' && (
-                        <ButtonGroup className="sb-icon-buttom-group">
+                        <ButtonGroup className="sb-icon-button-group">
                             {options.map((alignment) => {
                                 return (
                                     <Button
@@ -68,7 +64,7 @@ const ButtonGroupControl = ({
                         </ButtonGroup>
                     )}
                     {getView == 'Desktop' && (
-                        <ButtonGroup className="sb-icon-buttom-group">
+                        <ButtonGroup className="sb-icon-button-group">
                             {options.map((alignment) => {
                                 return (
                                     <Button
@@ -84,7 +80,7 @@ const ButtonGroupControl = ({
                     )}
                 </>) :
                 (
-                    <ButtonGroup className="sb-icon-buttom-group">
+                    <ButtonGroup className="sb-icon-button-group">
                         {options.map((alignment) => {
                             return (
                                 <Button

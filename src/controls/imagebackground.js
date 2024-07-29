@@ -33,14 +33,10 @@ const ImageBackgroundControl = ({
 }) => {
 
     return <>
-        <div className="sb-field sb-field-color sb-block ">
-            {label && (
-                <div>
-                    <label htmlFor="input">{label}</label>
-                </div>
-            )}
+        <div className="sb-field sb-field-background">
+            {label && (<label htmlFor="input">{label}</label>)}
         </div>
-        <div className="nxp-field-child sb-image-container">
+        <div className="sb-input-fields sb-image-container">
             {(imageURL) ? (
                 <>
                     <FocalPointPicker

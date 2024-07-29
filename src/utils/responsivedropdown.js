@@ -22,7 +22,7 @@ const ResponsiveDropdown = ({label, className, children}) => {
     const setView = __experimentalSetPreviewDeviceType ? __experimentalSetPreviewDeviceType : updateView;
 
     return (
-        <div className="sb-device sb-ml-10 active-md">
+        <div className="sb-device active-md">
             <button
                 title={__('Desktop', 'smart-blocks')}
                 className={`sb-device-desktop ${getView === 'Desktop' ? " active" : ""}`}
