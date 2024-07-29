@@ -245,18 +245,18 @@ const Inspector = ({
 									label={__('Sticky Offset', 'smart-blocks')}
 									min={0}
 									max={300}
-									responsive={!0}
+									responsive={!1}
 									value={stickyOffsetTop}
 									setValue={(value) => setAttributes({stickyOffsetTop: value})}
-									valueSm={stickyOffsetTopSm}
-									setValueSm={(value) => setAttributes({stickyOffsetTopSm: value})}
-									valueMd={stickyOffsetTopMd}
-									setValueMd={(value) => setAttributes({stickyOffsetTopMd: value})}
 									useUnit={!0}
 									units={['px']}
 									unit={stickyOffsetTopUnit}
 									setUnit={(value) => setAttributes({stickyOffsetTopUnit: value})}
 								/>)}
+
+								<p className="sb-inspector-help-text">
+									Container Should be inside column for sticky
+								</p>
 							</PanelBody>
 
 							<PanelBody

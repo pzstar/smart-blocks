@@ -10,7 +10,7 @@ const BorderControl = ({label, value, setValue}) => {
         ["double", __("Double", 'smart-blocks')]
     ];
     const onClearHandler = (e) => {
-        setValue(undefined);
+        setValue('');
     }
     return <>
         <div className="sb-field-select sb-field sb-d-flex sb-inline-block">

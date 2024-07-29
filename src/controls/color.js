@@ -6,7 +6,7 @@ const ColorControl = ({label, value, setValue, enableAlpha}) => {
         setValue(e.hex);
     }
     const onClearHandler = (e) => {
-        setValue(undefined);
+        setValue('');
     }
 
     return <>
@@ -48,13 +48,13 @@ const ColorControl = ({label, value, setValue, enableAlpha}) => {
                         return <span>
                             {enableAlpha ? (
                                 <ColorPicker
-                                    color={value ? value : undefined}
+                                    color={value ? value : ''}
                                     onChangeComplete={onChangeHandler}
                                     enableAlpha
                                 />
                             ) : (
                                 <ColorPicker
-                                    color={value ? value : undefined}
+                                    color={value ? value : ''}
                                     onChangeComplete={onChangeHandler}
                                     disableAlpha
                                 />

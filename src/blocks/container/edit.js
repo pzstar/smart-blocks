@@ -16,8 +16,6 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 		id,
 		enableSticky,
 		stickyOffsetTop,
-		stickyOffsetTopSm,
-		stickyOffsetTopMd,
 		stickyOffsetTopUnit,
 		columnsHTMLTag,
 		columnMarginSmTop,
@@ -171,7 +169,7 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 
         ${bgVars('container-bg', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat, columnBgType, columnBgGradient, columnBgColor, columnBgOverlayColor)}
 
-        ${responsiveSliderVars('container-sticky-offset', stickyOffsetTop, stickyOffsetTopSm, stickyOffsetTopMd, stickyOffsetTopUnit)}
+        --sb-container-sticky-offset:${stickyOffsetTop ? stickyOffsetTop : '0'};
 
         --sb-container-flexible-display:${flexibleContentDisplay ? flexibleContentDisplay : 'flex'};
         ${responsiveSliderVars('container-flex-direction', flexDirection, flexDirectionSm, flexDirectionMd)}

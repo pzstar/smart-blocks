@@ -54,8 +54,8 @@ const boxShadowVars = (varname, horizontal, vertical, blur, spread, color, inset
         --sb-${varname}-inset: ${inset ? inset : ''};`;
 }
 
-const checkDefault = (check, checkDiff = 'undefined') => {
-    if (checkDiff != 'undefined') {
+const checkDefault = (check, checkDiff = '') => {
+    if (checkDiff != '') {
         return (!checkDiff || checkDiff.toLowerCase() == 'default') ? 'inherit' : check;
     }
     return (!check || check.toLowerCase() == 'default') ? 'inherit' : check;

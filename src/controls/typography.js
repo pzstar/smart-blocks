@@ -48,17 +48,17 @@ const TypographyControl = ({
 		setValueWeight('Default');
 		setValueTextTransform('inherit');
 		setValueTextDecoration('inherit');
-		setValueFontSize(undefined);
-		setValueFontSizeMd(undefined);
-		setValueFontSizeSm(undefined);
+		setValueFontSize('');
+		setValueFontSizeMd('');
+		setValueFontSizeSm('');
 		setValueFontSizeUnit('px');
-		setValueLetterSpacing(undefined);
-		setValueLetterSpacingMd(undefined);
-		setValueLetterSpacingSm(undefined);
+		setValueLetterSpacing('');
+		setValueLetterSpacingMd('');
+		setValueLetterSpacingSm('');
 		setValueLetterSpacingUnit('px');
-		setValueLineHeight(undefined);
-		setValueLineHeightMd(undefined);
-		setValueLineHeightSm(undefined);
+		setValueLineHeight('');
+		setValueLineHeightMd('');
+		setValueLineHeightSm('');
 		setValueLineHeightUnit('px');
 	}
 

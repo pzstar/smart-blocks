@@ -7,13 +7,8 @@ const attributes = {
         default: false
     },
     stickyOffsetTop: {
-        type: 'string'
-    },
-    stickyOffsetTopSm: {
-        type: 'string'
-    },
-    stickyOffsetTopMd: {
-        type: 'string'
+        type: 'string',
+        default: 0
     },
     stickyOffsetTopUnit: {
         type: 'string',

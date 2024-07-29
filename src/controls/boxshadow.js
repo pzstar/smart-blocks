@@ -26,12 +26,12 @@ const BoxShadowControl = ({
                 <Tooltip text={__('Clear', 'smart-blocks')}>
                     <div className="sb-reset-color"
                         onClick={(e) => {
-                            setValueHorizontal(undefined);
-                            setValueVertical(undefined);
-                            setValueBlur(undefined);
-                            setValueSpread(undefined);
-                            setValueColor(undefined);
-                            setValueInset(undefined);
+                            setValueHorizontal('');
+                            setValueVertical('');
+                            setValueBlur('');
+                            setValueSpread('');
+                            setValueColor('');
+                            setValueInset('');
                         }}>
                         <span className="sb-border-clear sb-flex" role="button">
                             <ClearIcon />

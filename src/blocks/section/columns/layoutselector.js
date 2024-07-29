@@ -12,6 +12,18 @@ const LayoutSelector = ({clientId, setupColumns}) => {
 			className="sb-onboarding-component"
 		>
 			<div className="sb-layout-picker">
+				<Tooltip text={__('Single', 'smart-blocks')}>
+					<Button
+						isLarge
+						className="sb-blocks-column-layout"
+						onClick={() => setupColumns(1, 'equal')}
+					>
+						<svg viewBox="0 0 60 40">
+							<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
+						</svg>
+					</Button>
+				</Tooltip>
+
 				<Tooltip text={__('Equal', 'smart-blocks')}>
 					<Button
 						isLarge
