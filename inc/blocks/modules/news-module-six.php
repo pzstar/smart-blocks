@@ -14,7 +14,7 @@ class Smart_Blocks_News_Module_Six {
         $bottom_block_image_size = $this->attributes['bottomImageSize'];
         $content_rendered = '';
         $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
-        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-six wp-block-sb']) . '>';
+        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-six wp-block-smart-blocks']) . '>';
         $content_rendered .= $this->render_header();
 
         $content_rendered .= '<div class="sb-news-module-six-wrap">';

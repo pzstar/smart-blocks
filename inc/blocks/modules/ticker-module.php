@@ -25,7 +25,7 @@ class Smart_Blocks_Ticker_Module {
         $query = new \WP_Query($args);
         $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
         if ($query->have_posts()):
-            $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'wp-block-sb']) . '>';
+            $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'wp-block-smart-blocks']) . '>';
             $content_rendered .= '<div class="sb-ticker">';
             $content_rendered .= '<span class="sb-ticker-title">';
             $ticker_title = isset($this->attributes['tickerTitle']) ? $this->attributes['tickerTitle'] : NULL;

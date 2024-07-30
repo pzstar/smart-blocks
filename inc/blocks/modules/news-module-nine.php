@@ -14,7 +14,7 @@ class Smart_Blocks_News_Module_Nine {
         $listing_post_image_size = $this->attributes['listingImageSize'];
         $content_rendered = '';
         $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
-        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-nine wp-block-sb']) . '>';
+        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-nine wp-block-smart-blocks']) . '>';
 
         $content_rendered .= $this->render_header();
 

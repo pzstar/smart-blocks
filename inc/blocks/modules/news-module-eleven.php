@@ -14,7 +14,7 @@ class Smart_Blocks_News_Module_Eleven {
         $image_size = $this->attributes['postImageSize'];
         $display_cat = $this->attributes['postPostCategory'];
         $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
-        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-eleven wp-block-sb']) . '>';
+        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-eleven wp-block-smart-blocks']) . '>';
         $content_rendered .= $this->render_header();
         $content_rendered .= '<div class="sb-grid-blocks">';
         $args = $this->query_args();
