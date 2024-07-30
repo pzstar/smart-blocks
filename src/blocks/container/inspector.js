@@ -5,8 +5,6 @@ import {InspectorControls} from '@wordpress/block-editor';
 import {
 	Button,
 	PanelBody,
-	RangeControl,
-	SelectControl,
 	GradientPicker,
 	Tooltip
 } from '@wordpress/components';
@@ -17,6 +15,7 @@ import {
 	useState
 } from '@wordpress/element';
 import ToggleControl from '../../controls/toggle';
+import SelectControl from '../../controls/select';
 
 /**
  * Internal dependencies
@@ -186,12 +185,6 @@ const Inspector = (props) => {
 		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
 		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
 	}, []);
-
-
-
-	const changeColumnsHTMLTag = value => {
-		setAttributes({columnsHTMLTag: value});
-	};
 
 	return (
 		<InspectorControls>
@@ -787,17 +780,20 @@ const Inspector = (props) => {
 										{label: 'main', value: 'main'},
 										{label: 'anchor link', value: 'a'}
 									]}
-									onChange={changeColumnsHTMLTag}
+									onChange={value => setAttributes({columnsHTMLTag: value})}
+									inline={!1}
 								/>
+								{columnsHTMLTag == 'a' && (
+									<>
+										<TextControl
+											label={__('Link URL', 'smart-blocks')}
+											type="text"
+											value={hrefLinkURL}
+											setValue={value => setAttributes({hrefLinkURL: value})}
+										/>
+									</>
+								)}
 							</PanelBody>
-							{columnsHTMLTag == 'a' && (
-								<TextControl
-									label={__('Link URL', 'smart-blocks')}
-									type="text"
-									value={hrefLinkURL}
-									onChange={value => setAttributes({hrefLinkURL: value})}
-								/>
-							)}
 
                             {applyFilters('smartblocks.blockTools', '', props)}
 						</>

@@ -4,13 +4,13 @@ import {
     Dashicon,
     Button,
     Tooltip,
-    SelectControl,
     FocalPointPicker
 } from '@wordpress/components';
 import {
     MediaPlaceholder
 } from '@wordpress/block-editor';
 import ColorControl from './color';
+import SelectControl from './select';
 
 const ImageBackgroundControl = ({
     label,
@@ -72,17 +72,17 @@ const ImageBackgroundControl = ({
                     </Button>
 
                     <SelectControl
-                        label={__('Background Attachment', 'smart-blocks')}
+                        label={__('Attachment', 'smart-blocks')}
                         value={imageAttachment}
                         options={[
                             {label: __('Scroll', 'smart-blocks'), value: 'scroll'},
                             {label: __('Fixed', 'smart-blocks'), value: 'fixed'}
                         ]}
-                        onChange={value => setImageAttachment(value)}
+                        setValue={value => setImageAttachment(value)}
                     />
 
                     <SelectControl
-                        label={__('Background Repeat', 'smart-blocks')}
+                        label={__('Repeat', 'smart-blocks')}
                         value={imageRepeat}
                         options={[
                             {label: __('Repeat', 'smart-blocks'), value: 'repeat'},
@@ -90,18 +90,18 @@ const ImageBackgroundControl = ({
                             {label: __('Repeat X', 'smart-blocks'), value: 'repeat-x'},
                             {label: __('Repeat Y', 'smart-blocks'), value: 'repeat-y'}
                         ]}
-                        onChange={value => setImageRepeat(value)}
+                        setValue={value => setImageRepeat(value)}
                     />
 
                     <SelectControl
-                        label={__('Background Size', 'smart-blocks')}
+                        label={__('Size', 'smart-blocks')}
                         value={imageSize}
                         options={[
                             {label: __('Auto', 'smart-blocks'), value: 'auto'},
                             {label: __('Cover', 'smart-blocks'), value: 'cover'},
                             {label: __('Contain', 'smart-blocks'), value: 'contain'}
                         ]}
-                        onChange={value => setImageSize(value)}
+                        setValue={value => setImageSize(value)}
                     />
 
                     <ColorControl

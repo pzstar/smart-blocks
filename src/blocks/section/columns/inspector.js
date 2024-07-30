@@ -8,7 +8,6 @@ import {
 	Dashicon,
 	PanelBody,
 	RangeControl,
-	SelectControl,
 	GradientPicker,
 	Tooltip
 } from '@wordpress/components';
@@ -31,6 +30,7 @@ import BoxShadowControl from '../../../controls/boxshadow';
 import BorderControl from '../../../controls/border';
 import GapControl from '../../../controls/gap';
 import ToggleControl from '../../../controls/toggle';
+import SelectControl from '../../../controls/select';
 import {
 	LayoutIcon,
 	StyleIcon,
@@ -306,12 +306,14 @@ const Inspector = (props) => {
 									title={__('Columns & Layout', 'smart-blocks')}
 									initialOpen={false}
 								>
-									<RangeControl
+									<RangeSliderControl
 										label={__('Columns', 'smart-blocks')}
-										value={columns}
-										onChange={changeColumns}
 										min={1}
 										max={6}
+										responsive={!1}
+										useUnit={!1}
+										value={columns}
+										setValue={changeColumns}
 									/>
 
 									<LayoutControl
@@ -334,6 +336,7 @@ const Inspector = (props) => {
 											setAttributes({sectionContentWidth: value, columnsWidth: '', columnsWidthSm: '', columnsWidthMd: ''});
 											value === 'full' && setAttributes({columnsWidthUnit: '%'})
 										}}
+										inline={!1}
 									/>
 
 									<RangeSliderControl

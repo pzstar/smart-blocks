@@ -376,6 +376,9 @@ const attributes = {
     gridColumnNumberMd: {
         type: 'string'
     },
+    hrefLinkURL: {
+        type: 'string'
+    }
 };
 
 export default attributes;

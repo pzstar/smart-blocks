@@ -5,7 +5,8 @@ const Save = ({attributes, className}) => {
 	const {
 		id,
 		columnsHTMLTag,
-		enableSticky
+		enableSticky,
+		hrefLinkURL,
 	} = attributes;
 	const classes = classnames(
 		className,
@@ -16,6 +17,7 @@ const Save = ({attributes, className}) => {
 		<Tag
 			className={classes}
 			id={id}
+			href={Tag == 'a' ? hrefLinkURL : ''}
 		>
 			<InnerBlocks.Content />
 		</Tag>
