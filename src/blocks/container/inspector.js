@@ -145,6 +145,10 @@ const Inspector = (props) => {
 		flexDirectionSm,
 		flexDirectionMd,
 
+		flexWidthEnable,
+		flexWidth,
+		flexWidthUnit,
+
 		justifyContent,
 		justifyContentSm,
 		justifyContentMd,
@@ -255,6 +259,7 @@ const Inspector = (props) => {
 								title={__('Flexible Content Options', 'smart-blocks')}
 								initialOpen={false}
 							>
+
 								<div className={'sb-inspect-tabs'}>
 									<div className="components-tab-panel__tabs">
 										<Tooltip text={__("Flex", 'smart-blocks')}>
@@ -279,6 +284,24 @@ const Inspector = (props) => {
 
 								{(!flexibleContentDisplay || 'flex' === flexibleContentDisplay) && (
 									<>
+										<ToggleControl
+											label={__('Set Width', 'smart-blocks')}
+											checked={flexWidthEnable}
+											onChange={() => setAttributes({'flexWidthEnable': !flexWidthEnable})}
+										/>
+
+										{flexWidthEnable && (<RangeSliderControl
+											label={__('Columns Width', 'smart-blocks')}
+											min={0}
+											max={300}
+											responsive={!1}
+											value={flexWidth}
+											setValue={(value) => setAttributes({flexWidth: value})}
+											useUnit={!0}
+											unit={flexWidthUnit}
+											setUnit={(value) => setAttributes({flexWidthUnit: value})}
+										/>)}
+
 										<ButtonGroupControl
 											label={__('Direction', 'smart-blocks')}
 											responsive={!0}

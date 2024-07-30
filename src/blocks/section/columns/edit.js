@@ -16,7 +16,7 @@ import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import {blockInit} from '../../../utils/block-utility';
 import LayoutSelector from './layoutselector.js';
-import {responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveGapVars, bgVars} from '../../../utils/helper';
+import {responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveGapVars, responsiveGapColumnVars, bgVars} from '../../../utils/helper';
 
 const Edit = ({attributes, setAttributes, className, clientId}) => {
 	const {
@@ -133,9 +133,6 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 
 		sectionContentWidth,
 
-		columnsGapRow,
-		columnsGapSmRow,
-		columnsGapMdRow,
 		columnsGapColumn,
 		columnsGapSmColumn,
 		columnsGapMdColumn,
@@ -147,7 +144,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 	const stylesCSS = `#${id} {
 		${responsiveSliderVars('columns-width', columnsWidth, columnsWidthSm, columnsWidthMd, columnsWidthUnit)}
 		${responsiveSliderVars('columns-horizontal-align', horizontalAlign, horizontalAlignSm, horizontalAlignMd, '')}
-		${responsiveGapVars('columns-gap', columnsGapRow, columnsGapSmRow, columnsGapMdRow, columnsGapColumn, columnsGapSmColumn, columnsGapMdColumn, columnsGapUnit)}
+		${responsiveGapColumnVars('columns-gap', columnsGapColumn, columnsGapSmColumn, columnsGapMdColumn, columnsGapUnit)}
 		${responsiveSliderVars('columns-align', columnAlignment, columnAlignmentSm, columnAlignmentMd, '')}
 
         ${responsiveDimensionVars('columns-margin', columnsMarginTop, columnsMarginRight, columnsMarginBottom, columnsMarginLeft,
@@ -162,12 +159,10 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
         --sb-columns-border-normal-color: ${borderNormalColor ? borderNormalColor : 'initial'};
         --sb-columns-border-hover-color: ${borderHoverColor ? borderHoverColor : 'var(--sb-columns-border-normal-color)'};
 
-
         ${dimensionVars('columns-border-normal-width', borderNormalWidthTop, borderNormalWidthRight, borderNormalWidthBottom, borderNormalWidthLeft, borderNormalWidthUnit)}
         ${dimensionVars('columns-border-hover-width', borderHoverWidthTop, borderHoverWidthRight, borderHoverWidthBottom, borderHoverWidthLeft, borderHoverWidthUnit)}
         ${dimensionVars('columns-border-normal-radius', borderNormalRadiusTop, borderNormalRadiusRight, borderNormalRadiusBottom, borderNormalRadiusLeft, borderNormalRadiusUnit)}
         ${dimensionVars('columns-border-hover-radius', borderHoverRadiusTop, borderHoverRadiusRight, borderHoverRadiusBottom, borderHoverRadiusLeft, borderHoverRadiusUnit)}
-
 
         ${boxShadowVars('columns-border-normal-box-shadow', borderNormalBoxShadowHorizontal, borderNormalBoxShadowVertical, borderNormalBoxShadowBlur, borderNormalBoxShadowSpread, borderNormalBoxShadowColor, borderNormalBoxShadowInset, 'px')}
         ${boxShadowVars('columns-border-hover-box-shadow', borderHoverBoxShadowHorizontal, borderHoverBoxShadowVertical, borderHoverBoxShadowBlur, borderHoverBoxShadowSpread, borderHoverBoxShadowColor, borderHoverBoxShadowInset, 'px')}

@@ -352,15 +352,6 @@ const attributes = {
         enum: ['full', 'boxed']
     },
 
-    columnsGapRow: {
-        type: 'string'
-    },
-    columnsGapSmRow: {
-        type: 'string'
-    },
-    columnsGapMdRow: {
-        type: 'string'
-    },
     columnsGapColumn: {
         type: 'string'
     },

@@ -302,6 +302,18 @@ const attributes = {
         type: 'string'
     },
 
+    flexWidthEnable: {
+        type: 'boolean'
+    },
+    flexWidth: {
+        type: 'string'
+    },
+    flexWidthUnit: {
+        type: 'string',
+        enum: ['px', 'em', '%'],
+        default: 'px'
+    },
+
     justifyContent: {
         type: 'string'
     },
@@ -368,7 +380,8 @@ const attributes = {
     },
 
     gridColumnNumber: {
-        type: 'string'
+        type: 'string',
+        default: '3'
     },
     gridColumnNumberSm: {
         type: 'string'

@@ -5,6 +5,7 @@ import {useState, useEffect} from '@wordpress/element';
 import {DesktopIcon, TabletIcon, PhoneIcon, ClearIcon} from '../utils/svgicons';
 import ResponsiveDropdown from '../utils/responsivedropdown';
 import {useSelect} from '@wordpress/data';
+import SearchableSelectControl from './searchableselect';
 
 const TypographyControl = ({
 	label,
@@ -99,19 +100,18 @@ const TypographyControl = ({
 								<label>{__("Font Family", 'smart-blocks')}</label>
 								<div className="sb-input-fields">
 									<div className="sb-popup-select">
-										<select
+										<SearchableSelectControl
 											value={valueFamily}
-											onChange={(e) => {
-												const fontFamilyValue = e.target.value;
+											setValue={value => {
+												const fontFamilyValue = value;
 												setValueFamily(fontFamilyValue);
 												setAllWeights(GoogleFontsList.filter(font => font.family === fontFamilyValue)[0].variants);
 												setValueWeight('400');
-											}}>
-											{GoogleFontsList && GoogleFontsList.map((font, index) => {
-												return <option value={font.family} key={index}>{`${font.family != 'inherit' ? font.family : 'Default'}`}</option>;
-											}
-											)}
-										</select>
+											}}
+											optValue="family"
+											optLabel="family"
+											options={GoogleFontsList}
+										/>
 									</div>
 								</div>
 							</div>
