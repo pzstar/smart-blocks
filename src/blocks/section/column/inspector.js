@@ -227,7 +227,7 @@ const Inspector = ({
 					{'layout' === activeTab && (
 						<>
 							<PanelBody
-								title={__('Spacing', 'smart-blocks')}
+								title={__('Width', 'smart-blocks')}
 								initialOpen={false}
 							>
 								{(1 < parentBlock.innerBlocks.length) && (
