@@ -636,7 +636,7 @@ export default function Edit(props) {
                                     />
                                 </PanelBody>
                             )}
-                            <GroupControlQuery attributes={attributes} setAttributes={setAttributes}/>
+                            <GroupControlQuery attributes={attributes} setAttributes={setAttributes} optChange={loopUpdate}/>
                             <PanelBody
                                 title={__('Post Block', 'smart-blocks')}
                                 initialOpen={false}

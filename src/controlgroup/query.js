@@ -5,19 +5,19 @@ import SelectControl from '../controls/select';
 import MultiSelectControl from '../controls/multiselect';
 import RangeSliderControl from '../controls/rangeslider';
 
-const GroupControlQuery = ({attributes, setAttributes, usePostNumber}) => {
+const GroupControlQuery = ({attributes, setAttributes, usePostNumber, optChange = () => {}}) => {
     const {
         postsPostType,
         excludePosts,
         orderBy,
         order,
         offset,
-        categories
+        categories,
     } = attributes;
 
-    const allTaxonomies = useSelect((select) => {
-        var allTax = [];
-        var selectTaxonomiesTypes = select('core').getTaxonomies();
+    const {allTaxonomies, allPostsSelect, allPostTypes, allTaxTerms} = useSelect(select => {
+        let allTax = [];
+        let selectTaxonomiesTypes = select('core').getTaxonomies();
         selectTaxonomiesTypes?.forEach((el) => {
             if (el.visibility.show_in_nav_menus === true && el.types[0] == postsPostType) {
                 allTax.push({
@@ -26,20 +26,48 @@ const GroupControlQuery = ({attributes, setAttributes, usePostNumber}) => {
                 })
             }
         });
-        return allTax;
-    }, [postsPostType]);
 
-    const allTaxTerms = useSelect((select) => {
+        let allPtypes = [];
+        let selectPostTypes = select('core').getPostTypes();
+        selectPostTypes?.forEach((el) => {
+            if (el.visibility.show_in_nav_menus === true) {
+                allPtypes.push({
+                    value: el.slug,
+                    label: el.name
+                })
+            }
+        });
+
         let selectTerms = [];
-        allTaxonomies && allTaxonomies.map(function (tax, i) {
+        allTax && allTax.map(function (tax, i) {
             selectTerms[tax.value] = select('core').getEntityRecords('taxonomy', tax.value, {
                 per_page: -1,
             });
         });
-        return selectTerms;
-    }, [allTaxonomies]);
 
-    const termSuggestions = {};
+        let selectPosts = select('core').getEntityRecords('postType', postsPostType, {
+            per_page: 10,
+            _embed: true,
+            order,
+            orderby: orderBy,
+            offset: parseInt(offset ? offset : 0),
+        });
+
+        let allPostsSelect = [];
+        selectPosts && selectPosts.map((post, index) => {
+            allPostsSelect.push({
+                value: post.id,
+                label: post.title.rendered
+            })
+        })
+
+        return {
+            allTaxonomies: allTax,
+            allPostsSelect: allPostsSelect,
+            allPostTypes: allPtypes,
+            allTaxTerms: selectTerms
+        };
+    }, [postsPostType, order, orderBy, categories, postsPostType, offset, excludePosts]);
 
     const indentArray = (parentId, terms, childCount = -1) => {
         var options = [];
@@ -97,37 +125,6 @@ const GroupControlQuery = ({attributes, setAttributes, usePostNumber}) => {
         return options;
     }
 
-    const allPostTypes = useSelect((select) => {
-        let allPtypes = [];
-        let selectPostTypes = select('core').getPostTypes();
-        selectPostTypes?.forEach((el) => {
-            if (el.visibility.show_in_nav_menus === true) {
-                allPtypes.push({
-                    value: el.slug,
-                    label: el.name
-                })
-            }
-        });
-        return allPtypes;
-    }, []);
-
-    const selectPosts = useSelect((select) => {
-        return select('core').getEntityRecords('postType', postsPostType, {
-            per_page: 10,
-            _embed: true,
-            order,
-            orderby: orderBy,
-            offset: parseInt(offset ? offset : 0),
-        });
-    }, [order, orderBy, categories, postsPostType, offset, excludePosts]);
-
-    var allPostsSelect = [];
-    selectPosts && selectPosts.map((post, index) => {
-        allPostsSelect.push({
-            value: post.id,
-            label: post.title.rendered
-        })
-    })
 
     return (
         <PanelBody
@@ -137,7 +134,10 @@ const GroupControlQuery = ({attributes, setAttributes, usePostNumber}) => {
             <SelectControl
                 label={__('Source', 'smart-blocks')}
                 value={postsPostType}
-                onChange={value => setAttributes({postsPostType: value})}
+                onChange={value => {
+                    setAttributes({postsPostType: value});
+                    optChange();
+                }}
                 options={allPostTypes}
             />
 
@@ -148,7 +148,10 @@ const GroupControlQuery = ({attributes, setAttributes, usePostNumber}) => {
                         label={tax.label}
                         options={termOptions(tax.value)}
                         value={selectedValue}
-                        onChange={value => setAttributes({categories: {...categories, [tax.value]: value}})}
+                        onChange={value => {
+                            setAttributes({categories: {...categories, [tax.value]: value}})
+                            optChange();
+                        }}
                         key={i}
                     />
                 );
@@ -159,13 +162,19 @@ const GroupControlQuery = ({attributes, setAttributes, usePostNumber}) => {
                 label={__('Exclude Posts', 'smart-blocks')}
                 options={allPostsSelect}
                 value={excludePosts}
-                onChange={value => setAttributes({excludePosts: value})}
+                onChange={value => {
+                    setAttributes({excludePosts: value});
+                    optChange();
+                }}
             />
 
             <SelectControl
                 label={__('Order By', 'smart-blocks')}
                 value={orderBy}
-                onChange={value => setAttributes({orderBy: value})}
+                onChange={value => {
+                    setAttributes({orderBy: value});
+                    optChange();
+                }}
                 options={[
                     {value: 'date', label: __('Date', 'smart-blocks')},
                     {value: 'modified', label: __('Last Modified Date', 'smart-blocks')},
@@ -179,7 +188,10 @@ const GroupControlQuery = ({attributes, setAttributes, usePostNumber}) => {
             <SelectControl
                 label={__('Order', 'smart-blocks')}
                 value={order}
-                onChange={value => setAttributes({order: value})}
+                onChange={value => {
+                    setAttributes({order: value});
+                    optChange();
+                }}
                 options={[
                     {value: 'desc', label: __('Descending', 'smart-blocks')},
                     {value: 'asc', label: __('Ascending', 'smart-blocks')}
@@ -189,7 +201,10 @@ const GroupControlQuery = ({attributes, setAttributes, usePostNumber}) => {
             <RangeSliderControl
                 label={__('Offset', 'smart-blocks')}
                 value={offset}
-                setValue={value => setAttributes({offset: value})}
+                setValue={value => {
+                    setAttributes({offset: value});
+                    optChange();
+                }}
                 min={0}
                 max={10}
             />
@@ -198,7 +213,10 @@ const GroupControlQuery = ({attributes, setAttributes, usePostNumber}) => {
             {usePostNumber && (<RangeSliderControl
                 label={__('No of Posts', 'smart-blocks')}
                 value={attributes.noOfPosts}
-                setValue={value => setAttributes({noOfPosts: value})}
+                setValue={value => {
+                    setAttributes({noOfPosts: value});
+                    optChange();
+                }}
                 min={0}
                 max={20}
             />)}
