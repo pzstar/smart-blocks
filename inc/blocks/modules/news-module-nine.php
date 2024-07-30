@@ -18,7 +18,7 @@ class Smart_Blocks_News_Module_Nine {
 
         $content_rendered .= $this->render_header();
 
-        $content_rendered .= '<div class="hsb-news-module-nine-wrap">';
+        $content_rendered .= '<div class="sb-news-module-nine-wrap">';
         $args = $this->query_args();
         $query = new \WP_Query($args);
         while ($query->have_posts()):
