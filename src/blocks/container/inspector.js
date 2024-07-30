@@ -53,11 +53,10 @@ import {
 	JustifySpaceAround,
 	JustifySpaceEvenly
 } from '../../utils/svgicons';
+import { applyFilters } from '@wordpress/hooks';
 
-const Inspector = ({
-	attributes,
-	setAttributes
-}) => {
+const Inspector = (props) => {
+    const {attributes, setAttributes} = props;
 	const {
 		enableSticky,
 		stickyOffsetTop,
@@ -799,6 +798,8 @@ const Inspector = ({
 									onChange={value => setAttributes({hrefLinkURL: value})}
 								/>
 							)}
+
+                            {applyFilters('smartblocks.blockTools', '', props)}
 						</>
 					)}
 				</div>

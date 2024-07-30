@@ -25,3 +25,8 @@ import './blocks/carousel-module-one';
 import './blocks/single-news-one';
 import './blocks/single-news-two';
 import './blocks/ticker-module';
+
+
+
+import './plugins/inspector';
+import './plugins/conditions';

@@ -29,8 +29,10 @@ import ToggleControl from '../../controls/toggle';
 import {responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import GroupControlQuery from '../../controlgroup/query';
+import { applyFilters } from '@wordpress/hooks';
 
-export default function Edit({attributes, setAttributes}) {
+export default function Edit(props) {
+    const {attributes, setAttributes} = props;
     const [activeTab, setActiveTab] = useState('layout');
     const {
         id,
@@ -1094,6 +1096,8 @@ export default function Edit({attributes, setAttributes}) {
                                         setValue={(blockBgColor) => setAttributes({blockBgColor})}
                                     />
                                 </PanelBody>
+
+                                {applyFilters('smartblocks.blockTools', '', props)}
                             </>
                         )}
                     </div>
