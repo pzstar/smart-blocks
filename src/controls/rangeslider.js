@@ -72,16 +72,12 @@ const RangeSliderControl = ({
         return ret;
     }
 
-    return <div className={`sb-field-range sb-field ${responsive ? 'sb-responsive' : ''}`}>
-        <div className="sb-d-flex sb-align-center">
-            {label && (
-                <div>
-                    <label htmlFor="input">{label}</label>
-                </div>
-            )}
+    return <div className={`sb-field sb-field-range ${responsive ? 'sb-responsive' : ''}`}>
+        <div className="sb-label">
+            {label && (<label htmlFor="input">{label}</label>)}
             {responsive && (<ResponsiveDropdown />)}
             {useUnit && (
-                <div class="sb-unit-btn-group sb-ml-auto">
+                <div class="sb-unit-btn-group">
                     {allUnits.map((unt, index) => {
                         return <button
                             className={`${unit === unt ? "active" : ""}`}
@@ -98,7 +94,7 @@ const RangeSliderControl = ({
                 </div>
             )}
         </div>
-        <div className="nxp-field-child">
+        <div className="sb-input-fields">
             {responsive ?
                 (<>
                     {getView == 'Mobile' && (

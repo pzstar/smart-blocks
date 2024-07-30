@@ -118,7 +118,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 			columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
 		
 		--sb-column-border-normal:${borderNormal ? borderNormal : '0'};
-        --sb-column-border-hover: ${borderHover ? borderNormal : 'var(--sb-column-border-normal);'};
+        --sb-column-border-hover: ${borderHover ? borderNormal : 'var(--sb-column-border-normal)'};
         --sb-column-border-normal-color: ${borderNormalColor ? borderNormalColor : 'initial'};
         --sb-column-border-hover-color: ${borderHoverColor ? borderHoverColor : 'var(--sb-column-border-normal-color)'};
 

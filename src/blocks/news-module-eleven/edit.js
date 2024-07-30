@@ -501,7 +501,7 @@ export default function Edit(props) {
             {postTypographyFamily && (postTypographyFamily != 'Default') && (<GoogleFontLoad family={postTypographyFamily} weight={postTypographyWeight.replace("italic", "i")} />)}
             {metasTypographyFamily && (metasTypographyFamily != 'Default') && (<GoogleFontLoad family={metasTypographyFamily} weight={metasTypographyWeight.replace("italic", "i")} />)}
             <InspectorControls>
-                <div className="sb-field sb-head-panel-tabs">
+                <div className="sb-head-panel-tabs">
                     <div className="sb-panel-tabs-wrap">
                         <Button
                             className={classnames('sb-panel-tab', {'active-tab': 'layout' === activeTab})}

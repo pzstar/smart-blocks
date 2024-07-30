@@ -1,9 +1,9 @@
 import {Tooltip} from '@wordpress/components';
 
 const AdvancedRadio = ({options, value, setValue, label}) => {
-    return <div className="sb-field sb-field-radio-advanced sb-d-flex sb-align-center">
-        {label && (<span>{label}</span>)}
-        <div className="sb-field-button-list sb-ml-auto">
+    return <div className="sb-field sb-field-radio-advanced">
+        {label && (<label>{label}</label>)}
+        <div className="sb-field-button-wrap">
             {options.map(function (option, key) {
                 return <Tooltip text={option.title || option.value}>
                     <button

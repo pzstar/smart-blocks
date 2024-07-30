@@ -10,22 +10,21 @@ const ColorControl = ({label, value, setValue, enableAlpha}) => {
     }
 
     return <>
-        <div className="sb-field sb-field-color sb-inline-block ">
+        <div className="sb-field sb-field-color">
             {label && (<label>{label}</label>)}
-            <div className="sb-flex">
+            <div className="sb-components-dropdown">
                 <Tooltip text={__('Clear', 'smart-blocks')}>
                     <div
-                        className="sb-reset-color"
+                        className="sb-reset-field"
                         onClick={onClearHandler}
                     >
-                        <span className="sb-border-clear sb-flex" role="button">
+                        <span className="sb-clear-field" role="button">
                             <ClearIcon />
                         </span>
                     </div>
                 </Tooltip>
                 <Dropdown
                     position="top right"
-                    className="sb-ml-auto"
                     contentClassName="sb-popover-style"
                     renderToggle={(function ({isOpen, onToggle}) {
                         return <>

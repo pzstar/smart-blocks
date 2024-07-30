@@ -267,7 +267,7 @@ const Inspector = (props) => {
 	return (
 		<>
 			<InspectorControls>
-				<div className="sb-field sb-head-panel-tabs">
+				<div className="sb-head-panel-tabs">
 					<div className="sb-panel-tabs-wrap">
 						<Button
 							className={classnames('sb-panel-tab', {'active-tab': 'layout' === activeTab})}

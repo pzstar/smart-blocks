@@ -20,11 +20,11 @@ const BoxShadowControl = ({
     setValueInset
 }) => {
     return <>
-        <div className="sb-field sb-flex sb-field-boxshadow sb-inline-block ">
-            <label className="sb-mb-0">{__("Box Shadow", 'smart-blocks')}</label>
-            <div className="sb-flex">
+        <div className="sb-field sb-field-boxshadow">
+            <label>{__("Box Shadow", 'smart-blocks')}</label>
+            <div className="sb-components-dropdown">
                 <Tooltip text={__('Clear', 'smart-blocks')}>
-                    <div className="sb-reset-color"
+                    <div className="sb-reset-field"
                         onClick={(e) => {
                             setValueHorizontal('');
                             setValueVertical('');
@@ -33,18 +33,17 @@ const BoxShadowControl = ({
                             setValueColor('');
                             setValueInset('');
                         }}>
-                        <span className="sb-border-clear sb-flex" role="button">
+                        <span className="sb-clear-field" role="button">
                             <ClearIcon />
                         </span>
                     </div>
                 </Tooltip>
                 <Dropdown
                     position="top right"
-                    className="sb-ml-auto"
                     contentClassName="sb-popover-style"
                     renderToggle={({isOpen, onToggle}) => (
                         <button
-                            className="sb-shadow-setttings"
+                            className="sb-shadow-setttings sb-setting-button"
                             isPrimary={!0}
                             onClick={onToggle}
                             aria-expanded={isOpen}
@@ -54,7 +53,7 @@ const BoxShadowControl = ({
                     )}
                     renderContent={() =>
                         <>
-                            <div className="sb-field sb-d-flex sb-align-justified boxshadow-content">
+                            <div className="sb-field sb-boxshadow">
                                 <TextControl
                                     label={__('X', 'smart-blocks')}
                                     type={"number"}

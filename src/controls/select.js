@@ -4,10 +4,10 @@ const SelectControl = ({label, options, value, onChange}) => {
         onChange(e.target.value);
     }
     return <>
-        <div className="sb-field-select sb-field sb-d-flex sb-inline-block">
+        <div className="sb-field sb-field-select sb-display-inline">
             {label && (<label>{label}</label>)}
-            <div class="sb-field-child">
-                <div class="sb-popup-select ">
+            <div class="sb-input-fields">
+                <div class="sb-popup-select">
                     <select
                         value={value}
                         onChange={onChangeHandler}>
