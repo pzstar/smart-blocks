@@ -6,7 +6,7 @@ const ColorControl = ({label, value, setValue, enableAlpha}) => {
         setValue(e.hex);
     }
     const onClearHandler = (e) => {
-        setValue('');
+        setValue(undefined);
     }
 
     return <>

@@ -72,7 +72,7 @@ const responsiveTypographyVars = (varname, family, weight, textTransform, textDe
         --sb-${varname}-td: ${textDecoration ? textDecoration : 'inherit'};
         --sb-${varname}-fs-sm: ${fonsSizeSm ? (fonsSizeSm + fontSizeUnit) : 'var(--sb-' + varname + '-fs-md)'};
         --sb-${varname}-fs-md: ${fontSizeMd ? (fontSizeMd + fontSizeUnit) : 'var(--sb-' + varname + '-fs-lg)'};
-        --sb-${varname}-fs-lg: ${fontSize ? (fontSize + fontSizeUnit) : 'inherit'}
+        --sb-${varname}-fs-lg: ${fontSize ? (fontSize + fontSizeUnit) : 'inherit'};
         --sb-${varname}-ls-sm: ${letterSpacingSm ? (letterSpacingSm + letterSpacingUnit) : 'var(--sb-' + varname + '-ls-md)'};
         --sb-${varname}-ls-md: ${letterSpacingMd ? (letterSpacingMd + letterSpacingUnit) : 'var(--sb-' + varname + '-ls-lg)'};
         --sb-${varname}-ls-lg: ${letterSpacing ? (letterSpacing + letterSpacingUnit) : 'inherit'};

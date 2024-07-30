@@ -44,8 +44,8 @@ const TypographyControl = ({
 	const [allWeights, setAllWeights] = useState(GoogleFontsList.filter(font => font.family === (valueFamily ? valueFamily : 'inherit'))[0].variants);
 
 	const onClearHandler = (e) => {
-		setValueFamily('Default');
-		setValueWeight('Default');
+		setValueFamily('inherit');
+		setValueWeight('inherit');
 		setValueTextTransform('inherit');
 		setValueTextDecoration('inherit');
 		setValueFontSize('');

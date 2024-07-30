@@ -30,7 +30,7 @@ const BoxShadowControl = ({
                             setValueVertical('');
                             setValueBlur('');
                             setValueSpread('');
-                            setValueColor('');
+                            setValueColor(undefined);
                             setValueInset('');
                         }}>
                         <span className="sb-clear-field" role="button">
