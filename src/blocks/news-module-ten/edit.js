@@ -904,7 +904,7 @@ export default function Edit(props) {
                         ) || 'advanced' === activeTab && (
                             <>
                                 <PanelBody
-                                    title={__('Layout', 'smart-blocks')}
+                                    title={__('Spacing', 'smart-blocks')}
                                     initialOpen={false}
                                 >
                                     <DimensionControl
@@ -1134,7 +1134,7 @@ export default function Edit(props) {
             </InspectorControls>
             <div id={id}>
                 <div {...useBlockProps({
-                    className: "sb-blocks sb-news-module-ten"
+                    className: "wp-block-smart-blocks sb-news-module-ten"
                 })}>
                     <h2 className={headerClasses}>
                         <RichText

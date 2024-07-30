@@ -13,7 +13,7 @@ class Smart_Blocks_News_Module_Eight {
         $side_post_image_size = $this->attributes['sideImageSize'];
         $content_rendered = '';
         $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
-        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-eight wp-block-sb']) . '>';
+        $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-eight wp-block-smart-blocks']) . '>';
         $content_rendered .= $this->render_header();
 
         $content_rendered .= '<div class="sb-news-module-eight-wrap">';

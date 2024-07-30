@@ -47,7 +47,7 @@ jQuery(document).ready(function ($) {
         })
     }
 
-    $('body').on('click', '.wp-block-sb.block-editor-block-list__block a', function () {
+    $('body').on('click', '.wp-block-smart-blocks.block-editor-block-list__block a', function () {
         return false;
     });
 

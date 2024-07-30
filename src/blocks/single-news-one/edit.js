@@ -954,7 +954,7 @@ export default function Edit(props) {
                         ) || 'advanced' === activeTab && (
                             <>
                                 <PanelBody
-                                    title={__('Layout', 'smart-blocks')}
+                                    title={__('Spacing', 'smart-blocks')}
                                     initialOpen={false}
                                 >
                                     <DimensionControl
@@ -1184,7 +1184,7 @@ export default function Edit(props) {
             </InspectorControls>
             <div id={id}>
                 <div {...useBlockProps({
-                    className: "sb-blocks sb-single-post"
+                    className: "wp-block-smart-blocks sb-single-post"
                 })}>
                     <div className="sb-single-post-one">
                         {filterOption == 'single-post' ? selectPosts && postId ? postInner(selectPosts.filter(spost => spost.id == postId)[0]) : posts && posts.map((post) => (postInner(post))) : posts && posts.map((post) => (postInner(post)))}
