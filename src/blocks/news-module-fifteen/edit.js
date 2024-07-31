@@ -294,6 +294,8 @@ export default function Edit(props) {
         ${postMetasColor ? '--sb-post-metas-color: ' + postMetasColor + ';' : ''}
 
         ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius + 'px;' : ''}
+
+        ${postImageHeight ? '--sb-post-image-height: ' + postImageHeight + '%;' : ''}
     }`
     setAttributes({sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "")});
 

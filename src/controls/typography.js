@@ -5,7 +5,7 @@ import {useState, useEffect} from '@wordpress/element';
 import {DesktopIcon, TabletIcon, PhoneIcon, ClearIcon} from '../utils/svgicons';
 import ResponsiveDropdown from '../utils/responsivedropdown';
 import {useSelect} from '@wordpress/data';
-import SearchableSelectControl from './searchableselect';
+import Select from 'react-select';
 
 const TypographyControl = ({
 	label,
@@ -17,6 +17,7 @@ const TypographyControl = ({
 	setValueTextTransform,
 	valueTextDecoration,
 	setValueTextDecoration,
+
 	valueFontSize,
 	setValueFontSize,
 	valueFontSizeMd,
@@ -25,6 +26,7 @@ const TypographyControl = ({
 	setValueFontSizeSm,
 	valueFontSizeUnit,
 	setValueFontSizeUnit,
+
 	valueLetterSpacing,
 	setValueLetterSpacing,
 	valueLetterSpacingMd,
@@ -33,6 +35,7 @@ const TypographyControl = ({
 	setValueLetterSpacingSm,
 	valueLetterSpacingUnit,
 	setValueLetterSpacingUnit,
+
 	valueLineHeight,
 	setValueLineHeight,
 	valueLineHeightMd,
@@ -69,6 +72,14 @@ const TypographyControl = ({
 		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
 	}, []);
 
+	var allFontList = [];
+	GoogleFontsList && GoogleFontsList.map((font, index) => {
+		allFontList.push({
+			label: font.family != 'inherit' ? font.family : 'Default',
+			value: font.family,
+		});
+	});
+
 	return <>
 		<div className="sb-field sb-field-typography sb-display-inline">
 			<label>{label ? label : __("Typography", 'smart-blocks')}</label>
@@ -100,18 +111,17 @@ const TypographyControl = ({
 								<label>{__("Font Family", 'smart-blocks')}</label>
 								<div className="sb-input-fields">
 									<div className="sb-popup-select">
-										<SearchableSelectControl
-											value={valueFamily}
-											setValue={value => {
-												const fontFamilyValue = value;
+										<Select
+										    value={allFontList.find(option => option.value == valueFamily)}
+										    onChange={value => {
+												const fontFamilyValue = value.value;
 												setValueFamily(fontFamilyValue);
 												setAllWeights(GoogleFontsList.filter(font => font.family === fontFamilyValue)[0].variants);
 												setValueWeight('400');
 											}}
-											optValue="family"
-											optLabel="family"
-											options={GoogleFontsList}
-										/>
+										    options={allFontList}
+										    isMulti={!1}
+									    />
 									</div>
 								</div>
 							</div>
@@ -319,17 +329,17 @@ const TypographyControl = ({
 									<div className="sb-unit-btn-group">
 										<button
 											className={`${valueLineHeightUnit === 'px' ? "active" : ""}`}
-											onClick={(e) => setValuesLineHeightUnit('px')}
+											onClick={(e) => setValueLineHeightUnit('px')}
 										>px
 										</button>
 										<button
 											className={`${valueLineHeightUnit === 'em' ? "active" : ""}`}
-											onClick={(e) => setValuesLineHeightUnit('em')}
+											onClick={(e) => setValueLineHeightUnit('em')}
 										>em
 										</button>
 										<button
 											className={`${valueLineHeightUnit === '%' ? "active" : ""}`}
-											onClick={(e) => setValuesLineHeightUnit('%')}
+											onClick={(e) => setValueLineHeightUnit('%')}
 										>%
 										</button>
 									</div>

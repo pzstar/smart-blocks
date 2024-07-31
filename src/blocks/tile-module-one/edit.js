@@ -1161,9 +1161,19 @@ export default function Edit(props) {
 												setUnit={value => setAttributes({borderNormalRadiusUnit: value})}
 											/>
 											<BoxShadowControl
-												values={borderNormalBoxShadow}
-												onChange={(borderNormalBoxShadow) => setAttributes({borderNormalBoxShadow})}
-											/>
+                                                valueHorizontal={borderNormalBoxShadowHorizontal}
+                                                setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({borderNormalBoxShadowHorizontal})}
+                                                valueVertical={borderNormalBoxShadowVertical}
+                                                setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({borderNormalBoxShadowVertical})}
+                                                valueBlur={borderNormalBoxShadowBlur}
+                                                setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({borderNormalBoxShadowBlur})}
+                                                valueSpread={borderNormalBoxShadowSpread}
+                                                setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({borderNormalBoxShadowSpread})}
+                                                valueColor={borderNormalBoxShadowColor}
+                                                setValueColor={(borderNormalBoxShadowColor) => setAttributes({borderNormalBoxShadowColor})}
+                                                valueInset={borderNormalBoxShadowInset}
+                                                setValueInset={(borderNormalBoxShadowInset) => setAttributes({borderNormalBoxShadowInset})}
+                                            />
 										</div>
 										<div tabTitle={__("Hover", 'smart-blocks')}>
 											<BorderControl
@@ -1214,9 +1224,19 @@ export default function Edit(props) {
 												setUnit={value => setAttributes({borderHoverRadiusUnit: value})}
 											/>
 											<BoxShadowControl
-												values={borderHoverBoxShadow}
-												onChange={(borderHoverBoxShadow) => setAttributes({borderHoverBoxShadow})}
-											/>
+                                                valueHorizontal={borderHoverBoxShadowHorizontal}
+                                                setValueHorizontal={(borderHoverBoxShadowHorizontal) => setAttributes({borderHoverBoxShadowHorizontal})}
+                                                valueVertical={borderHoverBoxShadowVertical}
+                                                setValueVertical={(borderHoverBoxShadowVertical) => setAttributes({borderHoverBoxShadowVertical})}
+                                                valueBlur={borderHoverBoxShadowBlur}
+                                                setValueBlur={(borderHoverBoxShadowBlur) => setAttributes({borderHoverBoxShadowBlur})}
+                                                valueSpread={borderHoverBoxShadowSpread}
+                                                setValueSpread={(borderHoverBoxShadowSpread) => setAttributes({borderHoverBoxShadowSpread})}
+                                                valueColor={borderHoverBoxShadowColor}
+                                                setValueColor={(borderHoverBoxShadowColor) => setAttributes({borderHoverBoxShadowColor})}
+                                                valueInset={borderHoverBoxShadowInset}
+                                                setValueInset={(borderHoverBoxShadowInset) => setAttributes({borderHoverBoxShadowInset})}
+                                            />
 										</div>
 									</Tabs>
 								</PanelBody>

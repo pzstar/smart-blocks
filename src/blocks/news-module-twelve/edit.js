@@ -1009,24 +1009,34 @@ export default function Edit(props) {
                                             />
                                             <DimensionControl
                                                 label={__('Border Radius', 'smart-blocks')}
-                                                dimensionTop={borderNormalBoxShadowTop}
-                                                setDimensionTop={value => setAttributes({borderNormalBoxShadowTop: value})}
+                                                dimensionTop={borderNormalRadiusTop}
+                                                setDimensionTop={value => setAttributes({borderNormalRadiusTop: value})}
 
-                                                dimensionLeft={borderNormalBoxShadowLeft}
-                                                setDimensionLeft={value => setAttributes({borderNormalBoxShadowLeft: value})}
+                                                dimensionLeft={borderNormalRadiusLeft}
+                                                setDimensionLeft={value => setAttributes({borderNormalRadiusLeft: value})}
 
-                                                dimensionRight={borderNormalBoxShadowRight}
-                                                setDimensionRight={value => setAttributes({borderNormalBoxShadowRight: value})}
+                                                dimensionRight={borderNormalRadiusRight}
+                                                setDimensionRight={value => setAttributes({borderNormalRadiusRight: value})}
 
-                                                dimensionBottom={borderNormalBoxShadowBottom}
-                                                setDimensionBottom={value => setAttributes({borderNormalBoxShadowBottom: value})}
+                                                dimensionBottom={borderNormalRadiusBottom}
+                                                setDimensionBottom={value => setAttributes({borderNormalRadiusBottom: value})}
 
-                                                unit={borderNormalBoxShadowUnit}
-                                                setUnit={value => setAttributes({borderNormalBoxShadowUnit: value})}
+                                                unit={borderNormalRadiusUnit}
+                                                setUnit={value => setAttributes({borderNormalRadiusUnit: value})}
                                             />
                                             <BoxShadowControl
-                                                values={borderNormalBoxShadow}
-                                                onChange={(borderNormalBoxShadow) => setAttributes({})}
+                                                valueHorizontal={borderNormalBoxShadowHorizontal}
+                                                setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({borderNormalBoxShadowHorizontal})}
+                                                valueVertical={borderNormalBoxShadowVertical}
+                                                setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({borderNormalBoxShadowVertical})}
+                                                valueBlur={borderNormalBoxShadowBlur}
+                                                setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({borderNormalBoxShadowBlur})}
+                                                valueSpread={borderNormalBoxShadowSpread}
+                                                setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({borderNormalBoxShadowSpread})}
+                                                valueColor={borderNormalBoxShadowColor}
+                                                setValueColor={(borderNormalBoxShadowColor) => setAttributes({borderNormalBoxShadowColor})}
+                                                valueInset={borderNormalBoxShadowInset}
+                                                setValueInset={(borderNormalBoxShadowInset) => setAttributes({borderNormalBoxShadowInset})}
                                             />
                                         </div>
                                         <div tabTitle={__("Hover", 'smart-blocks')}>
