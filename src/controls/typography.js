@@ -1,10 +1,10 @@
-import { __ } from '@wordpress/i18n';
-import { Tooltip, Dropdown, Dashicon } from '@wordpress/components';
+import {__} from '@wordpress/i18n';
+import {Tooltip, Dropdown, Dashicon} from '@wordpress/components';
 import GoogleFontsList from '../utils/googlefonts.json';
-import { useState, useEffect } from '@wordpress/element';
-import { DesktopIcon, TabletIcon, PhoneIcon, ClearIcon } from '../utils/svgicons';
+import {useState, useEffect} from '@wordpress/element';
+import {DesktopIcon, TabletIcon, PhoneIcon, ClearIcon} from '../utils/svgicons';
 import ResponsiveDropdown from '../utils/responsivedropdown';
-import { useSelect } from '@wordpress/data';
+import {useSelect} from '@wordpress/data';
 import Select from 'react-select';
 
 const TypographyControl = ({
@@ -48,114 +48,114 @@ const TypographyControl = ({
 	const [allWeights, setAllWeights] = useState(GoogleFontsList.filter(font => font.family === (valueFamily ? valueFamily : 'inherit'))[0].variants);
 
 
-    const calcMinValFontSize = () => {
+	const calcMinValFontSize = () => {
 		var min = 0;
-        let ret;
-        switch(valueFontSizeUnit) {
-            case 'em':
-                ret = 0;
-                break;
-            case '%':
-                ret = 0;
-                break;
-            case 'rem':
-                ret = 0;
-                break;
-            default:
-                ret = min;
-                break;
-        }
-        return ret;
-    }
+		let ret;
+		switch (valueFontSizeUnit) {
+			case 'em':
+				ret = 0;
+				break;
+			case '%':
+				ret = 0;
+				break;
+			case 'rem':
+				ret = 0;
+				break;
+			default:
+				ret = min;
+				break;
+		}
+		return ret;
+	}
 
-    const calcMaxValFontSize = () => {
+	const calcMaxValFontSize = () => {
 		var max = 100;
-        let ret;
-        switch(valueFontSizeUnit) {
-            case 'em':
-                ret = 10;
-                break;
-            case '%':
-                ret = 100;
-                break;
-            case 'rem':
-                ret = 10;
-                break;
-            default:
-                ret = max;
-                break;
-        }
-        return ret;
-    }
+		let ret;
+		switch (valueFontSizeUnit) {
+			case 'em':
+				ret = 10;
+				break;
+			case '%':
+				ret = 100;
+				break;
+			case 'rem':
+				ret = 10;
+				break;
+			default:
+				ret = max;
+				break;
+		}
+		return ret;
+	}
 
 
-    const calcMinValLetterSpacing = () => {
+	const calcMinValLetterSpacing = () => {
 		var min = -10;
-        let ret;
-        switch(valueLetterSpacingUnit) {
-            case 'em':
-                ret = 0;
-                break;
-            case 'rem':
-                ret = 0;
-                break;
-            default:
-                ret = min;
-                break;
-        }
-        return ret;
-    }
+		let ret;
+		switch (valueLetterSpacingUnit) {
+			case 'em':
+				ret = 0;
+				break;
+			case 'rem':
+				ret = 0;
+				break;
+			default:
+				ret = min;
+				break;
+		}
+		return ret;
+	}
 
-    const calcMaxValLetterSpacing = () => {
+	const calcMaxValLetterSpacing = () => {
 		var max = 20;
-        let ret;
-        switch(valueLetterSpacingUnit) {
-            case 'em':
-                ret = 10;
-                break;
-            case 'rem':
-                ret = 10;
-                break;
-            default:
-                ret = max;
-                break;
-        }
-        return ret;
-    }
+		let ret;
+		switch (valueLetterSpacingUnit) {
+			case 'em':
+				ret = 10;
+				break;
+			case 'rem':
+				ret = 10;
+				break;
+			default:
+				ret = max;
+				break;
+		}
+		return ret;
+	}
 
-    const calcMinValLineHeight = () => {
+	const calcMinValLineHeight = () => {
 		var min = 0;
-        let ret;
-        switch(valueLineHeightUnit) {
-            case 'em':
-                ret = 0;
-                break;
-            case 'rem':
-                ret = 0;
-                break;
-            default:
-                ret = min;
-                break;
-        }
-        return ret;
-    }
+		let ret;
+		switch (valueLineHeightUnit) {
+			case 'em':
+				ret = 0;
+				break;
+			case 'rem':
+				ret = 0;
+				break;
+			default:
+				ret = min;
+				break;
+		}
+		return ret;
+	}
 
-    const calcMaxValLineHeight = () => {
+	const calcMaxValLineHeight = () => {
 		var max = 100;
-        let ret;
-        switch(valueLineHeightUnit) {
-            case 'em':
-                ret = 10;
-                break;
-            case 'rem':
-                ret = 10;
-                break;
-            default:
-                ret = max;
-                break;
-        }
-        return ret;
-    }
+		let ret;
+		switch (valueLineHeightUnit) {
+			case 'em':
+				ret = 10;
+				break;
+			case 'rem':
+				ret = 10;
+				break;
+			default:
+				ret = max;
+				break;
+		}
+		return ret;
+	}
 
 	const onClearHandler = (e) => {
 		setValueFamily('inherit');
@@ -222,16 +222,18 @@ const TypographyControl = ({
 								<div className="sb-input-fields">
 									<div className="sb-popup-select">
 										<Select
-										    value={allFontList.find(option => option.value == valueFamily)}
-										    onChange={value => {
+											value={allFontList.find(option => option.value == valueFamily)}
+											onChange={value => {
 												const fontFamilyValue = value.value;
 												setValueFamily(fontFamilyValue);
 												setAllWeights(GoogleFontsList.filter(font => font.family === fontFamilyValue)[0].variants);
 												setValueWeight('400');
 											}}
-										    options={allFontList}
-										    isMulti={!1}
-									    />
+											options={allFontList}
+											isMulti={!1}
+											className="sb-select-container"
+											classNamePrefix="sb-select"
+										/>
 									</div>
 								</div>
 							</div>
@@ -289,19 +291,6 @@ const TypographyControl = ({
 								</div>
 							</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 							<div className="sb-field sb-field-range sb-responsive">
 								<div class="sb-label">
 									<label for="input">{__('Font Size', 'smart-blocks')}</label>
@@ -329,16 +318,6 @@ const TypographyControl = ({
 										>em
 										</button>
 										<button
-											className={`${valueFontSizeUnit === '%' ? "active" : ""}`}
-											onClick={(e) => {
-												setValueFontSize('');
-												setValueFontSizeMd('');
-												setValueFontSizeSm('');
-												setValueFontSizeUnit('%');
-											}}
-										>%
-										</button>
-										<button
 											className={`${valueFontSizeUnit === 'rem' ? "active" : ""}`}
 											onClick={() => {
 												setValueFontSize('');
@@ -347,6 +326,16 @@ const TypographyControl = ({
 												setValueFontSizeUnit('rem');
 											}}
 										>rem
+										</button>
+										<button
+											className={`${valueFontSizeUnit === '%' ? "active" : ""}`}
+											onClick={(e) => {
+												setValueFontSize('');
+												setValueFontSizeMd('');
+												setValueFontSizeSm('');
+												setValueFontSizeUnit('%');
+											}}
+										>%
 										</button>
 									</div>
 								</div>
@@ -399,21 +388,6 @@ const TypographyControl = ({
 									</div>)}
 								</div>
 							</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 							<div className="sb-field sb-field-range sb-responsive">
 								<div class="sb-label">

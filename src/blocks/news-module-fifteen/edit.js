@@ -30,7 +30,7 @@ import ToggleControl from '../../controls/toggle';
 import {responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import GroupControlQuery from '../../controlgroup/query';
-import { applyFilters } from '@wordpress/hooks';
+import {applyFilters} from '@wordpress/hooks';
 
 export default function Edit(props) {
     const {attributes, setAttributes} = props;
@@ -295,7 +295,7 @@ export default function Edit(props) {
 
         ${imageBorderRadius ? '--sb-image-border-radius: ' + imageBorderRadius + 'px;' : ''}
 
-        ${postImageHeight ? '--sb-post-image-height: ' + postImageHeight + '%;' : ''}
+        ${postImageHeight ? '--sb-post-thumb-height: ' + postImageHeight + '%;' : ''}
     }`
     setAttributes({sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "")});
 
@@ -558,7 +558,7 @@ export default function Edit(props) {
                                         />
                                     </PanelBody>
                                 )}
-                                <GroupControlQuery attributes={attributes} setAttributes={setAttributes}/>
+                                <GroupControlQuery attributes={attributes} setAttributes={setAttributes} />
                                 <PanelBody
                                     title={__('Post Block', 'smart-blocks')}
                                     initialOpen={false}

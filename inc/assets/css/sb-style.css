@@ -1622,7 +1622,7 @@ h3.sb-big-title {
 }
 
 .sb-mini-news .sb-post-thumb .sb-thumb-container {
-    padding-bottom: var(--sb-listing-post-thumb-height, 100%);
+    padding-bottom: var(--sb-post-thumb-height, 100%);
 }
 
 .sb-mini-news .sb-post-item {
