@@ -28,6 +28,7 @@ import BoxShadowControl from '../../../controls/boxshadow';
 import BorderControl from '../../../controls/border';
 import Tabs from '../../../utils/tabs';
 import ButtonGroupControl from '../../../controls/buttongroup';
+import GapColumnControl from '../../../controls/gapcolumn';
 
 import {
 	LayoutIcon,
@@ -131,6 +132,11 @@ const Inspector = ({
 		columnAlignSelf,
 		columnAlignSelfSm,
 		columnAlignSelfMd,
+
+		columnGapColumn,
+		columnGapSmColumn,
+		columnGapMdColumn,
+		columnGapUnit,
 
 	} = attributes;
 
@@ -279,6 +285,22 @@ const Inspector = ({
 									setValueMd={(value) => setAttributes({columnAlignSelfMd: value})}
 								/>
 
+								<GapColumnControl
+									label={__('Gaps', 'smart-blocks')}
+									min="0"
+									max="100"
+									responsive={!0}
+
+									gapColumn={columnGapColumn}
+									setGapColumn={value => setAttributes({columnGapColumn: value})}
+									gapMdColumn={columnGapMdColumn}
+									setGapMdColumn={value => setAttributes({columnGapMdColumn: value})}
+									gapSmColumn={columnGapSmColumn}
+									setGapSmColumn={value => setAttributes({columnGapSmColumn: value})}
+
+									unit={columnGapUnit}
+									setUnit={value => setAttributes({columnGapUnit: value})}
+								/>
 
 							</PanelBody>
 						</>

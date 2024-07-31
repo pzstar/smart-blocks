@@ -49,7 +49,6 @@ import {
 } from '../../../utils/svgicons';
 import Tabs from '../../../utils/tabs';
 import { applyFilters } from '@wordpress/hooks';
-import GapColumnControl from '../../../controls/gapcolumn';
 
 const Inspector = (props) => {
     const {attributes, setAttributes, updateColumnsWidth} = props;
@@ -163,6 +162,10 @@ const Inspector = (props) => {
 		sectionBgOverlayColor,
 
 		sectionContentWidth,
+
+		columnsGapRow,
+		columnsGapSmRow,
+		columnsGapMdRow,
 
 		columnsGapColumn,
 		columnsGapSmColumn,
@@ -431,7 +434,7 @@ const Inspector = (props) => {
 										setValueMd={(value) => setAttributes({horizontalAlignMd: value})}
 									/>
 
-									<GapColumnControl
+									<GapControl
 										label={__('Gaps', 'smart-blocks')}
 										min="0"
 										max="100"
@@ -443,6 +446,13 @@ const Inspector = (props) => {
 										setGapMdColumn={value => setAttributes({columnsGapMdColumn: value})}
 										gapSmColumn={columnsGapSmColumn}
 										setGapSmColumn={value => setAttributes({columnsGapSmColumn: value})}
+
+										gapRow={columnsGapRow}
+										setGapRow={value => setAttributes({columnsGapRow: value})}
+										gapMdRow={columnsGapMdRow}
+										setGapMdRow={value => setAttributes({columnsGapMdRow: value})}
+										gapSmRow={columnsGapSmRow}
+										setGapSmRow={value => setAttributes({columnsGapSmRow: value})}
 
 										unit={columnsGapUnit}
 										setUnit={value => setAttributes({columnsGapUnit: value})}

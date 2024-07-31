@@ -12,7 +12,7 @@ import defaultAttributes from './attributes.js';
 import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import {blockInit} from '../../../utils/block-utility';
-import {responsiveDimensionVars, dimensionVars, boxShadowVars, bgVars, responsiveSliderVars} from '../../../utils/helper';
+import {responsiveDimensionVars, dimensionVars, boxShadowVars, bgVars, responsiveSliderVars, responsiveGapColumnVars} from '../../../utils/helper';
 
 export default function Edit({attributes, setAttributes, className, isSelected, clientId, toggleSelection}) {
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
@@ -105,6 +105,11 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 		columnAlignSelfSm,
 		columnAlignSelfMd,
 
+		columnGapColumn,
+		columnGapSmColumn,
+		columnGapMdColumn,
+		columnGapUnit,
+
 	} = attributes;
 
 	setAttributes({id: useBlockProps()['id']});
@@ -133,6 +138,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
         ${bgVars('column-bg', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat, columnBgType, columnBgGradient, columnBgColor, columnBgOverlayColor)}
 
         ${responsiveSliderVars('column-align-self', columnAlignSelf, columnAlignSelfSm, columnAlignSelfMd)}
+		${responsiveGapColumnVars('column-gap', columnGapColumn, columnGapSmColumn, columnGapMdColumn, columnGapUnit)}
     }`
 	setAttributes({sbStyle: stylesCSS.replace(/([^0-9a-zA-Z\.#])\s+/g, "$1").replace(/\s([^0-9a-zA-Z\.#]+)/g, "$1").replace(/;}/g, "}").replace(/\/\*.*?\*\//g, "")});
 

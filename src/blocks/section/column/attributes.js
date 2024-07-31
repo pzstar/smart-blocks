@@ -274,6 +274,23 @@ const attributes = {
     columnAlignSelfMd: {
         type: 'string'
     },
+
+
+    columnGapColumn: {
+        type: 'string'
+    },
+    columnGapSmColumn: {
+        type: 'string',
+        default: 20
+    },
+    columnGapMdColumn: {
+        type: 'string'
+    },
+    columnGapUnit: {
+        type: 'string',
+        enum: ['px', 'em', '%'],
+        default: 'px'
+    }
 };
 
 export default attributes;

@@ -1,10 +1,10 @@
-import {__} from '@wordpress/i18n';
-import {Tooltip, Dropdown, Dashicon} from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
+import { Tooltip, Dropdown, Dashicon } from '@wordpress/components';
 import GoogleFontsList from '../utils/googlefonts.json';
-import {useState, useEffect} from '@wordpress/element';
-import {DesktopIcon, TabletIcon, PhoneIcon, ClearIcon} from '../utils/svgicons';
+import { useState, useEffect } from '@wordpress/element';
+import { DesktopIcon, TabletIcon, PhoneIcon, ClearIcon } from '../utils/svgicons';
 import ResponsiveDropdown from '../utils/responsivedropdown';
-import {useSelect} from '@wordpress/data';
+import { useSelect } from '@wordpress/data';
 import Select from 'react-select';
 
 const TypographyControl = ({
@@ -46,6 +46,116 @@ const TypographyControl = ({
 	setValueLineHeightUnit
 }) => {
 	const [allWeights, setAllWeights] = useState(GoogleFontsList.filter(font => font.family === (valueFamily ? valueFamily : 'inherit'))[0].variants);
+
+
+    const calcMinValFontSize = () => {
+		var min = 0;
+        let ret;
+        switch(valueFontSizeUnit) {
+            case 'em':
+                ret = 0;
+                break;
+            case '%':
+                ret = 0;
+                break;
+            case 'rem':
+                ret = 0;
+                break;
+            default:
+                ret = min;
+                break;
+        }
+        return ret;
+    }
+
+    const calcMaxValFontSize = () => {
+		var max = 100;
+        let ret;
+        switch(valueFontSizeUnit) {
+            case 'em':
+                ret = 10;
+                break;
+            case '%':
+                ret = 100;
+                break;
+            case 'rem':
+                ret = 10;
+                break;
+            default:
+                ret = max;
+                break;
+        }
+        return ret;
+    }
+
+
+    const calcMinValLetterSpacing = () => {
+		var min = -10;
+        let ret;
+        switch(valueLetterSpacingUnit) {
+            case 'em':
+                ret = 0;
+                break;
+            case 'rem':
+                ret = 0;
+                break;
+            default:
+                ret = min;
+                break;
+        }
+        return ret;
+    }
+
+    const calcMaxValLetterSpacing = () => {
+		var max = 20;
+        let ret;
+        switch(valueLetterSpacingUnit) {
+            case 'em':
+                ret = 10;
+                break;
+            case 'rem':
+                ret = 10;
+                break;
+            default:
+                ret = max;
+                break;
+        }
+        return ret;
+    }
+
+    const calcMinValLineHeight = () => {
+		var min = 0;
+        let ret;
+        switch(valueLineHeightUnit) {
+            case 'em':
+                ret = 0;
+                break;
+            case 'rem':
+                ret = 0;
+                break;
+            default:
+                ret = min;
+                break;
+        }
+        return ret;
+    }
+
+    const calcMaxValLineHeight = () => {
+		var max = 100;
+        let ret;
+        switch(valueLineHeightUnit) {
+            case 'em':
+                ret = 10;
+                break;
+            case 'rem':
+                ret = 10;
+                break;
+            default:
+                ret = max;
+                break;
+        }
+        return ret;
+    }
 
 	const onClearHandler = (e) => {
 		setValueFamily('inherit');
@@ -131,7 +241,8 @@ const TypographyControl = ({
 									<div className="sb-popup-select">
 										<select
 											value={valueWeight}
-											onChange={(e) => setValueWeight(e.target.value)}>
+											onChange={(e) => setValueWeight(e.target.value)}
+										>
 											{!(valueFamily && valueFamily != 'inherit') && (<option value="inherit">Default</option>)}
 											{Object.keys(allWeights).sort().map((key) => {
 												return <option value={key}>{allWeights[key]}</option>;
@@ -148,7 +259,8 @@ const TypographyControl = ({
 									<div className="sb-popup-select">
 										<select
 											value={valueTextTransform}
-											onChange={(e) => setValueTextTransform(e.target.value)}>
+											onChange={(e) => setValueTextTransform(e.target.value)}
+										>
 											<option value="inherit">Default</option>
 											<option value="none">None</option>
 											<option value="uppercase">Uppercase</option>
@@ -165,7 +277,8 @@ const TypographyControl = ({
 									<div className="sb-popup-select">
 										<select
 											value={valueTextDecoration}
-											onChange={(e) => setValueTextDecoration(e.target.value)}>
+											onChange={(e) => setValueTextDecoration(e.target.value)}
+										>
 											<option value="inherit">Default</option>
 											<option value="none">None</option>
 											<option value="underline">Underline</option>
@@ -176,6 +289,19 @@ const TypographyControl = ({
 								</div>
 							</div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 							<div className="sb-field sb-field-range sb-responsive">
 								<div class="sb-label">
 									<label for="input">{__('Font Size', 'smart-blocks')}</label>
@@ -184,18 +310,43 @@ const TypographyControl = ({
 									<div className="sb-unit-btn-group">
 										<button
 											className={`${valueFontSizeUnit === 'px' ? "active" : ""}`}
-											onClick={(e) => setValueFontSizeUnit('px')}
+											onClick={() => {
+												setValueFontSize('');
+												setValueFontSizeMd('');
+												setValueFontSizeSm('');
+												setValueFontSizeUnit('px');
+											}}
 										>px
 										</button>
 										<button
 											className={`${valueFontSizeUnit === 'em' ? "active" : ""}`}
-											onClick={(e) => setValueFontSizeUnit('em')}
+											onClick={() => {
+												setValueFontSize('');
+												setValueFontSizeMd('');
+												setValueFontSizeSm('');
+												setValueFontSizeUnit('em');
+											}}
 										>em
 										</button>
 										<button
 											className={`${valueFontSizeUnit === '%' ? "active" : ""}`}
-											onClick={(e) => setValueFontSizeUnit('%')}
+											onClick={(e) => {
+												setValueFontSize('');
+												setValueFontSizeMd('');
+												setValueFontSizeSm('');
+												setValueFontSizeUnit('%');
+											}}
 										>%
+										</button>
+										<button
+											className={`${valueFontSizeUnit === 'rem' ? "active" : ""}`}
+											onClick={() => {
+												setValueFontSize('');
+												setValueFontSizeMd('');
+												setValueFontSizeSm('');
+												setValueFontSizeUnit('rem');
+											}}
+										>rem
 										</button>
 									</div>
 								</div>
@@ -203,8 +354,8 @@ const TypographyControl = ({
 								<div className="sb-input-fields">
 									{getView == 'Desktop' && (<div className="sb-input-range">
 										<input type="range"
-											min="1"
-											max="150"
+											min={calcMinValFontSize()}
+											max={calcMaxValFontSize()}
 											step="1"
 											value={valueFontSize}
 											onChange={(e) => setValueFontSize(e.target.value)}
@@ -218,8 +369,8 @@ const TypographyControl = ({
 									</div>)}
 									{getView == 'Tablet' && (<div className="sb-input-range">
 										<input type="range"
-											min="1"
-											max="150"
+											min={calcMinValFontSize()}
+											max={calcMaxValFontSize()}
 											step="1"
 											value={valueFontSizeMd}
 											onChange={(e) => setValueFontSizeMd(e.target.value)}
@@ -233,8 +384,8 @@ const TypographyControl = ({
 									</div>)}
 									{getView == 'Mobile' && (<div className="sb-input-range">
 										<input type="range"
-											min="1"
-											max="150"
+											min={calcMinValFontSize()}
+											max={calcMaxValFontSize()}
 											step="1"
 											value={valueFontSizeSm}
 											onChange={(e) => setValueFontSizeSm(e.target.value)}
@@ -248,6 +399,21 @@ const TypographyControl = ({
 									</div>)}
 								</div>
 							</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 							<div className="sb-field sb-field-range sb-responsive">
 								<div class="sb-label">
@@ -257,26 +423,42 @@ const TypographyControl = ({
 									<div className="sb-unit-btn-group">
 										<button
 											className={`${valueLetterSpacingUnit === 'px' ? "active" : ""}`}
-											onClick={(e) => setValueLetterSpacingUnit('px')}
+											onClick={() => {
+												setValueLetterSpacing('');
+												setValueLetterSpacingMd('');
+												setValueLetterSpacingSm('');
+												setValueLetterSpacingUnit('px');
+											}}
 										>px
 										</button>
 										<button
 											className={`${valueLetterSpacingUnit === 'em' ? "active" : ""}`}
-											onClick={(e) => setValueLetterSpacingUnit('em')}
+											onClick={() => {
+												setValueLetterSpacing('');
+												setValueLetterSpacingMd('');
+												setValueLetterSpacingSm('');
+												setValueLetterSpacingUnit('em');
+											}}
 										>em
 										</button>
 										<button
-											className={`${valueLetterSpacingUnit === '%' ? "active" : ""}`}
-											onClick={(e) => setValueLetterSpacingUnit('%')}
-										>%
+											className={`${valueLetterSpacingUnit === 'rem' ? "active" : ""}`}
+											onClick={() => {
+												setValueLetterSpacing('');
+												setValueLetterSpacingMd('');
+												setValueLetterSpacingSm('');
+												setValueLetterSpacingUnit('rem');
+											}}
+										>rem
 										</button>
 									</div>
 								</div>
+
 								<div className="sb-input-fields">
 									{getView == 'Desktop' && (<div className="sb-input-range">
 										<input type="range"
-											min="-10"
-											max="20"
+											min={calcMinValLetterSpacing()}
+											max={calcMaxValLetterSpacing()}
 											step="0.1"
 											value={valueLetterSpacing}
 											onChange={(e) => setValueLetterSpacing(e.target.value)}
@@ -290,8 +472,8 @@ const TypographyControl = ({
 									</div>)}
 									{getView == 'Tablet' && (<div className="sb-input-range">
 										<input type="range"
-											min="-10"
-											max="20"
+											min={calcMinValLetterSpacing()}
+											max={calcMaxValLetterSpacing()}
 											step="0.1"
 											value={valueLetterSpacingMd}
 											onChange={(e) => setValuesLetterSpacingMd(e.target.value)}
@@ -305,8 +487,8 @@ const TypographyControl = ({
 									</div>)}
 									{getView == 'Mobile' && (<div className="sb-input-range">
 										<input type="range"
-											min="-10"
-											max="20"
+											min={calcMinValLetterSpacing()}
+											max={calcMaxValLetterSpacing()}
 											step="0.1"
 											value={valueLetterSpacingSm}
 											onChange={(e) => setValuesLetterSpacingSm(e.target.value)}
@@ -321,6 +503,32 @@ const TypographyControl = ({
 								</div>
 							</div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 							<div className="sb-field sb-field-range sb-responsive">
 								<div class="sb-label">
 									<label for="input">{__('Line Height', 'smart-blocks')}</label>
@@ -329,18 +537,33 @@ const TypographyControl = ({
 									<div className="sb-unit-btn-group">
 										<button
 											className={`${valueLineHeightUnit === 'px' ? "active" : ""}`}
-											onClick={(e) => setValueLineHeightUnit('px')}
+											onClick={() => {
+												setValueLineHeight('');
+												setValueLineHeightMd('');
+												setValueLineHeightSm('');
+												setValueLineHeightUnit('px');
+											}}
 										>px
 										</button>
 										<button
 											className={`${valueLineHeightUnit === 'em' ? "active" : ""}`}
-											onClick={(e) => setValueLineHeightUnit('em')}
+											onClick={() => {
+												setValueLineHeight('');
+												setValueLineHeightMd('');
+												setValueLineHeightSm('');
+												setValueLineHeightUnit('em');
+											}}
 										>em
 										</button>
 										<button
-											className={`${valueLineHeightUnit === '%' ? "active" : ""}`}
-											onClick={(e) => setValueLineHeightUnit('%')}
-										>%
+											className={`${valueLineHeightUnit === 'rem' ? "active" : ""}`}
+											onClick={() => {
+												setValueLineHeight('');
+												setValueLineHeightMd('');
+												setValueLineHeightSm('');
+												setValueLineHeightUnit('rem');
+											}}
+										>rem
 										</button>
 									</div>
 								</div>
@@ -348,8 +571,8 @@ const TypographyControl = ({
 								<div className="sb-input-fields">
 									{getView == 'Desktop' && (<div className="sb-input-range">
 										<input type="range"
-											min="1"
-											max="150"
+											min={calcMinValLineHeight()}
+											max={calcMaxValLineHeight()}
 											step="1"
 											value={valueLineHeight}
 											onChange={(e) => setValueLineHeight(e.target.value)}
@@ -363,8 +586,8 @@ const TypographyControl = ({
 									</div>)}
 									{getView == 'Tablet' && (<div className="sb-input-range">
 										<input type="range"
-											min="1"
-											max="150"
+											min={calcMinValLineHeight()}
+											max={calcMaxValLineHeight()}
 											step="1"
 											value={valueLineHeightMd}
 											onChange={(e) => setValueLineHeightMd(e.target.value)}
@@ -378,8 +601,8 @@ const TypographyControl = ({
 									</div>)}
 									{getView == 'Mobile' && (<div className="sb-input-range">
 										<input type="range"
-											min="1"
-											max="150"
+											min={calcMinValLineHeight()}
+											max={calcMaxValLineHeight()}
 											step="1"
 											value={valueLineHeightSm}
 											onChange={(e) => setValueLineHeightSm(e.target.value)}
