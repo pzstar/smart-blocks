@@ -94,10 +94,10 @@ const TypographyControl = ({
 		let ret;
 		switch (valueLetterSpacingUnit) {
 			case 'em':
-				ret = 0;
+				ret = -5;
 				break;
 			case 'rem':
-				ret = 0;
+				ret = -5;
 				break;
 			default:
 				ret = min;
@@ -111,10 +111,10 @@ const TypographyControl = ({
 		let ret;
 		switch (valueLetterSpacingUnit) {
 			case 'em':
-				ret = 10;
+				ret = 5;
 				break;
 			case 'rem':
-				ret = 10;
+				ret = 5;
 				break;
 			default:
 				ret = max;
@@ -145,10 +145,10 @@ const TypographyControl = ({
 		let ret;
 		switch (valueLineHeightUnit) {
 			case 'em':
-				ret = 10;
+				ret = 5;
 				break;
 			case 'rem':
-				ret = 10;
+				ret = 5;
 				break;
 			default:
 				ret = max;
@@ -433,13 +433,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLetterSpacing()}
 											max={calcMaxValLetterSpacing()}
-											step="0.1"
+											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
 											value={valueLetterSpacing}
 											onChange={(e) => setValueLetterSpacing(e.target.value)}
 										/>
 										<input
 											type="number"
-											step="0.1"
+											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
 											value={valueLetterSpacing}
 											onChange={(e) => setValueLetterSpacing(e.target.value)}
 										/>
@@ -448,13 +448,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLetterSpacing()}
 											max={calcMaxValLetterSpacing()}
-											step="0.1"
+											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
 											value={valueLetterSpacingMd}
 											onChange={(e) => setValuesLetterSpacingMd(e.target.value)}
 										/>
 										<input
 											type="number"
-											step="0.1"
+											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
 											value={valueLetterSpacingMd}
 											onChange={(e) => setValuesLetterSpacingMd(e.target.value)}
 										/>
@@ -463,43 +463,19 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLetterSpacing()}
 											max={calcMaxValLetterSpacing()}
-											step="0.1"
+											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
 											value={valueLetterSpacingSm}
 											onChange={(e) => setValuesLetterSpacingSm(e.target.value)}
 										/>
 										<input
 											type="number"
-											step="0.1"
+											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
 											value={valueLetterSpacingSm}
 											onChange={(e) => setValuesLetterSpacingSm(e.target.value)}
 										/>
 									</div>)}
 								</div>
 							</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -547,13 +523,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLineHeight()}
 											max={calcMaxValLineHeight()}
-											step="1"
+											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
 											value={valueLineHeight}
 											onChange={(e) => setValueLineHeight(e.target.value)}
 										/>
 										<input
 											type="number"
-											step="1"
+											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
 											value={valueLineHeight}
 											onChange={(e) => setValueLineHeight(e.target.value)}
 										/>
@@ -562,13 +538,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLineHeight()}
 											max={calcMaxValLineHeight()}
-											step="1"
+											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
 											value={valueLineHeightMd}
 											onChange={(e) => setValueLineHeightMd(e.target.value)}
 										/>
 										<input
 											type="number"
-											step="1"
+											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
 											value={valueLineHeightMd}
 											onChange={(e) => setValueLineHeightMd(e.target.value)}
 										/>
@@ -577,13 +553,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLineHeight()}
 											max={calcMaxValLineHeight()}
-											step="1"
+											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
 											value={valueLineHeightSm}
 											onChange={(e) => setValueLineHeightSm(e.target.value)}
 										/>
 										<input
 											type="number"
-											step="1"
+											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
 											value={valueLineHeightSm}
 											onChange={(e) => setValueLineHeightSm(e.target.value)}
 										/>
