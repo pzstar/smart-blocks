@@ -276,6 +276,9 @@ a {
     padding-top: var(--sb-column-padding-top-lg, 0);
     align-self: var(--sb-column-align-self-lg);
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--sb-column-gap-column-lg);
 }
 
 .wp-block-smart-blocks-column:hover {

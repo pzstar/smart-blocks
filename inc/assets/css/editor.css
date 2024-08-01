@@ -1202,6 +1202,16 @@
     margin: 0;
 }
 
+.wp-block-smart-blocks-column > .block-editor-inner-blocks > .block-editor-block-list__layout {
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--sb-column-gap-column-lg);
+}
+
+.wp-block-smart-blocks-column > .block-editor-inner-blocks > .block-editor-block-list__layout > * {
+    width: 100%;
+}
+
 [data-type="smart-blocks/column"] .sb-column-resize-container {
     margin: inherit;
     width: 100% !important;

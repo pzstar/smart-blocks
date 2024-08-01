@@ -442,9 +442,9 @@ export const Columns = () => {
 
 export const Column = () => {
     return <svg viewBox="0 0 60 40">
-        <rect x="0" y="0" width="18" height="40" stroke-width="0" opacity="0.7"></rect>
+        <rect x="0" y="0" width="18" height="40" stroke-width="0" opacity="0.4"></rect>
         <rect x="21" y="0" width="18" height="40" stroke-width="0"></rect>
-        <rect x="42" y="0" width="18" height="40" stroke-width="0" opacity="0.7"></rect>
+        <rect x="42" y="0" width="18" height="40" stroke-width="0" opacity="0.4"></rect>
     </svg>
 }
 
