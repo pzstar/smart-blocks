@@ -106,47 +106,6 @@ a {
 }
 
 @media screen and (max-width:1024px) {
-
-    .wp-block-smart-blocks-columns.has-2-columns.has-tablet-oneTwo-layout > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column:last-child {
-        flex: 2;
-    }
-
-    .wp-block-smart-blocks-columns.has-2-columns.has-tablet-twoOne-layout > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column:first-child {
-        flex: 2;
-    }
-
-    .wp-block-smart-blocks-columns.has-3-columns.has-tablet-oneOneTwo-layout > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column:last-child {
-        flex: 2;
-    }
-
-    .wp-block-smart-blocks-columns.has-3-columns.has-tablet-twoOneOne-layout > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column:first-child {
-        flex: 2;
-    }
-
-    .wp-block-smart-blocks-columns.has-3-columns.has-tablet-oneTwoOne-layout > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
-        flex: 2;
-    }
-
-    .wp-block-smart-blocks-columns.has-3-columns.has-tablet-oneTwoOne-layout > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column:first-child {
-        flex: 1;
-    }
-
-    .wp-block-smart-blocks-columns.has-3-columns.has-tablet-oneTwoOne-layout > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column:last-child {
-        flex: 1;
-    }
-
-    .wp-block-smart-blocks-columns.has-3-columns.has-tablet-oneThreeOne-layout > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column {
-        flex: 3;
-    }
-
-    .wp-block-smart-blocks-columns.has-3-columns.has-tablet-oneThreeOne-layout > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column:first-child {
-        flex: 1;
-    }
-
-    .wp-block-smart-blocks-columns.has-3-columns.has-tablet-oneThreeOne-layout > .wp-block-smart-blocks-innerblocks-wrap > .wp-block-smart-blocks-column:last-child {
-        flex: 1;
-    }
-
     .wp-block-smart-blocks-columns.has-tablet-collapsedRows-layout > .wp-block-smart-blocks-innerblocks-wrap {
         flex-direction: column;
     }
