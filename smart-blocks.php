@@ -87,6 +87,8 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function create_block_init() {
+            global $wp_roles;
+
             // automatically load dependencies and version
             $asset_file = include (SMART_BLOCKS_PATH . 'build/index.asset.php');
             wp_register_style('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/css/owl.carousel.css', array(), SMART_BLOCKS_VERSION);
@@ -99,6 +101,9 @@ if (!class_exists('Smart_Blocks')) {
             wp_register_script('sb-script', SMART_BLOCKS_URL . 'inc/assets/js/sb-script.js', array('jquery', 'owl-carousel'), SMART_BLOCKS_VERSION, true);
 
             wp_register_script('sb-blocks', SMART_BLOCKS_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version']);
+            wp_localize_script('sb-blocks', 'smartblocks', array(
+                'userRoles' => $wp_roles->roles
+            ));
 
             $block_render = new Smart_Blocks_Blocks_Render();
             $blocks = array(

@@ -64,50 +64,57 @@ const LayoutControl = ({
 						</Tooltip>
 					) || 2 === columns && (
 						<Fragment>
-							<Tooltip text={__('Equal', 'smart-blocks')} >
-								<Button
-									className={classnames(
-										'sb-blocks-column-layout',
-										{'selected': 'equal' === value}
-									)}
-									onClick={() => onClick('equal')}
-								>
-									<svg viewBox="0 0 60 40">
-										<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
-										<rect x="29" y="0" width="2" height="40" stroke-width="0"></rect>
-									</svg>
-								</Button>
-							</Tooltip>
+							{'Mobile' != getView  && (
+								<>
+									<Tooltip text={__('Equal', 'smart-blocks')} >
+										<Button
+											className={classnames(
+												'sb-blocks-column-layout',
+												{'selected': 'equal' === value}
+											)}
+											onClick={() => onClick('equal')}
+											disabled={('Tablet' === getView && layout != 'equal') ? true : false}
+										>
+											<svg viewBox="0 0 60 40">
+												<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
+												<rect x="29" y="0" width="2" height="40" stroke-width="0"></rect>
+											</svg>
+										</Button>
+									</Tooltip>
 
-							<Tooltip text={__('1:2', 'smart-blocks')} >
-								<Button
-									className={classnames(
-										'sb-blocks-column-layout',
-										{'selected': 'oneTwo' === value}
-									)}
-									onClick={() => onClick('oneTwo')}
-								>
-									<svg viewBox="0 0 60 40">
-										<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
-										<rect x="19" y="0" width="2" height="40" stroke-width="0"></rect>
-									</svg>
-								</Button>
-							</Tooltip>
+									<Tooltip text={__('1:2', 'smart-blocks')} >
+										<Button
+											className={classnames(
+												'sb-blocks-column-layout',
+												{'selected': 'oneTwo' === value}
+											)}
+											onClick={() => onClick('oneTwo')}
+											disabled={('Tablet' === getView && layout != 'oneTwo') ? true : false}
+										>
+											<svg viewBox="0 0 60 40">
+												<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
+												<rect x="19" y="0" width="2" height="40" stroke-width="0"></rect>
+											</svg>
+										</Button>
+									</Tooltip>
 
-							<Tooltip text={__('2:1', 'smart-blocks')} >
-								<Button
-									className={classnames(
-										'sb-blocks-column-layout',
-										{'selected': 'twoOne' === value}
-									)}
-									onClick={() => onClick('twoOne')}
-								>
-									<svg viewBox="0 0 60 40">
-										<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
-										<rect x="39" y="0" width="2" height="40" stroke-width="0"></rect>
-									</svg>
-								</Button>
-							</Tooltip>
+									<Tooltip text={__('2:1', 'smart-blocks')} >
+										<Button
+											className={classnames(
+												'sb-blocks-column-layout',
+												{'selected': 'twoOne' === value}
+											)}
+											onClick={() => onClick('twoOne')}
+											disabled={('Tablet' === getView && layout != 'twoOne') ? true : false}
+										>
+											<svg viewBox="0 0 60 40">
+												<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
+												<rect x="39" y="0" width="2" height="40" stroke-width="0"></rect>
+											</svg>
+										</Button>
+									</Tooltip>
+								</>
+							)}
 
 							{('Mobile' == getView || 'Tablet' == getView) && (
 								<Tooltip text={__('Collapsed Rows', 'smart-blocks')} >

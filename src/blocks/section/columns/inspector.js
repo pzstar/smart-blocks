@@ -183,6 +183,7 @@ const Inspector = (props) => {
 	const [hasColumnsChanged, setColumnsChanged] = useState(false);
 
 	const changeColumns = value => {
+		value = parseInt(value);
 		if (6 >= value) {
 			setAttributes({
 				columns: value,
@@ -232,6 +233,7 @@ const Inspector = (props) => {
 		if ('Desktop' === getView) {
 			setAttributes({layout: value});
 			updateColumnsWidth(columns, value);
+			columns == 2 && setAttributes({layoutTablet: value});
 		}
 		if ('Tablet' === getView) {
 			setAttributes({layoutTablet: value});
