@@ -34,7 +34,8 @@ const Save = ({attributes, className}) => {
 		{'hide-in-mobile': hideMobile},
 		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
 		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
-		`has-${sectionContentWidth}-width`
+		`has-${sectionContentWidth}-width`,
+		{'sb-frontend': true}
 	);
 
 	return (
