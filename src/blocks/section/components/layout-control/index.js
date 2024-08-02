@@ -9,7 +9,6 @@ import {
 	Tooltip
 } from '@wordpress/components';
 import {useSelect} from '@wordpress/data';
-import {Fragment} from '@wordpress/element';
 
 import ResponsiveDropdown from '../../../../utils/responsivedropdown';
 
@@ -63,7 +62,7 @@ const LayoutControl = ({
 							</Button>
 						</Tooltip>
 					) || 2 === columns && (
-						<Fragment>
+						<>
 							{('Desktop' == getView || layout == 'equal') && (
 								<Tooltip text={__('Equal', 'smart-blocks')} >
 									<Button
@@ -132,9 +131,9 @@ const LayoutControl = ({
 									</Button>
 								</Tooltip>
 							)}
-						</Fragment>
+						</>
 					) || 3 === columns && (
-						<Fragment>
+						<>
 							{('Desktop' == getView || layout == 'equal') && (
 								<Tooltip text={__('Equal', 'smart-blocks')} >
 									<Button
@@ -241,9 +240,9 @@ const LayoutControl = ({
 									</Button>
 								</Tooltip>
 							)}
-						</Fragment>
+						</>
 					) || 4 === columns && (
-						<Fragment>
+						<>
 							<Tooltip text={__('Equal', 'smart-blocks')} >
 								<Button
 									className={classnames(
@@ -262,7 +261,7 @@ const LayoutControl = ({
 							</Tooltip>
 
 							{('Mobile' == getView || 'Tablet' == getView) && (
-								<Fragment>
+								<>
 									<Tooltip text={__('Two Column Grid', 'smart-blocks')} >
 										<Button
 											className={classnames(
@@ -293,11 +292,11 @@ const LayoutControl = ({
 											</svg>
 										</Button>
 									</Tooltip>
-								</Fragment>
+								</>
 							)}
-						</Fragment>
+						</>
 					) || 5 === columns && (
-						<Fragment>
+						<>
 							<Tooltip text={__('Equal', 'smart-blocks')} >
 								<Button
 									className={classnames(
@@ -317,24 +316,59 @@ const LayoutControl = ({
 							</Tooltip>
 
 							{('Mobile' == getView || 'Tablet' == getView) && (
-								<Tooltip text={__('Collapsed Rows', 'smart-blocks')} >
-									<Button
-										className={classnames(
-											'sb-blocks-column-layout',
-											{'selected': 'collapsedRows' === value}
-										)}
-										onClick={() => onClick('collapsedRows')}
-									>
-										<svg viewBox="0 0 60 40">
-											<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
-											<rect x="0" y="19" width="60" height="2" stroke-width="0"></rect>
-										</svg>
-									</Button>
-								</Tooltip>
+								<>
+									<Tooltip text={__('Two Column Grid', 'smart-blocks')} >
+										<Button
+											className={classnames(
+												'sb-blocks-column-layout',
+												{'selected': 'twoColumnGrid' === value}
+											)}
+											onClick={() => onClick('twoColumnGrid')}
+										>
+											<svg viewBox="0 0 60 40">
+												<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
+												<rect x="0" y="12.33" width="60" height="2" stroke-width="0"></rect>
+												<rect x="0" y="25.66" width="60" height="2" stroke-width="0"></rect>
+												<rect x="29" y="0" width="2" height="40" stroke-width="0"></rect>
+											</svg>
+										</Button>
+									</Tooltip>
+
+									<Tooltip text={__('Three Column Grid', 'smart-blocks')} >
+										<Button
+											className={classnames(
+												'sb-blocks-column-layout',
+												{'selected': 'threeColumnGrid' === value}
+											)}
+											onClick={() => onClick('threeColumnGrid')}
+										>
+											<svg viewBox="0 0 60 40">
+												<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
+												<rect x="19" y="0" width="2" height="40" stroke-width="0"></rect>
+												<rect x="39" y="0" width="2" height="40" stroke-width="0"></rect>
+												<rect x="0" y="19" width="60" height="2" stroke-width="0"></rect>
+											</svg>
+										</Button>
+									</Tooltip>
+									<Tooltip text={__('Collapsed Rows', 'smart-blocks')} >
+										<Button
+											className={classnames(
+												'sb-blocks-column-layout',
+												{'selected': 'collapsedRows' === value}
+											)}
+											onClick={() => onClick('collapsedRows')}
+										>
+											<svg viewBox="0 0 60 40">
+												<rect width="60" height="40" fill="none" stroke="inherit" stroke-width="4"></rect>
+												<rect x="0" y="19" width="60" height="2" stroke-width="0"></rect>
+											</svg>
+										</Button>
+									</Tooltip>
+								</>
 							)}
-						</Fragment>
+						</>
 					) || 6 === columns && (
-						<Fragment>
+						<>
 							<Tooltip text={__('Equal', 'smart-blocks')} >
 								<Button
 									className={classnames(
@@ -356,7 +390,7 @@ const LayoutControl = ({
 							</Tooltip>
 
 							{('Mobile' == getView || 'Tablet' == getView) && (
-								<Fragment>
+								<>
 									<Tooltip text={__('Two Column Grid', 'smart-blocks')} >
 										<Button
 											className={classnames(
@@ -405,9 +439,9 @@ const LayoutControl = ({
 											</svg>
 										</Button>
 									</Tooltip>
-								</Fragment>
+								</>
 							)}
-						</Fragment>
+						</>
 					)}
 				</div>
 			</div>
