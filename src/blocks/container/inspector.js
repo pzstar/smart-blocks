@@ -145,9 +145,11 @@ const Inspector = (props) => {
 		flexDirectionSm,
 		flexDirectionMd,
 
-		flexibleContentWidthEnable,
-		flexibleContentWidth,
-		flexibleContentWidthUnit,
+		containerWidthEnable,
+		containerWidth,
+		containerWidthSm,
+		containerWidthMd,
+		containerWidthUnit,
 
 		justifyContent,
 		justifyContentSm,
@@ -259,6 +261,27 @@ const Inspector = (props) => {
 								title={__('Flexible Content Options', 'smart-blocks')}
 								initialOpen={false}
 							>
+								<ToggleControl
+									label={__('Set Width', 'smart-blocks')}
+									checked={containerWidthEnable}
+									onChange={() => setAttributes({'containerWidthEnable': !containerWidthEnable})}
+								/>
+
+								{containerWidthEnable && (<RangeSliderControl
+									label={__('Container Width', 'smart-blocks')}
+									min={0}
+									max={2000}
+									responsive={!0}
+									value={containerWidth}
+									setValue={(value) => setAttributes({containerWidth: value})}
+									valueSm={containerWidthSm}
+									setValueSm={(value) => setAttributes({containerWidthSm: value})}
+									valueMd={containerWidthMd}
+									setValueMd={(value) => setAttributes({containerWidthMd: value})}
+									useUnit={!0}
+									unit={containerWidthUnit}
+									setUnit={(value) => setAttributes({containerWidthUnit: value})}
+								/>)}
 
 								<div className={'sb-inspect-tabs'}>
 									<div className="components-tab-panel__tabs">
@@ -284,24 +307,6 @@ const Inspector = (props) => {
 
 								{(!flexibleContentDisplay || 'flex' === flexibleContentDisplay) && (
 									<>
-										<ToggleControl
-											label={__('Set Width', 'smart-blocks')}
-											checked={flexibleContentWidthEnable}
-											onChange={() => setAttributes({'flexibleContentWidthEnable': !flexibleContentWidthEnable})}
-										/>
-
-										{flexibleContentWidthEnable && (<RangeSliderControl
-											label={__('Columns Width', 'smart-blocks')}
-											min={0}
-											max={2000}
-											responsive={!1}
-											value={flexibleContentWidth}
-											setValue={(value) => setAttributes({flexibleContentWidth: value})}
-											useUnit={!0}
-											unit={flexibleContentWidthUnit}
-											setUnit={(value) => setAttributes({flexibleContentWidthUnit: value})}
-										/>)}
-
 										<ButtonGroupControl
 											label={__('Direction', 'smart-blocks')}
 											responsive={!0}
@@ -335,7 +340,6 @@ const Inspector = (props) => {
 											setValueMd={(value) => setAttributes({flexDirectionMd: value})}
 										/>
 
-
 										<ButtonGroupControl
 											label={__('Container Wrap', 'smart-blocks')}
 											responsive={!0}
@@ -362,23 +366,6 @@ const Inspector = (props) => {
 								)}
 								{('grid' === flexibleContentDisplay) && (
 									<>
-										<ToggleControl
-											label={__('Set Width', 'smart-blocks')}
-											checked={flexibleContentWidthEnable}
-											onChange={() => setAttributes({'flexibleContentWidthEnable': !flexibleContentWidthEnable})}
-										/>
-
-										{flexibleContentWidthEnable && (<RangeSliderControl
-											label={__('Columns Width', 'smart-blocks')}
-											min={0}
-											max={2000}
-											responsive={!1}
-											value={flexibleContentWidth}
-											setValue={(value) => setAttributes({flexibleContentWidth: value})}
-											useUnit={!0}
-											unit={flexibleContentWidthUnit}
-											setUnit={(value) => setAttributes({flexibleContentWidthUnit: value})}
-										/>)}
 										<RangeSliderControl
 											label={__('Column Number', 'smart-blocks')}
 											min={1}

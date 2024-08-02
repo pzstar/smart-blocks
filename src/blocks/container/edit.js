@@ -132,9 +132,11 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 		gridColumnNumberSm,
 		gridColumnNumberMd,
 
-		flexibleContentWidthEnable,
-		flexibleContentWidth,
-		flexibleContentWidthUnit,
+		containerWidthEnable,
+		containerWidth,
+		containerWidthSm,
+		containerWidthMd,
+		containerWidthUnit,
 
 	} = attributes;
 
@@ -158,7 +160,7 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 			columnPaddingSmTop, columnPaddingSmRight, columnPaddingSmBottom, columnPaddingSmLeft,
 			columnPaddingMdTop, columnPaddingMdRight, columnPaddingMdBottom, columnPaddingMdLeft, columnPaddingUnit)}
 
-    	${flexibleContentWidthEnable ? `--sb-flexible-content-width:${flexibleContentWidth ? flexibleContentWidth + flexibleContentWidthUnit : ''};` : ''}
+    	${containerWidthEnable ? responsiveSliderVars('container-width', containerWidth, containerWidthSm, containerWidthMd, containerWidthUnit) : ''}
 
 		--sb-container-border-normal:${borderNormal ? borderNormal : '0'};
         --sb-container-border-hover: ${borderHover ? borderNormal : 'var(--sb-container-border-normal)'};

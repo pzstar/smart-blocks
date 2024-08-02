@@ -302,13 +302,19 @@ const attributes = {
         type: 'string'
     },
 
-    flexibleContentWidthEnable: {
+    containerWidthEnable: {
         type: 'boolean'
     },
-    flexibleContentWidth: {
+    containerWidth: {
         type: 'string'
     },
-    flexibleContentWidthUnit: {
+    containerWidthSm: {
+        type: 'string'
+    },
+    containerWidthMd: {
+        type: 'string'
+    },
+    containerWidthUnit: {
         type: 'string',
         enum: ['px', 'em', '%'],
         default: 'px'
