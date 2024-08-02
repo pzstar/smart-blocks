@@ -145,9 +145,9 @@ const Inspector = (props) => {
 		flexDirectionSm,
 		flexDirectionMd,
 
-		flexWidthEnable,
-		flexWidth,
-		flexWidthUnit,
+		flexibleContentWidthEnable,
+		flexibleContentWidth,
+		flexibleContentWidthUnit,
 
 		justifyContent,
 		justifyContentSm,
@@ -286,20 +286,20 @@ const Inspector = (props) => {
 									<>
 										<ToggleControl
 											label={__('Set Width', 'smart-blocks')}
-											checked={flexWidthEnable}
-											onChange={() => setAttributes({'flexWidthEnable': !flexWidthEnable})}
+											checked={flexibleContentWidthEnable}
+											onChange={() => setAttributes({'flexibleContentWidthEnable': !flexibleContentWidthEnable})}
 										/>
 
-										{flexWidthEnable && (<RangeSliderControl
+										{flexibleContentWidthEnable && (<RangeSliderControl
 											label={__('Columns Width', 'smart-blocks')}
 											min={0}
-											max={300}
+											max={2000}
 											responsive={!1}
-											value={flexWidth}
-											setValue={(value) => setAttributes({flexWidth: value})}
+											value={flexibleContentWidth}
+											setValue={(value) => setAttributes({flexibleContentWidth: value})}
 											useUnit={!0}
-											unit={flexWidthUnit}
-											setUnit={(value) => setAttributes({flexWidthUnit: value})}
+											unit={flexibleContentWidthUnit}
+											setUnit={(value) => setAttributes({flexibleContentWidthUnit: value})}
 										/>)}
 
 										<ButtonGroupControl
@@ -360,20 +360,39 @@ const Inspector = (props) => {
 										/>
 									</>
 								)}
-								{('grid' === flexibleContentDisplay) && (<>
-									<RangeSliderControl
-										label={__('Column Number', 'smart-blocks')}
-										min={1}
-										max={8}
-										responsive={!0}
-										value={gridColumnNumber}
-										setValue={(value) => setAttributes({gridColumnNumber: value})}
-										valueSm={gridColumnNumberSm}
-										setValueSm={(value) => setAttributes({gridColumnNumberSm: value})}
-										valueMd={gridColumnNumberMd}
-										setValueMd={(value) => setAttributes({gridColumnNumberMd: value})}
-									/>
-								</>)}
+								{('grid' === flexibleContentDisplay) && (
+									<>
+										<ToggleControl
+											label={__('Set Width', 'smart-blocks')}
+											checked={flexibleContentWidthEnable}
+											onChange={() => setAttributes({'flexibleContentWidthEnable': !flexibleContentWidthEnable})}
+										/>
+
+										{flexibleContentWidthEnable && (<RangeSliderControl
+											label={__('Columns Width', 'smart-blocks')}
+											min={0}
+											max={2000}
+											responsive={!1}
+											value={flexibleContentWidth}
+											setValue={(value) => setAttributes({flexibleContentWidth: value})}
+											useUnit={!0}
+											unit={flexibleContentWidthUnit}
+											setUnit={(value) => setAttributes({flexibleContentWidthUnit: value})}
+										/>)}
+										<RangeSliderControl
+											label={__('Column Number', 'smart-blocks')}
+											min={1}
+											max={8}
+											responsive={!0}
+											value={gridColumnNumber}
+											setValue={(value) => setAttributes({gridColumnNumber: value})}
+											valueSm={gridColumnNumberSm}
+											setValueSm={(value) => setAttributes({gridColumnNumberSm: value})}
+											valueMd={gridColumnNumberMd}
+											setValueMd={(value) => setAttributes({gridColumnNumberMd: value})}
+										/>
+									</>
+								)}
 
 								<ButtonGroupControl
 									label={__('Align Items', 'smart-blocks')}
