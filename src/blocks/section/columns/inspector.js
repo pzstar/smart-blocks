@@ -233,7 +233,8 @@ const Inspector = (props) => {
 		if ('Desktop' === getView) {
 			setAttributes({layout: value});
 			updateColumnsWidth(columns, value);
-			(columns == 2 || columns == 3) && setAttributes({layoutTablet: value, layoutMobile: value});
+			(columns == 2 || columns == 3) && layoutTablet != 'collapsedRows' && setAttributes({layoutTablet: value});
+			(columns == 2 || columns == 3) && layoutMobile != 'collapsedRows' && setAttributes({layoutMobile: value});
 		}
 		if ('Tablet' === getView) {
 			setAttributes({layoutTablet: value});
