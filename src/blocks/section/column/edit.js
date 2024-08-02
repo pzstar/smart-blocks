@@ -189,9 +189,7 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 		return () => unsubscribe(id);
 	}, [id]);
 
-	useEffect(() => {
-		updateWidth();
-	}, [columnWidth]);
+
 
 	const [currentWidth, setCurrentWidth] = useState(0);
 	const [nextWidth, setNextWidth] = useState(0);
@@ -217,17 +215,6 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 			}
 		});
 	}
-
-	const updateWidth = () => {
-		const columnContainer = document.getElementById(`block-${clientId}`);
-		if (null !== columnContainer) {
-			if (isDesktop) {
-				columnContainer.style.flexBasis = `${columnWidth}%`;
-			} else {
-				columnContainer.style.flexBasis = '';
-			}
-		}
-	};
 
 	const onResizeStart = () => {
 		// const handle = document.querySelector(`#block-${clientId} .sb-column-resize-container-handle .components-resizable-box__handle`);
