@@ -25,7 +25,7 @@ const GapColumnControl = ({
 }) => {
 	const [lock, setLock] = useState(true);
 	const sides = ["Column"];
-	const allUnits = units ? units : ["px", "em", "%"];
+	const allUnits = units ? units : ["px", "em", "rem"];
 
 	const getView = useSelect(select => {
 		const {getView} = select('smart-blocks/data');
