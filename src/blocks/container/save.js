@@ -10,7 +10,8 @@ const Save = ({attributes, className}) => {
 	} = attributes;
 	const classes = classnames(
 		className,
-		enableSticky ? 'sb-sticky-container' : ''
+		enableSticky ? 'sb-sticky-container' : '',
+		{'sb-frontend': true}
 	);
 	const Tag = columnsHTMLTag;
 	return (
