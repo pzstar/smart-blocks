@@ -4,8 +4,15 @@ import { useSelect } from '@wordpress/data';
 import SelectControl from '../controls/select';
 import MultiSelectControl from '../controls/multiselect';
 import RangeSliderControl from '../controls/rangeslider';
+import { applyFilters } from '@wordpress/hooks';
 
-const GroupControlQuery = ({attributes, setAttributes, usePostNumber, optChange = () => {}}) => {
+const GroupControlQuery = (props) => {
+    const {
+        attributes,
+        setAttributes,
+        usePostNumber,
+        optChange = () => {}
+    } = props;
     const {
         postsPostType,
         excludePosts,
@@ -220,6 +227,9 @@ const GroupControlQuery = ({attributes, setAttributes, usePostNumber, optChange 
                 min={0}
                 max={20}
             />)}
+
+
+            {applyFilters('smartblocks.queryFilter', '', props)}
         </PanelBody>
     );
 }

@@ -107,7 +107,7 @@ if (!class_exists('Smart_Blocks')) {
 
             $block_render = new Smart_Blocks_Blocks_Render();
             $blocks = array(
-                'template-import',
+                // 'template-import',
                 'columns',
                 'column',
                 'container'
@@ -308,7 +308,7 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function block_editor_assets() {
-            wp_enqueue_script('sb-block-editor-assets', SMART_BLOCKS_URL . 'inc/assets/js/editor-assets.js', array(), '1.0', true);
+            // wp_enqueue_script('sb-block-editor-assets', SMART_BLOCKS_URL . 'inc/assets/js/editor-assets.js', array(), '1.0', true);
             wp_enqueue_script('sb-editor-sidebar', SMART_BLOCKS_URL . 'inc/assets/js/editor-sidebar.js', array('wp-components', 'wp-data', 'wp-editor', 'wp-element', 'wp-i18n', 'wp-plugins'), SMART_BLOCKS_VERSION, true);
         }
 

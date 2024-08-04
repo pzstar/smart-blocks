@@ -2,7 +2,7 @@ import './data';
 import './blocks/section/columns';
 import './blocks/section/column';
 import './blocks/container';
-import './blocks/template-import';
+// import './blocks/template-import';
 import './blocks/news-module-one';
 import './blocks/news-module-two';
 import './blocks/news-module-three';

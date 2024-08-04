@@ -763,6 +763,7 @@ export default function Edit(props) {
                                         />
                                     )}
                                 </PanelBody>
+                                {applyFilters('smartblocks.newsModuleOptions', '', props)}
                             </>
                         ) || 'style' === activeTab && (
                             <>
