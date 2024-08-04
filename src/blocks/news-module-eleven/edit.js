@@ -22,7 +22,6 @@ import Tabs from '../../utils/tabs';
 import SelectControl from '../../controls/select';
 import DimensionControl from '../../controls/dimension';
 import RangeSliderControl from '../../controls/rangeslider';
-import MultiSelectControl from '../../controls/multiselect';
 import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';
 import ToggleControl from '../../controls/toggle';

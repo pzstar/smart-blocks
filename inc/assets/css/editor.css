@@ -1640,3 +1640,11 @@
     background-color: #f2f9fc;
     color: #333;
 }
+
+.sb-multiple-select .sb-popup-select .sb-select__control {
+    height: auto;
+}
+
+.sb-multiple-select .sb-popup-select .sb-select__value-container {
+    height: auto;
+}

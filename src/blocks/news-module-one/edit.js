@@ -21,8 +21,6 @@ import ColorControl from '../../controls/color';
 import Tabs from '../../utils/tabs';
 import SelectControl from '../../controls/select';
 import DimensionControl from '../../controls/dimension';
-import QueryTaxonomyControls from '../../utils/querytaxonomycontrols';
-import MultiSelectControl from '../../controls/multiselect';
 import RangeSliderControl from '../../controls/rangeslider';
 import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';

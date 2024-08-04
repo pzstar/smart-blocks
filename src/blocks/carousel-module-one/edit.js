@@ -18,8 +18,6 @@ import classnames from 'classnames';
 import TypographyControl from '../../controls/typography';
 import GoogleFontLoad from '../../utils/googlefontload';
 import Tabs from '../../utils/tabs';
-import QueryTaxonomyControls from '../../utils/querytaxonomycontrols';
-import MultiSelectControl from '../../controls/multiselect';
 import {getFontClass, responsiveTypographyVars, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import ColorControl from '../../controls/color';

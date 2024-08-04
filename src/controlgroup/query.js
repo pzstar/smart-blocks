@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { PanelBody } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import SelectControl from '../controls/select';
-import MultiSelectControl from '../controls/multiselect';
+import MultipleSelectControl from '../controls/multipleselect'
 import RangeSliderControl from '../controls/rangeslider';
 import { applyFilters } from '@wordpress/hooks';
 
@@ -74,7 +74,7 @@ const GroupControlQuery = (props) => {
             allPostTypes: allPtypes,
             allTaxTerms: selectTerms
         };
-    }, [postsPostType, order, orderBy, categories, postsPostType, offset, excludePosts]);
+    }, [postsPostType, order, orderBy, categories, offset, excludePosts]);
 
     const indentArray = (parentId, terms, childCount = -1) => {
         var options = [];
@@ -151,11 +151,11 @@ const GroupControlQuery = (props) => {
             {allTaxonomies && allTaxonomies.map((tax, i) => {
                 const selectedValue = categories ? (categories[tax.value] ?? []) : [];
                 return (
-                    <MultiSelectControl
+                    <MultipleSelectControl
                         label={tax.label}
                         options={termOptions(tax.value)}
                         value={selectedValue}
-                        onChange={value => {
+                        setValue={value => {
                             setAttributes({categories: {...categories, [tax.value]: value}})
                             optChange();
                         }}
@@ -165,11 +165,11 @@ const GroupControlQuery = (props) => {
             }
             )}
 
-            <MultiSelectControl
+            <MultipleSelectControl
                 label={__('Exclude Posts', 'smart-blocks')}
                 options={allPostsSelect}
                 value={excludePosts}
-                onChange={value => {
+                setValue={value => {
                     setAttributes({excludePosts: value});
                     optChange();
                 }}

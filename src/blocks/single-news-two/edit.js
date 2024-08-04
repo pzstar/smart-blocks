@@ -22,7 +22,7 @@ import Tabs from '../../utils/tabs';
 import SelectControl from '../../controls/select';
 import DimensionControl from '../../controls/dimension';
 import RangeSliderControl from '../../controls/rangeslider';
-import MultiSelectControl from '../../controls/multiselect';
+import MultipleSelectControl from '../../controls/multipleselect';
 import BorderControl from '../../controls/border';
 import BoxShadowControl from '../../controls/boxshadow';
 import ToggleControl from '../../controls/toggle';
@@ -585,20 +585,20 @@ export default function Edit(props) {
                                     )}
 
                                     {filterOption == 'categories' && (
-                                        <MultiSelectControl
+                                        <MultipleSelectControl
                                             label={__('Categories', 'smart-blocks')}
                                             options={allCatsSelect()}
                                             value={categories}
-                                            onChange={(categories) => setAttributes({categories})}
+                                            setValue={(categories) => setAttributes({categories})}
                                         />
                                     )}
 
                                     {filterOption == 'tags' && (
-                                        <MultiSelectControl
+                                        <MultipleSelectControl
                                             label={__('Tags', 'smart-blocks')}
                                             options={allTagsSelect()}
                                             value={tags}
-                                            onChange={(tags) => setAttributes({tags})}
+                                            setValue={(tags) => setAttributes({tags})}
                                         />
                                     )}
                                     {
