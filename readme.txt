@@ -4,7 +4,7 @@ Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks
 Tested up to:      6.6
 Stable tag:        2.0
 Requires at least: 5.0
-Requires PHP:      5.6 
+Requires PHP:      5.6
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
