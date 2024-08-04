@@ -28,7 +28,7 @@ import {responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, re
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import GroupControlQuery from '../../controlgroup/query';
 import ToggleControl from '../../controls/toggle';
-import { applyFilters } from '@wordpress/hooks';
+import {applyFilters} from '@wordpress/hooks';
 
 export default function Edit(props) {
     const {attributes, setAttributes} = props;
@@ -666,7 +666,7 @@ export default function Edit(props) {
                                         />
                                     </PanelBody>
                                 )}
-                                <GroupControlQuery attributes={attributes} setAttributes={setAttributes}/>
+                                <GroupControlQuery attributes={attributes} setAttributes={setAttributes} />
                                 <PanelBody
                                     title={__('Featured Block', 'smart-blocks')}
                                     initialOpen={false}

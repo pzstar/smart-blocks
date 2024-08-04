@@ -48,10 +48,10 @@ import {
 	JustifySpaceEvenly
 } from '../../../utils/svgicons';
 import Tabs from '../../../utils/tabs';
-import { applyFilters } from '@wordpress/hooks';
+import {applyFilters} from '@wordpress/hooks';
 
 const Inspector = (props) => {
-    const {attributes, setAttributes, updateColumnsWidth} = props;
+	const {attributes, setAttributes, updateColumnsWidth} = props;
 	const {
 		columns,
 		borderNormal,
@@ -796,7 +796,7 @@ const Inspector = (props) => {
 									/>
 								</PanelBody>
 
-                                {applyFilters('smartblocks.blockTools', '', props)}
+								{applyFilters('smartblocks.blockTools', '', props)}
 							</>
 						)}
 					</div>

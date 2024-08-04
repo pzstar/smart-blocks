@@ -1,17 +1,17 @@
-import { __ } from '@wordpress/i18n';
-import { PanelBody } from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
+import {__} from '@wordpress/i18n';
+import {PanelBody} from '@wordpress/components';
+import {useSelect} from '@wordpress/data';
 import SelectControl from '../controls/select';
 import MultipleSelectControl from '../controls/multipleselect'
 import RangeSliderControl from '../controls/rangeslider';
-import { applyFilters } from '@wordpress/hooks';
+import {applyFilters} from '@wordpress/hooks';
 
 const GroupControlQuery = (props) => {
     const {
         attributes,
         setAttributes,
         usePostNumber,
-        optChange = () => {}
+        optChange = () => { }
     } = props;
     const {
         postsPostType,
@@ -82,7 +82,7 @@ const GroupControlQuery = (props) => {
         var loopTerms = [];
         if (terms && terms.length) {
             if (typeof terms[0].parent !== "undefined") {
-                for (i= 0; i<terms.length; i++) {
+                for (i = 0; i < terms.length; i++) {
                     if (terms[i].parent == parentId) {
                         loopTerms = [...loopTerms, terms[i]];
                     }
@@ -126,7 +126,7 @@ const GroupControlQuery = (props) => {
 
     const termOptions = (taxonomy) => {
         let options = [];
-        if(allTaxTerms[taxonomy]) {
+        if (allTaxTerms[taxonomy]) {
             options = indentArray(0, allTaxTerms[taxonomy]);
         }
         return options;

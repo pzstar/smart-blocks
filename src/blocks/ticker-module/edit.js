@@ -29,7 +29,7 @@ import ToggleControl from '../../controls/toggle';
 import {responsiveTypographyVars, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import GroupControlQuery from '../../controlgroup/query';
-import { applyFilters } from '@wordpress/hooks';
+import {applyFilters} from '@wordpress/hooks';
 
 export default function Edit(props) {
     const {attributes, setAttributes} = props;
@@ -393,7 +393,7 @@ export default function Edit(props) {
                                         />)
                                     }
                                 </PanelBody>
-                                <GroupControlQuery attributes={attributes} setAttributes={setAttributes} usePostNumber={!0}/>
+                                <GroupControlQuery attributes={attributes} setAttributes={setAttributes} usePostNumber={!0} />
                             </>
                         ) || 'style' === activeTab && (
                             <>

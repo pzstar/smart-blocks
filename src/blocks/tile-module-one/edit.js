@@ -28,10 +28,10 @@ import ToggleControl from '../../controls/toggle';
 import {responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import GroupControlQuery from '../../controlgroup/query';
-import { applyFilters } from '@wordpress/hooks';
+import {applyFilters} from '@wordpress/hooks';
 
 export default function Edit(props) {
-    const {attributes, setAttributes} = props;
+	const {attributes, setAttributes} = props;
 	const [activeTab, setActiveTab] = useState('layout');
 	const {
 		id,
@@ -589,7 +589,7 @@ export default function Edit(props) {
 										/>
 									</PanelBody>
 								)}
-								<GroupControlQuery attributes={attributes} setAttributes={setAttributes}/>
+								<GroupControlQuery attributes={attributes} setAttributes={setAttributes} />
 								<PanelBody
 									title={__('Featured Block', 'smart-blocks')}
 									initialOpen={false}
@@ -1159,19 +1159,19 @@ export default function Edit(props) {
 												setUnit={value => setAttributes({borderNormalRadiusUnit: value})}
 											/>
 											<BoxShadowControl
-                                                valueHorizontal={borderNormalBoxShadowHorizontal}
-                                                setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({borderNormalBoxShadowHorizontal})}
-                                                valueVertical={borderNormalBoxShadowVertical}
-                                                setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({borderNormalBoxShadowVertical})}
-                                                valueBlur={borderNormalBoxShadowBlur}
-                                                setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({borderNormalBoxShadowBlur})}
-                                                valueSpread={borderNormalBoxShadowSpread}
-                                                setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({borderNormalBoxShadowSpread})}
-                                                valueColor={borderNormalBoxShadowColor}
-                                                setValueColor={(borderNormalBoxShadowColor) => setAttributes({borderNormalBoxShadowColor})}
-                                                valueInset={borderNormalBoxShadowInset}
-                                                setValueInset={(borderNormalBoxShadowInset) => setAttributes({borderNormalBoxShadowInset})}
-                                            />
+												valueHorizontal={borderNormalBoxShadowHorizontal}
+												setValueHorizontal={(borderNormalBoxShadowHorizontal) => setAttributes({borderNormalBoxShadowHorizontal})}
+												valueVertical={borderNormalBoxShadowVertical}
+												setValueVertical={(borderNormalBoxShadowVertical) => setAttributes({borderNormalBoxShadowVertical})}
+												valueBlur={borderNormalBoxShadowBlur}
+												setValueBlur={(borderNormalBoxShadowBlur) => setAttributes({borderNormalBoxShadowBlur})}
+												valueSpread={borderNormalBoxShadowSpread}
+												setValueSpread={(borderNormalBoxShadowSpread) => setAttributes({borderNormalBoxShadowSpread})}
+												valueColor={borderNormalBoxShadowColor}
+												setValueColor={(borderNormalBoxShadowColor) => setAttributes({borderNormalBoxShadowColor})}
+												valueInset={borderNormalBoxShadowInset}
+												setValueInset={(borderNormalBoxShadowInset) => setAttributes({borderNormalBoxShadowInset})}
+											/>
 										</div>
 										<div tabTitle={__("Hover", 'smart-blocks')}>
 											<BorderControl
@@ -1222,19 +1222,19 @@ export default function Edit(props) {
 												setUnit={value => setAttributes({borderHoverRadiusUnit: value})}
 											/>
 											<BoxShadowControl
-                                                valueHorizontal={borderHoverBoxShadowHorizontal}
-                                                setValueHorizontal={(borderHoverBoxShadowHorizontal) => setAttributes({borderHoverBoxShadowHorizontal})}
-                                                valueVertical={borderHoverBoxShadowVertical}
-                                                setValueVertical={(borderHoverBoxShadowVertical) => setAttributes({borderHoverBoxShadowVertical})}
-                                                valueBlur={borderHoverBoxShadowBlur}
-                                                setValueBlur={(borderHoverBoxShadowBlur) => setAttributes({borderHoverBoxShadowBlur})}
-                                                valueSpread={borderHoverBoxShadowSpread}
-                                                setValueSpread={(borderHoverBoxShadowSpread) => setAttributes({borderHoverBoxShadowSpread})}
-                                                valueColor={borderHoverBoxShadowColor}
-                                                setValueColor={(borderHoverBoxShadowColor) => setAttributes({borderHoverBoxShadowColor})}
-                                                valueInset={borderHoverBoxShadowInset}
-                                                setValueInset={(borderHoverBoxShadowInset) => setAttributes({borderHoverBoxShadowInset})}
-                                            />
+												valueHorizontal={borderHoverBoxShadowHorizontal}
+												setValueHorizontal={(borderHoverBoxShadowHorizontal) => setAttributes({borderHoverBoxShadowHorizontal})}
+												valueVertical={borderHoverBoxShadowVertical}
+												setValueVertical={(borderHoverBoxShadowVertical) => setAttributes({borderHoverBoxShadowVertical})}
+												valueBlur={borderHoverBoxShadowBlur}
+												setValueBlur={(borderHoverBoxShadowBlur) => setAttributes({borderHoverBoxShadowBlur})}
+												valueSpread={borderHoverBoxShadowSpread}
+												setValueSpread={(borderHoverBoxShadowSpread) => setAttributes({borderHoverBoxShadowSpread})}
+												valueColor={borderHoverBoxShadowColor}
+												setValueColor={(borderHoverBoxShadowColor) => setAttributes({borderHoverBoxShadowColor})}
+												valueInset={borderHoverBoxShadowInset}
+												setValueInset={(borderHoverBoxShadowInset) => setAttributes({borderHoverBoxShadowInset})}
+											/>
 										</div>
 									</Tabs>
 								</PanelBody>
@@ -1250,7 +1250,7 @@ export default function Edit(props) {
 									/>
 								</PanelBody>
 
-                                {applyFilters('smartblocks.blockTools', '', props)}
+								{applyFilters('smartblocks.blockTools', '', props)}
 							</>
 						)}
 					</div>

@@ -1,4 +1,4 @@
-import { ToggleControl as ToglControl } from '@wordpress/components';
+import {ToggleControl as ToglControl} from '@wordpress/components';
 
 const ToggleControl = ({
     label,
@@ -17,4 +17,3 @@ const ToggleControl = ({
 }
 
 export default ToggleControl;
-                                

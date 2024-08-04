@@ -169,7 +169,7 @@ const LayoutControl = ({
 									</Button>
 								</Tooltip>
 							)}
-							
+
 							{('Desktop' == getView || layout == 'twoOneOne') && (
 								<Tooltip text={__('2:1:1', 'smart-blocks')} >
 									<Button

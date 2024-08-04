@@ -63,7 +63,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                 }
             }
 
-            foreach($block_css_arr as $val) {
+            foreach ($block_css_arr as $val) {
                 $block_css .= $val;
             }
             self::$stylesheet .= $block_css;
@@ -239,7 +239,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                 }
             }
 
-            foreach($block_css_arr as $val) {
+            foreach ($block_css_arr as $val) {
                 $block_css .= $val;
             }
             return $block_css;

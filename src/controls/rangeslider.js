@@ -30,7 +30,7 @@ const RangeSliderControl = ({
 
     const calcMinVal = () => {
         let ret;
-        switch(unit) {
+        switch (unit) {
             case 'em':
                 ret = 0;
                 break;
@@ -52,7 +52,7 @@ const RangeSliderControl = ({
 
     const calcMaxVal = () => {
         let ret;
-        switch(unit) {
+        switch (unit) {
             case 'em':
                 ret = 10;
                 break;

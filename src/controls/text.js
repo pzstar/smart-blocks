@@ -1,5 +1,5 @@
-import { __ } from '@wordpress/i18n';
-import { TextControl as TxtControl } from '@wordpress/components';
+import {__} from '@wordpress/i18n';
+import {TextControl as TxtControl} from '@wordpress/components';
 
 const TextControl = ({label, value, setValue}) => {
     return <>

@@ -504,14 +504,14 @@ export const ArrowBottom = () => {
     return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m16.5 13.5-3.7 3.7V4h-1.5v13.2l-3.8-3.7-1 1 5.5 5.6 5.5-5.6z"></path></svg>
 }
 
-export const ArrowRight= () => {
+export const ArrowRight = () => {
     return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z"></path></svg>
 }
 
 export const ArrowUp = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><g xmlns="http://www.w3.org/2000/svg" transform="matrix(0 -1 1 0 -0 24)"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z"/></g></svg>
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><g xmlns="http://www.w3.org/2000/svg" transform="matrix(0 -1 1 0 -0 24)"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z" /></g></svg>
 }
 
 export const ArrowLeft = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><g xmlns="http://www.w3.org/2000/svg" transform="matrix(-1 0 0 -1 24 24)"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z"/></g></svg>
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><g xmlns="http://www.w3.org/2000/svg" transform="matrix(-1 0 0 -1 24 24)"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z" /></g></svg>
 }

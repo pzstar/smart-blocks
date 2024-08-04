@@ -29,7 +29,7 @@ import BoxShadowControl from '../../controls/boxshadow';
 import ToggleControl from '../../controls/toggle';
 import OwlCarousel from 'react-owl-carousel';
 import GroupControlQuery from '../../controlgroup/query';
-import { applyFilters } from '@wordpress/hooks';
+import {applyFilters} from '@wordpress/hooks';
 
 export default function Edit(props) {
     const {attributes, setAttributes} = props;
@@ -634,7 +634,7 @@ export default function Edit(props) {
                                     />
                                 </PanelBody>
                             )}
-                            <GroupControlQuery attributes={attributes} setAttributes={setAttributes} optChange={loopUpdate}/>
+                            <GroupControlQuery attributes={attributes} setAttributes={setAttributes} optChange={loopUpdate} />
                             <PanelBody
                                 title={__('Post Block', 'smart-blocks')}
                                 initialOpen={false}

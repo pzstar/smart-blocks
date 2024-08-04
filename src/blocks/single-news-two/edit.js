@@ -29,7 +29,7 @@ import ToggleControl from '../../controls/toggle';
 import {responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import classnames from 'classnames';
-import { applyFilters } from '@wordpress/hooks';
+import {applyFilters} from '@wordpress/hooks';
 
 export default function Edit(props) {
     const {attributes, setAttributes} = props;
@@ -339,7 +339,7 @@ export default function Edit(props) {
         var loopTerms = [];
         if (terms && terms.length) {
             if (typeof terms[0].parent !== "undefined") {
-                for (i= 0; i<terms.length; i++) {
+                for (i = 0; i < terms.length; i++) {
                     if (terms[i].parent == parentId) {
                         loopTerms = [...loopTerms, terms[i]];
                     }
@@ -383,7 +383,7 @@ export default function Edit(props) {
 
     const allCatsSelect = () => {
         let options = [];
-        if(allCats) {
+        if (allCats) {
             options = indentArray(0, allCats);
         }
         return options;
@@ -397,7 +397,7 @@ export default function Edit(props) {
 
     const allTagsSelect = () => {
         let options = [];
-        if(allTags) {
+        if (allTags) {
             options = indentArray(0, allTags);
         }
         return options;
