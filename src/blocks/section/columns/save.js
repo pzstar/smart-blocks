@@ -19,28 +19,28 @@ const Save = ({attributes, className}) => {
 	} = attributes;
 
 	const Tag = columnsHTMLTag;
-	const desktopLayout = hide ? '' : `has-desktop-${layout}-layout`;
-	const tabletLayout = hideTablet ? '' : `has-tablet-${layoutTablet}-layout`;
-	const mobileLayout = hideMobile ? '' : `has-mobile-${layoutMobile}-layout`;
+	const desktopLayout = hide ? '' : `sb-has-desktop-${layout}-layout`;
+	const tabletLayout = hideTablet ? '' : `sb-has-tablet-${layoutTablet}-layout`;
+	const mobileLayout = hideMobile ? '' : `sb-has-mobile-${layoutMobile}-layout`;
 
 	const classes = classnames(
 		className,
-		`has-${columns}-columns`,
+		`sb-has-${columns}-columns`,
 		desktopLayout,
 		tabletLayout,
 		mobileLayout,
 		{'hide-in-desktop': hide},
 		{'hide-in-tablet': hideTablet},
 		{'hide-in-mobile': hideMobile},
-		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
-		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
-		`has-${sectionContentWidth}-width`,
-		{'sb-frontend': true}
+		{'sb-has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
+		{'sb-has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
+		`sb-has-${sectionContentWidth}-width`,
+		{'sb-is-frontend': true}
 	);
 
 	return (
 		<Tag className={classes} id={id}>
-			<div className="wp-block-smart-blocks-innerblocks-wrap">
+			<div className="wp-block-smart-blocks-columns-wrap">
 				<InnerBlocks.Content />
 			</div>
 		</Tag>

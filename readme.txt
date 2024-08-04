@@ -1,7 +1,7 @@
 === Smart Blocks ===
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks
-Tested up to:      6.5
+Tested up to:      6.6
 Stable tag:        1.1.6
 Requires at least: 5.0
 Requires PHP:      5.6 

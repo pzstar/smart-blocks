@@ -52,10 +52,10 @@ import {
 	JustifySpaceAround,
 	JustifySpaceEvenly
 } from '../../utils/svgicons';
-import { applyFilters } from '@wordpress/hooks';
+import {applyFilters} from '@wordpress/hooks';
 
 const Inspector = (props) => {
-    const {attributes, setAttributes} = props;
+	const {attributes, setAttributes} = props;
 	const {
 		enableSticky,
 		stickyOffsetTop,
@@ -154,7 +154,7 @@ const Inspector = (props) => {
 		justifyContent,
 		justifyContentSm,
 		justifyContentMd,
-		
+
 		justifyItems,
 		justifyItemsSm,
 		justifyItemsMd,
@@ -253,7 +253,7 @@ const Inspector = (props) => {
 								/>)}
 
 								<p className="sb-inspector-help-text">
-									Container Should be inside column for sticky
+									{__('Container Should be inside column for sticky', 'smart-blocks')}
 								</p>
 							</PanelBody>
 
@@ -520,7 +520,7 @@ const Inspector = (props) => {
 
 
 							</PanelBody>
-							
+
 						</>
 					) || 'style' === activeTab && (
 						<>
@@ -820,11 +820,15 @@ const Inspector = (props) => {
 											value={hrefLinkURL}
 											setValue={value => setAttributes({hrefLinkURL: value})}
 										/>
+
+										<p className="sb-inspector-help-text">
+											{__('The contents inside the container should not have any anchort link inorder to work properly.', 'smart-blocks')}
+										</p>
 									</>
 								)}
 							</PanelBody>
 
-                            {applyFilters('smartblocks.blockTools', '', props)}
+							{applyFilters('smartblocks.blockTools', '', props)}
 						</>
 					)}
 				</div>

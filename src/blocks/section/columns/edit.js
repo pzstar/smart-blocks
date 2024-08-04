@@ -214,16 +214,16 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 
 	const classes = classnames(
 		className,
-		`has-${columns}-columns`,
-		`has-desktop-${layout}-layout`,
-		`has-tablet-${layoutTablet}-layout`,
-		`has-mobile-${layoutMobile}-layout`,
-		{'has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
-		{'has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
-		{'has-viewport-desktop': isDesktop},
-		{'has-viewport-tablet': isTablet},
-		{'has-viewport-mobile': isMobile},
-		`has-${sectionContentWidth}-width`
+		`sb-has-${columns}-columns`,
+		`sb-has-desktop-${layout}-layout`,
+		`sb-has-tablet-${layoutTablet}-layout`,
+		`sb-has-mobile-${layoutMobile}-layout`,
+		{'sb-has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
+		{'sb-has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
+		{'sb-has-viewport-desktop': isDesktop},
+		{'sb-has-viewport-tablet': isTablet},
+		{'sb-has-viewport-mobile': isMobile},
+		`sb-has-${sectionContentWidth}-width`
 	);
 
 	const updateColumnsWidth = (columns, layout) => {
@@ -276,7 +276,7 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 			className={classes} 
 			id={id}
 			>
-				<div className="wp-block-smart-blocks-innerblocks-wrap">
+				<div className="wp-block-smart-blocks-columns-wrap">
 					<InnerBlocks
 						allowedBlocks={['smart-blocks/column']}
 						template={getColumnsTemplate(columns)}

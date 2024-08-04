@@ -11,7 +11,7 @@ const Save = ({attributes, className}) => {
 	const classes = classnames(
 		className,
 		enableSticky ? 'sb-sticky-container' : '',
-		{'sb-frontend': true}
+		{'sb-is-frontend': true}
 	);
 	const Tag = columnsHTMLTag;
 	return (
