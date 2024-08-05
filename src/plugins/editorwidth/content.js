@@ -3,7 +3,7 @@ import {compose} from '@wordpress/compose'
 import {withDispatch, withSelect} from '@wordpress/data';
 import {PluginSidebar, PluginSidebarMoreMenuItem} from '@wordpress/editor';
 import {Tooltip, PanelBody} from '@wordpress/components';
-import {SmartBlockIcon} from '../../utils/svgicons';
+import {SmartBlockOutlineIcon} from '../../utils/svgicons';
 
 const SidebarContent = ({postMeta, setPostMeta}) => {
 	return (
@@ -17,7 +17,7 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 			<PluginSidebar
 				name="sb-editor-sidebar"
 				title={__('Smart Blocks Settings', 'smart-blocks')}
-				icon={SmartBlockIcon}
+				icon={SmartBlockOutlineIcon}
 			>
 				<PanelBody
 					title={__('Editor Width', 'smart-blocks')}
