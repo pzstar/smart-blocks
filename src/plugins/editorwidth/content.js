@@ -10,7 +10,7 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 		<>
 			<PluginSidebarMoreMenuItem
 				target="sb-editor-sidebar"
-				icon="<SmartBlockIcon />"
+				icon={SmartBlockIcon}
 			>
 				{__('Smart Blocks Settings', 'smart-blocks')}
 			</PluginSidebarMoreMenuItem>
@@ -18,6 +18,7 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 			<PluginSidebar
 				name="sb-editor-sidebar"
 				title={__('Smart Blocks Settings', 'smart-blocks')}
+				icon={SmartBlockIcon}
 			>
 				<PanelBody
 					title={__('Editor Width', 'smart-blocks')}

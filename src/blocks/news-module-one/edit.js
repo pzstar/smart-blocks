@@ -1386,17 +1386,24 @@ export default function Edit(props) {
                 <div {...useBlockProps({
                     className: "wp-block-smart-blocks sb-news-module-one"
                 })}>
-                    <h2 className={headerClasses}>
-                        <RichText
-                            tagName="span"
-                            value={headerTitle}
-                            onChange={(headerTitle) => setAttributes({headerTitle})}
-                            placeholder={__('Heading...', 'smart-blocks')}
-                        />
-                    </h2>
-                    <div className="sb-news-module-one-wrap">
-                        {posts && posts.map((post, index) => (postInner(post, index)))}
+                    <div className="sb-block-header">
+                        <h2 className={headerClasses}>
+                            <RichText
+                                tagName="span"
+                                value={headerTitle}
+                                onChange={(headerTitle) => setAttributes({headerTitle})}
+                                placeholder={__('Heading...', 'smart-blocks')}
+                            />
+                        </h2>
+
+                        {applyFilters('smartblocks.afterHeaderBlocks', '', props)}
                     </div>
+                    <div className="sb-block-inner">
+                        <div className="sb-news-module-one-wrap">
+                            {posts && posts.map((post, index) => (postInner(post, index)))}
+                        </div>
+                    </div>
+                    {applyFilters('smartblocks.footerBlocks', '', props)}
                 </div>
             </div>
         </>

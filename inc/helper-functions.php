@@ -51,7 +51,7 @@ if (!function_exists('smart_blocks_post_date')) {
 if (!function_exists('smart_blocks_time_ago')) {
 
     function smart_blocks_time_ago($class = '') {
-        return '<span class="sb-post-date ' . $class . '"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'hash-elements') . '</span>';
+        return '<span class="sb-post-date ' . $class . '"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'smart-blocks') . '</span>';
     }
 
 }
