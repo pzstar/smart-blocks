@@ -1,3 +1,11 @@
+export const SmartBlockIcon = () => {
+    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+    <g data-name="Layer 2">
+      <path d="M144 0H6a6 6 0 0 0-6 6v138a6 6 0 0 0 6 6h138a6 6 0 0 0 6-6V6a6 6 0 0 0-6-6m-8.8 45.83c-2.1 2.1-4.29 3.9-4.91 3.9S118.28 45 105 39.2c-22.37-9.67-24.32-10.37-25.8-9.35-.94.62-7.8 7.25-15.21 14.65L50.53 58l11.15 4.83c6.16 2.57 18.87 8.1 28.32 12.23s19.81 8.58 23 9.91a61 61 0 0 1 6.47 3c.32.23-4 5.07-9.74 10.6s-16.37 16-23.78 23.23c-7.87 7.72-13.8 13-14.42 12.79-2.81-1.17-59.57-25.81-59.88-26.12-.15-.15 1.64-2.18 4-4.6l4.29-4.29 8.88 3.9c4.92 2.11 16.22 6.94 25 10.84l16 6.94L85 106.56C99.57 92.45 100 91.9 98.17 91.2c-1.09-.46-12.08-5.2-24.56-10.6s-27.29-11.85-32.9-14.35-10.29-4.67-10.13-4.91c.46-1.09 47-45.92 47.79-45.92.47 0 8.5 3.36 17.93 7.41 9.35 4.13 22.37 9.75 28.77 12.55s12.24 5.38 12.86 5.77c.94.62.47 1.4-2.73 4.68m-28.84 14-4.21 4.06-7.64-3.28c-4.21-1.79-8.74-3.74-10-4.28-2.26-.94-2.58-.78-6.16 2.49-2.11 1.87-4.29 3.43-4.76 3.43a72 72 0 0 1-10.37-4.29c-.39-.31 15.91-16 16.69-16 .46 0 7.17 2.81 15 6.24s14.5 6.23 15 6.23c1.51-.03.66 1.38-3.55 5.35ZM68.15 95 72 91.12l3.82-3.82 5.54 2.34c3 1.33 5.61 2.42 5.77 2.58.39.31-15.52 15.59-16.53 15.82-.47.08-7.33-2.57-15.2-6.08s-14.5-6.24-15-6.24c-1.4 0-.62-1.16 3.35-5.22 4.68-4.75 3.43-4.75 15.75.62Z" data-name="Layer 1"/>
+    </g>
+  </svg>
+}
+
 export const DesktopIcon = () => {
     return <svg className="fa-desktop" aria-hidden="true" focusable="false" data-prefix="far" data-icon="desktop" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg="">
         <path fill="currentColor" d="M528 0H48C21.5 0 0 21.5 0 48v288c0 26.5 21.5 48 48 48h480c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zm-6 336H54c-3.3 0-6-2.7-6-6V54c0-3.3 2.7-6 6-6h468c3.3 0 6 2.7 6 6v276c0 3.3-2.7 6-6 6zm-42 152c0 13.3-10.7 24-24 24H120c-13.3 0-24-10.7-24-24s10.7-24 24-24h98.7l18.6-55.8c1.6-4.9 6.2-8.2 11.4-8.2h78.7c5.2 0 9.8 3.3 11.4 8.2l18.6 55.8H456c13.3 0 24 10.7 24 24z"></path>
@@ -452,66 +460,4 @@ export const Container = () => {
     return <svg viewBox="0 0 60 40">
         <rect width="60" height="40"></rect>
     </svg>
-}
-
-
-export const AlignFlexStart = () => {
-    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 1H1v1h18V1zM14 3h-3v6h3V3zM9 3H6v8h3V3z"></path></svg>
-}
-
-export const AlignCenter = () => {
-    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 9.5H1v1h18v-1z"></path><path d="M14 7h-3v6h3V7zM9 6H6v8h3V6z"></path></svg>
-}
-
-export const AlignFlexEnd = () => {
-    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 18H1v1h18v-1zM14 11h-3v6h3v-6zM9 9H6v8h3V9z"></path></svg>
-}
-
-export const AlignStretch = () => {
-    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 18H1v1h18v-1zM19 1H1v1h18V1zM14 3h-3v14h3V3zM9 3H6v14h3V3z"></path></svg>
-}
-
-export const AlignBaseline = () => {
-    return <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M1 14.1h18v1H1zM11.4 11.1h-3l-.6 2H6.5l2.6-8.3h1.7l2.6 8.3H12l-.6-2zm-2.6-1h2.4L10 5.9l-1.2 4.2z"></path></svg>
-}
-
-
-export const JustifyFlexStart = () => {
-    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M2 1H1v18h1V1zM6 5H3v10h3V5zM10 5H7v10h3V5z"></path></svg>
-}
-
-export const JustifyCenter = () => {
-    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M10.5 1h-1v18h1V1zM8 5H5v10h3V5zM15 5h-3v10h3V5z"></path></svg>
-}
-
-export const JustifyFlexEnd = () => {
-    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M19 1h-1v18h1V1zM13 5h-3v10h3V5zM17 5h-3v10h3V5z"></path></svg>
-}
-
-export const JustifySpaceBetween = () => {
-    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M20 1h-1v18h1V1zM1 1H0v18h1V1zM5 5H2v10h3V5zM18 5h-3v10h3V5z"></path></svg>
-}
-
-export const JustifySpaceAround = () => {
-    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M20 1h-1v18h1V1zM1 1H0v18h1V1zM7 5H4v10h3V5zM16 5h-3v10h3V5z"></path></svg>
-}
-
-export const JustifySpaceEvenly = () => {
-    return <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" size="24"><path d="M20 1h-1v18h1V1zM1 1H0v18h1V1zM8 5H5v10h3V5zM15 5h-3v10h3V5z"></path></svg>
-}
-
-export const ArrowBottom = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m16.5 13.5-3.7 3.7V4h-1.5v13.2l-3.8-3.7-1 1 5.5 5.6 5.5-5.6z"></path></svg>
-}
-
-export const ArrowRight = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z"></path></svg>
-}
-
-export const ArrowUp = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><g xmlns="http://www.w3.org/2000/svg" transform="matrix(0 -1 1 0 -0 24)"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z" /></g></svg>
-}
-
-export const ArrowLeft = () => {
-    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><g xmlns="http://www.w3.org/2000/svg" transform="matrix(-1 0 0 -1 24 24)"><path d="m14.5 6.5-1 1 3.7 3.7H4v1.6h13.2l-3.7 3.7 1 1 5.6-5.5z" /></g></svg>
 }

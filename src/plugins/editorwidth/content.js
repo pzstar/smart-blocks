@@ -3,14 +3,14 @@ import {compose} from '@wordpress/compose'
 import {withDispatch, withSelect} from '@wordpress/data';
 import {PluginSidebar, PluginSidebarMoreMenuItem} from '@wordpress/editor';
 import {Tooltip, PanelBody} from '@wordpress/components';
-import {image} from '@wordpress/icons';
+import {SmartBlockIcon} from '../../utils/svgicons';
 
 const SidebarContent = ({postMeta, setPostMeta}) => {
 	return (
 		<>
 			<PluginSidebarMoreMenuItem
 				target="sb-editor-sidebar"
-				icon="image"
+				icon="<SmartBlockIcon />"
 			>
 				{__('Smart Blocks Settings', 'smart-blocks')}
 			</PluginSidebarMoreMenuItem>
