@@ -177,7 +177,7 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 
         ${bgVars('container-bg', columnBgImgURL, columnBgAttachment, columnBgSize, columnBgPositionX, columnBgPositionY, columnBgRepeat, columnBgType, columnBgGradient, columnBgColor, columnBgOverlayColor)}
 
-        --sb-container-sticky-offset:${stickyOffsetTop ? stickyOffsetTop + 'px' : '0'};
+        --sb-container-sticky-offset:${stickyOffsetTop ? stickyOffsetTop + 'px' : '0px'};
 
         --sb-container-flexible-display:${flexibleContentDisplay ? flexibleContentDisplay : 'flex'};
         ${responsiveSliderVars('container-flex-direction', flexDirection, flexDirectionSm, flexDirectionMd)}
