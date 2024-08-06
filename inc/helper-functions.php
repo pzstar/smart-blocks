@@ -5,7 +5,7 @@ if (!function_exists('smart_blocks_custom_excerpt')) {
     function smart_blocks_custom_excerpt($limit) {
         if ($limit) {
             $content = get_the_content();
-            $content = strip_tags($content);
+            $content = wp_strip_all_tags($content);
             $content = strip_shortcodes($content);
             $excerpt = mb_substr($content, 0, $limit);
 
