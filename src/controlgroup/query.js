@@ -2,7 +2,7 @@ import {__} from '@wordpress/i18n';
 import {PanelBody} from '@wordpress/components';
 import {useSelect} from '@wordpress/data';
 import SelectControl from '../controls/select';
-import MultipleSelectControl from '../controls/multipleselect'
+import MultipleSelectControl from '../controls/multipleselect';
 import RangeSliderControl from '../controls/rangeslider';
 import {applyFilters} from '@wordpress/hooks';
 

@@ -1338,6 +1338,7 @@ export default function Edit(props) {
                                     />
                                 </PanelBody>
 
+                                {applyFilters('smartblocks.advancedBlocks', '', props)}
                                 {applyFilters('smartblocks.blockTools', '', props)}
                             </>
                         )}
