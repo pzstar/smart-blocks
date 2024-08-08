@@ -196,13 +196,17 @@ export default function Edit(props) {
 	const Tag = columnsHTMLTag;
 	const classes = classnames(
 		className,
-		enableSticky ? 'sb-sticky-container' : ''
+		enableSticky ? 'sb-sticky-container' : '',
+		{'sb-transform-yes': props.attributes.sbTransformEnable},
+		{'sb-float-yes': props.attributes.sbFloatEffectEnable},
+		{'sb-parallax-yes': (props.attributes.sbParallaxStyle && props.attributes.sbParallaxStyle != 'none')}
 	);
 
 	return (
 		<>
 			<style jsx>
                 {applyFilters('smartblocks.editorcss', sbStyle, props)}
+                {applyFilters('smartblocks.containercss', '', props)}
             </style>
 			<Inspector
 				attributes={attributes}

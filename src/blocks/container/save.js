@@ -11,7 +11,10 @@ const Save = ({attributes, className}) => {
 	const classes = classnames(
 		className,
 		enableSticky ? 'sb-sticky-container' : '',
-		{'sb-is-frontend': true}
+		{'sb-is-frontend': true},
+		{'sb-transform-yes': attributes.sbTransformEnable},
+		{'sb-float-yes': attributes.sbFloatEffectEnable},
+		{'sb-parallax-yes': (attributes.sbParallaxStyle && attributes.sbParallaxStyle != 'none')}
 	);
 	const Tag = columnsHTMLTag;
 	return (
