@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import {useDispatch, useSelect} from '@wordpress/data';
 import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
 import {Fragment, useEffect, useState} from '@wordpress/element';
+import {applyFilters} from '@wordpress/hooks';
 
 /**
  * Internal dependencies
@@ -11,7 +12,8 @@ import Inspector from './inspector.js';
 import {responsiveDimensionVars, dimensionVars, boxShadowVars, bgVars, responsiveSliderVars} from '../../utils/helper';
 import {responsiveGapVars} from '../../utils/helper';
 
-export default function Edit({attributes, setAttributes, clientId, className}) {
+export default function Edit(props) {
+	const {attributes, setAttributes, clientId, className} = props;
 	const {
 		id,
 		enableSticky,
