@@ -329,7 +329,7 @@ export default function Edit(props) {
     return (
         <>
             <style jsx>
-                {sbStyle}
+                {applyFilters('smartblocks.editorcss', sbStyle, props)}
             </style>
             {tickerTitleTypographyFamily && (tickerTitleTypographyFamily != 'Default') && (<GoogleFontLoad family={tickerTitleTypographyFamily} weight={tickerTitleTypographyWeight.replace("italic", "i")} />)}
             {tickerContentTypographyFamily && (tickerContentTypographyFamily != 'Default') && (<GoogleFontLoad family={tickerContentTypographyFamily} weight={tickerContentTypographyWeight.replace("italic", "i")} />)}

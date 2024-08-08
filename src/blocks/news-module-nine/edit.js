@@ -605,7 +605,7 @@ export default function Edit(props) {
     return (
         <>
             <style jsx>
-                {sbStyle}
+                {applyFilters('smartblocks.editorcss', sbStyle, props)}
             </style>
             {headerTitleTypographyFamily && (headerTitleTypographyFamily != 'Default') && (<GoogleFontLoad family={headerTitleTypographyFamily} weight={headerTitleTypographyWeight.replace("italic", "i")} />)}
             {categoryTypographyFamily && (categoryTypographyFamily != 'Default') && (<GoogleFontLoad family={categoryTypographyFamily} weight={categoryTypographyWeight.replace("italic", "i")} />)}

@@ -263,8 +263,8 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 	return (
 		<>
 			<style jsx>
-				{sbStyle}
-			</style>
+                {applyFilters('smartblocks.editorcss', sbStyle, props)}
+            </style>
 
 			<Inspector
 				attributes={attributes}

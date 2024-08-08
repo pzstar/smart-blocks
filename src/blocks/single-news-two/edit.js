@@ -518,7 +518,7 @@ export default function Edit(props) {
     return (
         <>
             <style jsx>
-                {sbStyle}
+                {applyFilters('smartblocks.editorcss', sbStyle, props)}
             </style>
             {postTypographyFamily && (postTypographyFamily != 'Default') && (<GoogleFontLoad family={postTypographyFamily} weight={postTypographyWeight.replace("italic", "i")} />)}
             {excerptTypographyFamily && (excerptTypographyFamily != 'Default') && (<GoogleFontLoad family={excerptTypographyFamily} weight={excerptTypographyWeight.replace("italic", "i")} />)}

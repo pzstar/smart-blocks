@@ -270,8 +270,8 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 	return (
 		<div {...useBlockProps()}>
 			<style jsx>
-				{sbStyle}
-			</style>
+                {applyFilters('smartblocks.editorcss', sbStyle, props)}
+            </style>
 			<Inspector
 				attributes={attributes}
 				setAttributes={setAttributes}

@@ -200,8 +200,8 @@ export default function Edit({attributes, setAttributes, clientId, className}) {
 	return (
 		<>
 			<style jsx>
-				{sbStyle}
-			</style>
+                {applyFilters('smartblocks.editorcss', sbStyle, props)}
+            </style>
 			<Inspector
 				attributes={attributes}
 				setAttributes={setAttributes}

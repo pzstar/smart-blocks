@@ -553,7 +553,7 @@ export default function Edit(props) {
     return (
         <>
             <style jsx>
-                {sbStyle}
+                {applyFilters('smartblocks.editorcss', sbStyle, props)}
             </style>
             {
                 headerTitleTypographyFamily && (headerTitleTypographyFamily != 'Default') && (
