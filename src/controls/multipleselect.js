@@ -50,6 +50,7 @@ const MultipleSelectControl = ({label, options, value, setValue}) => {
             <div class="sb-input-fields">
                 <div class="sb-popup-select">
                     <SortableSelect
+                        useDragHandle={!0}
                         axis="xy"
                         onSortEnd={onSortEnd}
                         getHelperDimensions={({node}) => node.getBoundingClientRect()}
