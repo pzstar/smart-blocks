@@ -205,9 +205,9 @@ export default function Edit(props) {
 	return (
 		<>
 			<style jsx>
-                {applyFilters('smartblocks.editorcss', sbStyle, props)}
-                {applyFilters('smartblocks.containercss', '', props)}
-            </style>
+				{applyFilters('smartblocks.editorcss', sbStyle, props)}
+				{applyFilters('smartblocks.containercss', '', props)}
+			</style>
 			<Inspector
 				attributes={attributes}
 				setAttributes={setAttributes}

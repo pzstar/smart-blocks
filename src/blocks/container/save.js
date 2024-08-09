@@ -23,7 +23,11 @@ const Save = ({attributes, className}) => {
 			id={id}
 			href={Tag == 'a' ? hrefLinkURL : ''}
 		>
-			<InnerBlocks.Content />
+			<div class="wp-block-smart-blocks-float-container">
+				<div class="wp-block-smart-blocks-container-content">
+					<InnerBlocks.Content />
+				</div>
+			</div>
 		</Tag>
 	);
 };
