@@ -140,6 +140,8 @@ export default function Edit(props) {
 		containerWidthMd,
 		containerWidthUnit,
 
+		hrefLinkURL
+
 	} = attributes;
 
 	const {
@@ -214,8 +216,11 @@ export default function Edit(props) {
 			/>
 
 			<Tag
-				id={id}
-				className={classes}
+				{...useBlockProps({
+					id,
+					className: classes,
+					href: Tag == 'a' && hrefLinkURL ? hrefLinkURL : ''
+				})}
 			>
 				<InnerBlocks
 					templateLock={false}

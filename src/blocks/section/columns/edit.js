@@ -272,9 +272,11 @@ const Edit = ({attributes, setAttributes, className, clientId}) => {
 				updateColumnsWidth={updateColumnsWidth}
 			/>
 
-			<Tag 
-			className={classes} 
-			id={id}
+			<Tag
+				{...useBlockProps({
+					id,
+					className: classes
+				})}
 			>
 				<div className="wp-block-smart-blocks-columns-wrap">
 					<InnerBlocks

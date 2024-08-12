@@ -12,8 +12,10 @@ const Save = ({attributes, className}) => {
 	const Tag = columnsHTMLTag;
 	return (
 		<Tag
-			className={classes}
-			id={id}
+			{...useBlockProps.save({
+				id,
+				className: classes
+			})}
 		>
 			<InnerBlocks.Content />
 		</Tag>

@@ -39,7 +39,12 @@ const Save = ({attributes, className}) => {
 	);
 
 	return (
-		<Tag className={classes} id={id}>
+		<Tag
+			{...useBlockProps.save({
+				id,
+				className: classes
+			})}
+		>
 			<div className="wp-block-smart-blocks-columns-wrap">
 				<InnerBlocks.Content />
 			</div>

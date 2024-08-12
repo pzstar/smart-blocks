@@ -295,8 +295,10 @@ export default function Edit({attributes, setAttributes, className, isSelected, 
 
 			>
 				<Tag
-					className={classes}
-					id={id}
+					{...useBlockProps({
+						id,
+						className: classes
+					})}
 				>
 					<InnerBlocks
 						templateLock={false}

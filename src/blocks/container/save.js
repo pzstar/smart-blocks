@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import {InnerBlocks} from '@wordpress/block-editor';
+import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
 
 const Save = ({attributes, className}) => {
 	const {
@@ -19,9 +19,11 @@ const Save = ({attributes, className}) => {
 	const Tag = columnsHTMLTag;
 	return (
 		<Tag
-			className={classes}
-			id={id}
-			href={Tag == 'a' ? hrefLinkURL : ''}
+			{...useBlockProps.save({
+				id,
+				className: classes,
+				href: Tag == 'a' && hrefLinkURL ? hrefLinkURL : ''
+			})}
 		>
 			<div class="wp-block-smart-blocks-float-container">
 				<div class="wp-block-smart-blocks-container-content">
