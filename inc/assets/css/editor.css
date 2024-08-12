@@ -541,7 +541,12 @@
 .sb-field-color:hover .sb-reset-field,
 .sb-field-select:hover .sb-reset-field,
 .sb-field-boxshadow:hover .sb-reset-field,
-.sb-field-typography:hover .sb-reset-field {
+.sb-field-typography:hover .sb-reset-field ,
+.sb-field-translate:hover .sb-reset-field,
+.sb-field-rotate:hover .sb-reset-field,
+.sb-field-scale:hover .sb-reset-field,
+.sb-field-opacity:hover .sb-reset-field,
+.sb-field-perspective:hover .sb-reset-field{
     opacity: 1;
     visibility: visible;
 }
