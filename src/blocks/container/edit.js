@@ -201,6 +201,10 @@ export default function Edit(props) {
 		enableSticky ? 'sb-sticky-container' : '',
 		{'sb-transform-yes': props.attributes.sbTransformEnable},
 		{'sb-float-yes': props.attributes.sbFloatEffectEnable},
+		{'sb-float-infinite-rotation': props.attributes.sbFloatEffectRotateInfiniteEnable},
+		{'sb-float-hide-on-tablet': props.attributes.sbFloatEffectHideOn.includes('tablet')},
+		{'sb-float-hide-on-mobile': props.attributes.sbFloatEffectHideOn.includes('mobile')},
+		{'sb-float-hide-on-desktop': props.attributes.sbFloatEffectHideOn.includes('desktop')},
 		{'sb-parallax-yes': (props.attributes.sbParallaxStyle && props.attributes.sbParallaxStyle != 'none')}
 	);
 
