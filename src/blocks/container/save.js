@@ -15,9 +15,9 @@ const Save = ({attributes, className}) => {
 		{'sb-transform-yes': attributes.sbTransformEnable},
 		{'sb-float-yes': attributes.sbFloatEffectEnable},
 		{'sb-float-infinite-rotation': attributes.sbFloatEffectRotateInfiniteEnable},
-		{'sb-float-hide-on-tablet': attributes.sbFloatEffectHideOn.includes('tablet')},
-		{'sb-float-hide-on-mobile': attributes.sbFloatEffectHideOn.includes('mobile')},
-		{'sb-float-hide-on-desktop': attributes.sbFloatEffectHideOn.includes('desktop')},
+		{'sb-float-hide-on-tablet': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('tablet')},
+		{'sb-float-hide-on-mobile': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('mobile')},
+		{'sb-float-hide-on-desktop': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('desktop')},
 		{'sb-parallax-yes': (attributes.sbParallaxStyle && attributes.sbParallaxStyle != 'none')}
 	);
 	const Tag = columnsHTMLTag;
