@@ -592,7 +592,10 @@
     border-color: #e6e6e6;
     border-radius: 3px;
     box-shadow: 0 5px 10px rgba(25, 30, 35, 0.1);
-    min-width: 250px;
+    min-width: 260px;
+    padding: 20px;
+    border: 1px solid #EEE;
+    border-top: 3px solid #037cba;
 }
 
 /* Box Shadow PopUp */
