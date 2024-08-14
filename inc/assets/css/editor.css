@@ -545,6 +545,7 @@
 .sb-field-translate:hover .sb-reset-field,
 .sb-field-rotate:hover .sb-reset-field,
 .sb-field-scale:hover .sb-reset-field,
+.sb-field-skew:hover .sb-reset-field,
 .sb-field-opacity:hover .sb-reset-field,
 .sb-field-perspective:hover .sb-reset-field {
     opacity: 1;
