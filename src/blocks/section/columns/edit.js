@@ -7,6 +7,7 @@ import {useDispatch, useSelect} from '@wordpress/data';
 import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
 
 import {useEffect, useState} from '@wordpress/element';
+import {applyFilters} from '@wordpress/hooks';
 
 /**
  * Internal dependencies
@@ -18,7 +19,8 @@ import {blockInit} from '../../../utils/block-utility';
 import LayoutSelector from './layoutselector.js';
 import {responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveGapVars, bgVars} from '../../../utils/helper';
 
-const Edit = ({attributes, setAttributes, className, clientId}) => {
+const Edit = (props) => {
+	const {attributes, setAttributes, className, clientId} = props
 	const {
 		id,
 		columns,

@@ -4,6 +4,7 @@ import {useViewportMatch} from '@wordpress/compose';
 import {useDispatch, useSelect} from '@wordpress/data';
 import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
 import {Fragment, useEffect, useState} from '@wordpress/element';
+import {applyFilters} from '@wordpress/hooks';
 
 /**
  * Internal dependencies
@@ -14,7 +15,8 @@ import Inspector from './inspector.js';
 import {blockInit} from '../../../utils/block-utility';
 import {responsiveDimensionVars, dimensionVars, boxShadowVars, bgVars, responsiveSliderVars, responsiveGapColumnVars} from '../../../utils/helper';
 
-export default function Edit({attributes, setAttributes, className, isSelected, clientId, toggleSelection}) {
+export default function Edit(props) {
+	const {attributes, setAttributes, className, isSelected, clientId, toggleSelection} = props;
 	const {updateBlockAttributes} = useDispatch('core/block-editor');
 
 	const {
