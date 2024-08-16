@@ -198,14 +198,7 @@ export default function Edit(props) {
 	const Tag = columnsHTMLTag;
 	const classes = classnames(
 		className,
-		enableSticky ? 'sb-sticky-container' : '',
-		{'sb-transform-yes': props.attributes.sbTransformEnable},
-		{'sb-float-yes': props.attributes.sbFloatEffectEnable},
-		{'sb-float-infinite-rotation': props.attributes.sbFloatEffectRotateInfiniteEnable},
-		{'sb-float-hide-on-tablet': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('tablet')},
-		{'sb-float-hide-on-mobile': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('mobile')},
-		{'sb-float-hide-on-desktop': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('desktop')},
-		{'sb-parallax-yes': (props.attributes.sbParallaxStyle && props.attributes.sbParallaxStyle != 'none')}
+		enableSticky ? 'sb-sticky-container' : ''
 	);
 
 	return (
