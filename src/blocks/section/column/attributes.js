@@ -246,11 +246,11 @@ const attributes = {
         default: 'auto'
     },
     columnBgPositionX: {
-        type: 'string',
+        type: 'number',
         default: '0.5'
     },
     columnBgPositionY: {
-        type: 'string',
+        type: 'number',
         default: '0.5'
     },
     columnBgRepeat: {
