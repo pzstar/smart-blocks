@@ -275,10 +275,8 @@ const Edit = (props) => {
 			/>
 
 			<Tag
-				{...useBlockProps({
-					id,
-					className: classes
-				})}
+				className={classes} 
+				id={id}
 			>
 				<div className="wp-block-smart-blocks-columns-wrap">
 					<InnerBlocks

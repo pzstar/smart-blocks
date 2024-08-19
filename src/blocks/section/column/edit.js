@@ -297,10 +297,8 @@ export default function Edit(props) {
 
 			>
 				<Tag
-					{...useBlockProps({
-						id,
-						className: classes
-					})}
+					className={classes} 
+					id={id}
 				>
 					<InnerBlocks
 						templateLock={false}
