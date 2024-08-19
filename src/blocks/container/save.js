@@ -18,7 +18,8 @@ const Save = ({attributes, className}) => {
 		{'sb-float-hide-on-tablet': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('tablet')},
 		{'sb-float-hide-on-mobile': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('mobile')},
 		{'sb-float-hide-on-desktop': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('desktop')},
-		{'sb-parallax-yes': (attributes.sbParallaxStyle && attributes.sbParallaxStyle != 'none')}
+		{'sb-parallax-yes': (attributes.sbParallaxStyle && attributes.sbParallaxStyle != 'none')},
+		attributes.sbColorAnimationType ? `sb--ca-${attributes.sbColorAnimationType}` : ''
 	);
 	const Tag = columnsHTMLTag;
 	return (

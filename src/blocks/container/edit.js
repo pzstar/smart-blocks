@@ -205,7 +205,8 @@ export default function Edit(props) {
 		{'sb-float-hide-on-tablet': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('tablet')},
 		{'sb-float-hide-on-mobile': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('mobile')},
 		{'sb-float-hide-on-desktop': attributes.sbFloatEffectHideOn && attributes.sbFloatEffectHideOn.includes('desktop')},
-		{'sb-parallax-yes': (props.attributes.sbParallaxStyle && props.attributes.sbParallaxStyle != 'none')}
+		{'sb-parallax-yes': (props.attributes.sbParallaxStyle && props.attributes.sbParallaxStyle != 'none')},
+		attributes.sbColorAnimationType ? `sb--ca-${attributes.sbColorAnimationType}` : ''
 	);
 
 	return (
