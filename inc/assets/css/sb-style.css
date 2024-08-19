@@ -214,6 +214,7 @@ a {
     padding-top: var(--sb-container-padding-top-lg, 0);
     width: var(--sb-container-width-lg, 100%);
     max-width: 100%;
+    display: block;
 }
 
 .wp-block-smart-blocks-container:hover {
