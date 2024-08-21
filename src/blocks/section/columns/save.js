@@ -35,7 +35,8 @@ const Save = ({attributes, className}) => {
 		{'sb-has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
 		{'sb-has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
 		`sb-has-${sectionContentWidth}-width`,
-		{'sb-is-frontend': true}
+		{'sb-is-frontend': true},
+		attributes.sbColorAnimationType ? `sb--ca-${attributes.sbColorAnimationType}` : ''
 	);
 
 	return (

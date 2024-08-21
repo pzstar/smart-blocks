@@ -225,7 +225,8 @@ const Edit = (props) => {
 		{'sb-has-viewport-desktop': isDesktop},
 		{'sb-has-viewport-tablet': isTablet},
 		{'sb-has-viewport-mobile': isMobile},
-		`sb-has-${sectionContentWidth}-width`
+		`sb-has-${sectionContentWidth}-width`,
+		attributes.sbColorAnimationType ? `sb--ca-${attributes.sbColorAnimationType}` : ''
 	);
 
 	const updateColumnsWidth = (columns, layout) => {
