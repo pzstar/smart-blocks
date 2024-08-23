@@ -1,6 +1,7 @@
 import classnames from 'classnames';
 
 import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
+import {applyFilters} from '@wordpress/hooks';
 
 const Save = ({attributes, className}) => {
 	const {
@@ -39,11 +40,15 @@ const Save = ({attributes, className}) => {
 		attributes.sbColorAnimationType ? `sb--ca-${attributes.sbColorAnimationType}` : ''
 	);
 
+	const InnerBlocksContent = (
+		<div className="wp-block-smart-blocks-columns-wrap">
+			<InnerBlocks.Content />
+		</div>
+	);
+
 	return (
 		<Tag className={classes} id={id}>
-			<div className="wp-block-smart-blocks-columns-wrap">
-				<InnerBlocks.Content />
-			</div>
+			{applyFilters('smartblocks.columns.innerBlock', InnerBlocksContent, attributes)}
 		</Tag>
 	);
 };

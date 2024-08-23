@@ -263,6 +263,16 @@ const Edit = (props) => {
 		return (<LayoutSelector clientId={clientId} setupColumns={setupColumns} />);
 	}
 
+	const InnerBlocksContent = (
+		<div className="wp-block-smart-blocks-columns-wrap">
+			<InnerBlocks
+				allowedBlocks={['smart-blocks/column']}
+				template={getColumnsTemplate(columns)}
+				templateLock="all"
+			/>
+		</div>
+	);
+
 	return (
 		<>
 			<style jsx>
@@ -279,13 +289,7 @@ const Edit = (props) => {
 				className={classes} 
 				id={id}
 			>
-				<div className="wp-block-smart-blocks-columns-wrap">
-					<InnerBlocks
-						allowedBlocks={['smart-blocks/column']}
-						template={getColumnsTemplate(columns)}
-						templateLock="all"
-					/>
-				</div>
+				{applyFilters('smartblocks.columns.innerBlock', InnerBlocksContent, attributes)}
 			</Tag>
 		</>
 	);
