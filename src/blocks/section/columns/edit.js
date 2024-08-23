@@ -277,6 +277,7 @@ const Edit = (props) => {
 		<>
 			<style jsx>
                 {applyFilters('smartblocks.editorcss', sbStyle, props)}
+				{applyFilters('smartblocks.sectioncss', '', props)}
             </style>
 
 			<Inspector
