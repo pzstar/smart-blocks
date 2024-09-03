@@ -77,7 +77,7 @@ const ImageBackgroundControl = ({
                                 {label: __('Scroll', 'smart-blocks'), value: 'scroll'},
                                 {label: __('Fixed', 'smart-blocks'), value: 'fixed'}
                             ]}
-                            setValue={value => setImageAttachment(value)}
+                            onChange={value => setImageAttachment(value)}
                         />
 
                         <SelectControl
@@ -89,7 +89,7 @@ const ImageBackgroundControl = ({
                                 {label: __('Repeat X', 'smart-blocks'), value: 'repeat-x'},
                                 {label: __('Repeat Y', 'smart-blocks'), value: 'repeat-y'}
                             ]}
-                            setValue={value => setImageRepeat(value)}
+                            onChange={value => setImageRepeat(value)}
                         />
 
                         <SelectControl
@@ -100,7 +100,7 @@ const ImageBackgroundControl = ({
                                 {label: __('Cover', 'smart-blocks'), value: 'cover'},
                                 {label: __('Contain', 'smart-blocks'), value: 'contain'}
                             ]}
-                            setValue={value => setImageSize(value)}
+                            onChange={value => setImageSize(value)}
                         />
 
                         <ColorControl
