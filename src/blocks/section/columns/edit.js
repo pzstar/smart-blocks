@@ -226,7 +226,9 @@ const Edit = (props) => {
 		{'sb-has-viewport-tablet': isTablet},
 		{'sb-has-viewport-mobile': isMobile},
 		`sb-has-${sectionContentWidth}-width`,
-		attributes.sbColorAnimationType ? `sb--ca-${attributes.sbColorAnimationType}` : ''
+		attributes.sbColorAnimationType ? `sb--ca-${attributes.sbColorAnimationType}` : '',
+		{'sb-particles-yes': attributes.sbParticlesEnable},
+		{'sb-water-ripples-yes': attributes.sbWaterRipplesEnable}
 	);
 
 	const updateColumnsWidth = (columns, layout) => {

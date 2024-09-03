@@ -37,7 +37,9 @@ const Save = ({attributes, className}) => {
 		{'sb-has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
 		`sb-has-${sectionContentWidth}-width`,
 		{'sb-is-frontend': true},
-		attributes.sbColorAnimationType ? `sb--ca-${attributes.sbColorAnimationType}` : ''
+		attributes.sbColorAnimationType ? `sb--ca-${attributes.sbColorAnimationType}` : '',
+		{'sb-particles-yes': attributes.sbParticlesEnable},
+		{'sb-water-ripples-yes': attributes.sbWaterRipplesEnable}
 	);
 
 	const InnerBlocksContent = (
