@@ -44,7 +44,7 @@ class Smart_Blocks_Ticker_Module {
             $content_rendered .= '</div>';
         endif;
         $content_rendered .= '</div>';
-        return $content_rendered;
+        return apply_filters('smart_blocks_ticker_module_render', $content_rendered, $attributes);
     }
 
     /** Query Args */

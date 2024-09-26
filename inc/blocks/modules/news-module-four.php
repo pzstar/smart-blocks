@@ -55,7 +55,7 @@ class Smart_Blocks_News_Module_Four {
         $content_rendered .= '</div>';
         $content_rendered .= '</div>';
         $content_rendered .= '</div>';
-        return $content_rendered;
+        return apply_filters('smart_blocks_news_module_four_render', $content_rendered, $attributes);
     }
 
     /** Render Header */

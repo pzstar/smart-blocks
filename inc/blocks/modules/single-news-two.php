@@ -51,7 +51,7 @@ class Smart_Blocks_Single_News_Two {
         }
         $content_rendered .= '</div>';
         $content_rendered .= '</div>';
-        return $content_rendered;
+        return apply_filters('smart_blocks_single_news_two_render', $content_rendered, $attributes);
     }
 
     /** Get Post Metas */

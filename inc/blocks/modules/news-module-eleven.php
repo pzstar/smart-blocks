@@ -49,7 +49,7 @@ class Smart_Blocks_News_Module_Eleven {
         $content_rendered .= '</div>';
         $content_rendered .= '</div>';
         $content_rendered .= '</div>';
-        return $content_rendered;
+        return apply_filters('smart_blocks_news_module_eleven_render', $content_rendered, $attributes);
     }
 
     /** Render Header */

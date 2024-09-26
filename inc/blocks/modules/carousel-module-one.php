@@ -64,7 +64,7 @@ class Smart_Blocks_Carousel_Module_One {
         $content_rendered .= '</div>';
         $content_rendered .= '</div>';
         $content_rendered .= '</div>';
-        return $content_rendered;
+        return apply_filters('smart_blocks_carousel_module_one_render', $content_rendered, $attributes);
     }
 
     /** Render Header */
