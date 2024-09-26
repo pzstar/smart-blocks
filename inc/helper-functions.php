@@ -22,7 +22,7 @@ if (!function_exists('smart_blocks_custom_excerpt')) {
 if (!function_exists('smart_blocks_author_name')) {
 
     function smart_blocks_author_name($class = '') {
-        return '<span class="sb-post-author ' . $class . '"><i class="mdi-account"></i>' . get_the_author() . '</span>';
+        return '<span class="sb-post-author ' . esc_attr($class) . '"><i class="mdi-account"></i>' . get_the_author() . '</span>';
     }
 
 }
@@ -40,9 +40,9 @@ if (!function_exists('smart_blocks_post_date')) {
     function smart_blocks_post_date($format = '', $class = '') {
 
         if ($format) {
-            return '<span class="sb-post-date ' . $class . '"><i class="mdi-clock-time-four-outline"></i>' . get_the_date($format) . '</span>';
+            return '<span class="sb-post-date ' . esc_attr($class) . '"><i class="mdi-clock-time-four-outline"></i>' . get_the_date($format) . '</span>';
         } else {
-            return '<span class="sb-post-date ' . $class . '"><i class="mdi-clock-time-four-outline"></i>' . get_the_date() . '</span>';
+            return '<span class="sb-post-date ' . esc_attr($class) . '"><i class="mdi-clock-time-four-outline"></i>' . get_the_date() . '</span>';
         }
     }
 
@@ -51,7 +51,7 @@ if (!function_exists('smart_blocks_post_date')) {
 if (!function_exists('smart_blocks_time_ago')) {
 
     function smart_blocks_time_ago($class = '') {
-        return '<span class="sb-post-date ' . $class . '"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'smart-blocks') . '</span>';
+        return '<span class="sb-post-date ' . esc_attr($class) . '"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'smart-blocks') . '</span>';
     }
 
 }
@@ -66,7 +66,7 @@ if (!function_exists('smart_blocks_get_the_primary_category')) {
             $category_obj = $post_categories['primary_category'];
             $category_link = get_category_link($category_obj->term_id);
             $content .= '<ul class="' . esc_attr($class) . '">';
-            $content .= '<li><a class="sb-primary-cat sb-category-' . esc_attr($category_obj->term_id) . ' ' . $link_class . '" href="' . esc_url($category_link) . '">' . esc_html($category_obj->name) . '</a></li>';
+            $content .= '<li><a class="sb-primary-cat sb-category-' . esc_attr($category_obj->term_id) . ' ' . esc_attr($link_class) . '" href="' . esc_url($category_link) . '">' . esc_html($category_obj->name) . '</a></li>';
             $content .= '</ul>';
         }
         return $content;

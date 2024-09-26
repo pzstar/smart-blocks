@@ -10,7 +10,7 @@ class Smart_Blocks_Carousel_Module_One {
     public function render($attributes) {
         $this->attributes = $attributes;
         $content_rendered = '';
-        $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
+        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '">';
         $slide_post_image_size = $this->attributes['postImageSize'];
 
         $params = array(
@@ -32,7 +32,7 @@ class Smart_Blocks_Carousel_Module_One {
         $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-carousel-block wp-block-smart-blocks']) . '>';
         $content_rendered .= $this->render_header();
 
-        $content_rendered .= '<div class="sb-carousel-block-wrap owl-carousel" data-params=' . $params . '>';
+        $content_rendered .= '<div class="sb-carousel-block-wrap owl-carousel" data-params=' . esc_attr($params) . '>';
         $args = $this->query_args();
         $query = new \WP_Query($args);
         while ($query->have_posts()):
@@ -71,9 +71,9 @@ class Smart_Blocks_Carousel_Module_One {
     public function render_header() {
         $content = '';
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypographyFamily'], $this->attributes['headerTitleTypographyWeight'], $this->attributes['headerTitleTypographyTextTransform'], $this->attributes['headerTitleTypographyTextDecoration']) . '">';
+            $content .= '<h2 class="sb-block-title ' . esc_attr($this->attributes['headerStyle']) . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypographyFamily'], $this->attributes['headerTitleTypographyWeight'], $this->attributes['headerTitleTypographyTextTransform'], $this->attributes['headerTitleTypographyTextDecoration']) . '">';
             $content .= '<span>';
-            $content .= $this->attributes['headerTitle'];
+            $content .= wp_kses_post($this->attributes['headerTitle']);
             $content .= '</span>';
             $content .= '</h2>';
         }

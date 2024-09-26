@@ -23,7 +23,7 @@ class Smart_Blocks_Ticker_Module {
 
         $args = $this->query_args();
         $query = new \WP_Query($args);
-        $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
+        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '">';
         if ($query->have_posts()):
             $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'wp-block-smart-blocks']) . '>';
             $content_rendered .= '<div class="sb-ticker">';
@@ -33,7 +33,7 @@ class Smart_Blocks_Ticker_Module {
                 $content_rendered .= esc_html($ticker_title);
             }
             $content_rendered .= '</span>';
-            $content_rendered .= '<div class="sb-ticker-posts"><div class="owl-carousel" data-params=' . $parameters_json . '>';
+            $content_rendered .= '<div class="sb-ticker-posts"><div class="owl-carousel" data-params=' . esc_attr($parameters_json) . '>';
             while ($query->have_posts()):
                 $query->the_post();
                 $content_rendered .= '<a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a>';

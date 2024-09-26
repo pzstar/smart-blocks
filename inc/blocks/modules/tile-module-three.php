@@ -13,7 +13,7 @@ class Smart_Blocks_Tile_Module_Three {
 
         $display_cat = $this->attributes['postPostCategory'];
         $image_size = $this->attributes['postImageSize'];
-        $content_rendered .= '<div id="' . $this->attributes['id'] . '">';
+        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '">';
         $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-tile-block-wrap wp-block-smart-blocks']) . '>';
         $content_rendered .= $this->render_header();
         $content_rendered .= '<div class="sb-tile-block sb-clearfix style3 space-10">';
@@ -56,9 +56,9 @@ class Smart_Blocks_Tile_Module_Three {
     public function render_header() {
         $content = '';
         if (isset($this->attributes['headerTitle']) && $this->attributes['headerTitle']) {
-            $content .= '<h2 class="sb-block-title ' . $this->attributes['headerStyle'] . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypographyFamily'], $this->attributes['headerTitleTypographyWeight'], $this->attributes['headerTitleTypographyTextTransform'], $this->attributes['headerTitleTypographyTextDecoration']) . '">';
+            $content .= '<h2 class="sb-block-title ' . esc_attr($this->attributes['headerStyle']) . ' ' . smart_blocks_get_font_class($this->attributes['headerTitleTypographyFamily'], $this->attributes['headerTitleTypographyWeight'], $this->attributes['headerTitleTypographyTextTransform'], $this->attributes['headerTitleTypographyTextDecoration']) . '">';
             $content .= '<span>';
-            $content .= $this->attributes['headerTitle'];
+            $content .= wp_kses_post($this->attributes['headerTitle']);
             $content .= '</span>';
             $content .= '</h2>';
         }

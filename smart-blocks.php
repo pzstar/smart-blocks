@@ -327,7 +327,7 @@ if (!class_exists('Smart_Blocks')) {
 
                 // Editor width
                 if (isset($editorWidth) && !empty($editorWidth)) {
-                    $classes .= ' sb-editor-width-' . $editorWidth . ' ';
+                    $classes .= ' sb-editor-width-' . esc_attr($editorWidth) . ' ';
                 }
 
                 return $classes;
