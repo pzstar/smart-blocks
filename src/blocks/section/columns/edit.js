@@ -278,9 +278,9 @@ const Edit = (props) => {
 	return (
 		<>
 			<style jsx>
-                {applyFilters('smartblocks.editorcss', sbStyle, props)}
+				{applyFilters('smartblocks.editorcss', sbStyle, props)}
 				{applyFilters('smartblocks.sectioncss', '', props)}
-            </style>
+			</style>
 
 			<Inspector
 				attributes={attributes}
@@ -289,7 +289,7 @@ const Edit = (props) => {
 			/>
 
 			<Tag
-				className={classes} 
+				className={classes}
 				id={id}
 			>
 				{applyFilters('smartblocks.columns.innerBlock', InnerBlocksContent, attributes)}

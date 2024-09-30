@@ -797,7 +797,7 @@ const Inspector = (props) => {
 								</PanelBody>
 
 								{applyFilters('smartblocks.columnsBlocks', '', props)}
-                                {applyFilters('smartblocks.advancedBlocks', '', props)}
+								{applyFilters('smartblocks.advancedBlocks', '', props)}
 								{applyFilters('smartblocks.blockTools', '', props)}
 							</>
 						)}

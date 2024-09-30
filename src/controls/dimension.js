@@ -234,7 +234,7 @@ const DimensionControl = ({
 					)
 				}
 			</div>
-			
+
 			{
 				responsive ? (
 					<>

@@ -272,8 +272,8 @@ export default function Edit(props) {
 	return (
 		<div {...useBlockProps()}>
 			<style jsx>
-                {applyFilters('smartblocks.editorcss', sbStyle, props)}
-            </style>
+				{applyFilters('smartblocks.editorcss', sbStyle, props)}
+			</style>
 			<Inspector
 				attributes={attributes}
 				setAttributes={setAttributes}
@@ -297,7 +297,7 @@ export default function Edit(props) {
 
 			>
 				<Tag
-					className={classes} 
+					className={classes}
 					id={id}
 				>
 					<InnerBlocks

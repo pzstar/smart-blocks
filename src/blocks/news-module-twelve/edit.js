@@ -28,7 +28,7 @@ import ToggleControl from '../../controls/toggle';
 import {responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import GroupControlQuery from '../../controlgroup/query';
-import { applyFilters } from '@wordpress/hooks';
+import {applyFilters} from '@wordpress/hooks';
 
 export default function Edit(props) {
     const {attributes, setAttributes} = props;
@@ -556,7 +556,7 @@ export default function Edit(props) {
                                         />
                                     </PanelBody>
                                 )}
-                                <GroupControlQuery attributes={attributes} setAttributes={setAttributes}/>
+                                <GroupControlQuery attributes={attributes} setAttributes={setAttributes} />
                                 <PanelBody
                                     title={__('Post Block', 'smart-blocks')}
                                     initialOpen={false}

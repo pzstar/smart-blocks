@@ -3,7 +3,7 @@ defined('ABSPATH') || die;
 /*
   Plugin Name:       Smart Blocks - WordPress Gutenberg Blocks
   Description:       Collection of advanced blocks to be used with WordPress Gutenberg Pagebuilder
-  Version:           2.0
+  Version:           2.1
   Author:            HashThemes
   Author URI:        http://hashthemes.com
   License:           GPLv2 or later
@@ -15,7 +15,7 @@ defined('ABSPATH') || die;
 define('SMART_BLOCKS_FILE', __FILE__);
 define('SMART_BLOCKS_PATH', plugin_dir_path(SMART_BLOCKS_FILE));
 define('SMART_BLOCKS_URL', plugins_url('/', SMART_BLOCKS_FILE));
-define('SMART_BLOCKS_VERSION', '2.0');
+define('SMART_BLOCKS_VERSION', '2.1');
 
 if (!class_exists('Smart_Blocks')) {
 
@@ -90,7 +90,7 @@ if (!class_exists('Smart_Blocks')) {
             global $wp_roles;
 
             // automatically load dependencies and version
-            $asset_file = include (SMART_BLOCKS_PATH . 'build/index.asset.php');
+            $asset_file = include(SMART_BLOCKS_PATH . 'build/index.asset.php');
             wp_register_style('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/css/owl.carousel.css', array(), SMART_BLOCKS_VERSION);
             wp_register_style('materialdesignicons', SMART_BLOCKS_URL . 'inc/assets/css/materialdesignicons.css', array(), SMART_BLOCKS_VERSION);
             wp_register_style('smart-blocks-icons', SMART_BLOCKS_URL . 'inc/assets/css/smart-blocks-icons.css', array(), SMART_BLOCKS_VERSION);

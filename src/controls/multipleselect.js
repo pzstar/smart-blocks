@@ -1,5 +1,5 @@
 import {__} from '@wordpress/i18n';
-import Select, { components } from "react-select";
+import Select, {components} from "react-select";
 import {
     SortableContainer,
     SortableElement,
@@ -20,7 +20,7 @@ const SortableMultiValue = SortableElement((props) => {
         e.preventDefault();
         e.stopPropagation();
     };
-    const innerProps = { ...props.innerProps, onMouseDown };
+    const innerProps = {...props.innerProps, onMouseDown};
     return <components.MultiValue {...props} innerProps={innerProps} />;
 });
 

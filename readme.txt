@@ -2,7 +2,7 @@
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks
 Tested up to:      6.6
-Stable tag:        2.0
+Stable tag:        2.1
 Requires at least: 5.0
 Requires PHP:      5.6
 License:           GPL-2.0-or-later
@@ -24,6 +24,10 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
+= 2.1 - Sep 30, 2024 =
+* Proper escaping of output releated to Security bug - Fixed
+* Refinement in code
+
 = 2.0 - Aug 04, 2024 =
 * Major Updates
 * Columns and Container blocks added
