@@ -48,9 +48,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                     $weight = '';
                     if (str_contains($attrs, 'Family')) {
                         $family = $value;
-                    }
-                    if (str_contains($attrs, 'Weight')) {
-                        $weight = $value;
+                        $weight = $blockAttrs[str_replace('Family', 'Weight', $attrs)];
                     }
                     if ($family && $family != 'inherit') {
                         self::blocks_google_font($family, $weight ? str_replace('italic', 'i', $weight) : 400);
@@ -224,9 +222,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                         $weight = '';
                         if (str_contains($attrs, 'Family')) {
                             $family = $value;
-                        }
-                        if (str_contains($attrs, 'Weight')) {
-                            $weight = $value;
+                            $weight = $blockAttrs[str_replace('Family', 'Weight', $attrs)];
                         }
                         if ($family && $family != 'inherit') {
                             self::blocks_google_font($family, $weight ? str_replace('italic', 'i', $weight) : 400);
@@ -254,9 +250,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                 $weight = '';
                 if (str_contains($attrs, 'Family')) {
                     $family = $value;
-                }
-                if (str_contains($attrs, 'Weight')) {
-                    $weight = $value;
+                    $weight = $blockAttrs[str_replace('Family', 'Weight', $attrs)];
                 }
                 if ($family && $family != 'inherit') {
                     self::blocks_google_font($family, $weight ? str_replace('italic', 'i', $weight) : 400);
