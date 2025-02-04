@@ -94,7 +94,7 @@ if (!class_exists('Smart_Blocks')) {
             wp_register_style('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/css/owl.carousel.css', array(), SMART_BLOCKS_VERSION);
             wp_register_style('materialdesignicons', SMART_BLOCKS_URL . 'inc/assets/css/materialdesignicons.css', array(), SMART_BLOCKS_VERSION);
             wp_register_style('smart-blocks-icons', SMART_BLOCKS_URL . 'inc/assets/css/smart-blocks-icons.css', array(), SMART_BLOCKS_VERSION);
-            wp_register_style('sb-style', SMART_BLOCKS_URL . 'inc/assets/css/sb-style.css', array(), SMART_BLOCKS_VERSION);
+            wp_register_style('sb-style', SMART_BLOCKS_URL . 'inc/assets/css/sb-style.css', array('materialdesignicons', 'owl-carousel'), SMART_BLOCKS_VERSION);
             wp_register_style('sb-block-editor', SMART_BLOCKS_URL . 'inc/assets/css/editor.css', array('smart-blocks-icons'), SMART_BLOCKS_VERSION);
 
             wp_register_script('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/js/owl.carousel.js', array('jquery'), SMART_BLOCKS_VERSION, true);
