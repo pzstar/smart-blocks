@@ -3,8 +3,8 @@ Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks
 Tested up to:      6.7
 Stable tag:        2.2
-Requires at least: 6.0
-Requires PHP:      7.0
+Requires at least: 6.3
+Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
