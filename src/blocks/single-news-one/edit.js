@@ -460,7 +460,7 @@ export default function Edit(props) {
                                     {post.title.rendered}
                                 </RawHTML>
                             ) : (
-                                __('(No title)', 'smart-blocks')
+                                esc_html__('(No title)', 'smart-blocks')
                             )}
                         </a>
                     </h3>
@@ -569,9 +569,9 @@ export default function Edit(props) {
                                         value={filterOption}
                                         onChange={(filterOption) => setAttributes({filterOption})}
                                         options={[
-                                            {value: 'single-post', label: __('By Post Title', 'smart-blocks')},
-                                            {value: 'categories', label: __('By Categories', 'smart-blocks')},
-                                            {value: 'tags', label: __('By Tags', 'smart-blocks')}
+                                            {value: 'single-post', label: esc_html__('By Post Title', 'smart-blocks')},
+                                            {value: 'categories', label: esc_html__('By Categories', 'smart-blocks')},
+                                            {value: 'tags', label: esc_html__('By Tags', 'smart-blocks')}
                                         ]}
                                     />
 
@@ -636,9 +636,9 @@ export default function Edit(props) {
                                         value={dateFormat}
                                         onChange={(dateFormat) => setAttributes({dateFormat})}
                                         options={[
-                                            {value: 'relative_format', label: __('Relative Format (Ago)', 'smart-blocks')},
-                                            {value: 'default', label: __('WordPress Default Format', 'smart-blocks')},
-                                            {value: 'custom', label: __('Custom Format', 'smart-blocks')}
+                                            {value: 'relative_format', label: esc_html__('Relative Format (Ago)', 'smart-blocks')},
+                                            {value: 'default', label: esc_html__('WordPress Default Format', 'smart-blocks')},
+                                            {value: 'custom', label: esc_html__('Custom Format', 'smart-blocks')}
                                         ]}
                                     />
                                     {dateFormat == 'custom' && (

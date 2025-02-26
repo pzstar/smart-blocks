@@ -38,7 +38,7 @@ const Header = ({
 		});
 
 		const options = [
-			{label: __('All Categories', 'smart-blocks'), value: 'all'},
+			{label: esc_html__('All Categories', 'smart-blocks'), value: 'all'},
 			...categories
 		];
 		return options;

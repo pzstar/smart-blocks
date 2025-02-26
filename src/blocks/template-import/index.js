@@ -25,13 +25,13 @@ registerBlockType('smart-blocks/template-import', {
         "html": false
     },
     category: "smart-blocks-block-modules",
-    title: __("Template Library", 'smart-blocks'),
+    title: esc_html__("Template Library", 'smart-blocks'),
     attributes: {
         isLibraryOpen: {
             type: 'boolean'
         }
     },
-    description: __("Import Blocks and Templates Library", 'smart-blocks'),
+    description: esc_html__("Import Blocks and Templates Library", 'smart-blocks'),
     keywords: ["Import", "Template", "Block", "Widget", "Section", "Patterns", "Reusable", "Library", "Tools"],
     /**
      * @see ./edit.js

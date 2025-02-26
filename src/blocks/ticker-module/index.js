@@ -25,8 +25,8 @@ registerBlockType('smart-blocks/ticker-module', {
 		html: false
 	},
 	category: "smart-blocks-magazine-modules",
-	title: __("Ticker Module", 'smart-blocks'),
-	description: __("Smart Blocks News Modules", 'smart-blocks'),
+	title: esc_html__("Ticker Module", 'smart-blocks'),
+	description: esc_html__("Smart Blocks News Modules", 'smart-blocks'),
 	keywords: ["posts"],
 	/**
 	 * @see ./edit.js

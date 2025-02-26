@@ -51,7 +51,7 @@ if (!function_exists('smart_blocks_post_date')) {
 if (!function_exists('smart_blocks_time_ago')) {
 
     function smart_blocks_time_ago($class = '') {
-        return '<span class="sb-post-date ' . esc_attr($class) . '"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'smart-blocks') . '</span>';
+        return '<span class="sb-post-date ' . esc_attr($class) . '"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . esc_html__('ago', 'smart-blocks') . '</span>';
     }
 
 }
@@ -173,8 +173,8 @@ if (!function_exists('smart_blocks_get_relative_dates')) {
 
     function smart_blocks_get_relative_dates($post) {
         return array(
-            'created' => human_time_diff(get_the_date('U', $post['id'])) . ' ' . __('ago', 'smart-blocks'),
-            'modified' => human_time_diff(get_the_modified_date('U', $post['id'])) . ' ' . __('ago', 'smart-blocks')
+            'created' => human_time_diff(get_the_date('U', $post['id'])) . ' ' . esc_html__('ago', 'smart-blocks'),
+            'modified' => human_time_diff(get_the_modified_date('U', $post['id'])) . ' ' . esc_html__('ago', 'smart-blocks')
         );
     }
 

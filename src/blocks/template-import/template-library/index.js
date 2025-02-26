@@ -46,7 +46,7 @@ const Library = ({clientId, close}) => {
 				setData(data);
 
 			} catch (error) {
-				createNotice('error', __('There seems to be an error. Please try again.', 'smart-blocks'),
+				createNotice('error', esc_html__('There seems to be an error. Please try again.', 'smart-blocks'),
 					{
 						context: 'smart-blocks/notices/template-library',
 						isDismissible: true

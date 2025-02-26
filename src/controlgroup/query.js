@@ -183,12 +183,12 @@ const GroupControlQuery = (props) => {
                     optChange();
                 }}
                 options={[
-                    {value: 'date', label: __('Date', 'smart-blocks')},
-                    {value: 'modified', label: __('Last Modified Date', 'smart-blocks')},
-                    {value: 'rand', label: __('Rand', 'smart-blocks')},
-                    {value: 'comment_count', label: __('Comment Count', 'smart-blocks')},
-                    {value: 'title', label: __('Title', 'smart-blocks')},
-                    {value: 'author', label: __('Show Post Author', 'smart-blocks')}
+                    {value: 'date', label: esc_html__('Date', 'smart-blocks')},
+                    {value: 'modified', label: esc_html__('Last Modified Date', 'smart-blocks')},
+                    {value: 'rand', label: esc_html__('Rand', 'smart-blocks')},
+                    {value: 'comment_count', label: esc_html__('Comment Count', 'smart-blocks')},
+                    {value: 'title', label: esc_html__('Title', 'smart-blocks')},
+                    {value: 'author', label: esc_html__('Show Post Author', 'smart-blocks')}
                 ]}
             />
 
@@ -200,8 +200,8 @@ const GroupControlQuery = (props) => {
                     optChange();
                 }}
                 options={[
-                    {value: 'desc', label: __('Descending', 'smart-blocks')},
-                    {value: 'asc', label: __('Ascending', 'smart-blocks')}
+                    {value: 'desc', label: esc_html__('Descending', 'smart-blocks')},
+                    {value: 'asc', label: esc_html__('Ascending', 'smart-blocks')}
                 ]}
             />
 

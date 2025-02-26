@@ -332,8 +332,8 @@ const Inspector = (props) => {
 										label={__('Content Width', 'smart-blocks')}
 										value={sectionContentWidth}
 										options={[
-											{label: __('Full Width', 'smart-blocks'), value: 'full'},
-											{label: __('Boxed', 'smart-blocks'), value: 'boxed'},
+											{label: esc_html__('Full Width', 'smart-blocks'), value: 'full'},
+											{label: esc_html__('Boxed', 'smart-blocks'), value: 'boxed'},
 										]}
 										onChange={value => {
 											setAttributes({sectionContentWidth: value, columnsWidth: '', columnsWidthSm: '', columnsWidthMd: ''});
@@ -383,22 +383,22 @@ const Inspector = (props) => {
 											{
 												value: 'flex-start',
 												icon: <i class="sbi-align-start-v"></i>,
-												label: __('Flex Start', 'smart-blocks')
+												label: esc_html__('Flex Start', 'smart-blocks')
 											},
 											{
 												value: 'center',
 												icon: <i class="sbi-align-center-v"></i>,
-												label: __('Center', 'smart-blocks')
+												label: esc_html__('Center', 'smart-blocks')
 											},
 											{
 												value: 'flex-end',
 												icon: <i class="sbi-align-end-v"></i>,
-												label: __('Flex End', 'smart-blocks')
+												label: esc_html__('Flex End', 'smart-blocks')
 											},
 											{
 												value: 'stretch',
 												icon: <i class="sbi-align-stretch-v"></i>,
-												label: __('Stretch', 'smart-blocks')
+												label: esc_html__('Stretch', 'smart-blocks')
 											}
 										]}
 										value={columnAlignment}
@@ -416,17 +416,17 @@ const Inspector = (props) => {
 											{
 												value: 'left',
 												icon: <i class="sbi-text-align-left"></i>,
-												label: __('Left', 'smart-blocks')
+												label: esc_html__('Left', 'smart-blocks')
 											},
 											{
 												value: 'center',
 												icon: <i class="sbi-text-align-center"></i>,
-												label: __('Center', 'smart-blocks')
+												label: esc_html__('Center', 'smart-blocks')
 											},
 											{
 												value: 'right',
 												icon: <i class="sbi-text-align-right"></i>,
-												label: __('Right', 'smart-blocks')
+												label: esc_html__('Right', 'smart-blocks')
 											}
 										]}
 										value={horizontalAlign}
@@ -785,7 +785,7 @@ const Inspector = (props) => {
 										label={__('HTML Tag', 'smart-blocks')}
 										value={columnsHTMLTag}
 										options={[
-											{label: __('Default (div)', 'smart-blocks'), value: 'div'},
+											{label: esc_html__('Default (div)', 'smart-blocks'), value: 'div'},
 											{label: 'section', value: 'section'},
 											{label: 'header', value: 'header'},
 											{label: 'footer', value: 'footer'},

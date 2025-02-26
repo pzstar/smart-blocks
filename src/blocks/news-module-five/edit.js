@@ -738,9 +738,9 @@ export default function Edit(props) {
 										value={dateFormat}
 										onChange={(dateFormat) => setAttributes({dateFormat})}
 										options={[
-											{value: 'relative_format', label: __('Relative Format (Ago)', 'smart-blocks')},
-											{value: 'default', label: __('WordPress Default Format', 'smart-blocks')},
-											{value: 'custom', label: __('Custom Format', 'smart-blocks')}
+											{value: 'relative_format', label: esc_html__('Relative Format (Ago)', 'smart-blocks')},
+											{value: 'default', label: esc_html__('WordPress Default Format', 'smart-blocks')},
+											{value: 'custom', label: esc_html__('Custom Format', 'smart-blocks')}
 										]}
 									/>
 									{dateFormat == 'custom' && (

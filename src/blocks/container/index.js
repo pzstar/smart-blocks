@@ -28,8 +28,8 @@ registerBlockType('smart-blocks/container', {
     },
     category: "smart-blocks-block-modules",
     attributes,
-    title: __("Container", 'smart-blocks'),
-    description: __("Display container wrapper for elements", 'smart-blocks'),
+    title: esc_html__("Container", 'smart-blocks'),
+    description: esc_html__("Display container wrapper for elements", 'smart-blocks'),
     keywords: ["section", "column", "row", "container"],
     /**
      * @see ./edit.js
