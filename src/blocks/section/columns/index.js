@@ -28,8 +28,8 @@ registerBlockType('smart-blocks/columns', {
     },
     category: "smart-blocks-block-modules",
     attributes,
-    title: esc_html__("Columns", 'smart-blocks'),
-    description: esc_html__("Display content in multiple columns, with blocks added to each column.", 'smart-blocks'),
+    title: __("Columns", 'smart-blocks'),
+    description: __("Display content in multiple columns, with blocks added to each column.", 'smart-blocks'),
     keywords: ["section", "column", "row", "container"],
     /**
      * @see ./edit.js
