@@ -259,22 +259,22 @@ const Inspector = ({
 										{
 											value: 'start',
 											icon: <i class="sbi-align-start-v"></i>,
-											label: esc_html__('Start', 'smart-blocks')
+											label: __('Start', 'smart-blocks')
 										},
 										{
 											value: 'center',
 											icon: <i class="sbi-align-center-v"></i>,
-											label: esc_html__('Center', 'smart-blocks')
+											label: __('Center', 'smart-blocks')
 										},
 										{
 											value: 'end',
 											icon: <i class="sbi-align-end-v"></i>,
-											label: esc_html__('Stretch', 'smart-blocks')
+											label: __('Stretch', 'smart-blocks')
 										},
 										{
 											value: 'srtetch',
 											icon: <i class="sbi-align-stretch-v"></i>,
-											label: esc_html__('Stretch', 'smart-blocks')
+											label: __('Stretch', 'smart-blocks')
 										}
 									]}
 									value={columnAlignSelf}
@@ -583,7 +583,7 @@ const Inspector = ({
 									label={__('HTML Tag', 'smart-blocks')}
 									value={attributes.columnsHTMLTag}
 									options={[
-										{label: esc_html__('Default (div)', 'smart-blocks'), value: 'div'},
+										{label: __('Default (div)', 'smart-blocks'), value: 'div'},
 										{label: 'section', value: 'section'},
 										{label: 'header', value: 'header'},
 										{label: 'footer', value: 'footer'},

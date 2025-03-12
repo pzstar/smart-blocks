@@ -314,22 +314,22 @@ const Inspector = (props) => {
 												{
 													value: 'row',
 													icon: <i class="sbi-arrow-right"></i>,
-													label: esc_html__('Right', 'smart-blocks')
+													label: __('Right', 'smart-blocks')
 												},
 												{
 													value: 'column',
 													icon: <i class="sbi-arrow-down"></i>,
-													label: esc_html__('Bottom', 'smart-blocks')
+													label: __('Bottom', 'smart-blocks')
 												},
 												{
 													value: 'row-reverse',
 													icon: <i class="sbi-arrow-left"></i>,
-													label: esc_html__('Left', 'smart-blocks')
+													label: __('Left', 'smart-blocks')
 												},
 												{
 													value: 'column-reverse',
 													icon: <i class="sbi-arrow-up"></i>,
-													label: esc_html__('Top', 'smart-blocks')
+													label: __('Top', 'smart-blocks')
 												}
 											]}
 											value={flexDirection}
@@ -347,12 +347,12 @@ const Inspector = (props) => {
 												{
 													value: 'nowrap',
 													icon: <i class="sbi-arrow-right"></i>,
-													label: esc_html__('No Wrap', 'smart-blocks')
+													label: __('No Wrap', 'smart-blocks')
 												},
 												{
 													value: 'wrap',
 													icon: <i class="sbi-wrap"></i>,
-													label: esc_html__('Wrap', 'smart-blocks')
+													label: __('Wrap', 'smart-blocks')
 												},
 											]}
 											value={containerWrap}
@@ -388,22 +388,22 @@ const Inspector = (props) => {
 										{
 											value: 'flex-start',
 											icon: <i class="sbi-align-start-v"></i>,
-											label: esc_html__('Flex Start', 'smart-blocks')
+											label: __('Flex Start', 'smart-blocks')
 										},
 										{
 											value: 'center',
 											icon: <i class="sbi-align-center-v"></i>,
-											label: esc_html__('Center', 'smart-blocks')
+											label: __('Center', 'smart-blocks')
 										},
 										{
 											value: 'flex-end',
 											icon: <i class="sbi-align-end-v"></i>,
-											label: esc_html__('Flex End', 'smart-blocks')
+											label: __('Flex End', 'smart-blocks')
 										},
 										{
 											value: 'stretch',
 											icon: <i class="sbi-align-stretch-v"></i>,
-											label: esc_html__('Stretch', 'smart-blocks')
+											label: __('Stretch', 'smart-blocks')
 										}
 									]}
 									value={alignItems}
@@ -422,32 +422,32 @@ const Inspector = (props) => {
 											{
 												value: 'flex-start',
 												icon: <i class="sbi-justify-start-h"></i>,
-												label: esc_html__('Flex Start', 'smart-blocks')
+												label: __('Flex Start', 'smart-blocks')
 											},
 											{
 												value: 'center',
 												icon: <i class="sbi-justify-center-h"></i>,
-												label: esc_html__('Center', 'smart-blocks')
+												label: __('Center', 'smart-blocks')
 											},
 											{
 												value: 'flex-end',
 												icon: <i class="sbi-justify-end-h"></i>,
-												label: esc_html__('Flex End', 'smart-blocks')
+												label: __('Flex End', 'smart-blocks')
 											},
 											{
 												value: 'space-between',
 												icon: <i class="sbi-justify-space-between-h"></i>,
-												label: esc_html__('Space Between', 'smart-blocks')
+												label: __('Space Between', 'smart-blocks')
 											},
 											{
 												value: 'space-around',
 												icon: <i class="sbi-justify-space-around-h"></i>,
-												label: esc_html__('Space Around', 'smart-blocks')
+												label: __('Space Around', 'smart-blocks')
 											},
 											{
 												value: 'space-evenly',
 												icon: <i class="sbi-justify-space-evenly-h"></i>,
-												label: esc_html__('Space Evenly', 'smart-blocks')
+												label: __('Space Evenly', 'smart-blocks')
 											}
 										]}
 										value={justifyContent}
@@ -467,22 +467,22 @@ const Inspector = (props) => {
 											{
 												value: 'start',
 												icon: <i class="sbi-align-start-h"></i>,
-												label: esc_html__('Start', 'smart-blocks')
+												label: __('Start', 'smart-blocks')
 											},
 											{
 												value: 'center',
 												icon: <i class="sbi-align-center-h"></i>,
-												label: esc_html__('Center', 'smart-blocks')
+												label: __('Center', 'smart-blocks')
 											},
 											{
 												value: 'end',
 												icon: <i class="sbi-align-end-h"></i>,
-												label: esc_html__('Stretch', 'smart-blocks')
+												label: __('Stretch', 'smart-blocks')
 											},
 											{
 												value: 'srtetch',
 												icon: <i class="sbi-align-stretch-h"></i>,
-												label: esc_html__('Stretch', 'smart-blocks')
+												label: __('Stretch', 'smart-blocks')
 											}
 										]}
 										value={justifyItems}
@@ -801,7 +801,7 @@ const Inspector = (props) => {
 									label={__('HTML Tag', 'smart-blocks')}
 									value={columnsHTMLTag}
 									options={[
-										{label: esc_html__('Default (div)', 'smart-blocks'), value: 'div'},
+										{label: __('Default (div)', 'smart-blocks'), value: 'div'},
 										{label: 'section', value: 'section'},
 										{label: 'header', value: 'header'},
 										{label: 'footer', value: 'footer'},

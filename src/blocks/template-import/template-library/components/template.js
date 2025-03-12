@@ -5,7 +5,7 @@ import {Button} from '@wordpress/components';
 
 const Template = ({template, importPreview, importTemplate}) => {
 	return (
-		<div ariaLabel={template.title || esc_html__('Untitled Template', 'smart-blocks')} className="library-modal-content__item" tabindex="0">
+		<div ariaLabel={template.title || __('Untitled Template', 'smart-blocks')} className="library-modal-content__item" tabindex="0">
 			<div className="library-modal-content__preview">
 				<LazyLoad>
 					<img src={template.screenshot_url || 'https://img.freepik.com/free-vector/abstract-grunge-style-coming-soon-with-black-splatter_1017-26690.jpg?t=st=1720613018~exp=1720616618~hmac=ad70d17f60f4e9888b53e4e8255f41abd9087a5590e3ba0b2bd10e464f2db55c&w=1380'} />
@@ -15,7 +15,7 @@ const Template = ({template, importPreview, importTemplate}) => {
 			<div className="library-modal-content__footer">
 				<div className="library-modal-content__footer_meta">
 					<h4 className="library-modal-content__footer_meta_area">
-						{(template.title) && (template.title + (template.author && esc_html__(' by ', 'smart-blocks') + template.author))}
+						{(template.title) && (template.title + (template.author && __(' by ', 'smart-blocks') + template.author))}
 						{(!template.title && template.author) && (__('Author: ', 'smart-blocks') + template.author)}
 					</h4>
 				</div>

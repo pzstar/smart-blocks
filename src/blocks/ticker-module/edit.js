@@ -805,7 +805,7 @@ export default function Edit(props) {
                                                 {post.title.rendered}
                                             </RawHTML>
                                         ) : (
-                                            esc_html__('(No title)', 'smart-blocks')
+                                            __('(No title)', 'smart-blocks')
                                         )}
                                     </a>
                                 ))}

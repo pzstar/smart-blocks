@@ -25,8 +25,8 @@ registerBlockType('smart-blocks/carousel-module-one', {
 		html: false
 	},
 	category: "smart-blocks-magazine-modules",
-	title: esc_html__("Carousel Module", 'smart-blocks'),
-	description: esc_html__("Smart Blocks News Modules", 'smart-blocks'),
+	title: __("Carousel Module", 'smart-blocks'),
+	description: __("Smart Blocks News Modules", 'smart-blocks'),
 	keywords: ["posts"],
 	/**
 	 * @see ./edit.js

@@ -29,8 +29,8 @@ registerBlockType('smart-blocks/column', {
     },
     category: "smart-blocks-block-modules",
     attributes,
-    title: esc_html__("Column", 'smart-blocks'),
-    description: esc_html__("A single column within a columns block.", 'smart-blocks'),
+    title: __("Column", 'smart-blocks'),
+    description: __("A single column within a columns block.", 'smart-blocks'),
     parent: ['smart-blocks/columns'],
     keywords: ['column'],
     /**

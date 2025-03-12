@@ -25,8 +25,8 @@ registerBlockType('smart-blocks/single-news-one', {
 		html: false
 	},
 	category: "smart-blocks-magazine-modules",
-	title: esc_html__("Single News 1", 'smart-blocks'),
-	description: esc_html__("Smart Blocks News Modules", 'smart-blocks'),
+	title: __("Single News 1", 'smart-blocks'),
+	description: __("Smart Blocks News Modules", 'smart-blocks'),
 	keywords: ["posts"],
 	/**
 	 * @see ./edit.js

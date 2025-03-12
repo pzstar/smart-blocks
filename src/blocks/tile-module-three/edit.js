@@ -437,7 +437,7 @@ export default function Edit(props) {
                                             {post.title.rendered}
                                         </RawHTML>
                                     ) : (
-                                        esc_html__('(No title)', 'smart-blocks')
+                                        __('(No title)', 'smart-blocks')
                                     )}
                                 </span>
                             </h3>
@@ -541,10 +541,10 @@ export default function Edit(props) {
                                             value={headerStyle}
                                             onChange={(headerStyle) => setAttributes({headerStyle})}
                                             options={[
-                                                {value: 'sb-title-style1', label: esc_html__('Style 1', 'smart-blocks')},
-                                                {value: 'sb-title-style2', label: esc_html__('Style 2', 'smart-blocks')},
-                                                {value: 'sb-title-style3', label: esc_html__('Style 3', 'smart-blocks')},
-                                                {value: 'sb-title-style4', label: esc_html__('Style 4', 'smart-blocks')}
+                                                {value: 'sb-title-style1', label: __('Style 1', 'smart-blocks')},
+                                                {value: 'sb-title-style2', label: __('Style 2', 'smart-blocks')},
+                                                {value: 'sb-title-style3', label: __('Style 3', 'smart-blocks')},
+                                                {value: 'sb-title-style4', label: __('Style 4', 'smart-blocks')}
                                             ]}
                                         />
                                     </PanelBody>
@@ -597,9 +597,9 @@ export default function Edit(props) {
                                         value={dateFormat}
                                         onChange={(dateFormat) => setAttributes({dateFormat})}
                                         options={[
-                                            {value: 'relative_format', label: esc_html__('Relative Format (Ago)', 'smart-blocks')},
-                                            {value: 'default', label: esc_html__('WordPress Default Format', 'smart-blocks')},
-                                            {value: 'custom', label: esc_html__('Custom Format', 'smart-blocks')}
+                                            {value: 'relative_format', label: __('Relative Format (Ago)', 'smart-blocks')},
+                                            {value: 'default', label: __('WordPress Default Format', 'smart-blocks')},
+                                            {value: 'custom', label: __('Custom Format', 'smart-blocks')}
                                         ]}
                                     />
                                     {dateFormat == 'custom' && (
