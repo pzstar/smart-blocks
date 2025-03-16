@@ -74,8 +74,8 @@ const ImageBackgroundControl = ({
                             label={__('Attachment', 'smart-blocks')}
                             value={imageAttachment}
                             options={[
-                                {label: esc_html__('Scroll', 'smart-blocks'), value: 'scroll'},
-                                {label: esc_html__('Fixed', 'smart-blocks'), value: 'fixed'}
+                                {label: __('Scroll', 'smart-blocks'), value: 'scroll'},
+                                {label: __('Fixed', 'smart-blocks'), value: 'fixed'}
                             ]}
                             onChange={value => setImageAttachment(value)}
                         />
@@ -84,10 +84,10 @@ const ImageBackgroundControl = ({
                             label={__('Repeat', 'smart-blocks')}
                             value={imageRepeat}
                             options={[
-                                {label: esc_html__('Repeat', 'smart-blocks'), value: 'repeat'},
-                                {label: esc_html__('No Repeat', 'smart-blocks'), value: 'no-repeat'},
-                                {label: esc_html__('Repeat X', 'smart-blocks'), value: 'repeat-x'},
-                                {label: esc_html__('Repeat Y', 'smart-blocks'), value: 'repeat-y'}
+                                {label: __('Repeat', 'smart-blocks'), value: 'repeat'},
+                                {label: __('No Repeat', 'smart-blocks'), value: 'no-repeat'},
+                                {label: __('Repeat X', 'smart-blocks'), value: 'repeat-x'},
+                                {label: __('Repeat Y', 'smart-blocks'), value: 'repeat-y'}
                             ]}
                             onChange={value => setImageRepeat(value)}
                         />
@@ -96,9 +96,9 @@ const ImageBackgroundControl = ({
                             label={__('Size', 'smart-blocks')}
                             value={imageSize}
                             options={[
-                                {label: esc_html__('Auto', 'smart-blocks'), value: 'auto'},
-                                {label: esc_html__('Cover', 'smart-blocks'), value: 'cover'},
-                                {label: esc_html__('Contain', 'smart-blocks'), value: 'contain'}
+                                {label: __('Auto', 'smart-blocks'), value: 'auto'},
+                                {label: __('Cover', 'smart-blocks'), value: 'cover'},
+                                {label: __('Contain', 'smart-blocks'), value: 'contain'}
                             ]}
                             onChange={value => setImageSize(value)}
                         />
@@ -114,8 +114,8 @@ const ImageBackgroundControl = ({
                     <MediaPlaceholder
                         icon="format-image"
                         labels={{
-                            title: esc_html__('Background Image', 'smart-blocks'),
-                            name: esc_html__('Background Image', 'smart-blocks')
+                            title: __('Background Image', 'smart-blocks'),
+                            name: __('Background Image', 'smart-blocks')
                         }}
                         value={imageID}
                         onSelect={value => {

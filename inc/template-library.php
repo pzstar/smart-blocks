@@ -25,12 +25,12 @@ class Smart_blocks_Template_Library {
 					'url' => array(
 						'type' => 'string',
 						'required' => true,
-						'description' => esc_html__('URL of the JSON file.', 'smart-blocks'),
+						'description' => __('URL of the JSON file.', 'smart-blocks'),
 					),
 					'preview' => array(
 						'type' => 'boolean',
 						'default' => false,
-						'description' => esc_html__('Load for Block Preview.', 'smart-blocks'),
+						'description' => __('Load for Block Preview.', 'smart-blocks'),
 					),
 				),
 				'permission_callback' => function () {
@@ -47,9 +47,9 @@ class Smart_blocks_Template_Library {
 
 		$templates_list = array(
 			array(
-				'title' => esc_html__('Header with Features', 'smart-blocks'),
+				'title' => __('Header with Features', 'smart-blocks'),
 				'type' => 'block',
-				'author' => esc_html__('Smart Block', 'smart-blocks'),
+				'author' => __('Smart Block', 'smart-blocks'),
 				'keywords' => array('header', 'features', 'services'),
 				'categories' => array('header', 'services'),
 				'template_url' => 'https://hashthemesu4.github.io/import.json',
@@ -79,7 +79,7 @@ class Smart_blocks_Template_Library {
 			if ($wp_filesystem->exists($url)) {
 				$json = $wp_filesystem->get_contents($url);
 			} else {
-				return new \WP_Error('filesystem_error', esc_html__('File doesn\'t exist', 'smart-blocks'));
+				return new \WP_Error('filesystem_error', __('File doesn\'t exist', 'smart-blocks'));
 			}
 		} else {
 			$request = wp_remote_get($url);

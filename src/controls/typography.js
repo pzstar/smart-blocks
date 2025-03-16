@@ -192,7 +192,7 @@ const TypographyControl = ({
 
 	return <>
 		<div className="sb-field sb-field-typography sb-display-inline">
-			<label>{label ? label : esc_html__("Typography", 'smart-blocks')}</label>
+			<label>{label ? label : __("Typography", 'smart-blocks')}</label>
 			<div className="sb-components-dropdown">
 				<Tooltip text={__('Clear', 'smart-blocks')}>
 					<div className="sb-reset-field"

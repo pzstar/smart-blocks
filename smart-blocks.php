@@ -3,7 +3,7 @@ defined('ABSPATH') || die;
 /*
   Plugin Name:       Smart Blocks - WordPress Gutenberg Blocks
   Description:       Collection of advanced blocks to be used with WordPress Gutenberg Pagebuilder
-  Version:           2.2
+  Version:           2.3
   Author:            HashThemes
   Author URI:        http://hashthemes.com
   License:           GPLv2 or later
@@ -15,7 +15,7 @@ defined('ABSPATH') || die;
 define('SMART_BLOCKS_FILE', __FILE__);
 define('SMART_BLOCKS_PATH', plugin_dir_path(SMART_BLOCKS_FILE));
 define('SMART_BLOCKS_URL', plugins_url('/', SMART_BLOCKS_FILE));
-define('SMART_BLOCKS_VERSION', '2.2');
+define('SMART_BLOCKS_VERSION', '2.3');
 
 if (!class_exists('Smart_Blocks')) {
 
@@ -174,11 +174,11 @@ if (!class_exists('Smart_Blocks')) {
                 $categories, array(
                     array(
                         'slug' => 'smart-blocks-block-modules',
-                        'title' => esc_html__('SB Block Modules', 'smart-blocks')
+                        'title' => __('SB Block Modules', 'smart-blocks')
                     ),
                     array(
                         'slug' => 'smart-blocks-magazine-modules',
-                        'title' => esc_html__('SB Magazine Modules', 'smart-blocks')
+                        'title' => __('SB Magazine Modules', 'smart-blocks')
                     ),
                 )
             );
@@ -264,13 +264,13 @@ if (!class_exists('Smart_Blocks')) {
                         <?php
                         printf(
                             /* translators: %1$s is link start tag, %2$s is link end tag. */
-                            esc_html__('Great to see that you have been using Smart Blocks - WordPress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'smart-blocks'), '<a target="_blank" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5">', '</a>'
+                            __('Great to see that you have been using Smart Blocks - WordPress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world.', 'smart-blocks'), '<a target="_blank" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5">', '</a>'
                         );
                         ?>
                     </p>
-                    <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5"><span class="dashicons dashicons-thumbs-up"></span><?php echo esc_html__('Yes, of course', 'smart-blocks') ?></a>
+                    <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5"><span class="dashicons dashicons-thumbs-up"></span><?php echo __('Yes, of course', 'smart-blocks') ?></a>
                     &nbsp;
-                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', 'review'), 'review', 'smart_blocks_notice_nonce')); ?>"><span class="dashicons dashicons-yes"></span><?php echo esc_html__('I have already rated', 'smart-blocks') ?></a>
+                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', 'review'), 'review', 'smart_blocks_notice_nonce')); ?>"><span class="dashicons dashicons-yes"></span><?php echo __('I have already rated', 'smart-blocks') ?></a>
                 </div>
             </div>
             <?php
@@ -291,7 +291,7 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function dismiss_button($name) {
-            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', $name), $name, 'smart_blocks_notice_nonce')), esc_html__('Dismiss this notice.', 'smart-blocks'));
+            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', $name), $name, 'smart_blocks_notice_nonce')), __('Dismiss this notice.', 'smart-blocks'));
         }
 
         public static function dismiss($notice) {
@@ -345,7 +345,7 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function add_page_templates($templates) {
-            $templates['template-sb-full-width.php'] = esc_html__('Smart Blocks Full Width', 'smart-blocks');
+            $templates['template-sb-full-width.php'] = __('Smart Blocks Full Width', 'smart-blocks');
             return $templates;
         }
 

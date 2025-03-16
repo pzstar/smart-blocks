@@ -4,10 +4,10 @@ import {ClearIcon} from '../utils/svgicons';
 
 const BorderControl = ({label, value, setValue}) => {
     const borderStyles = [
-        ["solid", esc_html__("Solid", 'smart-blocks')],
-        ["dotted", esc_html__("Dotted", 'smart-blocks')],
-        ["dashed", esc_html__("Dashed", 'smart-blocks')],
-        ["double", esc_html__("Double", 'smart-blocks')]
+        ["solid", __("Solid", 'smart-blocks')],
+        ["dotted", __("Dotted", 'smart-blocks')],
+        ["dashed", __("Dashed", 'smart-blocks')],
+        ["double", __("Double", 'smart-blocks')]
     ];
     const onClearHandler = (e) => {
         setValue('');
