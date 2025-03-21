@@ -72,6 +72,25 @@ const RangeSliderControl = ({
         return ret;
     }
 
+    const calcStepsVal = () => {
+        let ret;
+        switch(unit) {
+            case 'em':
+                ret = 0.1;
+                break;
+            case 'rem':
+                ret = 0.1;
+                break;
+            case '%':
+                ret = 1;
+                break;
+            default:
+                ret = steps;
+                break;
+        }
+        return ret;
+    }
+
     return <div className={`sb-field sb-field-range ${responsive ? 'sb-responsive' : ''}`}>
         <div className="sb-label">
             {label && (<label htmlFor="input">{label}</label>)}
@@ -103,11 +122,11 @@ const RangeSliderControl = ({
                                 min={calcMinVal()}
                                 max={calcMaxVal()}
                                 value={valueSm}
-                                step={steps ? steps : 1}
+                                step={calcStepsVal}
                                 onChange={(e) => {setValueSm(e.target.value)}}
                             />
                             <input type="number"
-                                step={steps ? steps : 1}
+                                step={calcStepsVal}
                                 onChange={(e) => {setValueSm(e.target.value)}}
                                 value={valueSm}
                             />
@@ -119,11 +138,11 @@ const RangeSliderControl = ({
                                 min={calcMinVal()}
                                 max={calcMaxVal()}
                                 value={valueMd}
-                                step={steps ? steps : 1}
+                                step={calcStepsVal}
                                 onChange={(e) => {setValueMd(e.target.value)}}
                             />
                             <input type="number"
-                                step={steps ? steps : 1}
+                                step={calcStepsVal}
                                 onChange={(e) => {setValueMd(e.target.value)}}
                                 value={valueMd}
                             />
@@ -135,11 +154,11 @@ const RangeSliderControl = ({
                                 min={calcMinVal()}
                                 max={calcMaxVal()}
                                 value={value}
-                                step={steps ? steps : 1}
+                                step={calcStepsVal}
                                 onChange={(e) => {setValue(e.target.value)}}
                             />
                             <input type="number"
-                                step={steps ? steps : 1}
+                                step={calcStepsVal}
                                 onChange={(e) => {setValue(e.target.value)}}
                                 value={value}
                             />
@@ -152,11 +171,11 @@ const RangeSliderControl = ({
                             min={calcMinVal()}
                             max={calcMaxVal()}
                             value={value}
-                            step={steps ? steps : 1}
+                            step={calcStepsVal}
                             onChange={(e) => {setValue(e.target.value)}}
                         />
                         <input type="number"
-                            step={steps ? steps : 1}
+                            step={calcStepsVal}
                             onChange={(e) => {setValue(e.target.value)}}
                             value={value}
                         />

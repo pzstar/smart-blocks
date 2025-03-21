@@ -345,13 +345,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValFontSize()}
 											max={calcMaxValFontSize()}
-											step="1"
+											step={!['rem', 'em'].includes(valueFontSizeUnit) ? 1 : 0.1}
 											value={valueFontSize}
 											onChange={(e) => setValueFontSize(e.target.value)}
 										/>
 										<input
 											type="number"
-											step="1"
+											step={!['rem', 'em'].includes(valueFontSizeUnit) ? 1 : 0.1}
 											value={valueFontSize}
 											onChange={(e) => setValueFontSize(e.target.value)}
 										/>
@@ -360,13 +360,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValFontSize()}
 											max={calcMaxValFontSize()}
-											step="1"
+											step={!['rem', 'em'].includes(valueFontSizeUnit) ? 1 : 0.1}
 											value={valueFontSizeMd}
 											onChange={(e) => setValueFontSizeMd(e.target.value)}
 										/>
 										<input
 											type="number"
-											step="1"
+											step={!['rem', 'em'].includes(valueFontSizeUnit) ? 1 : 0.1}
 											value={valueFontSizeMd}
 											onChange={(e) => setValueFontSizeMd(e.target.value)}
 										/>
@@ -375,13 +375,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValFontSize()}
 											max={calcMaxValFontSize()}
-											step="1"
+											step={!['rem', 'em'].includes(valueFontSizeUnit) ? 1 : 0.1}
 											value={valueFontSizeSm}
 											onChange={(e) => setValueFontSizeSm(e.target.value)}
 										/>
 										<input
 											type="number"
-											step="1"
+											step={!['rem', 'em'].includes(valueFontSizeUnit) ? 1 : 0.1}
 											value={valueFontSizeSm}
 											onChange={(e) => setValueFontSizeSm(e.target.value)}
 										/>
@@ -433,13 +433,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLetterSpacing()}
 											max={calcMaxValLetterSpacing()}
-											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLetterSpacingUnit) ? 1 : 0.1}
 											value={valueLetterSpacing}
 											onChange={(e) => setValueLetterSpacing(e.target.value)}
 										/>
 										<input
 											type="number"
-											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLetterSpacingUnit) ? 1 : 0.1}
 											value={valueLetterSpacing}
 											onChange={(e) => setValueLetterSpacing(e.target.value)}
 										/>
@@ -448,13 +448,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLetterSpacing()}
 											max={calcMaxValLetterSpacing()}
-											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLetterSpacingUnit) ? 1 : 0.1}
 											value={valueLetterSpacingMd}
 											onChange={(e) => setValuesLetterSpacingMd(e.target.value)}
 										/>
 										<input
 											type="number"
-											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLetterSpacingUnit) ? 1 : 0.1}
 											value={valueLetterSpacingMd}
 											onChange={(e) => setValuesLetterSpacingMd(e.target.value)}
 										/>
@@ -463,13 +463,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLetterSpacing()}
 											max={calcMaxValLetterSpacing()}
-											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLetterSpacingUnit) ? 1 : 0.1}
 											value={valueLetterSpacingSm}
 											onChange={(e) => setValuesLetterSpacingSm(e.target.value)}
 										/>
 										<input
 											type="number"
-											step={valueLetterSpacingUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLetterSpacingUnit) ? 1 : 0.1}
 											value={valueLetterSpacingSm}
 											onChange={(e) => setValuesLetterSpacingSm(e.target.value)}
 										/>
@@ -523,13 +523,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLineHeight()}
 											max={calcMaxValLineHeight()}
-											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLineHeightUnit) ? 1 : 0.1}
 											value={valueLineHeight}
 											onChange={(e) => setValueLineHeight(e.target.value)}
 										/>
 										<input
 											type="number"
-											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLineHeightUnit) ? 1 : 0.1}
 											value={valueLineHeight}
 											onChange={(e) => setValueLineHeight(e.target.value)}
 										/>
@@ -538,13 +538,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLineHeight()}
 											max={calcMaxValLineHeight()}
-											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLineHeightUnit) ? 1 : 0.1}
 											value={valueLineHeightMd}
 											onChange={(e) => setValueLineHeightMd(e.target.value)}
 										/>
 										<input
 											type="number"
-											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLineHeightUnit) ? 1 : 0.1}
 											value={valueLineHeightMd}
 											onChange={(e) => setValueLineHeightMd(e.target.value)}
 										/>
@@ -553,13 +553,13 @@ const TypographyControl = ({
 										<input type="range"
 											min={calcMinValLineHeight()}
 											max={calcMaxValLineHeight()}
-											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLineHeightUnit) ? 1 : 0.1}
 											value={valueLineHeightSm}
 											onChange={(e) => setValueLineHeightSm(e.target.value)}
 										/>
 										<input
 											type="number"
-											step={valueLineHeightUnit == 'px' ? 1 : 0.1}
+											step={!['rem', 'em'].includes(valueLineHeightUnit) ? 1 : 0.1}
 											value={valueLineHeightSm}
 											onChange={(e) => setValueLineHeightSm(e.target.value)}
 										/>
