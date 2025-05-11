@@ -23,6 +23,11 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 <li>Activate Plugin from "Plugins" menu in WordPress.</li>
 </ol>
 
+== Frequently Asked Questions ==
+= How can I report security bugs? =
+
+You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/9e5fc092-bbe0-4eba-93ac-4369a46b54b5)
+
 == Changelog ==
 = 2.4 - Mar 24, 2025 =
 * Translation fixes
