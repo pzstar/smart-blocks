@@ -1207,6 +1207,7 @@
 /* Import Modal */
 .sb-library-modal .components-modal__content {
     padding: 0;
+    margin: 0;
 }
 
 .sb-library-modal .components-modal__content .components-modal__header {

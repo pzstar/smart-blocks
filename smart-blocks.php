@@ -64,6 +64,8 @@ if (!class_exists('Smart_Blocks')) {
             if (is_admin()) {
                 add_filter('admin_body_class', array($this, 'add_editor_body_class'));
             }
+
+            add_action('admin_menu', array($this, 'register_admin_menu'));
         }
 
         public function load_textdomain() {
@@ -374,6 +376,37 @@ if (!class_exists('Smart_Blocks')) {
             return false;
         }
 
+        public function register_admin_menu() {
+
+            add_menu_page(esc_html__('Smart Blocks Settings', 'smart-'), esc_html__('Smart Blocks', 'smart-'), 'manage_options', 'sb-block-settings', [$this, 'sb_blocks_settings_page_display'], 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjYuNzIgMjEzLjEyIj48Zz48Zz48cGF0aCBkPSJNMjIxLjA4IDU0LjM5YzUuNzEtNS44NSA2LjU1LTcuMjUgNC44OC04LjM2LTEuMTItLjctMTEuNDQtNS40NC0yMy0xMC4zM3MtMzQuNzMtMTUuMDYtNTEuNDctMjIuNDVDMTM0LjYxIDYgMTIwLjI0IDAgMTE5LjQgMCAxMTggMCAzNC43NCA4MC4yIDMzLjkxIDgyLjE1Yy0uMjguNDIgOCA0LjQ2IDE4LjEzIDguNzhzMzYuNjggMTUuOSA1OC44NiAyNS42NyA0MiAxOC4xMyA0My45MyAxOWMzLjM1IDEuMjYgMi41MSAyLjI0LTIzLjU3IDI3LjQ4bC0yNy4yIDI2LjIyLTI4LjU5LTEyLjQ1Yy0xNS43Ni03LTM2LTE1LjYyLTQ0Ljc3LTE5LjM5bC0xNS45LTctNy42NyA3LjY3Yy00LjE4IDQuMzItNy4zOSA4LTcuMTEgOC4yMy41NS42NCAxMDIuMDkgNDQuNjQgMTA3LjExIDQ2Ljc1IDEuMTIuNDIgMTEuNzEtOS4wNyAyNS44LTIyLjg3IDEzLjI1LTEzIDMyLjM2LTMxLjY2IDQyLjU0LTQxLjU3czE4LTE4LjU0IDE3LjQzLTE5YTEwOCAxMDggMCAwIDAtMTEuNTctNS4zYy01LjcyLTIuMzctMjQuMjctMTAuMzItNDEuMTUtMTcuNzJTMTAwLjU3IDg5LjQgODkuNTYgODQuOGwtMjAtOC42NUw5My43NCA1MmMxMy4yNS0xMy4yNSAyNS41Mi0yNS4xIDI3LjItMjYuMjIgMi42NS0xLjgxIDYuMTMtLjU2IDQ2LjE2IDE2Ljc0IDIzLjcxIDEwLjMyIDQ0LjA3IDE4LjgzIDQ1LjE5IDE4LjgzczUuMDItMy4xOSA4Ljc5LTYuOTYiPjwvcGF0aD48cGF0aCBkPSJNNTcuNDggMTM0LjMxYy03LjExIDcuMjUtOC41MSA5LjM0LTYgOS4zNC44NCAwIDEyLjgzIDUgMjYuNzggMTEuMTZzMjYuMzYgMTEgMjcuMiAxMC44OGMxLjgxLS40MiAzMC4yNi0yNy43NSAyOS41Ni0yOC4zMS0uMjgtLjI4LTQuODgtMi4yMy0xMC4zMi00LjZsLTkuOS00LjE5LTYuOCA2Ljg0LTYuODQgNi44My0xNS40OC02LjgzYy0yMi4wNi05LjYzLTE5LjgzLTkuNjMtMjguMi0xLjEyTTE0OSA1OC41OGMtMTQtNi4xNC0yNi0xMS4xNi0yNi44MS0xMS4xNi0xLjM5IDAtMzAuNTQgMjgtMjkuODQgMjguNTkgMS42NyAxLjI2IDE3LjE1IDcuNjcgMTguNTUgNy42Ny44MyAwIDQuNzQtMi43OSA4LjUtNi4xMyA2LjQyLTUuODYgNy02LjE0IDExLTQuNDcgMi4yMyAxIDEwLjMyIDQuNDcgMTcuODUgNy42N2wxMy42NyA1Ljg2IDcuNTMtNy4yNWM3LjUzLTcuMTEgOS4wNy05LjYzIDYuMjgtOS42My0uODIgMC0xMi44MS01LjAyLTI2LjczLTExLjE1Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4=', 99);
+        }
+
+        public function sb_blocks_settings_page_display() {
+            include SMART_BLOCKS_PATH . 'inc/admin-settings-page.php';
+        }
+
+        public function get_widget_field($label, $val, $icon = '', $premium = false, $category = '') {
+            $sb_widgets = get_option('sb_widgets') ? get_option('sb_widgets') : array();
+            ?>
+
+            <div class="sb-widget-wrap <?php echo $premium ? 'sb-premium' : ''; ?>" data-main="<?php echo $premium ? 'pro' : 'free'; ?>" data-sub="<?php echo esc_attr($category); ?>">
+                <span>
+                    <?php
+                    if ($icon) {
+                        echo '<i class="' . $icon . '"></i>';
+                    }
+                    esc_html_e($label);
+                    ?>
+                </span>
+                <div class="sb-checkbox">
+                    <input type="checkbox" class="sb-widget-checkbox" name="widgets" value="<?php echo esc_attr($val); ?>" <?php checked((isset($sb_widgets) && in_array($val, $sb_widgets)), true); ?>>
+                    <label></label>
+                </div>
+
+            </div>
+
+            <?php
+        }
 
     }
 
