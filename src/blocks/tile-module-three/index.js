@@ -19,7 +19,7 @@ import {__} from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('smart-blocks/tile-module-three', {
+smartblocks.activeBlocks.includes('tile-module-three') && registerBlockType('smart-blocks/tile-module-three', {
     icon: <Tile3 />,
     supports: {
         "html": false

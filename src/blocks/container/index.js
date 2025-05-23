@@ -20,7 +20,7 @@ import {__} from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('smart-blocks/container', {
+smartblocks.activeBlocks.includes('container') && registerBlockType('smart-blocks/container', {
     icon: <Container />,
     supports: {
         "align": ['wide', 'full'],

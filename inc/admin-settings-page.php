@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-$sb_all_widgets = smart_blocks_get_all_blocks_list();
+$sb_all_blocks = smart_blocks_get_all_blocks_list();
 
 ?>
 
@@ -23,46 +23,56 @@ $sb_all_widgets = smart_blocks_get_all_blocks_list();
     </div>
 
     <nav class="sb-nav-tab-wrapper">
-        <a href="javascript:void(0)" class="nav-tab-active sb-tab" data-tab="sb-widgets-section-content" data-tohide="tab-content">
-            <i class="mdi-widgets-outline"></i>
-            <?php esc_html_e('Blocks', 'smart-blocks'); ?>
-        </a>
-
-        <a href="javascript:void(0)" class="sb-tab" data-tab="sb-api-settings-content" data-tohide="tab-content">
-            <i class="mdi-cog"></i>
-            <?php esc_html_e('Settings', 'smart-blocks'); ?>
-        </a>
-
-        <a href="javascript:void(0)" class="sb-tab" data-tab="sb-about-section-content" data-tohide="tab-content">
-            <i class="mdi-file-document-multiple-outline"></i>
-            <?php esc_html_e('About', 'smart-blocks'); ?>
-        </a>
+        <?php
+        $sb_block_settings_tabs = array(
+            'blocks' => array(
+                'name' => __('Blocks', 'smart-blocks'),
+                'icon' => 'mdi-widgets-outline'
+            ),
+            'settings' => array(
+                'name' => __('Settings', 'smart-blocks'),
+                'icon' => 'mdi-cog'
+            ),
+            'about' => array(
+                'name' => __('About', 'smart-blocks'),
+                'icon' => 'mdi-file-document-multiple-outline'
+            )
+        );
+        foreach ($sb_block_settings_tabs as $key => $val) {
+            ?>
+            <a href="javascript:void(0)" class="<?php echo $key == 'blocks' ? 'nav-tab-active ' : ''; ?>sb-tab" data-tab="sb-<?php echo esc_attr($key); ?>-section-content" data-tohide="tab-content">
+                <i class="<?php echo esc_attr($val['icon']); ?>"></i>
+                <?php echo esc_html($val['name']); ?>
+            </a>
+            <?php
+        }
+        ?>
     </nav>
 
     <div class="sb-tab-contents">
-        <div id="sb-widgets-section-content" class="tab-content">
-            <?php do_action('sb_before_admin_widgets'); ?>
+        <div id="sb-blocks-section-content" class="tab-content">
+            <?php do_action('sb_before_admin_blocks'); ?>
 
-            <div class="sb-widget-action-buttons">
-                <button class="sb-widget-action-btn sb-widget-enable-all">
+            <div class="sb-block-action-buttons">
+                <button class="sb-block-action-btn sb-block-enable-all">
                     <i class="mdi-check-circle-outline"></i><?php esc_html_e('Enable All', 'smart-blocks') ?>
                 </button>
-                <button class="sb-widget-action-btn sb-widget-disable-all">
+                <button class="sb-block-action-btn sb-block-disable-all">
                     <i class="mdi-close-circle-outline"></i><?php esc_html_e('Disable All', 'smart-blocks') ?>
                 </button>
             </div>
 
-            <form id="sb-widget-selection-form">
-                <div class="sb-widget-section-inner-wrap">
+            <form id="sb-block-selection-form">
+                <div class="sb-block-section-inner-wrap">
                     <?php
-                    foreach ($sb_all_widgets as $key => $val) {
-                        $this->get_widget_field($val['name'], $key, $val['icon'], isset($val['premium']) && $val['premium'], isset($val['category']) ? $val['category'] : '');
+                    foreach ($sb_all_blocks as $key => $val) {
+                        $this->get_block_field($val['name'], $key, $val['icon'], isset($val['premium']) && $val['premium'], isset($val['category']) ? $val['category'] : '');
                     }
                     ?>
                 </div>
 
-                <div class="eaad-save-button-wrap">
-                    <button name="sb-widget-enable" id="sb-widget-selection-btn" class="sb-save-button">
+                <div class="sb-save-button-wrap">
+                    <button name="sb-block-enable" id="sb-block-selection-btn" class="sb-save-button">
                         <i class="mdi-content-save"></i><?php esc_html_e('Save', 'smart-blocks'); ?>
                         <span class="sb-loader"></span>
                     </button>
@@ -72,14 +82,14 @@ $sb_all_widgets = smart_blocks_get_all_blocks_list();
 
         <div id="sb-about-section-content" class="tab-content" style="display: none;">
             <h3><?php esc_html_e('Description', 'smart-blocks'); ?></h3>
-            <p><?php esc_html_e('Easy Elementor Addons is an all in one element pack extension for Elementor page builder. It provides 50+ creative widgets to provide an outstanding look to your Elementor based WordPress website. The elements are multi concept and contain amazing features to make your website more effective by placing the spectacular widgets and enhance the engagement rate.', 'smart-blocks'); ?></p>
+            <p><?php esc_html_e('Smart Blocks is an all in one block pack extension for Gutenberg page builder. It provides creative blocks to provide an outstanding look to your Gutenberg based WordPress website. The blocks are multi concept and contain amazing features to make your website more effective by placing the spectacular blocks and enhance the engagement rate.', 'smart-blocks'); ?></p>
 
-            <h3><?php esc_html_e('Elements Available in the Extension:', 'smart-blocks'); ?></h3>
+            <h3><?php esc_html_e('Blocks Available in the Extension:', 'smart-blocks'); ?></h3>
 
             <?php
-            $description = sb_get_all_widgets_desc();
+            $description = sb_get_all_blocks_desc();
             $count = 0;
-            foreach ($sb_all_widgets as $key => $val) {
+            foreach ($sb_all_blocks as $key => $val) {
                 $count++;
                 ?>
                 <p><?php echo esc_html($count); ?>) <a href="https://demo.hashthemes.com/smart-blocks/<?php echo esc_attr($key); ?>/" target="_blank"><?php echo esc_html($val['name']); ?></a> - <?php echo isset($description[$key]) ? esc_html($description[$key]) : ''; ?></p>
@@ -93,6 +103,59 @@ $sb_all_widgets = smart_blocks_get_all_blocks_list();
             <p><?php esc_html_e('If you have any issues while using our plugin, feel free to contact us for support. Our support team will be more than happy to help you resolve your issue. You can chat with us or email us at our website', 'smart-blocks'); ?> <a href="https://hashthemes.com/" target="_blank"><?php esc_html_e('here', 'smart-blocks'); ?></a>.</p>
 
             <p style="height:40px;"></p>
+        </div>
+
+        <div id="sb-settings-section-content" class="tab-content" style="display: none;">
+            <form id="sb-general-settings-form">
+                <?php
+                $sb_general_settings = get_option('sb_general_settings');
+                $load_fonts_locally = isset($sb_general_settings['load_fonts_locally']) && $sb_general_settings['load_fonts_locally'] ? $sb_general_settings['load_fonts_locally'] : '';
+                $default_section_width = isset($sb_general_settings['default_section_width']) && $sb_general_settings['default_section_width'] ? $sb_general_settings['default_section_width'] : '';
+                $mobile_breakpoint = isset($sb_general_settings['mobile_breakpoint']) && $sb_general_settings['mobile_breakpoint'] ? $sb_general_settings['mobile_breakpoint'] : '';
+                $tablet_breakpoint = isset($sb_general_settings['tablet_breakpoint']) && $sb_general_settings['tablet_breakpoint'] ? $sb_general_settings['tablet_breakpoint'] : '';
+                ?>
+                <div class="sb-settings-field">
+                    <label><?php esc_html_e('Default Section Width', 'smart-blocks'); ?></label>
+                    <div class="sb-settings-input-field">
+                        <input type="number" name="default_section_width" value="<?php echo esc_attr($default_section_width); ?>">
+                    </div>
+                </div>
+                <div class="sb-settings-field">
+                    <label><?php esc_html_e('Tablet Breakpoint', 'smart-blocks'); ?></label>
+                    <div class="sb-settings-input-field">
+                        <input type="number" name="tablet_breakpoint" value="<?php echo esc_attr($tablet_breakpoint); ?>">
+                    </div>
+                </div>
+                <div class="sb-settings-field">
+                    <label><?php esc_html_e('Mobile Breakpoint', 'smart-blocks'); ?></label>
+                    <div class="sb-settings-input-field">
+                        <input type="number" name="mobile_breakpoint" value="<?php echo esc_attr($mobile_breakpoint); ?>">
+                    </div>
+                </div>
+
+                <div class="sb-settings-field">
+                    <label><?php esc_html_e('Load Google Fonts Locally', 'smart-blocks'); ?></label>
+                    <div class="sb-settings-fields sb-toggle-input-field">
+                        <div class="sb-checkbox">
+                            <input type="checkbox" class="sb-block-checkbox" name="load_fonts_locally" value="on" <?php checked($load_fonts_locally, 'on', true); ?>>
+                            <label></label>
+                        </div>
+                        <p class="sb-desc"><?php echo esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with GDPR then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'smart-blocks'); ?></p>
+                    </div>
+                </div>
+
+                <?php
+                do_action('sb_block_settings_tabs_content', $sb_general_settings);
+                ?>
+
+                <div class="sb-save-button-wrap">
+                    <button class="sb-save-button" id="sb-general-settings-save">
+                        <i class="mdi mdi-content-save"></i>
+                        <?php esc_html_e('Save', 'smart-blocks-pro'); ?>
+                        <span class="sb-loader"></span>
+                    </button>
+                </div>
+            </form>
         </div>
 
         <div class="sb-admin-notificn" style="display: none;"></div>

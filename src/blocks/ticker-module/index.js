@@ -19,7 +19,7 @@ import {__} from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('smart-blocks/ticker-module', {
+smartblocks.activeBlocks.includes('ticker-module') && registerBlockType('smart-blocks/ticker-module', {
 	icon: <Ticker />,
 	supports: {
 		html: false

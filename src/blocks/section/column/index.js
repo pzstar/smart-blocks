@@ -20,7 +20,7 @@ import {__} from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('smart-blocks/column', {
+smartblocks.activeBlocks.includes('section') && registerBlockType('smart-blocks/column', {
     icon: <Column />,
     supports: {
         "inserter": false,

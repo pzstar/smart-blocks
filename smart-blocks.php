@@ -57,7 +57,7 @@ if (!class_exists('Smart_Blocks')) {
             // Review Notification
             add_action('wp_loaded', array($this, 'admin_notice'), 20);
             add_action('admin_init', array($this, 'welcome_init'));
-            add_action('admin_enqueue_scripts', array($this, 'add_admin_styles'));
+            add_action('admin_enqueue_scripts', array($this, 'add_admin_scripts'));
 
             add_action('enqueue_block_editor_assets', array($this, 'block_editor_assets'));
 
@@ -66,6 +66,36 @@ if (!class_exists('Smart_Blocks')) {
             }
 
             add_action('admin_menu', array($this, 'register_admin_menu'));
+
+            add_action('wp_ajax_admin_settings_save', [$this, 'sb_settings_save']);
+            add_action('wp_ajax_sb_blocks_save', [$this, 'sb_blocks_save']);
+        }
+
+        public function sb_blocks_save() {
+
+            if (isset($_POST['wp_nonce']) && wp_verify_nonce($_POST['wp_nonce'], 'sb_ajax_nonce')) {
+                $data_ar = isset($_POST['data']) && !empty($_POST['data']) ? $_POST['data'] : array();
+                update_option('sb_blocks', array());
+                $update_blocks = update_option('sb_blocks', $data_ar);
+                echo ($update_blocks || empty($data_ar)) ? 'yes' : 'no';
+            }
+            die();
+        }
+
+        public function sb_settings_save() {
+
+            if (isset($_POST['wp_nonce']) && wp_verify_nonce($_POST['wp_nonce'], 'sb_ajax_nonce')) {
+                $data_ar = $_POST['data'];
+                $settings_ar = [];
+
+                foreach ($data_ar as $key => $value) {
+                    $settings_ar[$value['name']] = $value['value'];
+                }
+
+                $update = update_option('sb_general_settings', $settings_ar);
+                echo $update ? 'yes' : 'no';
+            }
+            die();
         }
 
         public function load_textdomain() {
@@ -104,7 +134,8 @@ if (!class_exists('Smart_Blocks')) {
 
             wp_register_script('sb-blocks', SMART_BLOCKS_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version']);
             wp_localize_script('sb-blocks', 'smartblocks', array(
-                'userRoles' => $wp_roles->roles
+                'userRoles' => $wp_roles->roles,
+                'activeBlocks' => get_option('sb_blocks')
             ));
 
             $block_render = new Smart_Blocks_Blocks_Render();
@@ -150,6 +181,7 @@ if (!class_exists('Smart_Blocks')) {
                 'single-news-two',
                 'ticker-module'
             );
+
             foreach ($news_blocks as $block) {
                 register_block_type(
                     'smart-blocks/' . $block, array(
@@ -164,6 +196,7 @@ if (!class_exists('Smart_Blocks')) {
                 );
             }
         }
+
 
         /**
          * Gutenberg block category.
@@ -305,8 +338,14 @@ if (!class_exists('Smart_Blocks')) {
             }
         }
 
-        public function add_admin_styles() {
+        public function add_admin_scripts() {
             wp_enqueue_style('smart-blocks-admin-style', SMART_BLOCKS_URL . 'inc/assets/css/admin-style.css', array(), SMART_BLOCKS_VERSION);
+            wp_enqueue_script('smart-blocks-admin-script', SMART_BLOCKS_URL . 'inc/assets/js/admin-script.js', array('jquery'), SMART_BLOCKS_VERSION);
+            wp_localize_script('smart-blocks-admin-script', 'admin_ajax_script', [
+                'ajaxurl' => admin_url('admin-ajax.php'),
+                'ajax_nonce' => wp_create_nonce('sb_ajax_nonce'),
+            ]);
+            wp_enqueue_script('smart-blocks-jquery-condition', SMART_BLOCKS_URL . 'inc/assets/js/jquery-condition.js', array('jquery'), SMART_BLOCKS_VERSION);
         }
 
         public function block_editor_assets() {
@@ -385,11 +424,11 @@ if (!class_exists('Smart_Blocks')) {
             include SMART_BLOCKS_PATH . 'inc/admin-settings-page.php';
         }
 
-        public function get_widget_field($label, $val, $icon = '', $premium = false, $category = '') {
-            $sb_widgets = get_option('sb_widgets') ? get_option('sb_widgets') : array();
+        public function get_block_field($label, $val, $icon = '', $premium = false, $category = '') {
+            $sb_blocks = get_option('sb_blocks') ? get_option('sb_blocks') : array();
             ?>
 
-            <div class="sb-widget-wrap <?php echo $premium ? 'sb-premium' : ''; ?>" data-main="<?php echo $premium ? 'pro' : 'free'; ?>" data-sub="<?php echo esc_attr($category); ?>">
+            <div class="sb-block-wrap <?php echo $premium ? 'sb-premium' : ''; ?>" data-main="<?php echo $premium ? 'pro' : 'free'; ?>" data-sub="<?php echo esc_attr($category); ?>">
                 <span>
                     <?php
                     if ($icon) {
@@ -398,11 +437,11 @@ if (!class_exists('Smart_Blocks')) {
                     esc_html_e($label);
                     ?>
                 </span>
+
                 <div class="sb-checkbox">
-                    <input type="checkbox" class="sb-widget-checkbox" name="widgets" value="<?php echo esc_attr($val); ?>" <?php checked((isset($sb_widgets) && in_array($val, $sb_widgets)), true); ?>>
+                    <input type="checkbox" class="sb-block-checkbox" name="blocks" value="<?php echo esc_attr($val); ?>" <?php checked((isset($sb_blocks) && in_array($val, $sb_blocks)), true); ?>>
                     <label></label>
                 </div>
-
             </div>
 
             <?php

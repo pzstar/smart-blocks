@@ -19,7 +19,7 @@ import {__} from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('smart-blocks/template-import', {
+smartblocks.activeBlocks.includes('template-import') && registerBlockType('smart-blocks/template-import', {
     icon: <Tile1 />,
     supports: {
         "html": false

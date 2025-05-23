@@ -19,7 +19,7 @@ import {__} from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('smart-blocks/news-module-one', {
+smartblocks.activeBlocks.includes('news-module-one') && registerBlockType('smart-blocks/news-module-one', {
     icon: <News1 />,
     supports: {
         "html": false

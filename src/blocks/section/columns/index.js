@@ -20,7 +20,7 @@ import {__} from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('smart-blocks/columns', {
+smartblocks.activeBlocks.includes('section') && registerBlockType('smart-blocks/columns', {
     icon: <Columns />,
     supports: {
         "align": ['wide', 'full'],

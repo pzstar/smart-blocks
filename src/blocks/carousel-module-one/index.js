@@ -19,7 +19,7 @@ import {__} from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('smart-blocks/carousel-module-one', {
+smartblocks.activeBlocks.includes('carousel-module-one') && registerBlockType('smart-blocks/carousel-module-one', {
 	icon: <Carousel1 />,
 	supports: {
 		html: false

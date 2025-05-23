@@ -93,7 +93,15 @@ if (!class_exists('Smart_Blocks_CSS')) {
             wp_register_style('sb-style-frontend', false, array(), SMART_BLOCKS_VERSION);
             wp_enqueue_style('sb-style-frontend');
             wp_add_inline_style('sb-style-frontend', smart_blocks_css_strip_whitespace(self::$stylesheet));
+
             $frontend_gfonts = $this->frontend_gfonts();
+            $sb_general_settings = get_option('sb_general_settings');
+            $load_fonts_locally = isset($sb_general_settings['load_fonts_locally']) && $sb_general_settings['load_fonts_locally'] ? $sb_general_settings['load_fonts_locally'] : '';
+
+            if ($frontend_gfonts && $load_font_locally == 'on') {
+                require_once UWCC_PATH . 'inc/wptt-webfont-loader.php';
+                $frontend_gfonts = wptt_get_webfont_url($frontend_gfonts);
+            }
             wp_enqueue_style('sb-fonts-frontend', $frontend_gfonts, array(), NULL);
         }
 
@@ -127,7 +135,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                 $link .= '&amp;subset=' . implode(',', $subsets);
             }
 
-            return '//fonts.googleapis.com/css?family=' . esc_attr(str_replace('|', '%7C', $link));
+            return 'https://fonts.googleapis.com/css?family=' . esc_attr(str_replace('|', '%7C', $link));
         }
 
         public static function blocks_google_font($font_family, $font_weight, $font_subset = NULL) {
