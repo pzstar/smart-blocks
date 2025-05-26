@@ -95,7 +95,6 @@ jQuery(document).ready(function ($) {
 
     /* Tabs display on tab click for Plugin Menu Settings Page */
     $('body').on('click', '.sb-tab', function () {
-        console.log('here');
         var selected_menu = $(this).data('tab');
         var hideDivs = $(this).data('tohide');
 
@@ -128,19 +127,13 @@ jQuery(document).ready(function ($) {
 
 
 
-    let gallery_frame, single_frame;
 
     // === GALLERY ===
     $('button.sb-upload-gallery').on('click', function (e) {
         e.preventDefault();
         const parent = $(this).closest('.sb-settings-input-field');
 
-        if (gallery_frame) {
-            gallery_frame.open();
-            return;
-        }
-
-        gallery_frame = wp.media({
+        const gallery_frame = wp.media({
             title: 'Select Images',
             multiple: true,
             library: { type: 'image' },
@@ -192,12 +185,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         const parent = $(this).closest('.sb-settings-input-field');
 
-        if (single_frame) {
-            single_frame.open();
-            return;
-        }
-
-        single_frame = wp.media({
+        const single_frame = wp.media({
             title: 'Select an Image',
             multiple: false,
             library: { type: 'image' },

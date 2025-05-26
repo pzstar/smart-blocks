@@ -343,7 +343,7 @@ if (!class_exists('Smart_Blocks')) {
 
         public function add_admin_scripts() {
             wp_enqueue_style('smart-blocks-admin-style', SMART_BLOCKS_URL . 'inc/assets/css/admin-style.css', array(), SMART_BLOCKS_VERSION);
-            wp_enqueue_script('smart-blocks-admin-script', SMART_BLOCKS_URL . 'inc/assets/js/admin-script.js', array('jquery'), SMART_BLOCKS_VERSION);
+            wp_enqueue_script('smart-blocks-admin-script', SMART_BLOCKS_URL . 'inc/assets/js/admin-script.js', array('jquery', 'wp-color-picker'), SMART_BLOCKS_VERSION);
             wp_localize_script('smart-blocks-admin-script', 'admin_ajax_script', [
                 'ajaxurl' => admin_url('admin-ajax.php'),
                 'ajax_nonce' => wp_create_nonce('sb_ajax_nonce'),
