@@ -72,6 +72,17 @@ if (!class_exists('Smart_Blocks')) {
 
             add_action('wp_head', array($this, 'sb_block_styles'));
             add_action('admin_head', array($this, 'sb_block_styles'));
+
+            add_action('init', array($this, 'maybe_run_one_time_setup'));
+        }
+
+        public function maybe_run_one_time_setup() {
+            if (!get_option('sb_setup_done')) {
+                update_option('sb_blocks', array_keys(smart_blocks_get_all_blocks_list()));
+
+                // Set the flag so it doesn't run again
+                update_option('sb_setup_done', true);
+            }
         }
 
         public function sb_block_styles() {
