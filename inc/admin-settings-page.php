@@ -113,40 +113,71 @@ $sb_all_blocks = smart_blocks_get_all_blocks_list();
                 $default_section_width = isset($sb_general_settings['default_section_width']) && $sb_general_settings['default_section_width'] ? $sb_general_settings['default_section_width'] : '';
                 $mobile_breakpoint = isset($sb_general_settings['mobile_breakpoint']) && $sb_general_settings['mobile_breakpoint'] ? $sb_general_settings['mobile_breakpoint'] : '';
                 $tablet_breakpoint = isset($sb_general_settings['tablet_breakpoint']) && $sb_general_settings['tablet_breakpoint'] ? $sb_general_settings['tablet_breakpoint'] : '';
+                $sb_settings_tabs = apply_filters('sb_setting_tabs', array(
+                    'block_styles' => __('Block Styles', 'smart-blocks'),
+                    'block_settings' => __('Block Settings', 'smart-blocks')
+                ));
                 ?>
-                <div class="sb-settings-field">
-                    <label><?php esc_html_e('Default Section Width', 'smart-blocks'); ?></label>
-                    <div class="sb-settings-input-field">
-                        <input type="number" name="default_section_width" value="<?php echo esc_attr($default_section_width); ?>">
+                <div class="sb-htab-container">
+                    <div class="sb-htabs">
+                        <?php
+                        foreach($sb_settings_tabs as $key => $tab) {
+                            ?>
+                            <div class="sb-htab<?php echo $key == 'block_styles' ? ' sb-active' : ''; ?>" data-tab="<?php echo esc_attr($key); ?>"><?php echo esc_html($tab); ?></div>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                    <div class="sb-htab-content">
+                        <?php
+                        foreach($sb_settings_tabs as $key => $tab) {
+                            ?>
+                            <div class="sb-htab-panel<?php echo $key == 'block_styles' ? ' sb-active' : ''; ?>" id="<?php echo esc_attr($key); ?>">
+                                <?php
+                                if ($key == 'block_styles') {
+                                    ?>
+                                    <div class="sb-settings-field">
+                                        <label><?php esc_html_e('Default Section Width', 'smart-blocks'); ?></label>
+                                        <div class="sb-settings-input-field">
+                                            <input type="number" name="default_section_width" value="<?php echo esc_attr($default_section_width); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="sb-settings-field">
+                                        <label><?php esc_html_e('Tablet Breakpoint', 'smart-blocks'); ?></label>
+                                        <div class="sb-settings-input-field">
+                                            <input type="number" name="tablet_breakpoint" value="<?php echo esc_attr($tablet_breakpoint); ?>">
+                                        </div>
+                                    </div>
+                                    <div class="sb-settings-field">
+                                        <label><?php esc_html_e('Mobile Breakpoint', 'smart-blocks'); ?></label>
+                                        <div class="sb-settings-input-field">
+                                            <input type="number" name="mobile_breakpoint" value="<?php echo esc_attr($mobile_breakpoint); ?>">
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                                if ($key == 'block_settings') {
+                                    ?>
+                                    <div class="sb-settings-field">
+                                        <label><?php esc_html_e('Load Google Fonts Locally', 'smart-blocks'); ?></label>
+                                        <div class="sb-settings-fields sb-toggle-input-field">
+                                            <div class="sb-checkbox">
+                                                <input type="checkbox" class="sb-block-checkbox" name="load_fonts_locally" value="on" <?php checked($load_fonts_locally, 'on', true); ?>>
+                                                <label></label>
+                                            </div>
+                                            <p class="sb-desc"><?php echo esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with GDPR then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'smart-blocks'); ?></p>
+                                        </div>
+                                    </div>
+                                    <?php
+                                }
+                                do_action('sb_block_settings_' . $key . '_content', $sb_general_settings);
+                                ?>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
-                <div class="sb-settings-field">
-                    <label><?php esc_html_e('Tablet Breakpoint', 'smart-blocks'); ?></label>
-                    <div class="sb-settings-input-field">
-                        <input type="number" name="tablet_breakpoint" value="<?php echo esc_attr($tablet_breakpoint); ?>">
-                    </div>
-                </div>
-                <div class="sb-settings-field">
-                    <label><?php esc_html_e('Mobile Breakpoint', 'smart-blocks'); ?></label>
-                    <div class="sb-settings-input-field">
-                        <input type="number" name="mobile_breakpoint" value="<?php echo esc_attr($mobile_breakpoint); ?>">
-                    </div>
-                </div>
-
-                <div class="sb-settings-field">
-                    <label><?php esc_html_e('Load Google Fonts Locally', 'smart-blocks'); ?></label>
-                    <div class="sb-settings-fields sb-toggle-input-field">
-                        <div class="sb-checkbox">
-                            <input type="checkbox" class="sb-block-checkbox" name="load_fonts_locally" value="on" <?php checked($load_fonts_locally, 'on', true); ?>>
-                            <label></label>
-                        </div>
-                        <p class="sb-desc"><?php echo esc_html__('It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with GDPR then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly.', 'smart-blocks'); ?></p>
-                    </div>
-                </div>
-
-                <?php
-                do_action('sb_block_settings_tabs_content', $sb_general_settings);
-                ?>
 
                 <div class="sb-save-button-wrap">
                     <button class="sb-save-button" id="sb-general-settings-save">

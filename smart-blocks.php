@@ -138,6 +138,9 @@ if (!class_exists('Smart_Blocks')) {
                 'activeBlocks' => get_option('sb_blocks')
             ));
 
+            wp_enqueue_media();
+            wp_enqueue_style('wp-color-picker');
+
             $block_render = new Smart_Blocks_Blocks_Render();
             $blocks = array(
                 // 'template-import',
