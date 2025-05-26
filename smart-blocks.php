@@ -69,6 +69,25 @@ if (!class_exists('Smart_Blocks')) {
 
             add_action('wp_ajax_admin_settings_save', [$this, 'sb_settings_save']);
             add_action('wp_ajax_sb_blocks_save', [$this, 'sb_blocks_save']);
+
+            add_action('wp_head', array($this, 'sb_block_styles'));
+            add_action('admin_head', array($this, 'sb_block_styles'));
+        }
+
+        public function sb_block_styles() {
+            $sb_general_settings = get_option('sb_general_settings');
+            $default_section_width = isset($sb_general_settings['default_section_width']) && $sb_general_settings['default_section_width'] ? $sb_general_settings['default_section_width'] : '';
+            $tablet_breakpoint = isset($sb_general_settings['tablet_breakpoint']) && $sb_general_settings['tablet_breakpoint'] ? $sb_general_settings['tablet_breakpoint'] : '';
+            $mobile_breakpoint = isset($sb_general_settings['mobile_breakpoint']) && $sb_general_settings['mobile_breakpoint'] ? $sb_general_settings['mobile_breakpoint'] : '';
+            ?>
+            <style>
+                body {
+                    --sb-default-section-width: <?php echo intval($default_section_width); ?>px;
+                    --sb-tablet-breakpoint: <?php echo intval($tablet_breakpoint); ?>px;
+                    --sb-mobile-breakpoint: <?php echo intval($mobile_breakpoint); ?>px;
+                }
+            </style>
+            <?php
         }
 
         public function sb_blocks_save() {

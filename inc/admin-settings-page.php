@@ -137,19 +137,19 @@ $sb_all_blocks = smart_blocks_get_all_blocks_list();
                                 if ($key == 'block_styles') {
                                     ?>
                                     <div class="sb-settings-field">
-                                        <label><?php esc_html_e('Default Section Width', 'smart-blocks'); ?></label>
+                                        <label><?php esc_html_e('Default Section Width (px)', 'smart-blocks'); ?></label>
                                         <div class="sb-settings-input-field">
                                             <input type="number" name="default_section_width" value="<?php echo esc_attr($default_section_width); ?>">
                                         </div>
                                     </div>
                                     <div class="sb-settings-field">
-                                        <label><?php esc_html_e('Tablet Breakpoint', 'smart-blocks'); ?></label>
+                                        <label><?php esc_html_e('Tablet Breakpoint (px)', 'smart-blocks'); ?></label>
                                         <div class="sb-settings-input-field">
                                             <input type="number" name="tablet_breakpoint" value="<?php echo esc_attr($tablet_breakpoint); ?>">
                                         </div>
                                     </div>
                                     <div class="sb-settings-field">
-                                        <label><?php esc_html_e('Mobile Breakpoint', 'smart-blocks'); ?></label>
+                                        <label><?php esc_html_e('Mobile Breakpoint (px)', 'smart-blocks'); ?></label>
                                         <div class="sb-settings-input-field">
                                             <input type="number" name="mobile_breakpoint" value="<?php echo esc_attr($mobile_breakpoint); ?>">
                                         </div>

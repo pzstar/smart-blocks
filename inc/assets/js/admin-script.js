@@ -18,17 +18,6 @@ jQuery(document).ready(function ($) {
                 data: data,
                 wp_nonce: adminNonce
             },
-            beforeSend: function () {
-                if (saveFlag == 'yes') {
-                    $('#sb-general-settings-form').data('serialize', $('#sb-general-settings-form').serialize());
-                }
-
-                if ($('#sb-general-settings-form').serialize() == $('#sb-general-settings-form').data('serialize')) {
-                    $('body').find('.sb-admin-notificn').html('No Changes Made!').addClass('sb-previously-saved').show();
-                    hideNotification();
-                    return false;
-                }
-            },
             success: function (res) {
 
                 if (res == 'yes') {
@@ -200,7 +189,7 @@ jQuery(document).ready(function ($) {
                     <button type="button" class="sb-remove-single-image" style="position:absolute;top:0;right:0;">×</button>
                 </div>
             `);
-            parent.find('sb-single_image_id').val(attachment.id);
+            parent.find('.sb-single_image').val(attachment.id);
         });
 
         single_frame.open();
@@ -208,8 +197,9 @@ jQuery(document).ready(function ($) {
 
     // Remove single image
     $(document).on('click', '.sb-remove-single-image', function () {
-        $('.sb-single_image_preview').empty();
-        $('.sb-single_image_id').val('');
+        const parent = $(this).closest('.sb-settings-input-field');
+        parent.find('.sb-single_image_preview').empty();
+        parent.find('.sb-single_image').val('');
     });
 
     $('.sb-color-field').wpColorPicker();
