@@ -27,7 +27,7 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 						<div className="components-tab-panel__tabs">
 							<Tooltip text={__("Default", 'smart-blocks')}>
 								<button
-									className={((!postMeta.sb_editor_width || 'default' === postMeta.sb_editor_width) ? "active-tab" : "") + " components-button sb-tab-menu"}
+									className={((!postMeta?.sb_editor_width || 'default' === postMeta?.sb_editor_width) ? "active-tab" : "") + " components-button sb-tab-menu"}
 									onClick={() => setPostMeta({sb_editor_width: 'default'})}
 								>
 									{__("Default", 'smart-blocks')}
@@ -36,7 +36,7 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 
 							<Tooltip text={__("Narrow", 'smart-blocks')}>
 								<button
-									className={('narrow' === postMeta.sb_editor_width ? "active-tab" : "") + " components-button sb-tab-menu"}
+									className={('narrow' === postMeta?.sb_editor_width ? "active-tab" : "") + " components-button sb-tab-menu"}
 									onClick={() => setPostMeta({sb_editor_width: 'narrow'})}
 								>
 									{__("Narrow", 'smart-blocks')}
@@ -45,7 +45,7 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 
 							<Tooltip text={__("Large", 'smart-blocks')}>
 								<button
-									className={('large' === postMeta.sb_editor_width ? "active-tab" : "") + " components-button sb-tab-menu"}
+									className={('large' === postMeta?.sb_editor_width ? "active-tab" : "") + " components-button sb-tab-menu"}
 									onClick={() => setPostMeta({sb_editor_width: 'large'})}
 								>
 									{__("Large", 'smart-blocks')}
@@ -54,7 +54,7 @@ const SidebarContent = ({postMeta, setPostMeta}) => {
 
 							<Tooltip text={__("Full", 'smart-blocks')}>
 								<button
-									className={('full' === postMeta.sb_editor_width ? "active-tab" : "") + " components-button sb-tab-menu"}
+									className={('full' === postMeta?.sb_editor_width ? "active-tab" : "") + " components-button sb-tab-menu"}
 									onClick={() => setPostMeta({sb_editor_width: 'full'})}
 								>
 									{__("Full", 'smart-blocks')}
