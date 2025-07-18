@@ -314,6 +314,10 @@
     font-size: 26px;
 }
 
+.sb-icon-button-group.components-button-group .components-button i{
+    font-size: 14px;
+}
+
 .sb-icon-button-group.components-button-group .components-button.is-primary:not(:disabled):not([aria-disabled="true"]):not(.is-default) {
     background: #eaecf5;
     border-color: #00435d;
