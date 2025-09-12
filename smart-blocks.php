@@ -145,7 +145,7 @@ if (!class_exists('Smart_Blocks')) {
             require SMART_BLOCKS_PATH . 'inc/blocks/blocks-render.php';
             require SMART_BLOCKS_PATH . 'inc/generate-css.php';
             require SMART_BLOCKS_PATH . 'inc/blocks/attributes.php';
-            require SMART_BLOCKS_PATH . 'inc/template-library.php';
+            // require SMART_BLOCKS_PATH . 'inc/template-library.php';
         }
 
         public function create_block_init() {

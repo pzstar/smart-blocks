@@ -24,4 +24,4 @@ import './blocks/carousel-module-one';
 import './blocks/single-news-one';
 import './blocks/single-news-two';
 import './blocks/ticker-module';
-import './blocks/template-import';
+// import './blocks/template-import';

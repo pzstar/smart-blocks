@@ -306,11 +306,11 @@ if (!function_exists('smart_blocks_get_all_blocks_list')) {
                 'icon' => 'sb-icons-icon-list',
                 'category' => 'listing'
             ),
-            'template-import' => array(
-                'name' => 'Template Import',
-                'icon' => 'sb-icons-image-accordion',
-                'category' => 'listing'
-            ),
+            // 'template-import' => array(
+            //     'name' => 'Template Import',
+            //     'icon' => 'sb-icons-image-accordion',
+            //     'category' => 'listing'
+            // ),
             'ticker-module' => array(
                 'name' => 'Ticker Module',
                 'icon' => 'sb-icons-compare',
