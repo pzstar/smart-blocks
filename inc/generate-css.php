@@ -41,7 +41,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
 
             if (is_array($block)) {
                 $block_css_arr = array_merge($block_css_arr, self::get_inner_block_css_arr($block));
-                $blockAttrs = $block['attrs'];
+                $blockAttrs = isset($block['attrs']) ? $block['attrs'] : array();
 
                 foreach ($blockAttrs as $attrs => $value) {
                     $family = '';
@@ -252,7 +252,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
 
         public function get_inner_block_css_arr($block) {
             $block_css_arr = [];
-            $blockAttrs = $block['attrs'];
+            $blockAttrs = isset($block['attrs']) ? $block['attrs'] : array();
             foreach ($blockAttrs as $attrs => $value) {
                 $family = '';
                 $weight = '';
