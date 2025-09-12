@@ -15,6 +15,7 @@ defined('ABSPATH') || die;
 define('SMART_BLOCKS_FILE', __FILE__);
 define('SMART_BLOCKS_PATH', plugin_dir_path(SMART_BLOCKS_FILE));
 define('SMART_BLOCKS_URL', plugins_url('/', SMART_BLOCKS_FILE));
+define('SMART_BLOCKS_BASENAME', plugin_basename(SMART_BLOCKS_FILE));
 define('SMART_BLOCKS_VERSION', '2.4');
 
 if (!class_exists('Smart_Blocks')) {
@@ -74,6 +75,8 @@ if (!class_exists('Smart_Blocks')) {
             add_action('admin_head', array($this, 'sb_block_styles'));
 
             add_action('init', array($this, 'maybe_run_one_time_setup'));
+
+            add_filter('plugin_action_links_' . SMART_BLOCKS_BASENAME, array($this, 'add_settings_link'));
         }
 
         public function maybe_run_one_time_setup() {
@@ -478,6 +481,12 @@ if (!class_exists('Smart_Blocks')) {
             </div>
 
             <?php
+        }
+
+        public function add_settings_link($links) {
+            $settings_link = '<a href="' . get_admin_url(null, 'admin.php?page=sb-block-settings') . '">' . esc_html__('Settings', 'smart-blocks') . '</a>';
+            array_unshift($links, $settings_link);
+            return $links;
         }
 
     }
