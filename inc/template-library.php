@@ -146,6 +146,10 @@ class Smart_blocks_Template_Library {
 		}
 
 		$tmp = download_url($url);
+		if (is_wp_error($tmp)) {
+			wp_delete_file($file_array['tmp_name']);
+			return $tmp;
+		}
 		$file_array = array(
 			'name' => basename($url),
 			'tmp_name' => $tmp,
@@ -160,10 +164,6 @@ class Smart_blocks_Template_Library {
 		$allowed = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 
 		if (in_array($mime, $allowed)) {
-			if (is_wp_error($tmp)) {
-				wp_delete_file($file_array['tmp_name']);
-				return $tmp;
-			}
 			$id = media_handle_sideload($file_array);
 			if (is_wp_error($id)) {
 				wp_delete_file($file_array['tmp_name']);
