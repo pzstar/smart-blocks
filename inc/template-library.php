@@ -103,6 +103,20 @@ class Smart_blocks_Template_Library {
 		return rest_ensure_response($obj);
 	}
 
+	public function hasDangerousExtension($filename) {
+	    // Extensions that should NEVER be allowed
+	    $dangerous = ['php', 'php3', 'php4', 'php5', 'phtml', 'exe', 'sh', 'pl', 'cgi', 'js', 'html', 'htm'];
+	    $parts = explode('.', strtolower($filename));
+
+	    // If there are multiple extensions, check them all
+	    foreach ($parts as $ext) {
+	        if (in_array($ext, $dangerous)) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+
 	public function get_saved_image($url) {
 		global $wpdb;
 		$post_id = $wpdb->get_var($wpdb->prepare(
@@ -116,6 +130,10 @@ class Smart_blocks_Template_Library {
 	}
 
 	public function import_image($url) {
+		if ($this->hasDangerousExtension($url)) {
+			return false;
+		}
+
 		$saved_image = $this->get_saved_image($url);
 		if ($saved_image) {
 			return wp_get_attachment_url($saved_image);
@@ -133,18 +151,29 @@ class Smart_blocks_Template_Library {
 			'tmp_name' => $tmp,
 		);
 
-		if (is_wp_error($tmp)) {
-			wp_delete_file($file_array['tmp_name']);
-			return $tmp;
+		// Use Fileinfo (recommended)
+		$finfo = finfo_open(FILEINFO_MIME_TYPE);
+		$mime = finfo_file($finfo, $tmp);
+		finfo_close($finfo);
+
+		// Only allow specific safe image types
+		$allowed = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+
+		if (in_array($mime, $allowed)) {
+			if (is_wp_error($tmp)) {
+				wp_delete_file($file_array['tmp_name']);
+				return $tmp;
+			}
+			$id = media_handle_sideload($file_array);
+			if (is_wp_error($id)) {
+				wp_delete_file($file_array['tmp_name']);
+				return $id;
+			}
+			update_post_meta($id, '_smart_blocks_image_hash', sha1($url));
+			$value = wp_get_attachment_url($id);
+			return $value;
 		}
-		$id = media_handle_sideload($file_array);
-		if (is_wp_error($id)) {
-			wp_delete_file($file_array['tmp_name']);
-			return $id;
-		}
-		update_post_meta($id, '_smart_blocks_image_hash', sha1($url));
-		$value = wp_get_attachment_url($id);
-		return $value;
+		return false;
 	}
 }
 
