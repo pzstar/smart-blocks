@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
 
-    var ajaxURL = admin_ajax_script.ajaxurl,
-        adminNonce = admin_ajax_script.ajax_nonce;
+    var ajaxURL = sb_ajax_obj.ajaxURL,
+        adminNonce = sb_ajax_obj.adminNonce;
 
     var saveFlag = '';
     $('#sb-general-settings-form').data('serialize', $('#sb-general-settings-form').serialize());
@@ -11,21 +11,42 @@ jQuery(document).ready(function ($) {
         var data = $('body').find('#sb-general-settings-form').serializeArray();
 
         $.ajax({
-            url: ajaxURL,
+            url: sb_ajax_obj.ajaxURL,
             type: 'post',
+            dataType: 'json',
             data: {
                 action: 'admin_settings_save',
                 data: data,
-                wp_nonce: adminNonce
+                sb_nonce: sb_ajax_obj.adminNonce
+            },
+            beforeSend: function () {
+                $('.sb-save-button').addClass('sb-btn-loading');
             },
             success: function (res) {
-
-                if (res == 'yes') {
-                    saveFlag = 'yes';
-                    $('body').find('.sb-admin-notificn').html('Saved Successfully!').addClass('sb-saved').show();
+                if (res.success) {
+                    $('body').find('.sb-admin-notificn')
+                        .html(res.data) // message from PHP
+                        .removeClass('sb-failed')
+                        .addClass('sb-saved')
+                        .show();
                 } else {
-                    $('body').find('.sb-admin-notificn').html('Save Failed!').addClass('sb-failed').show();
+                    $('body').find('.sb-admin-notificn')
+                        .html(res.data) // message from PHP
+                        .removeClass('sb-saved')
+                        .addClass('sb-failed')
+                        .show();
                 }
+
+                $('.sb-save-button').removeClass('sb-btn-loading');
+                hideNotification();
+            },
+            error: function (xhr, status, error) {
+                console.error("AJAX Error:", status, error, xhr.responseText);
+                $('body').find('.sb-admin-notificn')
+                    .html('AJAX request failed!')
+                    .removeClass('sb-saved')
+                    .addClass('sb-failed')
+                    .show();
                 $('.sb-save-button').removeClass('sb-btn-loading');
                 hideNotification();
             }
@@ -42,24 +63,42 @@ jQuery(document).ready(function ($) {
         });
 
         $.ajax({
-            url: ajaxURL,
+            url: sb_ajax_obj.ajaxURL,
             type: 'post',
+            dataType: 'json',
             data: {
                 action: 'sb_blocks_save',
-                data: blocks_arr,
-                wp_nonce: adminNonce
+                blocks: blocks_arr,
+                sb_nonce: sb_ajax_obj.adminNonce
             },
             beforeSend: function () {
                 $('.sb-save-button').addClass('sb-btn-loading');
-                // if( Array.isArray(blocks_arr) && blocks_arr.length == 0 ) { }
             },
             success: function (res) {
-                if (res == 'yes') {
-                    $('body').find('.sb-admin-notificn').html('Saved Successfully!').addClass('sb-saved').show();
+                if (res.success) {
+                    $('body').find('.sb-admin-notificn')
+                        .html(res.data) // message from PHP
+                        .removeClass('sb-failed')
+                        .addClass('sb-saved')
+                        .show();
                 } else {
-                    $('body').find('.sb-admin-notificn').html('Save Failed!').addClass('sb-failed').show();
+                    $('body').find('.sb-admin-notificn')
+                        .html(res.data) // message from PHP
+                        .removeClass('sb-saved')
+                        .addClass('sb-failed')
+                        .show();
                 }
 
+                $('.sb-save-button').removeClass('sb-btn-loading');
+                hideNotification();
+            },
+            error: function (xhr, status, error) {
+                console.error("AJAX Error:", status, error, xhr.responseText);
+                $('body').find('.sb-admin-notificn')
+                    .html('AJAX request failed!')
+                    .removeClass('sb-saved')
+                    .addClass('sb-failed')
+                    .show();
                 $('.sb-save-button').removeClass('sb-btn-loading');
                 hideNotification();
             }
@@ -80,6 +119,7 @@ jQuery(document).ready(function ($) {
         } else if ($(this).hasClass('sb-block-disable-all')) {
             $('.sb-block-wrap').find('.sb-block-checkbox').prop('checked', false);
         }
+        return false;
     });
 
     /* Tabs display on tab click for Plugin Menu Settings Page */
@@ -101,7 +141,7 @@ jQuery(document).ready(function ($) {
     });
 
 
-    $('.sb-htab').on('click', function() {
+    $('.sb-htab').on('click', function () {
         var target = $(this).data('tab');
 
         $('.sb-htab').removeClass('sb-active');
@@ -125,8 +165,8 @@ jQuery(document).ready(function ($) {
         const gallery_frame = wp.media({
             title: 'Select Images',
             multiple: true,
-            library: { type: 'image' },
-            button: { text: 'Add to Gallery' }
+            library: {type: 'image'},
+            button: {text: 'Add to Gallery'}
         });
 
         gallery_frame.on('select', function () {
@@ -177,8 +217,8 @@ jQuery(document).ready(function ($) {
         const single_frame = wp.media({
             title: 'Select an Image',
             multiple: false,
-            library: { type: 'image' },
-            button: { text: 'Set Image' }
+            library: {type: 'image'},
+            button: {text: 'Set Image'}
         });
 
         single_frame.on('select', function () {

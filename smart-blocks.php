@@ -96,39 +96,54 @@ if (!class_exists('Smart_Blocks')) {
             ?>
             <style>
                 body {
-                    --sb-default-section-width: <?php echo intval($default_section_width); ?>px;
-                    --sb-tablet-breakpoint: <?php echo intval($tablet_breakpoint); ?>px;
-                    --sb-mobile-breakpoint: <?php echo intval($mobile_breakpoint); ?>px;
+                    --sb-default-section-width:
+                        <?php echo intval($default_section_width); ?>
+                        px;
+                    --sb-tablet-breakpoint:
+                        <?php echo intval($tablet_breakpoint); ?>
+                        px;
+                    --sb-mobile-breakpoint:
+                        <?php echo intval($mobile_breakpoint); ?>
+                        px;
                 }
             </style>
             <?php
         }
 
         public function sb_blocks_save() {
+            check_ajax_referer('sb_ajax_nonce', 'sb_nonce');
 
-            if (isset($_POST['wp_nonce']) && wp_verify_nonce($_POST['wp_nonce'], 'sb_ajax_nonce')) {
-                $data_ar = isset($_POST['data']) && !empty($_POST['data']) ? $_POST['data'] : array();
-                update_option('sb_blocks', array());
-                $update_blocks = update_option('sb_blocks', $data_ar);
-                echo ($update_blocks || empty($data_ar)) ? 'yes' : 'no';
+            if (!current_user_can('manage_options')) {
+                wp_send_json_error('You are not allowed to perform this action.');
             }
-            die();
+
+            $data_ar = isset($_POST['blocks']) && !empty($_POST['blocks']) ? (array) $_POST['blocks'] : array();
+            $update_blocks = update_option('sb_blocks', $data_ar);
+
+            if ($update_blocks || !empty($data_ar)) {
+                wp_send_json_success('Saved successfully!');
+            } else {
+                wp_send_json_error('Save failed!');
+            }
         }
 
         public function sb_settings_save() {
+            check_ajax_referer('sb_ajax_nonce', 'sb_nonce');
 
-            if (isset($_POST['wp_nonce']) && wp_verify_nonce($_POST['wp_nonce'], 'sb_ajax_nonce')) {
-                $data_ar = $_POST['data'];
-                $settings_ar = [];
-
-                foreach ($data_ar as $key => $value) {
-                    $settings_ar[$value['name']] = $value['value'];
-                }
-
-                $update = update_option('sb_general_settings', $settings_ar);
-                echo $update ? 'yes' : 'no';
+            if (!current_user_can('manage_options')) {
+                wp_send_json_error('You are not allowed to perform this action.');
             }
-            die();
+
+            $data_ar = $_POST['data'];
+            $settings_ar = [];
+
+            foreach ($data_ar as $value) {
+                $settings_ar[$value['name']] = $value['value'];
+            }
+
+            update_option('sb_general_settings', $settings_ar);
+            wp_send_json_success('Saved successfully!');
+
         }
 
         public function load_textdomain() {
@@ -341,7 +356,7 @@ if (!class_exists('Smart_Blocks')) {
                     </p>
                     <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5"><span class="dashicons dashicons-thumbs-up"></span><?php echo __('Yes, of course', 'smart-blocks') ?></a>
                     &nbsp;
-                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', 'review'), 'review', 'smart_blocks_notice_nonce')); ?>"><span class="dashicons dashicons-yes"></span><?php echo __('I have already rated', 'smart-blocks') ?></a>
+                    <a class="button button-large" href="<?php echo esc_url(sb_nonce_url(add_query_arg('smart-blocks-hide-notice', 'review'), 'review', 'smart_blocks_notice_nonce')); ?>"><span class="dashicons dashicons-yes"></span><?php echo __('I have already rated', 'smart-blocks') ?></a>
                 </div>
             </div>
             <?php
@@ -362,7 +377,7 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function dismiss_button($name) {
-            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', $name), $name, 'smart_blocks_notice_nonce')), __('Dismiss this notice.', 'smart-blocks'));
+            printf('<a class="notice-dismiss" href="%s"><span class="screen-reader-text">%s</span></a>', esc_url(sb_nonce_url(add_query_arg('smart-blocks-hide-notice', $name), $name, 'smart_blocks_notice_nonce')), __('Dismiss this notice.', 'smart-blocks'));
         }
 
         public static function dismiss($notice) {
@@ -377,9 +392,9 @@ if (!class_exists('Smart_Blocks')) {
         public function add_admin_scripts() {
             wp_enqueue_style('smart-blocks-admin-style', SMART_BLOCKS_URL . 'inc/assets/css/admin-style.css', array(), SMART_BLOCKS_VERSION);
             wp_enqueue_script('smart-blocks-admin-script', SMART_BLOCKS_URL . 'inc/assets/js/admin-script.js', array('jquery', 'wp-color-picker'), SMART_BLOCKS_VERSION);
-            wp_localize_script('smart-blocks-admin-script', 'admin_ajax_script', [
-                'ajaxurl' => admin_url('admin-ajax.php'),
-                'ajax_nonce' => wp_create_nonce('sb_ajax_nonce'),
+            wp_localize_script('smart-blocks-admin-script', 'sb_ajax_obj', [
+                'ajaxURL' => admin_url('admin-ajax.php'),
+                'adminNonce' => wp_create_nonce('sb_ajax_nonce')
             ]);
             wp_enqueue_script('smart-blocks-jquery-condition', SMART_BLOCKS_URL . 'inc/assets/js/jquery-condition.js', array('jquery'), SMART_BLOCKS_VERSION);
         }
@@ -453,7 +468,7 @@ if (!class_exists('Smart_Blocks')) {
 
         public function register_admin_menu() {
 
-            add_menu_page(esc_html__('Smart Blocks Settings', 'smart-'), esc_html__('Smart Blocks', 'smart-'), 'manage_options', 'sb-block-settings', array($this, 'sb_blocks_settings_page_display'), 'data:image/svg+xml;base64,' .base64_encode('<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.72 213.12"><g><g><path d="M221.08 54.39c5.71-5.85 6.55-7.25 4.88-8.36-1.12-.7-11.44-5.44-23-10.33s-34.73-15.06-51.47-22.45C134.61 6 120.24 0 119.4 0 118 0 34.74 80.2 33.91 82.15c-.28.42 8 4.46 18.13 8.78s36.68 15.9 58.86 25.67 42 18.13 43.93 19c3.35 1.26 2.51 2.24-23.57 27.48l-27.2 26.22-28.59-12.45c-15.76-7-36-15.62-44.77-19.39l-15.9-7-7.67 7.67c-4.18 4.32-7.39 8-7.11 8.23.55.64 102.09 44.64 107.11 46.75 1.12.42 11.71-9.07 25.8-22.87 13.25-13 32.36-31.66 42.54-41.57s18-18.54 17.43-19a108 108 0 0 0-11.57-5.3c-5.72-2.37-24.27-10.32-41.15-17.72S100.57 89.4 89.56 84.8l-20-8.65L93.74 52c13.25-13.25 25.52-25.1 27.2-26.22 2.65-1.81 6.13-.56 46.16 16.74 23.71 10.32 44.07 18.83 45.19 18.83s5.02-3.19 8.79-6.96"></path><path d="M57.48 134.31c-7.11 7.25-8.51 9.34-6 9.34.84 0 12.83 5 26.78 11.16s26.36 11 27.2 10.88c1.81-.42 30.26-27.75 29.56-28.31-.28-.28-4.88-2.23-10.32-4.6l-9.9-4.19-6.8 6.84-6.84 6.83-15.48-6.83c-22.06-9.63-19.83-9.63-28.2-1.12M149 58.58c-14-6.14-26-11.16-26.81-11.16-1.39 0-30.54 28-29.84 28.59 1.67 1.26 17.15 7.67 18.55 7.67.83 0 4.74-2.79 8.5-6.13 6.42-5.86 7-6.14 11-4.47 2.23 1 10.32 4.47 17.85 7.67l13.67 5.86 7.53-7.25c7.53-7.11 9.07-9.63 6.28-9.63-.82 0-12.81-5.02-26.73-11.15"></path></g></g></svg>'), 99);
+            add_menu_page(esc_html__('Smart Blocks Settings', 'smart-'), esc_html__('Smart Blocks', 'smart-'), 'manage_options', 'sb-block-settings', array($this, 'sb_blocks_settings_page_display'), 'data:image/svg+xml;base64,' . base64_encode('<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.72 213.12"><g><g><path d="M221.08 54.39c5.71-5.85 6.55-7.25 4.88-8.36-1.12-.7-11.44-5.44-23-10.33s-34.73-15.06-51.47-22.45C134.61 6 120.24 0 119.4 0 118 0 34.74 80.2 33.91 82.15c-.28.42 8 4.46 18.13 8.78s36.68 15.9 58.86 25.67 42 18.13 43.93 19c3.35 1.26 2.51 2.24-23.57 27.48l-27.2 26.22-28.59-12.45c-15.76-7-36-15.62-44.77-19.39l-15.9-7-7.67 7.67c-4.18 4.32-7.39 8-7.11 8.23.55.64 102.09 44.64 107.11 46.75 1.12.42 11.71-9.07 25.8-22.87 13.25-13 32.36-31.66 42.54-41.57s18-18.54 17.43-19a108 108 0 0 0-11.57-5.3c-5.72-2.37-24.27-10.32-41.15-17.72S100.57 89.4 89.56 84.8l-20-8.65L93.74 52c13.25-13.25 25.52-25.1 27.2-26.22 2.65-1.81 6.13-.56 46.16 16.74 23.71 10.32 44.07 18.83 45.19 18.83s5.02-3.19 8.79-6.96"></path><path d="M57.48 134.31c-7.11 7.25-8.51 9.34-6 9.34.84 0 12.83 5 26.78 11.16s26.36 11 27.2 10.88c1.81-.42 30.26-27.75 29.56-28.31-.28-.28-4.88-2.23-10.32-4.6l-9.9-4.19-6.8 6.84-6.84 6.83-15.48-6.83c-22.06-9.63-19.83-9.63-28.2-1.12M149 58.58c-14-6.14-26-11.16-26.81-11.16-1.39 0-30.54 28-29.84 28.59 1.67 1.26 17.15 7.67 18.55 7.67.83 0 4.74-2.79 8.5-6.13 6.42-5.86 7-6.14 11-4.47 2.23 1 10.32 4.47 17.85 7.67l13.67 5.86 7.53-7.25c7.53-7.11 9.07-9.63 6.28-9.63-.82 0-12.81-5.02-26.73-11.15"></path></g></g></svg>'), 99);
         }
 
         public function sb_blocks_settings_page_display() {
