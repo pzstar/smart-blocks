@@ -2,38 +2,156 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Smart Blocks - WordPress Gutenberg Blocks 2.3\n"
+"Project-Id-Version: Smart Blocks - WordPress Gutenberg Blocks 2.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/smart-blocks\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-17T09:55:33+00:00\n"
+"POT-Creation-Date: 2025-09-14T15:12:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.6.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: smart-blocks\n"
 
 #. Plugin Name of the plugin
+#: smart-blocks.php
 msgid "Smart Blocks - WordPress Gutenberg Blocks"
 msgstr ""
 
 #. Description of the plugin
+#: smart-blocks.php
 msgid "Collection of advanced blocks to be used with WordPress Gutenberg Pagebuilder"
 msgstr ""
 
 #. Author of the plugin
+#: smart-blocks.php
 msgid "HashThemes"
 msgstr ""
 
 #. Author URI of the plugin
+#: smart-blocks.php
 msgid "http://hashthemes.com"
+msgstr ""
+
+#: inc/admin-settings-page.php:22
+msgid "Smart Blocks Setttings"
+msgstr ""
+
+#: inc/admin-settings-page.php:27
+msgid "Documentation"
+msgstr ""
+
+#: inc/admin-settings-page.php:36
+msgid "Blocks"
+msgstr ""
+
+#: inc/admin-settings-page.php:40
+#: smart-blocks.php:494
+msgid "Settings"
+msgstr ""
+
+#: inc/admin-settings-page.php:44
+msgid "About"
+msgstr ""
+
+#: inc/admin-settings-page.php:66
+msgid "Enable All"
+msgstr ""
+
+#: inc/admin-settings-page.php:69
+msgid "Disable All"
+msgstr ""
+
+#: inc/admin-settings-page.php:83
+msgid "Save"
+msgstr ""
+
+#: inc/admin-settings-page.php:91
+msgid "Description"
+msgstr ""
+
+#: inc/admin-settings-page.php:92
+msgid "Smart Blocks is an all in one block pack extension for Gutenberg page builder. It provides creative blocks to provide an outstanding look to your Gutenberg based WordPress website. The blocks are multi concept and contain amazing features to make your website more effective by placing the spectacular blocks and enhance the engagement rate."
+msgstr ""
+
+#: inc/admin-settings-page.php:94
+msgid "Blocks Available in the Extension:"
+msgstr ""
+
+#: inc/admin-settings-page.php:107
+msgid "More Coming"
+msgstr ""
+
+#: inc/admin-settings-page.php:109
+msgid "Support:"
+msgstr ""
+
+#: inc/admin-settings-page.php:110
+msgid "If you have any issues while using our plugin, feel free to contact us for support. Our support team will be more than happy to help you resolve your issue. You can chat with us or email us at our website"
+msgstr ""
+
+#: inc/admin-settings-page.php:110
+msgid "here"
+msgstr ""
+
+#: inc/admin-settings-page.php:122
+msgid "Block Styles"
+msgstr ""
+
+#: inc/admin-settings-page.php:123
+msgid "Block Settings"
+msgstr ""
+
+#: inc/admin-settings-page.php:145
+msgid "Default Columns Width (px)"
+msgstr ""
+
+#: inc/admin-settings-page.php:155
+msgid "Load Google Fonts Locally"
+msgstr ""
+
+#: inc/admin-settings-page.php:161
+msgid "It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with GDPR then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly."
 msgstr ""
 
 #: inc/helper-functions.php:54
 #: inc/helper-functions.php:176
 #: inc/helper-functions.php:177
 msgid "ago"
+msgstr ""
+
+#: inc/helper-functions.php:343
+msgid "Place content side by side inside a Columns block"
+msgstr ""
+
+#: inc/helper-functions.php:344
+msgid "Group blocks together for layout or styling"
+msgstr ""
+
+#: inc/helper-functions.php:345
+#: inc/helper-functions.php:346
+#: inc/helper-functions.php:347
+#: inc/helper-functions.php:348
+#: inc/helper-functions.php:349
+#: inc/helper-functions.php:350
+#: inc/helper-functions.php:351
+#: inc/helper-functions.php:352
+#: inc/helper-functions.php:353
+#: inc/helper-functions.php:354
+#: inc/helper-functions.php:355
+#: inc/helper-functions.php:356
+#: inc/helper-functions.php:357
+#: inc/helper-functions.php:358
+#: inc/helper-functions.php:359
+#: inc/helper-functions.php:360
+#: inc/helper-functions.php:361
+#: inc/helper-functions.php:362
+#: inc/helper-functions.php:363
+#: inc/helper-functions.php:364
+#: inc/helper-functions.php:365
+#: inc/helper-functions.php:366
+msgid "Displays News Posts"
 msgstr ""
 
 #: inc/template-library.php:28
@@ -44,4272 +162,1033 @@ msgstr ""
 msgid "Load for Block Preview."
 msgstr ""
 
-#: inc/template-library.php:50
-msgid "Header with Features"
-msgstr ""
-
-#: inc/template-library.php:52
-msgid "Smart Block"
-msgstr ""
-
-#: inc/template-library.php:82
+#: inc/template-library.php:81
 msgid "File doesn't exist"
 msgstr ""
 
-#: smart-blocks.php:177
+#: smart-blocks.php:255
 msgid "SB Block Modules"
 msgstr ""
 
-#: smart-blocks.php:181
+#: smart-blocks.php:259
 msgid "SB Magazine Modules"
 msgstr ""
 
 #. translators: %1$s is link start tag, %2$s is link end tag.
-#: smart-blocks.php:267
+#: smart-blocks.php:345
 msgid "Great to see that you have been using Smart Blocks - WordPress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world."
 msgstr ""
 
-#: smart-blocks.php:271
+#: smart-blocks.php:349
 msgid "Yes, of course"
 msgstr ""
 
-#: smart-blocks.php:273
+#: smart-blocks.php:351
 msgid "I have already rated"
 msgstr ""
 
-#: smart-blocks.php:294
+#: smart-blocks.php:372
 msgid "Dismiss this notice."
 msgstr ""
 
-#: smart-blocks.php:348
+#: smart-blocks.php:432
 msgid "Smart Blocks Full Width"
 msgstr ""
 
-#: build/index.js:2988
-#: build/index.js:6423
-#: build/index.js:8093
-#: build/index.js:9478
-#: build/index.js:10946
-#: build/index.js:12663
-#: build/index.js:14263
-#: build/index.js:15829
-#: build/index.js:15865
-#: build/index.js:17477
-#: build/index.js:19216
-#: build/index.js:19250
-#: build/index.js:20985
-#: build/index.js:21019
-#: build/index.js:22699
-#: build/index.js:24142
-#: build/index.js:25681
-#: build/index.js:25717
-#: build/index.js:27307
-#: build/index.js:28775
-#: build/index.js:34606
-#: build/index.js:36073
-#: build/index.js:38030
-#: build/index.js:38575
-#: build/index.js:40139
-#: build/index.js:41559
-#: build/index.js:2788
-#: build/index.js:5815
-#: build/index.js:7196
-#: build/index.js:8386
-#: build/index.js:9657
-#: build/index.js:11096
-#: build/index.js:12439
-#: build/index.js:13769
-#: build/index.js:13835
-#: build/index.js:15201
-#: build/index.js:16690
-#: build/index.js:16751
-#: build/index.js:18207
-#: build/index.js:18269
-#: build/index.js:19662
-#: build/index.js:20901
-#: build/index.js:22215
-#: build/index.js:22280
-#: build/index.js:23612
-#: build/index.js:24888
-#: build/index.js:29787
-#: build/index.js:31038
-#: build/index.js:32648
-#: build/index.js:33193
-#: build/index.js:34506
-#: build/index.js:35730
-msgid "(No title)"
-msgstr ""
-
-#: build/index.js:3047
-#: build/index.js:5131
-#: build/index.js:6488
-#: build/index.js:8152
-#: build/index.js:9535
-#: build/index.js:11011
-#: build/index.js:12723
-#: build/index.js:14325
-#: build/index.js:15926
-#: build/index.js:17542
-#: build/index.js:19314
-#: build/index.js:21085
-#: build/index.js:22756
-#: build/index.js:24204
-#: build/index.js:25778
-#: build/index.js:27364
-#: build/index.js:28840
-#: build/index.js:30927
-#: build/index.js:30953
-#: build/index.js:32518
-#: build/index.js:32546
-#: build/index.js:34662
-#: build/index.js:36129
-#: build/index.js:37459
-#: build/index.js:38635
-#: build/index.js:40196
-#: build/index.js:41619
-#: build/index.js:2862
-#: build/index.js:4614
-#: build/index.js:5891
-#: build/index.js:7271
-#: build/index.js:8453
-#: build/index.js:9733
-#: build/index.js:11164
-#: build/index.js:12514
-#: build/index.js:13904
-#: build/index.js:15300
-#: build/index.js:16821
-#: build/index.js:18346
-#: build/index.js:19729
-#: build/index.js:20979
-#: build/index.js:22350
-#: build/index.js:23679
-#: build/index.js:24964
-#: build/index.js:26699
-#: build/index.js:26741
-#: build/index.js:28125
-#: build/index.js:28166
-#: build/index.js:29860
-#: build/index.js:31111
-#: build/index.js:32186
-#: build/index.js:33260
-#: build/index.js:34574
-#: build/index.js:35798
-msgid "Layout"
-msgstr ""
-
-#: build/index.js:3054
-#: build/index.js:3067
-#: build/index.js:5138
-#: build/index.js:6495
-#: build/index.js:6508
-#: build/index.js:8159
-#: build/index.js:8172
-#: build/index.js:9542
-#: build/index.js:9555
-#: build/index.js:11018
-#: build/index.js:11031
-#: build/index.js:12730
-#: build/index.js:12743
-#: build/index.js:14332
-#: build/index.js:14345
-#: build/index.js:15933
-#: build/index.js:15946
-#: build/index.js:17549
-#: build/index.js:17562
-#: build/index.js:19321
-#: build/index.js:19334
-#: build/index.js:21092
-#: build/index.js:21105
-#: build/index.js:22763
-#: build/index.js:22776
-#: build/index.js:24211
-#: build/index.js:24224
-#: build/index.js:25785
-#: build/index.js:25798
-#: build/index.js:27371
-#: build/index.js:27384
-#: build/index.js:28847
-#: build/index.js:28860
-#: build/index.js:30934
-#: build/index.js:32525
-#: build/index.js:34669
-#: build/index.js:36136
-#: build/index.js:37466
-#: build/index.js:38642
-#: build/index.js:38655
-#: build/index.js:40203
-#: build/index.js:40216
-#: build/index.js:41626
-#: build/index.js:41639
-#: build/index.js:2872
-#: build/index.js:2893
-#: build/index.js:4624
-#: build/index.js:5901
-#: build/index.js:5923
-#: build/index.js:7281
-#: build/index.js:7303
-#: build/index.js:8463
-#: build/index.js:8485
-#: build/index.js:9743
-#: build/index.js:9765
-#: build/index.js:11174
-#: build/index.js:11196
-#: build/index.js:12524
-#: build/index.js:12546
-#: build/index.js:13914
-#: build/index.js:13936
-#: build/index.js:15310
-#: build/index.js:15332
-#: build/index.js:16831
-#: build/index.js:16853
-#: build/index.js:18356
-#: build/index.js:18378
-#: build/index.js:19739
-#: build/index.js:19761
-#: build/index.js:20989
-#: build/index.js:21011
-#: build/index.js:22360
-#: build/index.js:22382
-#: build/index.js:23689
-#: build/index.js:23711
-#: build/index.js:24974
-#: build/index.js:24996
-#: build/index.js:26709
-#: build/index.js:28135
-#: build/index.js:29870
-#: build/index.js:31121
-#: build/index.js:32196
-#: build/index.js:33270
-#: build/index.js:33292
-#: build/index.js:34584
-#: build/index.js:34606
-#: build/index.js:35808
-#: build/index.js:35830
-msgid "Style"
-msgstr ""
-
-#: build/index.js:3061
-#: build/index.js:5145
-#: build/index.js:6502
-#: build/index.js:8166
-#: build/index.js:9549
-#: build/index.js:11025
-#: build/index.js:12737
-#: build/index.js:14339
-#: build/index.js:15940
-#: build/index.js:17556
-#: build/index.js:19328
-#: build/index.js:21099
-#: build/index.js:22770
-#: build/index.js:24218
-#: build/index.js:25792
-#: build/index.js:27378
-#: build/index.js:28854
-#: build/index.js:30941
-#: build/index.js:32532
-#: build/index.js:34676
-#: build/index.js:36143
-#: build/index.js:37473
-#: build/index.js:38649
-#: build/index.js:40210
-#: build/index.js:41633
-#: build/index.js:2882
-#: build/index.js:4634
-#: build/index.js:5911
-#: build/index.js:7291
-#: build/index.js:8473
-#: build/index.js:9753
-#: build/index.js:11184
-#: build/index.js:12534
-#: build/index.js:13924
-#: build/index.js:15320
-#: build/index.js:16841
-#: build/index.js:18366
-#: build/index.js:19749
-#: build/index.js:20999
-#: build/index.js:22370
-#: build/index.js:23699
-#: build/index.js:24984
-#: build/index.js:26719
-#: build/index.js:28145
-#: build/index.js:29880
-#: build/index.js:31131
-#: build/index.js:32206
-#: build/index.js:33280
-#: build/index.js:34594
-#: build/index.js:35818
-msgid "Advanced"
-msgstr ""
-
-#: build/index.js:3064
-#: build/index.js:6505
-#: build/index.js:8169
-#: build/index.js:9552
-#: build/index.js:11028
-#: build/index.js:12740
-#: build/index.js:14342
-#: build/index.js:15943
-#: build/index.js:17559
-#: build/index.js:19331
-#: build/index.js:21102
-#: build/index.js:22773
-#: build/index.js:24221
-#: build/index.js:25795
-#: build/index.js:27381
-#: build/index.js:28857
-#: build/index.js:38652
-#: build/index.js:40213
-#: build/index.js:41636
-#: build/index.js:2889
-#: build/index.js:5919
-#: build/index.js:7299
-#: build/index.js:8481
-#: build/index.js:9761
-#: build/index.js:11192
-#: build/index.js:12542
-#: build/index.js:13932
-#: build/index.js:15328
-#: build/index.js:16849
-#: build/index.js:18374
-#: build/index.js:19757
-#: build/index.js:21007
-#: build/index.js:22378
-#: build/index.js:23707
-#: build/index.js:24992
-#: build/index.js:33288
-#: build/index.js:34602
-#: build/index.js:35826
-msgid "Header"
-msgstr ""
-
-#: build/index.js:3074
-#: build/index.js:6515
-#: build/index.js:8179
-#: build/index.js:9562
-#: build/index.js:12750
-#: build/index.js:14352
-#: build/index.js:15953
-#: build/index.js:17569
-#: build/index.js:19341
-#: build/index.js:21112
-#: build/index.js:22783
-#: build/index.js:24231
-#: build/index.js:25805
-#: build/index.js:27391
-#: build/index.js:28867
-#: build/index.js:40223
-#: build/index.js:41646
-#: build/index.js:2897
-#: build/index.js:5927
-#: build/index.js:7307
-#: build/index.js:8489
-#: build/index.js:11200
-#: build/index.js:12550
-#: build/index.js:13940
-#: build/index.js:15336
-#: build/index.js:16857
-#: build/index.js:18382
-#: build/index.js:19765
-#: build/index.js:21015
-#: build/index.js:22386
-#: build/index.js:23715
-#: build/index.js:25000
-#: build/index.js:34610
-#: build/index.js:35834
-msgid "Style 1"
-msgstr ""
-
-#: build/index.js:3077
-#: build/index.js:6518
-#: build/index.js:8182
-#: build/index.js:9565
-#: build/index.js:12753
-#: build/index.js:14355
-#: build/index.js:15956
-#: build/index.js:17572
-#: build/index.js:19344
-#: build/index.js:21115
-#: build/index.js:22786
-#: build/index.js:24234
-#: build/index.js:25808
-#: build/index.js:27394
-#: build/index.js:28870
-#: build/index.js:40226
-#: build/index.js:41649
-#: build/index.js:2898
-#: build/index.js:5928
-#: build/index.js:7308
-#: build/index.js:8490
-#: build/index.js:11201
-#: build/index.js:12551
-#: build/index.js:13941
-#: build/index.js:15337
-#: build/index.js:16858
-#: build/index.js:18383
-#: build/index.js:19766
-#: build/index.js:21016
-#: build/index.js:22387
-#: build/index.js:23716
-#: build/index.js:25001
-#: build/index.js:34611
-#: build/index.js:35835
-msgid "Style 2"
-msgstr ""
-
-#: build/index.js:3080
-#: build/index.js:6521
-#: build/index.js:8185
-#: build/index.js:9568
-#: build/index.js:12756
-#: build/index.js:14358
-#: build/index.js:15959
-#: build/index.js:17575
-#: build/index.js:19347
-#: build/index.js:21118
-#: build/index.js:22789
-#: build/index.js:24237
-#: build/index.js:25811
-#: build/index.js:27397
-#: build/index.js:28873
-#: build/index.js:40229
-#: build/index.js:41652
-#: build/index.js:2899
-#: build/index.js:5929
-#: build/index.js:7309
-#: build/index.js:8491
-#: build/index.js:11202
-#: build/index.js:12552
-#: build/index.js:13942
-#: build/index.js:15338
-#: build/index.js:16859
-#: build/index.js:18384
-#: build/index.js:19767
-#: build/index.js:21017
-#: build/index.js:22388
-#: build/index.js:23717
-#: build/index.js:25002
-#: build/index.js:34612
-#: build/index.js:35836
-msgid "Style 3"
-msgstr ""
-
-#: build/index.js:3083
-#: build/index.js:6524
-#: build/index.js:8188
-#: build/index.js:9571
-#: build/index.js:12759
-#: build/index.js:14361
-#: build/index.js:15962
-#: build/index.js:17578
-#: build/index.js:19350
-#: build/index.js:21121
-#: build/index.js:22792
-#: build/index.js:24240
-#: build/index.js:25814
-#: build/index.js:27400
-#: build/index.js:28876
-#: build/index.js:40232
-#: build/index.js:41655
-#: build/index.js:2900
-#: build/index.js:5930
-#: build/index.js:7310
-#: build/index.js:8492
-#: build/index.js:11203
-#: build/index.js:12553
-#: build/index.js:13943
-#: build/index.js:15339
-#: build/index.js:16860
-#: build/index.js:18385
-#: build/index.js:19768
-#: build/index.js:21018
-#: build/index.js:22389
-#: build/index.js:23718
-#: build/index.js:25003
-#: build/index.js:34613
-#: build/index.js:35837
-msgid "Style 4"
-msgstr ""
-
-#: build/index.js:3090
-#: build/index.js:8194
-#: build/index.js:9577
-#: build/index.js:14367
-#: build/index.js:24246
-#: build/index.js:27406
-#: build/index.js:40238
-#: build/index.js:2907
-#: build/index.js:7319
-#: build/index.js:8499
-#: build/index.js:12560
-#: build/index.js:21025
-#: build/index.js:23725
-#: build/index.js:34620
-msgid "Post Block"
-msgstr ""
-
-#: build/index.js:3093
-#: build/index.js:6533
-#: build/index.js:6583
-#: build/index.js:8197
-#: build/index.js:9580
-#: build/index.js:11056
-#: build/index.js:11106
-#: build/index.js:12768
-#: build/index.js:12810
-#: build/index.js:14386
-#: build/index.js:15971
-#: build/index.js:16013
-#: build/index.js:17587
-#: build/index.js:17637
-#: build/index.js:19359
-#: build/index.js:19409
-#: build/index.js:21130
-#: build/index.js:21172
-#: build/index.js:22802
-#: build/index.js:24249
-#: build/index.js:25823
-#: build/index.js:25857
-#: build/index.js:27409
-#: build/index.js:28885
-#: build/index.js:28935
-#: build/index.js:34784
-#: build/index.js:36251
-#: build/index.js:38680
-#: build/index.js:40241
-#: build/index.js:41664
-#: build/index.js:41698
-#: build/index.js:2911
-#: build/index.js:5941
-#: build/index.js:5986
-#: build/index.js:7323
-#: build/index.js:8503
-#: build/index.js:9783
-#: build/index.js:9828
-#: build/index.js:11214
-#: build/index.js:11252
-#: build/index.js:12578
-#: build/index.js:13954
-#: build/index.js:13992
-#: build/index.js:15352
-#: build/index.js:15397
-#: build/index.js:16871
-#: build/index.js:16916
-#: build/index.js:18396
-#: build/index.js:18434
-#: build/index.js:19779
-#: build/index.js:21029
-#: build/index.js:22400
-#: build/index.js:22431
-#: build/index.js:23729
-#: build/index.js:25014
-#: build/index.js:25059
-#: build/index.js:29993
-#: build/index.js:31243
-#: build/index.js:33310
-#: build/index.js:34624
-#: build/index.js:35848
-#: build/index.js:35879
-msgid "Image Size"
-msgstr ""
-
-#: build/index.js:3103
-#: build/index.js:6540
-#: build/index.js:6590
-#: build/index.js:8204
-#: build/index.js:9587
-#: build/index.js:11063
-#: build/index.js:11113
-#: build/index.js:12775
-#: build/index.js:12817
-#: build/index.js:14393
-#: build/index.js:15978
-#: build/index.js:16020
-#: build/index.js:17594
-#: build/index.js:17644
-#: build/index.js:19366
-#: build/index.js:19416
-#: build/index.js:21137
-#: build/index.js:21179
-#: build/index.js:22817
-#: build/index.js:24256
-#: build/index.js:25864
-#: build/index.js:27416
-#: build/index.js:28892
-#: build/index.js:28942
-#: build/index.js:34791
-#: build/index.js:36258
-#: build/index.js:2917
-#: build/index.js:5947
-#: build/index.js:5992
-#: build/index.js:7329
-#: build/index.js:8509
-#: build/index.js:9789
-#: build/index.js:9834
-#: build/index.js:11220
-#: build/index.js:11258
-#: build/index.js:12584
-#: build/index.js:13960
-#: build/index.js:13998
-#: build/index.js:15358
-#: build/index.js:15403
-#: build/index.js:16877
-#: build/index.js:16922
-#: build/index.js:18402
-#: build/index.js:18440
-#: build/index.js:19792
-#: build/index.js:21035
-#: build/index.js:22437
-#: build/index.js:23735
-#: build/index.js:25020
-#: build/index.js:25065
-#: build/index.js:29999
-#: build/index.js:31249
-msgid "Image Height (%)"
-msgstr ""
-
-#: build/index.js:3114
-#: build/index.js:2924
-msgid "No of Posts to Show"
-msgstr ""
-
-#: build/index.js:3125
-#: build/index.js:6548
-#: build/index.js:11071
-#: build/index.js:14401
-#: build/index.js:17602
-#: build/index.js:17652
-#: build/index.js:19374
-#: build/index.js:21187
-#: build/index.js:24264
-#: build/index.js:28900
-#: build/index.js:28950
-#: build/index.js:36240
-#: build/index.js:2931
-#: build/index.js:5954
-#: build/index.js:9796
-#: build/index.js:12591
-#: build/index.js:15365
-#: build/index.js:15410
-#: build/index.js:16884
-#: build/index.js:18447
-#: build/index.js:21042
-#: build/index.js:25027
-#: build/index.js:25072
-#: build/index.js:31231
-msgid "Excerpt Length"
-msgstr ""
-
-#: build/index.js:3136
-#: build/index.js:6556
-#: build/index.js:6598
-#: build/index.js:8212
-#: build/index.js:9595
-#: build/index.js:11079
-#: build/index.js:11121
-#: build/index.js:12783
-#: build/index.js:12825
-#: build/index.js:14409
-#: build/index.js:15986
-#: build/index.js:16028
-#: build/index.js:17610
-#: build/index.js:17660
-#: build/index.js:19382
-#: build/index.js:19424
-#: build/index.js:21145
-#: build/index.js:21195
-#: build/index.js:22825
-#: build/index.js:24272
-#: build/index.js:25830
-#: build/index.js:25872
-#: build/index.js:27424
-#: build/index.js:28908
-#: build/index.js:28958
-#: build/index.js:36197
-#: build/index.js:38687
-#: build/index.js:38728
-#: build/index.js:40248
-#: build/index.js:41671
-#: build/index.js:41705
-#: build/index.js:42939
-#: build/index.js:2938
-#: build/index.js:5961
-#: build/index.js:5999
-#: build/index.js:7336
-#: build/index.js:8516
-#: build/index.js:9803
-#: build/index.js:9841
-#: build/index.js:11227
-#: build/index.js:11265
-#: build/index.js:12598
-#: build/index.js:13967
-#: build/index.js:14005
-#: build/index.js:15372
-#: build/index.js:15417
-#: build/index.js:16891
-#: build/index.js:16929
-#: build/index.js:18409
-#: build/index.js:18454
-#: build/index.js:19799
-#: build/index.js:21049
-#: build/index.js:22406
-#: build/index.js:22444
-#: build/index.js:23742
-#: build/index.js:25034
-#: build/index.js:25079
-#: build/index.js:31194
-#: build/index.js:33316
-#: build/index.js:33353
-#: build/index.js:34630
-#: build/index.js:35854
-#: build/index.js:35885
-#: build/index.js:36785
-msgid "Show Post Author"
-msgstr ""
-
-#: build/index.js:3145
-#: build/index.js:6562
-#: build/index.js:6604
-#: build/index.js:8218
-#: build/index.js:9601
-#: build/index.js:11085
-#: build/index.js:11127
-#: build/index.js:12789
-#: build/index.js:12831
-#: build/index.js:14415
-#: build/index.js:15992
-#: build/index.js:16034
-#: build/index.js:17616
-#: build/index.js:17666
-#: build/index.js:19388
-#: build/index.js:19430
-#: build/index.js:21151
-#: build/index.js:21201
-#: build/index.js:22831
-#: build/index.js:24278
-#: build/index.js:25836
-#: build/index.js:25878
-#: build/index.js:27430
-#: build/index.js:28914
-#: build/index.js:28964
-#: build/index.js:36203
-#: build/index.js:38693
-#: build/index.js:38734
-#: build/index.js:40254
-#: build/index.js:41677
-#: build/index.js:41711
-#: build/index.js:2943
-#: build/index.js:5966
-#: build/index.js:6004
-#: build/index.js:7341
-#: build/index.js:8521
-#: build/index.js:9808
-#: build/index.js:9846
-#: build/index.js:11232
-#: build/index.js:11270
-#: build/index.js:12603
-#: build/index.js:13972
-#: build/index.js:14010
-#: build/index.js:15377
-#: build/index.js:15422
-#: build/index.js:16896
-#: build/index.js:16934
-#: build/index.js:18414
-#: build/index.js:18459
-#: build/index.js:19804
-#: build/index.js:21054
-#: build/index.js:22411
-#: build/index.js:22449
-#: build/index.js:23747
-#: build/index.js:25039
-#: build/index.js:25084
-#: build/index.js:31199
-#: build/index.js:33321
-#: build/index.js:33358
-#: build/index.js:34635
-#: build/index.js:35859
-#: build/index.js:35890
-msgid "Show Post Date"
-msgstr ""
-
-#: build/index.js:3154
-#: build/index.js:6568
-#: build/index.js:6610
-#: build/index.js:8224
-#: build/index.js:9607
-#: build/index.js:11091
-#: build/index.js:11133
-#: build/index.js:12795
-#: build/index.js:12837
-#: build/index.js:14421
-#: build/index.js:15998
-#: build/index.js:16040
-#: build/index.js:17622
-#: build/index.js:17672
-#: build/index.js:19394
-#: build/index.js:19436
-#: build/index.js:21157
-#: build/index.js:21207
-#: build/index.js:22837
-#: build/index.js:24284
-#: build/index.js:25842
-#: build/index.js:25884
-#: build/index.js:27436
-#: build/index.js:28920
-#: build/index.js:28970
-#: build/index.js:36209
-#: build/index.js:38699
-#: build/index.js:38740
-#: build/index.js:40260
-#: build/index.js:41683
-#: build/index.js:41717
-#: build/index.js:2948
-#: build/index.js:5971
-#: build/index.js:6009
-#: build/index.js:7346
-#: build/index.js:8526
-#: build/index.js:9813
-#: build/index.js:9851
-#: build/index.js:11237
-#: build/index.js:11275
-#: build/index.js:12608
-#: build/index.js:13977
-#: build/index.js:14015
-#: build/index.js:15382
-#: build/index.js:15427
-#: build/index.js:16901
-#: build/index.js:16939
-#: build/index.js:18419
-#: build/index.js:18464
-#: build/index.js:19809
-#: build/index.js:21059
-#: build/index.js:22416
-#: build/index.js:22454
-#: build/index.js:23752
-#: build/index.js:25044
-#: build/index.js:25089
-#: build/index.js:31204
-#: build/index.js:33326
-#: build/index.js:33363
-#: build/index.js:34640
-#: build/index.js:35864
-#: build/index.js:35895
-msgid "Show Post Comments"
-msgstr ""
-
-#: build/index.js:3163
-#: build/index.js:6574
-#: build/index.js:6616
-#: build/index.js:8230
-#: build/index.js:9613
-#: build/index.js:11097
-#: build/index.js:11139
-#: build/index.js:12801
-#: build/index.js:12843
-#: build/index.js:14427
-#: build/index.js:16004
-#: build/index.js:16046
-#: build/index.js:17628
-#: build/index.js:17678
-#: build/index.js:19400
-#: build/index.js:19442
-#: build/index.js:21163
-#: build/index.js:21213
-#: build/index.js:22843
-#: build/index.js:24290
-#: build/index.js:25848
-#: build/index.js:25890
-#: build/index.js:27442
-#: build/index.js:28926
-#: build/index.js:28976
-#: build/index.js:38705
-#: build/index.js:38746
-#: build/index.js:40266
-#: build/index.js:41689
-#: build/index.js:41723
-#: build/index.js:2953
-#: build/index.js:5976
-#: build/index.js:6014
-#: build/index.js:7351
-#: build/index.js:8531
-#: build/index.js:9818
-#: build/index.js:9856
-#: build/index.js:11242
-#: build/index.js:11280
-#: build/index.js:12613
-#: build/index.js:13982
-#: build/index.js:14020
-#: build/index.js:15387
-#: build/index.js:15432
-#: build/index.js:16906
-#: build/index.js:16944
-#: build/index.js:18424
-#: build/index.js:18469
-#: build/index.js:19814
-#: build/index.js:21064
-#: build/index.js:22421
-#: build/index.js:22459
-#: build/index.js:23757
-#: build/index.js:25049
-#: build/index.js:25094
-#: build/index.js:33331
-#: build/index.js:33368
-#: build/index.js:34645
-#: build/index.js:35869
-#: build/index.js:35900
-msgid "Show Post Category"
-msgstr ""
-
-#: build/index.js:3172
-#: build/index.js:2959
-msgid "Carousel Settings"
-msgstr ""
-
-#: build/index.js:3175
-#: build/index.js:37485
-#: build/index.js:2963
-#: build/index.js:32222
-msgid "Autoplay"
-msgstr ""
-
-#: build/index.js:3181
-#: build/index.js:2969
-msgid "Pause Duration"
-msgstr ""
-
-#: build/index.js:3189
-#: build/index.js:2977
-msgid "No of Slides"
-msgstr ""
-
-#: build/index.js:3206
-#: build/index.js:2989
-msgid "Spacing Between Slides"
-msgstr ""
-
-#: build/index.js:3223
-#: build/index.js:3001
-msgid "Stage Padding"
-msgstr ""
-
-#: build/index.js:3240
-#: build/index.js:3013
-msgid "Nav Arrow"
-msgstr ""
-
-#: build/index.js:3246
-#: build/index.js:3018
-msgid "Nav Dots"
-msgstr ""
-
-#: build/index.js:3252
-#: build/index.js:6622
-#: build/index.js:8236
-#: build/index.js:9619
-#: build/index.js:11145
-#: build/index.js:12849
-#: build/index.js:14433
-#: build/index.js:16052
-#: build/index.js:17684
-#: build/index.js:19448
-#: build/index.js:21219
-#: build/index.js:22849
-#: build/index.js:24296
-#: build/index.js:25896
-#: build/index.js:27448
-#: build/index.js:28982
-#: build/index.js:38752
-#: build/index.js:40272
-#: build/index.js:41729
-#: build/index.js:3024
-#: build/index.js:6020
-#: build/index.js:7357
-#: build/index.js:8537
-#: build/index.js:9862
-#: build/index.js:11286
-#: build/index.js:12619
-#: build/index.js:14026
-#: build/index.js:15438
-#: build/index.js:16950
-#: build/index.js:18475
-#: build/index.js:19820
-#: build/index.js:21070
-#: build/index.js:22465
-#: build/index.js:23763
-#: build/index.js:25100
-#: build/index.js:33374
-#: build/index.js:34651
-#: build/index.js:35906
-msgid "Additional Settings"
-msgstr ""
-
-#: build/index.js:3255
-#: build/index.js:6625
-#: build/index.js:8239
-#: build/index.js:9622
-#: build/index.js:11148
-#: build/index.js:12852
-#: build/index.js:14436
-#: build/index.js:16055
-#: build/index.js:17687
-#: build/index.js:19451
-#: build/index.js:21222
-#: build/index.js:22852
-#: build/index.js:24299
-#: build/index.js:25899
-#: build/index.js:27451
-#: build/index.js:28985
-#: build/index.js:34799
-#: build/index.js:36266
-#: build/index.js:38755
-#: build/index.js:40275
-#: build/index.js:41732
-#: build/index.js:3028
-#: build/index.js:6024
-#: build/index.js:7361
-#: build/index.js:8541
-#: build/index.js:9866
-#: build/index.js:11290
-#: build/index.js:12623
-#: build/index.js:14030
-#: build/index.js:15442
-#: build/index.js:16954
-#: build/index.js:18479
-#: build/index.js:19824
-#: build/index.js:21074
-#: build/index.js:22469
-#: build/index.js:23767
-#: build/index.js:25104
-#: build/index.js:30006
-#: build/index.js:31256
-#: build/index.js:33378
-#: build/index.js:34655
-#: build/index.js:35910
-msgid "Image Border Radius(px)"
-msgstr ""
-
-#: build/index.js:3263
-#: build/index.js:6633
-#: build/index.js:8247
-#: build/index.js:9630
-#: build/index.js:11156
-#: build/index.js:12860
-#: build/index.js:14444
-#: build/index.js:16063
-#: build/index.js:17695
-#: build/index.js:19459
-#: build/index.js:21230
-#: build/index.js:22860
-#: build/index.js:24307
-#: build/index.js:25907
-#: build/index.js:27459
-#: build/index.js:28993
-#: build/index.js:34748
-#: build/index.js:36215
-#: build/index.js:38763
-#: build/index.js:40283
-#: build/index.js:41740
-#: build/index.js:3035
-#: build/index.js:6031
-#: build/index.js:7368
-#: build/index.js:8548
-#: build/index.js:9873
-#: build/index.js:11297
-#: build/index.js:12630
-#: build/index.js:14037
-#: build/index.js:15449
-#: build/index.js:16961
-#: build/index.js:18486
-#: build/index.js:19831
-#: build/index.js:21081
-#: build/index.js:22476
-#: build/index.js:23774
-#: build/index.js:25111
-#: build/index.js:29959
-#: build/index.js:31209
-#: build/index.js:33385
-#: build/index.js:34662
-#: build/index.js:35917
-msgid "Date Format"
-msgstr ""
-
-#: build/index.js:3273
-#: build/index.js:6640
-#: build/index.js:8254
-#: build/index.js:9637
-#: build/index.js:11163
-#: build/index.js:12867
-#: build/index.js:14451
-#: build/index.js:16070
-#: build/index.js:17702
-#: build/index.js:19466
-#: build/index.js:21237
-#: build/index.js:22867
-#: build/index.js:24314
-#: build/index.js:25914
-#: build/index.js:27466
-#: build/index.js:29000
-#: build/index.js:34755
-#: build/index.js:36222
-#: build/index.js:38770
-#: build/index.js:40290
-#: build/index.js:41747
-#: build/index.js:3039
-#: build/index.js:6035
-#: build/index.js:7372
-#: build/index.js:8552
-#: build/index.js:9877
-#: build/index.js:11301
-#: build/index.js:12634
-#: build/index.js:14041
-#: build/index.js:15453
-#: build/index.js:16965
-#: build/index.js:18490
-#: build/index.js:19835
-#: build/index.js:21085
-#: build/index.js:22480
-#: build/index.js:23778
-#: build/index.js:25115
-#: build/index.js:29963
-#: build/index.js:31213
-#: build/index.js:33389
-#: build/index.js:34666
-#: build/index.js:35921
-msgid "Relative Format (Ago)"
-msgstr ""
-
-#: build/index.js:3276
-#: build/index.js:6643
-#: build/index.js:8257
-#: build/index.js:9640
-#: build/index.js:11166
-#: build/index.js:12870
-#: build/index.js:14454
-#: build/index.js:16073
-#: build/index.js:17705
-#: build/index.js:19469
-#: build/index.js:21240
-#: build/index.js:22870
-#: build/index.js:24317
-#: build/index.js:25917
-#: build/index.js:27469
-#: build/index.js:29003
-#: build/index.js:34758
-#: build/index.js:36225
-#: build/index.js:38773
-#: build/index.js:40293
-#: build/index.js:41750
-#: build/index.js:3040
-#: build/index.js:6036
-#: build/index.js:7373
-#: build/index.js:8553
-#: build/index.js:9878
-#: build/index.js:11302
-#: build/index.js:12635
-#: build/index.js:14042
-#: build/index.js:15454
-#: build/index.js:16966
-#: build/index.js:18491
-#: build/index.js:19836
-#: build/index.js:21086
-#: build/index.js:22481
-#: build/index.js:23779
-#: build/index.js:25116
-#: build/index.js:29964
-#: build/index.js:31214
-#: build/index.js:33390
-#: build/index.js:34667
-#: build/index.js:35922
-msgid "WordPress Default Format"
-msgstr ""
-
-#: build/index.js:3279
-#: build/index.js:6646
-#: build/index.js:8260
-#: build/index.js:9643
-#: build/index.js:11169
-#: build/index.js:12873
-#: build/index.js:14457
-#: build/index.js:16076
-#: build/index.js:17708
-#: build/index.js:19472
-#: build/index.js:21243
-#: build/index.js:22873
-#: build/index.js:24320
-#: build/index.js:25920
-#: build/index.js:27472
-#: build/index.js:29006
-#: build/index.js:34761
-#: build/index.js:36228
-#: build/index.js:38776
-#: build/index.js:40296
-#: build/index.js:41753
-#: build/index.js:3041
-#: build/index.js:6037
-#: build/index.js:7374
-#: build/index.js:8554
-#: build/index.js:9879
-#: build/index.js:11303
-#: build/index.js:12636
-#: build/index.js:14043
-#: build/index.js:15455
-#: build/index.js:16967
-#: build/index.js:18492
-#: build/index.js:19837
-#: build/index.js:21087
-#: build/index.js:22482
-#: build/index.js:23780
-#: build/index.js:25117
-#: build/index.js:29965
-#: build/index.js:31215
-#: build/index.js:33391
-#: build/index.js:34668
-#: build/index.js:35923
-msgid "Custom Format"
-msgstr ""
-
-#: build/index.js:3282
-#: build/index.js:6649
-#: build/index.js:8263
-#: build/index.js:9646
-#: build/index.js:11172
-#: build/index.js:12876
-#: build/index.js:14460
-#: build/index.js:16079
-#: build/index.js:17711
-#: build/index.js:19475
-#: build/index.js:21246
-#: build/index.js:22876
-#: build/index.js:24323
-#: build/index.js:25923
-#: build/index.js:27475
-#: build/index.js:29009
-#: build/index.js:34764
-#: build/index.js:36231
-#: build/index.js:38779
-#: build/index.js:40299
-#: build/index.js:41756
-#: build/index.js:3046
-#: build/index.js:6042
-#: build/index.js:7379
-#: build/index.js:8559
-#: build/index.js:9884
-#: build/index.js:11308
-#: build/index.js:12641
-#: build/index.js:14048
-#: build/index.js:15460
-#: build/index.js:16972
-#: build/index.js:18497
-#: build/index.js:19842
-#: build/index.js:21092
-#: build/index.js:22487
-#: build/index.js:23785
-#: build/index.js:25122
-#: build/index.js:29970
-#: build/index.js:31220
-#: build/index.js:33396
-#: build/index.js:34673
-#: build/index.js:35928
-msgid "Custom Date Format"
-msgstr ""
-
-#: build/index.js:3288
-#: build/index.js:6655
-#: build/index.js:8269
-#: build/index.js:9652
-#: build/index.js:11178
-#: build/index.js:12882
-#: build/index.js:14466
-#: build/index.js:16085
-#: build/index.js:17717
-#: build/index.js:19481
-#: build/index.js:21252
-#: build/index.js:22882
-#: build/index.js:24329
-#: build/index.js:25929
-#: build/index.js:27481
-#: build/index.js:29015
-#: build/index.js:38793
-#: build/index.js:40313
-#: build/index.js:41770
-#: build/index.js:3057
-#: build/index.js:6053
-#: build/index.js:7390
-#: build/index.js:8570
-#: build/index.js:9895
-#: build/index.js:11319
-#: build/index.js:12652
-#: build/index.js:14059
-#: build/index.js:15472
-#: build/index.js:16983
-#: build/index.js:18508
-#: build/index.js:19853
-#: build/index.js:21103
-#: build/index.js:22498
-#: build/index.js:23796
-#: build/index.js:25133
-#: build/index.js:33414
-#: build/index.js:34691
-#: build/index.js:35946
-msgid "Header Title"
-msgstr ""
-
-#: build/index.js:3291
-#: build/index.js:3620
-#: build/index.js:3696
-#: build/index.js:6658
-#: build/index.js:7114
-#: build/index.js:7190
-#: build/index.js:8272
-#: build/index.js:9655
-#: build/index.js:9984
-#: build/index.js:11181
-#: build/index.js:11637
-#: build/index.js:11713
-#: build/index.js:12885
-#: build/index.js:13341
-#: build/index.js:14469
-#: build/index.js:14798
-#: build/index.js:14874
-#: build/index.js:16088
-#: build/index.js:16544
-#: build/index.js:17720
-#: build/index.js:18176
-#: build/index.js:18252
-#: build/index.js:19484
-#: build/index.js:19940
-#: build/index.js:20016
-#: build/index.js:21255
-#: build/index.js:21711
-#: build/index.js:21787
-#: build/index.js:22885
-#: build/index.js:23214
-#: build/index.js:24332
-#: build/index.js:24671
-#: build/index.js:24747
-#: build/index.js:25932
-#: build/index.js:26395
-#: build/index.js:27484
-#: build/index.js:27813
-#: build/index.js:29018
-#: build/index.js:29474
-#: build/index.js:29550
-#: build/index.js:34946
-#: build/index.js:35077
-#: build/index.js:35153
-#: build/index.js:36424
-#: build/index.js:36555
-#: build/index.js:36631
-#: build/index.js:38796
-#: build/index.js:40316
-#: build/index.js:41773
-#: build/index.js:43203
-#: build/index.js:3061
-#: build/index.js:3276
-#: build/index.js:3322
-#: build/index.js:6057
-#: build/index.js:6349
-#: build/index.js:6395
-#: build/index.js:7394
-#: build/index.js:8574
-#: build/index.js:8789
-#: build/index.js:9899
-#: build/index.js:10191
-#: build/index.js:10237
-#: build/index.js:11323
-#: build/index.js:11615
-#: build/index.js:12656
-#: build/index.js:12871
-#: build/index.js:12917
-#: build/index.js:14063
-#: build/index.js:14355
-#: build/index.js:15476
-#: build/index.js:15768
-#: build/index.js:15814
-#: build/index.js:16987
-#: build/index.js:17279
-#: build/index.js:17325
-#: build/index.js:18512
-#: build/index.js:18804
-#: build/index.js:18850
-#: build/index.js:19857
-#: build/index.js:20072
-#: build/index.js:21107
-#: build/index.js:21333
-#: build/index.js:21379
-#: build/index.js:22502
-#: build/index.js:22800
-#: build/index.js:23800
-#: build/index.js:24015
-#: build/index.js:25137
-#: build/index.js:25429
-#: build/index.js:25475
-#: build/index.js:30110
-#: build/index.js:30190
-#: build/index.js:30236
-#: build/index.js:31375
-#: build/index.js:31455
-#: build/index.js:31501
-#: build/index.js:33418
-#: build/index.js:34695
-#: build/index.js:35950
-#: build/index.js:36981
-msgid "Color"
-msgstr ""
-
-#: build/index.js:3298
-#: build/index.js:6665
-#: build/index.js:8279
-#: build/index.js:9662
-#: build/index.js:11188
-#: build/index.js:12892
-#: build/index.js:14476
-#: build/index.js:16095
-#: build/index.js:17727
-#: build/index.js:19491
-#: build/index.js:21262
-#: build/index.js:22892
-#: build/index.js:24339
-#: build/index.js:25939
-#: build/index.js:27491
-#: build/index.js:29025
-#: build/index.js:38803
-#: build/index.js:40323
-#: build/index.js:41780
-#: build/index.js:3067
-#: build/index.js:6063
-#: build/index.js:7400
-#: build/index.js:8580
-#: build/index.js:9905
-#: build/index.js:11329
-#: build/index.js:12662
-#: build/index.js:14069
-#: build/index.js:15482
-#: build/index.js:16993
-#: build/index.js:18518
-#: build/index.js:19863
-#: build/index.js:21113
-#: build/index.js:22508
-#: build/index.js:23806
-#: build/index.js:25143
-#: build/index.js:33424
-#: build/index.js:34701
-#: build/index.js:35956
-msgid "Short Border Color"
-msgstr ""
-
-#: build/index.js:3305
-#: build/index.js:6672
-#: build/index.js:8286
-#: build/index.js:9669
-#: build/index.js:11195
-#: build/index.js:12899
-#: build/index.js:14483
-#: build/index.js:16102
-#: build/index.js:17734
-#: build/index.js:19498
-#: build/index.js:21269
-#: build/index.js:22899
-#: build/index.js:24346
-#: build/index.js:25946
-#: build/index.js:27498
-#: build/index.js:29032
-#: build/index.js:38810
-#: build/index.js:40330
-#: build/index.js:41787
-#: build/index.js:3073
-#: build/index.js:6069
-#: build/index.js:7406
-#: build/index.js:8586
-#: build/index.js:9911
-#: build/index.js:11335
-#: build/index.js:12668
-#: build/index.js:14075
-#: build/index.js:15488
-#: build/index.js:16999
-#: build/index.js:18524
-#: build/index.js:19869
-#: build/index.js:21119
-#: build/index.js:22514
-#: build/index.js:23812
-#: build/index.js:25149
-#: build/index.js:33430
-#: build/index.js:34707
-#: build/index.js:35962
-msgid "Long Border Color"
-msgstr ""
-
-#: build/index.js:3312
-#: build/index.js:3381
-#: build/index.js:3496
-#: build/index.js:3627
-#: build/index.js:3703
-#: build/index.js:6679
-#: build/index.js:6748
-#: build/index.js:6865
-#: build/index.js:6990
-#: build/index.js:7121
-#: build/index.js:7197
-#: build/index.js:8293
-#: build/index.js:8362
-#: build/index.js:8463
-#: build/index.js:8587
-#: build/index.js:9676
-#: build/index.js:9745
-#: build/index.js:9860
-#: build/index.js:9991
-#: build/index.js:11202
-#: build/index.js:11271
-#: build/index.js:11388
-#: build/index.js:11513
-#: build/index.js:11644
-#: build/index.js:11720
-#: build/index.js:12906
-#: build/index.js:12975
-#: build/index.js:13092
-#: build/index.js:13217
-#: build/index.js:13348
-#: build/index.js:14490
-#: build/index.js:14559
-#: build/index.js:14674
-#: build/index.js:14805
-#: build/index.js:14881
-#: build/index.js:16109
-#: build/index.js:16178
-#: build/index.js:16295
-#: build/index.js:16420
-#: build/index.js:16551
-#: build/index.js:17741
-#: build/index.js:17810
-#: build/index.js:17927
-#: build/index.js:18052
-#: build/index.js:18183
-#: build/index.js:18259
-#: build/index.js:19505
-#: build/index.js:19574
-#: build/index.js:19691
-#: build/index.js:19816
-#: build/index.js:19947
-#: build/index.js:20023
-#: build/index.js:21276
-#: build/index.js:21345
-#: build/index.js:21462
-#: build/index.js:21587
-#: build/index.js:21718
-#: build/index.js:21794
-#: build/index.js:22906
-#: build/index.js:22975
-#: build/index.js:23090
-#: build/index.js:23221
-#: build/index.js:24353
-#: build/index.js:24422
-#: build/index.js:24537
-#: build/index.js:24678
-#: build/index.js:24754
-#: build/index.js:25953
-#: build/index.js:26022
-#: build/index.js:26146
-#: build/index.js:26271
-#: build/index.js:26402
-#: build/index.js:27505
-#: build/index.js:27574
-#: build/index.js:27689
-#: build/index.js:27820
-#: build/index.js:29039
-#: build/index.js:29108
-#: build/index.js:29225
-#: build/index.js:29350
-#: build/index.js:29481
-#: build/index.js:29557
-#: build/index.js:34953
-#: build/index.js:35084
-#: build/index.js:35160
-#: build/index.js:36431
-#: build/index.js:36562
-#: build/index.js:36638
-#: build/index.js:37506
-#: build/index.js:37589
-#: build/index.js:38817
-#: build/index.js:38886
-#: build/index.js:38996
-#: build/index.js:39121
-#: build/index.js:39245
-#: build/index.js:40337
-#: build/index.js:40406
-#: build/index.js:40514
-#: build/index.js:40638
-#: build/index.js:41794
-#: build/index.js:41863
-#: build/index.js:41973
-#: build/index.js:42098
-#: build/index.js:42222
-#: build/index.js:45223
-#: build/index.js:3079
-#: build/index.js:3120
-#: build/index.js:3202
-#: build/index.js:3282
-#: build/index.js:3328
-#: build/index.js:6075
-#: build/index.js:6116
-#: build/index.js:6200
-#: build/index.js:6273
-#: build/index.js:6355
-#: build/index.js:6401
-#: build/index.js:7412
-#: build/index.js:7453
-#: build/index.js:7523
-#: build/index.js:7597
-#: build/index.js:8592
-#: build/index.js:8633
-#: build/index.js:8715
-#: build/index.js:8795
-#: build/index.js:9917
-#: build/index.js:9958
-#: build/index.js:10042
-#: build/index.js:10115
-#: build/index.js:10197
-#: build/index.js:10243
-#: build/index.js:11341
-#: build/index.js:11382
-#: build/index.js:11466
-#: build/index.js:11539
-#: build/index.js:11621
-#: build/index.js:12674
-#: build/index.js:12715
-#: build/index.js:12797
-#: build/index.js:12877
-#: build/index.js:12923
-#: build/index.js:14081
-#: build/index.js:14122
-#: build/index.js:14206
-#: build/index.js:14279
-#: build/index.js:14361
-#: build/index.js:15494
-#: build/index.js:15535
-#: build/index.js:15619
-#: build/index.js:15692
-#: build/index.js:15774
-#: build/index.js:15820
-#: build/index.js:17005
-#: build/index.js:17046
-#: build/index.js:17130
-#: build/index.js:17203
-#: build/index.js:17285
-#: build/index.js:17331
-#: build/index.js:18530
-#: build/index.js:18571
-#: build/index.js:18655
-#: build/index.js:18728
-#: build/index.js:18810
-#: build/index.js:18856
-#: build/index.js:19875
-#: build/index.js:19916
-#: build/index.js:19998
-#: build/index.js:20078
-#: build/index.js:21125
-#: build/index.js:21166
-#: build/index.js:21248
-#: build/index.js:21339
-#: build/index.js:21385
-#: build/index.js:22520
-#: build/index.js:22561
-#: build/index.js:22651
-#: build/index.js:22724
-#: build/index.js:22806
-#: build/index.js:23818
-#: build/index.js:23859
-#: build/index.js:23941
-#: build/index.js:24021
-#: build/index.js:25155
-#: build/index.js:25196
-#: build/index.js:25280
-#: build/index.js:25353
-#: build/index.js:25435
-#: build/index.js:25481
-#: build/index.js:30116
-#: build/index.js:30196
-#: build/index.js:30242
-#: build/index.js:31381
-#: build/index.js:31461
-#: build/index.js:31507
-#: build/index.js:32245
-#: build/index.js:32297
-#: build/index.js:33436
-#: build/index.js:33477
-#: build/index.js:33555
-#: build/index.js:33628
-#: build/index.js:33704
-#: build/index.js:34713
-#: build/index.js:34754
-#: build/index.js:34830
-#: build/index.js:34904
-#: build/index.js:35968
-#: build/index.js:36009
-#: build/index.js:36087
-#: build/index.js:36160
-#: build/index.js:36236
-#: build/index.js:38703
-msgid "Typography"
-msgstr ""
-
-#: build/index.js:3378
-#: build/index.js:6745
-#: build/index.js:8359
-#: build/index.js:9742
-#: build/index.js:11268
-#: build/index.js:12972
-#: build/index.js:14556
-#: build/index.js:16175
-#: build/index.js:17807
-#: build/index.js:19571
-#: build/index.js:21342
-#: build/index.js:22972
-#: build/index.js:24419
-#: build/index.js:26019
-#: build/index.js:27571
-#: build/index.js:29105
-#: build/index.js:38883
-#: build/index.js:40403
-#: build/index.js:41860
-#: build/index.js:3116
-#: build/index.js:6112
-#: build/index.js:7449
-#: build/index.js:8629
-#: build/index.js:9954
-#: build/index.js:11378
-#: build/index.js:12711
-#: build/index.js:14118
-#: build/index.js:15531
-#: build/index.js:17042
-#: build/index.js:18567
-#: build/index.js:19912
-#: build/index.js:21162
-#: build/index.js:22557
-#: build/index.js:23855
-#: build/index.js:25192
-#: build/index.js:33473
-#: build/index.js:34750
-#: build/index.js:36005
-msgid "Category"
-msgstr ""
-
-#: build/index.js:3447
-#: build/index.js:3772
-#: build/index.js:3938
-#: build/index.js:5593
-#: build/index.js:6814
-#: build/index.js:7383
-#: build/index.js:8428
-#: build/index.js:8773
-#: build/index.js:9811
-#: build/index.js:10177
-#: build/index.js:11337
-#: build/index.js:11906
-#: build/index.js:13041
-#: build/index.js:13534
-#: build/index.js:14625
-#: build/index.js:15067
-#: build/index.js:16244
-#: build/index.js:16737
-#: build/index.js:17876
-#: build/index.js:18445
-#: build/index.js:19640
-#: build/index.js:20209
-#: build/index.js:21411
-#: build/index.js:21980
-#: build/index.js:23041
-#: build/index.js:23407
-#: build/index.js:24488
-#: build/index.js:24940
-#: build/index.js:26088
-#: build/index.js:26588
-#: build/index.js:27640
-#: build/index.js:28006
-#: build/index.js:29174
-#: build/index.js:29743
-#: build/index.js:31137
-#: build/index.js:32848
-#: build/index.js:35346
-#: build/index.js:36824
-#: build/index.js:37679
-#: build/index.js:37831
-#: build/index.js:38952
-#: build/index.js:39431
-#: build/index.js:40472
-#: build/index.js:40824
-#: build/index.js:41929
-#: build/index.js:42408
-#: build/index.js:3155
-#: build/index.js:3368
-#: build/index.js:3496
-#: build/index.js:5020
-#: build/index.js:6151
-#: build/index.js:6522
-#: build/index.js:7488
-#: build/index.js:7718
-#: build/index.js:8668
-#: build/index.js:8916
-#: build/index.js:9993
-#: build/index.js:10364
-#: build/index.js:11417
-#: build/index.js:11742
-#: build/index.js:12750
-#: build/index.js:13044
-#: build/index.js:14157
-#: build/index.js:14482
-#: build/index.js:15570
-#: build/index.js:15941
-#: build/index.js:17081
-#: build/index.js:17452
-#: build/index.js:18606
-#: build/index.js:18977
-#: build/index.js:19951
-#: build/index.js:20199
-#: build/index.js:21201
-#: build/index.js:21506
-#: build/index.js:22596
-#: build/index.js:22927
-#: build/index.js:23894
-#: build/index.js:24142
-#: build/index.js:25231
-#: build/index.js:25602
-#: build/index.js:26884
-#: build/index.js:28397
-#: build/index.js:30363
-#: build/index.js:31628
-#: build/index.js:32355
-#: build/index.js:32471
-#: build/index.js:33512
-#: build/index.js:33825
-#: build/index.js:34789
-#: build/index.js:35025
-#: build/index.js:36044
-#: build/index.js:36357
-msgid "Normal"
-msgstr ""
-
-#: build/index.js:3449
-#: build/index.js:3465
-#: build/index.js:3774
-#: build/index.js:4109
-#: build/index.js:5784
-#: build/index.js:6816
-#: build/index.js:6832
-#: build/index.js:7554
-#: build/index.js:8430
-#: build/index.js:8446
-#: build/index.js:8944
-#: build/index.js:9813
-#: build/index.js:9829
-#: build/index.js:10348
-#: build/index.js:11339
-#: build/index.js:11355
-#: build/index.js:12077
-#: build/index.js:13043
-#: build/index.js:13059
-#: build/index.js:13705
-#: build/index.js:14627
-#: build/index.js:14643
-#: build/index.js:15238
-#: build/index.js:16246
-#: build/index.js:16262
-#: build/index.js:16908
-#: build/index.js:17878
-#: build/index.js:17894
-#: build/index.js:18616
-#: build/index.js:19642
-#: build/index.js:19658
-#: build/index.js:20380
-#: build/index.js:21413
-#: build/index.js:21429
-#: build/index.js:22151
-#: build/index.js:23043
-#: build/index.js:23059
-#: build/index.js:23578
-#: build/index.js:24490
-#: build/index.js:24506
-#: build/index.js:24661
-#: build/index.js:25111
-#: build/index.js:26090
-#: build/index.js:26106
-#: build/index.js:26759
-#: build/index.js:27642
-#: build/index.js:27658
-#: build/index.js:28177
-#: build/index.js:29176
-#: build/index.js:29192
-#: build/index.js:29914
-#: build/index.js:31328
-#: build/index.js:33039
-#: build/index.js:35517
-#: build/index.js:36995
-#: build/index.js:37572
-#: build/index.js:37655
-#: build/index.js:37681
-#: build/index.js:38002
-#: build/index.js:38954
-#: build/index.js:38970
-#: build/index.js:39602
-#: build/index.js:40474
-#: build/index.js:40490
-#: build/index.js:40995
-#: build/index.js:41931
-#: build/index.js:41947
-#: build/index.js:42579
-#: build/index.js:3157
-#: build/index.js:3171
-#: build/index.js:3370
-#: build/index.js:3629
-#: build/index.js:5163
-#: build/index.js:6153
-#: build/index.js:6167
-#: build/index.js:6655
-#: build/index.js:7490
-#: build/index.js:7504
-#: build/index.js:7851
-#: build/index.js:8670
-#: build/index.js:8684
-#: build/index.js:9049
-#: build/index.js:9995
-#: build/index.js:10009
-#: build/index.js:10497
-#: build/index.js:11419
-#: build/index.js:11433
-#: build/index.js:11875
-#: build/index.js:12752
-#: build/index.js:12766
-#: build/index.js:13177
-#: build/index.js:14159
-#: build/index.js:14173
-#: build/index.js:14615
-#: build/index.js:15572
-#: build/index.js:15586
-#: build/index.js:16074
-#: build/index.js:17083
-#: build/index.js:17097
-#: build/index.js:17585
-#: build/index.js:18608
-#: build/index.js:18622
-#: build/index.js:19110
-#: build/index.js:19953
-#: build/index.js:19967
-#: build/index.js:20332
-#: build/index.js:21203
-#: build/index.js:21217
-#: build/index.js:21322
-#: build/index.js:21639
-#: build/index.js:22598
-#: build/index.js:22612
-#: build/index.js:23060
-#: build/index.js:23896
-#: build/index.js:23910
-#: build/index.js:24275
-#: build/index.js:25233
-#: build/index.js:25247
-#: build/index.js:25735
-#: build/index.js:27027
-#: build/index.js:28541
-#: build/index.js:30496
-#: build/index.js:31761
-#: build/index.js:32280
-#: build/index.js:32332
-#: build/index.js:32357
-#: build/index.js:32604
-#: build/index.js:33514
-#: build/index.js:33528
-#: build/index.js:33958
-#: build/index.js:34791
-#: build/index.js:34805
-#: build/index.js:35158
-#: build/index.js:36046
-#: build/index.js:36060
-#: build/index.js:36490
-msgid "Background Color"
-msgstr ""
-
-#: build/index.js:3456
-#: build/index.js:3472
-#: build/index.js:6823
-#: build/index.js:6839
-#: build/index.js:8437
-#: build/index.js:8453
-#: build/index.js:9820
-#: build/index.js:9836
-#: build/index.js:11346
-#: build/index.js:11362
-#: build/index.js:13050
-#: build/index.js:13066
-#: build/index.js:14634
-#: build/index.js:14650
-#: build/index.js:16253
-#: build/index.js:16269
-#: build/index.js:17885
-#: build/index.js:17901
-#: build/index.js:19649
-#: build/index.js:19665
-#: build/index.js:21420
-#: build/index.js:21436
-#: build/index.js:23050
-#: build/index.js:23066
-#: build/index.js:24497
-#: build/index.js:24513
-#: build/index.js:26097
-#: build/index.js:26113
-#: build/index.js:27649
-#: build/index.js:27665
-#: build/index.js:29183
-#: build/index.js:29199
-#: build/index.js:37579
-#: build/index.js:37662
-#: build/index.js:38961
-#: build/index.js:38977
-#: build/index.js:40481
-#: build/index.js:40497
-#: build/index.js:41938
-#: build/index.js:41954
-#: build/index.js:3163
-#: build/index.js:3177
-#: build/index.js:6159
-#: build/index.js:6173
-#: build/index.js:7496
-#: build/index.js:7510
-#: build/index.js:8676
-#: build/index.js:8690
-#: build/index.js:10001
-#: build/index.js:10015
-#: build/index.js:11425
-#: build/index.js:11439
-#: build/index.js:12758
-#: build/index.js:12772
-#: build/index.js:14165
-#: build/index.js:14179
-#: build/index.js:15578
-#: build/index.js:15592
-#: build/index.js:17089
-#: build/index.js:17103
-#: build/index.js:18614
-#: build/index.js:18628
-#: build/index.js:19959
-#: build/index.js:19973
-#: build/index.js:21209
-#: build/index.js:21223
-#: build/index.js:22604
-#: build/index.js:22618
-#: build/index.js:23902
-#: build/index.js:23916
-#: build/index.js:25239
-#: build/index.js:25253
-#: build/index.js:32286
-#: build/index.js:32338
-#: build/index.js:33520
-#: build/index.js:33534
-#: build/index.js:34797
-#: build/index.js:34811
-#: build/index.js:36052
-#: build/index.js:36066
-msgid "Text Color"
-msgstr ""
-
-#: build/index.js:3463
-#: build/index.js:3795
-#: build/index.js:4022
-#: build/index.js:5677
-#: build/index.js:6830
-#: build/index.js:7467
-#: build/index.js:8444
-#: build/index.js:8857
-#: build/index.js:9827
-#: build/index.js:10261
-#: build/index.js:11353
-#: build/index.js:11990
-#: build/index.js:13057
-#: build/index.js:13618
-#: build/index.js:14641
-#: build/index.js:15151
-#: build/index.js:16260
-#: build/index.js:16821
-#: build/index.js:17892
-#: build/index.js:18529
-#: build/index.js:19656
-#: build/index.js:20293
-#: build/index.js:21427
-#: build/index.js:22064
-#: build/index.js:23057
-#: build/index.js:23491
-#: build/index.js:24504
-#: build/index.js:25024
-#: build/index.js:26104
-#: build/index.js:26672
-#: build/index.js:27656
-#: build/index.js:28090
-#: build/index.js:29190
-#: build/index.js:29827
-#: build/index.js:31221
-#: build/index.js:32932
-#: build/index.js:35430
-#: build/index.js:36908
-#: build/index.js:37695
-#: build/index.js:37915
-#: build/index.js:38968
-#: build/index.js:39515
-#: build/index.js:40488
-#: build/index.js:40908
-#: build/index.js:41945
-#: build/index.js:42492
-#: build/index.js:3169
-#: build/index.js:3388
-#: build/index.js:3559
-#: build/index.js:5077
-#: build/index.js:6165
-#: build/index.js:6585
-#: build/index.js:7502
-#: build/index.js:7781
-#: build/index.js:8682
-#: build/index.js:8979
-#: build/index.js:10007
-#: build/index.js:10427
-#: build/index.js:11431
-#: build/index.js:11805
-#: build/index.js:12764
-#: build/index.js:13107
-#: build/index.js:14171
-#: build/index.js:14545
-#: build/index.js:15584
-#: build/index.js:16004
-#: build/index.js:17095
-#: build/index.js:17515
-#: build/index.js:18620
-#: build/index.js:19040
-#: build/index.js:19965
-#: build/index.js:20262
-#: build/index.js:21215
-#: build/index.js:21569
-#: build/index.js:22610
-#: build/index.js:22990
-#: build/index.js:23908
-#: build/index.js:24205
-#: build/index.js:25245
-#: build/index.js:25665
-#: build/index.js:26941
-#: build/index.js:28454
-#: build/index.js:30426
-#: build/index.js:31691
-#: build/index.js:32369
-#: build/index.js:32534
-#: build/index.js:33526
-#: build/index.js:33888
-#: build/index.js:34803
-#: build/index.js:35088
-#: build/index.js:36058
-#: build/index.js:36420
-msgid "Hover"
-msgstr ""
-
-#: build/index.js:3479
-#: build/index.js:6846
-#: build/index.js:8460
-#: build/index.js:9843
-#: build/index.js:11369
-#: build/index.js:13073
-#: build/index.js:14657
-#: build/index.js:16276
-#: build/index.js:17908
-#: build/index.js:19672
-#: build/index.js:21443
-#: build/index.js:23073
-#: build/index.js:24520
-#: build/index.js:26120
-#: build/index.js:27672
-#: build/index.js:29206
-#: build/index.js:37479
-#: build/index.js:37503
-#: build/index.js:38984
-#: build/index.js:40504
-#: build/index.js:41961
-#: build/index.js:42936
-#: build/index.js:3186
-#: build/index.js:6182
-#: build/index.js:7519
-#: build/index.js:8699
-#: build/index.js:10024
-#: build/index.js:11448
-#: build/index.js:12781
-#: build/index.js:14188
-#: build/index.js:15601
-#: build/index.js:17112
-#: build/index.js:18637
-#: build/index.js:19982
-#: build/index.js:21232
-#: build/index.js:22627
-#: build/index.js:23925
-#: build/index.js:25262
-#: build/index.js:32217
-#: build/index.js:32241
-#: build/index.js:33543
-#: build/index.js:34820
-#: build/index.js:36075
-#: build/index.js:36784
-msgid "Title"
-msgstr ""
-
-#: build/index.js:3482
-#: build/index.js:6849
-#: build/index.js:9846
-#: build/index.js:11372
-#: build/index.js:13076
-#: build/index.js:14660
-#: build/index.js:16279
-#: build/index.js:17911
-#: build/index.js:19675
-#: build/index.js:21446
-#: build/index.js:23076
-#: build/index.js:24523
-#: build/index.js:27675
-#: build/index.js:29209
-#: build/index.js:38987
-#: build/index.js:40507
-#: build/index.js:41964
-#: build/index.js:3190
-#: build/index.js:6186
-#: build/index.js:8703
-#: build/index.js:10028
-#: build/index.js:11452
-#: build/index.js:12785
-#: build/index.js:14192
-#: build/index.js:15605
-#: build/index.js:17116
-#: build/index.js:18641
-#: build/index.js:19986
-#: build/index.js:21236
-#: build/index.js:23929
-#: build/index.js:25266
-#: build/index.js:33547
-#: build/index.js:34824
-#: build/index.js:36079
-msgid "Title Color"
-msgstr ""
-
-#: build/index.js:3489
-#: build/index.js:6856
-#: build/index.js:9853
-#: build/index.js:11379
-#: build/index.js:13083
-#: build/index.js:14667
-#: build/index.js:16286
-#: build/index.js:17918
-#: build/index.js:19682
-#: build/index.js:21453
-#: build/index.js:23083
-#: build/index.js:24530
-#: build/index.js:27682
-#: build/index.js:29216
-#: build/index.js:3196
-#: build/index.js:6192
-#: build/index.js:8709
-#: build/index.js:10034
-#: build/index.js:11458
-#: build/index.js:12791
-#: build/index.js:14198
-#: build/index.js:15611
-#: build/index.js:17122
-#: build/index.js:18647
-#: build/index.js:19992
-#: build/index.js:21242
-#: build/index.js:23935
-#: build/index.js:25272
-msgid "Title Color(Hover)"
-msgstr ""
-
-#: build/index.js:3562
-#: build/index.js:3821
-#: build/index.js:5476
-#: build/index.js:6931
-#: build/index.js:7056
-#: build/index.js:7266
-#: build/index.js:8529
-#: build/index.js:8656
-#: build/index.js:9926
-#: build/index.js:10060
-#: build/index.js:11454
-#: build/index.js:11579
-#: build/index.js:11789
-#: build/index.js:13158
-#: build/index.js:13283
-#: build/index.js:13417
-#: build/index.js:14740
-#: build/index.js:14950
-#: build/index.js:16361
-#: build/index.js:16486
-#: build/index.js:16620
-#: build/index.js:17993
-#: build/index.js:18118
-#: build/index.js:18328
-#: build/index.js:19757
-#: build/index.js:19882
-#: build/index.js:20092
-#: build/index.js:21528
-#: build/index.js:21653
-#: build/index.js:21863
-#: build/index.js:23156
-#: build/index.js:23290
-#: build/index.js:24603
-#: build/index.js:24823
-#: build/index.js:26212
-#: build/index.js:26337
-#: build/index.js:26471
-#: build/index.js:27755
-#: build/index.js:27889
-#: build/index.js:29291
-#: build/index.js:29416
-#: build/index.js:29626
-#: build/index.js:31020
-#: build/index.js:32731
-#: build/index.js:35019
-#: build/index.js:35229
-#: build/index.js:36497
-#: build/index.js:36707
-#: build/index.js:37714
-#: build/index.js:39062
-#: build/index.js:39187
-#: build/index.js:39314
-#: build/index.js:40580
-#: build/index.js:40707
-#: build/index.js:42039
-#: build/index.js:42164
-#: build/index.js:42291
-#: build/index.js:3237
-#: build/index.js:3418
-#: build/index.js:4940
-#: build/index.js:6235
-#: build/index.js:6308
-#: build/index.js:6444
-#: build/index.js:7558
-#: build/index.js:7640
-#: build/index.js:8750
-#: build/index.js:8838
-#: build/index.js:10077
-#: build/index.js:10150
-#: build/index.js:10286
-#: build/index.js:11501
-#: build/index.js:11574
-#: build/index.js:11664
-#: build/index.js:12832
-#: build/index.js:12966
-#: build/index.js:14241
-#: build/index.js:14314
-#: build/index.js:14404
-#: build/index.js:15654
-#: build/index.js:15727
-#: build/index.js:15863
-#: build/index.js:17165
-#: build/index.js:17238
-#: build/index.js:17374
-#: build/index.js:18690
-#: build/index.js:18763
-#: build/index.js:18899
-#: build/index.js:20033
-#: build/index.js:20121
-#: build/index.js:21283
-#: build/index.js:21428
-#: build/index.js:22686
-#: build/index.js:22759
-#: build/index.js:22849
-#: build/index.js:23976
-#: build/index.js:24064
-#: build/index.js:25315
-#: build/index.js:25388
-#: build/index.js:25524
-#: build/index.js:26804
-#: build/index.js:28316
-#: build/index.js:30151
-#: build/index.js:30285
-#: build/index.js:31416
-#: build/index.js:31550
-#: build/index.js:32393
-#: build/index.js:33590
-#: build/index.js:33663
-#: build/index.js:33747
-#: build/index.js:34865
-#: build/index.js:34947
-#: build/index.js:36122
-#: build/index.js:36195
-#: build/index.js:36279
-msgid "Margin"
-msgstr ""
-
-#: build/index.js:3617
-#: build/index.js:7187
-#: build/index.js:8584
-#: build/index.js:9981
-#: build/index.js:11710
-#: build/index.js:13338
-#: build/index.js:14871
-#: build/index.js:16541
-#: build/index.js:18249
-#: build/index.js:20013
-#: build/index.js:21784
-#: build/index.js:23211
-#: build/index.js:24744
-#: build/index.js:26392
-#: build/index.js:27810
-#: build/index.js:29547
-#: build/index.js:39242
-#: build/index.js:40635
-#: build/index.js:42219
-#: build/index.js:3272
-#: build/index.js:6391
-#: build/index.js:7593
-#: build/index.js:8785
-#: build/index.js:10233
-#: build/index.js:11611
-#: build/index.js:12913
-#: build/index.js:14351
-#: build/index.js:15810
-#: build/index.js:17321
-#: build/index.js:18846
-#: build/index.js:20068
-#: build/index.js:21375
-#: build/index.js:22796
-#: build/index.js:24011
-#: build/index.js:25471
-#: build/index.js:33700
-#: build/index.js:34900
-#: build/index.js:36232
-msgid "Metas"
-msgstr ""
-
-#: build/index.js:3693
-#: build/index.js:7111
-#: build/index.js:11634
-#: build/index.js:14795
-#: build/index.js:18173
-#: build/index.js:19937
-#: build/index.js:21708
-#: build/index.js:24668
-#: build/index.js:29471
-#: build/index.js:3318
-#: build/index.js:6345
-#: build/index.js:10187
-#: build/index.js:12867
-#: build/index.js:15764
-#: build/index.js:17275
-#: build/index.js:18800
-#: build/index.js:21329
-#: build/index.js:25425
-msgid "Excerpt"
-msgstr ""
-
-#: build/index.js:3769
-#: build/index.js:37676
-#: build/index.js:3364
-#: build/index.js:32351
-msgid "Navigation"
-msgstr ""
-
-#: build/index.js:3781
-#: build/index.js:37688
-#: build/index.js:3376
-#: build/index.js:32363
-msgid "Icon Color"
-msgstr ""
-
-#: build/index.js:3788
-#: build/index.js:3382
-msgid "Dots Color"
-msgstr ""
-
-#: build/index.js:3797
-#: build/index.js:3390
-msgid "Background Color (Hover)"
-msgstr ""
-
-#: build/index.js:3804
-#: build/index.js:3396
-msgid "Icon Color (Hover)"
-msgstr ""
-
-#: build/index.js:3811
-#: build/index.js:3402
-msgid "Dots Color (Active)"
-msgstr ""
-
-#: build/index.js:3818
-#: build/index.js:5473
-#: build/index.js:7263
-#: build/index.js:8653
-#: build/index.js:10057
-#: build/index.js:11786
-#: build/index.js:13414
-#: build/index.js:14947
-#: build/index.js:16617
-#: build/index.js:18325
-#: build/index.js:20089
-#: build/index.js:21860
-#: build/index.js:23287
-#: build/index.js:24820
-#: build/index.js:26468
-#: build/index.js:27886
-#: build/index.js:29623
-#: build/index.js:31017
-#: build/index.js:32728
-#: build/index.js:35226
-#: build/index.js:36704
-#: build/index.js:37711
-#: build/index.js:39311
-#: build/index.js:40704
-#: build/index.js:42288
-#: build/index.js:3414
-#: build/index.js:4936
-#: build/index.js:6440
-#: build/index.js:7636
-#: build/index.js:8834
-#: build/index.js:10282
-#: build/index.js:11660
-#: build/index.js:12962
-#: build/index.js:14400
-#: build/index.js:15859
-#: build/index.js:17370
-#: build/index.js:18895
-#: build/index.js:20117
-#: build/index.js:21424
-#: build/index.js:22845
-#: build/index.js:24060
-#: build/index.js:25520
-#: build/index.js:26800
-#: build/index.js:28312
-#: build/index.js:30281
-#: build/index.js:31546
-#: build/index.js:32389
-#: build/index.js:33743
-#: build/index.js:34943
-#: build/index.js:36275
-msgid "Spacing"
-msgstr ""
-
-#: build/index.js:3878
-#: build/index.js:5533
-#: build/index.js:7323
-#: build/index.js:8713
-#: build/index.js:10117
-#: build/index.js:11846
-#: build/index.js:13474
-#: build/index.js:15007
-#: build/index.js:16677
-#: build/index.js:18385
-#: build/index.js:20149
-#: build/index.js:21920
-#: build/index.js:23347
-#: build/index.js:24880
-#: build/index.js:26528
-#: build/index.js:27946
-#: build/index.js:29683
-#: build/index.js:31077
-#: build/index.js:32788
-#: build/index.js:35286
-#: build/index.js:36764
-#: build/index.js:37771
-#: build/index.js:39371
-#: build/index.js:40764
-#: build/index.js:42348
-#: build/index.js:3454
-#: build/index.js:4977
-#: build/index.js:6480
-#: build/index.js:7676
-#: build/index.js:8874
-#: build/index.js:10322
-#: build/index.js:11700
-#: build/index.js:13002
-#: build/index.js:14440
-#: build/index.js:15899
-#: build/index.js:17410
-#: build/index.js:18935
-#: build/index.js:20157
-#: build/index.js:21464
-#: build/index.js:22885
-#: build/index.js:24100
-#: build/index.js:25560
-#: build/index.js:26841
-#: build/index.js:28354
-#: build/index.js:30321
-#: build/index.js:31586
-#: build/index.js:32429
-#: build/index.js:33783
-#: build/index.js:34983
-#: build/index.js:36315
-msgid "Padding"
-msgstr ""
-
-#: build/index.js:3935
-#: build/index.js:5590
-#: build/index.js:7380
-#: build/index.js:8770
-#: build/index.js:10174
-#: build/index.js:11903
-#: build/index.js:13531
-#: build/index.js:15064
-#: build/index.js:16734
-#: build/index.js:18442
-#: build/index.js:20206
-#: build/index.js:21977
-#: build/index.js:23404
-#: build/index.js:24937
-#: build/index.js:26585
-#: build/index.js:28003
-#: build/index.js:29740
-#: build/index.js:31134
-#: build/index.js:32845
-#: build/index.js:35343
-#: build/index.js:36821
-#: build/index.js:37828
-#: build/index.js:39428
-#: build/index.js:40821
-#: build/index.js:42405
-#: build/index.js:43071
-#: build/index.js:3492
-#: build/index.js:5016
-#: build/index.js:6518
-#: build/index.js:7714
-#: build/index.js:8912
-#: build/index.js:10360
-#: build/index.js:11738
-#: build/index.js:13040
-#: build/index.js:14478
-#: build/index.js:15937
-#: build/index.js:17448
-#: build/index.js:18973
-#: build/index.js:20195
-#: build/index.js:21502
-#: build/index.js:22923
-#: build/index.js:24138
-#: build/index.js:25598
-#: build/index.js:26880
-#: build/index.js:28393
-#: build/index.js:30359
-#: build/index.js:31624
-#: build/index.js:32467
-#: build/index.js:33821
-#: build/index.js:35021
-#: build/index.js:36353
-#: build/index.js:36869
-msgid "Border"
-msgstr ""
-
-#: build/index.js:3945
-#: build/index.js:4029
-#: build/index.js:5600
-#: build/index.js:5684
-#: build/index.js:7390
-#: build/index.js:7474
-#: build/index.js:8780
-#: build/index.js:8864
-#: build/index.js:10184
-#: build/index.js:10268
-#: build/index.js:11913
-#: build/index.js:11997
-#: build/index.js:13541
-#: build/index.js:13625
-#: build/index.js:15074
-#: build/index.js:15158
-#: build/index.js:16744
-#: build/index.js:16828
-#: build/index.js:18452
-#: build/index.js:18536
-#: build/index.js:20216
-#: build/index.js:20300
-#: build/index.js:21987
-#: build/index.js:22071
-#: build/index.js:23414
-#: build/index.js:23498
-#: build/index.js:24947
-#: build/index.js:25031
-#: build/index.js:26595
-#: build/index.js:26679
-#: build/index.js:28013
-#: build/index.js:28097
-#: build/index.js:29750
-#: build/index.js:29834
-#: build/index.js:31144
-#: build/index.js:31228
-#: build/index.js:32855
-#: build/index.js:32939
-#: build/index.js:35353
-#: build/index.js:35437
-#: build/index.js:36831
-#: build/index.js:36915
-#: build/index.js:37838
-#: build/index.js:37922
-#: build/index.js:39438
-#: build/index.js:39522
-#: build/index.js:40831
-#: build/index.js:40915
-#: build/index.js:42415
-#: build/index.js:42499
-#: build/index.js:3503
-#: build/index.js:3566
-#: build/index.js:5027
-#: build/index.js:5084
-#: build/index.js:6529
-#: build/index.js:6592
-#: build/index.js:7725
-#: build/index.js:7788
-#: build/index.js:8923
-#: build/index.js:8986
-#: build/index.js:10371
-#: build/index.js:10434
-#: build/index.js:11749
-#: build/index.js:11812
-#: build/index.js:13051
-#: build/index.js:13114
-#: build/index.js:14489
-#: build/index.js:14552
-#: build/index.js:15948
-#: build/index.js:16011
-#: build/index.js:17459
-#: build/index.js:17522
-#: build/index.js:18984
-#: build/index.js:19047
-#: build/index.js:20206
-#: build/index.js:20269
-#: build/index.js:21513
-#: build/index.js:21576
-#: build/index.js:22934
-#: build/index.js:22997
-#: build/index.js:24149
-#: build/index.js:24212
-#: build/index.js:25609
-#: build/index.js:25672
-#: build/index.js:26891
-#: build/index.js:26948
-#: build/index.js:28404
-#: build/index.js:28461
-#: build/index.js:30370
-#: build/index.js:30433
-#: build/index.js:31635
-#: build/index.js:31698
-#: build/index.js:32478
-#: build/index.js:32541
-#: build/index.js:33832
-#: build/index.js:33895
-#: build/index.js:35032
-#: build/index.js:35095
-#: build/index.js:36364
-#: build/index.js:36427
-msgid "Border Color"
-msgstr ""
-
-#: build/index.js:3952
-#: build/index.js:4036
-#: build/index.js:5607
-#: build/index.js:5691
-#: build/index.js:7397
-#: build/index.js:7481
-#: build/index.js:8787
-#: build/index.js:8871
-#: build/index.js:10191
-#: build/index.js:10275
-#: build/index.js:11920
-#: build/index.js:12004
-#: build/index.js:13548
-#: build/index.js:13632
-#: build/index.js:15081
-#: build/index.js:15165
-#: build/index.js:16751
-#: build/index.js:16835
-#: build/index.js:18459
-#: build/index.js:18543
-#: build/index.js:20223
-#: build/index.js:20307
-#: build/index.js:21994
-#: build/index.js:22078
-#: build/index.js:23421
-#: build/index.js:23505
-#: build/index.js:24954
-#: build/index.js:25038
-#: build/index.js:26602
-#: build/index.js:26686
-#: build/index.js:28020
-#: build/index.js:28104
-#: build/index.js:29757
-#: build/index.js:29841
-#: build/index.js:31151
-#: build/index.js:31235
-#: build/index.js:32862
-#: build/index.js:32946
-#: build/index.js:35360
-#: build/index.js:35444
-#: build/index.js:36838
-#: build/index.js:36922
-#: build/index.js:37845
-#: build/index.js:37929
-#: build/index.js:39445
-#: build/index.js:39529
-#: build/index.js:40838
-#: build/index.js:40922
-#: build/index.js:42422
-#: build/index.js:42506
-#: build/index.js:3510
-#: build/index.js:3573
-#: build/index.js:5034
-#: build/index.js:5091
-#: build/index.js:6536
-#: build/index.js:6599
-#: build/index.js:7732
-#: build/index.js:7795
-#: build/index.js:8930
-#: build/index.js:8993
-#: build/index.js:10378
-#: build/index.js:10441
-#: build/index.js:11756
-#: build/index.js:11819
-#: build/index.js:13058
-#: build/index.js:13121
-#: build/index.js:14496
-#: build/index.js:14559
-#: build/index.js:15955
-#: build/index.js:16018
-#: build/index.js:17466
-#: build/index.js:17529
-#: build/index.js:18991
-#: build/index.js:19054
-#: build/index.js:20213
-#: build/index.js:20276
-#: build/index.js:21520
-#: build/index.js:21583
-#: build/index.js:22941
-#: build/index.js:23004
-#: build/index.js:24156
-#: build/index.js:24219
-#: build/index.js:25616
-#: build/index.js:25679
-#: build/index.js:26898
-#: build/index.js:26955
-#: build/index.js:28411
-#: build/index.js:28468
-#: build/index.js:30377
-#: build/index.js:30440
-#: build/index.js:31642
-#: build/index.js:31705
-#: build/index.js:32485
-#: build/index.js:32548
-#: build/index.js:33839
-#: build/index.js:33902
-#: build/index.js:35039
-#: build/index.js:35102
-#: build/index.js:36371
-#: build/index.js:36434
-msgid "Border Width"
-msgstr ""
-
-#: build/index.js:3975
-#: build/index.js:4059
-#: build/index.js:5630
-#: build/index.js:5714
-#: build/index.js:7420
-#: build/index.js:7504
-#: build/index.js:8810
-#: build/index.js:8894
-#: build/index.js:10214
-#: build/index.js:10298
-#: build/index.js:11943
-#: build/index.js:12027
-#: build/index.js:13571
-#: build/index.js:13655
-#: build/index.js:15104
-#: build/index.js:15188
-#: build/index.js:16774
-#: build/index.js:16858
-#: build/index.js:18482
-#: build/index.js:18566
-#: build/index.js:20246
-#: build/index.js:20330
-#: build/index.js:22017
-#: build/index.js:22101
-#: build/index.js:23444
-#: build/index.js:23528
-#: build/index.js:24977
-#: build/index.js:25061
-#: build/index.js:26625
-#: build/index.js:26709
-#: build/index.js:28043
-#: build/index.js:28127
-#: build/index.js:29780
-#: build/index.js:29864
-#: build/index.js:31174
-#: build/index.js:31258
-#: build/index.js:32885
-#: build/index.js:32969
-#: build/index.js:35383
-#: build/index.js:35467
-#: build/index.js:36861
-#: build/index.js:36945
-#: build/index.js:37868
-#: build/index.js:37952
-#: build/index.js:39468
-#: build/index.js:39552
-#: build/index.js:40861
-#: build/index.js:40945
-#: build/index.js:42445
-#: build/index.js:42529
-#: build/index.js:3528
-#: build/index.js:3591
-#: build/index.js:5049
-#: build/index.js:5106
-#: build/index.js:6554
-#: build/index.js:6617
-#: build/index.js:7750
-#: build/index.js:7813
-#: build/index.js:8948
-#: build/index.js:9011
-#: build/index.js:10396
-#: build/index.js:10459
-#: build/index.js:11774
-#: build/index.js:11837
-#: build/index.js:13076
-#: build/index.js:13139
-#: build/index.js:14514
-#: build/index.js:14577
-#: build/index.js:15973
-#: build/index.js:16036
-#: build/index.js:17484
-#: build/index.js:17547
-#: build/index.js:19009
-#: build/index.js:19072
-#: build/index.js:20231
-#: build/index.js:20294
-#: build/index.js:21538
-#: build/index.js:21601
-#: build/index.js:22959
-#: build/index.js:23022
-#: build/index.js:24174
-#: build/index.js:24237
-#: build/index.js:25634
-#: build/index.js:25697
-#: build/index.js:26913
-#: build/index.js:26970
-#: build/index.js:28426
-#: build/index.js:28483
-#: build/index.js:30395
-#: build/index.js:30458
-#: build/index.js:31660
-#: build/index.js:31723
-#: build/index.js:32503
-#: build/index.js:32566
-#: build/index.js:33857
-#: build/index.js:33920
-#: build/index.js:35057
-#: build/index.js:35120
-#: build/index.js:36389
-#: build/index.js:36452
-msgid "Border Radius"
-msgstr ""
-
-#: build/index.js:4106
-#: build/index.js:5761
-#: build/index.js:7551
-#: build/index.js:8941
-#: build/index.js:10345
-#: build/index.js:12074
-#: build/index.js:13702
-#: build/index.js:15235
-#: build/index.js:16905
-#: build/index.js:18613
-#: build/index.js:20377
-#: build/index.js:22148
-#: build/index.js:23575
-#: build/index.js:25108
-#: build/index.js:26756
-#: build/index.js:28174
-#: build/index.js:29911
-#: build/index.js:31305
-#: build/index.js:33016
-#: build/index.js:34826
-#: build/index.js:35514
-#: build/index.js:36992
-#: build/index.js:37999
-#: build/index.js:39599
-#: build/index.js:40992
-#: build/index.js:42576
-#: build/index.js:3625
-#: build/index.js:5138
-#: build/index.js:6651
-#: build/index.js:7847
-#: build/index.js:9045
-#: build/index.js:10493
-#: build/index.js:11871
-#: build/index.js:13173
-#: build/index.js:14611
-#: build/index.js:16070
-#: build/index.js:17581
-#: build/index.js:19106
-#: build/index.js:20328
-#: build/index.js:21635
-#: build/index.js:23056
-#: build/index.js:24271
-#: build/index.js:25731
-#: build/index.js:27002
-#: build/index.js:28515
-#: build/index.js:30031
-#: build/index.js:30492
-#: build/index.js:31757
-#: build/index.js:32600
-#: build/index.js:33954
-#: build/index.js:35154
-#: build/index.js:36486
-msgid "Background"
-msgstr ""
-
-#: build/index.js:4127
-#: build/index.js:7572
-#: build/index.js:8962
-#: build/index.js:10366
-#: build/index.js:12095
-#: build/index.js:13723
-#: build/index.js:15256
-#: build/index.js:16926
-#: build/index.js:18636
-#: build/index.js:20398
-#: build/index.js:22169
-#: build/index.js:23596
-#: build/index.js:25129
-#: build/index.js:26777
-#: build/index.js:28195
-#: build/index.js:29932
-#: build/index.js:39620
-#: build/index.js:41013
-#: build/index.js:42597
-#: build/index.js:3652
-#: build/index.js:6678
-#: build/index.js:7874
-#: build/index.js:9072
-#: build/index.js:10520
-#: build/index.js:11898
-#: build/index.js:13200
-#: build/index.js:14638
-#: build/index.js:16098
-#: build/index.js:17608
-#: build/index.js:19133
-#: build/index.js:20355
-#: build/index.js:21662
-#: build/index.js:23083
-#: build/index.js:24298
-#: build/index.js:25758
-#: build/index.js:33981
-#: build/index.js:35181
-#: build/index.js:36513
-msgid "Heading..."
-msgstr ""
-
-#: build/index.js:4187
-#: build/index.js:3700
-msgid "Carousel Module"
-msgstr ""
-
-#: build/index.js:4188
-#: build/index.js:7640
-#: build/index.js:9016
-#: build/index.js:10420
-#: build/index.js:12161
-#: build/index.js:13777
-#: build/index.js:15310
-#: build/index.js:16980
-#: build/index.js:18692
-#: build/index.js:20464
-#: build/index.js:22235
-#: build/index.js:23650
-#: build/index.js:25183
-#: build/index.js:26845
-#: build/index.js:28249
-#: build/index.js:29992
-#: build/index.js:35580
-#: build/index.js:37058
-#: build/index.js:38081
-#: build/index.js:39684
-#: build/index.js:41067
-#: build/index.js:42665
-#: build/index.js:3701
-#: build/index.js:6735
-#: build/index.js:7914
-#: build/index.js:9112
-#: build/index.js:10575
-#: build/index.js:11938
-#: build/index.js:13240
-#: build/index.js:14678
-#: build/index.js:16144
-#: build/index.js:17663
-#: build/index.js:19188
-#: build/index.js:20395
-#: build/index.js:21702
-#: build/index.js:23140
-#: build/index.js:24338
-#: build/index.js:25814
-#: build/index.js:30551
-#: build/index.js:31816
-#: build/index.js:32689
-#: build/index.js:34042
-#: build/index.js:35221
-#: build/index.js:36570
-msgid "Smart Blocks News Modules"
-msgstr ""
-
-#: build/index.js:4911
-#: build/index.js:4396
-msgid "Container"
-msgstr ""
-
-#: build/index.js:4912
-#: build/index.js:4397
-msgid "Display container wrapper for elements"
-msgstr ""
-
-#: build/index.js:5148
-#: build/index.js:4641
-msgid "Sticky Options"
-msgstr ""
-
-#: build/index.js:5151
-#: build/index.js:4645
-msgid "Enable Sticky"
-msgstr ""
-
-#: build/index.js:5157
-#: build/index.js:4651
-msgid "Sticky Offset"
-msgstr ""
-
-#: build/index.js:5173
-#: build/index.js:4664
-msgid "Container Should be inside column for sticky"
-msgstr ""
-
-#: build/index.js:5174
-#: build/index.js:4669
-msgid "Flexible Content Options"
-msgstr ""
-
-#: build/index.js:5177
-#: build/index.js:4673
-msgid "Set Width"
-msgstr ""
-
-#: build/index.js:5183
-#: build/index.js:4679
-msgid "Container Width"
-msgstr ""
-
-#: build/index.js:5209
-#: build/index.js:5215
-#: build/index.js:4696
-#: build/index.js:4701
-msgid "Flex"
-msgstr ""
-
-#: build/index.js:5216
-#: build/index.js:5222
-#: build/index.js:4705
-#: build/index.js:4710
-msgid "Grid"
-msgstr ""
-
-#: build/index.js:5223
-#: build/index.js:4719
-msgid "Direction"
-msgstr ""
-
-#: build/index.js:5230
-#: build/index.js:32680
-#: build/index.js:4725
-#: build/index.js:28272
-msgid "Right"
-msgstr ""
-
-#: build/index.js:5236
-#: build/index.js:4730
-msgid "Bottom"
-msgstr ""
-
-#: build/index.js:5242
-#: build/index.js:32668
-#: build/index.js:4735
-#: build/index.js:28262
-msgid "Left"
-msgstr ""
-
-#: build/index.js:5248
-#: build/index.js:4740
-msgid "Top"
-msgstr ""
-
-#: build/index.js:5263
-#: build/index.js:4752
-msgid "Container Wrap"
-msgstr ""
-
-#: build/index.js:5270
-#: build/index.js:4758
-msgid "No Wrap"
-msgstr ""
-
-#: build/index.js:5276
-#: build/index.js:4763
-msgid "Wrap"
-msgstr ""
-
-#: build/index.js:5291
-#: build/index.js:4778
-msgid "Column Number"
-msgstr ""
-
-#: build/index.js:5308
-#: build/index.js:4793
-msgid "Align Items"
-msgstr ""
-
-#: build/index.js:5315
-#: build/index.js:5355
-#: build/index.js:32628
-#: build/index.js:4799
-#: build/index.js:4833
-#: build/index.js:28229
-msgid "Flex Start"
-msgstr ""
-
-#: build/index.js:5321
-#: build/index.js:5361
-#: build/index.js:5413
-#: build/index.js:30969
-#: build/index.js:32634
-#: build/index.js:32674
-#: build/index.js:4804
-#: build/index.js:4838
-#: build/index.js:4883
-#: build/index.js:26757
-#: build/index.js:28234
-#: build/index.js:28267
-msgid "Center"
-msgstr ""
-
-#: build/index.js:5327
-#: build/index.js:5367
-#: build/index.js:32640
-#: build/index.js:4809
-#: build/index.js:4843
-#: build/index.js:28239
-msgid "Flex End"
-msgstr ""
-
-#: build/index.js:5333
-#: build/index.js:5419
-#: build/index.js:5425
-#: build/index.js:30975
-#: build/index.js:30981
-#: build/index.js:32646
-#: build/index.js:4814
-#: build/index.js:4888
-#: build/index.js:4893
-#: build/index.js:26762
-#: build/index.js:26767
-#: build/index.js:28244
-msgid "Stretch"
-msgstr ""
-
-#: build/index.js:5348
-#: build/index.js:4827
-msgid "Justify Content"
-msgstr ""
-
-#: build/index.js:5373
-#: build/index.js:4848
-msgid "Space Between"
-msgstr ""
-
-#: build/index.js:5379
-#: build/index.js:4853
-msgid "Space Around"
-msgstr ""
-
-#: build/index.js:5385
-#: build/index.js:4858
-msgid "Space Evenly"
-msgstr ""
-
-#: build/index.js:5400
-#: build/index.js:4872
-msgid "Justify Items"
-msgstr ""
-
-#: build/index.js:5407
-#: build/index.js:30963
-#: build/index.js:4878
-#: build/index.js:26752
-msgid "Start"
-msgstr ""
-
-#: build/index.js:5440
-#: build/index.js:30996
-#: build/index.js:32695
-#: build/index.js:4906
-#: build/index.js:26779
-#: build/index.js:28284
-msgid "Gaps"
-msgstr ""
-
-#: build/index.js:5768
-#: build/index.js:5774
-#: build/index.js:31312
-#: build/index.js:31318
-#: build/index.js:33023
-#: build/index.js:33029
-#: build/index.js:5143
-#: build/index.js:5147
-#: build/index.js:27007
-#: build/index.js:27011
-#: build/index.js:28521
-#: build/index.js:28525
-msgid "Image/Color"
-msgstr ""
-
-#: build/index.js:5775
-#: build/index.js:5781
-#: build/index.js:31319
-#: build/index.js:31325
-#: build/index.js:33030
-#: build/index.js:33036
-#: build/index.js:5151
-#: build/index.js:5155
-#: build/index.js:27015
-#: build/index.js:27019
-#: build/index.js:28529
-#: build/index.js:28533
-msgid "Gradient"
-msgstr ""
-
-#: build/index.js:5791
-#: build/index.js:31335
-#: build/index.js:33046
-#: build/index.js:44505
-#: build/index.js:44506
-#: build/index.js:5170
-#: build/index.js:27034
-#: build/index.js:28548
-#: build/index.js:38176
-#: build/index.js:38177
-msgid "Background Image"
-msgstr ""
-
-#: build/index.js:5825
-#: build/index.js:31369
-#: build/index.js:33080
-#: build/index.js:5192
-#: build/index.js:27056
-#: build/index.js:28570
-msgid "Background Gradient"
-msgstr ""
-
-#: build/index.js:5831
-#: build/index.js:31375
-#: build/index.js:33109
-#: build/index.js:5205
-#: build/index.js:27069
-#: build/index.js:28624
-msgid "Section Settings"
-msgstr ""
-
-#: build/index.js:5834
-#: build/index.js:31378
-#: build/index.js:33112
-#: build/index.js:5209
-#: build/index.js:27073
-#: build/index.js:28628
-msgid "HTML Tag"
-msgstr ""
-
-#: build/index.js:5837
-#: build/index.js:31381
-#: build/index.js:33115
-#: build/index.js:5212
-#: build/index.js:27076
-#: build/index.js:28631
-msgid "Default (div)"
-msgstr ""
-
-#: build/index.js:5863
-#: build/index.js:5226
-msgid "Link URL"
-msgstr ""
-
-#: build/index.js:5871
-#: build/index.js:5233
-msgid "The contents inside the container should not have any anchort link inorder to work properly."
-msgstr ""
-
-#: build/index.js:6530
-#: build/index.js:11053
-#: build/index.js:15968
-#: build/index.js:17584
-#: build/index.js:19356
-#: build/index.js:25820
-#: build/index.js:28882
-#: build/index.js:38677
-#: build/index.js:41661
-#: build/index.js:5937
-#: build/index.js:9779
-#: build/index.js:13950
-#: build/index.js:15348
-#: build/index.js:16867
-#: build/index.js:22396
-#: build/index.js:25010
-#: build/index.js:33306
-#: build/index.js:35844
-msgid "Featured Block"
-msgstr ""
-
-#: build/index.js:6580
-#: build/index.js:17634
-#: build/index.js:25854
-#: build/index.js:28932
-#: build/index.js:38711
-#: build/index.js:41695
-#: build/index.js:5982
-#: build/index.js:15393
-#: build/index.js:22427
-#: build/index.js:25055
-#: build/index.js:33337
-#: build/index.js:35875
-msgid "Side Block"
-msgstr ""
-
-#: build/index.js:6863
-#: build/index.js:11386
-#: build/index.js:16293
-#: build/index.js:17925
-#: build/index.js:19689
-#: build/index.js:29223
-#: build/index.js:6198
-#: build/index.js:10040
-#: build/index.js:14204
-#: build/index.js:15617
-#: build/index.js:17128
-#: build/index.js:25278
-msgid "Featured"
-msgstr ""
-
-#: build/index.js:6988
-#: build/index.js:18050
-#: build/index.js:26269
-#: build/index.js:29348
-#: build/index.js:39119
-#: build/index.js:42096
-#: build/index.js:6271
-#: build/index.js:15690
-#: build/index.js:22722
-#: build/index.js:25351
-#: build/index.js:33626
-#: build/index.js:36158
-msgid "Side Post"
-msgstr ""
-
-#: build/index.js:7639
-#: build/index.js:6734
-msgid "News Module 8"
-msgstr ""
-
-#: build/index.js:9015
-#: build/index.js:7913
-msgid "News Module 11"
-msgstr ""
-
-#: build/index.js:10419
-#: build/index.js:9111
-msgid "News Module 15"
-msgstr ""
-
-#: build/index.js:11103
-#: build/index.js:16010
-#: build/index.js:19406
-#: build/index.js:22799
-#: build/index.js:9824
-#: build/index.js:13988
-#: build/index.js:16912
-#: build/index.js:19775
-msgid "Listing Block"
-msgstr ""
-
-#: build/index.js:11511
-#: build/index.js:16418
-#: build/index.js:19814
-#: build/index.js:10113
-#: build/index.js:14277
-#: build/index.js:17201
-msgid "Listing Post"
-msgstr ""
-
-#: build/index.js:12160
-#: build/index.js:10574
-msgid "News Module 5"
-msgstr ""
-
-#: build/index.js:12765
-#: build/index.js:21127
-#: build/index.js:21460
-#: build/index.js:11210
-#: build/index.js:18392
-#: build/index.js:18653
-msgid "Top Block"
-msgstr ""
-
-#: build/index.js:12807
-#: build/index.js:21169
-#: build/index.js:21585
-#: build/index.js:11248
-#: build/index.js:18430
-#: build/index.js:18726
-msgid "Bottom Block"
-msgstr ""
-
-#: build/index.js:13090
-#: build/index.js:11464
-msgid "Top Post"
-msgstr ""
-
-#: build/index.js:13215
-#: build/index.js:11537
-msgid "Bottom Post"
-msgstr ""
-
-#: build/index.js:13776
-#: build/index.js:11937
-msgid "News Module 4"
-msgstr ""
-
-#: build/index.js:14370
-#: build/index.js:12564
-msgid "No of Columns"
-msgstr ""
-
-#: build/index.js:14378
-#: build/index.js:42969
-#: build/index.js:12571
-#: build/index.js:36815
-msgid "No of Posts"
-msgstr ""
-
-#: build/index.js:15309
-#: build/index.js:13239
-msgid "News Module 14"
-msgstr ""
-
-#: build/index.js:16979
-#: build/index.js:14677
-msgid "News Module 9"
-msgstr ""
-
-#: build/index.js:18691
-#: build/index.js:16143
-msgid "News Module 1"
-msgstr ""
-
-#: build/index.js:20463
-#: build/index.js:17662
-msgid "News Module 7"
-msgstr ""
-
-#: build/index.js:22234
-#: build/index.js:19187
-msgid "News Module 6"
-msgstr ""
-
-#: build/index.js:22809
-#: build/index.js:19785
-msgid "Image Width (px)"
-msgstr ""
-
-#: build/index.js:23649
-#: build/index.js:20394
-msgid "News Module 10"
-msgstr ""
-
-#: build/index.js:25182
-#: build/index.js:21701
-msgid "News Module 13"
-msgstr ""
-
-#: build/index.js:26123
-#: build/index.js:22631
-msgid "Featured Post Title Color"
-msgstr ""
-
-#: build/index.js:26130
-#: build/index.js:22637
-msgid "Side Post Title Color"
-msgstr ""
-
-#: build/index.js:26137
-#: build/index.js:22643
-msgid "Side Post Title Color(Hover)"
-msgstr ""
-
-#: build/index.js:26144
-#: build/index.js:38994
-#: build/index.js:41971
-#: build/index.js:22649
-#: build/index.js:33553
-#: build/index.js:36085
-msgid "Featured Post"
-msgstr ""
-
-#: build/index.js:26844
-#: build/index.js:23139
-msgid "News Module 3"
-msgstr ""
-
-#: build/index.js:28248
-#: build/index.js:24337
-msgid "News Module 12"
-msgstr ""
-
-#: build/index.js:29991
-#: build/index.js:25813
-msgid "News Module 2"
-msgstr ""
-
-#: build/index.js:30694
-#: build/index.js:26477
-msgid "Column"
-msgstr ""
-
-#: build/index.js:30695
-#: build/index.js:26478
-msgid "A single column within a columns block."
-msgstr ""
-
-#: build/index.js:30944
-#: build/index.js:32575
-#: build/index.js:26726
-#: build/index.js:28189
-msgid "Width"
-msgstr ""
-
-#: build/index.js:30947
-#: build/index.js:26731
-msgid "Column Width"
-msgstr ""
-
-#: build/index.js:30956
-#: build/index.js:26746
-msgid "Align Self"
-msgstr ""
-
-#: build/index.js:32191
-#: build/index.js:32538
-#: build/index.js:27831
-#: build/index.js:28156
-msgid "Columns"
-msgstr ""
-
-#: build/index.js:32192
-#: build/index.js:27832
-msgid "Display content in multiple columns, with blocks added to each column."
-msgstr ""
-
-#: build/index.js:32535
-#: build/index.js:28152
-msgid "Columns & Layout"
-msgstr ""
-
-#: build/index.js:32553
-#: build/index.js:28175
-msgid "Content Width"
-msgstr ""
-
-#: build/index.js:32556
-#: build/index.js:28178
-msgid "Full Width"
-msgstr ""
-
-#: build/index.js:32559
-#: build/index.js:28179
-msgid "Boxed"
-msgstr ""
-
-#: build/index.js:32598
-#: build/index.js:28206
-msgid "Min Height"
-msgstr ""
-
-#: build/index.js:32621
-#: build/index.js:28223
-msgid "Column Align"
-msgstr ""
-
-#: build/index.js:32661
-#: build/index.js:28256
-msgid "Text Align"
-msgstr ""
-
-#: build/index.js:33086
-#: build/index.js:28583
-msgid "Responsive"
-msgstr ""
-
-#: build/index.js:33089
-#: build/index.js:28587
-msgid "Hide this section in Desktop devices?"
-msgstr ""
-
-#: build/index.js:33093
-#: build/index.js:28593
-msgid "Hide this section in Tablet devices?"
-msgstr ""
-
-#: build/index.js:33097
-#: build/index.js:28599
-msgid "Hide this section in Mobile devices?"
-msgstr ""
-
-#: build/index.js:33101
-#: build/index.js:28608
-msgid "Reverse Columns in Tablet devices?"
-msgstr ""
-
-#: build/index.js:33105
-#: build/index.js:28616
-msgid "Reverse Columns in Mobile devices?"
-msgstr ""
-
-#: build/index.js:33171
-#: build/index.js:28664
-msgid "Section"
-msgstr ""
-
-#: build/index.js:33172
-#: build/index.js:28665
-msgid "Select a variation to start with"
-msgstr ""
-
-#: build/index.js:33178
-#: build/index.js:28670
-msgid "Single"
-msgstr ""
-
-#: build/index.js:33192
-#: build/index.js:33252
-#: build/index.js:33330
-#: build/index.js:33526
-#: build/index.js:33610
-#: build/index.js:33766
-#: build/index.js:33847
-#: build/index.js:33973
-#: build/index.js:28682
-#: build/index.js:28721
-#: build/index.js:28763
-#: build/index.js:28909
-#: build/index.js:28980
-#: build/index.js:29088
-#: build/index.js:29142
-#: build/index.js:29214
-msgid "Equal"
-msgstr ""
-
-#: build/index.js:33212
-#: build/index.js:33547
-#: build/index.js:28695
-#: build/index.js:28926
-msgid "1:2"
-msgstr ""
-
-#: build/index.js:33232
-#: build/index.js:33568
-#: build/index.js:28708
-#: build/index.js:28944
-msgid "2:1"
-msgstr ""
-
-#: build/index.js:33278
-#: build/index.js:33637
-#: build/index.js:28735
-#: build/index.js:28998
-msgid "1:1:2"
-msgstr ""
-
-#: build/index.js:33304
-#: build/index.js:33664
-#: build/index.js:28749
-#: build/index.js:29016
-msgid "2:1:1"
-msgstr ""
-
-#: build/index.js:33511
-#: build/index.js:28893
-msgid "Single Row"
-msgstr ""
-
-#: build/index.js:33589
-#: build/index.js:33745
-#: build/index.js:33826
-#: build/index.js:33952
-#: build/index.js:34090
-#: build/index.js:28961
-#: build/index.js:29070
-#: build/index.js:29123
-#: build/index.js:29195
-#: build/index.js:29270
-msgid "Collapsed Rows"
-msgstr ""
-
-#: build/index.js:33691
-#: build/index.js:29034
-msgid "1:2:1"
-msgstr ""
-
-#: build/index.js:33718
-#: build/index.js:29052
-msgid "1:3:1"
-msgstr ""
-
-#: build/index.js:33799
-#: build/index.js:33886
-#: build/index.js:34024
-#: build/index.js:29107
-#: build/index.js:29162
-#: build/index.js:29236
-msgid "Two Column Grid"
-msgstr ""
-
-#: build/index.js:33919
-#: build/index.js:34057
-#: build/index.js:29179
-#: build/index.js:29253
-msgid "Three Column Grid"
-msgstr ""
-
-#: build/index.js:34679
-#: build/index.js:36146
-#: build/index.js:42873
-#: build/index.js:29887
-#: build/index.js:31138
-#: build/index.js:36732
-msgid "Content Filter"
-msgstr ""
-
-#: build/index.js:34682
-#: build/index.js:36149
-#: build/index.js:29892
-#: build/index.js:31143
-msgid "Select Filter"
-msgstr ""
-
-#: build/index.js:34689
-#: build/index.js:36156
-#: build/index.js:29896
-#: build/index.js:31147
-msgid "By Post Title"
-msgstr ""
-
-#: build/index.js:34692
-#: build/index.js:36159
-#: build/index.js:29897
-#: build/index.js:31148
-msgid "By Categories"
-msgstr ""
-
-#: build/index.js:34695
-#: build/index.js:36162
-#: build/index.js:29898
-#: build/index.js:31149
-msgid "By Tags"
-msgstr ""
-
-#: build/index.js:34698
-#: build/index.js:36165
-#: build/index.js:29904
-#: build/index.js:31155
-msgid "Select Post"
-msgstr ""
-
-#: build/index.js:34705
-#: build/index.js:36172
-#: build/index.js:29913
-#: build/index.js:31164
-msgid "Categories"
-msgstr ""
-
-#: build/index.js:34712
-#: build/index.js:36179
-#: build/index.js:29922
-#: build/index.js:31173
-msgid "Tags"
-msgstr ""
-
-#: build/index.js:34719
-#: build/index.js:36186
-#: build/index.js:42958
-#: build/index.js:29931
-#: build/index.js:31181
-#: build/index.js:36803
-msgid "Offset"
-msgstr ""
-
-#: build/index.js:34727
-#: build/index.js:36194
-#: build/index.js:29940
-#: build/index.js:31190
-msgid "Post Meta"
-msgstr ""
-
-#: build/index.js:34730
-#: build/index.js:29944
-msgid "Post Author"
-msgstr ""
-
-#: build/index.js:34736
-#: build/index.js:29949
-msgid "Post Date"
-msgstr ""
-
-#: build/index.js:34742
-#: build/index.js:29954
-msgid "Post Comments"
-msgstr ""
-
-#: build/index.js:34770
-#: build/index.js:36237
-#: build/index.js:29977
-#: build/index.js:31227
-msgid "Post Excerpt"
-msgstr ""
-
-#: build/index.js:34773
-#: build/index.js:29981
-msgid "Excerpt Length (in Letters)"
-msgstr ""
-
-#: build/index.js:34781
-#: build/index.js:36248
-#: build/index.js:29989
-#: build/index.js:31239
-msgid "Image Settings"
-msgstr ""
-
-#: build/index.js:34807
-#: build/index.js:36274
-#: build/index.js:30013
-#: build/index.js:31263
-msgid "Content Alignment"
-msgstr ""
-
-#: build/index.js:34833
-#: build/index.js:36311
-#: build/index.js:30037
-#: build/index.js:31302
-msgid "Content Padding"
-msgstr ""
-
-#: build/index.js:34888
-#: build/index.js:36366
-#: build/index.js:30071
-#: build/index.js:31336
-msgid "Content Margin"
-msgstr ""
-
-#: build/index.js:35579
-#: build/index.js:30550
-msgid "Single News 1"
-msgstr ""
-
-#: build/index.js:37057
-#: build/index.js:31815
-msgid "Single News 2"
-msgstr ""
-
-#: build/index.js:37476
-#: build/index.js:32213
-msgid "Ticker Block"
-msgstr ""
-
-#: build/index.js:37491
-#: build/index.js:32228
-msgid "Ticker Pause Duration"
-msgstr ""
-
-#: build/index.js:37669
-#: build/index.js:32344
-msgid "Text Color (Hover)"
-msgstr ""
-
-#: build/index.js:37697
-#: build/index.js:32371
-msgid "Background Color(Hover)"
-msgstr ""
-
-#: build/index.js:37704
-#: build/index.js:32377
-msgid "Text Color(Hover)"
-msgstr ""
-
-#: build/index.js:38080
-#: build/index.js:32688
-msgid "Ticker Module"
-msgstr ""
-
-#: build/index.js:38714
-#: build/index.js:33341
-msgid "Large Image Size"
-msgstr ""
-
-#: build/index.js:38721
-#: build/index.js:33347
-msgid "Small Image Size"
-msgstr ""
-
-#: build/index.js:38785
-#: build/index.js:40305
-#: build/index.js:41762
-#: build/index.js:33402
-#: build/index.js:34679
-#: build/index.js:35934
-msgid "Module Height(px)"
-msgstr ""
-
-#: build/index.js:39683
-#: build/index.js:34041
-msgid "Tile Module 1"
-msgstr ""
-
-#: build/index.js:41066
-#: build/index.js:35220
-msgid "Tile Module 3"
-msgstr ""
-
-#: build/index.js:42664
-#: build/index.js:36569
-msgid "Tile Module 2"
-msgstr ""
-
-#: build/index.js:42876
-#: build/index.js:36736
-msgid "Source"
-msgstr ""
-
-#: build/index.js:42904
-#: build/index.js:36763
-msgid "Exclude Posts"
-msgstr ""
-
-#: build/index.js:42914
-#: build/index.js:36773
-msgid "Order By"
-msgstr ""
-
-#: build/index.js:42924
-#: build/index.js:36780
-msgid "Date"
-msgstr ""
-
-#: build/index.js:42927
-#: build/index.js:36781
-msgid "Last Modified Date"
-msgstr ""
-
-#: build/index.js:42930
-#: build/index.js:36782
-msgid "Rand"
-msgstr ""
-
-#: build/index.js:42933
-#: build/index.js:36783
-msgid "Comment Count"
-msgstr ""
-
-#: build/index.js:42942
-#: build/index.js:36790
-msgid "Order"
-msgstr ""
-
-#: build/index.js:42952
-#: build/index.js:36797
-msgid "Descending"
-msgstr ""
-
-#: build/index.js:42955
-#: build/index.js:36798
-msgid "Ascending"
-msgstr ""
-
-#: build/index.js:43063
-#: build/index.js:36859
-msgid "Solid"
-msgstr ""
-
-#: build/index.js:43063
-#: build/index.js:36860
-msgid "Dotted"
-msgstr ""
-
-#: build/index.js:43063
-#: build/index.js:36861
-msgid "Dashed"
-msgstr ""
-
-#: build/index.js:43063
-#: build/index.js:36862
-msgid "Double"
-msgstr ""
-
-#: build/index.js:43074
-#: build/index.js:43148
-#: build/index.js:43387
-#: build/index.js:45226
-#: build/index.js:36871
-#: build/index.js:36923
-#: build/index.js:37122
-#: build/index.js:38705
-msgid "Clear"
-msgstr ""
-
-#: build/index.js:43145
-#: build/index.js:36921
-msgid "Box Shadow"
-msgstr ""
-
-#: build/index.js:43183
-#: build/index.js:36955
-msgid "X"
-msgstr ""
-
-#: build/index.js:43188
-#: build/index.js:36961
-msgid "Y"
-msgstr ""
-
-#: build/index.js:43193
-#: build/index.js:36967
-msgid "Blur"
-msgstr ""
-
-#: build/index.js:43198
-#: build/index.js:36973
-msgid "Spread"
-msgstr ""
-
-#: build/index.js:43208
-#: build/index.js:36988
-msgid "Inset"
-msgstr ""
-
-#: build/index.js:44455
-#: build/index.js:38129
-msgid "Remove Image"
-msgstr ""
-
-#: build/index.js:44456
-#: build/index.js:38133
-msgid "Attachment"
-msgstr ""
-
-#: build/index.js:44459
-#: build/index.js:38136
-msgid "Scroll"
-msgstr ""
-
-#: build/index.js:44462
-#: build/index.js:38137
-msgid "Fixed"
-msgstr ""
-
-#: build/index.js:44467
-#: build/index.js:44470
-#: build/index.js:38143
-#: build/index.js:38146
-msgid "Repeat"
-msgstr ""
-
-#: build/index.js:44473
-#: build/index.js:38147
-msgid "No Repeat"
-msgstr ""
-
-#: build/index.js:44476
-#: build/index.js:38148
-msgid "Repeat X"
-msgstr ""
-
-#: build/index.js:44479
-#: build/index.js:38149
-msgid "Repeat Y"
-msgstr ""
-
-#: build/index.js:44484
-#: build/index.js:38155
-msgid "Size"
-msgstr ""
-
-#: build/index.js:44487
-#: build/index.js:38158
-msgid "Auto"
-msgstr ""
-
-#: build/index.js:44490
-#: build/index.js:38159
-msgid "Cover"
-msgstr ""
-
-#: build/index.js:44493
-#: build/index.js:38160
-msgid "Contain"
-msgstr ""
-
-#: build/index.js:44498
-#: build/index.js:38166
-msgid "Overlay Color"
-msgstr ""
-
-#: build/index.js:45255
-#: build/index.js:38729
-msgid "Font Family"
-msgstr ""
-
-#: build/index.js:45273
-#: build/index.js:38749
-msgid "Weight/Style"
-msgstr ""
-
-#: build/index.js:45288
-#: build/index.js:38767
-msgid "Text Transform"
-msgstr ""
-
-#: build/index.js:45307
-#: build/index.js:38785
-msgid "Text Decoration"
-msgstr ""
-
-#: build/index.js:45330
-#: build/index.js:38804
-msgid "Font Size"
-msgstr ""
-
-#: build/index.js:45414
-#: build/index.js:38902
-msgid "Letter Spacing"
-msgstr ""
-
-#: build/index.js:45490
-#: build/index.js:38992
-msgid "Line Height"
-msgstr ""
-
-#: build/index.js:46056
-#: build/index.js:39434
+#: build/index.js:1
 msgid "Desktop"
 msgstr ""
 
-#: build/index.js:46062
-#: build/index.js:39441
+#: build/index.js:1
 msgid "Tablet"
 msgstr ""
 
-#: build/index.js:46068
-#: build/index.js:39448
+#: build/index.js:1
 msgid "Phone"
+msgstr ""
+
+#: build/index.js:1
+msgid "Single Row"
+msgstr ""
+
+#: build/index.js:1
+msgid "Equal"
+msgstr ""
+
+#: build/index.js:1
+msgid "1:2"
+msgstr ""
+
+#: build/index.js:1
+msgid "2:1"
+msgstr ""
+
+#: build/index.js:1
+msgid "Collapsed Rows"
+msgstr ""
+
+#: build/index.js:1
+msgid "1:1:2"
+msgstr ""
+
+#: build/index.js:1
+msgid "2:1:1"
+msgstr ""
+
+#: build/index.js:1
+msgid "1:2:1"
+msgstr ""
+
+#: build/index.js:1
+msgid "1:3:1"
+msgstr ""
+
+#: build/index.js:1
+msgid "Two Column Grid"
+msgstr ""
+
+#: build/index.js:1
+msgid "Three Column Grid"
+msgstr ""
+
+#: build/index.js:1
+msgid "Clear"
+msgstr ""
+
+#: build/index.js:1
+msgid "Remove Image"
+msgstr ""
+
+#: build/index.js:1
+msgid "Attachment"
+msgstr ""
+
+#: build/index.js:1
+msgid "Scroll"
+msgstr ""
+
+#: build/index.js:1
+msgid "Fixed"
+msgstr ""
+
+#: build/index.js:1
+msgid "Repeat"
+msgstr ""
+
+#: build/index.js:1
+msgid "No Repeat"
+msgstr ""
+
+#: build/index.js:1
+msgid "Repeat X"
+msgstr ""
+
+#: build/index.js:1
+msgid "Repeat Y"
+msgstr ""
+
+#: build/index.js:1
+msgid "Size"
+msgstr ""
+
+#: build/index.js:1
+msgid "Auto"
+msgstr ""
+
+#: build/index.js:1
+msgid "Cover"
+msgstr ""
+
+#: build/index.js:1
+msgid "Contain"
+msgstr ""
+
+#: build/index.js:1
+msgid "Overlay Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Background Image"
+msgstr ""
+
+#: build/index.js:1
+msgid "Box Shadow"
+msgstr ""
+
+#: build/index.js:1
+msgid "X"
+msgstr ""
+
+#: build/index.js:1
+msgid "Y"
+msgstr ""
+
+#: build/index.js:1
+msgid "Blur"
+msgstr ""
+
+#: build/index.js:1
+msgid "Spread"
+msgstr ""
+
+#: build/index.js:1
+msgid "Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Inset"
+msgstr ""
+
+#: build/index.js:1
+msgid "Solid"
+msgstr ""
+
+#: build/index.js:1
+msgid "Dotted"
+msgstr ""
+
+#: build/index.js:1
+msgid "Dashed"
+msgstr ""
+
+#: build/index.js:1
+msgid "Double"
+msgstr ""
+
+#: build/index.js:1
+msgid "Border"
+msgstr ""
+
+#: build/index.js:1
+msgid "Layout"
+msgstr ""
+
+#: build/index.js:1
+msgid "Style"
+msgstr ""
+
+#: build/index.js:1
+msgid "Advanced"
+msgstr ""
+
+#: build/index.js:1
+msgid "Columns & Layout"
+msgstr ""
+
+#: build/index.js:1
+msgid "Columns"
+msgstr ""
+
+#: build/index.js:1
+msgid "Content Width"
+msgstr ""
+
+#: build/index.js:1
+msgid "Full Width"
+msgstr ""
+
+#: build/index.js:1
+msgid "Boxed"
+msgstr ""
+
+#: build/index.js:1
+msgid "Width"
+msgstr ""
+
+#: build/index.js:1
+msgid "Min Height"
+msgstr ""
+
+#: build/index.js:1
+msgid "Column Align"
+msgstr ""
+
+#: build/index.js:1
+msgid "Flex Start"
+msgstr ""
+
+#: build/index.js:1
+msgid "Center"
+msgstr ""
+
+#: build/index.js:1
+msgid "Flex End"
+msgstr ""
+
+#: build/index.js:1
+msgid "Stretch"
+msgstr ""
+
+#: build/index.js:1
+msgid "Text Align"
+msgstr ""
+
+#: build/index.js:1
+msgid "Left"
+msgstr ""
+
+#: build/index.js:1
+msgid "Right"
+msgstr ""
+
+#: build/index.js:1
+msgid "Gaps"
+msgstr ""
+
+#: build/index.js:1
+msgid "Spacing"
+msgstr ""
+
+#: build/index.js:1
+msgid "Margin"
+msgstr ""
+
+#: build/index.js:1
+msgid "Padding"
+msgstr ""
+
+#: build/index.js:1
+msgid "Normal"
+msgstr ""
+
+#: build/index.js:1
+msgid "Border Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Border Width"
+msgstr ""
+
+#: build/index.js:1
+msgid "Border Radius"
+msgstr ""
+
+#: build/index.js:1
+msgid "Hover"
+msgstr ""
+
+#: build/index.js:1
+msgid "Background"
+msgstr ""
+
+#: build/index.js:1
+msgid "Image/Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Gradient"
+msgstr ""
+
+#: build/index.js:1
+msgid "Background Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Background Gradient"
+msgstr ""
+
+#: build/index.js:1
+msgid "Responsive"
+msgstr ""
+
+#: build/index.js:1
+msgid "Hide this section in Desktop devices?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Hide this section in Tablet devices?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Hide this section in Mobile devices?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Reverse Columns in Tablet devices?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Reverse Columns in Mobile devices?"
+msgstr ""
+
+#: build/index.js:1
+msgid "Section Settings"
+msgstr ""
+
+#: build/index.js:1
+msgid "HTML Tag"
+msgstr ""
+
+#: build/index.js:1
+msgid "Default (div)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Section"
+msgstr ""
+
+#: build/index.js:1
+msgid "Select a variation to start with"
+msgstr ""
+
+#: build/index.js:1
+msgid "Single"
+msgstr ""
+
+#: build/index.js:1
+msgid "Display content in multiple columns, with blocks added to each column."
+msgstr ""
+
+#: build/index.js:1
+msgid "Column Width"
+msgstr ""
+
+#: build/index.js:1
+msgid "Align Self"
+msgstr ""
+
+#: build/index.js:1
+msgid "Start"
+msgstr ""
+
+#: build/index.js:1
+msgid "Column"
+msgstr ""
+
+#: build/index.js:1
+msgid "A single column within a columns block."
+msgstr ""
+
+#: build/index.js:1
+msgid "Sticky Options"
+msgstr ""
+
+#: build/index.js:1
+msgid "Enable Sticky"
+msgstr ""
+
+#: build/index.js:1
+msgid "Sticky Offset"
+msgstr ""
+
+#: build/index.js:1
+msgid "Container Should be inside column for sticky"
+msgstr ""
+
+#: build/index.js:1
+msgid "Flexible Content Options"
+msgstr ""
+
+#: build/index.js:1
+msgid "Set Width"
+msgstr ""
+
+#: build/index.js:1
+msgid "Container Width"
+msgstr ""
+
+#: build/index.js:1
+msgid "Flex"
+msgstr ""
+
+#: build/index.js:1
+msgid "Grid"
+msgstr ""
+
+#: build/index.js:1
+msgid "Direction"
+msgstr ""
+
+#: build/index.js:1
+msgid "Bottom"
+msgstr ""
+
+#: build/index.js:1
+msgid "Top"
+msgstr ""
+
+#: build/index.js:1
+msgid "Container Wrap"
+msgstr ""
+
+#: build/index.js:1
+msgid "No Wrap"
+msgstr ""
+
+#: build/index.js:1
+msgid "Wrap"
+msgstr ""
+
+#: build/index.js:1
+msgid "Column Number"
+msgstr ""
+
+#: build/index.js:1
+msgid "Align Items"
+msgstr ""
+
+#: build/index.js:1
+msgid "Justify Content"
+msgstr ""
+
+#: build/index.js:1
+msgid "Space Between"
+msgstr ""
+
+#: build/index.js:1
+msgid "Space Around"
+msgstr ""
+
+#: build/index.js:1
+msgid "Space Evenly"
+msgstr ""
+
+#: build/index.js:1
+msgid "Justify Items"
+msgstr ""
+
+#: build/index.js:1
+msgid "Link URL"
+msgstr ""
+
+#: build/index.js:1
+msgid "The contents inside the container should not have any anchort link inorder to work properly."
+msgstr ""
+
+#: build/index.js:1
+msgid "Container"
+msgstr ""
+
+#: build/index.js:1
+msgid "Display container wrapper for elements"
+msgstr ""
+
+#: build/index.js:1
+msgid "Typography"
+msgstr ""
+
+#: build/index.js:1
+msgid "Font Family"
+msgstr ""
+
+#: build/index.js:1
+msgid "Weight/Style"
+msgstr ""
+
+#: build/index.js:1
+msgid "Text Transform"
+msgstr ""
+
+#: build/index.js:1
+msgid "Text Decoration"
+msgstr ""
+
+#: build/index.js:1
+msgid "Font Size"
+msgstr ""
+
+#: build/index.js:1
+msgid "Letter Spacing"
+msgstr ""
+
+#: build/index.js:1
+msgid "Line Height"
+msgstr ""
+
+#: build/index.js:1
+msgid "Content Filter"
+msgstr ""
+
+#: build/index.js:1
+msgid "Source"
+msgstr ""
+
+#: build/index.js:1
+msgid "Exclude Posts"
+msgstr ""
+
+#: build/index.js:1
+msgid "Order By"
+msgstr ""
+
+#: build/index.js:1
+msgid "Date"
+msgstr ""
+
+#: build/index.js:1
+msgid "Last Modified Date"
+msgstr ""
+
+#: build/index.js:1
+msgid "Rand"
+msgstr ""
+
+#: build/index.js:1
+msgid "Comment Count"
+msgstr ""
+
+#: build/index.js:1
+msgid "Title"
+msgstr ""
+
+#: build/index.js:1
+msgid "Show Post Author"
+msgstr ""
+
+#: build/index.js:1
+msgid "Order"
+msgstr ""
+
+#: build/index.js:1
+msgid "Descending"
+msgstr ""
+
+#: build/index.js:1
+msgid "Ascending"
+msgstr ""
+
+#: build/index.js:1
+msgid "Offset"
+msgstr ""
+
+#: build/index.js:1
+msgid "No of Posts"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 1"
+msgstr ""
+
+#: build/index.js:1
+msgid "Smart Blocks News Modules"
+msgstr ""
+
+#: build/index.js:1
+msgid "Header"
+msgstr ""
+
+#: build/index.js:1
+msgid "Style 1"
+msgstr ""
+
+#: build/index.js:1
+msgid "Style 2"
+msgstr ""
+
+#: build/index.js:1
+msgid "Style 3"
+msgstr ""
+
+#: build/index.js:1
+msgid "Style 4"
+msgstr ""
+
+#: build/index.js:1
+msgid "Featured Block"
+msgstr ""
+
+#: build/index.js:1
+msgid "Image Size"
+msgstr ""
+
+#: build/index.js:1
+msgid "Image Height (%)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Excerpt Length"
+msgstr ""
+
+#: build/index.js:1
+msgid "Show Post Date"
+msgstr ""
+
+#: build/index.js:1
+msgid "Show Post Comments"
+msgstr ""
+
+#: build/index.js:1
+msgid "Show Post Category"
+msgstr ""
+
+#: build/index.js:1
+msgid "Side Block"
+msgstr ""
+
+#: build/index.js:1
+msgid "Additional Settings"
+msgstr ""
+
+#: build/index.js:1
+msgid "Image Border Radius(px)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Date Format"
+msgstr ""
+
+#: build/index.js:1
+msgid "Relative Format (Ago)"
+msgstr ""
+
+#: build/index.js:1
+msgid "WordPress Default Format"
+msgstr ""
+
+#: build/index.js:1
+msgid "Custom Format"
+msgstr ""
+
+#: build/index.js:1
+msgid "Custom Date Format"
+msgstr ""
+
+#: build/index.js:1
+msgid "Header Title"
+msgstr ""
+
+#: build/index.js:1
+msgid "Short Border Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Long Border Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Category"
+msgstr ""
+
+#: build/index.js:1
+msgid "Text Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Title Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Title Color(Hover)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Featured"
+msgstr ""
+
+#: build/index.js:1
+msgid "Side Post"
+msgstr ""
+
+#: build/index.js:1
+msgid "Excerpt"
+msgstr ""
+
+#: build/index.js:1
+msgid "Metas"
+msgstr ""
+
+#: build/index.js:1
+msgid "Heading..."
+msgstr ""
+
+#: build/index.js:1
+msgid "(No title)"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 2"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 3"
+msgstr ""
+
+#: build/index.js:1
+msgid "Featured Post Title Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Side Post Title Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Side Post Title Color(Hover)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Featured Post"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 4"
+msgstr ""
+
+#: build/index.js:1
+msgid "Top Block"
+msgstr ""
+
+#: build/index.js:1
+msgid "Bottom Block"
+msgstr ""
+
+#: build/index.js:1
+msgid "Top Post"
+msgstr ""
+
+#: build/index.js:1
+msgid "Bottom Post"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 5"
+msgstr ""
+
+#: build/index.js:1
+msgid "Listing Block"
+msgstr ""
+
+#: build/index.js:1
+msgid "Listing Post"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 6"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 7"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 8"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 9"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 10"
+msgstr ""
+
+#: build/index.js:1
+msgid "Image Width (px)"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 11"
+msgstr ""
+
+#: build/index.js:1
+msgid "Post Block"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 12"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 13"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 14"
+msgstr ""
+
+#: build/index.js:1
+msgid "No of Columns"
+msgstr ""
+
+#: build/index.js:1
+msgid "News Module 15"
+msgstr ""
+
+#: build/index.js:1
+msgid "Tile Module 1"
+msgstr ""
+
+#: build/index.js:1
+msgid "Large Image Size"
+msgstr ""
+
+#: build/index.js:1
+msgid "Small Image Size"
+msgstr ""
+
+#: build/index.js:1
+msgid "Module Height(px)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Tile Module 2"
+msgstr ""
+
+#: build/index.js:1
+msgid "Tile Module 3"
+msgstr ""
+
+#: build/index.js:1
+msgid "Carousel Module"
+msgstr ""
+
+#: build/index.js:1
+msgid "No of Posts to Show"
+msgstr ""
+
+#: build/index.js:1
+msgid "Carousel Settings"
+msgstr ""
+
+#: build/index.js:1
+msgid "Autoplay"
+msgstr ""
+
+#: build/index.js:1
+msgid "Pause Duration"
+msgstr ""
+
+#: build/index.js:1
+msgid "No of Slides"
+msgstr ""
+
+#: build/index.js:1
+msgid "Spacing Between Slides"
+msgstr ""
+
+#: build/index.js:1
+msgid "Stage Padding"
+msgstr ""
+
+#: build/index.js:1
+msgid "Nav Arrow"
+msgstr ""
+
+#: build/index.js:1
+msgid "Nav Dots"
+msgstr ""
+
+#: build/index.js:1
+msgid "Navigation"
+msgstr ""
+
+#: build/index.js:1
+msgid "Icon Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Dots Color"
+msgstr ""
+
+#: build/index.js:1
+msgid "Background Color (Hover)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Icon Color (Hover)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Dots Color (Active)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Single News 1"
+msgstr ""
+
+#: build/index.js:1
+msgid "Select Filter"
+msgstr ""
+
+#: build/index.js:1
+msgid "By Post Title"
+msgstr ""
+
+#: build/index.js:1
+msgid "By Categories"
+msgstr ""
+
+#: build/index.js:1
+msgid "By Tags"
+msgstr ""
+
+#: build/index.js:1
+msgid "Select Post"
+msgstr ""
+
+#: build/index.js:1
+msgid "Categories"
+msgstr ""
+
+#: build/index.js:1
+msgid "Tags"
+msgstr ""
+
+#: build/index.js:1
+msgid "Post Meta"
+msgstr ""
+
+#: build/index.js:1
+msgid "Post Author"
+msgstr ""
+
+#: build/index.js:1
+msgid "Post Date"
+msgstr ""
+
+#: build/index.js:1
+msgid "Post Comments"
+msgstr ""
+
+#: build/index.js:1
+msgid "Post Excerpt"
+msgstr ""
+
+#: build/index.js:1
+msgid "Excerpt Length (in Letters)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Image Settings"
+msgstr ""
+
+#: build/index.js:1
+msgid "Content Alignment"
+msgstr ""
+
+#: build/index.js:1
+msgid "Content Padding"
+msgstr ""
+
+#: build/index.js:1
+msgid "Content Margin"
+msgstr ""
+
+#: build/index.js:1
+msgid "Single News 2"
+msgstr ""
+
+#: build/index.js:1
+msgid "Ticker Module"
+msgstr ""
+
+#: build/index.js:1
+msgid "Ticker Block"
+msgstr ""
+
+#: build/index.js:1
+msgid "Ticker Pause Duration"
+msgstr ""
+
+#: build/index.js:1
+msgid "Text Color (Hover)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Background Color(Hover)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Text Color(Hover)"
 msgstr ""
 
 #: inc/assets/js/editor-sidebar.js:1
