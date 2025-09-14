@@ -2299,7 +2299,7 @@ h3.sb-big-title {
     }
 }
 
-@media screen and (max-width:767) {
+@media screen and (max-width:767px) {
     .wp-block-smart-blocks .sb-block-title {
         font-size: var(--sb-header-typo-fs-sm, var(--sb-header-typo-fs-md, var(--sb-header-typo-fs-lg, 20px)));
         letter-spacing: var(--sb-header-typo-ls-sm, var(--sb-header-typo-ls-md, var(--sb-header-typo-ls-lg, 0)));

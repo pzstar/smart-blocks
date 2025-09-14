@@ -91,15 +91,11 @@ if (!class_exists('Smart_Blocks')) {
         public function sb_block_styles() {
             $sb_general_settings = get_option('sb_general_settings');
             $default_section_width = isset($sb_general_settings['default_section_width']) && $sb_general_settings['default_section_width'] ? $sb_general_settings['default_section_width'] : '';
-            $tablet_breakpoint = isset($sb_general_settings['tablet_breakpoint']) && $sb_general_settings['tablet_breakpoint'] ? $sb_general_settings['tablet_breakpoint'] : '';
-            $mobile_breakpoint = isset($sb_general_settings['mobile_breakpoint']) && $sb_general_settings['mobile_breakpoint'] ? $sb_general_settings['mobile_breakpoint'] : '';
             ?>
             <style>
                 body {
                     <?php
                     echo $default_section_width ? '--sb-columns-width: ' . intval($default_section_width) . 'px;' : '';
-                    echo $tablet_breakpoint ? '--sb-columns-tablet-breakpoint: ' . intval($tablet_breakpoint) . 'px;' : '';
-                    echo $mobile_breakpoint ? '--sb-columns-mobile-breakpoint: ' . intval($mobile_breakpoint) . 'px;' : '';
                     ?>
                 }
             </style>

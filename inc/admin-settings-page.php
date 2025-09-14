@@ -118,8 +118,6 @@ $sb_all_blocks = smart_blocks_get_all_blocks_list();
                 $sb_general_settings = get_option('sb_general_settings');
                 $load_fonts_locally = isset($sb_general_settings['load_fonts_locally']) && $sb_general_settings['load_fonts_locally'] ? $sb_general_settings['load_fonts_locally'] : '';
                 $default_section_width = isset($sb_general_settings['default_section_width']) && $sb_general_settings['default_section_width'] ? $sb_general_settings['default_section_width'] : '';
-                $mobile_breakpoint = isset($sb_general_settings['mobile_breakpoint']) && $sb_general_settings['mobile_breakpoint'] ? $sb_general_settings['mobile_breakpoint'] : '';
-                $tablet_breakpoint = isset($sb_general_settings['tablet_breakpoint']) && $sb_general_settings['tablet_breakpoint'] ? $sb_general_settings['tablet_breakpoint'] : '';
                 $sb_settings_tabs = apply_filters('sb_setting_tabs', array(
                     'block_styles' => __('Block Styles', 'smart-blocks'),
                     'block_settings' => __('Block Settings', 'smart-blocks')
@@ -144,21 +142,9 @@ $sb_all_blocks = smart_blocks_get_all_blocks_list();
                                 if ($key == 'block_styles') {
                                     ?>
                                     <div class="sb-settings-field">
-                                        <label><?php esc_html_e('Default Section Width (px)', 'smart-blocks'); ?></label>
+                                        <label><?php esc_html_e('Default Columns Width (px)', 'smart-blocks'); ?></label>
                                         <div class="sb-settings-input-field">
                                             <input type="number" name="default_section_width" value="<?php echo esc_attr($default_section_width); ?>">
-                                        </div>
-                                    </div>
-                                    <div class="sb-settings-field">
-                                        <label><?php esc_html_e('Tablet Breakpoint (px)', 'smart-blocks'); ?></label>
-                                        <div class="sb-settings-input-field">
-                                            <input type="number" name="tablet_breakpoint" value="<?php echo esc_attr($tablet_breakpoint); ?>">
-                                        </div>
-                                    </div>
-                                    <div class="sb-settings-field">
-                                        <label><?php esc_html_e('Mobile Breakpoint (px)', 'smart-blocks'); ?></label>
-                                        <div class="sb-settings-input-field">
-                                            <input type="number" name="mobile_breakpoint" value="<?php echo esc_attr($mobile_breakpoint); ?>">
                                         </div>
                                     </div>
                                     <?php
