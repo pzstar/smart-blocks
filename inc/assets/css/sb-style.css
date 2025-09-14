@@ -85,7 +85,7 @@ a {
 }
 
 .wp-block-smart-blocks-columns.sb-has-full-width {
-    max-width: var(--sb-columns-width-lg, 100%);
+    max-width: var(--sb-columns-width-lg, var(--sb-columns-width, 100%));
     margin-left: auto;
     margin-right: auto;
 }
@@ -104,7 +104,7 @@ a {
 }
 
 .wp-block-smart-blocks-columns.sb-has-boxed-width > .wp-block-smart-blocks-columns-wrap {
-    max-width: var(--sb-columns-width-lg, 1170px);
+    max-width: var(--sb-columns-width-lg, var(--sb-columns-width, 1170px));
     width: 100%;
 }
 

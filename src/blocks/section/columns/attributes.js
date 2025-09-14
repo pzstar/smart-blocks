@@ -106,14 +106,13 @@ const attributes = {
     },
 
     columnsWidthSm: {
-        type: 'string',
-        default: 1170
+        type: 'string'
     },
     columnsWidthMd: {
-        type: 'string',
+        type: 'string'
     },
     columnsWidth: {
-        type: 'string',
+        type: 'string'
     },
     columnsWidthUnit: {
         type: 'string',

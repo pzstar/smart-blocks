@@ -17,7 +17,7 @@ import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import {blockInit} from '../../../utils/block-utility';
 import LayoutSelector from './layoutselector.js';
-import {responsiveDimensionVars, dimensionVars, responsiveSliderVars, boxShadowVars, responsiveGapVars, bgVars} from '../../../utils/helper';
+import {responsiveDimensionVars, dimensionVars, responsiveSliderVars,responsiveColumnWidthVars, boxShadowVars, responsiveGapVars, bgVars} from '../../../utils/helper';
 
 const Edit = (props) => {
 	const {attributes, setAttributes, className, clientId} = props
@@ -148,7 +148,7 @@ const Edit = (props) => {
 
 	setAttributes({id: useBlockProps()['id']});
 	const stylesCSS = `#${id} {
-		${responsiveSliderVars('columns-width', columnsWidth, columnsWidthSm, columnsWidthMd, columnsWidthUnit)}
+		${responsiveColumnWidthVars('columns-width', columnsWidth, columnsWidthSm, columnsWidthMd, columnsWidthUnit)}
 		${responsiveSliderVars('columns-horizontal-align', horizontalAlign, horizontalAlignSm, horizontalAlignMd, '')}
 		${responsiveGapVars('columns-gap', columnsGapRow, columnsGapSmRow, columnsGapMdRow, columnsGapColumn, columnsGapSmColumn, columnsGapMdColumn, columnsGapUnit)}
 		${responsiveSliderVars('columns-align', columnAlignment, columnAlignmentSm, columnAlignmentMd, '')}

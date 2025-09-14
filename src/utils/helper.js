@@ -45,6 +45,12 @@ const responsiveSliderVars = (varname, valueLg, valueSm, valueMd, unit = '') => 
         --sb-${varname}-lg: ${valueLg ? (valueLg + unit) : 'initial'};`;
 }
 
+const responsiveColumnWidthVars = (varname, valueLg, valueSm, valueMd, unit = '') => {
+    return `--sb-${varname}-sm: ${valueSm ? (valueSm + unit) : 'var(--sb-' + varname + '-md)'};
+        --sb-${varname}-md: ${valueMd ? (valueMd + unit) : 'var(--sb-' + varname + '-lg)'};
+        --sb-${varname}-lg: ${valueLg ? (valueLg + unit) : 'var(--sb-columns-width, 1170px)'};`;
+}
+
 const boxShadowVars = (varname, horizontal, vertical, blur, spread, color, inset, unit = '') => {
     return `--sb-${varname}-horizontal: ${horizontal ? (horizontal + unit) : '0'};
         --sb-${varname}-vertical: ${vertical ? (vertical + unit) : '0'};
@@ -110,4 +116,4 @@ const bgVars = (varname, valueURL, valueAttachment, valueSize, valuePositionX, v
         --sb-${varname}-overlay-color: ${valueOverlayColor ? valueOverlayColor : 'transparent'};`;
 }
 
-export {bgVars, boxShadowVars, checkDefault, dimensionVars, getFontClass, responsiveDimensionVars, responsiveGapColumnVars, responsiveGapVars, responsiveSliderVars, responsiveTypographyVars};
+export {bgVars, boxShadowVars, checkDefault, dimensionVars, getFontClass, responsiveDimensionVars, responsiveGapColumnVars, responsiveGapVars, responsiveSliderVars, responsiveColumnWidthVars, responsiveTypographyVars};
