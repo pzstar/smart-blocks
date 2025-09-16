@@ -1,3 +1,12 @@
+.wp-block-smart-blocks,
+.wp-block-smart-blocks *,
+.wp-block-smart-blocks-columns,
+.wp-block-smart-blocks-columns *,
+.wp-block-smart-blocks-container,
+.wp-block-smart-blocks-container * {
+    box-sizing: border-box;
+}
+
 .sb-clearfix:before,
 .sb-clearfix:after {
     content: "";
