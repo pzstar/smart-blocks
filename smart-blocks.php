@@ -342,7 +342,7 @@ if (!class_exists('Smart_Blocks')) {
                     </p>
                     <a target="_blank" class="button button-primary button-large" href="https://wordpress.org/support/plugin/smart-blocks/reviews/?filter=5"><span class="dashicons dashicons-thumbs-up"></span><?php echo esc_html__('Yes, of course', 'smart-blocks') ?></a>
                     &nbsp;
-                    <a class="button button-large" href="<?php echo esc_url(sb_nonce_url(add_query_arg('smart-blocks-hide-notice', 'review'), 'review', 'smart_blocks_notice_nonce')); ?>"><span class="dashicons dashicons-yes"></span><?php echo esc_html__('I have already rated', 'smart-blocks') ?></a>
+                    <a class="button button-large" href="<?php echo esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', 'review'), 'review', 'smart_blocks_notice_nonce')); ?>"><span class="dashicons dashicons-yes"></span><?php echo esc_html__('I have already rated', 'smart-blocks') ?></a>
                 </div>
             </div>
             <?php
@@ -364,7 +364,7 @@ if (!class_exists('Smart_Blocks')) {
 
         public function dismiss_button($name) {
             ?>
-            <a class="notice-dismiss" href="<?php echo esc_url(sb_nonce_url(add_query_arg('smart-blocks-hide-notice', $name), $name, 'smart_blocks_notice_nonce')); ?>">
+            <a class="notice-dismiss" href="<?php echo esc_url(wp_nonce_url(add_query_arg('smart-blocks-hide-notice', $name), $name, 'smart_blocks_notice_nonce')); ?>">
                 <span class="screen-reader-text"><?php echo esc_html__('Dismiss this notice.', 'smart-blocks'); ?></span>
             </a>
             <?php
