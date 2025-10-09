@@ -102,7 +102,7 @@ if (!class_exists('Smart_Blocks_CSS')) {
                 require_once UWCC_PATH . 'inc/wptt-webfont-loader.php';
                 $frontend_gfonts = wptt_get_webfont_url($frontend_gfonts);
             }
-            wp_enqueue_style('sb-fonts-frontend', $frontend_gfonts, array(), NULL);
+            wp_enqueue_style('sb-fonts-frontend', $frontend_gfonts, array(), SMART_BLOCKS_VERSION);
         }
 
         public function frontend_gfonts() {

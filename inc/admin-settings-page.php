@@ -19,7 +19,7 @@ $sb_all_blocks = smart_blocks_get_all_blocks_list();
                     </g>
                 </g>
             </svg>
-            <?php echo apply_filters('sb_settings_title', esc_html__('Smart Blocks Setttings', 'smart-blocks') . ' - V' . SMART_BLOCKS_VERSION); ?>
+            <?php echo esc_html(apply_filters('sb_settings_title', 'Smart Blocks Setttings - V' . SMART_BLOCKS_VERSION)); ?>
         </h1>
         <div class="sb-dcoumentation-link">
             <a href="https://hashthemes.com/documentation/smart-blocks-documentation/" target="_blank">
@@ -69,7 +69,7 @@ $sb_all_blocks = smart_blocks_get_all_blocks_list();
                         <i class="mdi-close-circle-outline"></i><?php esc_html_e('Disable All', 'smart-blocks') ?>
                     </button>
                 </div>
-                
+
                 <div class="sb-block-section-inner-wrap">
                     <?php
                     foreach ($sb_all_blocks as $key => $val) {
@@ -175,7 +175,7 @@ $sb_all_blocks = smart_blocks_get_all_blocks_list();
                 <div class="sb-save-button-wrap">
                     <button class="sb-save-button" id="sb-general-settings-save">
                         <i class="mdi mdi-content-save"></i>
-                        <?php esc_html_e('Save', 'smart-blocks-pro'); ?>
+                        <?php esc_html_e('Save', 'smart-blocks'); ?>
                         <span class="sb-loader"></span>
                     </button>
                 </div>
