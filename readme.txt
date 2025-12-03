@@ -2,9 +2,9 @@
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks
 Tested up to:      6.8
-Stable tag:        2.6
+Stable tag:        2.7
 Requires at least: 6.3
-Requires PHP:      7.4
+Requires PHP:      7.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,6 +29,9 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/9e5fc092-bbe0-4eba-93ac-4369a46b54b5)
 
 == Changelog ==
+= 2.7 - Dec 03, 2025 =
+* Media uploader not working issue fixed
+
 = 2.6 - Oct 09, 2025 =
 * Security bug fixed
 * Nonce error fixed
