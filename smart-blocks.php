@@ -3,7 +3,7 @@ defined('ABSPATH') || die;
 /*
   Plugin Name:       Smart Blocks - WordPress Gutenberg Blocks
   Description:       Collection of advanced blocks to be used with WordPress Gutenberg Pagebuilder
-  Version:           2.7
+  Version:           2.8
   Author:            HashThemes
   Author URI:        http://hashthemes.com
   License:           GPLv2 or later
@@ -16,7 +16,7 @@ define('SMART_BLOCKS_FILE', __FILE__);
 define('SMART_BLOCKS_PATH', plugin_dir_path(SMART_BLOCKS_FILE));
 define('SMART_BLOCKS_URL', plugins_url('/', SMART_BLOCKS_FILE));
 define('SMART_BLOCKS_BASENAME', plugin_basename(SMART_BLOCKS_FILE));
-define('SMART_BLOCKS_VERSION', '2.7');
+define('SMART_BLOCKS_VERSION', '2.8');
 
 if (!class_exists('Smart_Blocks')) {
 

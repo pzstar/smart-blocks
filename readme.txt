@@ -1,8 +1,8 @@
 === Smart Blocks - WordPress Gutenberg Blocks ===
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks
-Tested up to:      6.8
-Stable tag:        2.7
+Tested up to:      6.9
+Stable tag:        2.8
 Requires at least: 6.3
 Requires PHP:      7.2
 License:           GPL-2.0-or-later
@@ -23,12 +23,10 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 <li>Activate Plugin from "Plugins" menu in WordPress.</li>
 </ol>
 
-== Frequently Asked Questions ==
-= How can I report security bugs? =
-
-You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/9e5fc092-bbe0-4eba-93ac-4369a46b54b5)
-
 == Changelog ==
+= 2.8 - 6 Dec, 2025 =
+* Compatibility test with WordPress version 6.9
+
 = 2.7 - Dec 03, 2025 =
 * Media uploader not working issue fixed
 
