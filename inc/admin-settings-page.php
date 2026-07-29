@@ -10,7 +10,7 @@ $sb_all_blocks = smart_blocks_get_all_blocks_list();
 <div class="sb-wrap">
 
     <div class="sb-admin-header-section">
-        <h1 class="sb-admin-header-text">
+        <h2 class="sb-admin-header-text">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.72 213.12">
                 <g>
                     <g>
@@ -20,13 +20,17 @@ $sb_all_blocks = smart_blocks_get_all_blocks_list();
                 </g>
             </svg>
             <?php echo esc_html(apply_filters('sb_settings_title', 'Smart Blocks Setttings - V' . SMART_BLOCKS_VERSION)); ?>
-        </h1>
+        </h2>
         <div class="sb-dcoumentation-link">
             <a href="https://hashthemes.com/documentation/smart-blocks-documentation/" target="_blank">
                 <span class="mdi-text-box-multiple-outline"></span>
                 <?php echo esc_html__('Documentation', 'smart-blocks'); ?>
             </a>
         </div>
+    </div>
+
+    <div class="wrap">
+    <h1></h1>
     </div>
 
     <nav class="sb-nav-tab-wrapper">
