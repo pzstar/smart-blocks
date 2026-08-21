@@ -11,6 +11,7 @@ import {
 import {useSelect} from '@wordpress/data';
 
 import ResponsiveDropdown from '../../../../utils/responsivedropdown';
+import {getPreviewDeviceType} from '../../../../utils/device-preview';
 
 const LayoutControl = ({
 	label,
@@ -22,9 +23,8 @@ const LayoutControl = ({
 }) => {
 	const getView = useSelect((select) => {
 		const {getView} = select('smart-blocks/data');
-		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
-
-		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+		
+		return getPreviewDeviceType(select);
 	}, []);
 
 	let value;

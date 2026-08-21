@@ -2,9 +2,9 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_Ticker_Module {
+class Smart_Blocks_Ticker_Module extends Smart_Blocks_Module {
 
-    public $attributes = array();
+    protected ?int $posts_per_page = null;
 
     /** Render Layout */
     public function render($attributes) {
@@ -47,32 +47,5 @@ class Smart_Blocks_Ticker_Module {
         return apply_filters('smart_blocks_ticker_module_render', $content_rendered, $attributes);
     }
 
-    /** Query Args */
-    public function query_args() {
-
-        $post_type = $args['post_type'] = $this->attributes['postsPostType'];
-        $args['orderby'] = $this->attributes['orderBy'];
-        $args['order'] = $this->attributes['order'];
-        $args['ignore_sticky_posts'] = 1;
-        $args['post_status'] = 'publish';
-        if (isset($this->attributes['offset']))
-            $args['offset'] = $this->attributes['offset'];
-        $args['posts_per_page'] = $this->attributes['noOfPosts'];
-        $args['post__not_in'] = isset($this->attributes['excludePosts']) && $this->attributes['excludePosts'] ? $this->attributes['excludePosts'] : [];
-
-        $args['tax_query'] = [];
-        if (isset($this->attributes['categories']) && $this->attributes['categories']) {
-            foreach ($this->attributes['categories'] as $taxonomy => $terms) {
-                if (smart_blocks_is_taxonomy_assigned_to_post_type($this->attributes['postsPostType'], $taxonomy) && !empty($terms)) {
-                    $args['tax_query'][] = [
-                        'taxonomy' => $taxonomy,
-                        'field' => 'term_id',
-                        'terms' => $terms,
-                    ];
-                }
-            }
-        }
-        return $args;
-    }
 
 }

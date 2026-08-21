@@ -39,6 +39,7 @@ import {
 	AlignFlexEnd,
 	AlignStretch
 } from '../../../utils/svgicons';
+import {getPreviewDeviceType} from '../../../utils/device-preview';
 
 const Inspector = ({
 	attributes,
@@ -141,9 +142,7 @@ const Inspector = ({
 	} = attributes;
 
 	const getView = useSelect((select) => {
-		const {getView} = select('smart-blocks/data');
-		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
-		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+		return getPreviewDeviceType(select);
 	}, []);
 
 	useEffect(() => {
@@ -258,22 +257,22 @@ const Inspector = ({
 									options={[
 										{
 											value: 'start',
-											icon: <i class="sbi-align-start-v"></i>,
+											icon: <i className="sbi-align-start-v"></i>,
 											label: __('Start', 'smart-blocks')
 										},
 										{
 											value: 'center',
-											icon: <i class="sbi-align-center-v"></i>,
+											icon: <i className="sbi-align-center-v"></i>,
 											label: __('Center', 'smart-blocks')
 										},
 										{
 											value: 'end',
-											icon: <i class="sbi-align-end-v"></i>,
+											icon: <i className="sbi-align-end-v"></i>,
 											label: __('Stretch', 'smart-blocks')
 										},
 										{
 											value: 'srtetch',
-											icon: <i class="sbi-align-stretch-v"></i>,
+											icon: <i className="sbi-align-stretch-v"></i>,
 											label: __('Stretch', 'smart-blocks')
 										}
 									]}

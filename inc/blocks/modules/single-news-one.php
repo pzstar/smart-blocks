@@ -2,9 +2,9 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_Single_News_One {
+class Smart_Blocks_Single_News_One extends Smart_Blocks_Module {
 
-    public $attributes = array();
+    protected ?int $posts_per_page = 1;
 
     /** Render Layout */
     public function render($attributes) {
@@ -89,9 +89,17 @@ class Smart_Blocks_Single_News_One {
     }
 
     /** Query Args */
-    public function query_args() {
+    public function query_args(): array {
 
-        $filter_option = $this->attributes['filterOption'];
+        $args = array(
+            'post_type' => $this->get_attr('postsPostType', 'post'),
+            'ignore_sticky_posts' => 1,
+            'post_status' => 'publish',
+            'posts_per_page' => $this->get_posts_per_page(),
+            'tax_query' => array(),
+        );
+
+        $filter_option = $this->get_attr('filterOption');
         if ($filter_option == 'single-post') {
             if (!empty($this->attributes['postId'])) {
                 $args['p'] = $this->attributes['postId'];
@@ -118,11 +126,7 @@ class Smart_Blocks_Single_News_One {
             $args['offset'] = $this->attributes['offset'];
         }
 
-        $args['ignore_sticky_posts'] = 1;
-        $args['post_status'] = 'publish';
-        $args['posts_per_page'] = 1;
-
-        return $args;
+        return apply_filters('smart_blocks_module_query_args', $args, $this);
     }
 
 }

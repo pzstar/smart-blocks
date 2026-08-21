@@ -19,7 +19,10 @@ $sb_all_blocks = smart_blocks_get_all_blocks_list();
                     </g>
                 </g>
             </svg>
-            <?php echo esc_html(apply_filters('sb_settings_title', 'Smart Blocks Setttings - V' . SMART_BLOCKS_VERSION)); ?>
+            <?php
+            /* translators: %s is the plugin version number. */
+            echo esc_html(apply_filters('sb_settings_title', sprintf(__('Smart Blocks Settings - V%s', 'smart-blocks'), SMART_BLOCKS_VERSION)));
+            ?>
         </h2>
         <div class="sb-dcoumentation-link">
             <a href="https://hashthemes.com/documentation/smart-blocks-documentation/" target="_blank">

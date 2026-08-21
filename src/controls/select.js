@@ -6,8 +6,8 @@ const SelectControl = ({label, options, value, onChange, inline = !0}) => {
     return <>
         <div className={`sb-field ${inline ? 'sb-field-select sb-display-inline' : ''}`}>
             {label && (<label className={`${inline ? '' : 'sb-label'}`}>{label}</label>)}
-            <div class="sb-input-fields">
-                <div class="sb-popup-select">
+            <div className="sb-input-fields">
+                <div className="sb-popup-select">
                     <select
                         value={value}
                         onChange={onChangeHandler}>

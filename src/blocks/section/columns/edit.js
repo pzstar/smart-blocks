@@ -18,6 +18,7 @@ import Inspector from './inspector.js';
 import {blockInit} from '../../../utils/block-utility';
 import LayoutSelector from './layoutselector.js';
 import {responsiveDimensionVars, dimensionVars, responsiveSliderVars,responsiveColumnWidthVars, boxShadowVars, responsiveGapVars, bgVars} from '../../../utils/helper';
+import {getPreviewDeviceType, isPreviewDeviceAvailable} from '../../../utils/device-preview';
 
 const Edit = (props) => {
 	const {attributes, setAttributes, className, clientId} = props
@@ -181,14 +182,13 @@ const Edit = (props) => {
 
 	const {sectionBlock, isViewportAvailable, isPreviewDesktop, isPreviewTablet, isPreviewMobile} = useSelect(select => {
 		const {getBlock} = select('core/block-editor');
-		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
 		const sectionBlock = getBlock(clientId);
 		return {
 			sectionBlock,
-			isViewportAvailable: __experimentalGetPreviewDeviceType ? true : false,
-			isPreviewDesktop: __experimentalGetPreviewDeviceType ? 'Desktop' === __experimentalGetPreviewDeviceType() : false,
-			isPreviewTablet: __experimentalGetPreviewDeviceType ? 'Tablet' === __experimentalGetPreviewDeviceType() : false,
-			isPreviewMobile: __experimentalGetPreviewDeviceType ? 'Mobile' === __experimentalGetPreviewDeviceType() : false
+			isViewportAvailable: isPreviewDeviceAvailable(select),
+			isPreviewDesktop: 'Desktop' === getPreviewDeviceType(select),
+			isPreviewTablet: 'Tablet' === getPreviewDeviceType(select),
+			isPreviewMobile: 'Mobile' === getPreviewDeviceType(select)
 		};
 	}, []);
 
@@ -261,8 +261,20 @@ const Edit = (props) => {
 		return times(cols, i => ['smart-blocks/column', {columnWidth: layouts[cols][layout][i]}]);
 	};
 
+	// Under block API v2 the editor no longer wraps the block for us, so this
+	// has to render the wrapper itself. Called once, above the early return,
+	// so the hook order does not change with the number of columns.
+	const blockProps = useBlockProps({
+		id,
+		className: columns ? classes : className
+	});
+
 	if (!columns) {
-		return (<LayoutSelector clientId={clientId} setupColumns={setupColumns} />);
+		return (
+			<div {...blockProps}>
+				<LayoutSelector clientId={clientId} setupColumns={setupColumns} />
+			</div>
+		);
 	}
 
 	const InnerBlocksContent = (
@@ -288,10 +300,7 @@ const Edit = (props) => {
 				updateColumnsWidth={updateColumnsWidth}
 			/>
 
-			<Tag
-				className={classes}
-				id={id}
-			>
+			<Tag {...blockProps}>
 				{applyFilters('smartblocks.columns.innerBlock', InnerBlocksContent, attributes)}
 			</Tag>
 		</>

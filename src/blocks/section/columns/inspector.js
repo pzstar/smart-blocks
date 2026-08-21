@@ -49,6 +49,7 @@ import {
 } from '../../../utils/svgicons';
 import Tabs from '../../../utils/tabs';
 import {applyFilters} from '@wordpress/hooks';
+import {getPreviewDeviceType} from '../../../utils/device-preview';
 
 const Inspector = (props) => {
 	const {attributes, setAttributes, updateColumnsWidth} = props;
@@ -174,9 +175,7 @@ const Inspector = (props) => {
 	} = attributes;
 
 	const getView = useSelect((select) => {
-		const {getView} = select('smart-blocks/data');
-		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
-		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+		return getPreviewDeviceType(select);
 	}, []);
 
 	const [activeTab, setActiveTab] = useState('layout');
@@ -382,22 +381,22 @@ const Inspector = (props) => {
 										options={[
 											{
 												value: 'flex-start',
-												icon: <i class="sbi-align-start-v"></i>,
+												icon: <i className="sbi-align-start-v"></i>,
 												label: __('Flex Start', 'smart-blocks')
 											},
 											{
 												value: 'center',
-												icon: <i class="sbi-align-center-v"></i>,
+												icon: <i className="sbi-align-center-v"></i>,
 												label: __('Center', 'smart-blocks')
 											},
 											{
 												value: 'flex-end',
-												icon: <i class="sbi-align-end-v"></i>,
+												icon: <i className="sbi-align-end-v"></i>,
 												label: __('Flex End', 'smart-blocks')
 											},
 											{
 												value: 'stretch',
-												icon: <i class="sbi-align-stretch-v"></i>,
+												icon: <i className="sbi-align-stretch-v"></i>,
 												label: __('Stretch', 'smart-blocks')
 											}
 										]}
@@ -415,17 +414,17 @@ const Inspector = (props) => {
 										options={[
 											{
 												value: 'left',
-												icon: <i class="sbi-text-align-left"></i>,
+												icon: <i className="sbi-text-align-left"></i>,
 												label: __('Left', 'smart-blocks')
 											},
 											{
 												value: 'center',
-												icon: <i class="sbi-text-align-center"></i>,
+												icon: <i className="sbi-text-align-center"></i>,
 												label: __('Center', 'smart-blocks')
 											},
 											{
 												value: 'right',
-												icon: <i class="sbi-text-align-right"></i>,
+												icon: <i className="sbi-text-align-right"></i>,
 												label: __('Right', 'smart-blocks')
 											}
 										]}

@@ -2,9 +2,9 @@
 
 namespace Smart_Blocks;
 
-class Smart_Blocks_News_Module_Nine {
+class Smart_Blocks_News_Module_Nine extends Smart_Blocks_Module {
 
-    public $attributes = array();
+    protected ?int $posts_per_page = 5;
 
     /** Render Layout */
     public function render($attributes) {
@@ -92,34 +92,6 @@ class Smart_Blocks_News_Module_Nine {
         return $content;
     }
 
-    /** Query Args */
-    public function query_args() {
-
-        $post_type = $args['post_type'] = $this->attributes['postsPostType'];
-        $args['orderby'] = $this->attributes['orderBy'];
-        $args['order'] = $this->attributes['order'];
-        $args['ignore_sticky_posts'] = 1;
-        $args['post_status'] = 'publish';
-        if (isset($this->attributes['offset']))
-            $args['offset'] = $this->attributes['offset'];
-        $args['posts_per_page'] = 5;
-        $args['post__not_in'] = isset($this->attributes['excludePosts']) && $this->attributes['excludePosts'] ? $this->attributes['excludePosts'] : [];
-
-        $args['tax_query'] = [];
-
-        if (isset($this->attributes['categories']) && $this->attributes['categories']) {
-            foreach ($this->attributes['categories'] as $taxonomy => $terms) {
-                if (smart_blocks_is_taxonomy_assigned_to_post_type($this->attributes['postsPostType'], $taxonomy) && !empty($terms)) {
-                    $args['tax_query'][] = [
-                        'taxonomy' => $taxonomy,
-                        'field' => 'term_id',
-                        'terms' => $terms,
-                    ];
-                }
-            }
-        }
-        return $args;
-    }
 
     /** Get Post Metas */
     public function get_post_meta($count) {

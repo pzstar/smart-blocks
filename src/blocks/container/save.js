@@ -30,8 +30,8 @@ const Save = ({attributes, className}) => {
 				href: Tag == 'a' && hrefLinkURL ? hrefLinkURL : ''
 			})}
 		>
-			<div class="wp-block-smart-blocks-float-container">
-				<div class="wp-block-smart-blocks-container-content">
+			<div className="wp-block-smart-blocks-float-container">
+				<div className="wp-block-smart-blocks-container-content">
 					<InnerBlocks.Content />
 				</div>
 			</div>

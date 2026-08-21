@@ -5,6 +5,7 @@ import {
     ButtonGroup,
     Button
 } from '@wordpress/components';
+import {getPreviewDeviceType} from '../utils/device-preview';
 
 const ButtonGroupControl = ({
     label,
@@ -20,9 +21,7 @@ const ButtonGroupControl = ({
 }) => {
 
     const getView = useSelect(select => {
-        const {getView} = select('smart-blocks/data');
-        const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
-        return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+        return getPreviewDeviceType(select);
     }, []);
 
     return <div className={`sb-field sb-field-buttons ${responsive ? 'sb-responsive' : ''}`}>

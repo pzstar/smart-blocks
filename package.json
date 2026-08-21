@@ -16,7 +16,7 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "@wordpress/scripts": "23.3.0"
+    "@wordpress/scripts": "^34.1.0"
   },
   "scripts": {
     "start": "wp-scripts start",

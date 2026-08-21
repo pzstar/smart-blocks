@@ -2,19 +2,30 @@
 
 if (!function_exists('smart_blocks_custom_excerpt')) {
 
+    /**
+     * Trims the current post's content to a character limit.
+     *
+     * @param int $limit Maximum number of characters.
+     * @return string
+     */
     function smart_blocks_custom_excerpt($limit) {
-        if ($limit) {
-            $content = get_the_content();
-            $content = wp_strip_all_tags($content);
-            $content = strip_shortcodes($content);
-            $excerpt = mb_substr($content, 0, $limit);
+        $limit = (int) $limit;
 
-            if (strlen($content) >= $limit) {
-                $excerpt = $excerpt . '...';
-            }
-
-            return $excerpt;
+        if ($limit < 1) {
+            return '';
         }
+
+        $content = strip_shortcodes(get_the_content());
+        $content = wp_strip_all_tags($content);
+        $content = trim(preg_replace('/\s+/u', ' ', $content));
+
+        // Measure in characters, not bytes, so the ellipsis decision matches
+        // what mb_substr() actually trimmed on multibyte content.
+        if (mb_strlen($content) <= $limit) {
+            return $content;
+        }
+
+        return mb_substr($content, 0, $limit) . '...';
     }
 
 }
@@ -22,7 +33,7 @@ if (!function_exists('smart_blocks_custom_excerpt')) {
 if (!function_exists('smart_blocks_author_name')) {
 
     function smart_blocks_author_name($class = '') {
-        return '<span class="sb-post-author ' . esc_attr($class) . '"><i class="mdi-account"></i>' . get_the_author() . '</span>';
+        return '<span class="sb-post-author ' . esc_attr($class) . '"><i class="mdi-account"></i>' . esc_html(get_the_author()) . '</span>';
     }
 
 }
@@ -30,7 +41,7 @@ if (!function_exists('smart_blocks_author_name')) {
 if (!function_exists('smart_blocks_comment_count')) {
 
     function smart_blocks_comment_count($class = '') {
-        return '<span class="sb-post-comment ' . esc_attr($class) . '"><i class="mdi-comment-outline"></i>' . get_comments_number() . '</span>';
+        return '<span class="sb-post-comment ' . esc_attr($class) . '"><i class="mdi-comment-outline"></i>' . esc_html(get_comments_number()) . '</span>';
     }
 
 }
@@ -38,12 +49,9 @@ if (!function_exists('smart_blocks_comment_count')) {
 if (!function_exists('smart_blocks_post_date')) {
 
     function smart_blocks_post_date($format = '', $class = '') {
+        $date = $format ? get_the_date($format) : get_the_date();
 
-        if ($format) {
-            return '<span class="sb-post-date ' . esc_attr($class) . '"><i class="mdi-clock-time-four-outline"></i>' . get_the_date($format) . '</span>';
-        } else {
-            return '<span class="sb-post-date ' . esc_attr($class) . '"><i class="mdi-clock-time-four-outline"></i>' . get_the_date() . '</span>';
-        }
+        return '<span class="sb-post-date ' . esc_attr($class) . '"><i class="mdi-clock-time-four-outline"></i>' . esc_html($date) . '</span>';
     }
 
 }
@@ -51,7 +59,10 @@ if (!function_exists('smart_blocks_post_date')) {
 if (!function_exists('smart_blocks_time_ago')) {
 
     function smart_blocks_time_ago($class = '') {
-        return '<span class="sb-post-date ' . esc_attr($class) . '"><i class="mdi-clock-time-four-outline"></i>' . human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ' . __('ago', 'smart-blocks') . '</span>';
+        /* translators: %s is a human readable time difference, e.g. "2 hours". */
+        $ago = sprintf(__('%s ago', 'smart-blocks'), human_time_diff(get_the_time('U'), time()));
+
+        return '<span class="sb-post-date ' . esc_attr($class) . '"><i class="mdi-clock-time-four-outline"></i>' . esc_html($ago) . '</span>';
     }
 
 }
@@ -145,18 +156,23 @@ if (!function_exists('smart_blocks_css_strip_whitespace')) {
 if (!function_exists('smart_blocks_is_taxonomy_assigned_to_post_type')) {
 
     function smart_blocks_is_taxonomy_assigned_to_post_type($post_type, $taxonomy = NULL) {
-        if (is_object($post_type))
+        if (is_object($post_type)) {
             $post_type = $post_type->post_type;
+        }
 
-        if (empty($post_type))
+        if (empty($post_type)) {
             return false;
+        }
 
-        $taxonomies = get_object_taxonomies($post_type);
-
-        if (empty($taxonomy))
+        if (empty($taxonomy)) {
             $taxonomy = get_query_var('taxonomy');
+        }
 
-        return in_array($taxonomy, $taxonomies);
+        if (empty($taxonomy)) {
+            return false;
+        }
+
+        return in_array($taxonomy, get_object_taxonomies($post_type), true);
     }
 
 }
@@ -172,9 +188,18 @@ if (!function_exists('smart_blocks_get_CPTs')) {
 if (!function_exists('smart_blocks_get_relative_dates')) {
 
     function smart_blocks_get_relative_dates($post) {
+        $post_id = is_array($post) && isset($post['id']) ? (int) $post['id'] : 0;
+
+        if (!$post_id) {
+            return array('created' => '', 'modified' => '');
+        }
+
+        /* translators: %s is a human readable time difference, e.g. "2 hours". */
+        $format = __('%s ago', 'smart-blocks');
+
         return array(
-            'created' => human_time_diff(get_the_date('U', $post['id'])) . ' ' . __('ago', 'smart-blocks'),
-            'modified' => human_time_diff(get_the_modified_date('U', $post['id'])) . ' ' . __('ago', 'smart-blocks')
+            'created' => sprintf($format, human_time_diff((int) get_the_date('U', $post_id))),
+            'modified' => sprintf($format, human_time_diff((int) get_the_modified_date('U', $post_id))),
         );
     }
 
@@ -226,7 +251,7 @@ if (!function_exists('smart_blocks_get_all_blocks_list')) {
                 'category' => 'advanced',
                 'icon' => ''
             ),
-            'news-moduel-three' => array(
+            'news-module-three' => array(
                 'name' => 'News Module Three',
                 'category' => 'creative',
                 'icon' => ''
@@ -338,13 +363,37 @@ if (!function_exists('smart_blocks_get_all_blocks_list')) {
 
 
 
+if (!function_exists('smart_blocks_get_active_blocks')) {
+
+    /**
+     * Returns the slugs of the blocks the site has enabled.
+     *
+     * Falls back to every known block so a missing or corrupt option can never
+     * leave the editor with nothing to register.
+     *
+     * @return array
+     */
+    function smart_blocks_get_active_blocks() {
+        $active = get_option('sb_blocks');
+
+        if (!is_array($active)) {
+            return array_keys(smart_blocks_get_all_blocks_list());
+        }
+
+        return array_values(array_filter(array_map('strval', $active)));
+    }
+
+}
+
+if (!function_exists('sb_get_all_blocks_desc')) {
+
 function sb_get_all_blocks_desc() {
     return array(
         'section' => esc_html__('Place content side by side inside a Columns block', 'smart-blocks'),
         'container' => esc_html__('Group blocks together for layout or styling', 'smart-blocks'),
         'news-module-one' => esc_html__('Displays News Posts', 'smart-blocks'),
         'news-module-two' => esc_html__('Displays News Posts', 'smart-blocks'),
-        'news-moduel-three' => esc_html__('Displays News Posts', 'smart-blocks'),
+        'news-module-three' => esc_html__('Displays News Posts', 'smart-blocks'),
         'news-module-four' => esc_html__('Displays News Posts', 'smart-blocks'),
         'news-module-five' => esc_html__('Displays News Posts', 'smart-blocks'),
         'news-module-six' => esc_html__('Displays News Posts', 'smart-blocks'),
@@ -365,4 +414,6 @@ function sb_get_all_blocks_desc() {
         'single-news-two' => esc_html__('Displays News Posts', 'smart-blocks'),
         'carousel-module-one' => esc_html__('Displays News Posts', 'smart-blocks'),
     );
+}
+
 }

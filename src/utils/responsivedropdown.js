@@ -9,17 +9,16 @@ import {DesktopIcon, TabletIcon, PhoneIcon} from './svgicons';
  */
 import {__} from '@wordpress/i18n';
 import {useSelect, useDispatch} from '@wordpress/data';
+import {getPreviewDeviceSetter, getPreviewDeviceType} from '../utils/device-preview';
 
 const ResponsiveDropdown = ({label, className, children}) => {
     const getView = useSelect(select => {
-        const {getView} = select('smart-blocks/data');
-        const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
-        return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+        return getPreviewDeviceType(select);
     });
 
     const {updateView} = useDispatch('smart-blocks/data');
-    const {__experimentalSetPreviewDeviceType} = useDispatch('core/edit-post') ? useDispatch('core/edit-post') : false;
-    const setView = __experimentalSetPreviewDeviceType ? __experimentalSetPreviewDeviceType : updateView;
+    const dispatch = useDispatch();
+    const setView = getPreviewDeviceSetter(dispatch, updateView);
 
     return (
         <div className="sb-device active-md">

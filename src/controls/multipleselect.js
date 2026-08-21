@@ -47,8 +47,8 @@ const MultipleSelectControl = ({label, options, value, setValue}) => {
     return <>
         <div className="sb-field sb-multiple-select">
             {label && (<label className="sb-label">{label}</label>)}
-            <div class="sb-input-fields">
-                <div class="sb-popup-select">
+            <div className="sb-input-fields">
+                <div className="sb-popup-select">
                     <SortableSelect
                         useDragHandle={!0}
                         axis="xy"

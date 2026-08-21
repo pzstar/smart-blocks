@@ -1,6 +1,5 @@
 import {__} from '@wordpress/i18n';
 import {RawHTML, useState} from '@wordpress/element';
-// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
 import {format, dateI18n, getSettings} from '@wordpress/date';
 import {
     useBlockProps,
@@ -408,7 +407,7 @@ export default function Edit(props) {
         const obj = allCats && allCats.find(o => o.id === catId);
         return obj && (
             <li key={index}>
-                <a class={`sb-primary-cat sb-category-${catId}`} href={`${obj.link}`}>
+                <a className={`sb-primary-cat sb-category-${catId}`} href={`${obj.link}`}>
                     {obj.name}
                 </a>
             </li>
@@ -452,7 +451,7 @@ export default function Edit(props) {
                         </div>
                     </a>
                 </div>
-                <div class={`sb-post-content sb-align-${contentAlignment}`}>
+                <div className={`sb-post-content sb-align-${contentAlignment}`}>
                     <h3 className={`sb-post-title ${getFontClass(postTypographyFamily, postTypographyWeight, postTypographyTextTransform, postTypographyTextDecoration)}`}>
                         <a href={post.link}>
                             {post.title.rendered ? (

@@ -8,6 +8,8 @@ defined('ABSPATH') || die;
   Author URI:        http://hashthemes.com
   License:           GPLv2 or later
   License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+  Requires at least: 6.6
+  Requires PHP:      7.4
   Domain Path:       /languages
   Text Domain:       smart-blocks
  */
@@ -22,17 +24,32 @@ if (!class_exists('Smart_Blocks')) {
 
     class Smart_Blocks {
 
-        private static $instance = NULL;
+        /**
+         * Version of the plugin's stored data.
+         *
+         * Bump this when install() needs to run again on existing sites.
+         */
+        const DB_VERSION = '2';
+
+        /**
+         * Screen id of the plugin settings page, set once the menu is registered.
+         *
+         * @var string
+         */
+        private string $settings_screen = '';
+
+        private static ?Smart_Blocks $instance = NULL;
 
         public static function get_instance() {
             // If the single instance hasn't been set, set it now.
-            if (self::$instance == NULL) {
+            if (NULL === self::$instance) {
                 self::$instance = new self;
             }
             return self::$instance;
         }
 
         public function __construct() {
+            add_action('init', array($this, 'load_textdomain'));
             add_action('init', array($this, 'registerPostMeta'));
             add_action('init', array($this, 'add_page_templates_in_post_types'), 999);
 
@@ -47,6 +64,9 @@ if (!class_exists('Smart_Blocks')) {
             // Add new Category for blocks
             add_filter('block_categories_all', array($this, 'register_category'), 10, 2);
 
+            // Group Smart Blocks layouts in the inserter's Patterns tab.
+            add_action('init', array($this, 'register_pattern_categories'), 15);
+
             // Add custom fields for post types
             add_action('rest_api_init', array($this, 'register_custom_fields'));
 
@@ -54,7 +74,7 @@ if (!class_exists('Smart_Blocks')) {
             add_filter('rest_post_collection_params', array($this, 'post_query_vars'));
 
             // Review Notification
-            add_action('wp_loaded', array($this, 'admin_notice'), 20);
+            add_action('admin_notices', array($this, 'admin_notice_content'));
             add_action('admin_init', array($this, 'welcome_init'));
             add_action('admin_enqueue_scripts', array($this, 'add_admin_scripts'));
 
@@ -77,63 +97,186 @@ if (!class_exists('Smart_Blocks')) {
             add_filter('plugin_action_links_' . SMART_BLOCKS_BASENAME, array($this, 'add_settings_link'));
         }
 
+        /**
+         * Loads the plugin's bundled translations.
+         *
+         * Without this the languages folder shipped with the plugin was never
+         * read, so only translations installed into WP_LANG_DIR applied.
+         */
+        public function load_textdomain() {
+            load_plugin_textdomain('smart-blocks', false, dirname(SMART_BLOCKS_BASENAME) . '/languages');
+        }
+
+        /**
+         * Runs install and upgrade routines when the stored version is stale.
+         *
+         * The version option is autoloaded, so the common case is a single
+         * in-memory comparison rather than any write.
+         */
         public function maybe_run_one_time_setup() {
+            if (self::DB_VERSION === get_option('sb_db_version')) {
+                return;
+            }
+
+            self::install();
+        }
+
+        /**
+         * Creates or updates the plugin's stored data.
+         *
+         * Idempotent: safe to run on activation and on every version bump.
+         *
+         * @return void
+         */
+        public static function install() {
+            if (!function_exists('smart_blocks_get_all_blocks_list')) {
+                require_once SMART_BLOCKS_PATH . 'inc/helper-functions.php';
+            }
+
+            // First install: every block starts enabled. On existing sites the
+            // stored selection is left alone.
             if (!get_option('sb_setup_done')) {
                 update_option('sb_blocks', array_keys(smart_blocks_get_all_blocks_list()));
-
-                // Set the flag so it doesn't run again
                 update_option('sb_setup_done', true);
+            }
+
+            self::migrate_block_slugs();
+
+            if (!get_option('smart_blocks_first_activation')) {
+                update_option('smart_blocks_first_activation', time());
+            }
+
+            update_option('sb_db_version', self::DB_VERSION);
+        }
+
+        /**
+         * Repairs enabled-block slugs that were stored under a misspelled key.
+         *
+         * "news-moduel-three" never matched the registered "news-module-three"
+         * block, so the block was missing from the inserter on existing sites.
+         *
+         * @return void
+         */
+        private static function migrate_block_slugs() {
+            $blocks = get_option('sb_blocks');
+
+            if (!is_array($blocks)) {
+                return;
+            }
+
+            $renamed = array('news-moduel-three' => 'news-module-three');
+            $changed = false;
+
+            foreach ($blocks as $index => $slug) {
+                if (isset($renamed[$slug])) {
+                    $blocks[$index] = $renamed[$slug];
+                    $changed = true;
+                }
+            }
+
+            if ($changed) {
+                update_option('sb_blocks', array_values(array_unique($blocks)));
             }
         }
 
+        /**
+         * Prints the site-wide custom properties used by the layout blocks.
+         */
         public function sb_block_styles() {
-            $sb_general_settings = get_option('sb_general_settings');
-            $default_section_width = isset($sb_general_settings['default_section_width']) && $sb_general_settings['default_section_width'] ? $sb_general_settings['default_section_width'] : '';
-            ?>
-            <style>
-                body {
-                    <?php
-                    echo $default_section_width ? '--sb-columns-width: ' . intval($default_section_width) . 'px;' : '';
-                    ?>
-                }
-            </style>
-            <?php
+            $settings = get_option('sb_general_settings');
+            $width = is_array($settings) && isset($settings['default_section_width']) ? absint($settings['default_section_width']) : 0;
+
+            if (!$width) {
+                return;
+            }
+
+            printf('<style id="smart-blocks-inline-css">body{--sb-columns-width:%dpx;}</style>' . "\n", $width);
         }
 
         public function sb_blocks_save() {
-            check_ajax_referer('sb_ajax_nonce', 'sb_nonce');
+            $this->verify_settings_request();
 
-            if (!current_user_can('manage_options')) {
-                wp_send_json_error('You are not allowed to perform this action.');
-            }
+            $submitted = isset($_POST['blocks']) ? wp_unslash($_POST['blocks']) : array();
+            $submitted = is_array($submitted) ? $submitted : array();
 
-            $data_ar = isset($_POST['blocks']) && !empty($_POST['blocks']) ? (array) wp_unslash($_POST['blocks']) : array();
-            $update_blocks = update_option('sb_blocks', $data_ar);
+            // Only persist slugs the plugin actually knows about, so the option
+            // can never be used to smuggle arbitrary strings into the editor.
+            $known = array_keys(smart_blocks_get_all_blocks_list());
+            $blocks = array_values(array_intersect($known, array_map('sanitize_key', $submitted)));
 
-            if ($update_blocks || !empty($data_ar)) {
-                wp_send_json_success('Saved successfully!');
-            } else {
-                wp_send_json_error('Save failed!');
-            }
+            update_option('sb_blocks', $blocks);
+
+            wp_send_json_success(esc_html__('Saved successfully!', 'smart-blocks'));
         }
 
         public function sb_settings_save() {
-            check_ajax_referer('sb_ajax_nonce', 'sb_nonce');
+            $this->verify_settings_request();
 
+            $submitted = isset($_POST['data']) ? wp_unslash($_POST['data']) : array();
+            $settings = array();
+
+            if (is_array($submitted)) {
+                foreach ($submitted as $field) {
+                    if (!is_array($field) || !isset($field['name'])) {
+                        continue;
+                    }
+
+                    $name = sanitize_key($field['name']);
+
+                    if ('' === $name) {
+                        continue;
+                    }
+
+                    $settings[$name] = $this->sanitize_setting($name, isset($field['value']) ? $field['value'] : '');
+                }
+            }
+
+            update_option('sb_general_settings', $settings);
+
+            wp_send_json_success(esc_html__('Saved successfully!', 'smart-blocks'));
+        }
+
+        /**
+         * Rejects settings requests that are not a nonce-backed admin action.
+         */
+        private function verify_settings_request() {
             if (!current_user_can('manage_options')) {
-                wp_send_json_error('You are not allowed to perform this action.');
+                wp_send_json_error(esc_html__('You are not allowed to perform this action.', 'smart-blocks'), 403);
             }
 
-            $data_ar = isset($_POST['data']) ? wp_unslash($_POST['data']) : '';
-            $settings_ar = [];
+            check_ajax_referer('sb_ajax_nonce', 'sb_nonce');
+        }
 
-            foreach ($data_ar as $value) {
-                $settings_ar[$value['name']] = $value['value'];
+        /**
+         * Sanitizes one settings field according to what it holds.
+         *
+         * @param string $name  Sanitized field name.
+         * @param mixed  $value Raw submitted value.
+         * @return mixed
+         */
+        private function sanitize_setting($name, $value) {
+            if (is_array($value)) {
+                return array_map('sanitize_text_field', $value);
             }
 
-            update_option('sb_general_settings', $settings_ar);
-            wp_send_json_success('Saved successfully!');
+            $value = (string) $value;
 
+            // Rich fields keep their markup; everything else is plain text.
+            $html_fields = apply_filters('sb_settings_html_fields', array('maintenance_text'));
+
+            if (in_array($name, $html_fields, true)) {
+                return wp_kses_post($value);
+            }
+
+            if (false !== strpos($name, 'color')) {
+                return sanitize_text_field($value);
+            }
+
+            if (false !== strpos($name, 'image') || false !== strpos($name, 'logo') || false !== strpos($name, 'url')) {
+                return esc_url_raw($value);
+            }
+
+            return sanitize_text_field($value);
         }
 
         // Enqueue localization data for our blocks.
@@ -153,10 +296,9 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function create_block_init() {
-            global $wp_roles;
-
-            // automatically load dependencies and version
-            $asset_file = include(SMART_BLOCKS_PATH . 'build/index.asset.php');
+            // Register the shared styles and scripts first. The Pro plugin
+            // depends on these handles, so they must exist even when the
+            // editor bundle below is missing.
             wp_register_style('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/css/owl.carousel.css', array(), SMART_BLOCKS_VERSION);
             wp_register_style('materialdesignicons', SMART_BLOCKS_URL . 'inc/assets/css/materialdesignicons.css', array(), SMART_BLOCKS_VERSION);
             wp_register_style('smart-blocks-icons', SMART_BLOCKS_URL . 'inc/assets/css/smart-blocks-icons.css', array(), SMART_BLOCKS_VERSION);
@@ -166,10 +308,26 @@ if (!class_exists('Smart_Blocks')) {
             wp_register_script('owl-carousel', SMART_BLOCKS_URL . 'inc/assets/js/owl.carousel.js', array('jquery'), SMART_BLOCKS_VERSION, true);
             wp_register_script('sb-script', SMART_BLOCKS_URL . 'inc/assets/js/sb-script.js', array('jquery', 'owl-carousel'), SMART_BLOCKS_VERSION, true);
 
+            // The editor bundle is generated at build time; without it there is
+            // no editor UI to register blocks against.
+            $asset_path = SMART_BLOCKS_PATH . 'build/index.asset.php';
+
+            if (!file_exists($asset_path)) {
+                return;
+            }
+
+            $asset_file = include $asset_path;
+
+            if (!is_array($asset_file) || !isset($asset_file['dependencies'], $asset_file['version'])) {
+                return;
+            }
+
             wp_register_script('sb-blocks', SMART_BLOCKS_URL . 'build/index.js', $asset_file['dependencies'], $asset_file['version'], true);
             wp_localize_script('sb-blocks', 'smartblocks', array(
-                'userRoles' => $wp_roles->roles,
-                'activeBlocks' => get_option('sb_blocks')
+                'userRoles' => $this->get_user_roles(),
+                // Always an array: the editor calls .includes() on this, and a
+                // false value there stops every block from registering.
+                'activeBlocks' => smart_blocks_get_active_blocks()
             ));
 
             $block_render = new Smart_Blocks_Blocks_Render();
@@ -183,10 +341,19 @@ if (!class_exists('Smart_Blocks')) {
             foreach ($blocks as $block) {
                 register_block_type(
                     'smart-blocks/' . $block, array(
-                        'editor_script' => 'sb-blocks',
-                        'editor_style' => 'sb-block-editor',
-                        'style' => 'sb-style',
-                        'script' => 'sb-script',
+                        // These three were left on the default API version 1
+                        // while every other block here is version 2, even
+                        // though their edit() already renders its own wrapper
+                        // through useBlockProps. Under version 1 the editor
+                        // adds a second wrapper of its own, so the block came
+                        // out nested one level deeper than it saves.
+                        'api_version' => 2,
+                        // The singular editor_script/style/script arguments are
+                        // soft deprecated in favour of the *_handles arrays.
+                        'editor_script_handles' => array('sb-blocks'),
+                        'editor_style_handles' => array('sb-block-editor'),
+                        'style_handles' => array('sb-style'),
+                        'script_handles' => array('sb-script'),
                     )
                 );
             }
@@ -217,18 +384,32 @@ if (!class_exists('Smart_Blocks')) {
             );
 
             foreach ($news_blocks as $block) {
+                $module = str_replace('-', '_', $block);
+                $attributes_callback = 'smart_blocks_attributes_' . $module;
+
                 register_block_type(
                     'smart-blocks/' . $block, array(
                         'api_version' => 2,
-                        'editor_script' => 'sb-blocks',
-                        'editor_style' => 'sb-block-editor',
-                        'style' => 'sb-style',
-                        'attributes' => function_exists('smart_blocks_attributes_' . str_replace('-', '_', $block)) ? call_user_func('smart_blocks_attributes_' . str_replace('-', '_', $block)) : [],
-                        'script' => 'sb-script',
-                        'render_callback' => [$block_render, 'smart_blocks_render_' . str_replace('-', '_', $block)]
+                        'editor_script_handles' => array('sb-blocks'),
+                        'editor_style_handles' => array('sb-block-editor'),
+                        'style_handles' => array('sb-style'),
+                        'script_handles' => array('sb-script'),
+                        'attributes' => function_exists($attributes_callback) ? call_user_func($attributes_callback) : array(),
+                        'render_callback' => array($block_render, 'smart_blocks_render_' . $module)
                     )
                 );
             }
+        }
+
+        /**
+         * Returns the site's roles for the editor's condition controls.
+         *
+         * @return array
+         */
+        private function get_user_roles() {
+            $roles = function_exists('wp_roles') ? wp_roles() : null;
+
+            return ($roles && !empty($roles->roles)) ? $roles->roles : array();
         }
 
 
@@ -251,6 +432,36 @@ if (!class_exists('Smart_Blocks')) {
                     ),
                 )
             );
+        }
+
+        /**
+         * Registers the block pattern categories Smart Blocks layouts use.
+         *
+         * Patterns are the editor's native way to offer ready made layouts:
+         * they appear in the inserter's Patterns tab with a live preview,
+         * search and category filters. Registering the categories here means
+         * they exist whether or not the Templates add-on is installed, and any
+         * theme or add-on can drop patterns into them.
+         *
+         * @return void
+         */
+        public function register_pattern_categories() {
+            if (!function_exists('register_block_pattern_category')) {
+                return;
+            }
+
+            $categories = apply_filters('smart_blocks_pattern_categories', array(
+                'smart-blocks' => _x('Smart Blocks', 'Block pattern category', 'smart-blocks'),
+                'smart-blocks-header' => _x('Smart Blocks: Headers', 'Block pattern category', 'smart-blocks'),
+                'smart-blocks-hero' => _x('Smart Blocks: Hero', 'Block pattern category', 'smart-blocks'),
+                'smart-blocks-news' => _x('Smart Blocks: News', 'Block pattern category', 'smart-blocks'),
+                'smart-blocks-features' => _x('Smart Blocks: Features', 'Block pattern category', 'smart-blocks'),
+                'smart-blocks-footer' => _x('Smart Blocks: Footers', 'Block pattern category', 'smart-blocks'),
+            ));
+
+            foreach ($categories as $slug => $label) {
+                register_block_pattern_category($slug, array('label' => $label));
+            }
         }
 
         public function register_custom_fields() {
@@ -289,18 +500,33 @@ if (!class_exists('Smart_Blocks')) {
             return $query_params;
         }
 
-        public function admin_notice() {
-            add_action('admin_notices', array($this, 'admin_notice_content'));
-        }
-
         public function admin_notice_content() {
-            if (!$this->is_dismissed('review') && !empty(get_option('smart_blocks_first_activation')) && time() > get_option('smart_blocks_first_activation') + 15 * DAY_IN_SECONDS) {
+            if ($this->should_show_review_notice()) {
                 $this->review_notice();
             }
         }
 
+        /**
+         * Whether the review request should be shown on the current screen.
+         *
+         * @return bool
+         */
+        private function should_show_review_notice() {
+            if (!current_user_can('manage_options') || self::is_dismissed('review')) {
+                return false;
+            }
+
+            $activated = (int) get_option('smart_blocks_first_activation');
+
+            return $activated > 0 && time() > $activated + 15 * DAY_IN_SECONDS;
+        }
+
         public static function is_dismissed($notice) {
             $dismissed = get_option('smart_blocks_dismissed_notices', array());
+
+            if (!is_array($dismissed)) {
+                $dismissed = array();
+            }
 
             // Handle legacy user meta
             $dismissed_meta = get_user_meta(get_current_user_id(), 'smart_blocks_dismissed_notices', true);
@@ -315,7 +541,7 @@ if (!class_exists('Smart_Blocks')) {
                 }
             }
 
-            return in_array($notice, $dismissed);
+            return in_array($notice, $dismissed, true);
         }
 
         public function review_notice() {
@@ -346,10 +572,6 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function welcome_init() {
-            if (!get_option('smart_blocks_first_activation')) {
-                update_option('smart_blocks_first_activation', time());
-            }
-
             if (isset($_GET['smart-blocks-hide-notice'], $_GET['smart_blocks_notice_nonce'])) {
                 $notice = sanitize_key($_GET['smart-blocks-hide-notice']);
                 check_admin_referer($notice, 'smart_blocks_notice_nonce');
@@ -370,14 +592,40 @@ if (!class_exists('Smart_Blocks')) {
         public static function dismiss($notice) {
             $dismissed = get_option('smart_blocks_dismissed_notices', array());
 
-            if (!in_array($notice, $dismissed)) {
+            if (!is_array($dismissed)) {
+                $dismissed = array();
+            }
+
+            if (!in_array($notice, $dismissed, true)) {
                 $dismissed[] = $notice;
                 update_option('smart_blocks_dismissed_notices', array_unique($dismissed));
             }
         }
 
-        public function add_admin_scripts() {
-            wp_enqueue_style('smart-blocks-admin-style', SMART_BLOCKS_URL . 'inc/assets/css/admin-style.css', array(), SMART_BLOCKS_VERSION);
+        /**
+         * Loads the settings-screen assets.
+         *
+         * These are only useful on the plugin's own page, so they are not
+         * enqueued across the rest of wp-admin.
+         *
+         * @param string $hook Current admin page hook suffix.
+         */
+        public function add_admin_scripts($hook) {
+            $is_settings_screen = $this->settings_screen && $hook === $this->settings_screen;
+
+            // The review notice can appear on any admin screen and is styled by
+            // this stylesheet, so it loads slightly more widely than the rest.
+            if ($is_settings_screen || $this->should_show_review_notice()) {
+                wp_enqueue_style('smart-blocks-admin-style', SMART_BLOCKS_URL . 'inc/assets/css/admin-style.css', array(), SMART_BLOCKS_VERSION);
+            }
+
+            if (!$is_settings_screen) {
+                return;
+            }
+
+            wp_enqueue_style('wp-color-picker');
+            wp_enqueue_media();
+
             wp_enqueue_script('smart-blocks-admin-script', SMART_BLOCKS_URL . 'inc/assets/js/admin-script.js', array('jquery', 'wp-color-picker'), SMART_BLOCKS_VERSION, true);
             wp_localize_script('smart-blocks-admin-script', 'sb_ajax_obj', [
                 'ajaxURL' => admin_url('admin-ajax.php'),
@@ -400,17 +648,28 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function add_editor_body_class($classes) {
-            if ('post' === get_current_screen()->base) {
-                global $post;
-                $editorWidth = get_post_meta($post->ID, 'sb_editor_width', true);
-
-                // Editor width
-                if (isset($editorWidth) && !empty($editorWidth)) {
-                    $classes .= ' sb-editor-width-' . esc_attr($editorWidth) . ' ';
-                }
-
+            if (!function_exists('get_current_screen')) {
                 return $classes;
             }
+
+            $screen = get_current_screen();
+
+            if (!$screen || 'post' !== $screen->base) {
+                return $classes;
+            }
+
+            $post = get_post();
+
+            if (!$post) {
+                return $classes;
+            }
+
+            $editor_width = get_post_meta($post->ID, 'sb_editor_width', true);
+
+            if ($editor_width) {
+                $classes .= ' sb-editor-width-' . sanitize_html_class($editor_width) . ' ';
+            }
+
             return $classes;
         }
 
@@ -430,19 +689,22 @@ if (!class_exists('Smart_Blocks')) {
 
         public function redirect_page_template($template) {
             $post = get_post();
-            $page_template = '';
-            if ($post->ID) {
-                $page_template = get_post_meta($post->ID, '_wp_page_template', true);
+
+            if (!$post) {
+                return $template;
             }
-            $sb_template = false;
-            if ('template-sb-full-width.php' == basename($page_template)) {
-                $sb_template = true;
-                $template = SMART_BLOCKS_PATH . 'inc/page-templates/template-sb-full-width.php';
+
+            $page_template = get_post_meta($post->ID, '_wp_page_template', true);
+
+            if (!$page_template || 'template-sb-full-width.php' !== basename($page_template)) {
+                return $template;
             }
-            if ($sb_template) {
+
+            if (class_exists('WC_Template_Loader')) {
                 remove_action('template_include', array('WC_Template_Loader', 'template_loader'));
             }
-            return $template;
+
+            return SMART_BLOCKS_PATH . 'inc/page-templates/template-sb-full-width.php';
         }
 
         public static function is_fse_template() {
@@ -455,7 +717,7 @@ if (!class_exists('Smart_Blocks')) {
 
         public function register_admin_menu() {
 
-            add_menu_page(esc_html__('Smart Blocks Settings', 'smart-blocks'), esc_html__('Smart Blocks', 'smart-blocks'), 'manage_options', 'sb-block-settings', array($this, 'sb_blocks_settings_page_display'), 'data:image/svg+xml;base64,' . base64_encode('<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.72 213.12"><g><g><path d="M221.08 54.39c5.71-5.85 6.55-7.25 4.88-8.36-1.12-.7-11.44-5.44-23-10.33s-34.73-15.06-51.47-22.45C134.61 6 120.24 0 119.4 0 118 0 34.74 80.2 33.91 82.15c-.28.42 8 4.46 18.13 8.78s36.68 15.9 58.86 25.67 42 18.13 43.93 19c3.35 1.26 2.51 2.24-23.57 27.48l-27.2 26.22-28.59-12.45c-15.76-7-36-15.62-44.77-19.39l-15.9-7-7.67 7.67c-4.18 4.32-7.39 8-7.11 8.23.55.64 102.09 44.64 107.11 46.75 1.12.42 11.71-9.07 25.8-22.87 13.25-13 32.36-31.66 42.54-41.57s18-18.54 17.43-19a108 108 0 0 0-11.57-5.3c-5.72-2.37-24.27-10.32-41.15-17.72S100.57 89.4 89.56 84.8l-20-8.65L93.74 52c13.25-13.25 25.52-25.1 27.2-26.22 2.65-1.81 6.13-.56 46.16 16.74 23.71 10.32 44.07 18.83 45.19 18.83s5.02-3.19 8.79-6.96"></path><path d="M57.48 134.31c-7.11 7.25-8.51 9.34-6 9.34.84 0 12.83 5 26.78 11.16s26.36 11 27.2 10.88c1.81-.42 30.26-27.75 29.56-28.31-.28-.28-4.88-2.23-10.32-4.6l-9.9-4.19-6.8 6.84-6.84 6.83-15.48-6.83c-22.06-9.63-19.83-9.63-28.2-1.12M149 58.58c-14-6.14-26-11.16-26.81-11.16-1.39 0-30.54 28-29.84 28.59 1.67 1.26 17.15 7.67 18.55 7.67.83 0 4.74-2.79 8.5-6.13 6.42-5.86 7-6.14 11-4.47 2.23 1 10.32 4.47 17.85 7.67l13.67 5.86 7.53-7.25c7.53-7.11 9.07-9.63 6.28-9.63-.82 0-12.81-5.02-26.73-11.15"></path></g></g></svg>'), 99);
+            $this->settings_screen = add_menu_page(esc_html__('Smart Blocks Settings', 'smart-blocks'), esc_html__('Smart Blocks', 'smart-blocks'), 'manage_options', 'sb-block-settings', array($this, 'sb_blocks_settings_page_display'), 'data:image/svg+xml;base64,' . base64_encode('<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 226.72 213.12"><g><g><path d="M221.08 54.39c5.71-5.85 6.55-7.25 4.88-8.36-1.12-.7-11.44-5.44-23-10.33s-34.73-15.06-51.47-22.45C134.61 6 120.24 0 119.4 0 118 0 34.74 80.2 33.91 82.15c-.28.42 8 4.46 18.13 8.78s36.68 15.9 58.86 25.67 42 18.13 43.93 19c3.35 1.26 2.51 2.24-23.57 27.48l-27.2 26.22-28.59-12.45c-15.76-7-36-15.62-44.77-19.39l-15.9-7-7.67 7.67c-4.18 4.32-7.39 8-7.11 8.23.55.64 102.09 44.64 107.11 46.75 1.12.42 11.71-9.07 25.8-22.87 13.25-13 32.36-31.66 42.54-41.57s18-18.54 17.43-19a108 108 0 0 0-11.57-5.3c-5.72-2.37-24.27-10.32-41.15-17.72S100.57 89.4 89.56 84.8l-20-8.65L93.74 52c13.25-13.25 25.52-25.1 27.2-26.22 2.65-1.81 6.13-.56 46.16 16.74 23.71 10.32 44.07 18.83 45.19 18.83s5.02-3.19 8.79-6.96"></path><path d="M57.48 134.31c-7.11 7.25-8.51 9.34-6 9.34.84 0 12.83 5 26.78 11.16s26.36 11 27.2 10.88c1.81-.42 30.26-27.75 29.56-28.31-.28-.28-4.88-2.23-10.32-4.6l-9.9-4.19-6.8 6.84-6.84 6.83-15.48-6.83c-22.06-9.63-19.83-9.63-28.2-1.12M149 58.58c-14-6.14-26-11.16-26.81-11.16-1.39 0-30.54 28-29.84 28.59 1.67 1.26 17.15 7.67 18.55 7.67.83 0 4.74-2.79 8.5-6.13 6.42-5.86 7-6.14 11-4.47 2.23 1 10.32 4.47 17.85 7.67l13.67 5.86 7.53-7.25c7.53-7.11 9.07-9.63 6.28-9.63-.82 0-12.81-5.02-26.73-11.15"></path></g></g></svg>'), 99);
         }
 
         public function sb_blocks_settings_page_display() {
@@ -463,7 +725,7 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function get_block_field($label, $val, $icon = '', $premium = false, $category = '') {
-            $sb_blocks = get_option('sb_blocks') ? get_option('sb_blocks') : array();
+            $active = smart_blocks_get_active_blocks();
             ?>
 
             <div class="sb-block-wrap <?php echo $premium ? 'sb-premium' : ''; ?>" data-main="<?php echo $premium ? 'pro' : 'free'; ?>" data-sub="<?php echo esc_attr($category); ?>">
@@ -477,7 +739,7 @@ if (!class_exists('Smart_Blocks')) {
                 </span>
 
                 <div class="sb-checkbox">
-                    <input type="checkbox" class="sb-block-checkbox" name="blocks" value="<?php echo esc_attr($val); ?>" <?php checked((isset($sb_blocks) && in_array($val, $sb_blocks)), true); ?>>
+                    <input type="checkbox" class="sb-block-checkbox" name="blocks" value="<?php echo esc_attr($val); ?>" <?php checked(in_array($val, $active, true)); ?>>
                     <label></label>
                 </div>
             </div>
@@ -486,7 +748,7 @@ if (!class_exists('Smart_Blocks')) {
         }
 
         public function add_settings_link($links) {
-            $settings_link = '<a href="' . get_admin_url(null, 'admin.php?page=sb-block-settings') . '">' . esc_html__('Settings', 'smart-blocks') . '</a>';
+            $settings_link = '<a href="' . esc_url(admin_url('admin.php?page=sb-block-settings')) . '">' . esc_html__('Settings', 'smart-blocks') . '</a>';
             array_unshift($links, $settings_link);
             return $links;
         }
@@ -509,5 +771,7 @@ if (!function_exists('smart_blocks')) {
     }
 
 }
+
+register_activation_hook(SMART_BLOCKS_FILE, array('Smart_Blocks', 'install'));
 
 smart_blocks();

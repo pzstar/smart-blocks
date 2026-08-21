@@ -10,7 +10,7 @@ export default function Edit({attributes, setAttributes, clientId}) {
 	const {isLibraryOpen} = attributes;
 
 	return <Tooltip text={__('Open Template Library', 'smart-blocks')} {...useBlockProps()}>
-		<section class="sb-template-import">
+		<section className="sb-template-import">
 			<Button
 				isPrimary={!0}
 				isLarge={!0}

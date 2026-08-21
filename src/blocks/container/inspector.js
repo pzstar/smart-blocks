@@ -53,6 +53,7 @@ import {
 	JustifySpaceEvenly
 } from '../../utils/svgicons';
 import {applyFilters} from '@wordpress/hooks';
+import {getPreviewDeviceType} from '../../utils/device-preview';
 
 const Inspector = (props) => {
 	const {attributes, setAttributes} = props;
@@ -187,9 +188,7 @@ const Inspector = (props) => {
 	const [activeTab, setActiveTab] = useState('layout');
 
 	const getView = useSelect((select) => {
-		const {getView} = select('smart-blocks/data');
-		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
-		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+		return getPreviewDeviceType(select);
 	}, []);
 
 	return (
@@ -313,22 +312,22 @@ const Inspector = (props) => {
 											options={[
 												{
 													value: 'row',
-													icon: <i class="sbi-arrow-right"></i>,
+													icon: <i className="sbi-arrow-right"></i>,
 													label: __('Right', 'smart-blocks')
 												},
 												{
 													value: 'column',
-													icon: <i class="sbi-arrow-down"></i>,
+													icon: <i className="sbi-arrow-down"></i>,
 													label: __('Bottom', 'smart-blocks')
 												},
 												{
 													value: 'row-reverse',
-													icon: <i class="sbi-arrow-left"></i>,
+													icon: <i className="sbi-arrow-left"></i>,
 													label: __('Left', 'smart-blocks')
 												},
 												{
 													value: 'column-reverse',
-													icon: <i class="sbi-arrow-up"></i>,
+													icon: <i className="sbi-arrow-up"></i>,
 													label: __('Top', 'smart-blocks')
 												}
 											]}
@@ -346,12 +345,12 @@ const Inspector = (props) => {
 											options={[
 												{
 													value: 'nowrap',
-													icon: <i class="sbi-arrow-right"></i>,
+													icon: <i className="sbi-arrow-right"></i>,
 													label: __('No Wrap', 'smart-blocks')
 												},
 												{
 													value: 'wrap',
-													icon: <i class="sbi-wrap"></i>,
+													icon: <i className="sbi-wrap"></i>,
 													label: __('Wrap', 'smart-blocks')
 												},
 											]}
@@ -387,22 +386,22 @@ const Inspector = (props) => {
 									options={[
 										{
 											value: 'flex-start',
-											icon: <i class="sbi-align-start-v"></i>,
+											icon: <i className="sbi-align-start-v"></i>,
 											label: __('Flex Start', 'smart-blocks')
 										},
 										{
 											value: 'center',
-											icon: <i class="sbi-align-center-v"></i>,
+											icon: <i className="sbi-align-center-v"></i>,
 											label: __('Center', 'smart-blocks')
 										},
 										{
 											value: 'flex-end',
-											icon: <i class="sbi-align-end-v"></i>,
+											icon: <i className="sbi-align-end-v"></i>,
 											label: __('Flex End', 'smart-blocks')
 										},
 										{
 											value: 'stretch',
-											icon: <i class="sbi-align-stretch-v"></i>,
+											icon: <i className="sbi-align-stretch-v"></i>,
 											label: __('Stretch', 'smart-blocks')
 										}
 									]}
@@ -421,32 +420,32 @@ const Inspector = (props) => {
 										options={[
 											{
 												value: 'flex-start',
-												icon: <i class="sbi-justify-start-h"></i>,
+												icon: <i className="sbi-justify-start-h"></i>,
 												label: __('Flex Start', 'smart-blocks')
 											},
 											{
 												value: 'center',
-												icon: <i class="sbi-justify-center-h"></i>,
+												icon: <i className="sbi-justify-center-h"></i>,
 												label: __('Center', 'smart-blocks')
 											},
 											{
 												value: 'flex-end',
-												icon: <i class="sbi-justify-end-h"></i>,
+												icon: <i className="sbi-justify-end-h"></i>,
 												label: __('Flex End', 'smart-blocks')
 											},
 											{
 												value: 'space-between',
-												icon: <i class="sbi-justify-space-between-h"></i>,
+												icon: <i className="sbi-justify-space-between-h"></i>,
 												label: __('Space Between', 'smart-blocks')
 											},
 											{
 												value: 'space-around',
-												icon: <i class="sbi-justify-space-around-h"></i>,
+												icon: <i className="sbi-justify-space-around-h"></i>,
 												label: __('Space Around', 'smart-blocks')
 											},
 											{
 												value: 'space-evenly',
-												icon: <i class="sbi-justify-space-evenly-h"></i>,
+												icon: <i className="sbi-justify-space-evenly-h"></i>,
 												label: __('Space Evenly', 'smart-blocks')
 											}
 										]}
@@ -466,22 +465,22 @@ const Inspector = (props) => {
 										options={[
 											{
 												value: 'start',
-												icon: <i class="sbi-align-start-h"></i>,
+												icon: <i className="sbi-align-start-h"></i>,
 												label: __('Start', 'smart-blocks')
 											},
 											{
 												value: 'center',
-												icon: <i class="sbi-align-center-h"></i>,
+												icon: <i className="sbi-align-center-h"></i>,
 												label: __('Center', 'smart-blocks')
 											},
 											{
 												value: 'end',
-												icon: <i class="sbi-align-end-h"></i>,
+												icon: <i className="sbi-align-end-h"></i>,
 												label: __('Stretch', 'smart-blocks')
 											},
 											{
 												value: 'srtetch',
-												icon: <i class="sbi-align-stretch-h"></i>,
+												icon: <i className="sbi-align-stretch-h"></i>,
 												label: __('Stretch', 'smart-blocks')
 											}
 										]}

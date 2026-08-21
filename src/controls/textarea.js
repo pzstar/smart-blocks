@@ -5,7 +5,7 @@ const TextareaControl = ({label, value, setValue}) => {
     return <>
         <div className="sb-field sb-field-textarea">
             {label && (<label className="sb-label">{label}</label>)}
-            <div class="sb-field-child">
+            <div className="sb-field-child">
                 <TxtareaControl
                     value={value}
                     onChange={setValue}

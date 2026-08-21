@@ -3,6 +3,7 @@ import ResponsiveDropdown from '../utils/responsivedropdown';
 import {useState} from '@wordpress/element';
 import {DesktopIcon, TabletIcon, PhoneIcon} from '../utils/svgicons';
 import {useSelect} from '@wordpress/data';
+import {getPreviewDeviceType} from '../utils/device-preview';
 
 const DimensionControl = ({
 	min,
@@ -44,9 +45,7 @@ const DimensionControl = ({
 	const allUnits = units ? units : ["px", "em", "%"];
 
 	const getView = useSelect(select => {
-		const {getView} = select('smart-blocks/data');
-		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
-		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+		return getPreviewDeviceType(select);
 	}, []);
 
 	const callFunctionByName = (name, value) => {

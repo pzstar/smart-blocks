@@ -14,6 +14,7 @@ import layouts from '../layouts.js';
 import Inspector from './inspector.js';
 import {blockInit} from '../../../utils/block-utility';
 import {responsiveDimensionVars, dimensionVars, boxShadowVars, bgVars, responsiveSliderVars, responsiveGapColumnVars} from '../../../utils/helper';
+import {getPreviewDeviceType, isPreviewDeviceAvailable} from '../../../utils/device-preview';
 
 export default function Edit(props) {
 	const {attributes, setAttributes, className, isSelected, clientId, toggleSelection} = props;
@@ -160,7 +161,6 @@ export default function Edit(props) {
 			getBlock,
 			getBlockRootClientId
 		} = select('core/block-editor');
-		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
 		const block = getBlock(clientId);
 		const adjacentBlockClientId = getAdjacentBlockClientId(clientId);
 		const adjacentBlock = getBlock(adjacentBlockClientId);
@@ -174,10 +174,10 @@ export default function Edit(props) {
 			parentClientId,
 			parentBlock,
 			hasInnerBlocks,
-			isViewportAvailable: __experimentalGetPreviewDeviceType ? true : false,
-			isPreviewDesktop: __experimentalGetPreviewDeviceType ? 'Desktop' === __experimentalGetPreviewDeviceType() : false,
-			isPreviewTablet: __experimentalGetPreviewDeviceType ? 'Tablet' === __experimentalGetPreviewDeviceType() : false,
-			isPreviewMobile: __experimentalGetPreviewDeviceType ? 'Mobile' === __experimentalGetPreviewDeviceType() : false
+			isViewportAvailable: isPreviewDeviceAvailable(select),
+			isPreviewDesktop: 'Desktop' === getPreviewDeviceType(select),
+			isPreviewTablet: 'Tablet' === getPreviewDeviceType(select),
+			isPreviewMobile: 'Mobile' === getPreviewDeviceType(select)
 		};
 	}, []);
 

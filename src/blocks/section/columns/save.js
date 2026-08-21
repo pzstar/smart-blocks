@@ -20,13 +20,13 @@ const Save = ({attributes, className}) => {
 	} = attributes;
 
 	const Tag = columnsHTMLTag;
-	const desktopLayout = hide ? '' : `sb-has-desktop-${layout}-layout`;
-	const tabletLayout = hideTablet ? '' : `sb-has-tablet-${layoutTablet}-layout`;
-	const mobileLayout = hideMobile ? '' : `sb-has-mobile-${layoutMobile}-layout`;
+	const desktopLayout = (hide || !layout) ? '' : `sb-has-desktop-${layout}-layout`;
+	const tabletLayout = (hideTablet || !layoutTablet) ? '' : `sb-has-tablet-${layoutTablet}-layout`;
+	const mobileLayout = (hideMobile || !layoutMobile) ? '' : `sb-has-mobile-${layoutMobile}-layout`;
 
 	const classes = classnames(
 		className,
-		`sb-has-${columns}-columns`,
+		columns ? `sb-has-${columns}-columns` : '',
 		desktopLayout,
 		tabletLayout,
 		mobileLayout,
@@ -35,7 +35,7 @@ const Save = ({attributes, className}) => {
 		{'hide-in-mobile': hideMobile},
 		{'sb-has-reverse-columns-tablet': (reverseColumnsTablet && !hideTablet && 'collapsedRows' === layoutTablet)},
 		{'sb-has-reverse-columns-mobile': (reverseColumnsMobile && !hideMobile && 'collapsedRows' === layoutMobile)},
-		`sb-has-${sectionContentWidth}-width`,
+		sectionContentWidth ? `sb-has-${sectionContentWidth}-width` : '',
 		{'sb-is-frontend': true},
 		attributes.sbColorAnimationType ? `sb--ca-${attributes.sbColorAnimationType}` : '',
 		{'sb-particles-yes': attributes.sbParticlesEnable},

@@ -1,6 +1,5 @@
 import {__} from '@wordpress/i18n';
 import {RawHTML, useState} from '@wordpress/element';
-// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
 import {format, dateI18n, getSettings} from '@wordpress/date';
 import {
     useBlockProps,
@@ -28,7 +27,7 @@ import ToggleControl from '../../controls/toggle';
 import {responsiveTypographyVars, getFontClass, dimensionVars, boxShadowVars, responsiveDimensionVars} from '../../utils/helper';
 import {LayoutIcon, StyleIcon, AdvancedIcon} from '../../utils/svgicons';
 import GroupControlQuery from '../../controlgroup/query';
-import {applyFilters} from '@wordpress/hooks';
+import {applyFilters, hasFilter} from '@wordpress/hooks';
 
 export default function Edit(props) {
     const {attributes, setAttributes} = props;
@@ -436,7 +435,7 @@ export default function Edit(props) {
         const obj = allCats && allCats.find(o => o.id === catId);
         return obj && (
             <li key={index}>
-                <a class={`sb-primary-cat sb-category-${catId}`} href={`${obj.link}`}>
+                <a className={`sb-primary-cat sb-category-${catId}`} href={`${obj.link}`}>
                     {obj.name}
                 </a>
             </li>
@@ -474,21 +473,23 @@ export default function Edit(props) {
         return (
             <div className="sb-post-item" key={index}>
                 <div className="sb-post-thumb">
-                    <div className="sb-thumb-container">
-                        {featuredImage && featuredImage.media_details && (
-                            <img
-                                src={featuredImage.media_details.sizes?.[image_size] ? featuredImage.media_details.sizes?.[image_size].source_url : featuredImage.media_details.sizes?.['full'] ? featuredImage.media_details.sizes?.['full'].source_url : featuredImage.source_url}
-                                alt={featuredImage.alt_text}
-                            />
-                        )}
-                    </div>
+                    <a href={post.link}>
+                        <div className="sb-thumb-container">
+                            {featuredImage && featuredImage.media_details && (
+                                <img
+                                    src={featuredImage.media_details.sizes?.[image_size] ? featuredImage.media_details.sizes?.[image_size].source_url : featuredImage.media_details.sizes?.['full'] ? featuredImage.media_details.sizes?.['full'].source_url : featuredImage.source_url}
+                                    alt={featuredImage.alt_text}
+                                />
+                            )}
+                        </div>
+                    </a>
                     {display_category && post.categories && (
-                        <ul class="post-categories">
+                        <ul className="post-categories">
                             {post.categories && index == 0 ? post.categories.map((catId, index) => (catInner(catId, index, false))) : post.categories.map((catId, index) => (catInner(catId, index, true)))}
                         </ul>
                     )}
                 </div>
-                <div class="sb-post-content">
+                <div className="sb-post-content">
                     <h3 className={`sb-post-title ${titleClass}`}>
                         <a href={post.link}>
                             {post.title.rendered ? (
@@ -550,6 +551,38 @@ export default function Edit(props) {
         });
         return options;
     };
+    // Smart Blocks Pro re-renders this block through its own post block, which
+    // wraps the header and the items in .sb-block-header / .sb-block-inner. The
+    // free renderer emits neither, so the editor follows whichever renderer will
+    // actually produce the front end markup.
+    const hasProLayout = hasFilter('smartblocks.afterHeaderBlocks');
+
+    const blockTitle = (
+        <h2 className={headerClasses}>
+            <RichText
+                tagName="span"
+                // Pro styles the header title through span.sb-title.
+                className={hasProLayout ? 'sb-title' : undefined}
+                value={headerTitle}
+                onChange={(headerTitle) => setAttributes({headerTitle})}
+                placeholder={__('Heading...', 'smart-blocks')}
+            />
+        </h2>
+    );
+
+    const blockHeader = hasProLayout ? (
+        <div className="sb-block-header">
+            {blockTitle}
+            {applyFilters('smartblocks.afterHeaderBlocks', '', props)}
+        </div>
+    ) : blockTitle;
+
+    const blockItems = (
+        <div className="sb-news-module-one-wrap">
+            {posts && posts.map((post, index) => (postInner(post, index)))}
+        </div>
+    );
+
     return (
         <>
             <style jsx>
@@ -1387,23 +1420,10 @@ export default function Edit(props) {
                 <div {...useBlockProps({
                     className: "wp-block-smart-blocks sb-news-module-one"
                 })}>
-                    <div className="sb-block-header">
-                        <h2 className={headerClasses}>
-                            <RichText
-                                tagName="span"
-                                value={headerTitle}
-                                onChange={(headerTitle) => setAttributes({headerTitle})}
-                                placeholder={__('Heading...', 'smart-blocks')}
-                            />
-                        </h2>
-
-                        {applyFilters('smartblocks.afterHeaderBlocks', '', props)}
-                    </div>
-                    <div className="sb-block-inner">
-                        <div className="sb-news-module-one-wrap">
-                            {posts && posts.map((post, index) => (postInner(post, index)))}
-                        </div>
-                    </div>
+                    {blockHeader}
+                    {hasProLayout ? (
+                        <div className="sb-block-inner">{blockItems}</div>
+                    ) : blockItems}
                     {applyFilters('smartblocks.footerBlocks', '', props)}
                 </div>
             </div>

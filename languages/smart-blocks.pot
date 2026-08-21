@@ -1,15 +1,15 @@
-# Copyright (C) 2025 HashThemes
+# Copyright (C) 2026 HashThemes
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Smart Blocks - WordPress Gutenberg Blocks 2.6\n"
+"Project-Id-Version: Smart Blocks - WordPress Gutenberg Blocks 2.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/smart-blocks\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-10T15:35:11+00:00\n"
+"POT-Creation-Date: 2026-08-21T06:33:57+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: smart-blocks\n"
@@ -34,120 +34,126 @@ msgstr ""
 msgid "http://hashthemes.com"
 msgstr ""
 
-#: inc/admin-settings-page.php:27
+#. translators: %s is the plugin version number.
+#: inc/admin-settings-page.php:24
+msgid "Smart Blocks Settings - V%s"
+msgstr ""
+
+#: inc/admin-settings-page.php:30
 msgid "Documentation"
 msgstr ""
 
-#: inc/admin-settings-page.php:36
+#: inc/admin-settings-page.php:43
+#: src/blocks/template-import/template-library/components/header.js:75
 msgid "Blocks"
 msgstr ""
 
-#: inc/admin-settings-page.php:40
-#: smart-blocks.php:492
+#: inc/admin-settings-page.php:47
+#: smart-blocks.php:751
 msgid "Settings"
 msgstr ""
 
-#: inc/admin-settings-page.php:44
+#: inc/admin-settings-page.php:51
 msgid "About"
 msgstr ""
 
-#: inc/admin-settings-page.php:66
+#: inc/admin-settings-page.php:73
 msgid "Enable All"
 msgstr ""
 
-#: inc/admin-settings-page.php:69
+#: inc/admin-settings-page.php:76
 msgid "Disable All"
 msgstr ""
 
-#: inc/admin-settings-page.php:83
-#: inc/admin-settings-page.php:178
+#: inc/admin-settings-page.php:90
+#: inc/admin-settings-page.php:185
 msgid "Save"
 msgstr ""
 
-#: inc/admin-settings-page.php:91
+#: inc/admin-settings-page.php:98
 msgid "Description"
 msgstr ""
 
-#: inc/admin-settings-page.php:92
+#: inc/admin-settings-page.php:99
 msgid "Smart Blocks is an all in one block pack extension for Gutenberg page builder. It provides creative blocks to provide an outstanding look to your Gutenberg based WordPress website. The blocks are multi concept and contain amazing features to make your website more effective by placing the spectacular blocks and enhance the engagement rate."
 msgstr ""
 
-#: inc/admin-settings-page.php:94
+#: inc/admin-settings-page.php:101
 msgid "Blocks Available in the Extension:"
 msgstr ""
 
-#: inc/admin-settings-page.php:107
+#: inc/admin-settings-page.php:114
 msgid "More Coming"
 msgstr ""
 
-#: inc/admin-settings-page.php:109
+#: inc/admin-settings-page.php:116
 msgid "Support:"
 msgstr ""
 
-#: inc/admin-settings-page.php:110
+#: inc/admin-settings-page.php:117
 msgid "If you have any issues while using our plugin, feel free to contact us for support. Our support team will be more than happy to help you resolve your issue. You can chat with us or email us at our website"
 msgstr ""
 
-#: inc/admin-settings-page.php:110
+#: inc/admin-settings-page.php:117
 msgid "here"
 msgstr ""
 
-#: inc/admin-settings-page.php:122
+#: inc/admin-settings-page.php:129
 msgid "Block Styles"
 msgstr ""
 
-#: inc/admin-settings-page.php:123
+#: inc/admin-settings-page.php:130
 msgid "Block Settings"
 msgstr ""
 
-#: inc/admin-settings-page.php:145
+#: inc/admin-settings-page.php:152
 msgid "Default Columns Width (px)"
 msgstr ""
 
-#: inc/admin-settings-page.php:155
+#: inc/admin-settings-page.php:162
 msgid "Load Google Fonts Locally"
 msgstr ""
 
-#: inc/admin-settings-page.php:161
+#: inc/admin-settings-page.php:168
 msgid "It is required to load the Google Fonts locally in order to comply with GDPR. However, if your website is not required to comply with GDPR then you can check this field off. Loading the Fonts locally with lots of different Google fonts can decrease the speed of the website slightly."
 msgstr ""
 
-#: inc/helper-functions.php:54
-#: inc/helper-functions.php:176
-#: inc/helper-functions.php:177
-msgid "ago"
+#. translators: %s is a human readable time difference, e.g. "2 hours".
+#: inc/helper-functions.php:63
+#: inc/helper-functions.php:198
+msgid "%s ago"
 msgstr ""
 
-#: inc/helper-functions.php:343
+#: inc/helper-functions.php:392
 msgid "Place content side by side inside a Columns block"
 msgstr ""
 
-#: inc/helper-functions.php:344
+#: inc/helper-functions.php:393
 msgid "Group blocks together for layout or styling"
 msgstr ""
 
-#: inc/helper-functions.php:345
-#: inc/helper-functions.php:346
-#: inc/helper-functions.php:347
-#: inc/helper-functions.php:348
-#: inc/helper-functions.php:349
-#: inc/helper-functions.php:350
-#: inc/helper-functions.php:351
-#: inc/helper-functions.php:352
-#: inc/helper-functions.php:353
-#: inc/helper-functions.php:354
-#: inc/helper-functions.php:355
-#: inc/helper-functions.php:356
-#: inc/helper-functions.php:357
-#: inc/helper-functions.php:358
-#: inc/helper-functions.php:359
-#: inc/helper-functions.php:360
-#: inc/helper-functions.php:361
-#: inc/helper-functions.php:362
-#: inc/helper-functions.php:363
-#: inc/helper-functions.php:364
-#: inc/helper-functions.php:365
-#: inc/helper-functions.php:366
+#: inc/helper-functions.php:394
+#: inc/helper-functions.php:395
+#: inc/helper-functions.php:396
+#: inc/helper-functions.php:397
+#: inc/helper-functions.php:398
+#: inc/helper-functions.php:399
+#: inc/helper-functions.php:400
+#: inc/helper-functions.php:401
+#: inc/helper-functions.php:402
+#: inc/helper-functions.php:403
+#: inc/helper-functions.php:404
+#: inc/helper-functions.php:405
+#: inc/helper-functions.php:406
+#: inc/helper-functions.php:407
+#: inc/helper-functions.php:408
+#: inc/helper-functions.php:409
+#: inc/helper-functions.php:410
+#: inc/helper-functions.php:411
+#: inc/helper-functions.php:412
+#: inc/helper-functions.php:413
+#: inc/helper-functions.php:414
+#: inc/helper-functions.php:415
 msgid "Displays News Posts"
 msgstr ""
 
@@ -159,1060 +165,2672 @@ msgstr ""
 msgid "Load for Block Preview."
 msgstr ""
 
-#: inc/template-library.php:81
-msgid "File doesn't exist"
+#: inc/template-library.php:69
+msgid "You are not allowed to import templates."
 msgstr ""
 
-#: smart-blocks.php:249
+#: inc/template-library.php:80
+msgid "That template URL is not allowed."
+msgstr ""
+
+#: inc/template-library.php:99
+msgid "The template could not be downloaded."
+msgstr ""
+
+#: smart-blocks.php:209
+#: smart-blocks.php:236
+msgid "Saved successfully!"
+msgstr ""
+
+#: smart-blocks.php:244
+msgid "You are not allowed to perform this action."
+msgstr ""
+
+#: smart-blocks.php:427
 msgid "SB Block Modules"
 msgstr ""
 
-#: smart-blocks.php:253
+#: smart-blocks.php:431
 msgid "SB Magazine Modules"
 msgstr ""
 
-#. translators: %1$s is link start tag, %2$s is link end tag.
-#: smart-blocks.php:339
-msgid "Great to see that you have been using Smart Blocks - WordPress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world."
-msgstr ""
-
-#: smart-blocks.php:343
-msgid "Yes, of course"
-msgstr ""
-
-#: smart-blocks.php:345
-msgid "I have already rated"
-msgstr ""
-
-#: smart-blocks.php:368
-msgid "Dismiss this notice."
-msgstr ""
-
-#: smart-blocks.php:430
-msgid "Smart Blocks Full Width"
-msgstr ""
-
-#: smart-blocks.php:461
-#: inc/assets/js/editor-sidebar.js:1
-msgid "Smart Blocks Settings"
-msgstr ""
-
-#: smart-blocks.php:461
+#: smart-blocks.php:454
+msgctxt "Block pattern category"
 msgid "Smart Blocks"
 msgstr ""
 
-#: build/index.js:1
-msgid "Desktop"
+#: smart-blocks.php:455
+msgctxt "Block pattern category"
+msgid "Smart Blocks: Headers"
 msgstr ""
 
-#: build/index.js:1
-msgid "Tablet"
+#: smart-blocks.php:456
+msgctxt "Block pattern category"
+msgid "Smart Blocks: Hero"
 msgstr ""
 
-#: build/index.js:1
-msgid "Phone"
+#: smart-blocks.php:457
+msgctxt "Block pattern category"
+msgid "Smart Blocks: News"
 msgstr ""
 
-#: build/index.js:1
-msgid "Single Row"
+#: smart-blocks.php:458
+msgctxt "Block pattern category"
+msgid "Smart Blocks: Features"
 msgstr ""
 
-#: build/index.js:1
-msgid "Equal"
+#: smart-blocks.php:459
+msgctxt "Block pattern category"
+msgid "Smart Blocks: Footers"
 msgstr ""
 
-#: build/index.js:1
-msgid "1:2"
+#. translators: %1$s is link start tag, %2$s is link end tag.
+#: smart-blocks.php:562
+msgid "Great to see that you have been using Smart Blocks - WordPress Gutenberg Blocks for some time. We hope you love it, and we would really appreciate it if you would %1$sgive us a 5 stars rating%2$s and spread your words to the world."
 msgstr ""
 
-#: build/index.js:1
-msgid "2:1"
+#: smart-blocks.php:566
+msgid "Yes, of course"
 msgstr ""
 
-#: build/index.js:1
-msgid "Collapsed Rows"
+#: smart-blocks.php:568
+msgid "I have already rated"
 msgstr ""
 
-#: build/index.js:1
-msgid "1:1:2"
+#: smart-blocks.php:587
+msgid "Dismiss this notice."
 msgstr ""
 
-#: build/index.js:1
-msgid "2:1:1"
+#: smart-blocks.php:686
+msgid "Smart Blocks Full Width"
 msgstr ""
 
-#: build/index.js:1
-msgid "1:2:1"
+#: smart-blocks.php:720
+#: inc/assets/js/editor-sidebar.js:1
+#: src/plugins/editorwidth/content.js:14
+#: src/plugins/editorwidth/content.js:19
+msgid "Smart Blocks Settings"
 msgstr ""
 
-#: build/index.js:1
-msgid "1:3:1"
-msgstr ""
-
-#: build/index.js:1
-msgid "Two Column Grid"
-msgstr ""
-
-#: build/index.js:1
-msgid "Three Column Grid"
-msgstr ""
-
-#: build/index.js:1
-msgid "Clear"
-msgstr ""
-
-#: build/index.js:1
-msgid "Remove Image"
-msgstr ""
-
-#: build/index.js:1
-msgid "Attachment"
-msgstr ""
-
-#: build/index.js:1
-msgid "Scroll"
-msgstr ""
-
-#: build/index.js:1
-msgid "Fixed"
-msgstr ""
-
-#: build/index.js:1
-msgid "Repeat"
-msgstr ""
-
-#: build/index.js:1
-msgid "No Repeat"
-msgstr ""
-
-#: build/index.js:1
-msgid "Repeat X"
-msgstr ""
-
-#: build/index.js:1
-msgid "Repeat Y"
-msgstr ""
-
-#: build/index.js:1
-msgid "Size"
-msgstr ""
-
-#: build/index.js:1
-msgid "Auto"
-msgstr ""
-
-#: build/index.js:1
-msgid "Cover"
-msgstr ""
-
-#: build/index.js:1
-msgid "Contain"
-msgstr ""
-
-#: build/index.js:1
-msgid "Overlay Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Background Image"
-msgstr ""
-
-#: build/index.js:1
-msgid "Box Shadow"
-msgstr ""
-
-#: build/index.js:1
-msgid "X"
-msgstr ""
-
-#: build/index.js:1
-msgid "Y"
-msgstr ""
-
-#: build/index.js:1
-msgid "Blur"
-msgstr ""
-
-#: build/index.js:1
-msgid "Spread"
-msgstr ""
-
-#: build/index.js:1
-msgid "Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Inset"
-msgstr ""
-
-#: build/index.js:1
-msgid "Solid"
-msgstr ""
-
-#: build/index.js:1
-msgid "Dotted"
-msgstr ""
-
-#: build/index.js:1
-msgid "Dashed"
-msgstr ""
-
-#: build/index.js:1
-msgid "Double"
-msgstr ""
-
-#: build/index.js:1
-msgid "Border"
-msgstr ""
-
-#: build/index.js:1
-msgid "Layout"
-msgstr ""
-
-#: build/index.js:1
-msgid "Style"
-msgstr ""
-
-#: build/index.js:1
-msgid "Advanced"
-msgstr ""
-
-#: build/index.js:1
-msgid "Columns & Layout"
-msgstr ""
-
-#: build/index.js:1
-msgid "Columns"
-msgstr ""
-
-#: build/index.js:1
-msgid "Content Width"
-msgstr ""
-
-#: build/index.js:1
-msgid "Full Width"
-msgstr ""
-
-#: build/index.js:1
-msgid "Boxed"
-msgstr ""
-
-#: build/index.js:1
-msgid "Width"
-msgstr ""
-
-#: build/index.js:1
-msgid "Min Height"
-msgstr ""
-
-#: build/index.js:1
-msgid "Column Align"
-msgstr ""
-
-#: build/index.js:1
-msgid "Flex Start"
-msgstr ""
-
-#: build/index.js:1
-msgid "Center"
-msgstr ""
-
-#: build/index.js:1
-msgid "Flex End"
-msgstr ""
-
-#: build/index.js:1
-msgid "Stretch"
-msgstr ""
-
-#: build/index.js:1
-msgid "Text Align"
-msgstr ""
-
-#: build/index.js:1
-msgid "Left"
-msgstr ""
-
-#: build/index.js:1
-msgid "Right"
-msgstr ""
-
-#: build/index.js:1
-msgid "Gaps"
-msgstr ""
-
-#: build/index.js:1
-msgid "Spacing"
-msgstr ""
-
-#: build/index.js:1
-msgid "Margin"
-msgstr ""
-
-#: build/index.js:1
-msgid "Padding"
-msgstr ""
-
-#: build/index.js:1
-msgid "Normal"
-msgstr ""
-
-#: build/index.js:1
-msgid "Border Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Border Width"
-msgstr ""
-
-#: build/index.js:1
-msgid "Border Radius"
-msgstr ""
-
-#: build/index.js:1
-msgid "Hover"
-msgstr ""
-
-#: build/index.js:1
-msgid "Background"
-msgstr ""
-
-#: build/index.js:1
-msgid "Image/Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Gradient"
-msgstr ""
-
-#: build/index.js:1
-msgid "Background Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Background Gradient"
-msgstr ""
-
-#: build/index.js:1
-msgid "Responsive"
-msgstr ""
-
-#: build/index.js:1
-msgid "Hide this section in Desktop devices?"
-msgstr ""
-
-#: build/index.js:1
-msgid "Hide this section in Tablet devices?"
-msgstr ""
-
-#: build/index.js:1
-msgid "Hide this section in Mobile devices?"
-msgstr ""
-
-#: build/index.js:1
-msgid "Reverse Columns in Tablet devices?"
-msgstr ""
-
-#: build/index.js:1
-msgid "Reverse Columns in Mobile devices?"
-msgstr ""
-
-#: build/index.js:1
-msgid "Section Settings"
-msgstr ""
-
-#: build/index.js:1
-msgid "HTML Tag"
-msgstr ""
-
-#: build/index.js:1
-msgid "Default (div)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Section"
-msgstr ""
-
-#: build/index.js:1
-msgid "Select a variation to start with"
-msgstr ""
-
-#: build/index.js:1
-msgid "Single"
-msgstr ""
-
-#: build/index.js:1
-msgid "Display content in multiple columns, with blocks added to each column."
-msgstr ""
-
-#: build/index.js:1
-msgid "Column Width"
-msgstr ""
-
-#: build/index.js:1
-msgid "Align Self"
-msgstr ""
-
-#: build/index.js:1
-msgid "Start"
-msgstr ""
-
-#: build/index.js:1
-msgid "Column"
-msgstr ""
-
-#: build/index.js:1
-msgid "A single column within a columns block."
-msgstr ""
-
-#: build/index.js:1
-msgid "Sticky Options"
-msgstr ""
-
-#: build/index.js:1
-msgid "Enable Sticky"
-msgstr ""
-
-#: build/index.js:1
-msgid "Sticky Offset"
-msgstr ""
-
-#: build/index.js:1
-msgid "Container Should be inside column for sticky"
-msgstr ""
-
-#: build/index.js:1
-msgid "Flexible Content Options"
-msgstr ""
-
-#: build/index.js:1
-msgid "Set Width"
-msgstr ""
-
-#: build/index.js:1
-msgid "Container Width"
-msgstr ""
-
-#: build/index.js:1
-msgid "Flex"
-msgstr ""
-
-#: build/index.js:1
-msgid "Grid"
-msgstr ""
-
-#: build/index.js:1
-msgid "Direction"
-msgstr ""
-
-#: build/index.js:1
-msgid "Bottom"
-msgstr ""
-
-#: build/index.js:1
-msgid "Top"
-msgstr ""
-
-#: build/index.js:1
-msgid "Container Wrap"
-msgstr ""
-
-#: build/index.js:1
-msgid "No Wrap"
-msgstr ""
-
-#: build/index.js:1
-msgid "Wrap"
-msgstr ""
-
-#: build/index.js:1
-msgid "Column Number"
-msgstr ""
-
-#: build/index.js:1
-msgid "Align Items"
-msgstr ""
-
-#: build/index.js:1
-msgid "Justify Content"
-msgstr ""
-
-#: build/index.js:1
-msgid "Space Between"
-msgstr ""
-
-#: build/index.js:1
-msgid "Space Around"
-msgstr ""
-
-#: build/index.js:1
-msgid "Space Evenly"
-msgstr ""
-
-#: build/index.js:1
-msgid "Justify Items"
-msgstr ""
-
-#: build/index.js:1
-msgid "Link URL"
-msgstr ""
-
-#: build/index.js:1
-msgid "The contents inside the container should not have any anchort link inorder to work properly."
-msgstr ""
-
-#: build/index.js:1
-msgid "Container"
-msgstr ""
-
-#: build/index.js:1
-msgid "Display container wrapper for elements"
-msgstr ""
-
-#: build/index.js:1
-msgid "Typography"
-msgstr ""
-
-#: build/index.js:1
-msgid "Font Family"
-msgstr ""
-
-#: build/index.js:1
-msgid "Weight/Style"
-msgstr ""
-
-#: build/index.js:1
-msgid "Text Transform"
-msgstr ""
-
-#: build/index.js:1
-msgid "Text Decoration"
-msgstr ""
-
-#: build/index.js:1
-msgid "Font Size"
-msgstr ""
-
-#: build/index.js:1
-msgid "Letter Spacing"
-msgstr ""
-
-#: build/index.js:1
-msgid "Line Height"
-msgstr ""
-
-#: build/index.js:1
-msgid "Content Filter"
-msgstr ""
-
-#: build/index.js:1
-msgid "Source"
-msgstr ""
-
-#: build/index.js:1
-msgid "Exclude Posts"
-msgstr ""
-
-#: build/index.js:1
-msgid "Order By"
-msgstr ""
-
-#: build/index.js:1
-msgid "Date"
-msgstr ""
-
-#: build/index.js:1
-msgid "Last Modified Date"
-msgstr ""
-
-#: build/index.js:1
-msgid "Rand"
-msgstr ""
-
-#: build/index.js:1
-msgid "Comment Count"
-msgstr ""
-
-#: build/index.js:1
-msgid "Title"
-msgstr ""
-
-#: build/index.js:1
-msgid "Show Post Author"
-msgstr ""
-
-#: build/index.js:1
-msgid "Order"
-msgstr ""
-
-#: build/index.js:1
-msgid "Descending"
-msgstr ""
-
-#: build/index.js:1
-msgid "Ascending"
-msgstr ""
-
-#: build/index.js:1
-msgid "Offset"
-msgstr ""
-
-#: build/index.js:1
-msgid "No of Posts"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 1"
-msgstr ""
-
-#: build/index.js:1
-msgid "Smart Blocks News Modules"
-msgstr ""
-
-#: build/index.js:1
-msgid "Header"
-msgstr ""
-
-#: build/index.js:1
-msgid "Style 1"
-msgstr ""
-
-#: build/index.js:1
-msgid "Style 2"
-msgstr ""
-
-#: build/index.js:1
-msgid "Style 3"
-msgstr ""
-
-#: build/index.js:1
-msgid "Style 4"
-msgstr ""
-
-#: build/index.js:1
-msgid "Featured Block"
-msgstr ""
-
-#: build/index.js:1
-msgid "Image Size"
-msgstr ""
-
-#: build/index.js:1
-msgid "Image Height (%)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Excerpt Length"
-msgstr ""
-
-#: build/index.js:1
-msgid "Show Post Date"
-msgstr ""
-
-#: build/index.js:1
-msgid "Show Post Comments"
-msgstr ""
-
-#: build/index.js:1
-msgid "Show Post Category"
-msgstr ""
-
-#: build/index.js:1
-msgid "Side Block"
-msgstr ""
-
-#: build/index.js:1
-msgid "Additional Settings"
-msgstr ""
-
-#: build/index.js:1
-msgid "Image Border Radius(px)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Date Format"
-msgstr ""
-
-#: build/index.js:1
-msgid "Relative Format (Ago)"
-msgstr ""
-
-#: build/index.js:1
-msgid "WordPress Default Format"
-msgstr ""
-
-#: build/index.js:1
-msgid "Custom Format"
-msgstr ""
-
-#: build/index.js:1
-msgid "Custom Date Format"
-msgstr ""
-
-#: build/index.js:1
-msgid "Header Title"
-msgstr ""
-
-#: build/index.js:1
-msgid "Short Border Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Long Border Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Category"
-msgstr ""
-
-#: build/index.js:1
-msgid "Text Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Title Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Title Color(Hover)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Featured"
-msgstr ""
-
-#: build/index.js:1
-msgid "Side Post"
-msgstr ""
-
-#: build/index.js:1
-msgid "Excerpt"
-msgstr ""
-
-#: build/index.js:1
-msgid "Metas"
-msgstr ""
-
-#: build/index.js:1
-msgid "Heading..."
-msgstr ""
-
-#: build/index.js:1
-msgid "(No title)"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 2"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 3"
-msgstr ""
-
-#: build/index.js:1
-msgid "Featured Post Title Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Side Post Title Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Side Post Title Color(Hover)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Featured Post"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 4"
-msgstr ""
-
-#: build/index.js:1
-msgid "Top Block"
-msgstr ""
-
-#: build/index.js:1
-msgid "Bottom Block"
-msgstr ""
-
-#: build/index.js:1
-msgid "Top Post"
-msgstr ""
-
-#: build/index.js:1
-msgid "Bottom Post"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 5"
-msgstr ""
-
-#: build/index.js:1
-msgid "Listing Block"
-msgstr ""
-
-#: build/index.js:1
-msgid "Listing Post"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 6"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 7"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 8"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 9"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 10"
-msgstr ""
-
-#: build/index.js:1
-msgid "Image Width (px)"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 11"
-msgstr ""
-
-#: build/index.js:1
-msgid "Post Block"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 12"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 13"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 14"
-msgstr ""
-
-#: build/index.js:1
-msgid "No of Columns"
-msgstr ""
-
-#: build/index.js:1
-msgid "News Module 15"
-msgstr ""
-
-#: build/index.js:1
-msgid "Tile Module 1"
-msgstr ""
-
-#: build/index.js:1
-msgid "Large Image Size"
-msgstr ""
-
-#: build/index.js:1
-msgid "Small Image Size"
-msgstr ""
-
-#: build/index.js:1
-msgid "Module Height(px)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Tile Module 2"
-msgstr ""
-
-#: build/index.js:1
-msgid "Tile Module 3"
-msgstr ""
-
-#: build/index.js:1
-msgid "Carousel Module"
-msgstr ""
-
-#: build/index.js:1
-msgid "No of Posts to Show"
-msgstr ""
-
-#: build/index.js:1
-msgid "Carousel Settings"
-msgstr ""
-
-#: build/index.js:1
-msgid "Autoplay"
-msgstr ""
-
-#: build/index.js:1
-msgid "Pause Duration"
-msgstr ""
-
-#: build/index.js:1
-msgid "No of Slides"
-msgstr ""
-
-#: build/index.js:1
-msgid "Spacing Between Slides"
-msgstr ""
-
-#: build/index.js:1
-msgid "Stage Padding"
-msgstr ""
-
-#: build/index.js:1
-msgid "Nav Arrow"
-msgstr ""
-
-#: build/index.js:1
-msgid "Nav Dots"
-msgstr ""
-
-#: build/index.js:1
-msgid "Navigation"
-msgstr ""
-
-#: build/index.js:1
-msgid "Icon Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Dots Color"
-msgstr ""
-
-#: build/index.js:1
-msgid "Background Color (Hover)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Icon Color (Hover)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Dots Color (Active)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Single News 1"
-msgstr ""
-
-#: build/index.js:1
-msgid "Select Filter"
-msgstr ""
-
-#: build/index.js:1
-msgid "By Post Title"
-msgstr ""
-
-#: build/index.js:1
-msgid "By Categories"
-msgstr ""
-
-#: build/index.js:1
-msgid "By Tags"
-msgstr ""
-
-#: build/index.js:1
-msgid "Select Post"
-msgstr ""
-
-#: build/index.js:1
-msgid "Categories"
-msgstr ""
-
-#: build/index.js:1
-msgid "Tags"
-msgstr ""
-
-#: build/index.js:1
-msgid "Post Meta"
-msgstr ""
-
-#: build/index.js:1
-msgid "Post Author"
-msgstr ""
-
-#: build/index.js:1
-msgid "Post Date"
-msgstr ""
-
-#: build/index.js:1
-msgid "Post Comments"
-msgstr ""
-
-#: build/index.js:1
-msgid "Post Excerpt"
-msgstr ""
-
-#: build/index.js:1
-msgid "Excerpt Length (in Letters)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Image Settings"
-msgstr ""
-
-#: build/index.js:1
-msgid "Content Alignment"
-msgstr ""
-
-#: build/index.js:1
-msgid "Content Padding"
-msgstr ""
-
-#: build/index.js:1
-msgid "Content Margin"
-msgstr ""
-
-#: build/index.js:1
-msgid "Single News 2"
-msgstr ""
-
-#: build/index.js:1
-msgid "Ticker Module"
-msgstr ""
-
-#: build/index.js:1
-msgid "Ticker Block"
-msgstr ""
-
-#: build/index.js:1
-msgid "Ticker Pause Duration"
-msgstr ""
-
-#: build/index.js:1
-msgid "Text Color (Hover)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Background Color(Hover)"
-msgstr ""
-
-#: build/index.js:1
-msgid "Text Color(Hover)"
+#: smart-blocks.php:720
+msgid "Smart Blocks"
 msgstr ""
 
 #: inc/assets/js/editor-sidebar.js:1
+#: src/plugins/editorwidth/content.js:23
 msgid "Editor Width"
 msgstr ""
 
 #: inc/assets/js/editor-sidebar.js:1
+#: src/plugins/editorwidth/content.js:28
+#: src/plugins/editorwidth/content.js:33
 msgid "Default"
 msgstr ""
 
 #: inc/assets/js/editor-sidebar.js:1
+#: src/plugins/editorwidth/content.js:37
+#: src/plugins/editorwidth/content.js:42
 msgid "Narrow"
 msgstr ""
 
 #: inc/assets/js/editor-sidebar.js:1
+#: src/plugins/editorwidth/content.js:46
+#: src/plugins/editorwidth/content.js:51
 msgid "Large"
 msgstr ""
 
 #: inc/assets/js/editor-sidebar.js:1
+#: src/plugins/editorwidth/content.js:55
+#: src/plugins/editorwidth/content.js:60
 msgid "Full"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:519
+#: src/blocks/news-module-eight/edit.js:522
+#: src/blocks/news-module-eleven/edit.js:436
+#: src/blocks/news-module-fifteen/edit.js:449
+#: src/blocks/news-module-five/edit.js:522
+#: src/blocks/news-module-four/edit.js:498
+#: src/blocks/news-module-fourteen/edit.js:476
+#: src/blocks/news-module-nine/edit.js:489
+#: src/blocks/news-module-nine/edit.js:555
+#: src/blocks/news-module-one/edit.js:500
+#: src/blocks/news-module-seven/edit.js:523
+#: src/blocks/news-module-seven/edit.js:586
+#: src/blocks/news-module-six/edit.js:521
+#: src/blocks/news-module-six/edit.js:585
+#: src/blocks/news-module-ten/edit.js:451
+#: src/blocks/news-module-thirteen/edit.js:481
+#: src/blocks/news-module-three/edit.js:488
+#: src/blocks/news-module-three/edit.js:553
+#: src/blocks/news-module-twelve/edit.js:447
+#: src/blocks/news-module-two/edit.js:525
+#: src/blocks/single-news-one/edit.js:462
+#: src/blocks/single-news-two/edit.js:462
+#: src/blocks/ticker-module/edit.js:807
+#: src/blocks/tile-module-one/edit.js:480
+#: src/blocks/tile-module-three/edit.js:439
+#: src/blocks/tile-module-two/edit.js:484
+msgid "(No title)"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:593
+#: src/blocks/container/inspector.js:205
+#: src/blocks/news-module-eight/edit.js:598
+#: src/blocks/news-module-eleven/edit.js:511
+#: src/blocks/news-module-fifteen/edit.js:516
+#: src/blocks/news-module-five/edit.js:598
+#: src/blocks/news-module-four/edit.js:566
+#: src/blocks/news-module-fourteen/edit.js:551
+#: src/blocks/news-module-nine/edit.js:624
+#: src/blocks/news-module-one/edit.js:631
+#: src/blocks/news-module-seven/edit.js:656
+#: src/blocks/news-module-six/edit.js:662
+#: src/blocks/news-module-ten/edit.js:518
+#: src/blocks/news-module-thirteen/edit.js:559
+#: src/blocks/news-module-three/edit.js:623
+#: src/blocks/news-module-twelve/edit.js:514
+#: src/blocks/news-module-two/edit.js:601
+#: src/blocks/section/column/inspector.js:208
+#: src/blocks/section/column/inspector.js:250
+#: src/blocks/section/columns/inspector.js:281
+#: src/blocks/section/columns/inspector.js:322
+#: src/blocks/single-news-one/edit.js:535
+#: src/blocks/single-news-two/edit.js:535
+#: src/blocks/ticker-module/edit.js:345
+#: src/blocks/tile-module-one/edit.js:547
+#: src/blocks/tile-module-three/edit.js:507
+#: src/blocks/tile-module-two/edit.js:552
+msgid "Layout"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:603
+#: src/blocks/carousel-module-one/edit.js:624
+#: src/blocks/container/inspector.js:215
+#: src/blocks/news-module-eight/edit.js:608
+#: src/blocks/news-module-eight/edit.js:630
+#: src/blocks/news-module-eleven/edit.js:521
+#: src/blocks/news-module-eleven/edit.js:543
+#: src/blocks/news-module-fifteen/edit.js:526
+#: src/blocks/news-module-fifteen/edit.js:548
+#: src/blocks/news-module-five/edit.js:608
+#: src/blocks/news-module-five/edit.js:630
+#: src/blocks/news-module-four/edit.js:576
+#: src/blocks/news-module-four/edit.js:598
+#: src/blocks/news-module-fourteen/edit.js:561
+#: src/blocks/news-module-fourteen/edit.js:583
+#: src/blocks/news-module-nine/edit.js:634
+#: src/blocks/news-module-nine/edit.js:656
+#: src/blocks/news-module-one/edit.js:641
+#: src/blocks/news-module-one/edit.js:663
+#: src/blocks/news-module-seven/edit.js:666
+#: src/blocks/news-module-seven/edit.js:688
+#: src/blocks/news-module-six/edit.js:672
+#: src/blocks/news-module-six/edit.js:694
+#: src/blocks/news-module-ten/edit.js:528
+#: src/blocks/news-module-ten/edit.js:550
+#: src/blocks/news-module-thirteen/edit.js:569
+#: src/blocks/news-module-thirteen/edit.js:591
+#: src/blocks/news-module-three/edit.js:633
+#: src/blocks/news-module-three/edit.js:655
+#: src/blocks/news-module-twelve/edit.js:524
+#: src/blocks/news-module-twelve/edit.js:546
+#: src/blocks/news-module-two/edit.js:611
+#: src/blocks/news-module-two/edit.js:633
+#: src/blocks/section/column/inspector.js:218
+#: src/blocks/section/columns/inspector.js:291
+#: src/blocks/single-news-one/edit.js:545
+#: src/blocks/single-news-two/edit.js:545
+#: src/blocks/ticker-module/edit.js:355
+#: src/blocks/tile-module-one/edit.js:557
+#: src/blocks/tile-module-one/edit.js:579
+#: src/blocks/tile-module-three/edit.js:517
+#: src/blocks/tile-module-three/edit.js:539
+#: src/blocks/tile-module-two/edit.js:562
+#: src/blocks/tile-module-two/edit.js:584
+msgid "Style"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:613
+#: src/blocks/container/inspector.js:225
+#: src/blocks/news-module-eight/edit.js:618
+#: src/blocks/news-module-eleven/edit.js:531
+#: src/blocks/news-module-fifteen/edit.js:536
+#: src/blocks/news-module-five/edit.js:618
+#: src/blocks/news-module-four/edit.js:586
+#: src/blocks/news-module-fourteen/edit.js:571
+#: src/blocks/news-module-nine/edit.js:644
+#: src/blocks/news-module-one/edit.js:651
+#: src/blocks/news-module-seven/edit.js:676
+#: src/blocks/news-module-six/edit.js:682
+#: src/blocks/news-module-ten/edit.js:538
+#: src/blocks/news-module-thirteen/edit.js:579
+#: src/blocks/news-module-three/edit.js:643
+#: src/blocks/news-module-twelve/edit.js:534
+#: src/blocks/news-module-two/edit.js:621
+#: src/blocks/section/column/inspector.js:228
+#: src/blocks/section/columns/inspector.js:301
+#: src/blocks/single-news-one/edit.js:555
+#: src/blocks/single-news-two/edit.js:555
+#: src/blocks/ticker-module/edit.js:365
+#: src/blocks/tile-module-one/edit.js:567
+#: src/blocks/tile-module-three/edit.js:527
+#: src/blocks/tile-module-two/edit.js:572
+msgid "Advanced"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:620
+#: src/blocks/news-module-eight/edit.js:626
+#: src/blocks/news-module-eleven/edit.js:539
+#: src/blocks/news-module-fifteen/edit.js:544
+#: src/blocks/news-module-five/edit.js:626
+#: src/blocks/news-module-four/edit.js:594
+#: src/blocks/news-module-fourteen/edit.js:579
+#: src/blocks/news-module-nine/edit.js:652
+#: src/blocks/news-module-one/edit.js:659
+#: src/blocks/news-module-seven/edit.js:684
+#: src/blocks/news-module-six/edit.js:690
+#: src/blocks/news-module-ten/edit.js:546
+#: src/blocks/news-module-thirteen/edit.js:587
+#: src/blocks/news-module-three/edit.js:651
+#: src/blocks/news-module-twelve/edit.js:542
+#: src/blocks/news-module-two/edit.js:629
+#: src/blocks/tile-module-one/edit.js:575
+#: src/blocks/tile-module-three/edit.js:535
+#: src/blocks/tile-module-two/edit.js:580
+msgid "Header"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:628
+#: src/blocks/news-module-eight/edit.js:634
+#: src/blocks/news-module-eleven/edit.js:547
+#: src/blocks/news-module-fifteen/edit.js:552
+#: src/blocks/news-module-four/edit.js:602
+#: src/blocks/news-module-fourteen/edit.js:587
+#: src/blocks/news-module-nine/edit.js:660
+#: src/blocks/news-module-one/edit.js:667
+#: src/blocks/news-module-seven/edit.js:692
+#: src/blocks/news-module-six/edit.js:698
+#: src/blocks/news-module-ten/edit.js:554
+#: src/blocks/news-module-thirteen/edit.js:595
+#: src/blocks/news-module-three/edit.js:659
+#: src/blocks/news-module-twelve/edit.js:550
+#: src/blocks/news-module-two/edit.js:637
+#: src/blocks/tile-module-three/edit.js:543
+#: src/blocks/tile-module-two/edit.js:588
+msgid "Style 1"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:629
+#: src/blocks/news-module-eight/edit.js:635
+#: src/blocks/news-module-eleven/edit.js:548
+#: src/blocks/news-module-fifteen/edit.js:553
+#: src/blocks/news-module-four/edit.js:603
+#: src/blocks/news-module-fourteen/edit.js:588
+#: src/blocks/news-module-nine/edit.js:661
+#: src/blocks/news-module-one/edit.js:668
+#: src/blocks/news-module-seven/edit.js:693
+#: src/blocks/news-module-six/edit.js:699
+#: src/blocks/news-module-ten/edit.js:555
+#: src/blocks/news-module-thirteen/edit.js:596
+#: src/blocks/news-module-three/edit.js:660
+#: src/blocks/news-module-twelve/edit.js:551
+#: src/blocks/news-module-two/edit.js:638
+#: src/blocks/tile-module-three/edit.js:544
+#: src/blocks/tile-module-two/edit.js:589
+msgid "Style 2"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:630
+#: src/blocks/news-module-eight/edit.js:636
+#: src/blocks/news-module-eleven/edit.js:549
+#: src/blocks/news-module-fifteen/edit.js:554
+#: src/blocks/news-module-four/edit.js:604
+#: src/blocks/news-module-fourteen/edit.js:589
+#: src/blocks/news-module-nine/edit.js:662
+#: src/blocks/news-module-one/edit.js:669
+#: src/blocks/news-module-seven/edit.js:694
+#: src/blocks/news-module-six/edit.js:700
+#: src/blocks/news-module-ten/edit.js:556
+#: src/blocks/news-module-thirteen/edit.js:597
+#: src/blocks/news-module-three/edit.js:661
+#: src/blocks/news-module-twelve/edit.js:552
+#: src/blocks/news-module-two/edit.js:639
+#: src/blocks/tile-module-three/edit.js:545
+#: src/blocks/tile-module-two/edit.js:590
+msgid "Style 3"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:631
+#: src/blocks/news-module-eight/edit.js:637
+#: src/blocks/news-module-eleven/edit.js:550
+#: src/blocks/news-module-fifteen/edit.js:555
+#: src/blocks/news-module-four/edit.js:605
+#: src/blocks/news-module-fourteen/edit.js:590
+#: src/blocks/news-module-nine/edit.js:663
+#: src/blocks/news-module-one/edit.js:670
+#: src/blocks/news-module-seven/edit.js:695
+#: src/blocks/news-module-six/edit.js:701
+#: src/blocks/news-module-ten/edit.js:557
+#: src/blocks/news-module-thirteen/edit.js:598
+#: src/blocks/news-module-three/edit.js:662
+#: src/blocks/news-module-twelve/edit.js:553
+#: src/blocks/news-module-two/edit.js:640
+#: src/blocks/tile-module-three/edit.js:546
+#: src/blocks/tile-module-two/edit.js:591
+msgid "Style 4"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:638
+#: src/blocks/news-module-eleven/edit.js:559
+#: src/blocks/news-module-fifteen/edit.js:562
+#: src/blocks/news-module-fourteen/edit.js:597
+#: src/blocks/news-module-thirteen/edit.js:605
+#: src/blocks/news-module-twelve/edit.js:560
+#: src/blocks/tile-module-three/edit.js:553
+msgid "Post Block"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:642
+#: src/blocks/news-module-eight/edit.js:648
+#: src/blocks/news-module-eight/edit.js:693
+#: src/blocks/news-module-eleven/edit.js:563
+#: src/blocks/news-module-fifteen/edit.js:566
+#: src/blocks/news-module-five/edit.js:648
+#: src/blocks/news-module-five/edit.js:693
+#: src/blocks/news-module-four/edit.js:616
+#: src/blocks/news-module-four/edit.js:654
+#: src/blocks/news-module-fourteen/edit.js:615
+#: src/blocks/news-module-nine/edit.js:674
+#: src/blocks/news-module-nine/edit.js:712
+#: src/blocks/news-module-one/edit.js:683
+#: src/blocks/news-module-one/edit.js:728
+#: src/blocks/news-module-seven/edit.js:706
+#: src/blocks/news-module-seven/edit.js:751
+#: src/blocks/news-module-six/edit.js:712
+#: src/blocks/news-module-six/edit.js:750
+#: src/blocks/news-module-ten/edit.js:568
+#: src/blocks/news-module-thirteen/edit.js:609
+#: src/blocks/news-module-three/edit.js:673
+#: src/blocks/news-module-three/edit.js:704
+#: src/blocks/news-module-twelve/edit.js:564
+#: src/blocks/news-module-two/edit.js:651
+#: src/blocks/news-module-two/edit.js:696
+#: src/blocks/single-news-one/edit.js:668
+#: src/blocks/single-news-two/edit.js:667
+#: src/blocks/tile-module-one/edit.js:597
+#: src/blocks/tile-module-three/edit.js:557
+#: src/blocks/tile-module-two/edit.js:602
+#: src/blocks/tile-module-two/edit.js:633
+msgid "Image Size"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:648
+#: src/blocks/news-module-eight/edit.js:654
+#: src/blocks/news-module-eight/edit.js:699
+#: src/blocks/news-module-eleven/edit.js:569
+#: src/blocks/news-module-fifteen/edit.js:572
+#: src/blocks/news-module-five/edit.js:654
+#: src/blocks/news-module-five/edit.js:699
+#: src/blocks/news-module-four/edit.js:622
+#: src/blocks/news-module-four/edit.js:660
+#: src/blocks/news-module-fourteen/edit.js:621
+#: src/blocks/news-module-nine/edit.js:680
+#: src/blocks/news-module-nine/edit.js:718
+#: src/blocks/news-module-one/edit.js:689
+#: src/blocks/news-module-one/edit.js:734
+#: src/blocks/news-module-seven/edit.js:712
+#: src/blocks/news-module-seven/edit.js:757
+#: src/blocks/news-module-six/edit.js:718
+#: src/blocks/news-module-six/edit.js:756
+#: src/blocks/news-module-ten/edit.js:581
+#: src/blocks/news-module-thirteen/edit.js:615
+#: src/blocks/news-module-three/edit.js:710
+#: src/blocks/news-module-twelve/edit.js:570
+#: src/blocks/news-module-two/edit.js:657
+#: src/blocks/news-module-two/edit.js:702
+#: src/blocks/single-news-one/edit.js:674
+#: src/blocks/single-news-two/edit.js:673
+msgid "Image Height (%)"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:655
+msgid "No of Posts to Show"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:662
+#: src/blocks/news-module-eight/edit.js:661
+#: src/blocks/news-module-five/edit.js:661
+#: src/blocks/news-module-fourteen/edit.js:628
+#: src/blocks/news-module-one/edit.js:696
+#: src/blocks/news-module-one/edit.js:741
+#: src/blocks/news-module-seven/edit.js:719
+#: src/blocks/news-module-six/edit.js:763
+#: src/blocks/news-module-thirteen/edit.js:622
+#: src/blocks/news-module-two/edit.js:664
+#: src/blocks/news-module-two/edit.js:709
+#: src/blocks/single-news-two/edit.js:655
+msgid "Excerpt Length"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:669
+#: src/blocks/news-module-eight/edit.js:668
+#: src/blocks/news-module-eight/edit.js:706
+#: src/blocks/news-module-eleven/edit.js:576
+#: src/blocks/news-module-fifteen/edit.js:579
+#: src/blocks/news-module-five/edit.js:668
+#: src/blocks/news-module-five/edit.js:706
+#: src/blocks/news-module-four/edit.js:629
+#: src/blocks/news-module-four/edit.js:667
+#: src/blocks/news-module-fourteen/edit.js:635
+#: src/blocks/news-module-nine/edit.js:687
+#: src/blocks/news-module-nine/edit.js:725
+#: src/blocks/news-module-one/edit.js:703
+#: src/blocks/news-module-one/edit.js:748
+#: src/blocks/news-module-seven/edit.js:726
+#: src/blocks/news-module-seven/edit.js:764
+#: src/blocks/news-module-six/edit.js:725
+#: src/blocks/news-module-six/edit.js:770
+#: src/blocks/news-module-ten/edit.js:588
+#: src/blocks/news-module-thirteen/edit.js:629
+#: src/blocks/news-module-three/edit.js:679
+#: src/blocks/news-module-three/edit.js:717
+#: src/blocks/news-module-twelve/edit.js:577
+#: src/blocks/news-module-two/edit.js:671
+#: src/blocks/news-module-two/edit.js:716
+#: src/blocks/single-news-two/edit.js:618
+#: src/blocks/tile-module-one/edit.js:603
+#: src/blocks/tile-module-one/edit.js:640
+#: src/blocks/tile-module-three/edit.js:563
+#: src/blocks/tile-module-two/edit.js:608
+#: src/blocks/tile-module-two/edit.js:639
+#: src/controlgroup/query.js:191
+msgid "Show Post Author"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:674
+#: src/blocks/news-module-eight/edit.js:673
+#: src/blocks/news-module-eight/edit.js:711
+#: src/blocks/news-module-eleven/edit.js:581
+#: src/blocks/news-module-fifteen/edit.js:584
+#: src/blocks/news-module-five/edit.js:673
+#: src/blocks/news-module-five/edit.js:711
+#: src/blocks/news-module-four/edit.js:634
+#: src/blocks/news-module-four/edit.js:672
+#: src/blocks/news-module-fourteen/edit.js:640
+#: src/blocks/news-module-nine/edit.js:692
+#: src/blocks/news-module-nine/edit.js:730
+#: src/blocks/news-module-one/edit.js:708
+#: src/blocks/news-module-one/edit.js:753
+#: src/blocks/news-module-seven/edit.js:731
+#: src/blocks/news-module-seven/edit.js:769
+#: src/blocks/news-module-six/edit.js:730
+#: src/blocks/news-module-six/edit.js:775
+#: src/blocks/news-module-ten/edit.js:593
+#: src/blocks/news-module-thirteen/edit.js:634
+#: src/blocks/news-module-three/edit.js:684
+#: src/blocks/news-module-three/edit.js:722
+#: src/blocks/news-module-twelve/edit.js:582
+#: src/blocks/news-module-two/edit.js:676
+#: src/blocks/news-module-two/edit.js:721
+#: src/blocks/single-news-two/edit.js:623
+#: src/blocks/tile-module-one/edit.js:608
+#: src/blocks/tile-module-one/edit.js:645
+#: src/blocks/tile-module-three/edit.js:568
+#: src/blocks/tile-module-two/edit.js:613
+#: src/blocks/tile-module-two/edit.js:644
+msgid "Show Post Date"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:679
+#: src/blocks/news-module-eight/edit.js:678
+#: src/blocks/news-module-eight/edit.js:716
+#: src/blocks/news-module-eleven/edit.js:586
+#: src/blocks/news-module-fifteen/edit.js:589
+#: src/blocks/news-module-five/edit.js:678
+#: src/blocks/news-module-five/edit.js:716
+#: src/blocks/news-module-four/edit.js:639
+#: src/blocks/news-module-four/edit.js:677
+#: src/blocks/news-module-fourteen/edit.js:645
+#: src/blocks/news-module-nine/edit.js:697
+#: src/blocks/news-module-nine/edit.js:735
+#: src/blocks/news-module-one/edit.js:713
+#: src/blocks/news-module-one/edit.js:758
+#: src/blocks/news-module-seven/edit.js:736
+#: src/blocks/news-module-seven/edit.js:774
+#: src/blocks/news-module-six/edit.js:735
+#: src/blocks/news-module-six/edit.js:780
+#: src/blocks/news-module-ten/edit.js:598
+#: src/blocks/news-module-thirteen/edit.js:639
+#: src/blocks/news-module-three/edit.js:689
+#: src/blocks/news-module-three/edit.js:727
+#: src/blocks/news-module-twelve/edit.js:587
+#: src/blocks/news-module-two/edit.js:681
+#: src/blocks/news-module-two/edit.js:726
+#: src/blocks/single-news-two/edit.js:628
+#: src/blocks/tile-module-one/edit.js:613
+#: src/blocks/tile-module-one/edit.js:650
+#: src/blocks/tile-module-three/edit.js:573
+#: src/blocks/tile-module-two/edit.js:618
+#: src/blocks/tile-module-two/edit.js:649
+msgid "Show Post Comments"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:684
+#: src/blocks/news-module-eight/edit.js:683
+#: src/blocks/news-module-eight/edit.js:721
+#: src/blocks/news-module-eleven/edit.js:591
+#: src/blocks/news-module-fifteen/edit.js:594
+#: src/blocks/news-module-five/edit.js:683
+#: src/blocks/news-module-five/edit.js:721
+#: src/blocks/news-module-four/edit.js:644
+#: src/blocks/news-module-four/edit.js:682
+#: src/blocks/news-module-fourteen/edit.js:650
+#: src/blocks/news-module-nine/edit.js:702
+#: src/blocks/news-module-nine/edit.js:740
+#: src/blocks/news-module-one/edit.js:718
+#: src/blocks/news-module-one/edit.js:763
+#: src/blocks/news-module-seven/edit.js:741
+#: src/blocks/news-module-seven/edit.js:779
+#: src/blocks/news-module-six/edit.js:740
+#: src/blocks/news-module-six/edit.js:785
+#: src/blocks/news-module-ten/edit.js:603
+#: src/blocks/news-module-thirteen/edit.js:644
+#: src/blocks/news-module-three/edit.js:694
+#: src/blocks/news-module-three/edit.js:732
+#: src/blocks/news-module-twelve/edit.js:592
+#: src/blocks/news-module-two/edit.js:686
+#: src/blocks/news-module-two/edit.js:731
+#: src/blocks/tile-module-one/edit.js:618
+#: src/blocks/tile-module-one/edit.js:655
+#: src/blocks/tile-module-three/edit.js:578
+#: src/blocks/tile-module-two/edit.js:623
+#: src/blocks/tile-module-two/edit.js:654
+msgid "Show Post Category"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:690
+msgid "Carousel Settings"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:694
+#: src/blocks/ticker-module/edit.js:381
+msgid "Autoplay"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:700
+msgid "Pause Duration"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:708
+msgid "No of Slides"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:720
+msgid "Spacing Between Slides"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:732
+msgid "Stage Padding"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:744
+msgid "Nav Arrow"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:749
+msgid "Nav Dots"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:755
+#: src/blocks/news-module-eight/edit.js:727
+#: src/blocks/news-module-eleven/edit.js:597
+#: src/blocks/news-module-fifteen/edit.js:600
+#: src/blocks/news-module-five/edit.js:727
+#: src/blocks/news-module-four/edit.js:688
+#: src/blocks/news-module-fourteen/edit.js:656
+#: src/blocks/news-module-nine/edit.js:746
+#: src/blocks/news-module-one/edit.js:769
+#: src/blocks/news-module-seven/edit.js:785
+#: src/blocks/news-module-six/edit.js:791
+#: src/blocks/news-module-ten/edit.js:609
+#: src/blocks/news-module-thirteen/edit.js:650
+#: src/blocks/news-module-three/edit.js:738
+#: src/blocks/news-module-twelve/edit.js:598
+#: src/blocks/news-module-two/edit.js:737
+#: src/blocks/tile-module-one/edit.js:661
+#: src/blocks/tile-module-three/edit.js:584
+#: src/blocks/tile-module-two/edit.js:660
+msgid "Additional Settings"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:759
+#: src/blocks/news-module-eight/edit.js:731
+#: src/blocks/news-module-eleven/edit.js:601
+#: src/blocks/news-module-fifteen/edit.js:604
+#: src/blocks/news-module-five/edit.js:731
+#: src/blocks/news-module-four/edit.js:692
+#: src/blocks/news-module-fourteen/edit.js:660
+#: src/blocks/news-module-nine/edit.js:750
+#: src/blocks/news-module-one/edit.js:773
+#: src/blocks/news-module-seven/edit.js:789
+#: src/blocks/news-module-six/edit.js:795
+#: src/blocks/news-module-ten/edit.js:613
+#: src/blocks/news-module-thirteen/edit.js:654
+#: src/blocks/news-module-three/edit.js:742
+#: src/blocks/news-module-twelve/edit.js:602
+#: src/blocks/news-module-two/edit.js:741
+#: src/blocks/single-news-one/edit.js:681
+#: src/blocks/single-news-two/edit.js:680
+#: src/blocks/tile-module-one/edit.js:665
+#: src/blocks/tile-module-three/edit.js:588
+#: src/blocks/tile-module-two/edit.js:664
+msgid "Image Border Radius(px)"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:766
+#: src/blocks/news-module-eight/edit.js:738
+#: src/blocks/news-module-eleven/edit.js:608
+#: src/blocks/news-module-fifteen/edit.js:611
+#: src/blocks/news-module-five/edit.js:738
+#: src/blocks/news-module-four/edit.js:699
+#: src/blocks/news-module-fourteen/edit.js:667
+#: src/blocks/news-module-nine/edit.js:757
+#: src/blocks/news-module-one/edit.js:780
+#: src/blocks/news-module-seven/edit.js:796
+#: src/blocks/news-module-six/edit.js:802
+#: src/blocks/news-module-ten/edit.js:620
+#: src/blocks/news-module-thirteen/edit.js:661
+#: src/blocks/news-module-three/edit.js:749
+#: src/blocks/news-module-twelve/edit.js:609
+#: src/blocks/news-module-two/edit.js:748
+#: src/blocks/single-news-one/edit.js:634
+#: src/blocks/single-news-two/edit.js:633
+#: src/blocks/tile-module-one/edit.js:672
+#: src/blocks/tile-module-three/edit.js:595
+#: src/blocks/tile-module-two/edit.js:671
+msgid "Date Format"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:770
+#: src/blocks/news-module-eight/edit.js:742
+#: src/blocks/news-module-eleven/edit.js:612
+#: src/blocks/news-module-fifteen/edit.js:615
+#: src/blocks/news-module-five/edit.js:742
+#: src/blocks/news-module-four/edit.js:703
+#: src/blocks/news-module-fourteen/edit.js:671
+#: src/blocks/news-module-nine/edit.js:761
+#: src/blocks/news-module-one/edit.js:784
+#: src/blocks/news-module-seven/edit.js:800
+#: src/blocks/news-module-six/edit.js:806
+#: src/blocks/news-module-ten/edit.js:624
+#: src/blocks/news-module-thirteen/edit.js:665
+#: src/blocks/news-module-three/edit.js:753
+#: src/blocks/news-module-twelve/edit.js:613
+#: src/blocks/news-module-two/edit.js:752
+#: src/blocks/single-news-one/edit.js:638
+#: src/blocks/single-news-two/edit.js:637
+#: src/blocks/tile-module-one/edit.js:676
+#: src/blocks/tile-module-three/edit.js:599
+#: src/blocks/tile-module-two/edit.js:675
+msgid "Relative Format (Ago)"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:771
+#: src/blocks/news-module-eight/edit.js:743
+#: src/blocks/news-module-eleven/edit.js:613
+#: src/blocks/news-module-fifteen/edit.js:616
+#: src/blocks/news-module-five/edit.js:743
+#: src/blocks/news-module-four/edit.js:704
+#: src/blocks/news-module-fourteen/edit.js:672
+#: src/blocks/news-module-nine/edit.js:762
+#: src/blocks/news-module-one/edit.js:785
+#: src/blocks/news-module-seven/edit.js:801
+#: src/blocks/news-module-six/edit.js:807
+#: src/blocks/news-module-ten/edit.js:625
+#: src/blocks/news-module-thirteen/edit.js:666
+#: src/blocks/news-module-three/edit.js:754
+#: src/blocks/news-module-twelve/edit.js:614
+#: src/blocks/news-module-two/edit.js:753
+#: src/blocks/single-news-one/edit.js:639
+#: src/blocks/single-news-two/edit.js:638
+#: src/blocks/tile-module-one/edit.js:677
+#: src/blocks/tile-module-three/edit.js:600
+#: src/blocks/tile-module-two/edit.js:676
+msgid "WordPress Default Format"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:772
+#: src/blocks/news-module-eight/edit.js:744
+#: src/blocks/news-module-eleven/edit.js:614
+#: src/blocks/news-module-fifteen/edit.js:617
+#: src/blocks/news-module-five/edit.js:744
+#: src/blocks/news-module-four/edit.js:705
+#: src/blocks/news-module-fourteen/edit.js:673
+#: src/blocks/news-module-nine/edit.js:763
+#: src/blocks/news-module-one/edit.js:786
+#: src/blocks/news-module-seven/edit.js:802
+#: src/blocks/news-module-six/edit.js:808
+#: src/blocks/news-module-ten/edit.js:626
+#: src/blocks/news-module-thirteen/edit.js:667
+#: src/blocks/news-module-three/edit.js:755
+#: src/blocks/news-module-twelve/edit.js:615
+#: src/blocks/news-module-two/edit.js:754
+#: src/blocks/single-news-one/edit.js:640
+#: src/blocks/single-news-two/edit.js:639
+#: src/blocks/tile-module-one/edit.js:678
+#: src/blocks/tile-module-three/edit.js:601
+#: src/blocks/tile-module-two/edit.js:677
+msgid "Custom Format"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:777
+#: src/blocks/news-module-eight/edit.js:749
+#: src/blocks/news-module-eleven/edit.js:619
+#: src/blocks/news-module-fifteen/edit.js:622
+#: src/blocks/news-module-five/edit.js:749
+#: src/blocks/news-module-four/edit.js:710
+#: src/blocks/news-module-fourteen/edit.js:678
+#: src/blocks/news-module-nine/edit.js:768
+#: src/blocks/news-module-one/edit.js:791
+#: src/blocks/news-module-seven/edit.js:807
+#: src/blocks/news-module-six/edit.js:813
+#: src/blocks/news-module-ten/edit.js:631
+#: src/blocks/news-module-thirteen/edit.js:672
+#: src/blocks/news-module-three/edit.js:760
+#: src/blocks/news-module-twelve/edit.js:620
+#: src/blocks/news-module-two/edit.js:759
+#: src/blocks/single-news-one/edit.js:645
+#: src/blocks/single-news-two/edit.js:644
+#: src/blocks/tile-module-one/edit.js:683
+#: src/blocks/tile-module-three/edit.js:606
+#: src/blocks/tile-module-two/edit.js:682
+msgid "Custom Date Format"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:788
+#: src/blocks/news-module-eight/edit.js:760
+#: src/blocks/news-module-eleven/edit.js:630
+#: src/blocks/news-module-fifteen/edit.js:633
+#: src/blocks/news-module-five/edit.js:760
+#: src/blocks/news-module-four/edit.js:721
+#: src/blocks/news-module-fourteen/edit.js:689
+#: src/blocks/news-module-nine/edit.js:779
+#: src/blocks/news-module-one/edit.js:803
+#: src/blocks/news-module-seven/edit.js:818
+#: src/blocks/news-module-six/edit.js:824
+#: src/blocks/news-module-ten/edit.js:642
+#: src/blocks/news-module-thirteen/edit.js:683
+#: src/blocks/news-module-three/edit.js:771
+#: src/blocks/news-module-twelve/edit.js:631
+#: src/blocks/news-module-two/edit.js:770
+#: src/blocks/tile-module-one/edit.js:701
+#: src/blocks/tile-module-three/edit.js:624
+#: src/blocks/tile-module-two/edit.js:700
+msgid "Header Title"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:792
+#: src/blocks/carousel-module-one/edit.js:1007
+#: src/blocks/carousel-module-one/edit.js:1053
+#: src/blocks/news-module-eight/edit.js:764
+#: src/blocks/news-module-eight/edit.js:1056
+#: src/blocks/news-module-eight/edit.js:1102
+#: src/blocks/news-module-eleven/edit.js:634
+#: src/blocks/news-module-fifteen/edit.js:637
+#: src/blocks/news-module-fifteen/edit.js:852
+#: src/blocks/news-module-five/edit.js:764
+#: src/blocks/news-module-five/edit.js:1056
+#: src/blocks/news-module-five/edit.js:1102
+#: src/blocks/news-module-four/edit.js:725
+#: src/blocks/news-module-four/edit.js:1017
+#: src/blocks/news-module-fourteen/edit.js:693
+#: src/blocks/news-module-fourteen/edit.js:908
+#: src/blocks/news-module-fourteen/edit.js:954
+#: src/blocks/news-module-nine/edit.js:783
+#: src/blocks/news-module-nine/edit.js:1075
+#: src/blocks/news-module-one/edit.js:807
+#: src/blocks/news-module-one/edit.js:1099
+#: src/blocks/news-module-one/edit.js:1145
+#: src/blocks/news-module-seven/edit.js:822
+#: src/blocks/news-module-seven/edit.js:1114
+#: src/blocks/news-module-seven/edit.js:1160
+#: src/blocks/news-module-six/edit.js:828
+#: src/blocks/news-module-six/edit.js:1120
+#: src/blocks/news-module-six/edit.js:1166
+#: src/blocks/news-module-ten/edit.js:646
+#: src/blocks/news-module-ten/edit.js:861
+#: src/blocks/news-module-thirteen/edit.js:687
+#: src/blocks/news-module-thirteen/edit.js:913
+#: src/blocks/news-module-thirteen/edit.js:959
+#: src/blocks/news-module-three/edit.js:775
+#: src/blocks/news-module-three/edit.js:1073
+#: src/blocks/news-module-twelve/edit.js:635
+#: src/blocks/news-module-twelve/edit.js:850
+#: src/blocks/news-module-two/edit.js:774
+#: src/blocks/news-module-two/edit.js:1066
+#: src/blocks/news-module-two/edit.js:1112
+#: src/blocks/single-news-one/edit.js:785
+#: src/blocks/single-news-one/edit.js:865
+#: src/blocks/single-news-one/edit.js:911
+#: src/blocks/single-news-two/edit.js:799
+#: src/blocks/single-news-two/edit.js:879
+#: src/blocks/single-news-two/edit.js:925
+#: src/blocks/tile-module-one/edit.js:705
+#: src/blocks/tile-module-three/edit.js:628
+#: src/blocks/tile-module-two/edit.js:704
+#: src/controls/boxshadow.js:84
+msgid "Color"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:798
+#: src/blocks/news-module-eight/edit.js:770
+#: src/blocks/news-module-eleven/edit.js:640
+#: src/blocks/news-module-fifteen/edit.js:643
+#: src/blocks/news-module-five/edit.js:770
+#: src/blocks/news-module-four/edit.js:731
+#: src/blocks/news-module-fourteen/edit.js:699
+#: src/blocks/news-module-nine/edit.js:789
+#: src/blocks/news-module-one/edit.js:813
+#: src/blocks/news-module-seven/edit.js:828
+#: src/blocks/news-module-six/edit.js:834
+#: src/blocks/news-module-ten/edit.js:652
+#: src/blocks/news-module-thirteen/edit.js:693
+#: src/blocks/news-module-three/edit.js:781
+#: src/blocks/news-module-twelve/edit.js:641
+#: src/blocks/news-module-two/edit.js:780
+#: src/blocks/tile-module-one/edit.js:711
+#: src/blocks/tile-module-three/edit.js:634
+#: src/blocks/tile-module-two/edit.js:710
+msgid "Short Border Color"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:804
+#: src/blocks/news-module-eight/edit.js:776
+#: src/blocks/news-module-eleven/edit.js:646
+#: src/blocks/news-module-fifteen/edit.js:649
+#: src/blocks/news-module-five/edit.js:776
+#: src/blocks/news-module-four/edit.js:737
+#: src/blocks/news-module-fourteen/edit.js:705
+#: src/blocks/news-module-nine/edit.js:795
+#: src/blocks/news-module-one/edit.js:819
+#: src/blocks/news-module-seven/edit.js:834
+#: src/blocks/news-module-six/edit.js:840
+#: src/blocks/news-module-ten/edit.js:658
+#: src/blocks/news-module-thirteen/edit.js:699
+#: src/blocks/news-module-three/edit.js:787
+#: src/blocks/news-module-twelve/edit.js:647
+#: src/blocks/news-module-two/edit.js:786
+#: src/blocks/tile-module-one/edit.js:717
+#: src/blocks/tile-module-three/edit.js:640
+#: src/blocks/tile-module-two/edit.js:716
+msgid "Long Border Color"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:810
+#: src/blocks/carousel-module-one/edit.js:851
+#: src/blocks/carousel-module-one/edit.js:933
+#: src/blocks/carousel-module-one/edit.js:1013
+#: src/blocks/carousel-module-one/edit.js:1059
+#: src/blocks/news-module-eight/edit.js:782
+#: src/blocks/news-module-eight/edit.js:823
+#: src/blocks/news-module-eight/edit.js:907
+#: src/blocks/news-module-eight/edit.js:980
+#: src/blocks/news-module-eight/edit.js:1062
+#: src/blocks/news-module-eight/edit.js:1108
+#: src/blocks/news-module-eleven/edit.js:652
+#: src/blocks/news-module-eleven/edit.js:693
+#: src/blocks/news-module-eleven/edit.js:763
+#: src/blocks/news-module-eleven/edit.js:837
+#: src/blocks/news-module-fifteen/edit.js:655
+#: src/blocks/news-module-fifteen/edit.js:696
+#: src/blocks/news-module-fifteen/edit.js:778
+#: src/blocks/news-module-fifteen/edit.js:858
+#: src/blocks/news-module-five/edit.js:782
+#: src/blocks/news-module-five/edit.js:823
+#: src/blocks/news-module-five/edit.js:907
+#: src/blocks/news-module-five/edit.js:980
+#: src/blocks/news-module-five/edit.js:1062
+#: src/blocks/news-module-five/edit.js:1108
+#: src/blocks/news-module-four/edit.js:743
+#: src/blocks/news-module-four/edit.js:784
+#: src/blocks/news-module-four/edit.js:868
+#: src/blocks/news-module-four/edit.js:941
+#: src/blocks/news-module-four/edit.js:1023
+#: src/blocks/news-module-fourteen/edit.js:711
+#: src/blocks/news-module-fourteen/edit.js:752
+#: src/blocks/news-module-fourteen/edit.js:834
+#: src/blocks/news-module-fourteen/edit.js:914
+#: src/blocks/news-module-fourteen/edit.js:960
+#: src/blocks/news-module-nine/edit.js:801
+#: src/blocks/news-module-nine/edit.js:842
+#: src/blocks/news-module-nine/edit.js:926
+#: src/blocks/news-module-nine/edit.js:999
+#: src/blocks/news-module-nine/edit.js:1081
+#: src/blocks/news-module-one/edit.js:825
+#: src/blocks/news-module-one/edit.js:866
+#: src/blocks/news-module-one/edit.js:950
+#: src/blocks/news-module-one/edit.js:1023
+#: src/blocks/news-module-one/edit.js:1105
+#: src/blocks/news-module-one/edit.js:1151
+#: src/blocks/news-module-seven/edit.js:840
+#: src/blocks/news-module-seven/edit.js:881
+#: src/blocks/news-module-seven/edit.js:965
+#: src/blocks/news-module-seven/edit.js:1038
+#: src/blocks/news-module-seven/edit.js:1120
+#: src/blocks/news-module-seven/edit.js:1166
+#: src/blocks/news-module-six/edit.js:846
+#: src/blocks/news-module-six/edit.js:887
+#: src/blocks/news-module-six/edit.js:971
+#: src/blocks/news-module-six/edit.js:1044
+#: src/blocks/news-module-six/edit.js:1126
+#: src/blocks/news-module-six/edit.js:1172
+#: src/blocks/news-module-ten/edit.js:664
+#: src/blocks/news-module-ten/edit.js:705
+#: src/blocks/news-module-ten/edit.js:787
+#: src/blocks/news-module-ten/edit.js:867
+#: src/blocks/news-module-thirteen/edit.js:705
+#: src/blocks/news-module-thirteen/edit.js:746
+#: src/blocks/news-module-thirteen/edit.js:828
+#: src/blocks/news-module-thirteen/edit.js:919
+#: src/blocks/news-module-thirteen/edit.js:965
+#: src/blocks/news-module-three/edit.js:793
+#: src/blocks/news-module-three/edit.js:834
+#: src/blocks/news-module-three/edit.js:924
+#: src/blocks/news-module-three/edit.js:997
+#: src/blocks/news-module-three/edit.js:1079
+#: src/blocks/news-module-twelve/edit.js:653
+#: src/blocks/news-module-twelve/edit.js:694
+#: src/blocks/news-module-twelve/edit.js:776
+#: src/blocks/news-module-twelve/edit.js:856
+#: src/blocks/news-module-two/edit.js:792
+#: src/blocks/news-module-two/edit.js:833
+#: src/blocks/news-module-two/edit.js:917
+#: src/blocks/news-module-two/edit.js:990
+#: src/blocks/news-module-two/edit.js:1072
+#: src/blocks/news-module-two/edit.js:1118
+#: src/blocks/single-news-one/edit.js:791
+#: src/blocks/single-news-one/edit.js:871
+#: src/blocks/single-news-one/edit.js:917
+#: src/blocks/single-news-two/edit.js:805
+#: src/blocks/single-news-two/edit.js:885
+#: src/blocks/single-news-two/edit.js:931
+#: src/blocks/ticker-module/edit.js:404
+#: src/blocks/ticker-module/edit.js:456
+#: src/blocks/tile-module-one/edit.js:723
+#: src/blocks/tile-module-one/edit.js:764
+#: src/blocks/tile-module-one/edit.js:842
+#: src/blocks/tile-module-one/edit.js:915
+#: src/blocks/tile-module-one/edit.js:991
+#: src/blocks/tile-module-three/edit.js:646
+#: src/blocks/tile-module-three/edit.js:687
+#: src/blocks/tile-module-three/edit.js:763
+#: src/blocks/tile-module-three/edit.js:837
+#: src/blocks/tile-module-two/edit.js:722
+#: src/blocks/tile-module-two/edit.js:763
+#: src/blocks/tile-module-two/edit.js:841
+#: src/blocks/tile-module-two/edit.js:914
+#: src/blocks/tile-module-two/edit.js:990
+#: src/controls/typography.js:194
+msgid "Typography"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:847
+#: src/blocks/news-module-eight/edit.js:819
+#: src/blocks/news-module-eleven/edit.js:689
+#: src/blocks/news-module-fifteen/edit.js:692
+#: src/blocks/news-module-five/edit.js:819
+#: src/blocks/news-module-four/edit.js:780
+#: src/blocks/news-module-fourteen/edit.js:748
+#: src/blocks/news-module-nine/edit.js:838
+#: src/blocks/news-module-one/edit.js:862
+#: src/blocks/news-module-seven/edit.js:877
+#: src/blocks/news-module-six/edit.js:883
+#: src/blocks/news-module-ten/edit.js:701
+#: src/blocks/news-module-thirteen/edit.js:742
+#: src/blocks/news-module-three/edit.js:830
+#: src/blocks/news-module-twelve/edit.js:690
+#: src/blocks/news-module-two/edit.js:829
+#: src/blocks/tile-module-one/edit.js:760
+#: src/blocks/tile-module-three/edit.js:683
+#: src/blocks/tile-module-two/edit.js:759
+msgid "Category"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:886
+#: src/blocks/carousel-module-one/edit.js:1099
+#: src/blocks/carousel-module-one/edit.js:1227
+#: src/blocks/container/inspector.js:611
+#: src/blocks/news-module-eight/edit.js:858
+#: src/blocks/news-module-eight/edit.js:1229
+#: src/blocks/news-module-eleven/edit.js:728
+#: src/blocks/news-module-eleven/edit.js:958
+#: src/blocks/news-module-fifteen/edit.js:731
+#: src/blocks/news-module-fifteen/edit.js:979
+#: src/blocks/news-module-five/edit.js:858
+#: src/blocks/news-module-five/edit.js:1229
+#: src/blocks/news-module-four/edit.js:819
+#: src/blocks/news-module-four/edit.js:1144
+#: src/blocks/news-module-fourteen/edit.js:787
+#: src/blocks/news-module-fourteen/edit.js:1081
+#: src/blocks/news-module-nine/edit.js:877
+#: src/blocks/news-module-nine/edit.js:1202
+#: src/blocks/news-module-one/edit.js:901
+#: src/blocks/news-module-one/edit.js:1272
+#: src/blocks/news-module-seven/edit.js:916
+#: src/blocks/news-module-seven/edit.js:1287
+#: src/blocks/news-module-six/edit.js:922
+#: src/blocks/news-module-six/edit.js:1293
+#: src/blocks/news-module-ten/edit.js:740
+#: src/blocks/news-module-ten/edit.js:988
+#: src/blocks/news-module-thirteen/edit.js:781
+#: src/blocks/news-module-thirteen/edit.js:1086
+#: src/blocks/news-module-three/edit.js:869
+#: src/blocks/news-module-three/edit.js:1200
+#: src/blocks/news-module-twelve/edit.js:729
+#: src/blocks/news-module-twelve/edit.js:977
+#: src/blocks/news-module-two/edit.js:868
+#: src/blocks/news-module-two/edit.js:1239
+#: src/blocks/section/column/inspector.js:393
+#: src/blocks/section/columns/inspector.js:553
+#: src/blocks/single-news-one/edit.js:1038
+#: src/blocks/single-news-two/edit.js:1052
+#: src/blocks/ticker-module/edit.js:514
+#: src/blocks/ticker-module/edit.js:630
+#: src/blocks/tile-module-one/edit.js:799
+#: src/blocks/tile-module-one/edit.js:1112
+#: src/blocks/tile-module-three/edit.js:722
+#: src/blocks/tile-module-three/edit.js:958
+#: src/blocks/tile-module-two/edit.js:798
+#: src/blocks/tile-module-two/edit.js:1111
+msgid "Normal"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:888
+#: src/blocks/carousel-module-one/edit.js:902
+#: src/blocks/carousel-module-one/edit.js:1101
+#: src/blocks/carousel-module-one/edit.js:1360
+#: src/blocks/container/inspector.js:754
+#: src/blocks/news-module-eight/edit.js:860
+#: src/blocks/news-module-eight/edit.js:874
+#: src/blocks/news-module-eight/edit.js:1362
+#: src/blocks/news-module-eleven/edit.js:730
+#: src/blocks/news-module-eleven/edit.js:744
+#: src/blocks/news-module-eleven/edit.js:1091
+#: src/blocks/news-module-fifteen/edit.js:733
+#: src/blocks/news-module-fifteen/edit.js:747
+#: src/blocks/news-module-fifteen/edit.js:1112
+#: src/blocks/news-module-five/edit.js:860
+#: src/blocks/news-module-five/edit.js:874
+#: src/blocks/news-module-five/edit.js:1362
+#: src/blocks/news-module-four/edit.js:821
+#: src/blocks/news-module-four/edit.js:835
+#: src/blocks/news-module-four/edit.js:1277
+#: src/blocks/news-module-fourteen/edit.js:789
+#: src/blocks/news-module-fourteen/edit.js:803
+#: src/blocks/news-module-fourteen/edit.js:1214
+#: src/blocks/news-module-nine/edit.js:879
+#: src/blocks/news-module-nine/edit.js:893
+#: src/blocks/news-module-nine/edit.js:1335
+#: src/blocks/news-module-one/edit.js:903
+#: src/blocks/news-module-one/edit.js:917
+#: src/blocks/news-module-one/edit.js:1405
+#: src/blocks/news-module-seven/edit.js:918
+#: src/blocks/news-module-seven/edit.js:932
+#: src/blocks/news-module-seven/edit.js:1420
+#: src/blocks/news-module-six/edit.js:924
+#: src/blocks/news-module-six/edit.js:938
+#: src/blocks/news-module-six/edit.js:1426
+#: src/blocks/news-module-ten/edit.js:742
+#: src/blocks/news-module-ten/edit.js:756
+#: src/blocks/news-module-ten/edit.js:1121
+#: src/blocks/news-module-thirteen/edit.js:783
+#: src/blocks/news-module-thirteen/edit.js:797
+#: src/blocks/news-module-thirteen/edit.js:902
+#: src/blocks/news-module-thirteen/edit.js:1219
+#: src/blocks/news-module-three/edit.js:871
+#: src/blocks/news-module-three/edit.js:885
+#: src/blocks/news-module-three/edit.js:1333
+#: src/blocks/news-module-twelve/edit.js:731
+#: src/blocks/news-module-twelve/edit.js:745
+#: src/blocks/news-module-twelve/edit.js:1110
+#: src/blocks/news-module-two/edit.js:870
+#: src/blocks/news-module-two/edit.js:884
+#: src/blocks/news-module-two/edit.js:1372
+#: src/blocks/section/column/inspector.js:536
+#: src/blocks/section/columns/inspector.js:697
+#: src/blocks/single-news-one/edit.js:1171
+#: src/blocks/single-news-two/edit.js:1185
+#: src/blocks/ticker-module/edit.js:439
+#: src/blocks/ticker-module/edit.js:491
+#: src/blocks/ticker-module/edit.js:516
+#: src/blocks/ticker-module/edit.js:763
+#: src/blocks/tile-module-one/edit.js:801
+#: src/blocks/tile-module-one/edit.js:815
+#: src/blocks/tile-module-one/edit.js:1245
+#: src/blocks/tile-module-three/edit.js:724
+#: src/blocks/tile-module-three/edit.js:738
+#: src/blocks/tile-module-three/edit.js:1091
+#: src/blocks/tile-module-two/edit.js:800
+#: src/blocks/tile-module-two/edit.js:814
+#: src/blocks/tile-module-two/edit.js:1244
+msgid "Background Color"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:894
+#: src/blocks/carousel-module-one/edit.js:908
+#: src/blocks/news-module-eight/edit.js:866
+#: src/blocks/news-module-eight/edit.js:880
+#: src/blocks/news-module-eleven/edit.js:736
+#: src/blocks/news-module-eleven/edit.js:750
+#: src/blocks/news-module-fifteen/edit.js:739
+#: src/blocks/news-module-fifteen/edit.js:753
+#: src/blocks/news-module-five/edit.js:866
+#: src/blocks/news-module-five/edit.js:880
+#: src/blocks/news-module-four/edit.js:827
+#: src/blocks/news-module-four/edit.js:841
+#: src/blocks/news-module-fourteen/edit.js:795
+#: src/blocks/news-module-fourteen/edit.js:809
+#: src/blocks/news-module-nine/edit.js:885
+#: src/blocks/news-module-nine/edit.js:899
+#: src/blocks/news-module-one/edit.js:909
+#: src/blocks/news-module-one/edit.js:923
+#: src/blocks/news-module-seven/edit.js:924
+#: src/blocks/news-module-seven/edit.js:938
+#: src/blocks/news-module-six/edit.js:930
+#: src/blocks/news-module-six/edit.js:944
+#: src/blocks/news-module-ten/edit.js:748
+#: src/blocks/news-module-ten/edit.js:762
+#: src/blocks/news-module-thirteen/edit.js:789
+#: src/blocks/news-module-thirteen/edit.js:803
+#: src/blocks/news-module-three/edit.js:877
+#: src/blocks/news-module-three/edit.js:891
+#: src/blocks/news-module-twelve/edit.js:737
+#: src/blocks/news-module-twelve/edit.js:751
+#: src/blocks/news-module-two/edit.js:876
+#: src/blocks/news-module-two/edit.js:890
+#: src/blocks/ticker-module/edit.js:445
+#: src/blocks/ticker-module/edit.js:497
+#: src/blocks/tile-module-one/edit.js:807
+#: src/blocks/tile-module-one/edit.js:821
+#: src/blocks/tile-module-three/edit.js:730
+#: src/blocks/tile-module-three/edit.js:744
+#: src/blocks/tile-module-two/edit.js:806
+#: src/blocks/tile-module-two/edit.js:820
+msgid "Text Color"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:900
+#: src/blocks/carousel-module-one/edit.js:1119
+#: src/blocks/carousel-module-one/edit.js:1290
+#: src/blocks/container/inspector.js:668
+#: src/blocks/news-module-eight/edit.js:872
+#: src/blocks/news-module-eight/edit.js:1292
+#: src/blocks/news-module-eleven/edit.js:742
+#: src/blocks/news-module-eleven/edit.js:1021
+#: src/blocks/news-module-fifteen/edit.js:745
+#: src/blocks/news-module-fifteen/edit.js:1042
+#: src/blocks/news-module-five/edit.js:872
+#: src/blocks/news-module-five/edit.js:1292
+#: src/blocks/news-module-four/edit.js:833
+#: src/blocks/news-module-four/edit.js:1207
+#: src/blocks/news-module-fourteen/edit.js:801
+#: src/blocks/news-module-fourteen/edit.js:1144
+#: src/blocks/news-module-nine/edit.js:891
+#: src/blocks/news-module-nine/edit.js:1265
+#: src/blocks/news-module-one/edit.js:915
+#: src/blocks/news-module-one/edit.js:1335
+#: src/blocks/news-module-seven/edit.js:930
+#: src/blocks/news-module-seven/edit.js:1350
+#: src/blocks/news-module-six/edit.js:936
+#: src/blocks/news-module-six/edit.js:1356
+#: src/blocks/news-module-ten/edit.js:754
+#: src/blocks/news-module-ten/edit.js:1051
+#: src/blocks/news-module-thirteen/edit.js:795
+#: src/blocks/news-module-thirteen/edit.js:1149
+#: src/blocks/news-module-three/edit.js:883
+#: src/blocks/news-module-three/edit.js:1263
+#: src/blocks/news-module-twelve/edit.js:743
+#: src/blocks/news-module-twelve/edit.js:1040
+#: src/blocks/news-module-two/edit.js:882
+#: src/blocks/news-module-two/edit.js:1302
+#: src/blocks/section/column/inspector.js:450
+#: src/blocks/section/columns/inspector.js:610
+#: src/blocks/single-news-one/edit.js:1101
+#: src/blocks/single-news-two/edit.js:1115
+#: src/blocks/ticker-module/edit.js:528
+#: src/blocks/ticker-module/edit.js:693
+#: src/blocks/tile-module-one/edit.js:813
+#: src/blocks/tile-module-one/edit.js:1175
+#: src/blocks/tile-module-three/edit.js:736
+#: src/blocks/tile-module-three/edit.js:1021
+#: src/blocks/tile-module-two/edit.js:812
+#: src/blocks/tile-module-two/edit.js:1174
+msgid "Hover"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:917
+#: src/blocks/news-module-eight/edit.js:889
+#: src/blocks/news-module-eleven/edit.js:759
+#: src/blocks/news-module-fifteen/edit.js:762
+#: src/blocks/news-module-five/edit.js:889
+#: src/blocks/news-module-four/edit.js:850
+#: src/blocks/news-module-fourteen/edit.js:818
+#: src/blocks/news-module-nine/edit.js:908
+#: src/blocks/news-module-one/edit.js:932
+#: src/blocks/news-module-seven/edit.js:947
+#: src/blocks/news-module-six/edit.js:953
+#: src/blocks/news-module-ten/edit.js:771
+#: src/blocks/news-module-thirteen/edit.js:812
+#: src/blocks/news-module-three/edit.js:900
+#: src/blocks/news-module-twelve/edit.js:760
+#: src/blocks/news-module-two/edit.js:899
+#: src/blocks/ticker-module/edit.js:376
+#: src/blocks/ticker-module/edit.js:400
+#: src/blocks/tile-module-one/edit.js:830
+#: src/blocks/tile-module-three/edit.js:753
+#: src/blocks/tile-module-two/edit.js:829
+#: src/controlgroup/query.js:190
+msgid "Title"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:921
+#: src/blocks/news-module-eight/edit.js:893
+#: src/blocks/news-module-fifteen/edit.js:766
+#: src/blocks/news-module-five/edit.js:893
+#: src/blocks/news-module-four/edit.js:854
+#: src/blocks/news-module-fourteen/edit.js:822
+#: src/blocks/news-module-nine/edit.js:912
+#: src/blocks/news-module-one/edit.js:936
+#: src/blocks/news-module-seven/edit.js:951
+#: src/blocks/news-module-six/edit.js:957
+#: src/blocks/news-module-ten/edit.js:775
+#: src/blocks/news-module-thirteen/edit.js:816
+#: src/blocks/news-module-twelve/edit.js:764
+#: src/blocks/news-module-two/edit.js:903
+#: src/blocks/tile-module-one/edit.js:834
+#: src/blocks/tile-module-three/edit.js:757
+#: src/blocks/tile-module-two/edit.js:833
+msgid "Title Color"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:927
+#: src/blocks/news-module-eight/edit.js:899
+#: src/blocks/news-module-fifteen/edit.js:772
+#: src/blocks/news-module-five/edit.js:899
+#: src/blocks/news-module-four/edit.js:860
+#: src/blocks/news-module-fourteen/edit.js:828
+#: src/blocks/news-module-nine/edit.js:918
+#: src/blocks/news-module-one/edit.js:942
+#: src/blocks/news-module-seven/edit.js:957
+#: src/blocks/news-module-six/edit.js:963
+#: src/blocks/news-module-ten/edit.js:781
+#: src/blocks/news-module-thirteen/edit.js:822
+#: src/blocks/news-module-twelve/edit.js:770
+#: src/blocks/news-module-two/edit.js:909
+msgid "Title Color(Hover)"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:968
+#: src/blocks/carousel-module-one/edit.js:1149
+#: src/blocks/container/inspector.js:531
+#: src/blocks/news-module-eight/edit.js:942
+#: src/blocks/news-module-eight/edit.js:1015
+#: src/blocks/news-module-eight/edit.js:1151
+#: src/blocks/news-module-eleven/edit.js:798
+#: src/blocks/news-module-eleven/edit.js:880
+#: src/blocks/news-module-fifteen/edit.js:813
+#: src/blocks/news-module-fifteen/edit.js:901
+#: src/blocks/news-module-five/edit.js:942
+#: src/blocks/news-module-five/edit.js:1015
+#: src/blocks/news-module-five/edit.js:1151
+#: src/blocks/news-module-four/edit.js:903
+#: src/blocks/news-module-four/edit.js:976
+#: src/blocks/news-module-four/edit.js:1066
+#: src/blocks/news-module-fourteen/edit.js:869
+#: src/blocks/news-module-fourteen/edit.js:1003
+#: src/blocks/news-module-nine/edit.js:961
+#: src/blocks/news-module-nine/edit.js:1034
+#: src/blocks/news-module-nine/edit.js:1124
+#: src/blocks/news-module-one/edit.js:985
+#: src/blocks/news-module-one/edit.js:1058
+#: src/blocks/news-module-one/edit.js:1194
+#: src/blocks/news-module-seven/edit.js:1000
+#: src/blocks/news-module-seven/edit.js:1073
+#: src/blocks/news-module-seven/edit.js:1209
+#: src/blocks/news-module-six/edit.js:1006
+#: src/blocks/news-module-six/edit.js:1079
+#: src/blocks/news-module-six/edit.js:1215
+#: src/blocks/news-module-ten/edit.js:822
+#: src/blocks/news-module-ten/edit.js:910
+#: src/blocks/news-module-thirteen/edit.js:863
+#: src/blocks/news-module-thirteen/edit.js:1008
+#: src/blocks/news-module-three/edit.js:959
+#: src/blocks/news-module-three/edit.js:1032
+#: src/blocks/news-module-three/edit.js:1122
+#: src/blocks/news-module-twelve/edit.js:811
+#: src/blocks/news-module-twelve/edit.js:899
+#: src/blocks/news-module-two/edit.js:952
+#: src/blocks/news-module-two/edit.js:1025
+#: src/blocks/news-module-two/edit.js:1161
+#: src/blocks/section/column/inspector.js:313
+#: src/blocks/section/columns/inspector.js:472
+#: src/blocks/single-news-one/edit.js:826
+#: src/blocks/single-news-one/edit.js:960
+#: src/blocks/single-news-two/edit.js:840
+#: src/blocks/single-news-two/edit.js:974
+#: src/blocks/ticker-module/edit.js:552
+#: src/blocks/tile-module-one/edit.js:877
+#: src/blocks/tile-module-one/edit.js:950
+#: src/blocks/tile-module-one/edit.js:1034
+#: src/blocks/tile-module-three/edit.js:798
+#: src/blocks/tile-module-three/edit.js:880
+#: src/blocks/tile-module-two/edit.js:876
+#: src/blocks/tile-module-two/edit.js:949
+#: src/blocks/tile-module-two/edit.js:1033
+msgid "Margin"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1003
+#: src/blocks/news-module-eight/edit.js:1098
+#: src/blocks/news-module-eleven/edit.js:833
+#: src/blocks/news-module-fifteen/edit.js:848
+#: src/blocks/news-module-five/edit.js:1098
+#: src/blocks/news-module-four/edit.js:1013
+#: src/blocks/news-module-fourteen/edit.js:950
+#: src/blocks/news-module-nine/edit.js:1071
+#: src/blocks/news-module-one/edit.js:1141
+#: src/blocks/news-module-seven/edit.js:1156
+#: src/blocks/news-module-six/edit.js:1162
+#: src/blocks/news-module-ten/edit.js:857
+#: src/blocks/news-module-thirteen/edit.js:955
+#: src/blocks/news-module-three/edit.js:1069
+#: src/blocks/news-module-twelve/edit.js:846
+#: src/blocks/news-module-two/edit.js:1108
+#: src/blocks/tile-module-one/edit.js:987
+#: src/blocks/tile-module-three/edit.js:833
+#: src/blocks/tile-module-two/edit.js:986
+msgid "Metas"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1049
+#: src/blocks/news-module-eight/edit.js:1052
+#: src/blocks/news-module-five/edit.js:1052
+#: src/blocks/news-module-fourteen/edit.js:904
+#: src/blocks/news-module-one/edit.js:1095
+#: src/blocks/news-module-seven/edit.js:1110
+#: src/blocks/news-module-six/edit.js:1116
+#: src/blocks/news-module-thirteen/edit.js:909
+#: src/blocks/news-module-two/edit.js:1062
+msgid "Excerpt"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1095
+#: src/blocks/ticker-module/edit.js:510
+msgid "Navigation"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1107
+#: src/blocks/ticker-module/edit.js:522
+msgid "Icon Color"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1113
+msgid "Dots Color"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1121
+msgid "Background Color (Hover)"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1127
+msgid "Icon Color (Hover)"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1133
+msgid "Dots Color (Active)"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1145
+#: src/blocks/container/inspector.js:527
+#: src/blocks/news-module-eight/edit.js:1147
+#: src/blocks/news-module-eleven/edit.js:876
+#: src/blocks/news-module-fifteen/edit.js:897
+#: src/blocks/news-module-five/edit.js:1147
+#: src/blocks/news-module-four/edit.js:1062
+#: src/blocks/news-module-fourteen/edit.js:999
+#: src/blocks/news-module-nine/edit.js:1120
+#: src/blocks/news-module-one/edit.js:1190
+#: src/blocks/news-module-seven/edit.js:1205
+#: src/blocks/news-module-six/edit.js:1211
+#: src/blocks/news-module-ten/edit.js:906
+#: src/blocks/news-module-thirteen/edit.js:1004
+#: src/blocks/news-module-three/edit.js:1118
+#: src/blocks/news-module-twelve/edit.js:895
+#: src/blocks/news-module-two/edit.js:1157
+#: src/blocks/section/column/inspector.js:309
+#: src/blocks/section/columns/inspector.js:468
+#: src/blocks/single-news-one/edit.js:956
+#: src/blocks/single-news-two/edit.js:970
+#: src/blocks/ticker-module/edit.js:548
+#: src/blocks/tile-module-one/edit.js:1030
+#: src/blocks/tile-module-three/edit.js:876
+#: src/blocks/tile-module-two/edit.js:1029
+msgid "Spacing"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1185
+#: src/blocks/container/inspector.js:568
+#: src/blocks/news-module-eight/edit.js:1187
+#: src/blocks/news-module-eleven/edit.js:916
+#: src/blocks/news-module-fifteen/edit.js:937
+#: src/blocks/news-module-five/edit.js:1187
+#: src/blocks/news-module-four/edit.js:1102
+#: src/blocks/news-module-fourteen/edit.js:1039
+#: src/blocks/news-module-nine/edit.js:1160
+#: src/blocks/news-module-one/edit.js:1230
+#: src/blocks/news-module-seven/edit.js:1245
+#: src/blocks/news-module-six/edit.js:1251
+#: src/blocks/news-module-ten/edit.js:946
+#: src/blocks/news-module-thirteen/edit.js:1044
+#: src/blocks/news-module-three/edit.js:1158
+#: src/blocks/news-module-twelve/edit.js:935
+#: src/blocks/news-module-two/edit.js:1197
+#: src/blocks/section/column/inspector.js:350
+#: src/blocks/section/columns/inspector.js:510
+#: src/blocks/single-news-one/edit.js:996
+#: src/blocks/single-news-two/edit.js:1010
+#: src/blocks/ticker-module/edit.js:588
+#: src/blocks/tile-module-one/edit.js:1070
+#: src/blocks/tile-module-three/edit.js:916
+#: src/blocks/tile-module-two/edit.js:1069
+msgid "Padding"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1223
+#: src/blocks/container/inspector.js:607
+#: src/blocks/news-module-eight/edit.js:1225
+#: src/blocks/news-module-eleven/edit.js:954
+#: src/blocks/news-module-fifteen/edit.js:975
+#: src/blocks/news-module-five/edit.js:1225
+#: src/blocks/news-module-four/edit.js:1140
+#: src/blocks/news-module-fourteen/edit.js:1077
+#: src/blocks/news-module-nine/edit.js:1198
+#: src/blocks/news-module-one/edit.js:1268
+#: src/blocks/news-module-seven/edit.js:1283
+#: src/blocks/news-module-six/edit.js:1289
+#: src/blocks/news-module-ten/edit.js:984
+#: src/blocks/news-module-thirteen/edit.js:1082
+#: src/blocks/news-module-three/edit.js:1196
+#: src/blocks/news-module-twelve/edit.js:973
+#: src/blocks/news-module-two/edit.js:1235
+#: src/blocks/section/column/inspector.js:389
+#: src/blocks/section/columns/inspector.js:549
+#: src/blocks/single-news-one/edit.js:1034
+#: src/blocks/single-news-two/edit.js:1048
+#: src/blocks/ticker-module/edit.js:626
+#: src/blocks/tile-module-one/edit.js:1108
+#: src/blocks/tile-module-three/edit.js:954
+#: src/blocks/tile-module-two/edit.js:1107
+#: src/controls/border.js:17
+msgid "Border"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1234
+#: src/blocks/carousel-module-one/edit.js:1297
+#: src/blocks/container/inspector.js:618
+#: src/blocks/container/inspector.js:675
+#: src/blocks/news-module-eight/edit.js:1236
+#: src/blocks/news-module-eight/edit.js:1299
+#: src/blocks/news-module-eleven/edit.js:965
+#: src/blocks/news-module-eleven/edit.js:1028
+#: src/blocks/news-module-fifteen/edit.js:986
+#: src/blocks/news-module-fifteen/edit.js:1049
+#: src/blocks/news-module-five/edit.js:1236
+#: src/blocks/news-module-five/edit.js:1299
+#: src/blocks/news-module-four/edit.js:1151
+#: src/blocks/news-module-four/edit.js:1214
+#: src/blocks/news-module-fourteen/edit.js:1088
+#: src/blocks/news-module-fourteen/edit.js:1151
+#: src/blocks/news-module-nine/edit.js:1209
+#: src/blocks/news-module-nine/edit.js:1272
+#: src/blocks/news-module-one/edit.js:1279
+#: src/blocks/news-module-one/edit.js:1342
+#: src/blocks/news-module-seven/edit.js:1294
+#: src/blocks/news-module-seven/edit.js:1357
+#: src/blocks/news-module-six/edit.js:1300
+#: src/blocks/news-module-six/edit.js:1363
+#: src/blocks/news-module-ten/edit.js:995
+#: src/blocks/news-module-ten/edit.js:1058
+#: src/blocks/news-module-thirteen/edit.js:1093
+#: src/blocks/news-module-thirteen/edit.js:1156
+#: src/blocks/news-module-three/edit.js:1207
+#: src/blocks/news-module-three/edit.js:1270
+#: src/blocks/news-module-twelve/edit.js:984
+#: src/blocks/news-module-twelve/edit.js:1047
+#: src/blocks/news-module-two/edit.js:1246
+#: src/blocks/news-module-two/edit.js:1309
+#: src/blocks/section/column/inspector.js:400
+#: src/blocks/section/column/inspector.js:457
+#: src/blocks/section/columns/inspector.js:560
+#: src/blocks/section/columns/inspector.js:617
+#: src/blocks/single-news-one/edit.js:1045
+#: src/blocks/single-news-one/edit.js:1108
+#: src/blocks/single-news-two/edit.js:1059
+#: src/blocks/single-news-two/edit.js:1122
+#: src/blocks/ticker-module/edit.js:637
+#: src/blocks/ticker-module/edit.js:700
+#: src/blocks/tile-module-one/edit.js:1119
+#: src/blocks/tile-module-one/edit.js:1182
+#: src/blocks/tile-module-three/edit.js:965
+#: src/blocks/tile-module-three/edit.js:1028
+#: src/blocks/tile-module-two/edit.js:1118
+#: src/blocks/tile-module-two/edit.js:1181
+msgid "Border Color"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1241
+#: src/blocks/carousel-module-one/edit.js:1304
+#: src/blocks/container/inspector.js:625
+#: src/blocks/container/inspector.js:682
+#: src/blocks/news-module-eight/edit.js:1243
+#: src/blocks/news-module-eight/edit.js:1306
+#: src/blocks/news-module-eleven/edit.js:972
+#: src/blocks/news-module-eleven/edit.js:1035
+#: src/blocks/news-module-fifteen/edit.js:993
+#: src/blocks/news-module-fifteen/edit.js:1056
+#: src/blocks/news-module-five/edit.js:1243
+#: src/blocks/news-module-five/edit.js:1306
+#: src/blocks/news-module-four/edit.js:1158
+#: src/blocks/news-module-four/edit.js:1221
+#: src/blocks/news-module-fourteen/edit.js:1095
+#: src/blocks/news-module-fourteen/edit.js:1158
+#: src/blocks/news-module-nine/edit.js:1216
+#: src/blocks/news-module-nine/edit.js:1279
+#: src/blocks/news-module-one/edit.js:1286
+#: src/blocks/news-module-one/edit.js:1349
+#: src/blocks/news-module-seven/edit.js:1301
+#: src/blocks/news-module-seven/edit.js:1364
+#: src/blocks/news-module-six/edit.js:1307
+#: src/blocks/news-module-six/edit.js:1370
+#: src/blocks/news-module-ten/edit.js:1002
+#: src/blocks/news-module-ten/edit.js:1065
+#: src/blocks/news-module-thirteen/edit.js:1100
+#: src/blocks/news-module-thirteen/edit.js:1163
+#: src/blocks/news-module-three/edit.js:1214
+#: src/blocks/news-module-three/edit.js:1277
+#: src/blocks/news-module-twelve/edit.js:991
+#: src/blocks/news-module-twelve/edit.js:1054
+#: src/blocks/news-module-two/edit.js:1253
+#: src/blocks/news-module-two/edit.js:1316
+#: src/blocks/section/column/inspector.js:407
+#: src/blocks/section/column/inspector.js:464
+#: src/blocks/section/columns/inspector.js:567
+#: src/blocks/section/columns/inspector.js:624
+#: src/blocks/single-news-one/edit.js:1052
+#: src/blocks/single-news-one/edit.js:1115
+#: src/blocks/single-news-two/edit.js:1066
+#: src/blocks/single-news-two/edit.js:1129
+#: src/blocks/ticker-module/edit.js:644
+#: src/blocks/ticker-module/edit.js:707
+#: src/blocks/tile-module-one/edit.js:1126
+#: src/blocks/tile-module-one/edit.js:1189
+#: src/blocks/tile-module-three/edit.js:972
+#: src/blocks/tile-module-three/edit.js:1035
+#: src/blocks/tile-module-two/edit.js:1125
+#: src/blocks/tile-module-two/edit.js:1188
+msgid "Border Width"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1259
+#: src/blocks/carousel-module-one/edit.js:1322
+#: src/blocks/container/inspector.js:640
+#: src/blocks/container/inspector.js:697
+#: src/blocks/news-module-eight/edit.js:1261
+#: src/blocks/news-module-eight/edit.js:1324
+#: src/blocks/news-module-eleven/edit.js:990
+#: src/blocks/news-module-eleven/edit.js:1053
+#: src/blocks/news-module-fifteen/edit.js:1011
+#: src/blocks/news-module-fifteen/edit.js:1074
+#: src/blocks/news-module-five/edit.js:1261
+#: src/blocks/news-module-five/edit.js:1324
+#: src/blocks/news-module-four/edit.js:1176
+#: src/blocks/news-module-four/edit.js:1239
+#: src/blocks/news-module-fourteen/edit.js:1113
+#: src/blocks/news-module-fourteen/edit.js:1176
+#: src/blocks/news-module-nine/edit.js:1234
+#: src/blocks/news-module-nine/edit.js:1297
+#: src/blocks/news-module-one/edit.js:1304
+#: src/blocks/news-module-one/edit.js:1367
+#: src/blocks/news-module-seven/edit.js:1319
+#: src/blocks/news-module-seven/edit.js:1382
+#: src/blocks/news-module-six/edit.js:1325
+#: src/blocks/news-module-six/edit.js:1388
+#: src/blocks/news-module-ten/edit.js:1020
+#: src/blocks/news-module-ten/edit.js:1083
+#: src/blocks/news-module-thirteen/edit.js:1118
+#: src/blocks/news-module-thirteen/edit.js:1181
+#: src/blocks/news-module-three/edit.js:1232
+#: src/blocks/news-module-three/edit.js:1295
+#: src/blocks/news-module-twelve/edit.js:1009
+#: src/blocks/news-module-twelve/edit.js:1072
+#: src/blocks/news-module-two/edit.js:1271
+#: src/blocks/news-module-two/edit.js:1334
+#: src/blocks/section/column/inspector.js:422
+#: src/blocks/section/column/inspector.js:479
+#: src/blocks/section/columns/inspector.js:582
+#: src/blocks/section/columns/inspector.js:639
+#: src/blocks/single-news-one/edit.js:1070
+#: src/blocks/single-news-one/edit.js:1133
+#: src/blocks/single-news-two/edit.js:1084
+#: src/blocks/single-news-two/edit.js:1147
+#: src/blocks/ticker-module/edit.js:662
+#: src/blocks/ticker-module/edit.js:725
+#: src/blocks/tile-module-one/edit.js:1144
+#: src/blocks/tile-module-one/edit.js:1207
+#: src/blocks/tile-module-three/edit.js:990
+#: src/blocks/tile-module-three/edit.js:1053
+#: src/blocks/tile-module-two/edit.js:1143
+#: src/blocks/tile-module-two/edit.js:1206
+msgid "Border Radius"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1356
+#: src/blocks/container/inspector.js:729
+#: src/blocks/news-module-eight/edit.js:1358
+#: src/blocks/news-module-eleven/edit.js:1087
+#: src/blocks/news-module-fifteen/edit.js:1108
+#: src/blocks/news-module-five/edit.js:1358
+#: src/blocks/news-module-four/edit.js:1273
+#: src/blocks/news-module-fourteen/edit.js:1210
+#: src/blocks/news-module-nine/edit.js:1331
+#: src/blocks/news-module-one/edit.js:1401
+#: src/blocks/news-module-seven/edit.js:1416
+#: src/blocks/news-module-six/edit.js:1422
+#: src/blocks/news-module-ten/edit.js:1117
+#: src/blocks/news-module-thirteen/edit.js:1215
+#: src/blocks/news-module-three/edit.js:1329
+#: src/blocks/news-module-twelve/edit.js:1106
+#: src/blocks/news-module-two/edit.js:1368
+#: src/blocks/section/column/inspector.js:511
+#: src/blocks/section/columns/inspector.js:671
+#: src/blocks/single-news-one/edit.js:706
+#: src/blocks/single-news-one/edit.js:1167
+#: src/blocks/single-news-two/edit.js:1181
+#: src/blocks/ticker-module/edit.js:759
+#: src/blocks/tile-module-one/edit.js:1241
+#: src/blocks/tile-module-three/edit.js:1087
+#: src/blocks/tile-module-two/edit.js:1240
+msgid "Background"
+msgstr ""
+
+#: src/blocks/carousel-module-one/edit.js:1383
+#: src/blocks/news-module-eight/edit.js:1385
+#: src/blocks/news-module-eleven/edit.js:1114
+#: src/blocks/news-module-fifteen/edit.js:1135
+#: src/blocks/news-module-five/edit.js:1385
+#: src/blocks/news-module-four/edit.js:1300
+#: src/blocks/news-module-fourteen/edit.js:1237
+#: src/blocks/news-module-nine/edit.js:1358
+#: src/blocks/news-module-one/edit.js:568
+#: src/blocks/news-module-seven/edit.js:1443
+#: src/blocks/news-module-six/edit.js:1449
+#: src/blocks/news-module-ten/edit.js:1144
+#: src/blocks/news-module-thirteen/edit.js:1242
+#: src/blocks/news-module-three/edit.js:1356
+#: src/blocks/news-module-twelve/edit.js:1133
+#: src/blocks/news-module-two/edit.js:1395
+#: src/blocks/tile-module-one/edit.js:1268
+#: src/blocks/tile-module-three/edit.js:1114
+#: src/blocks/tile-module-two/edit.js:1267
+msgid "Heading..."
+msgstr ""
+
+#: src/blocks/carousel-module-one/index.js:28
+msgid "Carousel Module"
+msgstr ""
+
+#: src/blocks/carousel-module-one/index.js:29
+#: src/blocks/news-module-eight/index.js:29
+#: src/blocks/news-module-eleven/index.js:29
+#: src/blocks/news-module-fifteen/index.js:29
+#: src/blocks/news-module-five/index.js:29
+#: src/blocks/news-module-four/index.js:29
+#: src/blocks/news-module-fourteen/index.js:29
+#: src/blocks/news-module-nine/index.js:29
+#: src/blocks/news-module-one/index.js:29
+#: src/blocks/news-module-seven/index.js:29
+#: src/blocks/news-module-six/index.js:29
+#: src/blocks/news-module-ten/index.js:29
+#: src/blocks/news-module-thirteen/index.js:29
+#: src/blocks/news-module-three/index.js:29
+#: src/blocks/news-module-twelve/index.js:29
+#: src/blocks/news-module-two/index.js:29
+#: src/blocks/single-news-one/index.js:29
+#: src/blocks/single-news-two/index.js:29
+#: src/blocks/ticker-module/index.js:29
+#: src/blocks/tile-module-one/index.js:29
+#: src/blocks/tile-module-three/index.js:29
+#: src/blocks/tile-module-two/index.js:29
+msgid "Smart Blocks News Modules"
+msgstr ""
+
+#: src/blocks/container/index.js:31
+msgid "Container"
+msgstr ""
+
+#: src/blocks/container/index.js:32
+msgid "Display container wrapper for elements"
+msgstr ""
+
+#: src/blocks/container/inspector.js:232
+msgid "Sticky Options"
+msgstr ""
+
+#: src/blocks/container/inspector.js:236
+msgid "Enable Sticky"
+msgstr ""
+
+#: src/blocks/container/inspector.js:242
+msgid "Sticky Offset"
+msgstr ""
+
+#: src/blocks/container/inspector.js:255
+msgid "Container Should be inside column for sticky"
+msgstr ""
+
+#: src/blocks/container/inspector.js:260
+msgid "Flexible Content Options"
+msgstr ""
+
+#: src/blocks/container/inspector.js:264
+msgid "Set Width"
+msgstr ""
+
+#: src/blocks/container/inspector.js:270
+msgid "Container Width"
+msgstr ""
+
+#: src/blocks/container/inspector.js:287
+#: src/blocks/container/inspector.js:292
+msgid "Flex"
+msgstr ""
+
+#: src/blocks/container/inspector.js:296
+#: src/blocks/container/inspector.js:301
+msgid "Grid"
+msgstr ""
+
+#: src/blocks/container/inspector.js:310
+msgid "Direction"
+msgstr ""
+
+#: src/blocks/container/inspector.js:316
+#: src/blocks/section/columns/inspector.js:428
+msgid "Right"
+msgstr ""
+
+#: src/blocks/container/inspector.js:321
+msgid "Bottom"
+msgstr ""
+
+#: src/blocks/container/inspector.js:326
+#: src/blocks/section/columns/inspector.js:418
+msgid "Left"
+msgstr ""
+
+#: src/blocks/container/inspector.js:331
+msgid "Top"
+msgstr ""
+
+#: src/blocks/container/inspector.js:343
+msgid "Container Wrap"
+msgstr ""
+
+#: src/blocks/container/inspector.js:349
+msgid "No Wrap"
+msgstr ""
+
+#: src/blocks/container/inspector.js:354
+msgid "Wrap"
+msgstr ""
+
+#: src/blocks/container/inspector.js:369
+msgid "Column Number"
+msgstr ""
+
+#: src/blocks/container/inspector.js:384
+msgid "Align Items"
+msgstr ""
+
+#: src/blocks/container/inspector.js:390
+#: src/blocks/container/inspector.js:424
+#: src/blocks/section/columns/inspector.js:385
+msgid "Flex Start"
+msgstr ""
+
+#: src/blocks/container/inspector.js:395
+#: src/blocks/container/inspector.js:429
+#: src/blocks/container/inspector.js:474
+#: src/blocks/section/column/inspector.js:266
+#: src/blocks/section/columns/inspector.js:390
+#: src/blocks/section/columns/inspector.js:423
+msgid "Center"
+msgstr ""
+
+#: src/blocks/container/inspector.js:400
+#: src/blocks/container/inspector.js:434
+#: src/blocks/section/columns/inspector.js:395
+msgid "Flex End"
+msgstr ""
+
+#: src/blocks/container/inspector.js:405
+#: src/blocks/container/inspector.js:479
+#: src/blocks/container/inspector.js:484
+#: src/blocks/section/column/inspector.js:271
+#: src/blocks/section/column/inspector.js:276
+#: src/blocks/section/columns/inspector.js:400
+msgid "Stretch"
+msgstr ""
+
+#: src/blocks/container/inspector.js:418
+msgid "Justify Content"
+msgstr ""
+
+#: src/blocks/container/inspector.js:439
+msgid "Space Between"
+msgstr ""
+
+#: src/blocks/container/inspector.js:444
+msgid "Space Around"
+msgstr ""
+
+#: src/blocks/container/inspector.js:449
+msgid "Space Evenly"
+msgstr ""
+
+#: src/blocks/container/inspector.js:463
+msgid "Justify Items"
+msgstr ""
+
+#: src/blocks/container/inspector.js:469
+#: src/blocks/section/column/inspector.js:261
+msgid "Start"
+msgstr ""
+
+#: src/blocks/container/inspector.js:497
+#: src/blocks/section/column/inspector.js:288
+#: src/blocks/section/columns/inspector.js:440
+msgid "Gaps"
+msgstr ""
+
+#: src/blocks/container/inspector.js:734
+#: src/blocks/container/inspector.js:738
+#: src/blocks/section/column/inspector.js:516
+#: src/blocks/section/column/inspector.js:520
+#: src/blocks/section/columns/inspector.js:677
+#: src/blocks/section/columns/inspector.js:681
+msgid "Image/Color"
+msgstr ""
+
+#: src/blocks/container/inspector.js:742
+#: src/blocks/container/inspector.js:746
+#: src/blocks/section/column/inspector.js:524
+#: src/blocks/section/column/inspector.js:528
+#: src/blocks/section/columns/inspector.js:685
+#: src/blocks/section/columns/inspector.js:689
+msgid "Gradient"
+msgstr ""
+
+#: src/blocks/container/inspector.js:761
+#: src/blocks/section/column/inspector.js:543
+#: src/blocks/section/columns/inspector.js:704
+#: src/controls/imagebackground.js:117
+#: src/controls/imagebackground.js:118
+msgid "Background Image"
+msgstr ""
+
+#: src/blocks/container/inspector.js:783
+#: src/blocks/section/column/inspector.js:565
+#: src/blocks/section/columns/inspector.js:726
+msgid "Background Gradient"
+msgstr ""
+
+#: src/blocks/container/inspector.js:796
+#: src/blocks/section/column/inspector.js:578
+#: src/blocks/section/columns/inspector.js:780
+msgid "Section Settings"
+msgstr ""
+
+#: src/blocks/container/inspector.js:800
+#: src/blocks/section/column/inspector.js:582
+#: src/blocks/section/columns/inspector.js:784
+msgid "HTML Tag"
+msgstr ""
+
+#: src/blocks/container/inspector.js:803
+#: src/blocks/section/column/inspector.js:585
+#: src/blocks/section/columns/inspector.js:787
+msgid "Default (div)"
+msgstr ""
+
+#: src/blocks/container/inspector.js:817
+msgid "Link URL"
+msgstr ""
+
+#: src/blocks/container/inspector.js:824
+msgid "The contents inside the container should not have any anchort link inorder to work properly."
+msgstr ""
+
+#: src/blocks/news-module-eight/edit.js:644
+#: src/blocks/news-module-five/edit.js:644
+#: src/blocks/news-module-nine/edit.js:670
+#: src/blocks/news-module-one/edit.js:679
+#: src/blocks/news-module-seven/edit.js:702
+#: src/blocks/news-module-three/edit.js:669
+#: src/blocks/news-module-two/edit.js:647
+#: src/blocks/tile-module-one/edit.js:593
+#: src/blocks/tile-module-two/edit.js:598
+msgid "Featured Block"
+msgstr ""
+
+#: src/blocks/news-module-eight/edit.js:689
+#: src/blocks/news-module-one/edit.js:724
+#: src/blocks/news-module-three/edit.js:700
+#: src/blocks/news-module-two/edit.js:692
+#: src/blocks/tile-module-one/edit.js:624
+#: src/blocks/tile-module-two/edit.js:629
+msgid "Side Block"
+msgstr ""
+
+#: src/blocks/news-module-eight/edit.js:905
+#: src/blocks/news-module-five/edit.js:905
+#: src/blocks/news-module-nine/edit.js:924
+#: src/blocks/news-module-one/edit.js:948
+#: src/blocks/news-module-seven/edit.js:963
+#: src/blocks/news-module-two/edit.js:915
+msgid "Featured"
+msgstr ""
+
+#: src/blocks/news-module-eight/edit.js:978
+#: src/blocks/news-module-one/edit.js:1021
+#: src/blocks/news-module-three/edit.js:995
+#: src/blocks/news-module-two/edit.js:988
+#: src/blocks/tile-module-one/edit.js:913
+#: src/blocks/tile-module-two/edit.js:912
+msgid "Side Post"
+msgstr ""
+
+#: src/blocks/news-module-eight/index.js:28
+msgid "News Module 8"
+msgstr ""
+
+#: src/blocks/news-module-eleven/index.js:28
+msgid "News Module 11"
+msgstr ""
+
+#: src/blocks/news-module-fifteen/index.js:28
+msgid "News Module 15"
+msgstr ""
+
+#: src/blocks/news-module-five/edit.js:689
+#: src/blocks/news-module-nine/edit.js:708
+#: src/blocks/news-module-seven/edit.js:747
+#: src/blocks/news-module-ten/edit.js:564
+msgid "Listing Block"
+msgstr ""
+
+#: src/blocks/news-module-five/edit.js:978
+#: src/blocks/news-module-nine/edit.js:997
+#: src/blocks/news-module-seven/edit.js:1036
+msgid "Listing Post"
+msgstr ""
+
+#: src/blocks/news-module-five/index.js:28
+msgid "News Module 5"
+msgstr ""
+
+#: src/blocks/news-module-four/edit.js:612
+#: src/blocks/news-module-six/edit.js:708
+#: src/blocks/news-module-six/edit.js:969
+msgid "Top Block"
+msgstr ""
+
+#: src/blocks/news-module-four/edit.js:650
+#: src/blocks/news-module-six/edit.js:746
+#: src/blocks/news-module-six/edit.js:1042
+msgid "Bottom Block"
+msgstr ""
+
+#: src/blocks/news-module-four/edit.js:866
+msgid "Top Post"
+msgstr ""
+
+#: src/blocks/news-module-four/edit.js:939
+msgid "Bottom Post"
+msgstr ""
+
+#: src/blocks/news-module-four/index.js:28
+msgid "News Module 4"
+msgstr ""
+
+#: src/blocks/news-module-fourteen/edit.js:601
+msgid "No of Columns"
+msgstr ""
+
+#: src/blocks/news-module-fourteen/edit.js:608
+#: src/controlgroup/query.js:221
+msgid "No of Posts"
+msgstr ""
+
+#: src/blocks/news-module-fourteen/index.js:28
+msgid "News Module 14"
+msgstr ""
+
+#: src/blocks/news-module-nine/index.js:28
+msgid "News Module 9"
+msgstr ""
+
+#: src/blocks/news-module-one/index.js:28
+msgid "News Module 1"
+msgstr ""
+
+#: src/blocks/news-module-seven/index.js:28
+msgid "News Module 7"
+msgstr ""
+
+#: src/blocks/news-module-six/index.js:28
+msgid "News Module 6"
+msgstr ""
+
+#: src/blocks/news-module-ten/edit.js:574
+msgid "Image Width (px)"
+msgstr ""
+
+#: src/blocks/news-module-ten/index.js:28
+msgid "News Module 10"
+msgstr ""
+
+#: src/blocks/news-module-thirteen/index.js:28
+msgid "News Module 13"
+msgstr ""
+
+#: src/blocks/news-module-three/edit.js:904
+msgid "Featured Post Title Color"
+msgstr ""
+
+#: src/blocks/news-module-three/edit.js:910
+msgid "Side Post Title Color"
+msgstr ""
+
+#: src/blocks/news-module-three/edit.js:916
+msgid "Side Post Title Color(Hover)"
+msgstr ""
+
+#: src/blocks/news-module-three/edit.js:922
+#: src/blocks/tile-module-one/edit.js:840
+#: src/blocks/tile-module-two/edit.js:839
+msgid "Featured Post"
+msgstr ""
+
+#: src/blocks/news-module-three/index.js:28
+msgid "News Module 3"
+msgstr ""
+
+#: src/blocks/news-module-twelve/index.js:28
+msgid "News Module 12"
+msgstr ""
+
+#: src/blocks/news-module-two/index.js:28
+msgid "News Module 2"
+msgstr ""
+
+#: src/blocks/section/column/index.js:32
+msgid "Column"
+msgstr ""
+
+#: src/blocks/section/column/index.js:33
+msgid "A single column within a columns block."
+msgstr ""
+
+#: src/blocks/section/column/inspector.js:235
+#: src/blocks/section/columns/inspector.js:345
+msgid "Width"
+msgstr ""
+
+#: src/blocks/section/column/inspector.js:240
+msgid "Column Width"
+msgstr ""
+
+#: src/blocks/section/column/inspector.js:255
+msgid "Align Self"
+msgstr ""
+
+#: src/blocks/section/columns/index.js:32
+#: src/blocks/section/columns/inspector.js:312
+msgid "Columns"
+msgstr ""
+
+#: src/blocks/section/columns/index.js:33
+msgid "Display content in multiple columns, with blocks added to each column."
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:308
+msgid "Columns & Layout"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:331
+msgid "Content Width"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:334
+msgid "Full Width"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:335
+msgid "Boxed"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:362
+msgid "Min Height"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:379
+msgid "Column Align"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:412
+msgid "Text Align"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:739
+msgid "Responsive"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:743
+msgid "Hide this section in Desktop devices?"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:749
+msgid "Hide this section in Tablet devices?"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:755
+msgid "Hide this section in Mobile devices?"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:764
+msgid "Reverse Columns in Tablet devices?"
+msgstr ""
+
+#: src/blocks/section/columns/inspector.js:772
+msgid "Reverse Columns in Mobile devices?"
+msgstr ""
+
+#: src/blocks/section/columns/layoutselector.js:9
+msgid "Section"
+msgstr ""
+
+#: src/blocks/section/columns/layoutselector.js:10
+msgid "Select a variation to start with"
+msgstr ""
+
+#: src/blocks/section/columns/layoutselector.js:15
+msgid "Single"
+msgstr ""
+
+#: src/blocks/section/columns/layoutselector.js:27
+#: src/blocks/section/columns/layoutselector.js:66
+#: src/blocks/section/columns/layoutselector.js:108
+#: src/blocks/section/components/layout-control/index.js:67
+#: src/blocks/section/components/layout-control/index.js:138
+#: src/blocks/section/components/layout-control/index.js:246
+#: src/blocks/section/components/layout-control/index.js:300
+#: src/blocks/section/components/layout-control/index.js:372
+msgid "Equal"
+msgstr ""
+
+#: src/blocks/section/columns/layoutselector.js:40
+#: src/blocks/section/components/layout-control/index.js:84
+msgid "1:2"
+msgstr ""
+
+#: src/blocks/section/columns/layoutselector.js:53
+#: src/blocks/section/components/layout-control/index.js:102
+msgid "2:1"
+msgstr ""
+
+#: src/blocks/section/columns/layoutselector.js:80
+#: src/blocks/section/components/layout-control/index.js:156
+msgid "1:1:2"
+msgstr ""
+
+#: src/blocks/section/columns/layoutselector.js:94
+#: src/blocks/section/components/layout-control/index.js:174
+msgid "2:1:1"
+msgstr ""
+
+#: src/blocks/section/components/layout-control/index.js:51
+msgid "Single Row"
+msgstr ""
+
+#: src/blocks/section/components/layout-control/index.js:119
+#: src/blocks/section/components/layout-control/index.js:228
+#: src/blocks/section/components/layout-control/index.js:281
+#: src/blocks/section/components/layout-control/index.js:353
+#: src/blocks/section/components/layout-control/index.js:428
+msgid "Collapsed Rows"
+msgstr ""
+
+#: src/blocks/section/components/layout-control/index.js:192
+msgid "1:2:1"
+msgstr ""
+
+#: src/blocks/section/components/layout-control/index.js:210
+msgid "1:3:1"
+msgstr ""
+
+#: src/blocks/section/components/layout-control/index.js:265
+#: src/blocks/section/components/layout-control/index.js:320
+#: src/blocks/section/components/layout-control/index.js:394
+msgid "Two Column Grid"
+msgstr ""
+
+#: src/blocks/section/components/layout-control/index.js:337
+#: src/blocks/section/components/layout-control/index.js:411
+msgid "Three Column Grid"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:562
+#: src/blocks/single-news-two/edit.js:562
+#: src/controlgroup/query.js:138
+msgid "Content Filter"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:567
+#: src/blocks/single-news-two/edit.js:567
+msgid "Select Filter"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:571
+#: src/blocks/single-news-two/edit.js:571
+msgid "By Post Title"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:572
+#: src/blocks/single-news-two/edit.js:572
+msgid "By Categories"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:573
+#: src/blocks/single-news-two/edit.js:573
+msgid "By Tags"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:579
+#: src/blocks/single-news-two/edit.js:579
+msgid "Select Post"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:588
+#: src/blocks/single-news-two/edit.js:588
+msgid "Categories"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:597
+#: src/blocks/single-news-two/edit.js:597
+msgid "Tags"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:606
+#: src/blocks/single-news-two/edit.js:605
+#: src/controlgroup/query.js:209
+msgid "Offset"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:615
+#: src/blocks/single-news-two/edit.js:614
+msgid "Post Meta"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:619
+msgid "Post Author"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:624
+msgid "Post Date"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:629
+msgid "Post Comments"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:652
+#: src/blocks/single-news-two/edit.js:651
+msgid "Post Excerpt"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:656
+msgid "Excerpt Length (in Letters)"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:664
+#: src/blocks/single-news-two/edit.js:663
+msgid "Image Settings"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:688
+#: src/blocks/single-news-two/edit.js:687
+msgid "Content Alignment"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:712
+#: src/blocks/single-news-two/edit.js:726
+msgid "Content Padding"
+msgstr ""
+
+#: src/blocks/single-news-one/edit.js:746
+#: src/blocks/single-news-two/edit.js:760
+msgid "Content Margin"
+msgstr ""
+
+#: src/blocks/single-news-one/index.js:28
+msgid "Single News 1"
+msgstr ""
+
+#: src/blocks/single-news-two/index.js:28
+msgid "Single News 2"
+msgstr ""
+
+#: src/blocks/template-import/edit.js:12
+msgid "Open Template Library"
+msgstr ""
+
+#: src/blocks/template-import/edit.js:21
+#: src/blocks/template-import/index.js:28
+msgid "Template Library"
+msgstr ""
+
+#: src/blocks/template-import/index.js:34
+msgid "Import Blocks and Templates Library"
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/header.js:41
+msgid "All Categories"
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/header.js:56
+#: src/blocks/template-import/template-library/components/header.js:59
+msgid "Back to Library"
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/header.js:86
+msgid "Templates"
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/header.js:99
+#: src/blocks/template-import/template-library/components/template.js:41
+msgid "Insert"
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/header.js:103
+msgid "Close"
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/header.js:106
+msgid "Close settings"
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/header.js:126
+msgid "Search"
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/template.js:8
+msgid "Untitled Template"
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/template.js:18
+msgid " by "
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/template.js:19
+msgid "Author: "
+msgstr ""
+
+#: src/blocks/template-import/template-library/components/template.js:31
+msgid "Preview"
+msgstr ""
+
+#: src/blocks/template-import/template-library/index.js:49
+msgid "There seems to be an error. Please try again."
+msgstr ""
+
+#: src/blocks/ticker-module/edit.js:372
+msgid "Ticker Block"
+msgstr ""
+
+#: src/blocks/ticker-module/edit.js:387
+msgid "Ticker Pause Duration"
+msgstr ""
+
+#: src/blocks/ticker-module/edit.js:503
+msgid "Text Color (Hover)"
+msgstr ""
+
+#: src/blocks/ticker-module/edit.js:530
+msgid "Background Color(Hover)"
+msgstr ""
+
+#: src/blocks/ticker-module/edit.js:536
+msgid "Text Color(Hover)"
+msgstr ""
+
+#: src/blocks/ticker-module/index.js:28
+msgid "Ticker Module"
+msgstr ""
+
+#: src/blocks/tile-module-one/edit.js:628
+msgid "Large Image Size"
+msgstr ""
+
+#: src/blocks/tile-module-one/edit.js:634
+msgid "Small Image Size"
+msgstr ""
+
+#: src/blocks/tile-module-one/edit.js:689
+#: src/blocks/tile-module-three/edit.js:612
+#: src/blocks/tile-module-two/edit.js:688
+msgid "Module Height(px)"
+msgstr ""
+
+#: src/blocks/tile-module-one/index.js:28
+msgid "Tile Module 1"
+msgstr ""
+
+#: src/blocks/tile-module-three/index.js:28
+msgid "Tile Module 3"
+msgstr ""
+
+#: src/blocks/tile-module-two/index.js:28
+msgid "Tile Module 2"
+msgstr ""
+
+#: src/controlgroup/query.js:142
+msgid "Source"
+msgstr ""
+
+#: src/controlgroup/query.js:169
+msgid "Exclude Posts"
+msgstr ""
+
+#: src/controlgroup/query.js:179
+msgid "Order By"
+msgstr ""
+
+#: src/controlgroup/query.js:186
+msgid "Date"
+msgstr ""
+
+#: src/controlgroup/query.js:187
+msgid "Last Modified Date"
+msgstr ""
+
+#: src/controlgroup/query.js:188
+msgid "Rand"
+msgstr ""
+
+#: src/controlgroup/query.js:189
+msgid "Comment Count"
+msgstr ""
+
+#: src/controlgroup/query.js:196
+msgid "Order"
+msgstr ""
+
+#: src/controlgroup/query.js:203
+msgid "Descending"
+msgstr ""
+
+#: src/controlgroup/query.js:204
+msgid "Ascending"
+msgstr ""
+
+#: src/controls/border.js:7
+msgid "Solid"
+msgstr ""
+
+#: src/controls/border.js:8
+msgid "Dotted"
+msgstr ""
+
+#: src/controls/border.js:9
+msgid "Dashed"
+msgstr ""
+
+#: src/controls/border.js:10
+msgid "Double"
+msgstr ""
+
+#: src/controls/border.js:19
+#: src/controls/boxshadow.js:26
+#: src/controls/color.js:16
+#: src/controls/typography.js:196
+msgid "Clear"
+msgstr ""
+
+#: src/controls/boxshadow.js:24
+msgid "Box Shadow"
+msgstr ""
+
+#: src/controls/boxshadow.js:58
+msgid "X"
+msgstr ""
+
+#: src/controls/boxshadow.js:64
+msgid "Y"
+msgstr ""
+
+#: src/controls/boxshadow.js:70
+msgid "Blur"
+msgstr ""
+
+#: src/controls/boxshadow.js:76
+msgid "Spread"
+msgstr ""
+
+#: src/controls/boxshadow.js:91
+msgid "Inset"
+msgstr ""
+
+#: src/controls/imagebackground.js:70
+msgid "Remove Image"
+msgstr ""
+
+#: src/controls/imagebackground.js:74
+msgid "Attachment"
+msgstr ""
+
+#: src/controls/imagebackground.js:77
+msgid "Scroll"
+msgstr ""
+
+#: src/controls/imagebackground.js:78
+msgid "Fixed"
+msgstr ""
+
+#: src/controls/imagebackground.js:84
+#: src/controls/imagebackground.js:87
+msgid "Repeat"
+msgstr ""
+
+#: src/controls/imagebackground.js:88
+msgid "No Repeat"
+msgstr ""
+
+#: src/controls/imagebackground.js:89
+msgid "Repeat X"
+msgstr ""
+
+#: src/controls/imagebackground.js:90
+msgid "Repeat Y"
+msgstr ""
+
+#: src/controls/imagebackground.js:96
+msgid "Size"
+msgstr ""
+
+#: src/controls/imagebackground.js:99
+msgid "Auto"
+msgstr ""
+
+#: src/controls/imagebackground.js:100
+msgid "Cover"
+msgstr ""
+
+#: src/controls/imagebackground.js:101
+msgid "Contain"
+msgstr ""
+
+#: src/controls/imagebackground.js:107
+msgid "Overlay Color"
+msgstr ""
+
+#: src/controls/typography.js:220
+msgid "Font Family"
+msgstr ""
+
+#: src/controls/typography.js:240
+msgid "Weight/Style"
+msgstr ""
+
+#: src/controls/typography.js:258
+msgid "Text Transform"
+msgstr ""
+
+#: src/controls/typography.js:276
+msgid "Text Decoration"
+msgstr ""
+
+#: src/controls/typography.js:295
+msgid "Font Size"
+msgstr ""
+
+#: src/controls/typography.js:393
+msgid "Letter Spacing"
+msgstr ""
+
+#: src/controls/typography.js:483
+msgid "Line Height"
+msgstr ""
+
+#: src/utils/responsivedropdown.js:26
+msgid "Desktop"
+msgstr ""
+
+#: src/utils/responsivedropdown.js:33
+msgid "Tablet"
+msgstr ""
+
+#: src/utils/responsivedropdown.js:40
+msgid "Phone"
 msgstr ""

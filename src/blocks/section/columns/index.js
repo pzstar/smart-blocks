@@ -11,6 +11,7 @@ import attributes from './attributes.js';
  */
 import Edit from './edit';
 import Save from './save';
+import deprecated from './deprecated';
 import {Columns} from '../../../utils/svgicons';
 
 import {__} from '@wordpress/i18n';
@@ -39,4 +40,8 @@ smartblocks.activeBlocks.includes('section') && registerBlockType('smart-blocks/
      * @see ./save.js
      */
     save: Save,
+    /**
+     * @see ./deprecated.js
+     */
+    deprecated,
 });

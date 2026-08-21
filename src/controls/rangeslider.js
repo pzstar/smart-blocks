@@ -1,6 +1,7 @@
 import {__} from '@wordpress/i18n';
 import ResponsiveDropdown from '../utils/responsivedropdown';
 import {useSelect} from '@wordpress/data';
+import {getPreviewDeviceType} from '../utils/device-preview';
 
 const RangeSliderControl = ({
     label,
@@ -23,9 +24,7 @@ const RangeSliderControl = ({
     const allUnits = units ? units : ["px", "em", "%"];
 
     const getView = useSelect(select => {
-        const {getView} = select('smart-blocks/data');
-        const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
-        return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+        return getPreviewDeviceType(select);
     }, []);
 
     const calcMinVal = () => {
@@ -96,7 +95,7 @@ const RangeSliderControl = ({
             {label && (<label htmlFor="input">{label}</label>)}
             {responsive && (<ResponsiveDropdown />)}
             {useUnit && (
-                <div class="sb-unit-btn-group">
+                <div className="sb-unit-btn-group">
                     {allUnits.map((unt, index) => {
                         return <button
                             className={`${unit === unt ? "active" : ""}`}

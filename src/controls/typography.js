@@ -6,6 +6,7 @@ import {DesktopIcon, TabletIcon, PhoneIcon, ClearIcon} from '../utils/svgicons';
 import ResponsiveDropdown from '../utils/responsivedropdown';
 import {useSelect} from '@wordpress/data';
 import Select from 'react-select';
+import {getPreviewDeviceType} from '../utils/device-preview';
 
 const TypographyControl = ({
 	label,
@@ -177,9 +178,7 @@ const TypographyControl = ({
 	}
 
 	const getView = useSelect(select => {
-		const {getView} = select('smart-blocks/data');
-		const {__experimentalGetPreviewDeviceType} = select('core/edit-post') ? select('core/edit-post') : false;
-		return __experimentalGetPreviewDeviceType ? __experimentalGetPreviewDeviceType() : getView();
+		return getPreviewDeviceType(select);
 	}, []);
 
 	var allFontList = [];
@@ -292,7 +291,7 @@ const TypographyControl = ({
 							</div>
 
 							<div className="sb-field sb-field-range sb-responsive">
-								<div class="sb-label">
+								<div className="sb-label">
 									<label for="input">{__('Font Size', 'smart-blocks')}</label>
 
 									<ResponsiveDropdown />
@@ -390,7 +389,7 @@ const TypographyControl = ({
 							</div>
 
 							<div className="sb-field sb-field-range sb-responsive">
-								<div class="sb-label">
+								<div className="sb-label">
 									<label for="input">{__('Letter Spacing', 'smart-blocks')}</label>
 
 									<ResponsiveDropdown />
@@ -450,13 +449,13 @@ const TypographyControl = ({
 											max={calcMaxValLetterSpacing()}
 											step={!['rem', 'em'].includes(valueLetterSpacingUnit) ? 1 : 0.1}
 											value={valueLetterSpacingMd}
-											onChange={(e) => setValuesLetterSpacingMd(e.target.value)}
+											onChange={(e) => setValueLetterSpacingMd(e.target.value)}
 										/>
 										<input
 											type="number"
 											step={!['rem', 'em'].includes(valueLetterSpacingUnit) ? 1 : 0.1}
 											value={valueLetterSpacingMd}
-											onChange={(e) => setValuesLetterSpacingMd(e.target.value)}
+											onChange={(e) => setValueLetterSpacingMd(e.target.value)}
 										/>
 									</div>)}
 									{getView == 'Mobile' && (<div className="sb-input-range">
@@ -465,13 +464,13 @@ const TypographyControl = ({
 											max={calcMaxValLetterSpacing()}
 											step={!['rem', 'em'].includes(valueLetterSpacingUnit) ? 1 : 0.1}
 											value={valueLetterSpacingSm}
-											onChange={(e) => setValuesLetterSpacingSm(e.target.value)}
+											onChange={(e) => setValueLetterSpacingSm(e.target.value)}
 										/>
 										<input
 											type="number"
 											step={!['rem', 'em'].includes(valueLetterSpacingUnit) ? 1 : 0.1}
 											value={valueLetterSpacingSm}
-											onChange={(e) => setValuesLetterSpacingSm(e.target.value)}
+											onChange={(e) => setValueLetterSpacingSm(e.target.value)}
 										/>
 									</div>)}
 								</div>
@@ -480,7 +479,7 @@ const TypographyControl = ({
 
 
 							<div className="sb-field sb-field-range sb-responsive">
-								<div class="sb-label">
+								<div className="sb-label">
 									<label for="input">{__('Line Height', 'smart-blocks')}</label>
 
 									<ResponsiveDropdown />

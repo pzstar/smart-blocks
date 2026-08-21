@@ -1,6 +1,5 @@
 import {__} from '@wordpress/i18n';
 import {RawHTML, useState} from '@wordpress/element';
-// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
 import {format, dateI18n, getSettings} from '@wordpress/date';
 import {
     useBlockProps,
@@ -384,7 +383,7 @@ export default function Edit(props) {
         const obj = allCats && allCats.find(o => o.id === catId);
         return obj && (
             <li key={index}>
-                <a class={`sb-primary-cat sb-category-${catId}`} href={`${obj.link}`}>
+                <a className={`sb-primary-cat sb-category-${catId}`} href={`${obj.link}`}>
                     {obj.name}
                 </a>
             </li>
@@ -416,7 +415,7 @@ export default function Edit(props) {
         const display_category = postPostCategory;
         return (
             <div className="sb-grid-block sb-post-item" key={index}>
-                <div class="sb-grid-block-inner">
+                <div className="sb-grid-block-inner">
                     <div className="sb-post-thumb">
                         <a href={post.link}>
                             <div className="sb-thumb-container">
@@ -427,7 +426,7 @@ export default function Edit(props) {
                                     />
                                 )}
                             </div>
-                            <div class="sb-post-content sb-gradient-overlay">
+                            <div className="sb-post-content sb-gradient-overlay">
                                 <h3 className={`sb-post-title ${getFontClass(postTypographyFamily, postTypographyWeight, postTypographyTextTransform, postTypographyTextDecoration)}`}>
                                     {post.title.rendered ? (
                                         <RawHTML>
@@ -464,7 +463,7 @@ export default function Edit(props) {
                             </div>
                         </a>
                         {display_category && post.categories && (
-                            <ul class="post-categories">
+                            <ul className="post-categories">
                                 {post.categories && post.categories.map((catId, index) => (catInner(catId, index, true)))}
                             </ul>
                         )}

@@ -1,6 +1,5 @@
 import {__} from '@wordpress/i18n';
 import {RawHTML, useState} from '@wordpress/element';
-// eslint-disable-next-line @wordpress/no-unsafe-wp-apis
 import {format, dateI18n, getSettings} from '@wordpress/date';
 import {
     useBlockProps,
@@ -437,7 +436,7 @@ export default function Edit(props) {
         const obj = allCats && allCats.find(o => o.id === catId);
         return obj && (
             <li key={index}>
-                <a class={`sb-primary-cat sb-category-${catId}`} href={`${obj.link}`}>
+                <a className={`sb-primary-cat sb-category-${catId}`} href={`${obj.link}`}>
                     {obj.name}
                 </a>
             </li>
@@ -472,21 +471,23 @@ export default function Edit(props) {
         return (
             <div className="sb-post-item" key={index}>
                 <div className="sb-post-thumb">
-                    <div className="sb-thumb-container">
-                        {featuredImage && featuredImage.media_details && (
-                            <img
-                                src={featuredImage.media_details.sizes?.[image_size] ? featuredImage.media_details.sizes?.[image_size].source_url : featuredImage.media_details.sizes?.['full'] ? featuredImage.media_details.sizes?.['full'].source_url : featuredImage.source_url}
-                                alt={featuredImage.alt_text}
-                            />
-                        )}
-                    </div>
+                    <a href={post.link}>
+                        <div className="sb-thumb-container">
+                            {featuredImage && featuredImage.media_details && (
+                                <img
+                                    src={featuredImage.media_details.sizes?.[image_size] ? featuredImage.media_details.sizes?.[image_size].source_url : featuredImage.media_details.sizes?.['full'] ? featuredImage.media_details.sizes?.['full'].source_url : featuredImage.source_url}
+                                    alt={featuredImage.alt_text}
+                                />
+                            )}
+                        </div>
+                    </a>
                     {display_category && post.categories && (
-                        <ul class="post-categories">
+                        <ul className="post-categories">
                             {post.categories && (index == 0 || index == 1) ? post.categories.map((catId, index) => (catInner(catId, index, false))) : post.categories.map((catId, index) => (catInner(catId, index, true)))}
                         </ul>
                     )}
                 </div>
-                <div class="sb-post-content">
+                <div className="sb-post-content">
                     <h3 className={`sb-post-title ${titleClass}`}>
                         <a href={post.link}>
                             {post.title.rendered ? (

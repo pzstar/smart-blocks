@@ -34,7 +34,7 @@ class Smart_blocks_Template_Library {
 					),
 				),
 				'permission_callback' => function () {
-					return current_user_can('edit_posts');
+					return current_user_can('upload_files');
 				},
 			),
 		));
@@ -46,7 +46,7 @@ class Smart_blocks_Template_Library {
 		}
 
 		$templates_list = array();
-		$response = wp_remote_get('https://smartblocks.hashcreation.com/wp-json/v2/templates');
+		$response = wp_safe_remote_get('https://smartblocks.hashcreation.com/wp-json/v2/templates', array('timeout' => 15));
 
 		if (!is_wp_error($response)) {
 		    $response_dat = json_decode(wp_remote_retrieve_body($response), true);
@@ -61,29 +61,47 @@ class Smart_blocks_Template_Library {
 
 
 	public function import_template($request) {
-		global $wp_filesystem;
-		if (!current_user_can('edit_posts')) {
-			return false;
+		// Importing pulls in remote files and sideloads media, so it needs more
+		// than the contributor level capability used for merely browsing.
+		if (!current_user_can('upload_files')) {
+			return new \WP_Error(
+				'smart_blocks_forbidden',
+				__('You are not allowed to import templates.', 'smart-blocks'),
+				array('status' => 403)
+			);
 		}
-
-		require_once ABSPATH . '/wp-admin/includes/file.php';
-		WP_Filesystem();
 
 		$url = $request->get_param('url');
 		$preview = $request->get_param('preview');
-		$site_url = get_site_url();
 
-		if (strpos($url, $site_url) !== false) {
-			$url = str_replace($site_url, ABSPATH, $url);
-			if ($wp_filesystem->exists($url)) {
-				$json = $wp_filesystem->get_contents($url);
-			} else {
-				return new \WP_Error('filesystem_error', __('File doesn\'t exist', 'smart-blocks'));
-			}
-		} else {
-			$request = wp_remote_get($url);
-			$json = wp_remote_retrieve_body($request);
+		if (!$this->is_allowed_url($url)) {
+			return new \WP_Error(
+				'smart_blocks_invalid_url',
+				__('That template URL is not allowed.', 'smart-blocks'),
+				array('status' => 400)
+			);
 		}
+
+		// wp_safe_remote_get() refuses private and loopback addresses, so the
+		// URL cannot be used to reach services inside the network. The previous
+		// local-path branch was removed: it mapped any same-host URL onto a
+		// filesystem path and read it, which allowed traversal outside the
+		// intended directory.
+		$response = wp_safe_remote_get($url, array('timeout' => 15));
+
+		if (is_wp_error($response)) {
+			return $response;
+		}
+
+		if (200 !== (int) wp_remote_retrieve_response_code($response)) {
+			return new \WP_Error(
+				'smart_blocks_fetch_failed',
+				__('The template could not be downloaded.', 'smart-blocks'),
+				array('status' => 502)
+			);
+		}
+
+		$json = wp_remote_retrieve_body($response);
 		$obj = json_decode($json);
 		if (!isset($obj->__file) || 'wp_export' !== $obj->__file || !isset($obj->content) || $preview) {
 			return rest_ensure_response($obj);
@@ -103,6 +121,48 @@ class Smart_blocks_Template_Library {
 		return rest_ensure_response($obj);
 	}
 
+	/**
+	 * Whether a URL may be fetched by the importer.
+	 *
+	 * Only plain http(s) URLs are accepted, and only from hosts the site owner
+	 * has allowed. Everything else, including schemes such as file:// and ftp://,
+	 * is rejected before any request is made.
+	 *
+	 * @param mixed $url Requested URL.
+	 * @return bool
+	 */
+	public function is_allowed_url($url) {
+		if (!is_string($url) || '' === $url) {
+			return false;
+		}
+
+		$parts = wp_parse_url($url);
+
+		if (empty($parts['scheme']) || empty($parts['host'])) {
+			return false;
+		}
+
+		if (!in_array(strtolower($parts['scheme']), array('http', 'https'), true)) {
+			return false;
+		}
+
+		/**
+		 * Filters the hosts the template importer may download from.
+		 *
+		 * Defaults to the official library plus the current site.
+		 *
+		 * @param array $hosts Allowed host names.
+		 */
+		$allowed_hosts = apply_filters('smart_blocks_template_import_hosts', array(
+			'smartblocks.hashcreation.com',
+			wp_parse_url(home_url(), PHP_URL_HOST),
+		));
+
+		$allowed_hosts = array_filter(array_map('strtolower', (array) $allowed_hosts));
+
+		return in_array(strtolower($parts['host']), $allowed_hosts, true);
+	}
+
 	public function hasDangerousExtension($filename) {
 	    // Extensions that should NEVER be allowed
 	    $dangerous = ['php', 'php3', 'php4', 'php5', 'phtml', 'exe', 'sh', 'pl', 'cgi', 'js', 'html', 'htm'];
@@ -110,7 +170,7 @@ class Smart_blocks_Template_Library {
 
 	    // If there are multiple extensions, check them all
 	    foreach ($parts as $ext) {
-	        if (in_array($ext, $dangerous)) {
+	        if (in_array($ext, $dangerous, true)) {
 	            return true;
 	        }
 	    }
@@ -134,6 +194,13 @@ class Smart_blocks_Template_Library {
 			return false;
 		}
 
+		// The URLs here come out of a downloaded template, so they get the same
+		// scheme and host checks as the template itself before anything is
+		// fetched. This keeps the importer from being pointed at internal hosts.
+		if (!$this->is_allowed_url($url)) {
+			return false;
+		}
+
 		$saved_image = $this->get_saved_image($url);
 		if ($saved_image) {
 			return wp_get_attachment_url($saved_image);
@@ -147,11 +214,11 @@ class Smart_blocks_Template_Library {
 
 		$tmp = download_url($url);
 		if (is_wp_error($tmp)) {
-			wp_delete_file($file_array['tmp_name']);
+			// $file_array is not built yet at this point; there is nothing to clean up.
 			return $tmp;
 		}
 		$file_array = array(
-			'name' => basename($url),
+			'name' => basename(wp_parse_url($url, PHP_URL_PATH)),
 			'tmp_name' => $tmp,
 		);
 
@@ -163,7 +230,7 @@ class Smart_blocks_Template_Library {
 		// Only allow specific safe image types
 		$allowed = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
 
-		if (in_array($mime, $allowed)) {
+		if (in_array($mime, $allowed, true)) {
 			$id = media_handle_sideload($file_array);
 			if (is_wp_error($id)) {
 				wp_delete_file($file_array['tmp_name']);
@@ -173,6 +240,10 @@ class Smart_blocks_Template_Library {
 			$value = wp_get_attachment_url($id);
 			return $value;
 		}
+
+		// Not an image we accept; do not leave the download behind.
+		wp_delete_file($tmp);
+
 		return false;
 	}
 }
