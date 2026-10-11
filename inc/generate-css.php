@@ -248,6 +248,11 @@ if (!class_exists('Smart_Blocks_CSS')) {
 
             $css = smart_blocks_css_strip_whitespace(implode('', self::$block_css));
 
+            // The CSS is authored in the editor and stored in the block markup.
+            // It is printed inside a <style> element, so nothing in it may be
+            // able to close that element.
+            $css = preg_replace('#</?\s*style[^>]*>?#i', '', $css);
+
             if ('' === $css) {
                 return;
             }

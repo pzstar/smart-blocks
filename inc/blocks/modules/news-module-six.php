@@ -34,7 +34,7 @@ class Smart_Blocks_News_Module_Six extends Smart_Blocks_Module {
                 $content_rendered .= '<div class="sb-thumb-container">';
                 if (has_post_thumbnail()) {
                     $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $top_block_image_size);
-                    $content_rendered .= '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">';
+                    $content_rendered .= $image ? '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">' : '';
                 }
 
                 $content_rendered .= '</div>';
@@ -62,7 +62,7 @@ class Smart_Blocks_News_Module_Six extends Smart_Blocks_Module {
                 $content_rendered .= '<div class="sb-thumb-container">';
                 if (has_post_thumbnail()) {
                     $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $bottom_block_image_size);
-                    $content_rendered .= '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">';
+                    $content_rendered .= $image ? '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">' : '';
                 }
 
                 $content_rendered .= '</div>';

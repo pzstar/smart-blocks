@@ -18,7 +18,7 @@ class Smart_Blocks_Ticker_Module extends Smart_Blocks_Module {
             'autoplay' => $this->attributes['autoplay'] == 'yes' ? true : false,
         );
 
-        $parameters_json = json_encode($parameters);
+        $parameters_json = wp_json_encode($parameters);
 
 
         $args = $this->query_args();
@@ -33,7 +33,7 @@ class Smart_Blocks_Ticker_Module extends Smart_Blocks_Module {
                 $content_rendered .= esc_html($ticker_title);
             }
             $content_rendered .= '</span>';
-            $content_rendered .= '<div class="sb-ticker-posts"><div class="owl-carousel" data-params=' . esc_attr($parameters_json) . '>';
+            $content_rendered .= '<div class="sb-ticker-posts"><div class="owl-carousel" data-params="' . esc_attr($parameters_json) . '">';
             while ($query->have_posts()):
                 $query->the_post();
                 $content_rendered .= '<a href="' . esc_url(get_permalink()) . '">' . esc_html(get_the_title()) . '</a>';

@@ -29,7 +29,7 @@ class Smart_Blocks_Single_News_Two extends Smart_Blocks_Module {
                 $content_rendered .= '<div class="sb-thumb-container">';
                 if (has_post_thumbnail()) {
                     $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
-                    $content_rendered .= '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">';
+                    $content_rendered .= $image ? '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">' : '';
                 }
                 $content_rendered .= '</div>';
                 $content_rendered .= '</a>';
@@ -92,7 +92,7 @@ class Smart_Blocks_Single_News_Two extends Smart_Blocks_Module {
     public function query_args(): array {
 
         $args = array(
-            'post_type' => $this->get_attr('postsPostType', 'post'),
+            'post_type' => $this->get_post_type(),
             'ignore_sticky_posts' => 1,
             'post_status' => 'publish',
             'posts_per_page' => $this->get_posts_per_page(),
@@ -102,7 +102,7 @@ class Smart_Blocks_Single_News_Two extends Smart_Blocks_Module {
         $filter_option = $this->get_attr('filterOption');
         if ($filter_option == 'single-post') {
             if (!empty($this->attributes['postId'])) {
-                $args['p'] = $this->attributes['postId'];
+                $args['p'] = absint($this->attributes['postId']);
             }
         } elseif ($filter_option == 'categories') {
             if (!empty($this->attributes['categories'])) {

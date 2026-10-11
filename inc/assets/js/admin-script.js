@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
             type: 'post',
             dataType: 'json',
             data: {
-                action: 'admin_settings_save',
+                action: 'sb_settings_save',
                 data: data,
                 sb_nonce: sb_ajax_obj.adminNonce
             },

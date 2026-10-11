@@ -2,7 +2,7 @@
 Contributors:      hashthemes
 Tags:              block, gutenberg, blocks, gutenberg blocks, wordpress blocks
 Tested up to:      7.1
-Stable tag:        2.8
+Stable tag:        2.9
 Requires at least: 6.6
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
@@ -24,6 +24,24 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 </ol>
 
 == Changelog ==
+= 2.9 - 11 Oct, 2026 =
+* Post blocks could list entries of non-public post types - Fixed
+* Warning in post blocks when the featured image file is missing - Fixed
+* Carousel and ticker settings attribute is now quoted and its values cast to numbers
+* Block CSS can no longer close the style element it is printed in
+* Settings save request renamed so it cannot clash with other plugins
+* News Module Three missing from the inserter on existing sites - Fixed
+* Block styles now load for blocks placed in block theme templates, template parts, synced patterns and widgets
+* Extra wrapper around Columns, Column and Container blocks in the editor - Fixed
+* Columns block no longer saves empty layout classes
+* Editor no longer breaks when the enabled blocks setting is missing
+* Translations bundled with the plugin are now loaded
+* Excerpt length is now counted correctly for multibyte languages
+* Smart Blocks pattern categories added to the inserter
+* Settings page assets are only loaded on the Smart Blocks settings page
+* Plugin data is removed when the plugin is deleted
+* Settings are sanitized on save
+
 = 2.8 - 6 Dec, 2025 =
 * Compatibility test with WordPress version 6.9
 

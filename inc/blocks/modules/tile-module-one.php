@@ -34,7 +34,7 @@ class Smart_Blocks_Tile_Module_One extends Smart_Blocks_Module {
                 $content_rendered .= '<a href="' . get_the_permalink() . '">';
                 if (has_post_thumbnail()) {
                     $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $featured_image_size);
-                    $content_rendered .= '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">';
+                    $content_rendered .= $image ? '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">' : '';
                 }
                 $content_rendered .= '</a>';
 
@@ -57,7 +57,7 @@ class Smart_Blocks_Tile_Module_One extends Smart_Blocks_Module {
                     $content_rendered .= '<a href="' . get_the_permalink() . '">';
                     if (has_post_thumbnail()) {
                         $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $side_large_image_size);
-                        $content_rendered .= '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">';
+                        $content_rendered .= $image ? '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">' : '';
                     }
                     $content_rendered .= '</a>';
 
@@ -81,7 +81,7 @@ class Smart_Blocks_Tile_Module_One extends Smart_Blocks_Module {
                     $content_rendered .= '<a href="' . get_the_permalink() . '">';
                     if (has_post_thumbnail()) {
                         $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $side_image_size);
-                        $content_rendered .= '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">';
+                        $content_rendered .= $image ? '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">' : '';
                     }
                     $content_rendered .= '</a>';
 

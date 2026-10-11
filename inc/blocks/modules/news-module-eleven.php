@@ -29,7 +29,7 @@ class Smart_Blocks_News_Module_Eleven extends Smart_Blocks_Module {
 
             if (has_post_thumbnail()) {
                 $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $image_size);
-                $content_rendered .= '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">';
+                $content_rendered .= $image ? '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">' : '';
             }
             $content_rendered .= '</div>';
 

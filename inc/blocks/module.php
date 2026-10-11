@@ -80,12 +80,34 @@ abstract class Smart_Blocks_Module {
     }
 
     /**
+     * Resolves the post type to query.
+     *
+     * The post type comes from the block markup, so anyone who can edit a
+     * post could point it at an internal type (coupons, orders, templates)
+     * and have its entries listed on the front end. Only the types the
+     * editor offers (those shown in nav menus) or that are publicly viewable
+     * may be queried.
+     *
+     * @return string
+     */
+    protected function get_post_type(): string {
+        $post_type = $this->get_attr('postsPostType', 'post');
+        $post_type_object = is_string($post_type) ? get_post_type_object($post_type) : null;
+
+        if (!$post_type_object || !($post_type_object->show_in_nav_menus || is_post_type_viewable($post_type_object))) {
+            return 'post';
+        }
+
+        return $post_type;
+    }
+
+    /**
      * Builds the WP_Query arguments for the module.
      *
      * @return array
      */
     public function query_args(): array {
-        $post_type = $this->get_attr('postsPostType', 'post');
+        $post_type = $this->get_post_type();
 
         $args = array(
             'post_type' => $post_type,
@@ -94,7 +116,7 @@ abstract class Smart_Blocks_Module {
             'ignore_sticky_posts' => 1,
             'post_status' => 'publish',
             'posts_per_page' => $this->get_posts_per_page(),
-            'post__not_in' => (array) $this->get_attr('excludePosts', array()),
+            'post__not_in' => array_filter(array_map('absint', (array) $this->get_attr('excludePosts', array()))),
             'tax_query' => $this->get_tax_query($post_type),
         );
 

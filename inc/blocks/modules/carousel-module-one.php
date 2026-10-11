@@ -17,22 +17,22 @@ class Smart_Blocks_Carousel_Module_One extends Smart_Blocks_Module {
             'autoplay' => $this->attributes['autoplay'] == 'yes' ? true : false,
             'pause' => (int) $this->attributes['pauseDuration'] * 1000,
             'items' => (int) $this->attributes['noOfSlides'],
-            'items_tablet' => (int) isset($this->attributes['noOfSlidesMd']) ? $this->attributes['noOfSlidesMd'] : 2,
-            'items_mobile' => (int) isset($this->attributes['noOfSlidesSm']) ? $this->attributes['noOfSlidesSm'] : 1,
+            'items_tablet' => isset($this->attributes['noOfSlidesMd']) ? (int) $this->attributes['noOfSlidesMd'] : 2,
+            'items_mobile' => isset($this->attributes['noOfSlidesSm']) ? (int) $this->attributes['noOfSlidesSm'] : 1,
             'margin' => (int) $this->attributes['slidesMargin'],
-            'margin_tablet' => (int) isset($this->attributes['slidesMarginMd']) ? $this->attributes['slidesMarginMd'] : 30,
-            'margin_mobile' => (int) isset($this->attributes['slidesMarginSm']) ? $this->attributes['slidesMarginSm'] : 30,
+            'margin_tablet' => isset($this->attributes['slidesMarginMd']) ? (int) $this->attributes['slidesMarginMd'] : 30,
+            'margin_mobile' => isset($this->attributes['slidesMarginSm']) ? (int) $this->attributes['slidesMarginSm'] : 30,
             'stagepadding' => (int) $this->attributes['slidesStagepadding'],
-            'stagepadding_tablet' => (int) isset($this->attributes['slidesStagepaddingMd']) ? $this->attributes['slidesStagepaddingMd'] : 0,
-            'stagepadding_mobile' => (int) isset($this->attributes['slidesStagepaddingSm']) ? $this->attributes['slidesStagepaddingSm'] : 0,
+            'stagepadding_tablet' => isset($this->attributes['slidesStagepaddingMd']) ? (int) $this->attributes['slidesStagepaddingMd'] : 0,
+            'stagepadding_mobile' => isset($this->attributes['slidesStagepaddingSm']) ? (int) $this->attributes['slidesStagepaddingSm'] : 0,
             'nav' => $this->attributes['nav'] ? true : false,
             'dots' => $this->attributes['dots'] ? true : false
         );
-        $params = json_encode($params);
+        $params = wp_json_encode($params);
         $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-carousel-block wp-block-smart-blocks']) . '>';
         $content_rendered .= $this->render_header();
 
-        $content_rendered .= '<div class="sb-carousel-block-wrap owl-carousel" data-params=' . esc_attr($params) . '>';
+        $content_rendered .= '<div class="sb-carousel-block-wrap owl-carousel" data-params="' . esc_attr($params) . '">';
         $args = $this->query_args();
         $query = new \WP_Query($args);
         while ($query->have_posts()):
@@ -44,7 +44,7 @@ class Smart_Blocks_Carousel_Module_One extends Smart_Blocks_Module {
             $content_rendered .= '<div class="sb-thumb-container">';
             if (has_post_thumbnail()) {
                 $image = wp_get_attachment_image_src(get_post_thumbnail_id(), $slide_post_image_size);
-                $content_rendered .= '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">';
+                $content_rendered .= $image ? '<img alt="' . the_title_attribute(array('echo' => false)) . '" src="' . esc_url($image[0]) . '">' : '';
             }
             $content_rendered .= '</div>';
             $content_rendered .= '</a>';
