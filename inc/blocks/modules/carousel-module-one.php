@@ -10,7 +10,7 @@ class Smart_Blocks_Carousel_Module_One extends Smart_Blocks_Module {
     public function render($attributes) {
         $this->attributes = $attributes;
         $content_rendered = '';
-        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '">';
+        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '" class="sb-post-module">';
         $slide_post_image_size = $this->attributes['postImageSize'];
 
         $params = array(

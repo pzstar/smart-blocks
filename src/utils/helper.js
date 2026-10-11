@@ -1,5 +1,3 @@
-
-
 const getFontClass = (family = '', weight = '', textTransform = '', textDecoration = '') => {
     var retrun_classes = [];
     if (family && family.toLowerCase() != 'inherit') {
@@ -17,49 +15,6 @@ const getFontClass = (family = '', weight = '', textTransform = '', textDecorati
     return retrun_classes.join(" ");
 }
 
-const dimensionVars = (varname, top, right, bottom, left, unit = '') => {
-    return `--sb-${varname}-top: ${top ? (top + unit) : 'initial'};
-        --sb-${varname}-right: ${right ? (right + unit) : 'initial'};
-        --sb-${varname}-bottom: ${bottom ? (bottom + unit) : 'initial'};
-        --sb-${varname}-left: ${left ? (left + unit) : 'initial'};`;
-}
-
-const responsiveDimensionVars = (varname, top, right, bottom, left, topSm, rightSm, bottomSm, leftSm, topMd, rightMd, bottomMd, leftMd, unit = '') => {
-    return `--sb-${varname}-top-sm: ${topSm ? (topSm + unit) : 'var(--sb-' + varname + '-top-md)'};
-        --sb-${varname}-right-sm: ${rightSm ? (rightSm + unit) : 'var(--sb-' + varname + '-right-md)'};
-        --sb-${varname}-bottom-sm: ${bottomSm ? (bottomSm + unit) : 'var(--sb-' + varname + '-bottom-md)'};
-        --sb-${varname}-left-sm: ${leftSm ? (leftSm + unit) : 'var(--sb-' + varname + '-left-md)'};
-        --sb-${varname}-top-md: ${topMd ? (topMd + unit) : 'var(--sb-' + varname + '-top-lg)'};
-        --sb-${varname}-right-md: ${rightMd ? (rightMd + unit) : 'var(--sb-' + varname + '-right-lg)'};
-        --sb-${varname}-bottom-md: ${bottomMd ? (bottomMd + unit) : 'var(--sb-' + varname + '-bottom-lg)'};
-        --sb-${varname}-left-md: ${leftMd ? (leftMd + unit) : 'var(--sb-' + varname + '-left-lg)'};
-        --sb-${varname}-top-lg: ${top ? (top + unit) : 'initial'};
-        --sb-${varname}-right-lg: ${right ? (right + unit) : 'initial'};
-        --sb-${varname}-bottom-lg: ${bottom ? (bottom + unit) : 'initial'};
-        --sb-${varname}-left-lg: ${left ? (left + unit) : 'initial'};`;
-}
-
-const responsiveSliderVars = (varname, valueLg, valueSm, valueMd, unit = '') => {
-    return `--sb-${varname}-sm: ${valueSm ? (valueSm + unit) : 'var(--sb-' + varname + '-md)'};
-        --sb-${varname}-md: ${valueMd ? (valueMd + unit) : 'var(--sb-' + varname + '-lg)'};
-        --sb-${varname}-lg: ${valueLg ? (valueLg + unit) : 'initial'};`;
-}
-
-const responsiveColumnWidthVars = (varname, valueLg, valueSm, valueMd, unit = '') => {
-    return `--sb-${varname}-sm: ${valueSm ? (valueSm + unit) : 'var(--sb-' + varname + '-md)'};
-        --sb-${varname}-md: ${valueMd ? (valueMd + unit) : 'var(--sb-' + varname + '-lg)'};
-        --sb-${varname}-lg: ${valueLg ? (valueLg + unit) : 'var(--sb-columns-width, 1170px)'};`;
-}
-
-const boxShadowVars = (varname, horizontal, vertical, blur, spread, color, inset, unit = '') => {
-    return `--sb-${varname}-horizontal: ${horizontal ? (horizontal + unit) : '0'};
-        --sb-${varname}-vertical: ${vertical ? (vertical + unit) : '0'};
-        --sb-${varname}-blur: ${blur ? (blur + unit) : '0'};
-        --sb-${varname}-spread: ${spread ? (spread + unit) : '0'};
-        --sb-${varname}-color: ${color ? color : 'transparent'};
-        --sb-${varname}-inset: ${inset ? inset : ''};`;
-}
-
 const checkDefault = (check, checkDiff = '') => {
     if (checkDiff != '') {
         return (!checkDiff || checkDiff.toLowerCase() == 'default') ? 'inherit' : check;
@@ -67,53 +22,141 @@ const checkDefault = (check, checkDiff = '') => {
     return (!check || check.toLowerCase() == 'default') ? 'inherit' : check;
 }
 
-const responsiveTypographyVars = (varname, family, weight, textTransform, textDecoration,
-    fonsSizeSm, fontSizeMd, fontSize, fontSizeUnit,
-    letterSpacingSm, letterSpacingMd, letterSpacing, letterSpacingUnit,
-    lineHeightSm, lineHeightMd, lineHeight, lineHeightUnit) => {
-    return `--sb-${varname}-family: ${family ? checkDefault(family) : 'inherit'};
-        --sb-${varname}-weight: ${weight ? checkDefault(weight.replace(/\D/g, ''), weight) : 'inherit'};
-        --sb-${varname}-style: ${weight ? checkDefault(weight.replace(/\d+/g, ''), weight) : 'inherit'};
-        --sb-${varname}-tt: ${textTransform ? textTransform : 'inherit'};
-        --sb-${varname}-td: ${textDecoration ? textDecoration : 'inherit'};
-        --sb-${varname}-fs-sm: ${fonsSizeSm ? (fonsSizeSm + fontSizeUnit) : 'var(--sb-' + varname + '-fs-md)'};
-        --sb-${varname}-fs-md: ${fontSizeMd ? (fontSizeMd + fontSizeUnit) : 'var(--sb-' + varname + '-fs-lg)'};
-        --sb-${varname}-fs-lg: ${fontSize ? (fontSize + fontSizeUnit) : 'inherit'};
-        --sb-${varname}-ls-sm: ${letterSpacingSm ? (letterSpacingSm + letterSpacingUnit) : 'var(--sb-' + varname + '-ls-md)'};
-        --sb-${varname}-ls-md: ${letterSpacingMd ? (letterSpacingMd + letterSpacingUnit) : 'var(--sb-' + varname + '-ls-lg)'};
-        --sb-${varname}-ls-lg: ${letterSpacing ? (letterSpacing + letterSpacingUnit) : 'inherit'};
-        --sb-${varname}-lh-sm: ${lineHeightSm ? (lineHeightSm + lineHeightUnit) : 'var(--sb-' + varname + '-lh-md)'};
-        --sb-${varname}-lh-md: ${lineHeightMd ? (lineHeightMd + lineHeightUnit) : 'var(--sb-' + varname + '-lh-lg)'};
-        --sb-${varname}-lh-lg: ${lineHeight ? (lineHeight + lineHeightUnit) : 'inherit'};
-        `;
-}
+/*
+ * Every helper below describes one control as a list of [variable, value]
+ * pairs. A control always has a value for each of its variables: what the
+ * user picked, or a default that falls back to the next screen size up.
+ *
+ * Those defaults are the same for every block, so they are not written into
+ * each block's CSS. They live once in the stylesheet (the "Default block
+ * variables" section of sb-style.css, generated by bin/default-vars.js) and in
+ * the editor (default-vars.json). A block only writes the variables whose
+ * value differs from the default.
+ *
+ * When a control is added to a block, run `npm run build` so the defaults are
+ * regenerated; without them an unset tablet or mobile value has nothing to
+ * fall back to.
+ */
+const pairs = {
+    dimensionVars: (varname, top, right, bottom, left, unit = '') => [
+        [`--sb-${varname}-top`, top ? (top + unit) : 'initial'],
+        [`--sb-${varname}-right`, right ? (right + unit) : 'initial'],
+        [`--sb-${varname}-bottom`, bottom ? (bottom + unit) : 'initial'],
+        [`--sb-${varname}-left`, left ? (left + unit) : 'initial'],
+    ],
 
-const responsiveGapVars = (varname, valueRowLg, valueRowSm, valueRowMd, valueColumnLg, valueColumnSm, valueColumnMd, unit = '') => {
-    return `--sb-${varname}-row-sm: ${valueRowSm ? (valueRowSm + unit) : 'var(--sb-' + varname + '-row-md)'};
-        --sb-${varname}-row-md: ${valueRowMd ? (valueRowMd + unit) : 'var(--sb-' + varname + '-row-lg)'};
-        --sb-${varname}-row-lg: ${valueRowLg ? (valueRowLg + unit) : '20px'};
-        --sb-${varname}-column-sm: ${valueColumnSm ? (valueColumnSm + unit) : 'var(--sb-' + varname + '-column-md)'};
-        --sb-${varname}-column-md: ${valueColumnMd ? (valueColumnMd + unit) : 'var(--sb-' + varname + '-column-lg)'};
-        --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : '20px'};`;
-}
+    responsiveDimensionVars: (varname, top, right, bottom, left, topSm, rightSm, bottomSm, leftSm, topMd, rightMd, bottomMd, leftMd, unit = '') => [
+        [`--sb-${varname}-top-sm`, topSm ? (topSm + unit) : 'var(--sb-' + varname + '-top-md)'],
+        [`--sb-${varname}-right-sm`, rightSm ? (rightSm + unit) : 'var(--sb-' + varname + '-right-md)'],
+        [`--sb-${varname}-bottom-sm`, bottomSm ? (bottomSm + unit) : 'var(--sb-' + varname + '-bottom-md)'],
+        [`--sb-${varname}-left-sm`, leftSm ? (leftSm + unit) : 'var(--sb-' + varname + '-left-md)'],
+        [`--sb-${varname}-top-md`, topMd ? (topMd + unit) : 'var(--sb-' + varname + '-top-lg)'],
+        [`--sb-${varname}-right-md`, rightMd ? (rightMd + unit) : 'var(--sb-' + varname + '-right-lg)'],
+        [`--sb-${varname}-bottom-md`, bottomMd ? (bottomMd + unit) : 'var(--sb-' + varname + '-bottom-lg)'],
+        [`--sb-${varname}-left-md`, leftMd ? (leftMd + unit) : 'var(--sb-' + varname + '-left-lg)'],
+        [`--sb-${varname}-top-lg`, top ? (top + unit) : 'initial'],
+        [`--sb-${varname}-right-lg`, right ? (right + unit) : 'initial'],
+        [`--sb-${varname}-bottom-lg`, bottom ? (bottom + unit) : 'initial'],
+        [`--sb-${varname}-left-lg`, left ? (left + unit) : 'initial'],
+    ],
 
-const responsiveGapColumnVars = (varname, valueColumnLg, valueColumnSm, valueColumnMd, unit = '') => {
-    return `--sb-${varname}-column-sm: ${valueColumnSm ? (valueColumnSm + unit) : 'var(--sb-' + varname + '-column-md)'};
-        --sb-${varname}-column-md: ${valueColumnMd ? (valueColumnMd + unit) : 'var(--sb-' + varname + '-column-lg)'};
-        --sb-${varname}-column-lg: ${valueColumnLg ? (valueColumnLg + unit) : '20px'};`;
-}
+    responsiveSliderVars: (varname, valueLg, valueSm, valueMd, unit = '') => [
+        [`--sb-${varname}-sm`, valueSm ? (valueSm + unit) : 'var(--sb-' + varname + '-md)'],
+        [`--sb-${varname}-md`, valueMd ? (valueMd + unit) : 'var(--sb-' + varname + '-lg)'],
+        [`--sb-${varname}-lg`, valueLg ? (valueLg + unit) : 'initial'],
+    ],
 
-const bgVars = (varname, valueURL, valueAttachment, valueSize, valuePositionX, valuePositionY, valueRepeat, valueType, valueGradient, valueColor, valueOverlayColor) => {
-    const imageURL = valueURL ? valueURL : '';
-    const imageGradient = valueGradient ? valueGradient : '';
-    const urlValue = valueType == 'imageOrColor' ? 'url(' + imageURL + ')' : imageGradient;
-    return `--sb-${varname}-img-url: ${urlValue ? urlValue : 'initial'};
-        --sb-${varname}-img-attachment: ${valueAttachment ? valueAttachment : 'scroll'};
-        --sb-${varname}-img-size: ${valueSize ? valueSize : 'auto'};
-        --sb-${varname}-img-position: ${(valuePositionX && valuePositionY) ? ((valuePositionX * 100) + '%' + (valuePositionY * 100) + '%') : '50% 50%'};
-        --sb-${varname}-img-repeat: ${valueRepeat ? valueRepeat : 'repeat'};
-        --sb-${varname}-color: ${valueColor ? valueColor : 'transparent'};
-        --sb-${varname}-overlay-color: ${valueOverlayColor ? valueOverlayColor : 'transparent'};`;
-}
+    responsiveColumnWidthVars: (varname, valueLg, valueSm, valueMd, unit = '') => [
+        [`--sb-${varname}-sm`, valueSm ? (valueSm + unit) : 'var(--sb-' + varname + '-md)'],
+        [`--sb-${varname}-md`, valueMd ? (valueMd + unit) : 'var(--sb-' + varname + '-lg)'],
+        [`--sb-${varname}-lg`, valueLg ? (valueLg + unit) : 'var(--sb-columns-width, 1170px)'],
+    ],
 
-export {bgVars, boxShadowVars, checkDefault, dimensionVars, getFontClass, responsiveDimensionVars, responsiveGapColumnVars, responsiveGapVars, responsiveSliderVars, responsiveColumnWidthVars, responsiveTypographyVars};
+    boxShadowVars: (varname, horizontal, vertical, blur, spread, color, inset, unit = '') => [
+        [`--sb-${varname}-horizontal`, horizontal ? (horizontal + unit) : '0'],
+        [`--sb-${varname}-vertical`, vertical ? (vertical + unit) : '0'],
+        [`--sb-${varname}-blur`, blur ? (blur + unit) : '0'],
+        [`--sb-${varname}-spread`, spread ? (spread + unit) : '0'],
+        [`--sb-${varname}-color`, color ? color : 'transparent'],
+        [`--sb-${varname}-inset`, inset ? inset : ''],
+    ],
+
+    responsiveTypographyVars: (varname, family, weight, textTransform, textDecoration,
+        fonsSizeSm, fontSizeMd, fontSize, fontSizeUnit,
+        letterSpacingSm, letterSpacingMd, letterSpacing, letterSpacingUnit,
+        lineHeightSm, lineHeightMd, lineHeight, lineHeightUnit) => [
+        [`--sb-${varname}-family`, family ? checkDefault(family) : 'inherit'],
+        [`--sb-${varname}-weight`, weight ? checkDefault(weight.replace(/\D/g, ''), weight) : 'inherit'],
+        [`--sb-${varname}-style`, weight ? checkDefault(weight.replace(/\d+/g, ''), weight) : 'inherit'],
+        [`--sb-${varname}-tt`, textTransform ? textTransform : 'inherit'],
+        [`--sb-${varname}-td`, textDecoration ? textDecoration : 'inherit'],
+        [`--sb-${varname}-fs-sm`, fonsSizeSm ? (fonsSizeSm + fontSizeUnit) : 'var(--sb-' + varname + '-fs-md)'],
+        [`--sb-${varname}-fs-md`, fontSizeMd ? (fontSizeMd + fontSizeUnit) : 'var(--sb-' + varname + '-fs-lg)'],
+        [`--sb-${varname}-fs-lg`, fontSize ? (fontSize + fontSizeUnit) : 'inherit'],
+        [`--sb-${varname}-ls-sm`, letterSpacingSm ? (letterSpacingSm + letterSpacingUnit) : 'var(--sb-' + varname + '-ls-md)'],
+        [`--sb-${varname}-ls-md`, letterSpacingMd ? (letterSpacingMd + letterSpacingUnit) : 'var(--sb-' + varname + '-ls-lg)'],
+        [`--sb-${varname}-ls-lg`, letterSpacing ? (letterSpacing + letterSpacingUnit) : 'inherit'],
+        [`--sb-${varname}-lh-sm`, lineHeightSm ? (lineHeightSm + lineHeightUnit) : 'var(--sb-' + varname + '-lh-md)'],
+        [`--sb-${varname}-lh-md`, lineHeightMd ? (lineHeightMd + lineHeightUnit) : 'var(--sb-' + varname + '-lh-lg)'],
+        [`--sb-${varname}-lh-lg`, lineHeight ? (lineHeight + lineHeightUnit) : 'inherit'],
+    ],
+
+    responsiveGapVars: (varname, valueRowLg, valueRowSm, valueRowMd, valueColumnLg, valueColumnSm, valueColumnMd, unit = '') => [
+        [`--sb-${varname}-row-sm`, valueRowSm ? (valueRowSm + unit) : 'var(--sb-' + varname + '-row-md)'],
+        [`--sb-${varname}-row-md`, valueRowMd ? (valueRowMd + unit) : 'var(--sb-' + varname + '-row-lg)'],
+        [`--sb-${varname}-row-lg`, valueRowLg ? (valueRowLg + unit) : '20px'],
+        [`--sb-${varname}-column-sm`, valueColumnSm ? (valueColumnSm + unit) : 'var(--sb-' + varname + '-column-md)'],
+        [`--sb-${varname}-column-md`, valueColumnMd ? (valueColumnMd + unit) : 'var(--sb-' + varname + '-column-lg)'],
+        [`--sb-${varname}-column-lg`, valueColumnLg ? (valueColumnLg + unit) : '20px'],
+    ],
+
+    responsiveGapColumnVars: (varname, valueColumnLg, valueColumnSm, valueColumnMd, unit = '') => [
+        [`--sb-${varname}-column-sm`, valueColumnSm ? (valueColumnSm + unit) : 'var(--sb-' + varname + '-column-md)'],
+        [`--sb-${varname}-column-md`, valueColumnMd ? (valueColumnMd + unit) : 'var(--sb-' + varname + '-column-lg)'],
+        [`--sb-${varname}-column-lg`, valueColumnLg ? (valueColumnLg + unit) : '20px'],
+    ],
+
+    bgVars: (varname, valueURL, valueAttachment, valueSize, valuePositionX, valuePositionY, valueRepeat, valueType, valueGradient, valueColor, valueOverlayColor) => {
+        const imageURL = valueURL ? valueURL : '';
+        const imageGradient = valueGradient ? valueGradient : '';
+        const urlValue = valueType == 'imageOrColor' ? 'url(' + imageURL + ')' : imageGradient;
+        return [
+            [`--sb-${varname}-img-url`, urlValue ? urlValue : 'initial'],
+            [`--sb-${varname}-img-attachment`, valueAttachment ? valueAttachment : 'scroll'],
+            [`--sb-${varname}-img-size`, valueSize ? valueSize : 'auto'],
+            [`--sb-${varname}-img-position`, (valuePositionX && valuePositionY) ? ((valuePositionX * 100) + '%' + (valuePositionY * 100) + '%') : '50% 50%'],
+            [`--sb-${varname}-img-repeat`, valueRepeat ? valueRepeat : 'repeat'],
+            [`--sb-${varname}-color`, valueColor ? valueColor : 'transparent'],
+            [`--sb-${varname}-overlay-color`, valueOverlayColor ? valueOverlayColor : 'transparent'],
+        ];
+    },
+};
+
+const toCSS = (list) => list.map(([name, value]) => `${name}: ${value};`).join('\n        ');
+
+/**
+ * The variables a control has before the user sets anything.
+ *
+ * @param {string} helper  Name of the helper, e.g. "responsiveDimensionVars".
+ * @param {string} varname Variable prefix the block passes to that helper.
+ * @return {Array} List of [variable, value] pairs.
+ */
+const defaultVars = (helper, varname) => pairs[helper](varname);
+
+// Writes only the variables that differ from the control's defaults.
+const changedOnly = (helper) => (varname, ...values) => {
+    const defaults = defaultVars(helper, varname);
+    return toCSS(pairs[helper](varname, ...values).filter(([, value], index) => value !== defaults[index][1]));
+};
+
+const dimensionVars = changedOnly('dimensionVars');
+const responsiveDimensionVars = changedOnly('responsiveDimensionVars');
+const responsiveSliderVars = changedOnly('responsiveSliderVars');
+const responsiveColumnWidthVars = changedOnly('responsiveColumnWidthVars');
+const boxShadowVars = changedOnly('boxShadowVars');
+const responsiveTypographyVars = changedOnly('responsiveTypographyVars');
+const responsiveGapVars = changedOnly('responsiveGapVars');
+const responsiveGapColumnVars = changedOnly('responsiveGapColumnVars');
+const bgVars = changedOnly('bgVars');
+
+export {bgVars, boxShadowVars, checkDefault, defaultVars, dimensionVars, getFontClass, responsiveDimensionVars, responsiveGapColumnVars, responsiveGapVars, responsiveSliderVars, responsiveColumnWidthVars, responsiveTypographyVars};

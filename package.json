@@ -19,8 +19,9 @@
     "@wordpress/scripts": "^34.1.0"
   },
   "scripts": {
-    "start": "wp-scripts start",
-    "build": "wp-scripts build",
+    "css": "node bin/responsive-vars.js && node bin/default-vars.js",
+    "start": "npm run css && wp-scripts start",
+    "build": "npm run css && wp-scripts build",
     "lint:js": "wp-scripts lint-js src/index.js",
     "lint:js-fix": "wp-scripts lint-js src/index.js --fix",
     "lint:css": "wp-scripts lint-style '**/*.css'"

@@ -10,7 +10,7 @@ class Smart_Blocks_Single_News_Two extends Smart_Blocks_Module {
     public function render($attributes) {
         $this->attributes = $attributes;
         $content_rendered = '';
-        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '">';
+        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '" class="sb-post-module">';
         $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-single-post wp-block-smart-blocks']) . '>';
 
         $args = $this->query_args();

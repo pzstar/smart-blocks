@@ -16,7 +16,7 @@ class Smart_Blocks_Tile_Module_Two extends Smart_Blocks_Module {
         $featured_image_size = $this->attributes['featuredImageSize'];
         $side_image_size = $this->attributes['sideImageSize'];
 
-        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '">';
+        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '" class="sb-post-module">';
         $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-tile-block-wrap wp-block-smart-blocks']) . '>';
         $content_rendered .= $this->render_header();
         $content_rendered .= '<div class="sb-tile-block sb-clearfix style2 space-10">';

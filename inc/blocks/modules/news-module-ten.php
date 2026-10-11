@@ -12,7 +12,7 @@ class Smart_Blocks_News_Module_Ten extends Smart_Blocks_Module {
         $content_rendered = '';
 
         $listing_post_image_size = $this->attributes['listingImageSize'];
-        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '">';
+        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '" class="sb-post-module">';
         $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-ten wp-block-smart-blocks']) . '>';
 
         $content_rendered .= $this->render_header();

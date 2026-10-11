@@ -25,6 +25,11 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 
 == Changelog ==
 = 2.9 - 11 Oct, 2026 =
+* Blocks now save only the style values that were changed, which makes the CSS printed on the page much smaller
+* Tablet and mobile gap, alignment and text alignment of the Columns block were not applied on the front end - Fixed
+* Tablet and mobile flex and grid settings of the Container block were applied to the wrong element - Fixed
+* Tablet and mobile title settings were not applied in News Module Seven, Carousel Module and Single News blocks - Fixed
+* Tablet and mobile typography settings of the Ticker Module were not applied - Fixed
 * Post blocks could list entries of non-public post types - Fixed
 * Warning in post blocks when the featured image file is missing - Fixed
 * Carousel and ticker settings attribute is now quoted and its values cast to numbers

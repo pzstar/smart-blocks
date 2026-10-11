@@ -13,7 +13,7 @@ class Smart_Blocks_News_Module_Fifteen extends Smart_Blocks_Module {
 
         $display_cat = $this->attributes['postPostCategory'];
         $image_size = $this->attributes['postImageSize'];
-        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '">';
+        $content_rendered .= '<div id="' . esc_attr($this->attributes['id']) . '" class="sb-post-module">';
         $content_rendered .= '<div ' . get_block_wrapper_attributes(['class' => 'sb-news-module-fifteen wp-block-smart-blocks']) . '>';
         $content_rendered .= $this->render_header();
 

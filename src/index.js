@@ -1,4 +1,5 @@
 import './data';
+import './utils/default-vars';
 import './blocks/section/columns';
 import './blocks/section/column';
 import './blocks/container';
