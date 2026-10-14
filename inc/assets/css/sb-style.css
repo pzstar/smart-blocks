@@ -75,7 +75,7 @@
 }
 
 .wp-block-smart-blocks-columns:hover {
-    border-bottom-width: var(var(--sb-columns-border-hover-width-bottom), var(--sb-columns-border-normal-width-bottom, 0));
+    border-bottom-width: var(--sb-columns-border-hover-width-bottom, var(--sb-columns-border-normal-width-bottom, 0));
     border-color: var(--sb-columns-border-hover-color, var(--sb-columns-border-normal-color, transparent));
     border-left-width: var(--sb-columns-border-hover-width-left, var(--sb-columns-border-normal-width-left, 0));
     border-radius: var(--sb-columns-border-hover-radius-top, var(--sb-columns-border-normal-radius-top, 0)) var(--sb-columns-border-hover-radius-right, var(--sb-columns-border-normal-radius-right, 0)) var(--sb-columns-border-hover-radius-bottom, var(--sb-columns-border-normal-radius-bottom, 0)) var(--sb-columns-border-hover-radius-left, var(--sb-columns-border-normal-radius-left, 0));
@@ -136,7 +136,7 @@
 }
 
 .wp-block-smart-blocks-column:hover {
-    border-bottom-width: var(var(--sb-column-border-hover-width-bottom), var(--sb-column-border-normal-width-bottom, 0));
+    border-bottom-width: var(--sb-column-border-hover-width-bottom, var(--sb-column-border-normal-width-bottom, 0));
     border-color: var(--sb-column-border-hover-color, var(--sb-column-border-normal-color, transparent));
     border-left-width: var(--sb-column-border-hover-width-left, var(--sb-column-border-normal-width-left, 0));
     border-radius: var(--sb-column-border-hover-radius-top, var(--sb-column-border-normal-radius-top, 0)) var(--sb-column-border-hover-radius-right, var(--sb-column-border-normal-radius-right, 0)) var(--sb-column-border-hover-radius-bottom, var(--sb-column-border-normal-radius-bottom, 0)) var(--sb-column-border-hover-radius-left, var(--sb-column-border-normal-radius-left, 0));
@@ -219,7 +219,7 @@
 }
 
 .wp-block-smart-blocks-container:hover {
-    border-bottom-width: var(var(--sb-container-border-hover-width-bottom), var(--sb-container-border-normal-width-bottom, 0));
+    border-bottom-width: var(--sb-container-border-hover-width-bottom, var(--sb-container-border-normal-width-bottom, 0));
     border-color: var(--sb-container-border-hover-color, var(--sb-container-border-normal-color, transparent));
     border-left-width: var(--sb-container-border-hover-width-left, var(--sb-container-border-normal-width-left, 0));
     border-radius: var(--sb-container-border-hover-radius-top, var(--sb-container-border-normal-radius-top, 0)) var(--sb-container-border-hover-radius-right, var(--sb-container-border-normal-radius-right, 0)) var(--sb-container-border-hover-radius-bottom, var(--sb-container-border-normal-radius-bottom, 0)) var(--sb-container-border-hover-radius-left, var(--sb-container-border-normal-radius-left, 0));
@@ -2530,6 +2530,7 @@ h3.sb-big-title {
 
 
 @media screen and (max-width: 767px) {
+
     .sb-news-module-one .sb-news-module-one-wrap,
     .sb-news-module-two .sb-news-module-two-wrap,
     .sb-news-module-three .sb-news-module-three-wrap,

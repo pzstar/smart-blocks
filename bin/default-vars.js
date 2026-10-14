@@ -168,3 +168,41 @@ if (from !== -1 && to !== -1) {
 fs.writeFileSync(cssFile, css);
 
 console.log(`default-vars: ${groups.map((group) => `${group.selector} ${group.vars.size}`).join(', ')} variables written.`);
+
+/*
+ * Safety checks. They catch the mistakes that otherwise only show up as a
+ * setting that silently does nothing:
+ *
+ *  - a rule reads a responsive variable that no control writes (a typo, or a
+ *    control that was renamed), so the setting can never reach it;
+ *  - a var() nested directly inside another var(), which makes the whole
+ *    declaration invalid.
+ *
+ * A control whose desktop variable no rule reads is reported as a warning.
+ */
+const handWritten = css.slice(0, css.indexOf(start)).replace(/\/\*[\s\S]*?\*\//g, '');
+const written = new Set();
+groups.forEach((group) => group.vars.forEach((value, name) => written.add(name)));
+
+const read = new Set((handWritten.match(/var\(\s*--sb-[a-z0-9-]+/g) || []).map((match) => match.replace(/var\(\s*/, '')));
+const errors = [];
+
+for (const name of read) {
+  if (/-(lg|md|sm)$/.test(name) && !written.has(name)) {
+    errors.push(`sb-style.css reads ${name}, but no control writes it.`);
+  }
+}
+
+if (/var\(\s*var\(/.test(handWritten)) {
+  errors.push('sb-style.css has a var() directly inside another var(), which makes the declaration invalid.');
+}
+
+for (const name of written) {
+  if (/-lg$/.test(name) && !read.has(name)) {
+    console.warn(`default-vars: warning: no rule in sb-style.css reads ${name}, so that setting has no effect.`);
+  }
+}
+
+if (errors.length) {
+  fail(errors.join('\n  '));
+}

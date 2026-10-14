@@ -30,6 +30,7 @@ The easy way to install the plugin is via WordPress.org plugin directory.
 * Tablet and mobile flex and grid settings of the Container block were applied to the wrong element - Fixed
 * Tablet and mobile title settings were not applied in News Module Seven, Carousel Module and Single News blocks - Fixed
 * Tablet and mobile typography settings of the Ticker Module were not applied - Fixed
+* Hover bottom border width of Columns, Column and Container blocks was never applied - Fixed
 * Post blocks could list entries of non-public post types - Fixed
 * Warning in post blocks when the featured image file is missing - Fixed
 * Carousel and ticker settings attribute is now quoted and its values cast to numbers
